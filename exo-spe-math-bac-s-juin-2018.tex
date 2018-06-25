@@ -1,0 +1,198 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage{lymath}
+
+\DeclareMathOperator{\taille}{\tau}
+
+\newtheorem{fact}{Fait}
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+
+\begin{document}
+
+\title{À propos de l'exercice de SPÉ MATHS du BAC S de Juin 2018}
+\author{Christophe BAL}
+\date{25 Juin 2018}
+\maketitle
+
+Dans le BAC S de Juin 2018, la partie A de l'exercice de SPÉ MATHS s'intéressait à l'équation diophantienne \textbf{[ED]} : $x^2 - 8 y^2 = 1$ sur $\NN^2$. 
+
+
+\medskip
+
+On a une solution évidente $(x \,; y) = (3 \,; 1)$. L'exercice introduit alors une matrice "magique"
+$A =
+\begin{pmatrix} 
+  3 & 8  \\ 
+  1 & 3 
+\end{pmatrix}$
+pour ensuite construite des solutions $(x_n \,; y_n)$ de façon récursive linéairement comme suit :
+$\begin{pmatrix} 
+  x_{n+1} \\ 
+  y_{n+1} 
+\end{pmatrix}
+=
+A
+\begin{pmatrix} 
+  x_{n} \\ 
+  y_{n} 
+\end{pmatrix}
+$.
+
+
+\medskip
+
+Très bien mais voyons comment découvrir la matrice "magique" $A$. Une idée élémentaire est de noter que
+$x^2 - 8 y^2
+=
+\begin{pmatrix} 
+  x & y 
+\end{pmatrix}
+Q
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$
+en posant
+$Q
+=
+\begin{pmatrix} 
+  1 & 0  \\ 
+  0 & -8 
+\end{pmatrix}$.
+
+
+\medskip
+
+En notant 
+$\begin{pmatrix} 
+  X \\ 
+  Y 
+\end{pmatrix}
+=
+A
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$,
+nous avons :
+$\begin{pmatrix} 
+  X & Y 
+\end{pmatrix}
+Q
+\begin{pmatrix} 
+  X \\ 
+  Y 
+\end{pmatrix}
+=
+\begin{pmatrix} 
+  x & y 
+\end{pmatrix}
+A^T Q A
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$.
+
+
+\medskip
+
+Essayons de trouver $A$ vérifiant $A^T Q A = Q$ car d'une solution
+$\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$
+on pourra passer à une "autre"
+$\begin{pmatrix} 
+  X \\ 
+  Y 
+\end{pmatrix}
+=
+A \begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$.
+
+
+\medskip
+
+Utilisant le déterminant, nous avons come première contrainte $\det A = \pm 1$ donc $A$ doit être inversible. Imposons $\det A = 1$.
+Notant
+$A = \begin{pmatrix} 
+  a & b \\ 
+  c & d
+\end{pmatrix}$,
+nous avons alors
+$A^{-1} = \begin{pmatrix} 
+  d  & -b \\ 
+  -c & a
+\end{pmatrix}$
+d'où :
+\begin{flalign*}
+	A^T Q A = Q & \Longleftrightarrow  A^T Q A = Q      & \\
+	            & \Longleftrightarrow  A^T Q = Q A^{-1} & \\
+	            & \Longleftrightarrow 
+	\begin{pmatrix} 
+	  a & c \\ 
+	  b & d
+	\end{pmatrix}
+	\begin{pmatrix} 
+	  1 & 0  \\ 
+	  0 & -8 
+	\end{pmatrix}
+	=
+	\begin{pmatrix} 
+	  1 & 0  \\ 
+	  0 & -8 
+	\end{pmatrix}
+	\begin{pmatrix} 
+	  d  & -b \\ 
+	  -c & a
+	\end{pmatrix}
+	                                                    & \\
+	            & \Longleftrightarrow 
+	\begin{pmatrix} 
+	  a & -8 c \\ 
+	  b & -8 d
+	\end{pmatrix}
+	=
+	\begin{pmatrix} 
+	  d  & -b \\ 
+	  8c & -8a
+	\end{pmatrix}
+	                                                    & \\
+	            & \Longleftrightarrow a = d \text{ et } b = 8c 
+\end{flalign*}
+
+
+\medskip
+
+$\det A = 1$ pour
+$A
+=
+\begin{pmatrix} 
+  a & b \\ 
+  c & d
+\end{pmatrix}
+=
+\begin{pmatrix} 
+  d & 8c \\ 
+  c & d
+\end{pmatrix}$
+nous donne
+$d^2 - 8c^2 = 1$. Que c'est joli !
+
+
+\medskip
+
+La matrice du sujet de BAC utilise donc la solution élémentaire
+$(c \,; d) = (1 \,; 3)$.
+\end{document}
