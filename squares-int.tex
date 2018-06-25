@@ -1,0 +1,104 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage{lymath}
+
+\DeclareMathOperator{\taille}{\tau}
+
+\newtheorem{fact}{Fait}
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+
+\begin{document}
+
+\title{BROUILLON - Sommer les carrés des chiffres d'un naturel - MANQUE L'ASPECT PROG POUR PRÉCISER LA PÉRIODICITÉ}
+\author{Christophe BAL}
+\date{6 Juin 2018}
+\maketitle
+
+Pour un naturel 
+$\displaystyle      n = [c_{d-1} c_{d-2} \cdots c_1 c_0]_{10} 
+\stackrel{\text{def}}{=} \sum_{k=0}^{d-1} c_k 10^k$
+avec $c_{d-1} \neq 0$,
+on pose
+$\displaystyle \phi(n) = \sum_{k=0}^{d-1} (c_k)^2$
+et
+$\taille(n) = d$ sera appelé taille de $n$.
+
+\medskip
+
+Pour $(n \,; k) \in \NN^2$, on définit 
+$  \hypergeo{a}{n}{0} = n$
+et
+$  \hypergeo{a}{n}{k} = \phi^k(n)
+\stackrel{\text{def}}{=} \phi \,\circ \phi \,\circ \cdots \,\circ \phi(n)$ avec $(k-1)$ compositions si $k > 0$.
+Donc
+$\hypergeo{a}{n}{k+1} = \phi \left( \hypergeo{a}{n}{k} \right)$.
+On note enfin
+$E_n = \{ \hypergeo{a}{n}{k} \, \text{pour} \, k \in \NN \}$.
+
+
+
+\medskip
+
+\begin{fact}
+	$\forall n \in \NN$, $\phi(n) \leqslant 81 d$ où $d = \taille(n)$.
+\end{fact}
+
+\begin{proof*}
+	Si $n = [c_{d-1} c_{d-2} \cdots c_1 c_0]_{10}$
+	alors 
+	$\displaystyle \phi(n) = \sum_{k=0}^{d-1} (c_k)^2 \leqslant \sum_{k=0}^{d-1} 9^2 = 81 d $.
+\end{proof*}
+
+
+
+\medskip
+
+\begin{fact}
+	$\forall n \in \NN$, notant $d = \taille(n)$, nous avons les résultats suivants :
+	
+	\begin{enumerate}
+		\item Si $d \geqslant 4$ alors $\taille(\phi(n)) < \taille(n)$.
+		
+		\item Si $d \leqslant 3$ alors $\taille(\phi(n)) \leqslant 3$.
+	\end{enumerate}
+\end{fact}
+
+\begin{proof*}
+	Notons que $n \geqslant 10^{d-1}$.
+	Le comportement des fonctions $10^{x-1}$ et $81x$ sur $\RRsp$ assure l'existence d'un naturel $D$ tel que $\forall d \in \NN$, $d \geqslant D$ implique $10^{d-1} > 81d \geqslant \phi(n)$. On a même beaucoup mieux : si $10^{D-1} > 81D \geqslant \phi(n)$ alors $d \geqslant D$ implique $10^{d-1} > 81d \geqslant \phi(n)$.
+	
+	\medskip
+	
+	Comme $10^3 > 81 \times 4$, nous avons sans effort le 1er point (rappelons que $10^k > n$ implique que $n$ admet au plus $(k-1)$ chiffres).
+	
+	\medskip
+	
+	Pour $d \leqslant 3$, le 2nd point découle de $\phi(999) = 243$, $\phi(99) = 162$ et $\phi(9) = 81$.
+\end{proof*}
+
+
+
+\medskip
+
+\begin{fact}
+	$\forall n \in \NN$, l'ensemble $E_n$ est fini et donc la suite $\left( \hypergeo{a}{n}{k} \right)_{k \in \NN}$ est ultimement périodique, i.e. périodique à partir d'un certain rang.
+\end{fact}
+
+\begin{proof*}
+	Le 2nd point dépend directement du 1er point via le principe des tiroirs et la définition récursive de la suite $\left( \hypergeo{a}{n}{k} \right)_k$.
+	
+	\medskip
+	
+	Pour le 1er point, il suffit de montrer que $E_n \subset \intervalC{0}{10^{\taille(n)}}$ pour $n \geqslant 4$ via une petite récurrence descendante finie, et pour $n \leqslant 3$ on a directement $E_n \subset \intervalC{0}{10^3}$.
+\end{proof*}
+
+\end{document}
