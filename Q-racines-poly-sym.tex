@@ -1,0 +1,146 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage{lymath}
+
+\DeclareMathOperator{\taille}{\tau}
+
+\newtheorem{fact}{Fait}
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+
+\begin{document}
+
+\title{BROUILLON - Racines rationnelles d'un polynôme symétrique de degré 4}
+\author{Christophe BAL}
+\date{6 Décembre 2018}
+\maketitle
+
+$P(X) = a X^4 + b x^3 + c X^2 + b X + a$, un polynôme symétrique de degré 4, peut-il n'avoir que des racines entières ? Que des racines rationnelles ?
+
+
+
+\section{Constatations générales}
+
+On peut supposer que $a = 1$, i.e. $P(X) = X^4 + b X^3 + c X^2 + b X + 1$.
+
+Dès lors si $P(r) = 0$ alors $r \neq 0$ et $P\left( \dfrac1r \right) = 0$.
+
+Ensuite, nous avons :
+
+\medskip
+
+$P(X) = X^4 P\left( \dfrac1X \right)$
+
+\medskip
+
+$P\,^{\prime}(X) = 4 X^3 P\left( \dfrac1X \right) 
+            - X^2 P\,^{\prime}\left( \dfrac1X \right)$
+
+%\medskip
+%
+%$P\,^{\prime\prime}(X) = 12 X^2 P\left( \dfrac1X \right)  - 4 X P\,^{\prime}\left( \dfrac1X \right)
+%		    - 2 X P\,^{\prime}\left( \dfrac1X \right) + P\,^{\prime\prime}\left( \dfrac1X \right)$
+%
+%$P\,^{\prime\prime}(X) = 12 X^2 P\left( \dfrac1X \right)  
+%            - 6 X P\,^{\prime}\left( \dfrac1X \right) 
+%            + P\,^{\prime\prime}\left( \dfrac1X \right)$
+
+On en déduit que si $r$ est une racine d'ordre au moins $2$, il en est de même pour $\dfrac1r$.
+
+
+\section{Uniquement des racines entières ?}
+
+Si $P$ n'a que des racines entières, alors ces racines ne peuvent être que $\pm 1$ qui sont les seuls entiers ayant un inverse entier. Ceci donne les uniques  possibilités suivantes :
+
+\begin{enumerate}
+	\item $P(X) = (X + 1)^4 = X^4 + 4 X^3 + 6 X^2 + 4 X + 1$ : ce polynôme est ok.
+
+	\item $P(X) = (X - 1)^4 = X^4 - 4 X^3 + 6 X^2 - 4 X + 1$ : ce polynôme est ok.
+	
+	\item $P(X) = (X + 1)^3 (X - 1) = X^4 + 2 X^3 - 2 X - 1$ : on rejette. Notons que l'on a un polynôme anti-symétrique.
+	
+	\item $P(X) = (X - 1)^3 (X + 1) = X^4 - 2 X^3 + 2 X - 1$ : on rejette. Notons que l'on a un polynôme anti-symétrique.
+
+	\item $P(X) = (X + 1)^2 (X - 1)^2 = X^4 - 2 X^2 + 1$ : ce polynôme est ok.
+\end{enumerate}
+
+
+\section{Uniquement des racines rationnelles ?}
+
+Supposons que $r \in \QQ - \NN$ soit une racine de $P$.
+
+\medskip
+
+Le résultat sur la multiplicité supérieure ou égale à $2$ nous donne que si $r$ est de multiplicité au moins $2$ alors $\dfrac1r \neq r$ est aussi de multiplicité au moins $2$.
+Ceci implique que $r$ est de multiplicité $1$ ou $2$.
+
+
+
+\subsection*{$r$ est de multiplicité $1$}
+
+Si $P$ admet une autre racine $s \in \QQ - \NN$ avec $s \neq r$ et $s \neq \dfrac1r$ alors nécessairement $P(X) = (X - r) \left( X - \dfrac1r \right) (X - s) \left( X - \dfrac1s \right)$.
+
+
+D'où
+$P(X) = X^4
+      - \left( r + \dfrac1r + s + \dfrac1s \right) X^3
+      + \left( 2 + \dfrac{s}{r} + \dfrac{r}{s} + r s + \dfrac{1}{r s} \right) X^2
+      - \left( r + \dfrac1r + s + \dfrac1s \right) X
+      + 1$
+
+Ce polynôme est ok (utilisation d'un logiciel de calcul formel par flemme !).
+
+
+\bigskip
+
+Il reste à étudier les cas suivants.
+
+\begin{enumerate}
+	\item $P(X) = (X - r) \left( X - \dfrac1r \right) (X + 1)^2$ et $P(X) = (X - r) \left( X - \dfrac1r \right) (X - 1)^2$ sont ok car il suffit de reprendre le calcul formel précédent avec $s = \pm 1$.
+	
+
+	\item $P(X) = (X - r) \left( X - \dfrac1r \right) (X + 1) (X - 1)
+	            = X^4
+	            - \left( r + \dfrac1r \right) X^3 
+	            + \left( r + \dfrac1r \right) X
+	            - 1$ : on rejette. Notons que l'on a un polynôme anti-symétrique.
+\end{enumerate}
+
+
+\subsection*{$r$ est de multiplicité $2$}
+
+Dans ce cas, $P(X) = (X - r)^2 \left( X - \dfrac1r \right)^2$ nécessairement !
+
+
+$P(X) = (X - r)^2 \left( X - \dfrac1r \right)^2 
+      = X^4
+      - \left( 2 r + \dfrac2r \right) X^3 
+      + \left( 4 + r^2 + \dfrac{1}{r^2} \right) X^2 
+      - \left( 2 r + \dfrac2r \right) X
+      + 1$
+      
+Ce polynôme est ok (utilisation d'un logiciel de calcul formel par flemme !).
+
+
+
+\section{Problèmes similaires}
+
+Que se passe-t-il pour un polynôme anti-symétrique $P(X) = a X^4 + b x^3 - b X - a$ ?
+
+\medskip
+
+Comment généraliser à d'autres degrés ?
+
+\medskip
+
+Et surtout, blanquette de veau ou moussaka ?
+
+\end{document}
