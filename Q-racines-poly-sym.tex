@@ -26,7 +26,10 @@
 \date{6 Décembre 2018}
 \maketitle
 
-La question que l'on se pose est la suivante.
+La question que l'on se pose est la suivante
+\footnote{
+	L'auteur s'est posé cette question en voulant fabriquer un polynôme symétrique de degré $4$ à racines \og simples \fg{} pour fabriquer une exercice.
+}.
 
 \begin{tcolorbox}
 	$P(X) = a X^4 + b x^3 + c X^2 + b X + a$, un polynôme symétrique de degré 4, peut-il n'avoir que des racines entières ? Que des racines rationnelles ?
@@ -180,11 +183,11 @@ Donc les raisonnements de la section 2 nous donnent :
 
 
 
-\section{Peut-on généraliser ?}
+\section{Peut-on généraliser à un degré quelconque ?}
 
 \subsection*{Cas d'un polynôme symétrique de degré $n \geqslant 2$}
 
-Soit $P$ un polynôme symétrique de degré $n \geqslant 2$. On sait donc que $P(X) = X^n P\left( \dfrac1X \right)$. Notons que cette propriété est stable par multiplication. 
+Soit $P$ un polynôme symétrique de degré $n \geqslant 2$ et de coefficient dominant $1$. On sait donc que $P(X) = X^n P\left( \dfrac1X \right)$. Notons que cette propriété est stable par multiplication. 
 
 \medskip
 
@@ -224,6 +227,12 @@ On a donc juste la contrainte $b \in 2 \NN$. Que c'est beau !
 La démarche est similaire et on arrive à des polynômes du type
 $\displaystyle P(X) = (X + 1)^a (X - 1)^b \prod_{fini} (X - r_i)^{k_i} \left( X - \dfrac1{r_i} \right)^{k_i}$
 avec $b \in 2 \NN + 1$, les autres exposants pouvant être nuls avec d'éventuels $r_i \in \QQ - \NN$.
+
+
+
+\section{Peut-on généraliser à des racines non rationnelles ?}
+
+Oui, c'est immédiat à voir !
 
 
 
