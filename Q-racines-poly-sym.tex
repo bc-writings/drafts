@@ -4,8 +4,9 @@
 
 \usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
 
-\usepackage{amsmath}
+\usepackage{hyperref}
 \usepackage[french]{babel}
+
 \usepackage{lymath}
 
 \DeclareMathOperator{\taille}{\tau}
@@ -37,7 +38,7 @@ Ensuite, nous avons :
 
 \medskip
 
-$P(X) = X^4 P\left( \dfrac1X \right)$
+$P(X) = X^4 P\left( \dfrac1X \right)$ : caractérisation des polynômes symétriques de degré $4$
 
 \medskip
 
@@ -61,15 +62,25 @@ On en déduit que si $r$ est une racine d'ordre au moins $2$, il en est de même
 Si $P$ n'a que des racines entières, alors ces racines ne peuvent être que $\pm 1$ qui sont les seuls entiers ayant un inverse entier. Ceci donne les uniques  possibilités suivantes :
 
 \begin{enumerate}
-	\item $P(X) = (X + 1)^4 = X^4 + 4 X^3 + 6 X^2 + 4 X + 1$ : ce polynôme est ok.
+	\item Pour $P(X) = (X + 1)^4$
+	      comme $X^4 \left( \dfrac1X + 1\right)^4 = (1 + X)^4$ 
+	      on a : $P(X) = X^4 P\left( \dfrac1X \right)$ (on évite ainsi la tache ingrate de développer ceci même si les logiciels de calcul formel, comme  \url{https://www.wolframalpha.com},  le font sans sourciller).
+	      Le polynôme est ok.
 
-	\item $P(X) = (X - 1)^4 = X^4 - 4 X^3 + 6 X^2 - 4 X + 1$ : ce polynôme est ok.
+	\item $P(X) = (X - 1)^4$ est ok (comme ci-dessus et merci à l'exposant pair).
 	
-	\item $P(X) = (X + 1)^3 (X - 1) = X^4 + 2 X^3 - 2 X - 1$ : on rejette. Notons que l'on a un polynôme anti-symétrique.
-	
-	\item $P(X) = (X - 1)^3 (X + 1) = X^4 - 2 X^3 + 2 X - 1$ : on rejette. Notons que l'on a un polynôme anti-symétrique.
+	\item Pour $P(X) = (X - 1)^3 (X + 1)$
+	      comme $X^4 \left( \dfrac1X - 1\right)^3 \left( \dfrac1X + 1\right)
+	          = (1 - X)^3 (1 + X)$ ,
+	      on a : $P(X) = - X^4 P\left( \dfrac1X \right)$.
+	      Le polynôme est rejeté.
 
-	\item $P(X) = (X + 1)^2 (X - 1)^2 = X^4 - 2 X^2 + 1$ : ce polynôme est ok.
+	      \noindent En fait $P(X) = (X - 1)^3 (X + 1) = X^4 - 2 X^3 + 2 X - 1$ est anti-symétrique. 
+	      Un polynôme de degré $4$ est anti-symétrique ssi  $P(X) = - X^4 P\left( \dfrac1X \right)$.
+	
+	\item $P(X) = (X + 1)^3 (X - 1)$ est rejeté (comme ci-dessus).
+
+	\item $P(X) = (X + 1)^2 (X - 1)^2$ est ok car il vérifie $P(X) = X^4 P\left( \dfrac1X \right)$.
 \end{enumerate}
 
 
@@ -90,13 +101,24 @@ Si $P$ admet une autre racine $s \in \QQ - \NN$ avec $s \neq r$ et $s \neq \dfra
 
 
 D'où
-$P(X) = X^4
-      - \left( r + \dfrac1r + s + \dfrac1s \right) X^3
-      + \left( 2 + \dfrac{s}{r} + \dfrac{r}{s} + r s + \dfrac{1}{r s} \right) X^2
-      - \left( r + \dfrac1r + s + \dfrac1s \right) X
-      + 1$
 
-Ce polynôme est ok (utilisation d'un logiciel de calcul formel par flemme !).
+$X^4 P\left( \dfrac1X \right)
+= X^4 
+  \left( \dfrac1X - r \right) \left( \dfrac1X - \dfrac1r \right) 
+  \left( \dfrac1X - s \right) \left( \dfrac1X - \dfrac1s \right)$
+
+$X^4 P\left( \dfrac1X \right)
+= ( 1 - r X) \left( 1 - \dfrac{X}{r} \right) 
+  ( 1 - s X) \left( 1 - \dfrac{X}{s} \right)$
+
+$X^4 P\left( \dfrac1X \right)
+= r \left( \dfrac1r - X \right) \times \dfrac1r ( r - X) 
+  \times s \left( \dfrac1s - X \right) \times \dfrac1s ( s - X)$
+
+$X^4 P\left( \dfrac1X \right)
+= P(X)$
+
+Ce polynôme est donc ok.
 
 
 \bigskip
@@ -104,14 +126,10 @@ Ce polynôme est ok (utilisation d'un logiciel de calcul formel par flemme !).
 Il reste à étudier les cas suivants.
 
 \begin{enumerate}
-	\item $P(X) = (X - r) \left( X - \dfrac1r \right) (X + 1)^2$ et $P(X) = (X - r) \left( X - \dfrac1r \right) (X - 1)^2$ sont ok car il suffit de reprendre le calcul formel précédent avec $s = \pm 1$.
+	\item $P(X) = (X - r) \left( X - \dfrac1r \right) (X + 1)^2$ et $P(X) = (X - r) \left( X - \dfrac1r \right) (X - 1)^2$ sont ok car il suffit de reprendre le calcul précédent avec $s = \pm 1$.
 	
 
-	\item $P(X) = (X - r) \left( X - \dfrac1r \right) (X + 1) (X - 1)
-	            = X^4
-	            - \left( r + \dfrac1r \right) X^3 
-	            + \left( r + \dfrac1r \right) X
-	            - 1$ : on rejette. Notons que l'on a un polynôme anti-symétrique.
+	\item $P(X) = (X - r) \left( X - \dfrac1r \right) (X + 1) (X - 1)$ vérifie $P(X) = - X^4 P\left( \dfrac1X \right)$ donc on a un polynôme anti-symétrique que l'on rejette.
 \end{enumerate}
 
 
@@ -119,21 +137,81 @@ Il reste à étudier les cas suivants.
 
 Dans ce cas, $P(X) = (X - r)^2 \left( X - \dfrac1r \right)^2$ nécessairement !
 
-
-$P(X) = (X - r)^2 \left( X - \dfrac1r \right)^2 
-      = X^4
-      - \left( 2 r + \dfrac2r \right) X^3 
-      + \left( 4 + r^2 + \dfrac{1}{r^2} \right) X^2 
-      - \left( 2 r + \dfrac2r \right) X
-      + 1$
-      
-Ce polynôme est ok (utilisation d'un logiciel de calcul formel par flemme !).
+Il est immédiat que $P(X) = X^4 P\left( \dfrac1X \right)$ donc ce polynôme est ok.
 
 
 
-\section{Problèmes similaires}
+\section{Calcul formel. Bon ou mauvais choix ?}
 
-Que se passe-t-il pour un polynôme anti-symétrique $P(X) = a X^4 + b x^3 - b X - a$ ?
+Par flemme, l'auteur avait d'abord raisonner avec un logiciel de calcul formel comme suit où des lettres différentes indiquent des racines différentes.
+
+\begin{enumerate}
+	\item $P(X) = (X - r)^4
+	            = X^4
+	            - 4 r X^3
+	            + 6 r^2 X^2
+	            - 4 r^3 X
+	            + r^4$
+	       est symétrique
+	       ssi
+	       $r^4 = 1$ et $r^3 = r$.
+	       Si $r\in \QQ$ alors nécessairement $r = \pm 1$.
+	       C'est alors ok via le développement de $(X - r)^4$.
+
+	\item $P(X) = (X - r)^3 (X - s)
+	            = X^4
+	            - (3 r + s) X^3
+	            + (3 r^2 + 3 r s) X^2
+	            - (r^3 + 3 r^2 s) X
+	            + r^3 s$
+	       est symétrique
+	       ssi
+	       $r^3 s = 1$ et $3 r + s = r^3 + 3 r^2 s$.
+	       On en déduit $3 r^4 + 1 = r^6 + 3 r^2$
+	       d'où $T^3 - 3 T^2 + 3 T - 1 = 0$
+	       i.e. $(T - 1)^3 = 1$
+	       en posant $T = r^2$.
+	       On en déduit que $r = \pm 1$ mais dans ce cas $s = r$ !
+	       Donc on rejette. 
+
+	\item $P(X) = (X - r)^2 (X - s)^2
+	            = X^4
+	            - (2 r  + 2 s) X^3
+	            + (r^2 + 4 r s + s^2) X^2
+	            - (2 r^2 s + 2 r s^2) X
+	            + r^2 s^2
+	            $
+	       est symétrique
+	       ssi
+	       $r^2 s^2 = 1$ et $r + s = r^2 s + r s^2$ soit
+	       $r s = \pm 1$ et $r + s = rs(r + s)$.
+	       
+	\begin{enumerate}
+		\item $r s = 1$ donne $r  + s = r + s$ et surtout $s = \dfrac1r$.
+		C'est alors ok via le développement de $(X - r)^2 \left( X - \dfrac1r \right)^2$.
+
+		\item $r s = -1$ donne $r  + s = 0$ i.e. $s = - r$ d'où $r = \pm 1$.
+		C'est alors ok via le développement de $(X - 1)^2 ( X + 1)^2$.
+	\end{enumerate}
+	
+	\item $P(X) = (X - r)^2 (X - s) (X - t)
+	            = X^4
+	            - (s + t + 2 r) X^3
+	            + (s t + r^2 + 2 r s + 2 r t) X^2
+	            - (r^2 s + r^2 t + 2 r s t) X 
+	            + r^2 s t$
+	       est symétrique
+	       ssi
+	       $r^2 s t = 1$ et $s + t + 2 r = r^2 s + r^2 t + 2 r s t$. Que faire ?
+\end{enumerate}
+
+A partir de là, on est bloqué avec trois inconnues et seulement deux équations ! De plus, pour ce qui précède, on n'a aucun recul sur ce que l'on fait. C'est moche !
+
+
+
+\section{À explorer...}
+
+Que se passe-t-il pour un polynôme anti-symétrique $P(X) = a X^4 + b X^3 - b X - a$ ?
 
 \medskip
 
