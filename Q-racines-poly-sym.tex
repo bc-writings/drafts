@@ -153,7 +153,81 @@ Il est immédiat que $P(X) = X^4 P\left( \dfrac1X \right)$ donc ce polynôme est
 
 
 
-\section{Calcul formel. Bon ou mauvais choix ?}
+\section{Et les polynômes anti-symétriques ?}
+
+Considérons $P$ un polynôme anti-symétrique de degré $4$ et de coefficient dominant $1$ (il est toujours possible de supposer ceci).
+
+\medskip
+
+$P(X) = -X^4 P\left( \dfrac1X \right)$ : caractérisation des polynômes anti-symétriques de degré $4$
+
+\medskip
+
+$P\,^{\prime}(X) = - 4 X^3 P\left( \dfrac1X \right) 
+            + X^2 P\,^{\prime}\left( \dfrac1X \right)$
+
+
+\medskip
+
+Nous avons de nouveau la clé de voûte des raisonnements précédents sur la multiplicité d'une racine et de son inverse.
+Donc les raisonnements de la section 2 nous donnent :
+
+\begin{enumerate}
+	\item $P$ n'a que des racines entières si et seulement si $P(X) = (X - 1)^3 (X + 1)$ ou $P(X) = (X - 1) (X + 1)^3$.
+
+	\item $P$ n'a que des racines rationnelles dont une au moins non entière si et seulement si $P(X) = (X - r) \left( X - \dfrac1r \right) (X - 1) (X + 1)$ où $r \in \QQ - \NN$.
+\end{enumerate}
+
+
+
+\section{Peut-on généraliser ?}
+
+\subsection*{Cas d'un polynôme symétrique de degré $n \geqslant 2$}
+
+Soit $P$ un polynôme symétrique de degré $n \geqslant 2$. On sait donc que $P(X) = X^n P\left( \dfrac1X \right)$. Notons que cette propriété est stable par multiplication. 
+
+\medskip
+
+De nouveau si $P(r) = 0$ alors $r \neq 0$ et $P\left( \dfrac1r \right) = 0$.
+De plus, une récurrence facile nous donne :
+
+\medskip
+
+$\displaystyle
+  P\,^{(k)}(X) 
+=
+  \epsilon X^{n - 2k} P\,^{(k)}\left( \dfrac1X \right)
++
+  \sum_{i = n - 2k + 1}^{n - k} c_i X^i P\,^{(i)}\left( \dfrac1X \right)$
+où $\epsilon = \pm 1$.
+
+
+\medskip
+
+On en déduit plus précisément que $r$ et $\dfrac1r$ ont la même multiplicité (de nouveau à l'aide d'une récurrence facile).
+
+
+\medskip
+
+On a donc
+$\displaystyle P(X) = (X + 1)^a (X - 1)^b \prod_{fini} (X - r_i)^{k_i} \left( X - \dfrac1{r_i} \right)^{k_i}$ avec d'éventuels $r_i \in \QQ - \NN$, les exposants naturels pouvant être nuls.
+
+
+\medskip
+
+Dans ce produit, $(X + 1)$ et $(X - r_i) \left( X - \dfrac1{r_i} \right)$ sont symétriques tandis que $(X - 1)^b$ peut être anti-symétrique.
+On a donc juste la contrainte $b \in 2 \NN$. Que c'est beau !
+
+
+\subsection*{Cas d'un polynôme anti-symétrique de degré $n \geqslant 2$}
+
+La démarche est similaire et on arrive à des polynômes du type
+$\displaystyle P(X) = (X + 1)^a (X - 1)^b \prod_{fini} (X - r_i)^{k_i} \left( X - \dfrac1{r_i} \right)^{k_i}$
+avec $b \in 2 \NN + 1$, les autres exposants pouvant être nuls avec d'éventuels $r_i \in \QQ - \NN$.
+
+
+
+\section*{Annexe : Calcul formel, bon ou mauvais choix ?}
 
 Par flemme, l'auteur avait commencé par raisonner avec un logiciel de calcul formel comme suit où des lettres différentes indiquent des racines différentes.
 
@@ -216,43 +290,5 @@ Par flemme, l'auteur avait commencé par raisonner avec un logiciel de calcul fo
 \end{enumerate}
 
 À partir de là, on est bloqué avec trois inconnues et seulement deux équations ! De plus, dans tout ce qui précède, on n'a aucun recul sur ce que l'on fait. C'est moche !
-
-
-
-\section{Et les polynômes anti-symétriques ?}
-
-Considérons $P$ un polynôme anti-symétrique de degré $4$ et de coefficient dominant $1$ (il est toujours possible de supposer ceci).
-
-\medskip
-
-$P(X) = -X^4 P\left( \dfrac1X \right)$ : caractérisation des polynômes anti-symétriques de degré $4$
-
-\medskip
-
-$P\,^{\prime}(X) = - 4 X^3 P\left( \dfrac1X \right) 
-            + X^2 P\,^{\prime}\left( \dfrac1X \right)$
-
-
-\medskip
-
-Nous avons de nouveau la clé de voûte des raisonnements précédents sur la multiplicité d'une racine et de son inverse.
-Donc les raisonnements de la section 2 nous donnent :
-
-\begin{enumerate}
-	\item $P$ n'a que des racines entières si et seulement si $P(X) = (X - 1)^3 (X + 1)$ ou $P(X) = (X - 1) (X + 1)^3$.
-
-	\item $P$ n'a que des racines rationnelles dont une au moins non entière si et seulement si $P(X) = (X - r) \left( X - \dfrac1r \right) (X - 1) (X + 1)$ où $r \in \QQ - \NN$.
-\end{enumerate}
-
-
-
-
-\section{À explorer...}
-
-Comment généraliser à d'autres degrés ?
-
-\medskip
-
-Mais surtout, blanquette de veau ou moussaka ?
 
 \end{document}
