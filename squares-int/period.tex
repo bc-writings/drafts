@@ -1,0 +1,15 @@
+Quand il ne se fige pas, le code suivant donne la \textit{\og période \fg} d'un naturel auquel on applique le procédé.
+
+\begin{rawcode}
+n = 19
+
+results = []
+print(n)
+
+while n not in results:
+    results.append(n)
+    n = sum(int(d)**2 for d in str(n))
+
+print("Période :")
+print(results[results.index(n):])
+\end{rawcode}

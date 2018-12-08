@@ -1,0 +1,81 @@
+Pour un naturel 
+$\displaystyle      n = \left[ c_{d-1} c_{d-2} \cdots c_1 c_0 \right]_{10} 
+\stackrel{\text{def}}{=} \sum_{k=0}^{d-1} c_k 10^k$
+avec $c_{d-1} \neq 0$,
+on pose
+$\displaystyle sq(n) = \sum_{k=0}^{d-1} (c_k)^2$
+et
+$\taille(n) = d$ qui sera appelé \emph{\og taille de $n$ \fg}.
+
+\medskip
+
+Pour $(n \,; k) \in \NN^2$, on définit 
+$  \sqseq{n}{0} = n$
+et
+$  \sqseq{n}{k} = sq^k(n)
+\stackrel{\text{def}}{=} sq \,\circ sq \,\circ \cdots \,\circ sq(n)$ avec $(k-1)$ compositions si $k > 0$.
+Autrement dit,
+$\sqseq{n}{k+1} = sq \left( \, \sqseq{n}{k} \right)$.
+
+\medskip
+
+On note enfin
+$V_n = \geneset{ \, \sqseq{n}{k} \, | \, k \in \NN }$
+l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{k} \right)_k$.
+
+
+
+\medskip
+
+\begin{fact}
+	$\forall n \in \NN$, $sq(n) \leqslant 81 d$ où $d = \taille(n)$.
+\end{fact}
+
+\begin{proof*}
+	Si $n = [c_{d-1} c_{d-2} \cdots c_1 c_0]_{10}$
+	alors 
+	$\displaystyle sq(n) = \sum_{k=0}^{d-1} (c_k)^2 \leqslant \sum_{k=0}^{d-1} 9^2 = 81 d $.
+\end{proof*}
+
+
+
+\medskip
+
+\begin{fact}
+	$\forall n \in \NN$, notant $d = \taille(n)$, nous avons les résultats suivants :
+	
+	\begin{enumerate}
+		\item Si $d \geqslant 4$ alors $\taille(sq(n)) < \taille(n)$.
+		
+		\item Si $d \leqslant 3$ alors $\taille(sq(n)) \leqslant 3$.
+	\end{enumerate}
+\end{fact}
+
+\begin{proof*}
+	Notons que $n \geqslant 10^{d-1}$.
+	Le comportement des fonctions $10^{x-1}$ et $81x$ sur $\RRsp$ assure l'existence d'un naturel $D$ tel que $\forall d \in \NN$, $d \geqslant D$ implique $10^{d-1} > 81d \geqslant sq(n)$. On a même beaucoup mieux : si $10^{D-1} > 81D \geqslant sq(n)$ alors $d \geqslant D$ implique $10^{d-1} > 81d \geqslant sq(n)$.
+	
+	\medskip
+	
+	Comme $10^3 > 81 \times 4$, nous avons sans effort le 1er point \emph{(rappelons que $10^k > n$ implique que $n$ admet au plus $(k-1)$ chiffres)}.
+	
+	\medskip
+	
+	Pour $d \leqslant 3$, le 2nd point découle de $sq(999) = 243$, $sq(99) = 162$ et $sq(9) = 81$.
+\end{proof*}
+
+
+
+\medskip
+
+\begin{fact}
+	$\forall n \in \NN$, l'ensemble $V_n$ est fini et donc la suite $\left( \, \sqseq{n}{k} \right)_{k \in \NN}$ est ultimement périodique, i.e. périodique à partir d'un certain rang.
+\end{fact}
+
+\begin{proof*}
+	Le 2nd point dépend directement du 1er point via le principe des tiroirs et la définition récursive de la suite $\left( \, \sqseq{n}{k} \right)_k$.
+	
+	\medskip
+	
+	Pour le 1er point, il suffit de montrer que $V_n \subset \intervalC{0}{10^{\taille(n)}}$ pour $n \geqslant 4$ via une petite récurrence descendante finie, et pour $n \leqslant 3$ on a directement $V_n \subset \intervalC{0}{10^3}$.
+\end{proof*}
