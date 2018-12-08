@@ -1,0 +1,57 @@
+Supposons que $r \in \QQ - \NN$ soit une racine de $P$.
+
+\medskip
+
+Le résultat sur la multiplicité supérieure ou égale à $2$ nous donne que si $r$ est de multiplicité au moins $2$ alors $\dfrac1r \neq r$ est aussi de multiplicité au moins $2$.
+Ceci implique que $r$ est de multiplicité $1$ ou $2$.
+
+
+
+\subsection*{$r$ est de multiplicité $1$}
+
+Si $P$ admet une autre racine $s \in \QQ - \NN$ avec $s \neq r$ et $s \neq \dfrac1r$ alors nécessairement $P(X) = (X - r) \left( X - \dfrac1r \right) (X - s) \left( X - \dfrac1s \right)$.
+
+
+D'où
+
+$X^4 P\left( \dfrac1X \right)
+= X^4 
+  \left( \dfrac1X - r \right) \left( \dfrac1X - \dfrac1r \right) 
+  \left( \dfrac1X - s \right) \left( \dfrac1X - \dfrac1s \right)$
+
+$X^4 P\left( \dfrac1X \right)
+= ( 1 - r X) \left( 1 - \dfrac{X}{r} \right) 
+  ( 1 - s X) \left( 1 - \dfrac{X}{s} \right)$
+
+$X^4 P\left( \dfrac1X \right)
+= r \left( \dfrac1r - X \right) \times \dfrac1r ( r - X) 
+  \times s \left( \dfrac1s - X \right) \times \dfrac1s ( s - X)$
+
+$X^4 P\left( \dfrac1X \right)
+= P(X)$
+
+\medskip
+
+Donc $P$ polynôme est symétrique.
+
+
+\bigskip
+
+Il reste à étudier les cas suivants.
+
+\begin{enumerate}
+	\item $P(X) = (X - r) \left( X - \dfrac1r \right) (X + 1)^2$ et $P(X) = (X - r) \left( X - \dfrac1r \right) (X - 1)^2$ sont symétriques.
+	Il suffit de reprendre le calcul précédent avec $s = \pm 1$.
+	
+
+	\item $P(X) = (X - r) \left( X - \dfrac1r \right) (X + 1) (X - 1)$ vérifie $P(X) = - X^4 P\left( \dfrac1X \right)$ donc $P$ est anti-symétrique.
+\end{enumerate}
+
+
+\subsection*{$r$ est de multiplicité $2$}
+
+Dans ce cas, $P(X) = (X - r)^2 \left( X - \dfrac1r \right)^2$ nécessairement !
+Il est immédiat que $P(X) = X^4 P\left( \dfrac1X \right)$ donc ce polynôme est symétrique.
+
+
+

@@ -1,0 +1,131 @@
+Par flemme, l'auteur avait commencé par raisonner avec un logiciel de calcul formel, les neurones presque déconnectés. Voici ce qui avait été fait \emph{(l'idée était de commencer à étudier les cas avec le moins d'inconnues)}.
+
+\begin{enumerate}
+	\item On suppose que $P$ admet une seule racine $r$.
+	Nous n'avons qu'une seule possibilité à savoir
+	$P(X) = (X - r)^4
+	      = X^4
+	      - 4 r X^3
+	      + 6 r^2 X^2
+	      - 4 r^3 X
+	      + r^4$
+	qui est symétrique si et seulement si $r^4 = 1$ et $r^3 = r$.
+	       
+	       \noindent Si $r\in \QQ$ alors nécessairement $r = \pm 1$ et on tombe sur les polynômes symétriques $(X - 1)^4$ et $(X + 1)^4$. Pour vérifier que ces polynômes sont bien symétriques, il suffit de penser au triangle de Pascal. 
+
+
+	\item On suppose que $P$ admet deux racines $r$ et $s$.
+	Nous avons deux possibilités.
+	\begin{enumerate}
+		\item
+		$P(X) = (X - r)^3 (X - s)
+		      = X^4
+		      - (3 r + s) X^3
+		      + (3 r^2 + 3 r s) X^2
+		      - (r^3 + 3 r^2 s) X
+		      + r^3 s$
+		est symétrique si et seulement si $r^3 s = 1$ et $3 r + s = r^3 + 3 r^2 s$.
+	       
+		\noindent
+		On en déduit que $3 r^4 + 1 = r^6 + 3 r^2$
+		d'où $T^3 - 3 T^2 + 3 T - 1 = 0$ i.e. $(T - 1)^3 = 1$
+		en posant $T = r^2$.
+		On a alors $r = \pm 1$ mais dans ce cas $s = r$ !
+		Nous avons une contradiction. 
+
+
+		\item
+		$P(X) = (X - r)^2 (X - s)^2
+		      = X^4
+		      - (2 r  + 2 s) X^3
+		      + (r^2 + 4 r s + s^2) X^2
+		      - (2 r^2 s + 2 r s^2) X
+		      + r^2 s^2$
+		est symétrique si et seulement si
+		$r^2 s^2 = 1$ et $r + s = r^2 s + r s^2$
+		i.e. $r s = \pm 1$ et $r + s = rs(r + s)$. Nous avons deux sous-cas.
+		\begin{enumerate}
+			\item $r s = 1$ donne $r  + s = r + s$ et surtout $s = \dfrac1r$.
+			On tombe sur le polynôme symétrique $(X - r)^2 \left( X - \dfrac1r \right)^2$.
+			Ceci avait été vérifié sans effort, ni neurone, via un logiciel de calcul formel :
+	 		$ X^4
+			+ \left( \dfrac2r - 2 r \right) X^2
+			+ \left( \dfrac{1}{r^2} + r^2 + 4 \right) X^2
+			+ \left( \dfrac2r - 2 r \right) X
+			+ 1$.
+
+
+			\item $r s = -1$ donne $r  + s = 0$ i.e. $s = - r$ d'où $r = \pm 1$.
+			Ceci nous donne le polynôme symétrique
+			$ (X - 1)^2 ( X + 1)^2
+			= (X^2 - 1)^2
+			= X^4 - 2 X ^2 + 1$.
+		\end{enumerate}
+	\end{enumerate}
+
+	
+	\item Soyons fort et continuons en supposant que $P$ admet trois racines $r$, $s$ et $t$ i.e. que $P(X) = (X - r)^2 (X - s) (X - t)$.
+	Le calcul formal nous donne :
+	
+	\noindent
+	$P(X) = X^4
+	      - (s + t + 2 r) X^3
+	      + (s t + r^2 + 2 r s + 2 r t) X^2
+	      - (r^2 s + r^2 t + 2 r s t) X 
+	      + r^2 s t$
+	       	
+	\noindent
+	$P$ est symétrique si et seulement si
+	$r^2 s t = 1$ et $s + t + 2 r = r^2 s + r^2 t + 2 r s t$.
+	Deux équations et trois inconnues\dots{} Que faire ? Considérons des sous-cas en activant quelques neurones
+	\footnote{
+		Mais pas tous car l'auteur bien qu'ayant l'intuition \og sûre \fg{} des multiplicités égales de $r$ et son inverse n'avait pas le recul nécessaire pour le démontrer !
+	}
+	pour noter que
+	$a r^4 + b r^3 + c r^2 + b r + a = 0$
+	si et seulement si
+	$\dfrac{a r^4 + b r^3 + c r^2 + b r + a}{r^4} = 0$
+	c'est à dire si et seulement si
+	$a + b \dfrac1r + c \left( \dfrac1r \right)^2 + b \left( \dfrac1r \right)^3 + a \left( \dfrac1r \right)^4 = 0$
+	\begin{enumerate}
+		\item On suppose que ni $s$, ni $t$ n'est l'inverse de $r$. Dans ce cas nécessairement $r = \dfrac1r$ i.e. $r = \pm 1$.
+		Nos équations deviennent
+		$s t = 1$ et $s + t = s + t$.
+		
+		\noindent
+		$P(X) = (X \pm 1)^2 (X - s) \left( X - \dfrac1s \right)$
+		est symétrique puisque son développement est
+		$ X^4
+		+ \left( \dfrac1s - s \pm 2 \right) X^3
+		+ \left( - \dfrac2s + 2 \pm 2 s \right) X^2
+		+ \left( \dfrac1s - s \pm 2 \right) X
+		+ 1$
+		où tous les $\pm$ \og correspondent \fg{} au $\pm$ de la forme factorisée.	 
+
+
+		\item On suppose maintenant que soit $s$, soit $t$ est l'inverse de $r$. Supposons par exemple que $s = \dfrac1r$.
+		Dès lors $r^2 s t = 1$ implique que $\dfrac{t}{s} = 1$ !
+		Nous avons une contradiction. 
+	\end{enumerate}
+
+	
+	\item Persévérance ou acharnement ? Finissons avec le cas où $P$ admet quatre racines $r$, $s$, $t$ et $u$ c'est à dire $P(X) = (X - r) (X - s) (X - t) (X - u)$.
+	
+	\noindent
+	On peut supposer que $s = \dfrac1r \neq \pm1$, et comme $u \neq r$ et $u \neq s$, nous avons forcément $u = \dfrac1t \neq \pm1$
+	d'où
+	$P(X) = (X - r) \left( X - \dfrac1r \right) (X - t) \left( X - \dfrac1t \right)$
+	qui est symétrique comme le prouve le développement suivant :
+		
+	\noindent
+	$ X^4
+	- \left( \dfrac1r + r + \dfrac1t + t \right) X^3
+	+ \left( r t + \dfrac{t}{r} + \dfrac{r}{t} + \dfrac{1}{rt} + 2 \right) X^2
+	- \left( \dfrac1r + r + \dfrac1t + t \right) X 
+	+ 1$
+\end{enumerate}
+
+Dans tout ce qui précède, on a très peu de recul sur ce que l'on fait. C'est moche !
+De plus, passer au cas général devient juste ingérable\dots{}
+Mais tout n'est pas si sombre puisque les deux derniers points montrent que l'usage du calcul formel est des plus abusifs ici\dots{}
+La suite de l'histoire est au début de ce document.

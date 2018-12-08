@@ -1,0 +1,45 @@
+\subsection*{Cas d'un polynôme symétrique de degré $n \geqslant 2$}
+
+Soit $P$ un polynôme symétrique de degré $n \geqslant 2$ et de coefficient dominant $1$. On sait donc que $P(X) = X^n P\left( \dfrac1X \right)$. Notons que cette propriété est stable par multiplication. 
+
+\medskip
+
+De nouveau si $P(r) = 0$ alors $r \neq 0$ et $P\left( \dfrac1r \right) = 0$.
+De plus, une récurrence facile nous donne :
+
+\medskip
+
+$\displaystyle
+  P\,^{(k)}(X) 
+=
+  \epsilon_k X^{n - 2k} P\,^{(k)}\left( \dfrac1X \right)
++
+  \sum_{i = n - 2k + 1}^{n - k} c_i X^i P\,^{(i)}\left( \dfrac1X \right)$
+où $\epsilon_k = \pm 1$.
+
+
+\medskip
+
+On en déduit plus précisément que $r$ et $\dfrac1r$ ont la même multiplicité \emph{(de nouveau à l'aide d'une récurrence facile)}.
+
+
+\medskip
+
+On a donc
+$\displaystyle P(X) = (X + 1)^a (X - 1)^b \prod_{fini} (X - r_i)^{k_i} \left( X - \dfrac1{r_i} \right)^{k_i}$ avec d'éventuels $r_i \in \QQ - \NN$, les exposants naturels pouvant être nuls.
+
+
+\medskip
+
+Dans ce produit, $(X + 1)$ et $(X - r_i) \left( X - \dfrac1{r_i} \right)$ sont symétriques tandis que $(X - 1)^b$ peut être anti-symétrique.
+On a donc juste la contrainte $b \in 2 \NN$. Que c'est beau !
+
+
+\subsection*{Cas d'un polynôme anti-symétrique de degré $n \geqslant 2$}
+
+La démarche est similaire et on arrive à des polynômes du type
+$\displaystyle P(X) = (X + 1)^a (X - 1)^b \prod_{fini} (X - r_i)^{k_i} \left( X - \dfrac1{r_i} \right)^{k_i}$
+avec $b \in 2 \NN + 1$, les autres exposants pouvant être nuls avec d'éventuels $r_i \in \QQ - \NN$.
+
+
+
