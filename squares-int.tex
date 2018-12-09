@@ -6,6 +6,7 @@
 
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{tcolorbox}
 \usepackage{multicol}
 \usepackage{fancyvrb}
 \usepackage{amsmath}
@@ -37,11 +38,22 @@
 
 \title{BROUILLON - Sommer les carrés des chiffres d'un naturel}
 \author{Christophe BAL}
-\date{6 Juin 2018 -- 8 Déc. 2018}
+\date{6 Juin 2018 -- 9 Déc. 2018}
+
 \maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
 
 \setcounter{tocdepth}{1}
 \tableofcontents
+
 
 
 \section{Faire une tête au carré à tous les entiers naturels}
@@ -49,12 +61,12 @@
 \input{squares-int/conjecture}
 
 
-\section{Une preuve}
+\section{Une preuve}\label{proof}
 
 \input{squares-int/proof}
 
 
-\section{Code : déterminer la période d'un naturel}
+\section{Coder - Étudier la \og période \fg{} d'un naturel}
 
 \input{squares-int/period}
 

@@ -44,7 +44,11 @@ Dans le 1\ier{} cas, au bout d'un moment le procédé ne produit que des $1$. Ce
 
 \medskip
 
-On peut explorer le comportement de ce procédé sur plusieurs valeurs grâce à un programme. Voici un code possible écrit en Python qui prend un peu de temps pour vérifier que pour tous les naturels $n \in \ZintervalC{1}{10^6}$, le procédé devient ultimement périodique.
+On peut explorer le comportement de ce procédé sur plusieurs valeurs grâce à un programme. Voici un code possible non optimisé
+\footnote{
+	Voir la section proposant des graphiques pour découvrir un code qui explore un peu plus efficacement les périodes.
+}
+écrit en Python 3.7 qui prend un peu de temps pour vérifier que pour tous les naturels $n \in \ZintervalC{1}{10^6}$, le procédé devient ultimement périodique.
 
 \begin{rawcode}
 NMAX    = 10**6
@@ -62,10 +66,11 @@ for n in range(1, NMAX + 1):
     if n not in results:
         print(f"Test raté pour n = {n}.")
 
-print(f"Tests finis.")
+print("Tests finis.")
 \end{rawcode}
 
 \medskip
 
+Une fois lancé, le code précédent affiche juste \verb+Tests finis+.
 Il reste à voir ce qu'il se passe dans le cas général. La section qui suit démontre que pour tout naturel $n$, le procédé sera toujours ultimement périodique.
 
