@@ -12,11 +12,14 @@
 \usepackage{amsmath}
 \usepackage[french]{babel}
 
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
 \usepackage{lymath}
 
 
 \newtheorem{fact}{Fait}[section]
 \newtheorem{example}{Exemple}[section]
+\newtheorem{remark}{Remarque}[section]
 \newtheorem*{proof*}{Preuve}
 
 \setlength\parindent{0pt}
@@ -70,9 +73,15 @@
 
 \input{squares-int/period}
 
+
+\section{Peut-on généraliser à un exposant $p \geqslant 3$ ?}
+
+\input{squares-int/bigger-power}
+
+
+
+%\section{Quelles périodes déterminées informatiquement}
 %
-%\section{Peut-on généraliser à un exposant $k \geqslant 3$ ?}
-%
-%\input{squares-int/bigger-power}
+%\input{squares-int/bigger-power-some-periods}
 
 \end{document}

@@ -1,5 +1,10 @@
+Q-racines-poly-sym
+    ---> cas général : revoir formule car -1 pas toujours racine !!!!
+         gérer la parité de l'exposant !!!!
+
+
 squares-int
     ---> histogramme : les normaliser car là axe bizazare !!!
-    ---> clarifier la preuve 2 via une comparaison de fonctions
-    ---> passer au cube, voir au puissane de n
-         surtout voir quelles sont les périodes !
+    ---> cas général : bigger-power-some-periods
+        + améliorer bigger-power-all-periods pour ne pas refaire des calcusl inutiles
+        + coder en C, là il y a besoin !!!! On prooduit résultat au format texte et python se charge de faire des gra^hiques !

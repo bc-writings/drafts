@@ -1,27 +1,34 @@
-Pour un naturel 
-$\displaystyle      n =  \left[ c_{d-1} c_{d-2} \cdots c_1 c_0 \right]_{10} 
-\stackrel{\text{def}}{=} \sum_{k=0}^{d-1} c_k 10^k$
-avec $c_{d-1} \neq 0$,
-on pose
-$\displaystyle sq(n) = \sum_{k=0}^{d-1} (c_k)^2$
-et
-$\taille(n) = d$ sera appelé \emph{\og taille de $n$ \fg}.
+On introduit les notations suivantes.
+\begin{itemize}[label = \textbullet]
+	\item Pour un naturel $n$,
+	$\displaystyle      n =  \left[ \, c_{d-1} c_{d-2} \cdots c_1 c_0 \, \right]_{10} 
+	\stackrel{\text{def}}{=} \sum_{k=0}^{d-1} c_k 10^k$,
+	avec $c_{d-1} \neq 0$, désigne l'écriture décimale propre de $n$.
+	
+	\item On pose enuite
+	$\displaystyle sq(n) = \sum_{k=0}^{d-1} (c_k)^2$
+	et
+	$\taille(n) = d$ sera appelé \emph{\og taille de $n$ \fg}.
 
-\medskip
 
-Pour $(n \,; k) \in \NN^2$, on définit 
-$  \sqseq{n}{0} = n$
-et
-$  \sqseq{n}{k} = sq^k(n)
-\stackrel{\text{def}}{=} sq \,\circ sq \,\circ \cdots \,\circ sq(n)$ avec $(k-1)$ compositions si $k > 0$.
-Autrement dit,
-$\sqseq{n}{k+1} = sq \left( \, \sqseq{n}{k} \right)$.
+	\item Pour $(n \,; k) \in \NN^2$, on définit 
+	$  \sqseq{n}{0} = n$
+	et
+	$  \sqseq{n}{k} = sq^k(n)
+	\stackrel{\text{def}}{=} sq \,\circ sq \,\circ \cdots \,\circ sq(n)$ avec $(k-1)$ compositions si $k > 0$.
+	
+	
+	\smallskip\noindent
+	Autrement dit, nous avons
+	$\sqseq{n}{0} = n$
+	et
+	$\sqseq{n}{k+1} = sq \left( \, \sqseq{n}{k} \right)$.
 
-\medskip
 
-On note enfin
-$V_n = \geneset{ \, \sqseq{n}{k} \, | \, k \in \NN }$
-l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{k} \right)_k$.
+	\item Enfin on note
+	$V_n = \geneset{ \, \sqseq{n}{k} \, | \, k \in \NN }$
+	l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{k} \right)_k$.
+\end{itemize}
 
 
 
@@ -32,7 +39,7 @@ l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{k} \right)_k$.
 \end{fact}
 
 \begin{proof*}
-	Si $n = [c_{d-1} c_{d-2} \cdots c_1 c_0]_{10}$
+	Si $n = \left[ \, c_{d-1} c_{d-2} \cdots c_1 c_0 \, \right]_{10}$
 	alors 
 	$\displaystyle sq(n) = \sum_{k=0}^{d-1} (c_k)^2 \leqslant \sum_{k=0}^{d-1} 9^2 = 81 d $.
 \end{proof*}
@@ -53,8 +60,8 @@ l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{k} \right)_k$.
 \end{fact}
 
 \begin{proof*}
-	Comme $n \geqslant 10^{d-1}$, et en utilisant le fait précédent, nous cherchons à comparer $10^{d-1}$ et $81d$.
-	Pour cela, nous allons considérer sur $\RRsp$ la fonction $\Delta(x) = 10^{x-1} - 81x$. 
+	Comme $n \geqslant 10^{d-1}$, et compte tenu du fait précédent, nous cherchons à comparer $10^{d-1}$ et $81d$.
+	Pour cela, nous allons considérer sur $\RRp$ la fonction $\Delta(x) = 10^{x-1} - 81x$. 
 	Comme $\Delta^\prime(x) = \ln 10 \times 10^{x-1} - 81$,
 	nous avons $\Delta^\prime(x) > 0$ 
 	si et seulement si $x > 1 + \dfrac{1}{\, \ln 10 \,} \ln \left( \dfrac{81}{\, \ln 10 \,} \right)$
@@ -64,13 +71,13 @@ l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{k} \right)_k$.
 	\medskip
 	
 	Comme $10^3 > 81 \times 4$, nous avons donc  $10^{d-1} > 81d$ dès que $d \geqslant 4 > \alpha$
-	d'où nous déduisons $n \geqslant 10^{d-1} > 81d \geqslant sq(n)$
+	d'où nous déduisons $n \geqslant 10^{d-1} > 81d \geqslant sq(n)$ ,
 	puis $n > sq(n)$ dès que $d \geqslant 4$. Ceci prouve le 1\ier{} point.
 
 
 	\bigskip
 	
-	Pour $d \leqslant 3$, le 2nd point découle de ce que l'on a : $sq(9) < sq(99) < sq(999) = 243$.
+	Le 2nd point pour $d \leqslant 3$ découle de ce que l'on a : $sq(9) < sq(99) < sq(999) = 243$.
 \end{proof*}
 
 
@@ -87,5 +94,6 @@ l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{k} \right)_k$.
 	
 	\medskip
 	
-	Pour le 1er point, il suffit de montrer que $V_n \subset \intervalC{0}{10^{\taille(n)}}$ pour $n \geqslant 4$ via une petite récurrence descendante finie, et pour $n \leqslant 3$ on a directement $V_n \subset \intervalC{0}{10^3}$.
+	Pour le 1er point, pour $n \leqslant 999$, on a directement $V_n \subset \intervalC{0}{999}$,
+	sinon il suffit de montrer que $V_n \subset \intervalC{0}{10^{\taille(n)}}$ pour $n \geqslant 10^4$ via une petite récurrence descendante finie.
 \end{proof*}
