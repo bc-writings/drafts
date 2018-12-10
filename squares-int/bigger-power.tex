@@ -1,4 +1,4 @@
-Pour finir, nous allons analyser ce qu'il se passe s'il on somme à la puissance $p \geqslant 3$ au lieu d'élever au carré.
+Pour finir, nous allons analyser ce qu'il se passe si l'on somme à la puissance $p \geqslant 3$ au lieu d'élever au carré.
 Nous reprenons des notations similaires à celles de la section \ref{proof}.
 \begin{itemize}[label = \textbullet]
 	\item Pour un naturel $n =  \left[ \, c_{d-1} c_{d-2} \cdots c_1 c_0 \, \right]_{10}$ avec $c_{d-1} \neq 0$,
@@ -33,8 +33,8 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 \medskip
 
 \begin{fact}\label{magicmajo}
-	Il existe $d_0 \in \NN$ tel qu'on ait : $\forall n \in \NN$,	
-	$[ \, \taille(n) \geqslant d_0 \Rightarrow n > pw(n) \, ]$ .
+	Il existe $d_0 \in \NN$ tel que $\forall n \in \NN$,	
+	$[ \, \taille(n) \geqslant d_0 \Rightarrow pw(n) < n \, ]$.
 	
 	\smallskip
 	On peut en fait choisir $d_0 = 3 + \floor{\dfrac{1}{\, \ln 10 \,} \ln \left( \dfrac{ \, 9^p \, d \, }{\, \ln 10 \,} \right)}$
@@ -42,7 +42,7 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 \end{fact}
 
 \begin{proof*}
-	Notons $d = \taille(n)$ , de sorte que $n \geqslant 10^{d-1}$.
+	Notons $d = \taille(n)$ de sorte que $n \geqslant 10^{d-1}$.
 	Compte tenu du fait précédent, nous cherchons à comparer $10^{d-1}$ et $9^p \, d$.
 	Comme dans le cas $p = 2$ démontré dans la section \ref{proof}, on considère sur $\RRp$ la fonction $\Delta(x) = 10^{x-1} - 9^p \, d \, x$
 	qui vérifie $\Delta^\prime(x) > 0$ 
@@ -70,7 +70,7 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 	\begin{itemize}[label = \textbullet]
 		\item Le fait \ref{magicmajo} donne l'existence d'un indice $k_0 \in \NN$ tel que $\taille\left( \, \sqseq{n}{k_0} \right) < d_0$ \emph{(dans le cas contraire, on pourrait construire une suite strictement décroissante de naturels)}.
 
-		\item Si $\forall k \in \ZintervalCO{k_0}{+\infty}$, $\taille\left( \, \sqseq{n}{k} \right) < d_0$ , nous avons l'ultime périodicité via le principe des tiroirs \emph{(si besoin revoir la fin de la section \ref{proof})}.
+		\item Si pour tout naturel $k \in \ZintervalCO{k_0}{+\infty}$ , $\taille\left( \, \sqseq{n}{k} \right) < d_0$ , nous avons l'ultime périodicité via le principe des tiroirs \emph{(si besoin revoir la fin de la section \ref{proof})}.
 
 		\item Sinon il existe $k^\prime_0 \in \ZintervalO{k_0}{+\infty}$ tel que $\taille\left( \, \sqseq{n}{k^\prime_0} \right) \geqslant d_0$. Comme dans le premier point, nous pouvons alors trouver $k_1 \in \ZintervalO{k^\prime_0}{+\infty}$ tel que $\taille\left( \, \sqseq{n}{k_1} \right) < d_0$.
 		

@@ -53,14 +53,14 @@ On introduit les notations suivantes.
 	$\forall n \in \NN$, notant $d = \taille(n)$, nous avons les résultats suivants :
 	
 	\begin{enumerate}
-		\item Si $d \geqslant 4$ alors $\taille(sq(n)) < \taille(n)$.
+		\item Si $d \geqslant 4$ alors $sq(n) < n$.
 		
-		\item Si $d \leqslant 3$ alors $\taille(sq(n)) \leqslant 3$.
+		\item Si $d \leqslant 3$ alors $sq(n) < 10^3$.
 	\end{enumerate}
 \end{fact}
 
 \begin{proof*}
-	Comme $n \geqslant 10^{d-1}$, et compte tenu du fait précédent, nous cherchons à comparer $10^{d-1}$ et $81d$.
+	Comme $n \geqslant 10^{d-1}$ et compte tenu du fait précédent, nous cherchons à comparer $10^{d-1}$ et $81d$.
 	Pour cela, nous allons considérer sur $\RRp$ la fonction $\Delta(x) = 10^{x-1} - 81x$. 
 	Comme $\Delta^\prime(x) = \ln 10 \times 10^{x-1} - 81$,
 	nous avons $\Delta^\prime(x) > 0$ 
@@ -71,13 +71,13 @@ On introduit les notations suivantes.
 	\medskip
 	
 	Comme $10^3 > 81 \times 4$, nous avons donc  $10^{d-1} > 81d$ dès que $d \geqslant 4 > \alpha$
-	d'où nous déduisons $n \geqslant 10^{d-1} > 81d \geqslant sq(n)$ ,
+	d'où nous déduisons $n \geqslant 10^{d-1} > 81d \geqslant sq(n)$
 	puis $n > sq(n)$ dès que $d \geqslant 4$. Ceci prouve le 1\ier{} point.
 
 
 	\bigskip
 	
-	Le 2nd point pour $d \leqslant 3$ découle de ce que l'on a : $sq(9) < sq(99) < sq(999) = 243$.
+	Le 2nd point pour $d \leqslant 3$ découle directement de $sq(999) = 243$.
 \end{proof*}
 
 

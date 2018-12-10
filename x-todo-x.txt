@@ -1,8 +1,3 @@
-Q-racines-poly-sym
-    ---> cas général : revoir formule car -1 pas toujours racine !!!!
-         gérer la parité de l'exposant !!!!
-
-
 squares-int
     ---> histogramme : les normaliser car là axe bizazare !!!
     ---> cas général : bigger-power-some-periods
