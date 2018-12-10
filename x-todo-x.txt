@@ -1,0 +1,5 @@
+squares-int
+    ---> histogramme : les normaliser car là axe bizazare !!!
+    ---> clarifier la preuve 2 via une comparaison de fonctions
+    ---> passer au cube, voir au puissane de n
+         surtout voir quelles sont les périodes !
