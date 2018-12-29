@@ -1,3 +1,7 @@
+fixated-on-point-fixed-theorems
+    ---> balayer differnts theo du point fixe simple à comprendre
+
+
 squares-int
     ---> histogramme : les normaliser car là axe bizazare !!!
     ---> cas général : bigger-power-some-periods
