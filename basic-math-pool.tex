@@ -16,13 +16,13 @@
     modifier={by-nc-sa},
 	version={4.0},
 ]{doclicense}
-
-\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
-
+\usepackage{textcomp}
+\usepackage{tcolorbox}
 \usepackage{lymath}
 
-
-\newtheorem{fact}{Fait}[section]
+    
+\newtheorem{fact}{Fait}%[section]
+\newtheorem*{theorem}{Théorème}
 \newtheorem{example}{Exemple}[section]
 \newtheorem{remark}{Remarque}[section]
 \newtheorem*{proof*}{Preuve}
@@ -34,6 +34,8 @@
 
 \newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
 
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloorx}
+
 
 \DefineVerbatimEnvironment{rawcode}%
 	{Verbatim}%
@@ -44,9 +46,9 @@
 	 
 \begin{document}
 
-\title{BROUILLON - Sommer les carrés des chiffres d'un naturel}
+\title{BROUILLON - Un simple (\!?) billard à deux bandes}
 \author{Christophe BAL}
-\date{6 Juin 2018 -- 10 Déc. 2018}
+\date{25 Déc. 2018}
 
 \maketitle
 
@@ -73,35 +75,41 @@
 	\hrule
 \end{center}
 
-
-\setcounter{tocdepth}{1}
+	
+\setcounter{tocdepth}{2}
 \tableofcontents
 
 
 
-\section{Faire une tête au carré à tous les entiers naturels}
+\section{Présentation du problème}
 
-\input{squares-int/conjecture}
-
-
-\section{Une preuve}\label{proof}
-
-\input{squares-int/proof}
+\input{basic-math-pool/presentation}
 
 
-\section{Coder - Étudier la \og période \fg{} d'un naturel}
+\section{Rechercher et conjecturer}
 
-\input{squares-int/period}
-
-
-\section{Peut-on généraliser à un exposant $p \geqslant 3$ ?}
-
-\input{squares-int/bigger-power}
+\input{basic-math-pool/conjecture}
 
 
+\section{Comprendre partiellement\dots}
 
-%\section{Quelles périodes déterminées informatiquement}
-%
-%\input{squares-int/bigger-power-some-periods}
+\input{basic-math-pool/analysis}
+
+
+\section{Notations pour la suite}
+
+\input{basic-math-pool/proof-notations}
+
+
+\section{Où se fait le 1\ier{} rebond ?}
+\label{1st-bounce}
+
+\input{basic-math-pool/proof-1st-bounce}
+
+
+\section{Quand le 1\ier{} rebond se fait "vers le haut"}
+
+\input{basic-math-pool/proof-starting-with-d2}
+
 
 \end{document}

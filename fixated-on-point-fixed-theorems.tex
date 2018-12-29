@@ -17,11 +17,9 @@
 	version={4.0},
 ]{doclicense}
 
-\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
-
 \usepackage{lymath}
 
-
+    
 \newtheorem{fact}{Fait}[section]
 \newtheorem{example}{Exemple}[section]
 \newtheorem{remark}{Remarque}[section]
@@ -34,6 +32,8 @@
 
 \newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
 
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
 
 \DefineVerbatimEnvironment{rawcode}%
 	{Verbatim}%
@@ -44,9 +44,9 @@
 	 
 \begin{document}
 
-\title{BROUILLON - Sommer les carrés des chiffres d'un naturel}
+\title{BROUILLON - Quand on fait une fixation sur les points fixes}
 \author{Christophe BAL}
-\date{6 Juin 2018 -- 10 Déc. 2018}
+\date{25 Déc. 2018}
 
 \maketitle
 
@@ -73,35 +73,14 @@
 	\hrule
 \end{center}
 
-
+	
 \setcounter{tocdepth}{1}
 \tableofcontents
 
 
 
-\section{Faire une tête au carré à tous les entiers naturels}
+\section{Exemple 1 -- ????}
 
-\input{squares-int/conjecture}
-
-
-\section{Une preuve}\label{proof}
-
-\input{squares-int/proof}
-
-
-\section{Coder - Étudier la \og période \fg{} d'un naturel}
-
-\input{squares-int/period}
-
-
-\section{Peut-on généraliser à un exposant $p \geqslant 3$ ?}
-
-\input{squares-int/bigger-power}
-
-
-
-%\section{Quelles périodes déterminées informatiquement}
-%
-%\input{squares-int/bigger-power-some-periods}
+%\input{fixated-on-point-fixed-theorems/basic-geometry}
 
 \end{document}
