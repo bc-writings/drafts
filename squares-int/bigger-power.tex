@@ -51,7 +51,7 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 	
 	Il existe $d\,^\prime \in \NN$ tel que $10^{d\,^\prime  - 1} \geqslant 9^{\,p  - 1}$.
 	Il suffit de choisir $d\,^\prime = 2 + \floor{ \log \left( 9^{\,p-1} \right) }$ où $\log$ désigne le logarithme décimal et $\floor{x}$ la partie entière de $x$.
-	La croissance comparée des fonctions $10^{x - 1}$ et $9^{\,p} x$ donne ensuite $d_0 \in \ZintervalCO{d\,^\prime}{+\infty}$ tel que $10^{d_0 - 1} > 9^{\,p} d_0$ .
+	Ensuite la croissance comparée des fonctions $10^{x - 1}$ et $9^{\,p} x$ donne $d_0 \in \ZintervalCO{d\,^\prime}{+\infty}$ tel que $10^{d_0 - 1} > 9^{\,p} d_0$ .
 
 
 
@@ -87,11 +87,11 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 \medskip
 
 \begin{remark}
-	Informatiquement une valeur de $d_0$ peut s'obtenir en testant $10^{d - 1} > 9^{\,p} d$ successivement les naturels $d$ tels que $d \geqslant d^{\,\prime}$ où $d^{\,\prime} = 2 + \floor{ \log \left( 9^{\,p-1} \right)}$.
+	Informatiquement une valeur de $d_0$ peut s'obtenir en testant $10^{d - 1} > 9^{\,p} d$ successivement pour les naturels $d$ tels que $d \geqslant d^{\,\prime}$ où $d^{\,\prime} = 2 + \floor{ \log \left( 9^{\,p-1} \right)}$.
 	
 	\medskip
 	
-	Pour gagner du temps, on peur tester les valeurs successives de $2^k d^{\,\prime}$ pour $k = 0, 1, 2, \dots$ pour obtenir $D$ tel que $10^{D - 1} > 9^{\,p} D$ . Si la valeur de $D$ est trop grande, on peut chercher la valeur minimale de $d$ tel que $10^{d - 1} > 9^{\,p} d$ en utilisant une recherche de type dichotomique. 
+	Pour gagner du temps, on peut tester les valeurs successives de $2^k d^{\,\prime}$ pour $k = 0, 1, 2, \dots$ pour obtenir $D$ tel que $10^{D - 1} > 9^{\,p} D$ . Si la valeur de $D$ est trop grande, on peut chercher la valeur minimale de $d$ tel que $10^{d - 1} > 9^{\,p} d$ en utilisant une recherche de type dichotomique. 
 \end{remark}
 
 
@@ -102,7 +102,7 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 \end{fact}
 
 \begin{proof*}
-	Tout est en fait contenu dans le fait \ref{magicmajo}, dont on reprend la définition de $d_0$. Expliquons pourquoi.
+	Tout est en fait contenu dans le fait \ref{magicmajo}, dont on reprend la signification de $d_0$. Expliquons pourquoi.
 	\begin{itemize}[label = \textbullet]
 		\item Le fait \ref{magicmajo} donne l'existence d'un indice $k_0 \in \NN$ tel que $\taille\left( \, \sqseq{n}{k_0} \right) < d_0$ \emph{(dans le cas contraire, on pourrait construire une suite strictement décroissante de naturels)}.
 
