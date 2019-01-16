@@ -61,18 +61,30 @@ On introduit les notations suivantes.
 
 \begin{proof*}
 	Comme $n \geqslant 10^{d-1}$ et compte tenu du fait précédent, nous cherchons à comparer $10^{d-1}$ et $81d$.
-	Pour cela, nous allons considérer sur $\RRp$ la fonction $\Delta(x) = 10^{x-1} - 81x$. 
-	Comme $\Delta^\prime(x) = \ln 10 \times 10^{x-1} - 81$,
-	nous avons $\Delta^\prime(x) > 0$ 
-	si et seulement si $x > 1 + \dfrac{1}{\, \ln 10 \,} \ln \left( \dfrac{81}{\, \ln 10 \,} \right)$
-	où le dernier nombre $\alpha$ vaut environ $2,\!546 < 3$.
+	Pour cela, regardons ce qu'il se passe pour les premières valeurs de $d$.
 
-
-	\medskip
+	\smallskip
+	\begin{center}
+		\begin{tabular}{|r|c|c|c|c|c|}
+			\hline
+				$d$        & $1$  & $2$   & $3$   & $4$    & $5$        \\
+			\hline
+				$10^{d-1}$ & $1$  & $10$  & $100$ & $1000$ & $10\,000$  \\
+			\hline
+				$81d$      & $81$ & $162$ & $243$ & $324$  & $405$      \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\smallskip
 	
-	Comme $10^3 > 81 \times 4$, nous avons donc  $10^{d-1} > 81d$ dès que $d \geqslant 4 > \alpha$
-	d'où nous déduisons $n \geqslant 10^{d-1} > 81d \geqslant sq(n)$
-	puis $n > sq(n)$ dès que $d \geqslant 4$. Ceci prouve le 1\ier{} point.
+	Or lorsque $d \geqslant 2$ augmente de $1$, alors $81d$ augmente de $81$ tandis que $10^{d-1}$ augmente d'au moins $100$.
+	Nous en déduisons que $n \geqslant 10^{d-1} > 81d \geqslant sq(n)$ , d'où $n > sq(n)$ , dès que $d \geqslant 4$.
+	Ceci prouve le 1\ier{} point.
+	Pour les fans de Nicolas B.
+	\footnote{
+		Alias Nicolas BOURBAKI.
+	}, 
+	voir la preuve \cpageref{magicmajo-proof} du fait \ref{magicmajo} qui traite le cas d'une puissance quelconque.
 
 
 	\bigskip
