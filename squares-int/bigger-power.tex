@@ -49,10 +49,7 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 	
 	\medskip
 	
-	Il existe $d\,^\prime \in \NN$ tel que $10^{d\,^\prime  - 1} \geqslant 9^{\,p  - 1}$.
-	Il suffit de choisir $d\,^\prime = 2 + \floor{ \log \left( 9^{\,p-1} \right) }$ où $\log$ désigne le logarithme décimal et $\floor{x}$ la partie entière de $x$.
-	Ensuite la croissance comparée des fonctions $10^{x - 1}$ et $9^{\,p} x$ donne $d_0 \in \ZintervalCO{d\,^\prime}{+\infty}$ tel que $10^{d_0 - 1} > 9^{\,p} d_0$ .
-
+	$\exists d_0 \in \NNs$ tel que $10^{d_0 - 1} > 9^{\,p} d_0 > 9^{\,p  - 1}$ . Ceci s'obtient en utilisant la croissance comparée des fonctions $f(x) = 10^{x - 1}$ et $g(x) = 9^{\,p} x$.
 
 
 	\medskip
@@ -70,12 +67,12 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 		\smallskip
 		
 		\noindent
-		Nous avons : $10^{(d+1)-1} = 10\times10^{d-1} = 10^{d-1} + 9\times10^{d-1} \geqslant 10^{d-1} + 9^{\,p}$ car $10^{d-1} \geqslant 9^{\,p  - 1}$ puisque $d \geqslant d_0 \geqslant d\,^\prime$.
+		Nous avons : $10^{(d+1)-1} = 10\times10^{d-1} = 10^{d-1} + 9\times10^{d-1} > 10^{d-1} + 9^{\,p}$ car $10^{d-1} > 9^{\,p  - 1}$ puisque $d \geqslant d_0$ .
 
 		\smallskip
 		
 		\noindent
-		Comme $10^{d-1} > 9^{\,p} d$, nous avons : $10^{(d+1)-1} \geqslant 10^{d-1} + 9^{\,p} > 9^{\,p} d + 9^{\,p} = 9^{\,p} (d+ 1)$ .
+		Comme $10^{d-1} > 9^{\,p} d$, nous avons ensuite : $10^{(d+1)-1} > 9^{\,p} d + 9^{\,p} = 9^{\,p} (d+ 1)$ .
 		L'inégalité est donc vérifiée au rang suivant $(d+1)$. 
 
 		\item \emph{Conclusion.}
@@ -87,11 +84,12 @@ Nous reprenons des notations similaires à celles de la section \ref{proof}.
 \medskip
 
 \begin{remark}
-	Informatiquement une valeur de $d_0$ peut s'obtenir en testant $10^{d - 1} > 9^{\,p} d$ successivement pour les naturels $d$ tels que $d \geqslant d^{\,\prime}$ où $d^{\,\prime} = 2 + \floor{ \log \left( 9^{\,p-1} \right)}$.
+	Informatiquement une valeur de $d_0$ peut s'obtenir en testant $10^{d - 1} > 9^{\,p} d$ successivement pour les naturels non nuls $d$.
+	
 	
 	\medskip
 	
-	Pour gagner du temps, on peut tester les valeurs successives de $2^k d^{\,\prime}$ pour $k = 0, 1, 2, \dots$ pour obtenir $D$ tel que $10^{D - 1} > 9^{\,p} D$ . Si la valeur de $D$ est trop grande, on peut chercher la valeur minimale de $d$ tel que $10^{d - 1} > 9^{\,p} d$ en utilisant une recherche de type dichotomique. 
+	Pour gagner du temps, on peut tester les valeurs successives de $2^k d^{\,\prime}$ pour $k = 0, 1, 2, \dots$ pour obtenir $D$ tel que $10^{D - 1} > 9^{\,p} D$ . Si la valeur de $D$ est trop grande pour faire des tests brutaux, on peut chercher la valeur minimale de $d$ tel que $10^{d - 1} > 9^{\,p} d$ en utilisant une recherche de type dichotomique. 
 \end{remark}
 
 
