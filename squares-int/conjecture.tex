@@ -1,5 +1,23 @@
 Voici un procédé facile à faire à l'aide d'une calculatrice.
-Considérons un entier naturel $n$, puis calculons la somme de ses chiffres élevés au carré. Ceci nous donne un nouveau naturel auquel on peut appliquer le même procédé. Voici deux exemples.
+
+
+\medskip
+
+\begin{tcolorbox}
+	Considérons un entier naturel $n$.
+	
+	\begin{itemize}[label = \small\textbullet]
+		\item Élevons chacun des chiffres de $n$ au carré.
+		
+		\item Additionnons tous ces carrés. Notons $n$ cette somme.
+		
+		\item Retournons au premier point.
+	\end{itemize}
+
+	On peut alors étudier ce processus qui peut être infini a priori.
+\end{tcolorbox}
+
+Voici deux exemples instructifs pour la suite.
 
 
 \begin{example}
@@ -39,16 +57,13 @@ Considérons un entier naturel $n$, puis calculons la somme de ses chiffres éle
 	\end{multicols}
 \end{example}
 
-Dans le 1\ier{} cas, au bout d'un moment le procédé ne produit que des $1$. Ce sera le cas dès que l'on commence avec une puissance de $10$. Le 2\ieme{} exemple montre que le mieux que l'on puisse espérer c'est que le procédé devienne périodique à partir d'un moment \emph{(on parle de phénomène ultimement périodique)}.
+Dans le 1\ier{} cas, au bout d'un moment le procédé ne produit que des $1$. Ce sera par exemple le cas dès que l'on commence avec une puissance de $10$.
+Quant au 2\ieme{} exemple, il montre que le mieux que l'on puisse espérer c'est que le procédé devienne périodique à partir d'un moment \emph{(on parle de phénomène ultimement périodique)}.
 
 
 \medskip
 
-On peut explorer le comportement de ce procédé sur plusieurs valeurs grâce à un programme. Voici un code possible non optimisé
-\footnote{
-	Voir la section proposant des graphiques pour découvrir un code qui explore un peu plus efficacement les périodes.
-}
-écrit en Python 3.7 qui prend un peu de temps pour vérifier que pour tous les naturels $n \in \ZintervalC{1}{10^6}$, le procédé devient ultimement périodique.
+On peut explorer le comportement de ce procédé sur plusieurs valeurs grâce à un programme. Voici un code possible non optimisé écrit en Python 3.7 qui prend un peu de temps pour vérifier que pour tous les naturels $n \in \ZintervalC{1}{10^6}$, le procédé devient ultimement périodique.
 
 \begin{rawcode}
 NMAX    = 10**6

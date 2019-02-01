@@ -2,32 +2,32 @@ On introduit les notations suivantes.
 \begin{itemize}[label = \textbullet]
 	\item Pour un naturel $n$,
 	$\displaystyle      n =  \left[ \, c_{d-1} c_{d-2} \cdots c_1 c_0 \, \right]_{10} 
-	\stackrel{\text{def}}{=} \sum_{k=0}^{d-1} c_k 10^k$,
+	\stackrel{\text{def}}{=} \sum_{i=0}^{d-1} c_i 10^i$,
 	avec $c_{d-1} \neq 0$, désigne l'écriture décimale propre de $n$.
 	
 	\item On pose enuite
-	$\displaystyle sq(n) = \sum_{k=0}^{d-1} (c_k)^2$
+	$\displaystyle sq(n) = \sum_{i=0}^{d-1} (c_i)^2$
 	et
 	$\taille(n) = d$ sera appelé \emph{\og taille de $n$ \fg}.
 
 
-	\item Pour $(n \,; k) \in \NN^2$, on définit 
+	\item Pour $(n \,; i) \in \NN^2$, on définit 
 	$  \sqseq{n}{0} = n$
 	et
-	$  \sqseq{n}{k} = sq^k(n)
-	\stackrel{\text{def}}{=} sq \,\circ sq \,\circ \cdots \,\circ sq(n)$ avec $(k-1)$ compositions si $k > 0$.
+	$  \sqseq{n}{i} = sq^i(n)
+	\stackrel{\text{def}}{=} sq \,\circ sq \,\circ \cdots \,\circ sq(n)$ avec $(i-1)$ compositions si $i > 0$.
 	
 	
 	\smallskip\noindent
 	Autrement dit, nous avons
 	$\sqseq{n}{0} = n$
 	et
-	$\sqseq{n}{k+1} = sq \left( \, \sqseq{n}{k} \right)$.
+	$\sqseq{n}{i+1} = sq \left( \, \sqseq{n}{i} \right)$.
 
 
 	\item Enfin on note
-	$V_n = \geneset{ \, \sqseq{n}{k} \, | \, k \in \NN }$
-	l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{k} \right)_k$.
+	$V_n = \geneset{ \, \sqseq{n}{i} \, | \, i \in \NN }$
+	l'ensemble des valeurs prises par la suite $\left( \, \sqseq{n}{i} \right)_i$.
 \end{itemize}
 
 
@@ -41,7 +41,7 @@ On introduit les notations suivantes.
 \begin{proof*}
 	Si $n = \left[ \, c_{d-1} c_{d-2} \cdots c_1 c_0 \, \right]_{10}$
 	alors 
-	$\displaystyle sq(n) = \sum_{k=0}^{d-1} (c_k)^2 \leqslant \sum_{k=0}^{d-1} 9^2 = 81 d $.
+	$\displaystyle sq(n) = \sum_{i=0}^{d-1} (c_i)^2 \leqslant \sum_{i=0}^{d-1} 9^2 = 81 d $.
 \end{proof*}
 
 
@@ -83,13 +83,11 @@ On introduit les notations suivantes.
 	
 	\smallskip
 	
-	Donc $n \geqslant 10^{d-1} > 81d \geqslant sq(n)$ , d'où $n > sq(n)$ , dès que $d \geqslant 4$.
+	Donc dès que $d \geqslant 4$, nous avons $n \geqslant 10^{d-1} > 81d \geqslant sq(n)$ d'où ensuite $n > sq(n)$.
 	Ceci prouve le 1\ier{} point.
-	Pour les fans de Nicolas B.
 	\footnote{
-		Alias Nicolas BOURBAKI.
-	}, 
-	voir la preuve \cpageref{magicmajo-proof} du fait \ref{magicmajo} traitant les puissances quelconques.
+		Pour les fans de Nicolas BOURBAKI, voir la preuve \cpageref{magicmajo-proof} du fait \ref{magicmajo} qui traite le cas des puissances quelconques
+	}.
 
 
 	\bigskip
@@ -103,11 +101,11 @@ On introduit les notations suivantes.
 \medskip
 
 \begin{fact}
-	$\forall n \in \NN$, l'ensemble $V_n$ est fini et donc la suite $\left( \, \sqseq{n}{k} \right)_{k \in \NN}$ est ultimement périodique, i.e. périodique à partir d'un certain rang.
+	$\forall n \in \NN$, l'ensemble $V_n$ est fini et donc la suite $\left( \, \sqseq{n}{i} \right)_{i \in \NN}$ est ultimement périodique, i.e. périodique à partir d'un certain rang.
 \end{fact}
 
 \begin{proof*}
-	Le 2nd point dépend directement du 1er point via le principe des tiroirs et la définition récursive de la suite $\left( \, \sqseq{n}{k} \right)_k$.
+	Le 2nd point dépend directement du 1er point via le principe des tiroirs et la définition récursive de la suite $\left( \, \sqseq{n}{i} \right)_i$.
 	
 	\medskip
 	

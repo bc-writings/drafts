@@ -1,4 +1,4 @@
-Quand il ne se fige pas, le code suivant donne la \textit{\og période \fg} d'un naturel auquel on applique le procédé.
+Quand il ne se fige pas, le code suivant donne la \textit{\og période \fg} d'un naturel auquel on applique le procédé présenté dans la section \ref{conjecture}.
 
 \begin{rawcode}
 n     = 20181209
@@ -39,7 +39,7 @@ Avant la 1ère période nous avons :
 
 \medskip
 
-\begin{figure}[b]
+\begin{figure}[t]
 	\centering
 	\includegraphics[scale=.9]{squares-int/periods.png}
   	\caption{Histogramme des tailles des périodes}
@@ -62,23 +62,14 @@ Le résultat est donné dans la figure \ref{histogram} \cpageref{histogram}.
 
 \medskip
 
-Voilà quelque chose de frappant ! Il semblerait que l'on ait soit des périodes de taille $1$, penser à $0$ et $1$, soit des périodes de taille $8$ comme pour $37 - 58 - 89 - 145 - 42 - 20 - 4 - 16$\dots{}
-Magie ou coïncidence ? Les résultats de la section \ref{proof} vont nous permettre de le savoir. Dans la suite, nous reprenons les notations de la dite section.
-
-
-\medskip
-
-Tout d'abord, comme $\taille(sq(n)) < \taille(n)$ dès que $\taille(n) \geqslant 4$ d'après le fait \ref{magicmajo}, la périodicité n'arrivera que lorsque $\taille\left( \, \sqseq{n}{k} \right) \leqslant 3$.
-
-
-\medskip
-
+Le graphique est frappant ! En effet, il semblerait que l'on ait soit des périodes de taille $1$, penser à $0$ et $1$, soit des périodes de taille $8$ comme pour $37 - 58 - 89 - 145 - 42 - 20 - 4 - 16$.
+Magie ou coïncidence ? Les résultats de la section \ref{proof}, dont nous allons reprendre les notations, vont nous permettre de le savoir.
+Tout d'abord,  d'après le fait \ref{magicmajo}, nous avons $\taille(sq(n)) < \taille(n)$ dès que $\taille(n) \geqslant 4$, donc la périodicité n'arrivera que lorsque $\taille\left( \, \sqseq{n}{k} \right) \leqslant 3$.
 De plus, nous savons aussi que $\taille(sq(n)) \leqslant 3$ dès que $\taille(n) \leqslant 3$.
-
-
-\medskip
-
 Tout ceci nous permet d'analyser brutalement via un programme ce qu'il se passe pour les périodes des naturels appartenant à $\ZintervalC{0}{999}$. Nous pouvons pour cela utiliser le code suivant, qui n'est absolument pas optimisé mais fait le travail immédiatement.
+
+
+\newpage
 
 \begin{rawcode}
 nmax = 999
@@ -106,6 +97,9 @@ for oneperiod in periodsfound:
 \medskip
 
 Le code précédent nous fournit toutes les périodes possibles.
+
+
+\newpage
 
 \begin{rawcode}
 [0]
