@@ -7,8 +7,6 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{tcolorbox}
-\usepackage{float}
-\usepackage{cleveref}
 \usepackage{multicol}
 \usepackage{fancyvrb}
 \usepackage{amsmath}
@@ -18,26 +16,26 @@
     modifier={by-nc-sa},
 	version={4.0},
 ]{doclicense}
-
-\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
-
+\usepackage{textcomp}
+\usepackage{tcolorbox}
 \usepackage{lymath}
 
-
-\newtheorem{fact}{Fait}[section]
+    
+\newtheorem{fact}{Fait}%[section]
+\newtheorem*{theorem}{Théorème}
 \newtheorem{example}{Exemple}[section]
 \newtheorem{remark}{Remarque}[section]
 \newtheorem*{proof*}{Preuve}
 
 \setlength\parindent{0pt}
 
-\floatstyle{boxed} 
-\restylefloat{figure}
-
 
 \DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
 
 \newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloorx}
+
 
 
 \DefineVerbatimEnvironment{rawcode}%
@@ -49,9 +47,9 @@
 	 
 \begin{document}
 
-\title{BROUILLON - CANDIDAT - Sommer les carrés des chiffres d'un naturel}
+\title{BROUILLON - La récursivité, quésaco ?}
 \author{Christophe BAL}
-\date{6 Juin 2018 -- 6 Mars 2019}
+\date{3 Fév. 2019}
 
 \maketitle
 
@@ -78,35 +76,26 @@
 	\hrule
 \end{center}
 
-
-\setcounter{tocdepth}{1}
+	
+\setcounter{tocdepth}{2}
 \tableofcontents
 
 
 
-\section{Faire une tête au carré à tous les entiers naturels}
+\section{Étymologie}
 
-\input{squares-int/conjecture}\label{conjecture}
-
-
-\section{Une preuve}\label{proof}
-
-\input{squares-int/proof}
-
-
-\section{Coder - Étudier la \og période \fg{} d'un naturel}
-
-\input{squares-int/period}
-
-
-\section{Peut-on généraliser à un exposant $k \geqslant 3$ ?}
-
-\input{squares-int/bigger-power}
+\input{recursivity-showcase/etymology}
 
 
 
-%\section{Quelles périodes déterminées informatiquement}
-%
-%\input{squares-int/bigger-power-some-periods}
+\section{???}
+
+% \input{recursivity-showcase/etymology}
+
+
+
+\section{???}
+
+% \input{recursivity-showcase/etymology}
 
 \end{document}

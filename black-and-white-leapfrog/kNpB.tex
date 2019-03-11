@@ -1,0 +1,74 @@
+Généralisons Observns config \config{3}{2}
+
+\begin{mvts}
+	\medskip
+	\item  \gameline{NNN.BB} : on choisit une couleur, la blanche
+
+	\medskip
+	\item  \gameline{NNNB.B} : ne pouvant plus bouger de blancs, on passe aux noirs
+
+	\medskip
+	\item  \gameline{NN.BNB}
+
+	\medskip
+	\item  \gameline{N.NBNB}
+
+	\medskip
+	\item  \gameline{NBN.NB} : ne pouvant plus bouger de noirs, on passe aux blancs
+
+	\medskip
+	\item  \gameline{NBNBN.}
+
+	\medskip
+	\item  \gameline{NBNB.N} : ne pouvant plus bouger de blancs, on passe aux noirs
+
+	\medskip
+	\item  \gameline{NB.BNN}
+
+	\medskip
+	\item  \gameline{.BNBNN} : ne pouvant plus bouger de noirs, on passe aux blancs
+
+	\medskip
+	\item  \gameline{B.NBNN}
+
+	\medskip
+	\item  \gameline{BBN.NN}
+
+	\medskip
+	\item  \gameline{BB.NNN} : nous avons gagné avec une idée simple !
+\end{mvts}
+
+Facile à comprendre mais la preuve va nous demander du travail.
+
+
+\begin{fact}
+	$k \geq 1$
+	
+	$p \geq 1$
+		
+	
+	\gameline{N-N.BB-B} où on met deux \black{} et troi \white{} pour faciliter la compréhension mais pas vrai en toute rigueur
+	
+	????
+\end{fact}
+
+\begin{proof}
+	On fixe $k \geq 1$ quelconque et on raisonne par récurrence sur $p \geq 1$
+	
+	Init : déjaà vu
+	
+	Hérédité : 
+	
+	\begin{mvts}
+		\medskip
+		\item  \gameline{N-N.BB-B}
+
+		\medskip
+		\item  \gameline{BN-N.B-B} : résolution de \config{k}{1} sur les cases 1 à $(k+2)$.
+
+		\medskip
+		\item  \gameline{B-B.N-NN} : résolution de \config{k}{(p-1)} sur les cases 2 à $(k+p+2)$.
+	\end{mvts}
+	
+\end{proof}
+

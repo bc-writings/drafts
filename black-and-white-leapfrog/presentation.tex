@@ -1,0 +1,52 @@
+Voici une petite devinette bien sympathique.
+
+\begin{enumerate}
+	\item Dans des cases sont disposés à gauche uniquement des moutons noirs \textbf{N} et à droite que des blancs \textbf{B} avec une case vide entre chaque groupe. Voici un exemple.
+	\centerit{\gameline{NNN.BBBB}}
+
+
+	\item Les moutons noirs ne se déplacent que vers la droite, et les blancs uniquement vers la gauche. Aucun retour en arrière n'est possible !
+
+
+	\item Pour avancer, un mouton ne peut faire que deux choses dans sa direction de déplacement.
+	\begin{enumerate}
+		\item Si la case est vide juste à côté de lui, un mouton peut avancer dans cette case.
+
+		\item Un mouton peut sauter au-dessus d'un seul mouton d'une autre couleur pour arriver dans la case vide.
+	\end{enumerate}
+\end{enumerate}
+
+\textbf{Question.} Peut-on faire passer tous les moutons blancs à gauche les uns à côté des autres, et tous les noirs à droite avec une case vide entre ces deux groupes de moutons ?
+
+
+\bigskip
+
+
+A titre d'exemple, considérons une partie avec la grille initiale suivante.
+
+\centerit{\gameline{NN.BBB}}
+
+Voici des mouvements possibles à partir de cette configuration.
+
+\medskip
+
+\begin{mvts}
+	\item \gamelineplus*{NN.bBB}{Le \lmove{4}.}
+
+	\medskip
+	\item \gamelineplus*{Nnp.BB}{Le \rjump{2} au dessus d'un blanc.}
+		  
+	\medskip
+	\item \gamelineplus*{n.BuBB}{Le \rmove{1}}
+		  
+	\medskip
+	\item \gamelineplus*{.ubNBB}{Le \rjump{3} au dessus d'un noir.}
+		  
+	\medskip
+	\item \gamelineplus*{pn.NBB}{Le \rmove{2}}
+		  
+	\medskip
+	\item \gamelineplus*{B.uNBB}{Plus aucun mouvement n'est possible. Partie perdue !}
+\end{mvts}
+
+Si le coeur vous en dit, n'hésitez pas à tenter de résoudre cette devinette en prenant par exemple $3$ moutons noirs et $3$ blancs.

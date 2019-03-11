@@ -1,0 +1,3 @@
+Si on auroise de reculer dans cas vide alors on a une solution simple
+    ---> devinette pour lycéen !
+    

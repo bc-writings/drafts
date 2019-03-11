@@ -1,0 +1,344 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{xstring}
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+\usepackage{pgffor}
+      
+\usepackage{lymath}
+
+    
+\newtheorem{fact}{Fait}%[section]
+
+\newtheorem{definition}{Définition}%[section]
+\newtheorem{theorem}{Théorème}%[section]
+\newtheorem{example}{Exemple}%[section]
+\newtheorem{remark}{Remarque}%[section]
+\newtheorem*{notations}{Notations}
+
+\setlength\parindent{0pt}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\centerit[1]{%%
+	\smallskip
+	
+	\begin{center}
+		#1
+	\end{center}
+}
+
+
+\newcommand\sheepnb[1]{mouton no.#1}
+
+\newcommand\move[1]{\sheepnb{#1} va avancer}
+\newcommand\lmove[1]{\move{#1} vers la gauche}
+\newcommand\rmove[1]{\move{#1} vers la droite}
+
+\newcommand\jump[1]{\sheepnb{#1} va sauter}
+\newcommand\ljump[1]{\jump{#1} vers la gauche}
+\newcommand\rjump[1]{\jump{#1} vers la droite}
+
+
+
+% Source pour le \@tfor :
+% 	* https://tex.stackexchange.com/a/253205/6880
+\makeatletter
+% Nothing special for the cell...	
+	\newcommand\elasticbox[1]{%
+		\fcolorbox{black}{white}{\normalfont #1}%
+	}
+
+	\newcommand\fixedboxcolored[3]{%
+		\fcolorbox{#1}{#2}{\makebox[1em]{\normalfont #3}}%
+	}
+
+	\newcommand\fixedbox[1]{%
+		\fixedboxcolored{black}{white}{\makebox[1em]{\normalfont #1}}%
+	}
+
+% ... will move
+	\newcommand\elasticboxwill[1]{%
+		\fcolorbox{black}{red!15}{\normalfont #1}%
+	}
+
+	\newcommand\fixedboxwill[1]{%
+		\fixedboxcolored{black}{red!15}{\normalfont #1}%
+	}
+
+% ... has moved
+	\newcommand\elasticboxhas[1]{%
+		\fcolorbox{black}{black!10}{\normalfont #1}%
+	}
+	
+	\newcommand\fixedboxhas[1]{%
+		\fixedboxcolored{black}{black!10}{\normalfont #1}%
+	}
+
+% Let's go !
+	\newcommand\@empty@content{\phantom{N}}
+	\newcommand\emptycell{\fixedbox{\@empty@content}}
+	\newcommand\white{\fixedbox{\bfseries B}}
+	\newcommand\black{\fixedbox{\bfseries N}}
+	
+	\newcommand\@ellipsis@{\,\,\vphantom{N}$\cdots$\,\,}
+	\newcommand\myellipsis{\elasticbox{\@ellipsis@}}
+
+% ... will move
+	\newcommand\emptycellwill{\fixedboxwill{\@empty@content}}
+	\newcommand\whitewill{\fixedboxwill{\bfseries B}}
+	\newcommand\blackwill{\fixedboxwill{\bfseries N}}
+	\newcommand\myellipsiswill{\elasticboxwill{\@ellipsis@}}
+
+% ... has moved
+	\newcommand\emptycellhas{\fixedboxhas{\@empty@content}}
+	\newcommand\whitehas{\fixedboxhas{\bfseries B}}
+	\newcommand\blackhas{\fixedboxhas{\bfseries N}}
+	\newcommand\myellipsishas{\elasticboxhas{\@ellipsis@}}
+
+	\newcommand\config[1]{%
+		\texttt{%
+			\upshape%
+			\@tfor\next:=#1\do{%
+				\if\next .\kern.15em{\tiny\textbullet}\kern.15em\else%
+					\next{}%
+				\fi%
+			}%
+		}%
+	}
+
+% B : blanc normal
+% N : noir normal
+% . : vide normal
+% - : ellipsis
+%
+% b : blanc qui va bouger
+% n : noir qui va bouger
+% v : vide qui va bouger
+% = : ellipsis qui va bouger
+%
+% p : blanc qui vient de bouger
+% u : noir qui vient de bouger
+% a : vide qui vient de bouger
+% + : ellipsis
+%
+% < Ouvre un cadre de surlignement de plusieurs cellules
+% < Ferme un cadre de surlignement de plusieurs cellules
+	\newcommand\gameline[1]{%
+		\@tfor\next:=#1\do{%
+			\if\next B\white{}\else%
+		    \if\next N\black{}\else%
+			\if\next .\emptycell{}\else%
+			\if\next -\myellipsis{}\else%
+			%
+			\if\next b\whitewill{}\else%
+		    \if\next n\blackwill{}\else%
+		    \if\next v\emptycellwill{}\else%
+			\if\next =\myellipsiswill{}\else%
+		    %
+			\if\next p\whitehas{}\else%
+		    \if\next u\blackhas{}\else%
+		    \if\next a\emptycellhas{}\else%
+			\if\next +\myellipsishas{}\else%
+		    %
+\quad {\bfseries [[ illegal character : \, {\normalfont \next{}} \, ]]} \quad % BUG
+			\fi%  :
+			\fi%  a
+			\fi%  u
+			\fi%  p
+			%
+			\fi%  =
+			\fi%  v
+			\fi%  n
+			\fi%  b
+			%
+			\fi%  -
+			\fi%  .
+			\fi%  N
+			\fi%  B
+		}%
+	}
+	
+
+	\newcommand\autobox[1]{%
+      \foreach \i in {1, ..., #1} {%
+        \fixedbox{\i}%
+      }
+	}
+	
+
+	\newcommand\gamelineplus{\@ifstar{\@gamelineplus@star@}{\@gamelineplus@no@star@}}
+
+	\newcommand\@gamelineplus@no@star@[2]{
+		\gameline{#1}
+		\setbox0=\hbox{#2\unskip}\ifdim\wd0=0pt \else {\small \ $\leftarrow$ #2}\fi
+	}
+
+	\newcommand\@gamelineplus@star@[2]{
+		\@gamelineplus@no@star@{#1}{#2}
+		
+		\StrLen{#1}[\@length@]
+		\noindent  
+		\autobox{\@length@}
+	}
+
+	\newcommand\listbox[1]{%
+		\@tfor\next:=#1\do{\fixedbox{\next}}%
+	}
+	
+	
+	\newcommand\iterconfig[1]{
+		\foreach \k/\p in {#1}{
+			\subsection{Configuration \texttt{\k N\kern.15em{\tiny\textbullet}\kern.15em\p B}}   
+		 	\input{black-and-white-leapfrog/\k N\p B}
+		}
+	}
+\makeatother
+
+
+\newcommand\step[1]{\textbf{\texttt{[E#1]}}}
+
+\newenvironment{mvts}[1][start=1]{
+	\normalfont
+	\begin{enumerate}[#1, left = 0pt .. 3em, label = \step{\arabic*}]
+}{
+	\end{enumerate}
+}
+
+\newcommand\factwin[2]{
+	\begin{fact}
+	La configuration \config{#1N.#2B} est résoluble.
+	\end{fact}
+}
+
+ 
+\begin{document}
+
+\title{BROUILLON - Un saute-mouton bicolore pour gloutons}
+\author{Christophe BAL}
+\date{11 Mars 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+	
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% ----------------- %
+
+
+\section{Une devinette qui défrise}
+
+\input{black-and-white-leapfrog/presentation}
+
+
+% ----------------- %
+
+
+\section{Vocabulaire et notations}
+
+\input{black-and-white-leapfrog/notations}
+
+
+% ----------------- %
+
+
+\section{Quelques configurations particulières}
+
+Afin de nous construire une petite intuition pour la résolution, ou non, de la devinette des moutons, nous allons étudier quelques configurations simples.
+
+\iterconfig{1/1, 2/1, 2/2, 3/2, k/1}
+
+
+% ----------------- %
+
+
+\section{Principe de symétrie}
+
+\input{black-and-white-leapfrog/symmetry}
+
+
+% ----------------- %
+
+
+\section{Résolution de la configuration \texttt{kN$\cdot$kB}}
+
+\input{black-and-white-leapfrog/kNkB-proof}
+
+
+
+% ----------------- %
+
+
+\section{Résolution de la configuration \texttt{kN$\cdot$pB}}
+
+\input{black-and-white-leapfrog/kNpB-proof}
+
+
+% ----------------- %
+
+%
+%\section{Un algorithme à utiliser et étudier}
+%
+%\input{black-and-white-leapfrog/algorithm}
+%
+
+%% ----------------- %
+%
+%
+%\section{Une preuve astucieuse ?}
+%
+%\input{black-and-white-leapfrog/trickyproof}
+%
+%
+%% ----------------- %
+%
+%
+%\section{Unicité ?}
+%
+%\input{black-and-white-leapfrog/uniqueness}
+
+\end{document}

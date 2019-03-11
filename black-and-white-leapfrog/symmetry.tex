@@ -1,0 +1,46 @@
+\begin{fact} \label{symmetry}
+	La configuration \config{kN.pB} est résoluble si et seulement si la configuration \config{pN.kB} l'est aussi. 
+	Par exemple, nous avons :
+	
+	\centerit{%
+		\gameline{NNNN.BB} est résoluble.
+		\, $\Longleftrightarrow$ \, 
+		\gameline{NN.BBBB} est résoluble.
+	}
+	
+	\medskip
+	
+	Plus généralement, considérons deux configurations $\probaset*{C}{1}$ et $\probaset*{C}{2}$ , et pour chaque $k \in \geneset{1 ; 2}$ notons $\probaset*{R}{k}$ la configuration obtenue en faisant un demi-tour et en échangeant les couleurs.
+	Alors il existe des mouvements permettant de passer de $\probaset*{C}{1}$ à $\probaset*{C}{2}$ si et seulement si il en existe pour aller de $\probaset*{R}{1}$ à $\probaset*{R}{2}$  
+\end{fact}
+
+
+\begin{proof}
+	Il suffit de considérer les opérations suivantes.
+	\begin{enumerate}
+		\item On applique un demi-tour à la ligne de jeu. 
+		      Par exemple, nous avons :
+		\centerit{%
+			\gameline{NNNN.BB}
+			\, devient \, 
+			\gameline{BB.NNNN} .
+		}
+		
+		\noindent
+		Tout mouvement ou saut fait dans un sens sur une ligne de jeu sera fait dans l'autre sens sur l'autre.
+
+		\item Après le demi-tour, on échange les couleurs. Ceci est sans importance car tout ce qui compte c'est d'avoir deux catégories de moutons. 
+		      En continuant avec notre exemple, nous avons :
+		\centerit{%
+			\gameline{BB.NNNN}
+			\, devient \,
+			\gameline{NN.BBBB} .
+		}
+	\end{enumerate}
+	
+	En résumé, si l'on peut passer de $\probaset*{C}{1}$ à $\probaset*{C}{2}$ alors il suffit de reprendre les mouvements utilisés en échangeant les couleurs et les sens de parcours pour aller de $\probaset*{R}{1}$ à $\probaset*{R}{2}$ .
+	Ceci s'applique en particulier à la résolution d'un jeu. 
+	Ceci est un petit truc tout bête qui va nous rendre d'énormes services bientôt.
+\end{proof}
+
+

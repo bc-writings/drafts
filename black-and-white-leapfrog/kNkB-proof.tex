@@ -1,0 +1,179 @@
+Les démonstrations ci-dessous sont sans astuce particulière et faites en raisonnant sur la ligne de jeu telle que nous la connaissons. Autrement dit, nous n'allons pas travailler avec une représentation ad-hoc du jeu.
+
+
+\begin{remark}
+	Dans la suite, pour ne pas alourdir le document, nous indiquerons d'un seul coup plusieurs mouvements successifs.
+	Par exemple, voici une méthode possible pour résoudre la configuration \config{3N.3B} qui va au passage nous éclairer pour le cas général.
+	\begin{mvts}
+		\medskip
+		\item  \gamelineplus{NNN.bBB}{Un seul blanc peut bouger.}
+
+		\medskip
+		\item  \gamelineplus{Nnnp.BB}{Deux noirs peuvent bouger.}
+
+		\medskip
+		\item  \gamelineplus{N.ububb}{Trois blancs peuvent bouger.}
+
+		\medskip
+		\item  \gamelineplus{npnpnp.}{Trois noirs peuvent bouger.}
+
+		\medskip
+		\item  \gamelineplus{.bububu}{Trois blancs peuvent bouger.}
+
+		\medskip
+		\item  \gamelineplus{ppnpn.N}{Deux noirs peuvent bouger.}
+
+		\medskip
+		\item  \gamelineplus{BB.buuN}{Un blanc peut bouger.}
+
+		\medskip
+		\item  \gamelineplus{BBp.NNN}{Gagné !}
+	\end{mvts}
+
+	Notons au passage la configuration particulière de l'étape \step{4} car ceci va être important pour notre preuve du cas général. 
+\end{remark}
+
+
+\begin{remark}
+	Voici une autre belle astuce que nous allons utiliser dans le cas général. Dans la résolution précédente, dès \step{5} nous savons que nous pouvons gagner. Voici pourquoi.
+	\begin{itemize}[label=\small\textbullet]
+		\item \gameline{.bububu} \, est le symétrique de \, \gameline{ububub.} .
+
+		\item En reprenant les mouvements à rebours de \step{4} à \step{1} et en échangeant juste les sens de parcours, et non les couleurs, nous arrivons finalement à la configuration symétrique de  \, \gameline{uuu.bbb} \, qui est \, \gameline{bbb.uuu} . Que c'est beau !
+	\end{itemize}
+\end{remark}
+
+
+
+\begin{fact} \label{kNkB-reduction}
+	Soit $k \in \NNs$. Suivant la parité de $k$ nous avons :
+	\begin{enumerate}
+		\item Si $k = 2r$ est pair, nous pouvons passer de \config{kN.kB} à \config{kNB.} .
+
+		\item Si $k = 2r+1$ est impair, nous pouvons passer de \config{kN.kB} à \config{.kNB} .
+	\end{enumerate}
+\end{fact}
+
+
+\begin{proof}
+	Ceci découle du résultat plus plus général suivant en prenant $m = 0$.
+\end{proof}
+
+
+
+\begin{fact}
+	Soit $(k ; m) \in \NN^2$ tel que $k \geq 1$. Suivant la parité de $k$ nous avons :
+	\begin{enumerate}
+		\item Si $k = 2r$ est pair, nous pouvons passer de \config{kNmNB.kB} à \config{(k+m)NB.} .
+
+		\item Si $k = 2r+1$ est impair, nous pouvons passer de \config{kNmNB.kB} à \config{.(k+m)NB} .
+	\end{enumerate}
+\end{fact}
+
+
+\begin{proof}
+	Pour $j \in \NNs$, notons $\probaset*{P}{j}$ la propriété \emph{\og $\forall m \in \NN$, $\forall k \in \NN$ tel que $1 \leq k \leq j$ , soit (1) est vrai, soit (2) est vrai \fg}.
+	Prouvons $\probaset*{P}{j}$ par récurrence sur $j \in \NNs$.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\item \textbf{Cas de base :} nous devons prouver $\probaset*{P}{1}$ , c'est à dire que \emph{\og $\forall m \in \NN$, nous pouvons passer de \config{1NmNB.1B} à \config{.(1+m)NB} \fg} est vérifiée.
+		Les cas $m = 0$ et $m = 1$ sont faciles à traiter, et pour $m \geq 2$ , il suffit de faire les mouvements suivants.
+	\begin{mvts}
+		\medskip
+		\item \gamelineplus{nnB-nB.B}{Du type \config{1NmNB.1B} .}
+
+		\medskip
+		\item \gamelineplus{.uB-uBuB}{Du type \config{.(1+m)NB} .}
+	\end{mvts}
+
+
+		\item \textbf{Hérédité :} supposons que $\probaset*{P}{j}$ soit vérifiée. Nous devons en déduire que $\probaset*{P}{j+1}$ l'est aussi.
+		
+		\medskip
+		
+		\noindent
+		Si $m = 0$ alors nous faisons les mouvements suivants.
+		\begin{mvts}
+			\medskip
+			\item \gamelineplus{-NNn.BBB-}{Du type \config{(j+1)N0NB.(j+1)B} .}
+
+			\medskip
+			\item \gameline{-NN.ubbB-}
+
+			\medskip
+			\item \gamelineplus{-NNpNp.B-}{Du type \config{(j-1)N2NB.(j-1)B} .}
+		\end{mvts}
+			
+		\noindent
+		Si $j+1 = 2$ , nous arrivons à la configuration \config{2NB.} comme attendu. Sinon $(j - 1)$ et $(j + 1)$ étant de même parité, la validité de $\probaset*{P}{j}$ permet d'arriver à \config{.(j-1+2)NB} , c'est à dire à \config{.(j+1)NB} si $j+1 = 2r+1$ est impair, et sinon d'arriver à \config{(j+1)NB.} .
+			
+		\medskip
+			
+		\noindent
+		Si $m \geq 1$ alors nous faisons les mouvements suivants avec un abus de notations évidents pour les \, \gameline{NB} \, centraux si $m = 1$ mais ceci n'invalide pas le raisonnement fait.
+		\begin{mvts}
+			\medskip
+			\item \gameline{-NNnnB-nB.BBB-}
+
+			\medskip
+			\item \gameline{-NN.ub-ububbB-}
+
+			\medskip
+			\item \gameline{-NNpNp-NpNp.B-}
+		\end{mvts}
+			
+		\noindent
+		La dernière configuration étant du type \config{(j-1)N(m+2)NB.(j-1)B} , nous pouvons de nouveau arriver comme attendu à \config{.(j+1)NB} ou \config{(j+1)NB.} suivant la parité de $(j+1)$.
+	\end{itemize}
+\end{proof}
+
+
+ 
+\begin{fact} \label{kNkB-resoluble}
+	$\forall k \in \NNs$, la configuration \config{kN.kB} est résoluble.
+\end{fact}
+
+
+\begin{proof}
+	Distinguons deux cas avec des abus de notations évidents qui sont juste là pour faciliter la compréhension.
+
+	\begin{itemize}[label=\small\textbullet]
+		\item  Supposons que $k = 2r$ soit pair. Nous pouvons alors faire les mouvements suivants d'après le fait \ref{kNkB-reduction}.
+		\begin{mvts}
+			\medskip
+			\item \gameline{-NNN.BBB-}
+
+			\medskip
+			\item \gameline{nBnB-nB.}
+
+			\medskip
+			\item \gameline{.Bu-BuBu}
+		\end{mvts}
+		
+		\noindent
+		Comme les configurations des étapes \step{2} et \step{3} sont symétriques, en reprenant les mouvements à rebours de \step{2} à \step{1} et en échangeant juste les sens de parcours, et non les couleurs, nous arrivons finalement à la configuration symétrique de  \, \gameline{-NN.BB-} \, qui est \, \gameline{-BB.NN-} \, ce qui nous fait gagner.
+
+
+		\item Supposons que $k = 2r + 1$ soit impair. Nous pouvons alors faire les mouvements suivants de nouveau en faisant appel au fait \ref{kNkB-reduction}.
+		\begin{mvts}
+			\medskip
+			\item \gameline{-NNN.BBB-}
+
+			\medskip
+			\item \gameline{.NbNb-Nb}
+
+			\medskip
+			\item \gameline{pN-pNpN.}
+		\end{mvts}
+		
+		\noindent
+		Nous pouvons conclure comme précédemment avec un argument de symétrie.
+	\end{itemize}
+\end{proof}
+
+
+
+\begin{remark}
+	Si vous reprenez les preuves de cette section, vous noterez que nous avons de nouveau appliquer une tactique gloutonne en commençant par faire bouger un mouton noir. \textbf{Nous avons une preuve algorithmique constructive !}
+\end{remark}
+

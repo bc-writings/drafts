@@ -1,0 +1,32 @@
+Avant de passer au cas général, nous allons démontrer le fait suivant où le nombre de moutons noirs est quelconque.
+
+
+\factwin{k}{1}
+
+
+\begin{proof}
+	Il suffit d'utiliser un raisonnement par récurrence sur $k \in \NNs$.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\item \textbf{Cas de base :} pour $k = 1$, la configuration \config{kN.1B} est résoluble d'après le fait \ref{config-1-1}.
+
+
+		\item \textbf{Hérédité :} supposons que la configuration \config{kN.1B} soit résoluble. Nous devons en déduire que la configuration \config{(k+1)N.1B} l'est aussi. Ceci vient directement de la dernière étape ci-dessous.
+		\begin{mvts}
+			\medskip
+			\item  \gamelineplus{-NN.b}{Il y a $(k+1)$ noirs à gauche. On décide de bouger le blanc.} 
+
+			\medskip
+			\item  \gamelineplus{-Nnp.}{Un noir va aller prendre sa place définitive à droite.}
+
+			\medskip
+			\item  \gamelineplus{=nvbu}{Nous reconnaissons à gauche la sous-configuration \config{kN.1B}.}  
+		\end{mvts}
+	
+		\noindent
+		A partir de la dernière étape, il suffit de résoudre la sous-configuration \config{kN.1B} à gauche grâce à l'hypothèse de récurrence, et ceci sans toucher le mouton noir bien placé tout à droite qui de toute façon ne peut plus bouger.
+	\end{itemize}
+\end{proof}
+
+
+Les preuves des faits \ref{greedy-2N2B} et \ref{greedy-3N2B} sont faciles à comprendre mais leur généralisation va nous demander un peu de travail et de prudence. Le chemin entre l'intuition est la démonstration n'est pas toujours direct.

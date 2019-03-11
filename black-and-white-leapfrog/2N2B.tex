@@ -1,0 +1,73 @@
+Essayons maintenant de résoudre la configuration \config{2N.2B} en passant comme précédemment par la résolution d'une sous-configuration. Voici un premier essai en passant par la configuration \config{2N.1B} des quatre premières cases.	
+\begin{mvts}
+	\medskip
+	\item  \gameline{nnvbB}
+
+	\medskip
+	\item  \gamelineplus{pauuB}{Perdu !}
+\end{mvts}
+
+Nous sommes bloqués : le mouton blanc tout à droite ne pourra jamais se déplacer. 
+De façon analogue, passer par la sous-configuration \config{1N.2B} sur les quatre dernières cases ne nous permet pas de gagner car nous aurons un mouton noir tout à gauche qui ne pourra jamais se déplacer \emph{(notez au passage une forme de symétrie du jeu sur laquelle nous reviendrons plus tard)}.
+
+
+\medskip
+
+
+Il reste une dernière sous-configuration à utiliser, à savoir la \config{1N.1B} sur les trois cases centrales. Une possibilité consiste à faire comme suit où en \step{3} les trois moutons à gauche sont définitivement bloqués.
+\begin{mvts}
+	\medskip
+	\item  \gameline{NnvbB}
+
+	\medskip
+	\item  \gameline{Npaub}
+
+	\medskip
+	\item  \gamelineplus{NBpN.}{Perdu !}
+\end{mvts}
+
+
+\medskip
+
+
+Il est facile de vérifier qu'en partant de \step{2} ci-dessus, il est impossible de gagner ! 
+On peut alors se demander si le jeu \config{2N.2B} est en fait impossible à gagner. La réponse est non comme nous allons le voir.
+
+
+\factwin{2}{2} \label{greedy-2N2B}
+
+
+\begin{proof}
+	Nous allons utiliser une méthode simple consistant à faire le maximum possible de mouvements pour une couleur donnée et ceci sans bloquer le jeu. On ne cherche pas ici à raisonner à long terme. Ce type de méthode est dite \emph{\itshape \og gloutonne \fg}.
+
+\begin{mvts}
+	\medskip
+	\item  \gamelineplus{NN.bB}{On choisit une couleur, la blanche.}
+
+	\medskip
+	\item  \gamelineplus{Nnp.B}{Ne pouvant plus bouger de blancs, on passe aux noirs.}
+
+	\medskip
+	\item  \gamelineplus{n.BuB}{}
+
+	\medskip
+	\item  \gamelineplus{.ubNB}{}
+
+	\medskip
+	\item  \gamelineplus{pN.Nb}{Ne pouvant plus bouger de noirs, on passe aux blancs.}
+
+	\medskip
+	\item  \gamelineplus{BNpn.}{Ne pouvant plus bouger de blancs, on passe aux noirs.}
+
+	\medskip
+	\item  \gamelineplus{BnB.u}{}
+
+	\medskip
+	\item  \gamelineplus{B.buN}{Seul un mouton blanc peut bouger.}
+
+	\medskip
+	\item  \gamelineplus{Bp.NN}{Gagné !}
+\end{mvts}
+
+Il n'était pas évident qu'avec une vision à court terme nous allions gagner.
+\end{proof}

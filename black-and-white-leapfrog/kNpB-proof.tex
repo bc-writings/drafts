@@ -1,0 +1,90 @@
+\begin{fact}
+	Soit la configuration initiale \config{kN.pB} avec $(k ; p) \in \NN^2$ tel que $k > p \geq 1$ \emph{(autrement dit, nous avons plus de moutons noirs que de blancs)}. Suivant la parité de $p$ nous avons :
+	\begin{enumerate}
+		\item Si $p = 2s$ est pair, nous pouvons passer de \config{kN.pB} à \config{(k-p)NpNB.} .
+
+		\item Si $p = 2s+1$ est impair, nous pouvons passer de \config{kN.pB} à \config{(k-p)N.pNB} .
+	\end{enumerate}
+\end{fact}
+
+
+\begin{proof}
+	C'est immédiat en notant que \config{kN.pB} et \config{(k-p)NpN.pB} désignent la même configuration.
+	Il suffit alors de faire appel au fait \ref{kNkB-reduction} en laissant immobile les $(k-p)$ premiers moutons noirs.
+\end{proof}
+
+
+
+\begin{fact}
+	Soit $(k ; p) \in \NN^2$.
+	La configuration initiale \config{kN.pB} est résoluble.
+\end{fact}
+
+
+\begin{proof}
+	Les cas $k = 0$ ou $p = 0$ sont évidents à résoudre donc nous supposerons dans la suite que $k \geq 1$ et $p \geq 1$.
+	
+	\medskip
+	
+	Ensuite le principe de symétrie vu dans le fait \ref{symmetry} permet de se ramener au cas où $k \geq p \geq 1$ ,
+	puis le fait \ref{kNkB-resoluble} permet de supposer $k > p \geq 1$ afin de pouvoir nous appuyer sur le fait précédent.
+	
+	\medskip
+	
+	\noindent
+	Distinguons alors deux cas avec des abus de notations évidents qui sont juste là pour faciliter la compréhension. Nous ne donnons que les grandes lignes \emph{(les récurrences non rédigées ne sont pas difficiles)}.
+
+	\begin{itemize}[label=\small\textbullet]
+		\item  Supposons que $p = 2r$ soit pair. Nous pouvons alors faire les mouvements suivants.
+		\begin{mvts}
+			\medskip
+			\item \gameline{-NNNNN.B-B}
+
+			\medskip
+			\item \gamelineplus{-NNnnB-nB.}{Voir le fait précédent.}
+
+			\medskip
+			\item \gameline{-NN.ub-ubu}
+
+			\medskip
+			\item \gameline{-NNpu-pn.N}
+
+			\medskip
+			\item \gameline{-NNB-NB.uN}
+
+			\medskip
+			\item \gamelineplus{nb=nbvN-N}{En continuant de proche en proche.}
+			
+			\medskip
+			\item \gamelineplus{p+pau+uN-N}{Voir la preuve du fait \ref{kNkB-resoluble}.}
+		\end{mvts}
+
+
+		\item  Supposons que $p = 2r+1$ soit impair. Nous pouvons alors faire les mouvements suivants.
+		\begin{mvts}
+			\medskip
+			\item \gameline{-NNNNN.B-B}
+
+			\medskip
+			\item \gamelineplus{-NNN.Nb-Nb}{Voir le fait précédent.}
+
+			\medskip
+			\item \gameline{-Nnnpn-pn.}
+
+			\medskip
+			\item \gameline{-N.uBu-Buu}
+
+			\medskip
+			\item \gamelineplus{vnb=nbN-N}{En continuant de proche en proche.}
+			
+			\medskip
+			\item \gamelineplus{p+pau+uN-N}{Voir la preuve du fait \ref{kNkB-resoluble}.}
+		\end{mvts}
+	\end{itemize}
+\end{proof}
+
+
+
+\begin{remark}
+	\textbf{Là aussi, nous avons une preuve algorithmique constructive !}
+\end{remark}
