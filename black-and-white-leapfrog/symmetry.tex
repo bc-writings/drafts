@@ -1,4 +1,11 @@
-\begin{fact} \label{symmetry}
+Imaginons que nous soyons de part et d'autre de la ligne de jeux.
+Pour vous les règles de déplacement et les couleurs sont inversés par rapport à moi.
+Si je résous une configuration, vous pourrez aussi la faire avec la votre un peu particulière.
+Ceci nous donne l'idée de chercher des principes de symétrie. Les faits suivants en proposent deux.
+
+
+
+\begin{fact} \label{symmetry-color}
 	La configuration \config{kN.pB} est résoluble si et seulement si la configuration \config{pN.kB} l'est aussi. 
 	Par exemple, nous avons :
 	
@@ -16,31 +23,107 @@
 
 
 \begin{proof}
-	Il suffit de considérer les opérations suivantes.
+	Donnons un exemple d'application des transformations.
 	\begin{enumerate}
-		\item On applique un demi-tour à la ligne de jeu. 
-		      Par exemple, nous avons :
+		\item On applique un demi-tour à la ligne de jeu :
 		\centerit{%
-			\gameline{NNNN.BB}
+			\gameline{nnnn.pp}
 			\, devient \, 
-			\gameline{BB.NNNN} .
+			\gameline{pp.nnnn} .
 		}
 		
 		\noindent
 		Tout mouvement ou saut fait dans un sens sur une ligne de jeu sera fait dans l'autre sens sur l'autre.
 
-		\item Après le demi-tour, on échange les couleurs. Ceci est sans importance car tout ce qui compte c'est d'avoir deux catégories de moutons. 
-		      En continuant avec notre exemple, nous avons :
+		\item Après le demi-tour, on échange les couleurs :
 		\centerit{%
-			\gameline{BB.NNNN}
+			\gameline{pp.nnnn}
 			\, devient \,
-			\gameline{NN.BBBB} .
+			\gameline{uu.bbbb} .
 		}
 	\end{enumerate}
 	
-	En résumé, si l'on peut passer de $\probaset*{C}{1}$ à $\probaset*{C}{2}$ alors il suffit de reprendre les mouvements utilisés en échangeant les couleurs et les sens de parcours pour aller de $\probaset*{R}{1}$ à $\probaset*{R}{2}$ .
-	Ceci s'applique en particulier à la résolution d'un jeu. 
-	Ceci est un petit truc tout bête qui va nous rendre d'énormes services bientôt.
+	Revenons au cas général.
+	Si l'on peut passer de $\probaset*{C}{1}$ à $\probaset*{C}{2}$ alors il suffit de reprendre la même séquence de mouvements en échangeant les couleurs et les sens de parcours pour aller de $\probaset*{R}{1}$ à $\probaset*{R}{2}$ .
+	Ceci s'applique en particulier à la résolution d'un jeu telle que nous l'avons indiquée. 
+	Ceci est un petit truc tout bête qui va nous rendre un énorme service très bientôt.
 \end{proof}
 
 
+Redonnons les mouvements proposés pour résoudre la configuration \config{2N.2B}.
+\begin{mvts}
+	\medskip
+	\item  \gameline{NN.bB}
+	
+	\medskip
+	\item  \gameline{Nnp.B}
+	
+	\medskip
+	\item  \gameline{n.BuB}
+	
+	\medskip
+	\item  \gameline{.ubNB}
+	
+	\medskip
+	\item  \gameline{pN.Nb}
+	
+	\medskip
+	\item  \gameline{BNpn.}
+	
+	\medskip
+	\item  \gameline{BnB.u}
+	
+	\medskip
+	\item  \gameline{B.buN}
+	
+	\medskip
+	\item  \gameline{Bp.NN}
+\end{mvts}
+
+
+Constatez-vous quelque chose ? Si vous regardez de part et d'autre de l'étape \step{5}, nous avons une autre forme de symétrie. Mettons-là en valeur.
+\begin{multicols}{2}
+	\medskip \step{1} 
+	\gameline{nn.pp} \,\,\,\,\rotatebox[origin=c]{270}{$\Rsh$}
+	
+	\medskip \step{2} 
+	\gameline{nnb.p} \quad $\shortdownarrow$
+	
+	\medskip \step{3} 
+	\gameline{n.pup} \quad $\shortdownarrow$
+	
+	\medskip \step{4} 
+	\gameline{.upup} \quad $\shortdownarrow$
+
+	% ----------- %
+	
+	\medskip \hfill{} $\Rsh$ \quad \step{9}
+	\gameline{pp.nn}
+
+	\medskip \hfill{} $\shortuparrow$ \quad \step{8}
+	\gameline{p.bnn}
+
+	\medskip \hfill{} $\shortuparrow$ \quad \step{7}
+	\gameline{pup.n}
+
+	\medskip \hfill{} $\shortuparrow$ \quad \step{6}
+	\gameline{pupu.}
+\end{multicols}
+\vspace{-1em}
+\begin{center}
+	\medskip \rotatebox[origin=c]{180}{$\Lsh$} \, $\shortrightarrow$ \quad \step{5}
+	\gameline{BN.NB} \quad $\shortrightarrow$ \, \rotatebox[origin=c]{270}{$\Lsh$}
+\end{center}
+
+Ceci motive le fait général suivant.
+
+
+\begin{fact} \label{symmetry-no-color}
+	Considérons deux configurations $\probaset*{C}{1}$ et $\probaset*{C}{2}$ , et pour chaque $k \in \geneset{1 ; 2}$ notons $\probaset*{R}{k}$ la configuration obtenue en faisant juste un demi-tour sans échanger les couleurs.
+	Alors il existe des mouvements permettant de passer de $\probaset*{C}{1}$ à $\probaset*{C}{2}$ si et seulement si il en existe pour aller de $\probaset*{R}{2}$ à $\probaset*{R}{1}$ \emph{(attention aux indices)}.
+\end{fact}
+
+
+\begin{proof}
+	Il suffit de raisonner sur deux étapes successives en considérant les différents mouvements possibles.
+\end{proof}
