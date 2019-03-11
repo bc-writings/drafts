@@ -37,13 +37,13 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 
 
 \begin{proof}
-	Ceci découle du résultat plus plus général suivant en prenant $m = 0$.
+	Ceci découle du résultat plus général suivant en prenant $m = 0$.
 \end{proof}
 
 
 
 \begin{fact}
-	Soit $(k ; m) \in \NN^2$ tel que $k \geq 1$. Suivant la parité de $k$ nous avons :
+	Soit $(k ; m) \in \NN^2$. Suivant la parité de $k$ nous avons :
 	\begin{enumerate}
 		\item Si $k = 2r$ est pair, nous pouvons passer de \config{kNmNB.kB} à \config{(k+m)NB.} .
 
@@ -53,12 +53,18 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 
 
 \begin{proof}
-	Pour $j \in \NNs$, notons $\probaset*{P}{j}$ la propriété \emph{\og $\forall m \in \NN$, $\forall k \in \NN$ tel que $1 \leq k \leq j$ , soit (1) est vrai, soit (2) est vrai \fg}.
+	Pour $j \in \NNs$, notons $\probaset*{P}{j}$ la propriété \emph{\og $\forall m \in \NN$, $\forall k \in \NN$ tel que $0 \leq k \leq j$ , soit (1) est vrai, soit (2) est vrai \fg}.
 	Prouvons $\probaset*{P}{j}$ par récurrence sur $j \in \NNs$.
 	
 	\begin{itemize}[label=\small\textbullet]
-		\item \textbf{Cas de base :} nous devons prouver $\probaset*{P}{1}$ , c'est à dire que \emph{\og $\forall m \in \NN$, nous pouvons passer de \config{1NmNB.1B} à \config{.(1+m)NB} \fg} est vérifiée.
-		Les cas $m = 0$ et $m = 1$ sont faciles à traiter, et pour $m \geq 2$ , il suffit de faire les mouvements suivants.
+		\item \textbf{Cas de base :} pour la suite nous devons à la fois prouver $\probaset*{P}{0}$ et $\probaset*{P}{1}$ .
+		
+		\noindent
+		$\probaset*{P}{0}$ est clairement vérifiée puisque $\probaset*{P}{0}$ est\emph{\og $\forall m \in \NN$, nous pouvons passer de \config{mNB.} à \config{(0+m)NB.} \fg} .
+		
+		\noindent
+		Passons à $\probaset*{P}{1}$ . Nous devons valider la proposition \emph{\og $\forall m \in \NN$, nous pouvons passer de \config{1NmNB.1B} à \config{.(1+m)NB} \fg} .
+		Les cas $m = 0$ et $m = 1$ sont faciles à traiter, tandis que pour $m \geq 2$ , il suffit de faire les mouvements suivants.
 	\begin{mvts}
 		\medskip
 		\item \gamelineplus{nnB-nB.B}{Du type \config{1NmNB.1B} .}
@@ -68,7 +74,7 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 	\end{mvts}
 
 
-		\item \textbf{Hérédité :} supposons que $\probaset*{P}{j}$ soit vérifiée. Nous devons en déduire que $\probaset*{P}{j+1}$ l'est aussi.
+		\item \textbf{Hérédité :} supposons que $\probaset*{P}{j}$ soit vérifiée avec $j \geq 1$. Nous devons en déduire que $\probaset*{P}{j+1}$ l'est aussi.
 		
 		\medskip
 		
@@ -86,7 +92,7 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 		\end{mvts}
 			
 		\noindent
-		Si $j+1 = 2$ , nous arrivons à la configuration \config{2NB.} comme attendu. Sinon $(j - 1)$ et $(j + 1)$ étant de même parité, la validité de $\probaset*{P}{j}$ permet d'arriver à \config{.(j-1+2)NB} , c'est à dire à \config{.(j+1)NB} si $j+1 = 2r+1$ est impair, et sinon d'arriver à \config{(j+1)NB.} .
+		Comme $j - 1 \geq 0$ et $j + 1 \geq 2$ sont de même parité, la validité de $\probaset*{P}{j}$ permet, si $j+1 = 2r+1$ est impair, d'arriver à \config{.(j-1+2)NB} c'est à dire à \config{.(j+1)NB} , et sinon d'arriver à \config{(j+1)NB.} .
 			
 		\medskip
 			
@@ -132,7 +138,7 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 		\end{mvts}
 		
 		\noindent
-		Comme les configurations des étapes \step{2} et \step{3} sont symétriques, en reprenant les mouvements à rebours de \step{2} à \step{1} et en échangeant juste les sens de parcours, et non les couleurs, nous arrivons finalement à la configuration symétrique de  \, \gameline{-NN.BB-} \, qui est \, \gameline{-BB.NN-} \, ce qui nous fait gagner.
+		Comme les configurations des étapes \step{2} et \step{3} sont symétriques, en reprenant les mouvements à rebours de \step{2} à \step{1} et en échangeant juste les sens de parcours, et non les couleurs, nous arrivons finalement à la configuration symétrique de  \, \gameline{-NN.BB-} \, qui est \, \gameline{-BB.NN-} \, ce qui nous fait gagner \emph{(voir le fait \ref{symmetry-no-color})}.
 
 
 		\item Supposons que $k = 2r + 1$ soit impair. Nous pouvons alors faire les mouvements suivants de nouveau en faisant appel au fait \ref{kNkB-reduction}.
