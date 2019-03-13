@@ -5,22 +5,22 @@ Avant de passer au cas général, nous allons démontrer le fait suivant où le 
 
 
 \begin{proof}
-	Il suffit d'utiliser un raisonnement par récurrence sur $k \in \NNs$.
+	Il suffit d'utiliser un raisonnement par récurrence sur $k \in \NN$.
 	
 	\begin{itemize}[label=\small\textbullet]
-		\item \textbf{Cas de base :} pour $k = 1$, la configuration \config{kN.1B} est résoluble d'après le fait \ref{config-1-1}.
+		\item \textbf{Cas de base :} pour $k = 0$, la configuration \config{kN.1B} est résoluble car on passe de \gameline{.B} à \gameline{B.} directement.
 
 
-		\item \textbf{Hérédité :} supposons que la configuration \config{kN.1B} soit résoluble. Nous devons en déduire que la configuration \config{(k+1)N.1B} l'est aussi. Ceci vient directement de la dernière étape ci-dessous.
+		\item \textbf{Hérédité :} supposons que la configuration \config{kN.1B} soit résoluble. Nous devons en déduire que la configuration \config{(k+1)N.1B} l'est aussi. Voici comment faire où les points de suspension indiquent soit rien du tout, soit des moutons noirs côte à côte.
 		\begin{mvts}
 			\medskip
-			\item  \gamelineplus{-NN.b}{Il y a $(k+1)$ noirs à gauche. On décide de bouger le blanc.} 
+			\item  \gamelineplus{-N.b}{Il y a $(k+1)$ noirs à gauche. On décide de bouger le blanc.} 
 
 			\medskip
-			\item  \gamelineplus{-Nnp.}{Un noir va aller prendre sa place définitive à droite.}
+			\item  \gamelineplus{-np.}{Un noir va aller prendre sa place définitive à droite.}
 
 			\medskip
-			\item  \gamelineplus{=nvbu}{Nous reconnaissons à gauche la sous-configuration \config{kN.1B}.}  
+			\item  \gamelineplus{=vbu}{Nous reconnaissons à gauche la sous-configuration \config{kN.1B}.}  
 		\end{mvts}
 	
 		\noindent

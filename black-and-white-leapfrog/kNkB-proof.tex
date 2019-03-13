@@ -53,8 +53,8 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 
 
 \begin{proof}
-	Pour $j \in \NNs$, notons $\probaset*{P}{j}$ la propriété \emph{\og $\forall m \in \NN$, $\forall k \in \NN$ tel que $0 \leq k \leq j$ , soit (1) est vrai, soit (2) est vrai \fg}.
-	Prouvons $\probaset*{P}{j}$ par récurrence sur $j \in \NNs$.
+	Pour $j \in \NN$, notons $\probaset*{P}{j}$ la propriété \emph{\og $\forall m \in \NN$, $\forall k \in \NN$ tel que $0 \leq k \leq j$ , soit (1) est vrai, soit (2) est vrai \fg}.
+	Prouvons $\probaset*{P}{j}$ par récurrence sur $j \in \NN$.
 	
 	\begin{itemize}[label=\small\textbullet]
 		\item \textbf{Cas de base :} pour la suite nous devons à la fois prouver $\probaset*{P}{0}$ et $\probaset*{P}{1}$ .
@@ -74,7 +74,7 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 	\end{mvts}
 
 
-		\item \textbf{Hérédité :} supposons que $\probaset*{P}{j}$ soit vérifiée avec $j \geq 1$. Nous devons en déduire que $\probaset*{P}{j+1}$ l'est aussi.
+		\item \textbf{Hérédité :} supposons que $\probaset*{P}{j}$ avec en plus $j \geq 1$. On peut faire ceci car si $j = 0$ alors $j + 1 = 1$ donne un cas qui a déjà été traité. Nous devons alors déduire $\probaset*{P}{j+1}$ de $\probaset*{P}{j}$.
 		
 		\medskip
 		
@@ -110,7 +110,7 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 		\end{mvts}
 			
 		\noindent
-		La dernière configuration étant du type \config{(j-1)N(m+2)NB.(j-1)B} , nous pouvons de nouveau arriver comme attendu à \config{.(j+1)NB} ou \config{(j+1)NB.} suivant la parité de $(j+1)$.
+		La dernière configuration étant du type \config{(j-1)N(m+2)NB.(j-1)B} , nous pouvons de nouveau arriver à \config{.(j+1+m)NB} ou \config{(j+1+m)NB.} suivant la parité de $(j+1)$.
 	\end{itemize}
 \end{proof}
 
