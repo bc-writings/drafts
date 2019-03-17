@@ -1,0 +1,65 @@
+Voici des exemples de représentations toujours sur 8 bits et de type little-endian où la case rouge indiquera toujours un bit de signe.
+
+\medskip
+
+\binaryplus{Z1111000}{$120 = 64 + 32 + 16 + 8 = \fbox{$0 \times \left( -2^7 \right)$} + 2^6 + 2^5 + 2^4 + 2^3$}
+
+\medskip
+
+\binaryplus{U0001000}{$- 120 = -128 + 8 = \fbox{$1 \times \left( -2^7 \right)$} + 2^3$}
+
+\medskip
+
+\binaryplus{U0000000}{$- 128 = \fbox{$1 \times \left( -2^7 \right)$} + 0$}
+
+\medskip
+
+Avec 8 bits on peut représenter les naturels de $-2^7 = -128$ à $1 + 2 + 2^2 + \cdots + 2^6 = 2^7 - 1 = 127$.
+
+\medskip
+
+Ce choix permet d'effectuer des additions relatives toujours sous forme d'addition bit à bit, et donc par conséquent de faire aussi des soustractions via des additions bit à bit. Voici quelques exemples sans dépassement de capacité.
+\begin{itemize}[label=\small\textbullet]
+	\medskip\item Addition de deux positifs.
+
+		  \smallskip
+		  
+		  \noindent \phantom{$+$} \binaryplus{Z1010100}{$84 = 64 + 16 + 4$}
+	
+		  \noindent          $+$  \binaryplus{Z0010001}{$17 = 16 + 1$}
+	
+		  \noindent          $=$  \binaryplus{Z1100101}{$101 = 64 + 32 + 4 + 1$}
+
+
+	\medskip\item Addition de deux négatifs \emph{(la retenue finale hors capacité est ignorée)}.
+
+		  \smallskip
+		  
+		  \noindent \phantom{$+$} \binaryplus{U0101100}{$-84 = \fbox{$-128$} + 44 = \fbox{$-128$} + 32 + 8 + 4$}
+	
+		  \noindent          $+$  \binaryplus{U1101111}{$-17 = \fbox{$-128$} + 111 = \fbox{$-128$} + 64 + 32 + 8 + 4 + 2 + 1$}
+	
+		  \noindent          $=$  \binaryplus{U0011011}{$-101 = \fbox{$-128$} + 27 = \fbox{$-128$} + 16 + 8 + 2 + 1$}
+
+
+	\medskip\item Addition de deux entiers de signes différents.
+
+		  \smallskip
+		  
+		  \noindent \phantom{$+$} \binaryplus{Z1010100}{$84 = 64 + 16 + 4$}
+	
+		  \noindent          $+$  \binaryplus{U0011011}{$-101 = \fbox{$-128$} + 27 = 16 + 8 + 2 + 1$}
+	
+		  \noindent          $=$  \binaryplus{U1101111}{$-17 = \fbox{$-128$} + 111 = -128 + 64 + 32 + 8 + 4 + 2 + 1$}
+
+
+	\medskip\item Autre addition de deux entiers de signes différents \emph{(la retenue finale hors capacité est ignorée)}.
+
+		  \smallskip
+		  
+		  \noindent \phantom{$+$} \binaryplus{Z1010100}{$84 = 64 + 16 + 4$}
+	
+		  \noindent          $+$  \binaryplus{U1000011}{$-61 = \fbox{$-128$} + 67 = 64 + 2 + 1$}
+	
+		  \noindent          $=$  \binaryplus{Z0010111}{$23 = 16 + 4 + 2 + 1$}
+\end{itemize}

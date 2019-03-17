@@ -1,0 +1,23 @@
+Lorsque l'on calcule $2n$ le double d'un naturel non signé $n$, il suffit de retirer son bit de poids fort tout en ajoutant un zéro comme nouveau bit de poids faible. Voici un exemple sans dépassement de capacité.
+
+
+\medskip
+
+\binaryplus{00010111}{$n_0 = 16 + 4 + 2 + 1 = 23$}
+
+\medskip
+
+\binaryplus{0010111z}{$n_1 = 2 n_0 = 46$}
+
+\medskip
+
+\binaryplus{010111zz}{$n_2 = 2 n_1 = 92$}
+
+\medskip
+
+\binaryplus{10111zzz}{$n_3 = 2 n_2 = 184$}
+
+\medskip
+
+
+Chaque étape correspond à un décalage vers la gauche tout en complétant par un zéro à droite.

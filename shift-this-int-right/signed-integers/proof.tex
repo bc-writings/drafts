@@ -1,0 +1,174 @@
+Revenons à nos entiers signés écrits sur $8$ bits. Reprenons le calcul de $84 - 101 = -17$ en nous inspirant de ce qui a été vu dans la section précédente avec la base $10$. Ici $\bullet$ indique une ligne où a été fait le calcul d'un complément à $1$ plus $1$.
+
+\medskip
+
+\begin{center}
+\begin{tabular}{ll}
+	    & \!\!\binary{Z1010100}  	\\
+	$-$ & \!\!\binary{Z1100101} 	\\[.8ex]
+	\hline
+	\hline 							\\[-2ex]
+	    & \!\!\binary{Z1010100} 	\\
+	$+$ & \!\!\binary{o0011011} 	\\[.8ex]
+	\hline \\[-2ex]
+	$=$ & \!\!\binary{Z1101111} 	\\[.8ex]
+	\hline
+	\hline 							\\[-2ex]
+	$-$ & \!\!\binary{o0010001} 	\\
+\end{tabular}
+\end{center}
+
+\medskip
+
+Tout s'éclaire ! Reprenons le cas de $84 - 61 = 23$ où l'on avait une retenue à ignorer.
+
+\medskip
+
+\begin{center}
+\begin{tabular}{ll}
+	    & \!\!\binary{Z1010100}  	\\
+	$-$ & \!\!\binary{Z0111101} 	\\[.8ex]
+	\hline
+	\hline 							\\[-2ex]
+	    & \!\!\binary{Z1010100} 	\\
+	$+$ & \!\!\binary{o1000011} 	\\[.8ex]
+	\hline \\[-2ex]
+	$=$ & \!\!\binary{U0010111} 	\\[.8ex]
+	\hline
+	\hline 							\\[-2ex]
+	$+$ & \!\!\binary{Z0010111} 	\\
+\end{tabular}
+\end{center}
+
+\medskip
+
+Avec le nouvel éclairage, nous notons qu'en fait les bits rouges ne servent qu'à indiquer s'il faut ou non effectuer un complément à $1$ plus $1$ en changeant de signe.
+Avec la façon de stocker les entiers signés, nous avons alors les correspondances suivantes où les entiers additionnés $a$ et $b$ sont dans $\intervalC{-128}{127}$ et leur somme aussi, ce qui revient à ne considérer que les cas de non dépassement de capacité.
+Ci-après, \binary{*} et les cases sur fond gris indiquent l'utilisation d'un complément à $1$ plus $1$ que nous avions noté \binary{o} ci-dessus, et le symbole $\sim$ est pour le calcul de la somme sans le bit de signe qui lui entre en jeu dans la ligne avec le signe $=$ .
+\begin{multicols}{4}
+    \begin{center}
+	\begin{tabular}{ll}
+	    & \!\!\binary{Z-}  		\\
+	$-$ & \!\!\binary{Z-} 		\\[.8ex]
+	\hline
+	\hline 						\\[-2ex]
+	    & \!\!\binary{Z-} 		\\
+	$+$ & \!\!\binary{*+} 		\\[.8ex]
+	\hline \\[-2ex]
+	$\sim$ & \!\!\binary{Z-} 	\\[.8ex]
+	\hline
+	\hline 						\\[-2ex]
+	$=$ & \!\!\binary{U-} 		\\
+	\end{tabular}
+	
+	\medskip\itshape\footnotesize
+	
+	Soustraction 1
+	
+	de deux naturels
+	\end{center}
+
+
+	\null\vfill
+	\columnbreak
+	
+	
+	\begin{center}
+	\begin{tabular}{ll}
+	    & \!\!\binary{Z-}  		\\
+	$-$ & \!\!\binary{Z-} 		\\[.8ex]
+	\hline
+	\hline 						\\[-2ex]
+	    & \!\!\binary{Z-} 		\\
+	$+$ & \!\!\binary{*+} 		\\[.8ex]
+	\hline \\[-2ex]
+	$\sim$ & \!\!\binary{U-} 	\\[.8ex]
+	\hline
+	\hline 						\\[-2ex]
+	$=$ & \!\!\binary{Z-} 		\\
+	\end{tabular}
+	
+	\medskip\itshape\footnotesize
+	
+	Soustraction 2
+	
+	de deux naturels
+	\end{center}
+
+
+	\null\vfill
+	\columnbreak
+	
+	
+	\begin{center}
+	\begin{tabular}{ll}
+	$-$ & \!\!\binary{Z-}  		\\
+	$-$ & \!\!\binary{Z-} 		\\[.8ex]
+	\hline
+	\hline 						\\[-2ex]
+	    & \!\!\binary{*+} 		\\
+	$+$ & \!\!\binary{*+} 		\\[.8ex]
+	\hline \\[-2ex]
+	$\sim$ & \!\!\binary{Z-} 	\\[.8ex]
+	\hline
+	\hline 						\\[-2ex]
+	$=$ & \!\!\binary{Z-} 		\\
+	\end{tabular}
+	
+	\medskip\itshape\footnotesize
+	
+	Addition 1 de
+	
+	deux relatifs négatifs
+	\end{center}
+
+
+	\null\vfill
+	\columnbreak
+	
+	
+	\begin{center}
+	\begin{tabular}{ll}
+	$-$ & \!\!\binary{Z-}  		\\
+	$-$ & \!\!\binary{Z-} 		\\[.8ex]
+	\hline
+	\hline 						\\[-2ex]
+	    & \!\!\binary{*+} 		\\
+	$+$ & \!\!\binary{*+} 		\\[.8ex]
+	\hline \\[-2ex]
+	$\sim$ & \!\!\binary{U-} 	\\[.8ex]
+	\hline
+	\hline 						\\[-2ex]
+	$=$ & \!\!\binary{U-} 		\\
+	\end{tabular}
+	
+	\medskip\itshape\footnotesize
+	
+	Addition 2 de
+	
+	deux relatifs négatifs
+	\end{center}
+
+
+	\null\vfill
+\end{multicols}
+
+\vspace{-1.5em}
+
+Les soustractions et l'addition 2 ne posent aucun souci.
+Par contre l'addition 1 est problématique avec son résultat positif. 
+En fait cette addition contredit notre hypothèse de non dépassement de capacité. Nous allons voir pourquoi.
+
+\medskip
+
+Le cas de l'addition 1 correspond à $(a ; b) \in \intervalC{-128}{-1}^2$ tel que $(128 + a) + (128 + b) \in \intervalC{0}{127}$ soit $0 \leq 256 + a + b \leq 127$ \emph{i.e.} $-256 \leq a + b \leq -129$ ce qui correspond à un dépassement de capacité comme annoncé.
+ 
+\medskip
+
+Ceci achève de démontrer la validité des procédés d'addition et de soustraction d'entiers signés dans les cas de non dépassement de capacité.
+Notez que le cas évident d'une addition de deux naturels a été omis, et aussi que $-a + b = b - a = b + (-a)$ et le fait qu'un changement de signe n'est autre qu'un complément à $1$ plus $1$ permettent de compléter les cas non indiqués ci-dessus.
+
+\begin{exercise}
+	Étudiez plus généralement le cas d'une base $b \in \NN_{\geq 3}$ quelconque.
+\end{exercise}
+

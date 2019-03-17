@@ -1,0 +1,23 @@
+Lorsque l'on calcule $(n\, \ediv{} \, 2)$ le quotient entier par défaut d'un naturel non signé $n$ divisé par $2$, il suffit de retirer son bit de poids faible. Voici un exemple.
+
+
+\medskip
+
+\binaryplus{11010111}{$n_0 = 128 + 64 + 16 + 4 + 2 + 1 = 215$}
+
+\medskip
+
+\binaryplus{z1101011}{$n_1 = n_0 \, \ediv{} \, 2 = 107$}
+
+\medskip
+
+\binaryplus{zz110101}{$n_2 = n_1 \, \ediv{} \, 2 = 53$}
+
+\medskip
+
+\binaryplus{zzz11010}{$n_3 = n_2 \, \ediv{} \, 2 = 26$}
+
+\medskip
+
+
+Chaque étape correspond à un décalage vers la droite tout en complétant par un zéro à gauche.

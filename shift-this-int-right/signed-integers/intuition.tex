@@ -1,0 +1,165 @@
+Pour comprendre comment découvrir ce type de procédé, nous allons raisonner en base $10$ et imaginer que nous voulions calculer $189 - 32 = 157$ en utilisant uniquement des additions. Traditionnellement on fait comme suit.
+\begin{center}
+\begin{tabular}{cccc}
+	    & 1 & 8 & 9 \\
+	$-$ & 0 & 3 & 2 \\
+	\hline
+    $=$ & 1 & 5 & 7 \\
+\end{tabular}
+\end{center}
+Maintenant ajoutons $1000$ à $189 - 32$. Nous obtenons :
+\begin{center}
+\begin{tabular}{ccccc}
+	    & 0 & 1 & 8 & 9 \\
+	$-$ & 0 & 0 & 3 & 2 \\
+	$+$ & 1 & 0 & 0 & 0 \\
+	\hline
+    $=$ & 1 & 1 & 5 & 7 \\
+\end{tabular}
+\end{center}
+Comme le résultat initial tenait sur les trois chiffres de droite, l'ajout de $1000$ donne un nouveau résultat dont nous savons que les trois chiffres de droite sont ceux de $189 - 32$.
+D'autre part, $1000 + 189 - 32 = 189 + 968$ est une simple addition.
+
+\smallskip
+
+Notons aussi que $1000 - 32 = 968 = 967 + 1$ où $9$ , $6$ et $7$ sont les compléments à $9$ de $0$ , $3$ et $2$ respectivement.
+L'opération $1000 - 32$ se fait donc rapidement. De plus, la soustraction $1157 - 1000$ revient à ignorer le $1$ tout à droite. En résumé, nous avons fait comme suit où $\bullet$ indique une ligne où a été fait le calcul d'un complément à $9$ plus $1$ :
+
+\begin{center}
+\begin{tabular}{ccccc}
+	    & 0 & 1 & 8 & 9 \\
+	$-$ & 0 & 0 & 3 & 2 \\
+	\hline
+	\hline
+	    & 0 & 1 & 8 & 9 \\
+	$+$ & $\bullet$ & 9 & 6 & 8 \\
+	\hline
+    $=$ & 1 & 1 & 5 & 7 \\
+	\hline
+	\hline
+    $+$ &  & 1 & 5 & 7 \\
+\end{tabular}
+\end{center}
+
+\smallskip
+
+Très bien mais que se passe-t-il avec $32 - 189 = -157$ qui est négatif ? Testons pour voir.
+\begin{center}
+\begin{tabular}{ccccc}
+	    & 0 & 0 & 3 & 2 \\
+	$-$ & 0 & 1 & 8 & 9 \\
+	\hline
+	\hline
+	    & 0 & 0 & 3 & 2 \\
+	$+$ & $\bullet$ & 8 & 1 & 1 \\
+	\hline
+    $=$ & 0 & 8 & 4 & 3 \\
+\end{tabular}
+\end{center}
+Oups ! Nous ne voyons pas directement $157$. C'est normal puisque $843 - 1000 = -157$ n'a pas été effectué.
+Dans un tel cas, on note que le chiffre à gauche étant $0$, on effectue un complément à $9$ plus $1$ tout en ajoutant un signe moins afin d'obtenir le résultat final.
+En résumé, nous procédons comme suit. 
+\begin{center}
+\begin{tabular}{ccccc}
+	    & 0 & 0 & 3 & 2 \\
+	$-$ & 0 & 1 & 8 & 9 \\
+	\hline
+	\hline
+	    & 0 & 0 & 3 & 2 \\
+	$+$ & $\bullet$ & 8 & 1 & 1 \\
+	\hline
+    $=$ & 0 & 8 & 4 & 3 \\
+	\hline
+	\hline
+	$-$ & $\bullet$ & 1 & 5 & 7 \\
+\end{tabular}
+\end{center}
+
+
+\smallskip
+
+Ne nous emballons pas trop vite car il reste un cas problématique que nous n'avons pas abordé.
+Examinons ce qu'il se passe avec $-32 - 189 = - 221$ ?
+\begin{center}
+\begin{tabular}{ccccc}
+	$-$ & 0 & 0 & 3 & 2 \\
+	$-$ & 0 & 1 & 8 & 9 \\
+	\hline
+	\hline
+	    & $\bullet$ & 9 & 6 & 8 \\
+	$+$ & $\bullet$ & 8 & 1 & 1 \\
+	\hline
+    $=$ & 1 & 7 & 7 & 9 \\
+\end{tabular}
+\end{center}
+
+Nous devons affiner notre règle car sinon ici nous aurions un résultat positif !
+En fait, il est facile de voir qu'il suffit de comparer le nombre de compléments à $9$ plus $1$ effectués, c'est à dire le nombre de $1000$ ajoutés, au chiffre tout à gauche qui sera $0$ ou $1$.
+Ici nous avons deux compléments et un chiffre $1$ ce qui nous demande d'appliquer $2 - 1 = 1$ complément au résultat final tout en mettant un signe moins.
+En résumé, nous avons :
+\begin{center}
+\begin{tabular}{ccccc}
+	$-$ & 0 & 0 & 3 & 2 \\
+	$-$ & 0 & 1 & 8 & 9 \\
+	\hline
+	\hline
+	    & $\bullet$ & 9 & 6 & 8 \\
+	$+$ & $\bullet$ & 8 & 1 & 1 \\
+	\hline
+    $=$ & 1 & 7 & 7 & 9 \\
+	\hline
+	\hline
+    $-$ & $\bullet$ & 2 & 2 & 1 \\
+\end{tabular}
+\end{center}
+
+
+\medskip
+
+
+Nous trouvons bien $- 32 - 189 = - 221$. Que c'est beau !
+Les deux cas suivants achèvent notre exploration expérimentale.
+\begin{multicols}{2}
+\begin{center}
+\begin{tabular}{ccccc}
+	    & 0 & 0 & 3 & 2 \\
+	$+$ & 0 & 1 & 8 & 9 \\
+	\hline
+	$=$ & 0 & 2 & 2 & 1 \\
+	\hline
+	\hline
+	$+$ &   & 2 & 2 & 1 \\
+\end{tabular}
+\end{center}
+
+\null\vfill
+
+\columnbreak
+
+\begin{center}
+\begin{tabular}{ccccc}
+	$-$ & 0 & 0 & 3 & 2 \\
+	$+$ & 0 & 1 & 8 & 9 \\
+	\hline
+	\hline
+	    & $\bullet$ & 9 & 6 & 8 \\
+	$+$ & 0 & 1 & 8 & 9 \\
+	\hline
+	$=$ & 1 & 1 & 5 & 7 \\
+	\hline
+	\hline
+	$+$ &   & 1 & 5 & 7 \\
+\end{tabular}
+\end{center}
+\end{multicols}
+
+
+\begin{exercise}
+	Dans la méthode ci-dessous, il existe des cas problématiques. Lesquels ?
+\end{exercise}
+
+
+\begin{exercise}
+	En laissant les cas problématiques de côté, démontrer le caractère général de la méthode que nous avons juste exposée via quelques exemples.
+\end{exercise}
+

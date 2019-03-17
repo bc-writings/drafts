@@ -28,16 +28,19 @@
     
 \newtheorem{fact}{Fait}%[section]
 
+
 \newtheorem{definition}{Définition}%[section]
 \newtheorem{theorem}{Théorème}%[section]
 \newtheorem{example}{Exemple}%[section]
+\newtheorem{exercise}{Exercice}%[section]
 \newtheorem{remark}{Remarque}%[section]
 \newtheorem*{notations}{Notations}
 
 \setlength\parindent{0pt}
 
 
-\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+\DeclareMathMacro{\ediv}{\operatorname{div}}
+
 
 \newcommand\centerit[1]{%%
 	\smallskip
@@ -48,32 +51,39 @@
 }
 
 
-\newcommand\sheepnb[1]{mouton no.#1}
-
-\newcommand\move[1]{\sheepnb{#1} va avancer}
-\newcommand\lmove[1]{\move{#1} vers la gauche}
-\newcommand\rmove[1]{\move{#1} vers la droite}
-
-\newcommand\jump[1]{\sheepnb{#1} va sauter}
-\newcommand\ljump[1]{\jump{#1} vers la gauche}
-\newcommand\rjump[1]{\jump{#1} vers la droite}
-
-
 
 % Source pour le \@tfor :
 % 	* https://tex.stackexchange.com/a/253205/6880
 \makeatletter
+	\newcommand\equality{\@ifstar{\@equality@star@}{\@equality@no@star@}}
+
+	\newcommand\@equality@star@[1]{
+		\smallskip
+	
+		$=$ {} \qquad  $\leftarrow$ #1
+	
+		\smallskip
+	}
+
+	\newcommand\@equality@no@star@{
+		\smallskip
+	
+		$=$
+
+		\smallskip
+	}
+
 % Nothing special for the cell...	
 	\newcommand\elasticbox[1]{%
 		\fcolorbox{black}{white}{\normalfont #1}%
 	}
 
 	\newcommand\fixedboxcolored[3]{%
-		\fcolorbox{#1}{#2}{\makebox[1em]{\normalfont #3}}%
+		\fcolorbox{#1}{#2}{\makebox[1em]{\normalfont\vphantom{?}#3}}%
 	}
 
 	\newcommand\fixedbox[1]{%
-		\fixedboxcolored{black}{white}{\makebox[1em]{\normalfont #1}}%
+		\fixedboxcolored{black}{white}{\makebox[1em]{\normalfont\vphantom{?}#1}}%
 	}
 
 % ... will move
@@ -95,70 +105,70 @@
 	}
 
 % Let's go !
-	\newcommand\@empty@content{\phantom{N}}
+	\newcommand\onefortwocomplemen{\fixedboxcolored{black}{green!15}{\bfseries 1}}
+	\newcommand\twocomplement{\fixedboxwill{$\bullet$}}
+
+	\newcommand\@empty@content{\phantom{?}}
 	\newcommand\emptycell{\fixedbox{\@empty@content}}
-	\newcommand\white{\fixedbox{\bfseries B}}
-	\newcommand\black{\fixedbox{\bfseries N}}
+	\newcommand\one{\fixedbox{\bfseries 1}}
+	\newcommand\zero{\fixedbox{\bfseries 0}}
 	
-	\newcommand\@ellipsis@{\,\,\vphantom{N}$\cdots$\,\,}
+	\newcommand\@ellipsis@{\,\,\vphantom{?}$\cdots$\,\,}
 	\newcommand\myellipsis{\elasticbox{\@ellipsis@}}
 
 % ... will move
 	\newcommand\emptycellwill{\fixedboxwill{\@empty@content}}
-	\newcommand\whitewill{\fixedboxwill{\bfseries B}}
-	\newcommand\blackwill{\fixedboxwill{\bfseries N}}
+	\newcommand\onewill{\fixedboxwill{\bfseries 1}}
+	\newcommand\zerowill{\fixedboxwill{\bfseries 0}}
 	\newcommand\myellipsiswill{\elasticboxwill{\@ellipsis@}}
-
+	
 % ... has moved
 	\newcommand\emptycellhas{\fixedboxhas{\@empty@content}}
-	\newcommand\whitehas{\fixedboxhas{\bfseries B}}
-	\newcommand\blackhas{\fixedboxhas{\bfseries N}}
+	\newcommand\onehas{\fixedboxhas{\bfseries 1}}
+	\newcommand\zerohas{\fixedboxhas{\bfseries 0}}
 	\newcommand\myellipsishas{\elasticboxhas{\@ellipsis@}}
 
-	\newcommand\config[1]{%
-		\texttt{%
-			\upshape%
-			\@tfor\next:=#1\do{%
-				\if\next .\kern.15em{\tiny\textbullet}\kern.15em\else%
-					\next{}%
-				\fi%
-			}%
-		}%
-	}
 
-% B : blanc normal
-% N : noir normal
+% 0 : 0 normal
+% 1 : 1 normal
 % . : vide normal
 % - : ellipsis
 %
-% b : blanc qui va bouger
-% n : noir qui va bouger
+% Z : 0 qui va bouger
+% U : 1 qui va bouger
 % v : vide qui va bouger
 % = : ellipsis qui va bouger
 %
-% p : blanc qui vient de bouger
-% u : noir qui vient de bouger
+% z : 0 qui vient de bouger
+% u : 1 qui vient de bouger
 % a : vide qui vient de bouger
 % + : ellipsis
 %
+%
+% * : 1 pour complément à 2 + 1
+% o : complément à 2 + 1
+%
 % < Ouvre un cadre de surlignement de plusieurs cellules
 % < Ferme un cadre de surlignement de plusieurs cellules
-	\newcommand\gameline[1]{%
+	\newcommand\binary[1]{%
 		\@tfor\next:=#1\do{%
-			\if\next B\white{}\else%
-		    \if\next N\black{}\else%
+			\if\next 0\zero{}\else%
+		    \if\next 1\one{}\else%
 			\if\next .\emptycell{}\else%
 			\if\next -\myellipsis{}\else%
 			%
-			\if\next b\whitewill{}\else%
-		    \if\next n\blackwill{}\else%
+			\if\next Z\zerowill{}\else%
+		    \if\next U\onewill{}\else%
 		    \if\next v\emptycellwill{}\else%
 			\if\next =\myellipsiswill{}\else%
 		    %
-			\if\next p\whitehas{}\else%
-		    \if\next u\blackhas{}\else%
+			\if\next z\zerohas{}\else%
+		    \if\next u\onehas{}\else%
 		    \if\next a\emptycellhas{}\else%
 			\if\next +\myellipsishas{}\else%
+			%
+			\if\next *\onefortwocomplemen{}\else%
+			\if\next o\twocomplement{}\else%
 		    %
 \quad {\bfseries [[ illegal character : \, {\normalfont \next{}} \, ]]} \quad % BUG
 			\fi%  :
@@ -175,6 +185,9 @@
 			\fi%  .
 			\fi%  N
 			\fi%  B
+			%
+			\fi%  *
+			\fi%  o
 		}%
 	}
 	
@@ -186,15 +199,15 @@
 	}
 	
 
-	\newcommand\gamelineplus{\@ifstar{\@gamelineplus@star@}{\@gamelineplus@no@star@}}
+	\newcommand\binaryplus{\@ifstar{\@binaryplus@star@}{\@binaryplus@no@star@}}
 
-	\newcommand\@gamelineplus@no@star@[2]{
-		\gameline{#1}
+	\newcommand\@binaryplus@no@star@[2]{
+		\binary{#1}
 		\setbox0=\hbox{#2\unskip}\ifdim\wd0=0pt \else {\small \ $\leftarrow$ #2}\fi
 	}
 
-	\newcommand\@gamelineplus@star@[2]{
-		\@gamelineplus@no@star@{#1}{#2}
+	\newcommand\@binaryplus@star@[2]{
+		\@binaryplus@no@star@{#1}{#2}
 		
 		\StrLen{#1}[\@length@]
 		\noindent  
@@ -204,38 +217,15 @@
 	\newcommand\listbox[1]{%
 		\@tfor\next:=#1\do{\fixedbox{\next}}%
 	}
-	
-	
-	\newcommand\iterconfig[1]{
-		\foreach \k/\p in {#1}{
-			\subsection{Configuration \texttt{\k N\kern.15em{\tiny\textbullet}\kern.15em\p B}}   
-		 	\input{black-and-white-leapfrog/\k N\p B}
-		}
-	}
 \makeatother
 
-
-\newcommand\step[1]{\textbf{\texttt{[E#1]}}}
-
-\newenvironment{mvts}[1][start=1]{
-	\normalfont
-	\begin{enumerate}[#1, left = 0pt .. 3em, label = \step{\arabic*}]
-}{
-	\end{enumerate}
-}
-
-\newcommand\factwin[2]{
-	\begin{fact}
-	La configuration \config{#1N.#2B} est résoluble.
-	\end{fact}
-}
 
  
 \begin{document}
 
-\title{BROUILLON - Un saute-mouton bicolore pour gloutons}
+\title{BROUILLON - Quels décalages entre les entiers signés et les non signés ?}
 \author{Christophe BAL}
-\date{13 Mars 2019}
+\date{17 Mars 2019}
 
 \maketitle
 
@@ -270,75 +260,67 @@
 % ----------------- %
 
 
-\section{Une devinette qui défrise}
+\section{Entiers non signés}
 
-\input{black-and-white-leapfrog/presentation}
-
-
-% ----------------- %
-
-
-\section{Vocabulaire et notations}
-
-\input{black-and-white-leapfrog/notations}
+\input{shift-this-int-right/unsigned-integers}
 
 
 % ----------------- %
 
 
-\section{Quelques configurations particulières}
+\section{Entiers signés}
 
-Afin de nous construire une petite intuition pour la résolution, ou non, de la devinette des moutons, nous allons étudier quelques configurations simples.
+\subsection{Comment ça marche ?}
 
-\iterconfig{1/1, 2/1, 2/2, 3/2, k/1}
-
-
-% ----------------- %
+\input{shift-this-int-right/signed-integers/recipe}
 
 
-\section{Deux principes de symétrie}
+\subsection{Qu'est-ce qui motive ces choix ?}
 
-\input{black-and-white-leapfrog/symmetry}
-
-
-% ----------------- %
+\input{shift-this-int-right/signed-integers/intuition}
 
 
-\section{Résolution de la configuration \texttt{kN$\cdot$kB}}
+\subsection{Pourquoi ça marche ?}
 
-\input{black-and-white-leapfrog/kNkB-proof}
-
+\input{shift-this-int-right/signed-integers/proof}
 
 
 % ----------------- %
 
 
-\section{Résolution de la configuration \texttt{kN$\cdot$pB}}
+\section{Division par $2$ et décalage à droite}
 
-\input{black-and-white-leapfrog/kNpB-proof}
+\subsection{Entiers non signés}
+
+\input{shift-this-int-right/shift-right/signed}
+
+
+\subsection{Entiers signés}
+
+\input{shift-this-int-right/shift-right/unsigned}
+
+
+\subsection{Synthèse}
+
+\input{shift-this-int-right/shift-right/synthesis}
 
 
 % ----------------- %
 
-%
-%\section{Un algorithme à utiliser et étudier}
-%
-%\input{black-and-white-leapfrog/algorithm}
-%
 
-%% ----------------- %
-%
-%
-%\section{Une preuve astucieuse ?}
-%
-%\input{black-and-white-leapfrog/trickyproof}
-%
-%
-%% ----------------- %
-%
-%
-%\section{Unicité ?}
-%
-%\input{black-and-white-leapfrog/uniqueness}
+\section{Multiplication par $2$ et décalage à gauche}
+
+\subsection{Entiers non signés}
+
+\input{shift-this-int-right/shift-left/signed}
+
+
+\subsection{Entiers signés}
+\input{shift-this-int-right/shift-left/unsigned}
+
+
+\subsection{Synthèse}
+\input{shift-this-int-right/shift-left/synthesis}
+
 
 \end{document}
