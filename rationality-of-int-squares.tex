@@ -1,0 +1,134 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{lymath}
+
+
+\newtheorem{fact}{Fait}[section]
+\newtheorem{example}{Exemple}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem*{proof*}{Preuve}
+
+\npthousandsep{.}
+\setlength\parindent{0pt}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand{\logicneg}{\text{\normalfont non \!}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+	 
+	 
+	 
+\begin{document}
+
+\title{BROUILLON - Écriture décimale, racine carrée de naturels et irrationalité}
+\author{Christophe BAL}
+\date{27 Mars 2019 - 30 Mars 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+
+\section{$\sqrt2$ n'est pas rationnel}
+
+\input{rationality-of-int-squares/sqrt-of-2}
+
+
+
+\section{$\sqrt3$ n'est pas rationnel}
+
+\input{rationality-of-int-squares/sqrt-of-3}
+
+
+\section{$\sqrt5$ n'est pas rationnel -- Besoin d'une nouvelle preuve}
+
+\input{rationality-of-int-squares/sqrt-of-5}
+
+
+
+\section{$\sqrt7$ et $\sqrt{11}$ ne sont pas rationnels}
+
+\input{rationality-of-int-squares/sqrt-of-7}
+
+\input{rationality-of-int-squares/sqrt-of-11}
+
+
+
+\section{Prenons un peu de recul} \label{general-case}
+
+\subsection{Un grand classique}
+
+\input{rationality-of-int-squares/general/sqrt-of-prime}
+
+
+\subsection{Expérimentations}
+
+\input{rationality-of-int-squares/general/computing}
+
+
+%\subsection{L'arithmétique modulaire}
+%
+%\input{rationality-of-int-squares/general/modular}
+
+\end{document}

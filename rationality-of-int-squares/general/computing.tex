@@ -1,0 +1,41 @@
+A ce stade, il est temps d'expérimenter via un petit code nommé \verb+last-digits-big-tests.py+ disponible sur \url{https://github.com/bc-writing/drafts}.
+Ce petit programme, absolument pas optimisé, fonctionne comme suit.
+
+\begin{itemize}[label=\small\textbullet]
+	\item \verb+NMIN+ et \verb+NMAX+ définissent l'intervalle où seront pris les nombres premiers.
+
+	\item \verb+MAX_POWER+ donne le nombre maximal de chiffres à droite que l'on va tester.
+\end{itemize}
+
+Voici quelques résultats obtenus où pour \verb+MAX_POWER = 7+ il a fallu être très, très patient.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline
+	\verb+NMIN+ & \verb+NMAX+ & \verb+MAX_POWER+
+    & Message affiché
+	\\
+	\hline
+    \verb+1+ & \verb+500+ & \verb+2+
+    & \verb+19 tests failed : 29 , 41 , 61 , 89 , 101 , 109 , ...  +
+	\\
+	\hline
+    \verb+1+ & \verb+500+ & \verb+3+
+    & \verb+ 7 tests failed : 41 , 89 , 241 , 281 , 401 , 409 , 449+
+	\\
+	\hline
+    \verb+1+ & \verb+500+ & \verb+4+
+    & \verb+ 7 tests failed : 41 , 89 , 241 , 281 , 401 , 409 , 449+
+	\\
+	\hline
+    \verb+1+ & \verb+500+ & \verb+7+
+    & \verb+ 7 tests failed : 41 , 89 , 241 , 281 , 401 , 409 , 449+
+	\\
+	\hline
+\end{tabular}
+\end{center}
+
+
+\medskip
+
+Nous perdons là tout espoir de généralisation mais du coup un autre problème s'offre à nous à savoir : \emph{\og Peut-on caractériser les mauvais candidats à notre analayse via les derniers chiffres décimaux ? \fg}.

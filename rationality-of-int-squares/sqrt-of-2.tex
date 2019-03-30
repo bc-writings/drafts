@@ -1,0 +1,99 @@
+\begin{fact} \label{sqrt-2-not-in-Q}
+	$\sqrt2 \not\in \QQ$
+\end{fact}
+
+\begin{proof}
+	Nous allons donner une preuve élémentaire de ce fait inspiré de la preuve n\textdegree{}12 proposée dans cette page : \url{https://www.cut-the-knot.org/proofs/sq_root.shtml} 
+	\footnote{
+		Page disponible le 30 mars 2019.
+	}.
+	
+	\medskip
+	
+	Regardons ce qu'il se passe si nous supposons l'existence de $(r ; s) \in \QQp \times \QQsp$ tel que $\sqrt2 = \dfrac{r}{s}$. Nous pouvons supposer que $\pgcd(r ; s) = 1$ \emph{(nous prenons la fraction la plus simple possible)}.
+	Dès lors nous raisonnons comme suit.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\item $\sqrt2 = \dfrac{r}{s} \, \Leftrightarrow \, 2 s^2 = r^2$ car $r > 0$ et $s > 0$.
+
+
+		\item Intéressons nous juste aux chiffres des unités de $r^2$ et $2s^2$ en fonction de ceux de $r$ et $s$ respectivement. Les résultats ci-dessous viennent de $(10d + u)^2 = 100d^2 + 20du + u^2$ où $(d ; u) \in \NN^2$.
+		En effet, ceci démontre que le chiffre des unités de $(10d + u)^2$ est identique à celui de $u^2$ ce qui facilite notre travail
+		\footnote{
+			Pour ceux qui connaissent, on reconnait là les techniques de calculs modulo $10$.
+		}.
+		\begin{center}
+			\begin{tabular}{|r|c|c|c|c|c|c|c|c|c|c|}
+				\hline
+				Chiffre des unités de $r$
+				  & $0$  &  $1$  &  $2$  &  $3$  &  $4$  &  $5$  &  $6$  &  $7$  &  $8$  &  $9$
+				\\ \hline
+				\phantom{$2$}Chiffre des unités de $r^2$
+				  & $0$  &  $1$  &  $4$  &  $9$  &  $6$  &  $5$  &  $6$  &  $9$  &  $4$  &  $1$
+				\\ \hline
+			\end{tabular}
+
+			\medskip
+			
+			\begin{tabular}{|r|c|c|c|c|c|c|c|c|c|c|}
+				\hline
+				Chiffre des unités de $s$
+				  & $0$  &  $1$  &  $2$  &  $3$  &  $4$  &  $5$  &  $6$  &  $7$  &  $8$  &  $9$
+				\\ \hline
+				Chiffre des unités de $2s^2$
+				  & $0$  &  $2$  &  $8$  &  $8$  &  $2$  &  $0$  &  $2$  &  $8$  &  $8$  &  $2$
+				\\ \hline
+			\end{tabular}
+		\end{center}
+
+
+		\item Les résultas précédents montrent que $r^2$ et $2 s^2$ ne peuvent avoir que $0$ comme chiffre commun des unités.
+		Ceci n'est possible que si $r$ est un multiple de $10$ et $s$ un multiple de $5$ d'où $r$ et $s$ sont des multiples de $5$.
+		Or ceci contredit $\pgcd(r ; s) = 1$ 
+		et donc il n'est pas possible d'avoir $(r ; s) \in \QQp \times \QQsp$ tel que $\sqrt2 = \dfrac{r}{s}$.
+	\end{itemize}
+\end{proof}
+
+
+Au passage, nous avons une condition nécessaire pour qu'un naturel soit un carré parfait. Par exemple, $\numprint{1324535464654653524327}$ n'est pas un carré parfait. En effet, ce naturel se finit par $7$. Nous avons plus précisément le fait suivant.
+
+
+\begin{fact} \label{perfect-square-last-digit}
+	Un naturel $n \in \NN$ est un carré parfait s'il peut s'écrire $n = k^2$ avec $k \in \NN$.
+	
+	\medskip
+	
+	Si $n \in \NN$ est un carré parfait alors son chiffre des unités est forcément $0$ , $1$ , $4$ , $5$  , $6$ ou $9$ .
+\end{fact}
+
+
+\begin{remark}
+	Comment peut-on avoir l'idée de la preuve du fait \ref{sqrt-2-not-in-Q} ? 
+	On sait facilement caractériser les nombres pairs par leur dernier chiffre. Dès lors il semble naturel de tenter sa chance en analysant les chiffres des unités comme dans la preuve ci-dessus.
+	Ceci étant dit, nous allons voir dans la section suivante que la démonstration s'adapte sans souci au cas de l'irrationalité de $\sqrt3$ or le critère de divisibilité par $3$ ne fait pas du tout référence au chiffre des unités !
+	La section \ref{general-case} analyse pourquoi cette technique est une bonne candidate et comment on peut la généraliser.
+\end{remark}
+
+
+\begin{remark}
+	Une petite question de logique pour conclure cette section.
+	A-t-on fait une démonstration par l'absurde ? 
+	De \textbf{façon informelle}, lorsque l'on fait une démonstration, on part d'un ensemble $\probaset{H}$ de faits vrais
+	\footnote{
+		On parle d'hypothèses en logique.
+	}.
+	On déduit de $\probaset{H}$ d'autres faits vrais pour arriver à un fait que l'on veut démontrer.
+	
+	\smallskip
+	
+	Démontrer une proposition $A$ par l'absurde c'est supposer que $\logicneg A$ est un fait vrai pour en déduire quelque chose de faux
+	\footnote{
+		Que les logiciens m'excusent mais ce n'est pas le propos ici de parler du calcul des prédicats de la logique du 1\ier{} ordre, un sujet très passionnant !
+	}.
+	Notre proposition ici est
+	$\left[ \forall (r ; s) \in \QQ \times \QQs , \sqrt2 \neq \dfrac{r}{s} \right]$
+	dont la négation est 
+	$\left[ \exists (r ; s) \in \QQ \times \QQs , \sqrt2 = \dfrac{r}{s} \right]$.
+	Comme de cette hypothèse, nous sommes arrivé à quelque chose de faux, nous avons fait une démonstration par l'absurde.	
+\end{remark}
+

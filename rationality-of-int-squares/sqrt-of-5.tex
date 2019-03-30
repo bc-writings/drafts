@@ -1,0 +1,109 @@
+\begin{fact} \label{sqrt-5-not-in-Q}
+	$\sqrt5 \not\in \QQ$
+\end{fact}
+
+\begin{proof}
+	De nouveau, nous partons de $r^2 = 5s^2$ mais ici nous ne pouvons plus faire comme avant car nous avons les tableaux suivants qui nous disent que $r$ peut avoir n'importe quel chiffre des unités, ceci ne nous permettant pas d'avoir une contradiction.
+
+	\begin{center}
+		\begin{tabular}{|r|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			Chiffre des unités de $r$
+			  & $0$  &  $1$  &  $2$  &  $3$  &  $4$  &  $5$  &  $6$  &  $7$  &  $8$  &  $9$
+			\\ \hline
+			\phantom{$5$}Chiffre des unités de $r^2$
+			  & $0$  &  $1$  &  $4$  &  $9$  &  $6$  &  $5$  &  $6$  &  $9$  &  $4$  &  $1$
+			\\ \hline
+		\end{tabular}
+
+		\medskip
+
+		\begin{tabular}{|r|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			Chiffre des unités de $s$
+			  & $0$  &  $1$  &  $2$  &  $3$  &  $4$  &  $5$  &  $6$  &  $7$  &  $8$  &  $9$
+			\\ \hline
+			Chiffre des unités de $5s^2$
+			  & $0$  &  $5$  &  $0$  &  $5$  &  $0$  &  $5$  &  $0$  &  $5$  &  $0$  &  $5$
+			\\ \hline
+		\end{tabular}
+	\end{center}
+
+    \medskip
+
+    Tentons tout simplement notre chance avec les deux derniers chiffres décimaux et non juste le dernier.
+    À ce stade, nous allons utiliser un programme écrit en Python dont le code est le suivant
+    \footnote{
+    	Le fichier Python est disponible sur \url{https://github.com/bc-writing/drafts}.
+		Chercher le fichier \texttt{last-two-digits.py} .
+	}
+	où la fonction \verb+keep+ nous sera utile après pour analyser rapidement les résultats.
+
+	\begin{rawcode}
+N = 5
+
+def keep(i):
+    return True
+
+twolastdigits       = []
+twolastdigits_for_N = []
+
+for i in range(100):
+    square   = (i**2)%100
+    N_square = (N*square)%100
+
+    twolastdigits.append(square)
+    twolastdigits_for_N.append(N_square)
+
+common = set(twolastdigits).intersection(twolastdigits_for_N)
+
+
+print(f"N = {N}")
+print("r possibles :")
+
+for i in range(100):
+    if twolastdigits[i] in common and keep(i):
+        print(i, end = ", ")
+
+print()
+print("s possibles :")
+
+for i in range(100):
+    if twolastdigits_for_N[i] in common and keep(i):
+        print(i, end = ", ")
+
+print()
+	\end{rawcode}
+
+
+	\medskip
+
+	Une fois lancé dans un terminal, ce programme nous affiche :
+
+	\begin{rawcode}
+N = 5
+r possibles :
+0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95,
+s possibles :
+0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95,
+	\end{rawcode}
+
+	Nous constatons que $r$ et $s$ sont tous les deux multiples de $5$ ce qui établit une contradiction permettant de conclure.
+	Ceci est confirmé par le programme.
+	En effet, dans la fonction \verb+keep+, utilisons \verb+return i % 5 != 0+
+	à la place de \verb+return True+ afin de n'afficher que les non multiples de $5$.
+	On obtient alors la sortie suivante.
+
+	\begin{rawcode}
+N = 5
+r possibles :
+
+s possibles :
+
+	\end{rawcode}
+\end{proof}
+
+
+\begin{remark}
+	Notons que notre programme fournit bien une argumentation totalement rigoureuse car il travaille uniquement sur des valeurs naturelles exactes.
+\end{remark}
