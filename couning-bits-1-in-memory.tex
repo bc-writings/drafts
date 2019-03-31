@@ -1,0 +1,350 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{xstring}
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+\usepackage{pgffor}
+      
+\usepackage{lymath}
+
+    
+\newtheorem{fact}{Fait}%[section]
+\newtheorem*{fact*}{Fait}%[section]
+
+
+\newtheorem{definition}{Définition}%[section]
+\newtheorem{theorem}{Théorème}%[section]
+\newtheorem{example}{Exemple}%[section]
+\newtheorem{exercise}{Exercice}%[section]
+\newtheorem{remark}{Remarque}%[section]
+\newtheorem*{notations}{Notations}
+
+\setlength\parindent{0pt}
+
+
+\DeclareMathMacro{\ediv}{\operatorname{div}}
+
+
+\newcommand\centerit[1]{%%
+	\smallskip
+	
+	\begin{center}
+		#1
+	\end{center}
+}
+
+
+
+% Source pour le \@tfor :
+% 	* https://tex.stackexchange.com/a/253205/6880
+\makeatletter
+	\newcommand\equality{\@ifstar{\@equality@star@}{\@equality@no@star@}}
+
+	\newcommand\@equality@star@[1]{
+		\smallskip
+	
+		$=$ {} \qquad  $\leftarrow$ #1
+	
+		\smallskip
+	}
+
+	\newcommand\@equality@no@star@{
+		\smallskip
+	
+		$=$
+
+		\smallskip
+	}
+
+% Nothing special for the cell...	
+	\newcommand\elasticbox[1]{%
+		\fcolorbox{black}{white}{\normalfont #1}%
+	}
+
+	\newcommand\fixedboxcolored[3]{%
+		\fcolorbox{#1}{#2}{\makebox[1em]{\normalfont\vphantom{?}#3}}%
+	}
+
+	\newcommand\fixedbox[1]{%
+		\fixedboxcolored{black}{white}{\makebox[1em]{\normalfont\vphantom{?}#1}}%
+	}
+
+% ... will move
+	\newcommand\elasticboxwill[1]{%
+		\fcolorbox{black}{red!15}{\normalfont #1}%
+	}
+
+	\newcommand\fixedboxwill[1]{%
+		\fixedboxcolored{black}{red!15}{\normalfont #1}%
+	}
+
+% ... has moved
+	\newcommand\elasticboxhas[1]{%
+		\fcolorbox{black}{black!10}{\normalfont #1}%
+	}
+	
+	\newcommand\fixedboxhas[1]{%
+		\fixedboxcolored{black}{black!10}{\normalfont #1}%
+	}
+
+% Let's go !
+	\newcommand\onefortwocomplemen{\fixedboxcolored{black}{green!15}{\bfseries 1}}
+	\newcommand\twocomplement{\fixedboxwill{$\bullet$}}
+
+	\newcommand\@empty@content{\phantom{?}}
+	\newcommand\emptycell{\fixedbox{\@empty@content}}
+	\newcommand\one{\fixedbox{\bfseries 1}}
+	\newcommand\zero{\fixedbox{\bfseries 0}}
+	
+	\newcommand\@ellipsis@{\,\,\vphantom{?}$\cdots$\,\,}
+	\newcommand\myellipsis{\elasticbox{\@ellipsis@}}
+
+% ... will move
+	\newcommand\emptycellwill{\fixedboxwill{\@empty@content}}
+	\newcommand\onewill{\fixedboxwill{\bfseries 1}}
+	\newcommand\zerowill{\fixedboxwill{\bfseries 0}}
+	\newcommand\myellipsiswill{\elasticboxwill{\@ellipsis@}}
+	
+% ... has moved
+	\newcommand\emptycellhas{\fixedboxhas{\@empty@content}}
+	\newcommand\onehas{\fixedboxhas{\bfseries 1}}
+	\newcommand\zerohas{\fixedboxhas{\bfseries 0}}
+	\newcommand\myellipsishas{\elasticboxhas{\@ellipsis@}}
+
+
+% 0 : 0 normal
+% 1 : 1 normal
+% . : vide normal
+% - : ellipsis
+%
+% Z : 0 qui va bouger
+% U : 1 qui va bouger
+% v : vide qui va bouger
+% = : ellipsis qui va bouger
+%
+% z : 0 qui vient de bouger
+% u : 1 qui vient de bouger
+% a : vide qui vient de bouger
+% + : ellipsis
+%
+%
+% * : 1 pour complément à 2 + 1
+% o : complément à 2 + 1
+%
+% < Ouvre un cadre de surlignement de plusieurs cellules
+% < Ferme un cadre de surlignement de plusieurs cellules
+	\newcommand\binary[1]{%
+		\@tfor\next:=#1\do{%
+			\if\next 0\zero{}\else%
+		    \if\next 1\one{}\else%
+			\if\next .\emptycell{}\else%
+			\if\next -\myellipsis{}\else%
+			%
+			\if\next Z\zerowill{}\else%
+		    \if\next U\onewill{}\else%
+		    \if\next v\emptycellwill{}\else%
+			\if\next =\myellipsiswill{}\else%
+		    %
+			\if\next z\zerohas{}\else%
+		    \if\next u\onehas{}\else%
+		    \if\next a\emptycellhas{}\else%
+			\if\next +\myellipsishas{}\else%
+			%
+			\if\next *\onefortwocomplemen{}\else%
+			\if\next o\twocomplement{}\else%
+		    %
+\quad {\bfseries [[ illegal character : \, {\normalfont \next{}} \, ]]} \quad % BUG
+			\fi%  :
+			\fi%  a
+			\fi%  u
+			\fi%  p
+			%
+			\fi%  =
+			\fi%  v
+			\fi%  n
+			\fi%  b
+			%
+			\fi%  -
+			\fi%  .
+			\fi%  N
+			\fi%  B
+			%
+			\fi%  *
+			\fi%  o
+		}%
+	}
+	
+
+	\newcommand\autobox[1]{%
+      \foreach \i in {1, ..., #1} {%
+        \fixedbox{\i}%
+      }
+	}
+	
+
+	\newcommand\binaryplus{\@ifstar{\@binaryplus@star@}{\@binaryplus@no@star@}}
+
+	\newcommand\@binaryplus@no@star@[2]{
+		\binary{#1}
+		\setbox0=\hbox{#2\unskip}\ifdim\wd0=0pt \else {\small \ $\leftarrow$ #2}\fi
+	}
+
+	\newcommand\@binaryplus@star@[2]{
+		\@binaryplus@no@star@{#1}{#2}
+		
+		\StrLen{#1}[\@length@]
+		\noindent  
+		\autobox{\@length@}
+	}
+
+	\newcommand\listbox[1]{%
+		\@tfor\next:=#1\do{\fixedbox{\next}}%
+	}
+\makeatother
+
+
+ 
+\begin{document}
+
+\title{BROUILLON - Compter en place le nombre de bits non nuls d'une écriture binaire}
+\author{Christophe BAL}
+\date{31 Mars 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\bigskip
+
+
+En informatique, il existe une méthode astucieuse pour compter le nombre de \verb+1+ dans une écriture binaire.
+Expliquons comment faire avec l'écriture binaire \verb+1101.1001.0110.1111+ qui contient $16 = 2^4$ chiffres. Ci-dessous, toutes les opérations se font en base $2$. 
+\textbf{Notez bien que l'on note les résultats dans une écriture binaire  de taille 16 et c'est là la belle astuce du point de vue informatique.}
+
+\begin{itemize}[label=\small\textbullet]
+	\item On additionne les chiffres voisins puis on conserve le résultat sur deux chiffres.
+	
+	\begin{center}
+	\verb-[1+1 | 0+1 | 1+0 | 0+1 | 0+1 | 1+0 | 1+1 | 1+1]-
+
+	\verb-[10  | 01  | 01  | 01  | 01  | 01  | 10  | 10 ]-
+	\end{center}
+
+
+	\item On additionne les paires voisines puis on conserve le résultat sur quatre chiffres.
+	
+	\begin{center}
+	\verb-[10  +  01 | 01  +  01 | 01  +  01 | 10  +  10]-
+
+	\verb-[  0011    |   0010    |   0010    |   0100   ]-
+	\end{center}
+
+
+	\item On additionne les quadruplets voisins puis on conserve le résultat sur huit chiffres.
+
+	\begin{center}
+	\verb-[  0011    +   0010    |   0010    +   0100   ]-
+
+	\verb-[      00000101        |       00000110       ]-
+	\end{center}
+
+
+	\item On additionne les octuplets voisins puis on conserve le résultat sur seize chiffres et on s'arrête pour analyser le résultat.
+
+	\begin{center}
+	\verb-[      00000101        +       00000110       ]-
+
+	\verb-[              0000000000001011               ]-
+	\end{center}
+	
+	
+	\item Le dernier nombre a pour valeur décimale $11$ qui est exactement le nombre de \verb+1+ contenus dans \verb+1101.1001.0110.1111+.
+\end{itemize}
+
+
+
+
+Très joli ! Non ? Très bien ! Mais pourquoi, ou comment cela marche-t-il ? En fait c'est tout simple. Pour le voir reprenons les étapes en expliquant l'information qu'elles construisent.
+
+\begin{itemize}[label=\small\textbullet]
+	\item La 1\iere étape redonnée ci-dessous compte le nombre de \verb+1+ par paire de voisins. 
+	Il est important de noter qu'il n'y a pas de perte d'information car au maximum il y aura deux \verb+1+, or deux s'écrit \verb+10+ en base $2$. 
+
+	\begin{center}
+	\verb-[1+1 | 0+1 | 1+0 | 0+1 | 0+1 | 1+0 | 1+1 | 1+1]-
+
+	\verb-[10  | 01  | 01  | 01  | 01  | 01  | 10  | 10 ]-
+	\end{center}
+
+
+	\item La 2\ieme étape redonnée ci-dessous compte le nombre de \verb+1+ par quadruplets de voisins sans perdre d'information car au maximum il y aura quatre \verb+1+, or $4$ s'écrit \verb+0100+ en base $2$. 
+
+	\begin{center}
+	\verb-[10  +  01 | 01  +  01 | 01  +  01 | 10  +  10]-
+
+	\verb-[  0011    |   0010    |   0010    |   0100   ]-
+	\end{center}
+
+
+	\item La 3\ieme étape redonnée ci-dessous compte le nombre de \verb+1+ par octuplets de voisins sans perdre d'information. 
+
+	\begin{center}
+	\verb-[  0011    +   0010    |   0010    +   0100   ]-
+
+	\verb-[      00000101        |       00000110       ]-
+	\end{center}
+
+
+	\item La 4\ieme étape redonnée ci-dessous compte le nombre de \verb+1+ pour $16$ voisins, c'est à dire tous les chiffres, sans perdre d'information. Simple mais efficace !
+
+	\begin{center}
+	\verb-[      00000101        +       00000110       ]-
+
+	\verb-[              0000000000001011               ]-
+	\end{center}
+\end{itemize}
+
+Vous noterez le caractère général des explications précédentes.
+Ainsi il est immédiat d'étendre la méthode à toute écriture binaire contenant $2^p$ chiffres où $p\in\NNs$.
+
+\end{document}

@@ -1,11 +1,12 @@
 from sympy import sieve
 
-NMIN = 1
-NMAX = 500
+NMIN = 40
+NMAX = 42
 
-MAX_POWER = 7
+MAX_POWER = 2
 
-VERBATIM = False
+VERBOSE = False
+VERBOSE = True
 
 
 def build_datas(tenpower, N):
@@ -81,6 +82,19 @@ for p in range(1, MAX_POWER + 1):
 
         else:
             i += 1
+
+            if VERBOSE:
+                print(
+f"""
+--- {N} & 10**{p} ---
+
+lastdigits_up:
+{lastdigits_up}
+
+lastdigits_down:
+{lastdigits_down}
+"""
+                )
 
 
 primes_to_test = [str(N) for N in primes_to_test]
