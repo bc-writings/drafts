@@ -36,12 +36,6 @@
 
 
 
-
-
-
-
-
-
 \begin{fact} \label{prime-divisor}
 	Soit
 	$(a ; b) \in \NNs \times \NNs$.
@@ -81,7 +75,7 @@
 		
 		\smallskip
 		\noindent
-		$c = p \, c \, u + p \, a \, v$
+		$c = p \, c \, u + p \, a \, v$ via $p \, a = q \, c$
 		
 		\smallskip
 		\noindent
@@ -111,7 +105,7 @@
 		
 		\smallskip
 		\noindent
-		$\widetilde{k} = \widetilde{q} \, \widetilde{u} + \widetilde{q} \, \widetilde{k} \, \widetilde{v}$
+		$\widetilde{k} = \widetilde{q} \, \widetilde{u} + \widetilde{q} \, \widetilde{k} \, \widetilde{v}$ via $p \, \widetilde{k} = \widetilde{q}$
 		
 		\smallskip
 		\noindent
@@ -132,14 +126,14 @@
 
 
 \begin{unproved}
-	Le théorème de Bachet-Bézout, l'algorithme d'Euclide et l'existence d'une relation du type $p \, \widetilde{k} = \widetilde{q}$ ne pourront être démontrés proprement qu'une fois le raisonnement par récurrence connu.
+	L'algorithme d'Euclide, le théorème de Bachet-Bézout et l'existence d'une relation du type $p \, \widetilde{k} = \widetilde{q}$ ne peuvent être démontrés proprement que via un raisonnement par récurrence.
 
-	\seefact{????}
+	\seethreefacts{????}{????}{????}
 \end{unproved}
 
 
 \begin{remark}
-	Nous avons démontré une forme faible du lemme d'Euclide qui dit que si un nombre premier $p$ divise le produit de deux nombres entiers $b$ et $c$ alors $p$ divise $b$ ou $c$ \emph{(la preuve ci-dessus s'adapte facilement pour obtenir le lemme d'Euclide)}.  
+	Le fait \ref{prime-divisor} est une forme faible du lemme de divisibilité d'Euclide qui dit que si un nombre premier $p$ divise le produit de deux nombres entiers $b$ et $c$ alors $p$ divise $b$ ou $c$ \emph{(la preuve ci-dessus s'adapte facilement pour obtenir le lemme d'Euclide)}.  
 \end{remark}
 
 
@@ -158,11 +152,20 @@ Notons au passage que le fait \ref{prime-divisor} implique l'unicité de la déc
 	et
 	$(q_i)_{1 \leq i \leq m}$
 	telles que $\displaystyle a = \prod_{j=1}^{n} p_j = \prod_{i=1}^{m} q_i$ .
+	Nous raisonns alors comme suit.
 	
-	\smallskip
+	\begin{itemize}[label=\small\textbullet]
+		\item Quitte à changer les noms des suites, on peut supposer que $p_1 \leq q_1$ .
+		
+
+		\item D'après le fait \ref{prime-divisor}, nous savons qu'il existe $i$ tel que $q_i = p_1$ .
 	
-	Quitte à changer les noms des suites, on peut supposer que $p_1 \leq q_1$ .
-	De plus d'après le fait \ref{prime-divisor}, nous savons qu'il existe $i$ tel que $q_i = p_1$ .
-	Par croissance de la suite $q$, nous avons $q_1 \leq q_i$ d'où nous déduisons $p_1 \leq q_1 \leq q_i = p_1$ puis $p_1 = q_1$ .
-	Ceci réduit la taille des suites. On voit que l'on pourra ainsi répéter le raisonnement pour obtenir que les deux suites sont de même taille et identiques \emph{(une démonstration par récurrence trouverait sa place ici pour plus de rigueur mais nous ne la ferons pas dans ce document car le fait \ref{prime-decompo} est juste un petit bonus de notre exposé)}.
+		\item Par croissance de la suite $q$, nous avons $q_1 \leq q_i$.
+		
+		\item Nous avons alors $p_1 \leq q_1 \leq q_i = p_1$ puis $p_1 = q_1$ .
+		
+		\item D'après le point précédent nous pouvons réduire de un les tailles des suites.
+	\end{itemize}
+	
+	On voit alors que l'on pourra ainsi répéter le raisonnement pour obtenir que les deux suites sont de même taille et identiques \emph{(une démonstration par récurrence trouverait sa place ici pour plus de rigueur mais nous ne la ferons pas dans ce document car le fait \ref{prime-decompo} est juste un petit bonus de notre exposé)}.
 \end{proof}
