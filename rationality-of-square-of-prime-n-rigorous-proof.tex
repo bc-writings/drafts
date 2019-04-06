@@ -29,8 +29,19 @@
 
 \newtheorem{fact}{Fait}[section]
 \newtheorem{example}{Exemple}[section]
+\newtheorem{notation}{Notation}[section]
 \newtheorem{remark}{Remarque}[section]
+\newtheorem{unproved}{Non Prouvé}[section]
 \newtheorem*{proof*}{Preuve}
+
+
+\newcommand\seefact[1]{
+	
+	\smallskip
+	
+	\hfill {\footnotesize $\rightarrow$ Voir le fait \ref{#1}.}
+}
+
 
 \npthousandsep{.}
 \setlength\parindent{0pt}
@@ -40,6 +51,13 @@
 
 
 \DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+
+\newcommand\PP{\fieldset{P}}
+
+\newcommand\sqrtp{\sqrt{p\,\vphantom{M}}}
+
+
 
 \newcommand{\logicneg}{\text{\normalfont non \!}}
 
@@ -55,9 +73,9 @@
 	 
 \begin{document}
 
-\title{BROUILLON - NON ACHEVÉ ! - Écriture décimale, racine carrée de naturels et irrationalité}
+\title{BROUILLON - NON ACHEVÉ ! - Une preuve rigoureuse (\!?) de l'irrationalité de la racine carrée d'un nombre premier}
 \author{Christophe BAL}
-\date{27 Mars 2019 - 4 Avril 2019}
+\date{4 Avril 2019 - 6 Avril 2019}
 
 \maketitle
 
@@ -90,45 +108,62 @@
 
 
 
-\section{$\sqrt2$ n'est pas rationnel, les décimaux nous le disent}
+\section{Où allons-nous ?}
 
-\input{rationality-of-int-squares-n-decimal/sqrt-of-2}
-
-
-
-\section{$\sqrt3$ n'est pas rationnel}
-
-\input{rationality-of-int-squares-n-decimal/sqrt-of-3}
-
-
-\section{$\sqrt5$ n'est pas rationnel -- Besoin d'une nouvelle preuve}
-
-\input{rationality-of-int-squares-n-decimal/sqrt-of-5}
+\input{rationality-of-square-of-prime-n-rigorous-proof/intro}
 
 
 
-\section{$\sqrt7$ et $\sqrt{11}$ ne sont pas rationnels}
+\section{Notations}
 
-\input{rationality-of-int-squares-n-decimal/sqrt-of-7}
-
-\input{rationality-of-int-squares-n-decimal/sqrt-of-11}
+\input{rationality-of-square-of-prime-n-rigorous-proof/notations}
 
 
 
-\section{Prenons un peu de recul} \label{general-case}
+\section{\texorpdfstring{$\sqrt{p\,}$ n'est pas rationnel, une preuve très classique}%
+		                {Racine carrée de p n'est pas rationnel, une preuve très classique}}
 
-\subsection{Un grand classique}
-
-\input{rationality-of-int-squares-n-decimal/general/sqrt-of-prime}
-
-
-\subsection{Expérimentations}
-
-\input{rationality-of-int-squares-n-decimal/general/computing}
+\input{rationality-of-square-of-prime-n-rigorous-proof/proof/informal}
 
 
-%\subsection{L'arithmétique modulaire}
+
+\section{Décompositions en produit de facteurs premiers}
+
+\input{rationality-of-square-of-prime-n-rigorous-proof/proof/decomposition}
+
+
+
+
+
+
+
+
+\bigskip
+
+\hrule
+
+\section{AFFAIRE À SUIVRE...}
+
+\bigskip
+
+\hrule
+
 %
-%\input{rationality-of-int-squares-n-decimal/general/modular}
+%
+%\section{La méthode de descente infinie, quézako ?}
+%
+%
+%\section{Les nombres naturels, c'est quoi en fait...}
+%
+%
+%\section{Et les nombres rationnels et les racines carrées dans tout cela ?}
+%
+%
+%
+%\section{Comment savons-nous que notre preuve est rigoureuse ?}
+%
+%\section{Raisonnement par l'absurde}
+%
+%
 
 \end{document}

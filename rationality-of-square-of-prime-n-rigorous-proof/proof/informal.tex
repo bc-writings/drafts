@@ -1,0 +1,45 @@
+\begin{fact}
+	$\forall p \in \PP, \sqrtp \not\in \QQ$.
+\end{fact}
+
+\begin{proof}
+	Soit $p \in \PP$ quelconque mais fixé. L'irrationalité de $\sqrtp$ peut se démontrer très classiquement comme suit.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\item Regardons ce qu'il se passe si nous supposons l'existence de $(r ; s) \in \QQ \times \QQs$ tel que $\sqrtp = \dfrac{r}{s}$. On peut supposer que $(r ; s) \in \QQp \times \QQsp$ mais nous n'aurons pas besoin de supposer que $\pgcd(r ; s) = 1$.
+
+	
+		\item $\sqrtp = \dfrac{r}{s} \, \Leftrightarrow \, p \times s^2 = r^2$ car $r \geq 0$ et $s > 0$.
+	
+		\item Nous pouvons écrire les naturels
+		$\displaystyle s = \prod_{j=1}^{n} p_j$
+		et
+		$\displaystyle r = \prod_{i=1}^{m} q_i$
+		sous forme de produits de nombres premiers.
+		Après simplification dans $p \times s^2 = r^2$ des nombres premiers communs entre les $p_j$ et les $q_i$ de part et d'autre, il restera un nombre impair de facteurs premiers égaux à $p$ à gauche, et un nombre pair à droite, éventuellement nul. 
+		Ceci n'est clairement pas possible. 
+
+	
+		\item Comme nous obtenons quelque chose d'impossible, il ne peut pas exister $(r ; s) \in \QQ \times \QQs$ tel que $\sqrtp = \dfrac{r}{s}$.
+	\end{itemize}
+\end{proof}
+
+
+\begin{unproved}
+	Une première chose que nous avons admise très cavalièrement c'est la possibilité d'écrire un naturel comme un produit de facteurs premiers.
+	
+	\seefact{exists-decompo}
+\end{unproved}
+
+
+\begin{unproved}
+	Un autre fait a été présenté comme immédiat à savoir l'impossibilité d'avoir une égalité entre deux produits de facteurs premiers dont l'un possède un nombre impair de facteurs premiers égaux à $p$, et l'autre en a un nombre pair éventuellement nul.
+	
+	\smallskip
+	
+	Ceci équivaut à l'impossibilité d'avoir $p \times a = b$ où soit $b = 1$, soit $b \neq 1$ s'écrit comme un produit de facteurs premiers tous différents de $p$ \emph{(pour se ramener à ce cas, il suffit de simplifier de part et d'autre des $p$ tant que c'est possible)}.
+	
+	\seefact{pseudo-prime-divisor}
+\end{unproved}
+
+

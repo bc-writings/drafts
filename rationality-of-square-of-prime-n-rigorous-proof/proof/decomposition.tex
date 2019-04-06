@@ -1,0 +1,168 @@
+\begin{fact} \label{exists-decompo}
+	$\forall a \in \NNs - \geneset{1}$, il existe au moins une suite finie de nombres premiers $(p_j)_{1 \leq j \leq n}$
+	telle que $\displaystyle a = \prod_{j=1}^{n} p_j$. 
+\end{fact}
+
+\begin{proof}
+	Considérons $a \in \NNs - \geneset{1}$.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\item Si $a$ premier il suffit de choisir $n = 1$ et $p_1 = a$.
+	
+	
+		\item Dans le cas contraire, $a = b \, c$ où $(b ; c) \in \ZintervalC{2}{a-1}$ par définition d'un nombre premier.
+		Il suffit alors de reprendre le même type de raisonnement à partir de $b$ et $c$ car l'on obtiendra de proche en proche des naturels de plus en plus petits et donc forcément il arrivera un moment où la décomposition en produit de deux naturels du type $b \, c$ ne sera plus possible.
+	\end{itemize}
+\end{proof}
+
+
+\begin{unproved}
+	Nous avons été bien cavaliers avec l'argument \emph{\og on obtiendra des naturels de plus en plus petits et donc forcément il arrivera un moment où... \fg}. Ce type d'argument se rédige proprement à l'aide du raisonnement par récurrence.
+
+	\seefact{????}
+\end{unproved}
+
+
+
+\begin{fact} \label{pseudo-prime-divisor}
+	Si $p \in \PP$ alors il n'existe pas $(a ; b) \in \NNs \times \NNs$ tel que
+	$p \, a = b$ avec $b = 1$ ou $b \neq 1$ s'écrivant comme un produit de facteurs premiers tous différents de $p$.
+\end{fact}
+	
+
+\begin{proof}
+	Ceci découle directement du fait suivant plus facile à retenir.
+\end{proof}
+
+
+
+
+
+
+
+
+
+\begin{fact} \label{prime-divisor}
+	Soit
+	$(a ; b) \in \NNs \times \NNs$.
+	%
+	Si $p \in \PP$ vérifie $p \, a = b$ alors $b \neq 1$ et $p$ apparait dans toute décomposition en facteurs premiers de $b$.
+\end{fact}
+	
+
+\begin{proof}
+	$b \neq 1$ découle de $a \geq 1$ et $p \geq 2$. 
+	Supposons alors avoir $(q_i)_{1 \leq i \leq m}$ une suite de nombres premiers tous distincts de $p$ tels que $\displaystyle b = \prod_{i=1}^{m} q_i$ .
+	Nous raisonnons alors comme suit.
+	\begin{itemize}[label=\small\textbullet]
+		\item Posant $q = q_1$ et $\displaystyle c = \prod_{i=2}^{m} q_i$ si $m \neq 1$ ou $c=1$ sinon, nous avons l'identité $p \, a = q \, c$ avec $p$ et $q$ deux nombres premiers distincts.
+		
+		
+		\item Par définition des nombres premiers, $p$ et $q$ ont juste $1$ comme diviseur commun donc leur PGCD est $1$.
+
+	
+		\item Si $c \neq 1$, démontrons que $p$ divise $c$, autrement dit qu'il existe $k \in \NNs$ tel que $p \, k = c$ .
+		L'algorithme d'Euclide nous donne par remontée des calculs l'existence de $(u ; v) \in \ZZ^2$ tel que $p \, u + q \, v = 1$. Ce résultat est appelé le théorème de Bachet-Bézout
+		\footnote{
+			À ne pas confondre avec une célèbre insulte du capitaine Haddock.
+		}.
+		
+		\smallskip
+		\noindent
+		Nous avons alors sans effort :
+		
+		\smallskip
+		\noindent
+		$c = c(p \, u + q \, v)$
+		
+		\smallskip
+		\noindent
+		$c = p \, c \, u + q \, c \, v$
+		
+		\smallskip
+		\noindent
+		$c = p \, c \, u + p \, a \, v$
+		
+		\smallskip
+		\noindent
+		$c = p(c \, u + a \, v)$
+		
+		\smallskip
+		\noindent
+		Donc $k = c \, u + a \, v$ convient.
+		
+		
+		\item En répétant autant de fois que nécessaire ce qui précède, c'est à dire en isolant à chaque fois un facteur premier à droite, nous avons l'existence de $\widetilde{k} \in \NNs$ tel que $p \, \widetilde{k} = \widetilde{q}$ avec $\widetilde{q}$ un nombre premier distinct de $p$.
+
+	
+		\item Démontrons maintenant que l'égalité précédente est impossible ce qui achèvera notre preuve. De nouveau, nous allons utiliser le théorème de Bachet-Bézout avec des notations similaires évidentes.
+		
+		\smallskip
+		\noindent
+		$1 = p \, \widetilde{u} + \widetilde{q} \, \widetilde{v}$
+		
+		\smallskip
+		\noindent
+		$\widetilde{k} = \widetilde{k} (p \, \widetilde{u} + \widetilde{q} \, \widetilde{v})$
+		
+		\smallskip
+		\noindent
+		$\widetilde{k} = p \, \widetilde{k} \, \widetilde{u} + \widetilde{q} \, \widetilde{k} \, \widetilde{v}$
+		
+		\smallskip
+		\noindent
+		$\widetilde{k} = \widetilde{q} \, \widetilde{u} + \widetilde{q} \, \widetilde{k} \, \widetilde{v}$
+		
+		\smallskip
+		\noindent
+		$\widetilde{k} = \widetilde{q} (\widetilde{u} + \widetilde{k} \, \widetilde{v})$
+		
+		\smallskip
+		\noindent
+		$\widetilde{k} = \widetilde{q} K$ avec $K = \widetilde{u} + \widetilde{k} \, \widetilde{v}$ qui nécessairement appartient à $\NNs$.
+		
+		\smallskip
+		\noindent
+		Finalement,
+		d'un côté $\widetilde{k} \in \NNs$ et $p \, \widetilde{k} = \widetilde{q}$ impliquent $\widetilde{k} \leq \widetilde{q}$,
+		et de l'autre $K \in \NNs$ et $\widetilde{k} = \widetilde{q} K$ impliquent $\widetilde{k} \geq \widetilde{q}$.
+		Ceci nous donne $\widetilde{k} = \widetilde{q}$ qui après simplification dans $p \, \widetilde{k} = \widetilde{q}$ nous fournit $p = 1$ ce qui n'est pas possible.
+	\end{itemize}
+\end{proof}
+
+
+\begin{unproved}
+	Le théorème de Bachet-Bézout, l'algorithme d'Euclide et l'existence d'une relation du type $p \, \widetilde{k} = \widetilde{q}$ ne pourront être démontrés proprement qu'une fois le raisonnement par récurrence connu.
+
+	\seefact{????}
+\end{unproved}
+
+
+\begin{remark}
+	Nous avons démontré une forme faible du lemme d'Euclide qui dit que si un nombre premier $p$ divise le produit de deux nombres entiers $b$ et $c$ alors $p$ divise $b$ ou $c$ \emph{(la preuve ci-dessus s'adapte facilement pour obtenir le lemme d'Euclide)}.  
+\end{remark}
+
+
+Notons au passage que le fait \ref{prime-divisor} implique l'unicité de la décomposition en facteurs premiers.
+
+\begin{fact} \label{prime-decompo}
+	$\forall a \in \NNs - \geneset{1}$, il existe une et une seule suite finie croissante, non nécessairement strictement, de nombres premiers $(p_j)_{1 \leq j \leq n}$
+	telle que $\displaystyle a = \prod_{j=1}^{n} p_j$. 
+\end{fact}
+	
+
+\begin{proof}
+	L'existence découlant directement du fait \ref{exists-decompo}, il nous reste à démontrer l'unicité.
+	Pour cela considérons deux suites finies croissantes de nombres premiers
+	$(p_j)_{1 \leq j \leq n}$
+	et
+	$(q_i)_{1 \leq i \leq m}$
+	telles que $\displaystyle a = \prod_{j=1}^{n} p_j = \prod_{i=1}^{m} q_i$ .
+	
+	\smallskip
+	
+	Quitte à changer les noms des suites, on peut supposer que $p_1 \leq q_1$ .
+	De plus d'après le fait \ref{prime-divisor}, nous savons qu'il existe $i$ tel que $q_i = p_1$ .
+	Par croissance de la suite $q$, nous avons $q_1 \leq q_i$ d'où nous déduisons $p_1 \leq q_1 \leq q_i = p_1$ puis $p_1 = q_1$ .
+	Ceci réduit la taille des suites. On voit que l'on pourra ainsi répéter le raisonnement pour obtenir que les deux suites sont de même taille et identiques \emph{(une démonstration par récurrence trouverait sa place ici pour plus de rigueur mais nous ne la ferons pas dans ce document car le fait \ref{prime-decompo} est juste un petit bonus de notre exposé)}.
+\end{proof}
