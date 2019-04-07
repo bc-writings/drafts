@@ -89,38 +89,7 @@
 		\item En répétant autant de fois que nécessaire ce qui précède, c'est à dire en isolant à chaque fois un facteur premier à droite, nous avons l'existence de $\widetilde{k} \in \NNs$ tel que $p \, \widetilde{k} = \widetilde{q}$ avec $\widetilde{q}$ un nombre premier distinct de $p$.
 
 	
-		\item Démontrons maintenant que l'égalité précédente est impossible ce qui achèvera notre preuve. De nouveau, nous allons utiliser le théorème de Bachet-Bézout avec des notations similaires évidentes.
-		
-		\smallskip
-		\noindent
-		$1 = p \, \widetilde{u} + \widetilde{q} \, \widetilde{v}$
-		
-		\smallskip
-		\noindent
-		$\widetilde{k} = \widetilde{k} (p \, \widetilde{u} + \widetilde{q} \, \widetilde{v})$
-		
-		\smallskip
-		\noindent
-		$\widetilde{k} = p \, \widetilde{k} \, \widetilde{u} + \widetilde{q} \, \widetilde{k} \, \widetilde{v}$
-		
-		\smallskip
-		\noindent
-		$\widetilde{k} = \widetilde{q} \, \widetilde{u} + \widetilde{q} \, \widetilde{k} \, \widetilde{v}$ via $p \, \widetilde{k} = \widetilde{q}$
-		
-		\smallskip
-		\noindent
-		$\widetilde{k} = \widetilde{q} (\widetilde{u} + \widetilde{k} \, \widetilde{v})$
-		
-		\smallskip
-		\noindent
-		$\widetilde{k} = \widetilde{q} K$ avec $K = \widetilde{u} + \widetilde{k} \, \widetilde{v}$ qui nécessairement appartient à $\NNs$.
-		
-		\smallskip
-		\noindent
-		Finalement,
-		d'un côté $\widetilde{k} \in \NNs$ et $p \, \widetilde{k} = \widetilde{q}$ impliquent $\widetilde{k} \leq \widetilde{q}$,
-		et de l'autre $K \in \NNs$ et $\widetilde{k} = \widetilde{q} K$ impliquent $\widetilde{k} \geq \widetilde{q}$.
-		Ceci nous donne $\widetilde{k} = \widetilde{q}$ qui après simplification dans $p \, \widetilde{k} = \widetilde{q}$ nous fournit $p = 1$ ce qui n'est pas possible.
+		\item Comme $\widetilde{q} \in \PP$, ses seuls diviseurs sont $1$ et lui-même. De $p \, \widetilde{k} = \widetilde{q}$ nous déduisons alors que $p$ est un diviseur de $\widetilde{q}$. Comme $p \neq 1$, nous avons alors $p = \widetilde{q}$ ce qui n'est pas possible car par construction $\widetilde{q} \neq p$.
 	\end{itemize}
 \end{proof}
 
