@@ -1,1 +1,43 @@
-????
+Nous pouvons enfin donner une preuve rigoureuse du fait \ref{exists-decompo} qui pour tout naturel $a \in \NN - \geneset{0 ; 1}$ affirme l'existence d'au moins une suite finie de nombres premiers $(p_j)_{1 \leq j \leq n}$ telle que $\displaystyle a = \prod_{j=1}^{n} p_j$.
+
+
+\begin{proof}
+	Pour $k \geq 2$, notons $\probaset{P}(k)$ la propriété \emph{\og Si $a \in \NN$ vérifie $1 < a \leq k$ alors il existe au moins une suite finie de nombres premiers $(p_j)_{1 \leq j \leq n}$ telle que $\displaystyle a = \prod_{j=1}^{n} p_j$ \fg}. Nous allons faire une démonstration par récurrence.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\medskip
+		\item \textbf{Initialisation :} démontrons que $\probaset{P}(2)$ est vraie. C'est immédiat car la validité de $\probaset{P}(2)$ vient de ce que si $a \in \NN$ vérifie $1 < a \leq 2$ alors $a = 2$ et aussi de $\displaystyle 2 = \prod_{j=1}^{1} p_j$ avec $p_1 = 2$ qui est un nombre premier. 
+
+
+		\medskip
+		\item \textbf{Hérédité :} soit un naturel $k$ quelconque, mais fixé, et supposons $\probaset{P}(k)$ vraie. Nous devons en déduire que forcément $\probaset{P}(k+1)$ sera aussi vraie.
+		Pour cela, considérons $a \in \NN$ tel que $1 < a \leq k + 1$. Nous avons alors trois cas possibles.
+		\begin{itemize}
+			\smallskip
+			\item \emph{Cas 1 : $1 < a \leq k$.}
+			      
+			      De la validité supposée de $\probaset{P}(k)$, nous déduisons que $\displaystyle a = \prod_{j=1}^{n} p_j$ avec $(p_j)_{1 \leq j \leq n}$ une suite finie de nombres premiers. 
+
+			\smallskip
+			\item \emph{Cas 2 : $a = k + 1$ et $a$ est premier.}
+			      
+			      Dans ce cas, $\displaystyle a = \prod_{j=1}^{1} p_j$ avec $p_1 = a$ qui est un nombre premier. 
+
+			\smallskip
+			\item \emph{Cas 3 : $a = k + 1$ et $a$ n'est pas premier.}
+			      
+			      Ici $a = b \, c$ où $(b ; c) \in \ZintervalC{2}{a-1}$ par définition d'un nombre premier.
+			      Comme $\ZintervalC{2}{a-1} \subseteq \ZintervalOC{1}{k}$ , de la validité supposée de $\probaset{P}(k)$ nous déduisons que $\displaystyle b = \prod_{j=1}^{n} p_j$  et $\displaystyle c = \prod_{i=1}^{m} q_i$ avec $(p_j)_{1 \leq j \leq n}$ et $(q_i)_{1 \leq i \leq m}$ deux suites finies de nombres premiers. Il est alors immédiat d'écrire $a$ comme un produit de nombres premiers.
+		\end{itemize}
+
+
+		\medskip
+		\noindent
+		D'après les trois cas précédents, $\probaset{P}(k + 1)$ est vraie dès que $\probaset{P}(k)$ est supposée vraie.
+
+
+		\medskip
+		\item \textbf{Conclusion :} par récurrence sur $k \geq 2$, nous avons prouvé que pour tout naturel $k \in \NN$ vérifiant $k \geq 2$, la propriété $\probaset{P}(k)$ est vraie.
+		De ceci découle que le fait \ref{exists-decompo} est valide.
+	\end{itemize}
+\end{proof}

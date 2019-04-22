@@ -1,10 +1,10 @@
 \begin{fact} \label{exists-decompo}
-	$\forall a \in \NNs - \geneset{1}$, il existe au moins une suite finie de nombres premiers $(p_j)_{1 \leq j \leq n}$
+	$\forall a \in \NN - \geneset{0 ; 1}$, il existe au moins une suite finie de nombres premiers $(p_j)_{1 \leq j \leq n}$
 	telle que $\displaystyle a = \prod_{j=1}^{n} p_j$. 
 \end{fact}
 
 \begin{proof}
-	Considérons $a \in \NNs - \geneset{1}$.
+	Considérons $a \in \NN - \geneset{0 ; 1}$.
 	
 	\begin{itemize}[label=\small\textbullet]
 		\item Si $a$ premier il suffit de choisir $n = 1$ et $p_1 = a$.
@@ -19,7 +19,7 @@
 \begin{unproved}
 	Nous avons été bien cavaliers avec l'argument \emph{\og on obtiendra des naturels de plus en plus petits et donc forcément il arrivera un moment où... \fg}. Ce type d'argument se rédige proprement à l'aide du raisonnement par récurrence.
 
-	\seefact{????}
+	\seefactproof{recursivity}{exists-decompo-clean}
 \end{unproved}
 
 
@@ -46,7 +46,7 @@
 
 \begin{proof}
 	$b \neq 1$ découle de $a \geq 1$ et $p \geq 2$. 
-	Supposons alors avoir $(q_i)_{1 \leq i \leq m}$ une suite de nombres premiers tous distincts de $p$ tels que $\displaystyle b = \prod_{i=1}^{m} q_i$ .
+	Supposons avoir au moins une suite $(q_i)_{1 \leq i \leq m}$ de nombres premiers tous distincts de $p$ tels que $\displaystyle b = \prod_{i=1}^{m} q_i$ .
 	Nous raisonnons alors comme suit.
 	\begin{itemize}[label=\small\textbullet]
 		\item Posant $q = q_1$ et $\displaystyle c = \prod_{i=2}^{m} q_i$ si $m \neq 1$ ou $c=1$ sinon, nous avons l'identité $p \, a = q \, c$ avec $p$ et $q$ deux nombres premiers distincts.
@@ -97,19 +97,19 @@
 \begin{unproved}
 	L'algorithme d'Euclide, le théorème de Bachet-Bézout et l'existence d'une relation du type $p \, \widetilde{k} = \widetilde{q}$ ne peuvent être démontrés proprement que via un raisonnement par récurrence.
 
-	\seethreefacts{????}{????}{????}
+	\seethreefacts{euclide-algo}{bachet-bezout}{euclide-weak-lemma}
 \end{unproved}
 
 
 \begin{remark}
-	Le fait \ref{prime-divisor} est une forme faible du lemme de divisibilité d'Euclide qui dit que si un nombre premier $p$ divise le produit de deux nombres entiers $b$ et $c$ alors $p$ divise $b$ ou $c$ \emph{(la preuve ci-dessus s'adapte facilement pour obtenir le lemme d'Euclide)}.  
+	Le fait \ref{prime-divisor} est une forme faible du lemme de divisibilité d'Euclide qui dit que si un nombre premier $p$ divise le produit de deux nombres entiers $b$ et $c$ alors $p$ divise $b$ ou $c$ \emph{(la preuve ci-dessus s'adapte facilement pour obtenir le lemme plus général d'Euclide)}.  
 \end{remark}
 
 
-Notons au passage que le fait \ref{prime-divisor} implique l'unicité de la décomposition en facteurs premiers.
+Notons au passage que le fait \ref{prime-divisor} implique l'unicité de la décomposition en facteurs premiers qui est indiquée dans le fait suivant.
 
 \begin{fact} \label{prime-decompo}
-	$\forall a \in \NNs - \geneset{1}$, il existe une et une seule suite finie croissante, non nécessairement strictement, de nombres premiers $(p_j)_{1 \leq j \leq n}$
+	$\forall a \in \NN - \geneset{0 ; 1}$, il existe une et une seule suite finie croissante, non nécessairement strictement, de nombres premiers $(p_j)_{1 \leq j \leq n}$
 	telle que $\displaystyle a = \prod_{j=1}^{n} p_j$. 
 \end{fact}
 	
