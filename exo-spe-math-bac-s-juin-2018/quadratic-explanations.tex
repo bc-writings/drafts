@@ -1,0 +1,201 @@
+Une idée élémentaire pour découvrir la matrice \squote{magique} $A$ est de noter que nous pouvons écrire
+$x^2 - 8 y^2
+=
+\begin{pmatrix} 
+  x & y 
+\end{pmatrix}
+Q
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$
+en posant
+$Q
+=
+\begin{pmatrix} 
+  1 & 0  \\ 
+  0 & -8 
+\end{pmatrix}$ 
+\textit{
+	(le lecteur connaissant les formes quadratiques ne sera pas surpris par cette réécriture) 
+}.
+
+
+\medskip
+
+En posant 
+$\begin{pmatrix} 
+  X \\ 
+  Y 
+\end{pmatrix}
+=
+A
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$ ,
+comme nous avons
+$\begin{pmatrix} 
+  X & Y 
+\end{pmatrix}
+Q
+\begin{pmatrix} 
+  X \\ 
+  Y 
+\end{pmatrix}
+=
+\begin{pmatrix} 
+  x & y 
+\end{pmatrix}
+A^T Q A
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$ ,
+il est alors naturel de chercher $A$ vérifiant $A^T Q A = Q$ car d'une solution
+$\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$
+on pourra passer à une \squote{autre} solution
+$\begin{pmatrix} 
+  X \\ 
+  Y 
+\end{pmatrix}
+=
+A \begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$
+comme dans le sujet du BAC S.
+
+
+\bigskip
+
+Utilisant le déterminant, nous avons comme contrainte immédiate que $\det A = \pm 1$ \textit{($A$ doit donc être inversible)}. 
+
+
+% ------------------ %
+
+
+\bigskip
+
+\textit{\textbf{Cas 1 :} supposons d'abord que $\det A = 1$ .}
+
+\medskip
+
+Notant
+$A = \begin{pmatrix} 
+  a & b \\ 
+  c & d
+\end{pmatrix}$ ,
+nous avons alors
+$A^{-1} = \begin{pmatrix} 
+  d  & -b \\ 
+  -c & a
+\end{pmatrix}$
+d'où :
+
+\begin{flalign*}
+	A^T Q A = Q & \Longleftrightarrow  A^T Q = Q A^{-1} & \\
+	            & \Longleftrightarrow 
+	\begin{pmatrix} 
+	  a & c \\ 
+	  b & d
+	\end{pmatrix}
+	\begin{pmatrix} 
+	  1 & 0  \\ 
+	  0 & -8 
+	\end{pmatrix}
+	=
+	\begin{pmatrix} 
+	  1 & 0  \\ 
+	  0 & -8 
+	\end{pmatrix}
+	\begin{pmatrix} 
+	  d  & -b \\ 
+	  -c & a
+	\end{pmatrix}
+	                                                    & \\
+	            & \Longleftrightarrow 
+	\begin{pmatrix} 
+	  a & -8 c \\ 
+	  b & -8 d
+	\end{pmatrix}
+	=
+	\begin{pmatrix} 
+	  d  & -b \\ 
+	  8c & -8a
+	\end{pmatrix}
+	                                                    & \\
+	            & \Longleftrightarrow a = d \text{ et } b = 8c 
+\end{flalign*}
+
+
+\medskip
+
+La condition $\det A = 1$ pour
+$A
+=
+\begin{pmatrix} 
+  a & b \\ 
+  c & d
+\end{pmatrix}
+=
+\begin{pmatrix} 
+  a & 8c \\ 
+  c & a
+\end{pmatrix}$
+nous donne
+$a^2 - 8c^2 = 1$ . Que c'est joli !
+
+
+\medskip
+
+La matrice du sujet de BAC utilise donc la solution élémentaire
+$(a \,; c) = (3 \,; 1)$.
+
+
+% ------------------ %
+
+
+\bigskip
+
+\textit{\textbf{Cas 2 :} supposons maintenant que $\det A = -1$ .}
+
+\medskip
+
+Notant
+$A = \begin{pmatrix} 
+  a & b \\ 
+  c & d
+\end{pmatrix}$ ,
+nous avons alors
+$A^{-1} = \begin{pmatrix} 
+  -d & b  \\ 
+   c & -a
+\end{pmatrix}$
+d'où comme dans les calculs précédents :
+
+\medskip
+
+$A^T Q A = Q \Longleftrightarrow a = -d \text{ et } b = -8c$
+
+
+\bigskip
+
+La condition $\det A = -1$ pour
+$A
+=
+\begin{pmatrix} 
+  a & b \\ 
+  c & d
+\end{pmatrix}
+=
+\begin{pmatrix} 
+  a & -8c \\ 
+  c & -a
+\end{pmatrix}$
+nous redonne
+$a^2 - 8c^2 = 1$ donc rien de nouveau sous les cocotiers.
+

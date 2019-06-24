@@ -1,0 +1,120 @@
+Ce qui suit reprend les excellentes indications données par Jérôme Germoni dans une discussion au bas de cette page :
+\url{http://images.math.cnrs.fr/+Nombres-puissants-au-bac-S+}
+\textit{(chercher les messages de l'utilisateur projetmbc)}.
+
+
+\bigskip
+
+Gardant les notations précédentes, les matrices $A$ telles que $A^T Q A = Q$ sont celles du type 
+$A
+=
+\begin{pmatrix} 
+  a & 8c \\ 
+  c & a
+\end{pmatrix}$ .
+Notez que la contrainte $a^2 - 8c^2 = 1$ utile pour avoir des exemples numériques concrets est cachée dans la relation $A^T Q A = Q$ .
+
+
+\medskip
+
+Ensuite à partir de toute solution 
+$\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$
+de $x^2 - 8 y^2 = 1$ , nous en construisons une \squote{autre} via
+$\begin{pmatrix} 
+  X \\ 
+  Y 
+\end{pmatrix}
+=
+A
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$ .
+
+
+\medskip
+
+Notant $\probaset{S}$ l'ensemble des solutions entières
+\footnote{
+	Ce qui suit se généralise aux solutions rationnelles, à celles réelles ou encore à celles complexes mais ne sortons pas du cadre de ce modeste document.
+}
+de \textbf{[ED]} : $x^2 - 8 y^2 = 1$ , ce qui précède motive la définition de la loi $\star$ sur $\probaset{S}$ via
+$\begin{pmatrix} 
+  a \\ 
+  c 
+\end{pmatrix}
+\star
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}
+=
+\begin{pmatrix} 
+  a x + 8c y \\ 
+  c x + a y
+\end{pmatrix}$ .
+Il est important de comprendre que le vecteur obtenu est bien un élément de $\probaset{S}$ \textit{(nous allons expliquer pourquoi après)}.
+Nous allons démontrer que cette loi $\star$ fait de $\probaset{S}$ un groupe. Très joli ! Non ?
+
+
+\medskip
+
+Les raisonnements suivants se font en faisant le parallèle entre 
+$\begin{pmatrix} 
+  a \\ 
+  c 
+\end{pmatrix}
+\star
+\begin{pmatrix} 
+  x \\ 
+  y 
+\end{pmatrix}$
+et la matrice produit
+$\begin{pmatrix} 
+  a & 8c \\ 
+  c & a 
+\end{pmatrix}
+\begin{pmatrix} 
+  x & 8y \\ 
+  y & x 
+\end{pmatrix}$
+dont on garde juste la première colonne.
+Notons que les deux matrices sont celles entières $A$ vérifiant $A^T Q A = Q$ . 
+Ceci étant dit, les résultats suivants se vérifient et se trouvent directement à la main sans passer par les matrices \textit{(mais ceci est bien moins élégant)}.
+
+
+\begin{itemize}[label=\small\textbullet]
+	\item La loi $\star$ est bien interne à $\probaset{S}$ car si $A^T Q A = Q$ et $B^T Q B = Q$ alors nous avons sans effort :
+	$(AB)^T Q (AB) = B^T A^T Q A B = B^T Q B = Q$ .
+
+
+	\medskip
+	\item
+	$\begin{pmatrix} 
+	  1 \\ 
+	  0 
+	\end{pmatrix}$
+	est l'élément neutre de $\star$ car sa matrice associée est la matrice identité.
+
+
+	\medskip
+	\item
+	$\begin{pmatrix} 
+	  a  \\ 
+	  -c 
+	\end{pmatrix}$
+	est l'inverse de
+	$\begin{pmatrix} 
+	  a \\ 
+	  c 
+	\end{pmatrix}$
+	\textit{(revoir si besoin le cas 1 de la section précédente)}.
+
+
+	\medskip
+	\item Pour finir, l'associativité de $\star$ découle de celle de la multiplication des matrices.
+\end{itemize}
+
