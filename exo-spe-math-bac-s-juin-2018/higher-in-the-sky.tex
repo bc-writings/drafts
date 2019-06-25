@@ -5,19 +5,19 @@ Ce qui suit reprend les excellentes indications données par Jérôme Germoni da
 
 \bigskip
 
-Gardant les notations précédentes, les matrices $A$ telles que $A^T Q A = Q$ sont celles du type 
+Nous ne considérons que l'ensemble des matrices $A$ telles que $A^T Q A = Q$ et $\det A = 1$ afin de pouvoir les multiplier entre elles. Nous savons que $A$ est du type 
 $A
 =
 \begin{pmatrix} 
   a & 8c \\ 
   c & a
-\end{pmatrix}$ .
-Notez que la contrainte $a^2 - 8c^2 = 1$ utile pour avoir des exemples numériques concrets est cachée dans la relation $A^T Q A = Q$ .
+\end{pmatrix}$ 
+et que la contrainte $a^2 - 8c^2 = 1$ est cachée dans la relation $A^T Q A = Q$ .
 
 
 \medskip
 
-Ensuite à partir de toute solution 
+De plus, à partir de toute solution 
 $\begin{pmatrix} 
   x \\ 
   y 
@@ -56,8 +56,7 @@ $\begin{pmatrix}
   a x + 8c y \\ 
   c x + a y
 \end{pmatrix}$ .
-Il est important de comprendre que le vecteur obtenu est bien un élément de $\probaset{S}$ \textit{(nous allons expliquer pourquoi après)}.
-Nous allons démontrer que cette loi $\star$ fait de $\probaset{S}$ un groupe. Très joli ! Non ?
+Nous allons démontrer que cette loi $\star$ est bien définie et qu'elle fait de $\probaset{S}$ un groupe. Très joli ! Non ?
 
 
 \medskip
@@ -81,14 +80,22 @@ $\begin{pmatrix}
   x & 8y \\ 
   y & x 
 \end{pmatrix}$
-dont on garde juste la première colonne.
-Notons que les deux matrices sont celles entières $A$ vérifiant $A^T Q A = Q$ . 
-Ceci étant dit, les résultats suivants se vérifient et se trouvent directement à la main sans passer par les matrices \textit{(mais ceci est bien moins élégant)}.
+dont on garde juste la première colonne
+\footnote{
+	Les résultats présentés ici se vérifient et se trouvent directement à la main sans passer par les matrices mais ceci est bien moins élégant.
+} .
+Rappelons que les deux matrices précédentes sont entières et du type $A$ vérifiant $A^T Q A = Q$ et $\det A = 1$ .
 
 
 \begin{itemize}[label=\small\textbullet]
-	\item La loi $\star$ est bien interne à $\probaset{S}$ car si $A^T Q A = Q$ et $B^T Q B = Q$ alors nous avons sans effort :
-	$(AB)^T Q (AB) = B^T A^T Q A B = B^T Q B = Q$ .
+	\item La loi $\star$ est bien interne à $\probaset{S}$ car si $A^T Q A = Q$ avec $\det A = 1$ , et aussi $B^T Q B = Q$ avec $\det B = 1$ alors nous avons :
+	
+	\begin{itemize}[label=\raisebox{.3ex}{$\centerdot$}]
+		\item $(AB)^T Q (AB) = B^T A^T Q A B = B^T Q B = Q$
+		
+		\medskip
+		\item $\det(AB) = \det A \cdot \det B = 1$
+	\end{itemize}
 
 
 	\medskip
@@ -117,4 +124,3 @@ Ceci étant dit, les résultats suivants se vérifient et se trouvent directemen
 	\medskip
 	\item Pour finir, l'associativité de $\star$ découle de celle de la multiplication des matrices.
 \end{itemize}
-
