@@ -1,0 +1,63 @@
+On souhaite modéliser le capital d'une entreprise qui fabrique et vend un produit, ceci à des fins prospectives. On utilise les notations suivantes.
+
+\begin{itemize}[label=\small\textbullet]
+	\item $C(x)$ est le coût de production en euros pour $x$ unités produites.
+
+	\item $C_m(x) = C(x) - C(x - 1)$ est le coût marginal de production pour $x > 0$ \textit{(c'est le coût spécifique à la x\ieme unité produite)}.
+\end{itemize}
+
+
+Des études statistiques ont montré que lorsque le nombre d'unités vendues augmente le coût marginal diminue strictement puis qu'ensuite il atteint un minimum pour enfin ne cesser d'augmenter strictement. Notons que le minimum est forcément positif.
+
+
+% ---------------- %
+
+
+\paragraph{Choix 1.}
+
+Pour commencer, on va chercher une expression polynomiale simple pour $C_m(x)$ . Une première idée est de supposer $C_m(x) = ax^2 + bx + c$ avec $a > 0$ , $\Delta \stackrel{\text{déf}}{=} b^2 - 4ac \leq 0$ ainsi que $\frac{-b}{2a} > 0$. Expliquons les conditions choisies.
+
+\begin{enumerate}
+	\item $a > 0$ permet de vérifier les contraintes de variation.
+
+
+	\item $\Delta \leq 0$ et $\frac{-b}{2a} > 0$ servent à valider la contrainte du minimum.
+\end{enumerate}
+
+Nous avons alors :
+\begin{flalign*}
+	C(x) &= C(0) + \sum_{k = 1}^{x} C_m(k) & \\
+	     &= C(0) + \sum_{k = 1}^{x} (a k^2 + b k + c) & \\
+	     &= A x^3 + B x^2 + C x + D & \\
+\end{flalign*}
+
+
+\vspace{-1.5em}
+
+Pour la dernière égalité, nous avons utilisé le fait que $\forall (p, x) \in \NN^2$ , $\displaystyle \sum_{k = 1}^{x} k^p$ est un polynôme en $x$ de degré $(p + 1)$.
+
+
+\bigskip
+
+Des données concrètes permettraient de trouver les valeurs des coefficients $A$ , $B$ , $C$ et $D$. Il se trouve que la modélisation du coût de production par un polynôme de degré 3 apparait souvent dans des livres présentant des mathématiques pour l'Économie.
+
+
+% ---------------- %
+
+
+\bigskip
+
+\paragraph{Choix 2.}
+
+Nous pouvons aussi considérer $C_m(x) = c (x - \alpha)^{2p} + \beta$ avec $(c ; \alpha ; \beta) \in \left( \RRp \right)^3$ et $p \in \NNs$ .
+Dans ce cas, $C(x)$ sera un polynôme de degré $(2p + 1)$. Le problème ici sera de trouver un plus grand nombre de coefficients. Est-ce plus efficace au final ? Si l'on s'en réfère aux livres présentant des mathématiques pour l'Économie, il semblerait que le choix 1 fournit une modélisation suffisamment efficace.
+
+
+% ---------------- %
+
+
+\bigskip
+
+\paragraph{Choix 3.}
+
+On pourrait considérer d'autres types de fonctions. Le problème que l'on aura à résoudre sera alors d'évaluer simplement $\displaystyle \sum_{k = 1}^{x} C_m(k)$ .
