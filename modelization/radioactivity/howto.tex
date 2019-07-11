@@ -1,1 +1,103 @@
-????
+Les Sciences Physiques nous donnent la loi \textbf{[D]} suivante : \emph{\og la probabilité qu'à un instant $t$ un noyau radioactif se désintègre dans l'intervalle $\intervalC{t}{t + s}$ ne dépend pas de son âge $t$ et n'est jamais égale à un \fg}.
+Concrètement, ceci signifie que l'on suppose que les noyaux radioactifs ne vieillissent pas avant leur désintégration, et que de plus il est impossible qu'ils disparaissent majoritairement d'un seul coup. Il est aussi implicite qu'il est impossible qu'aucun noyau ne disparaisse sur l'intervalle $\intervalC{0}{t}$ pour $t > 0$ , ceci revient à n'étudier que le phénomène de radioactivité.
+
+
+\medskip
+
+
+\textbf{Nous allons supposer de plus} que la probabilité $P$ de désintégration suit sur $\RRp$ une loi de densité continue $f$ de sorte que $\displaystyle P\left( \intervalC{0}{t} \right) = \int_0^t f(x) \dd{x}$ pour $t \geq 0$ . Posant $F(t) = P\left( \intervalC{0}{t} \right)$ pour $t \geq 0$ , nous avons alors les faits suivants.
+
+\begin{itemize}[label=\small\textbullet]
+	\item  $F$ est une primitive de $f$ sur $\RRp$ puisque $f$ est continue sur $\RRp$ par hypothèse.
+
+	
+% ---------- %
+
+
+	\medskip
+	\item La loi \textbf{[D]} signifie que la probabilité que le noyau se désintègre dans l'intervalle $\intervalC{t}{t + s}$ sachant qu'il ne s'est pas désintégré dans l'intervalle $\intervalC{0}{t}$ est égale à $P\left( \intervalC{0}{s} \right) = F(s)$ pour tout couple $(t ; s) \in \left( \RRp \right)^2$ .
+
+	
+% ---------- %
+
+
+	\medskip
+	\item Pour $(t ; s) \in \left( \RRp \right)^2$ , la probabilité que le noyau se désintègre dans l'intervalle $\intervalC{t}{t + s}$ sachant qu'il ne s'est pas désintégré dans l'intervalle $\intervalC{0}{t}$ est 
+	$\frac{P\left( \intervalC{t}{t+s} \right)}{1 - P\left( \intervalC{0}{t} \right)}$ ,
+	c'est à dire
+	$\frac{F(t+s) - F(t)}{1 - F(t)}$
+	\emph{(notons qu'il n'y a aucun souci car par hypothèse $F(t) \neq 1$)}.
+
+	
+% ---------- %
+
+
+	\medskip
+	\item Nous obtenons donc
+	$\frac{F(t+s) - F(t)}{1 - F(t)} = F(s)$
+	d'où
+	$F(t+s) - F(t) = F(s) (1 - F(t))$
+	pour tout couple $(t ; s) \in \left( \RRp \right)^2$ .
+
+	
+% ---------- %
+
+
+	\medskip
+	\item L'équation fonctionnelle vérifiée par $F$ n'est pas très sympathique. Nous allons essayer d'en déduire une autre qui nous éclairera sur la marche à suivre.
+	Il est naturel d'introduire $G(t) = 1 - F(t)$ la probabilité que le noyau ne se soit pas désintégré dans l'intervalle $\intervalC{0}{t}$. Nous avons alors :
+
+	\medskip\noindent
+	$F(t+s) - F(t) = F(s) (1 - F(t))
+		\Longleftrightarrow 1 - G(t+s) - (1 - G(t)) = (1 - G(s)) G(t)$
+
+	\smallskip\noindent
+	$\phantom{F(t+s) - F(t) = F(s) (1 - F(t))}
+		\Longleftrightarrow - G(t+s) + G(t) = G(t) - G(s) G(t)$
+
+	\smallskip\noindent
+	$\phantom{F(t+s) - F(t) = F(s) (1 - F(t))}
+		\Longleftrightarrow G(t+s) = G(s) G(t)$
+		
+		
+	\medskip\noindent
+	Nous obtenons donc que la fonction $G$ dérivable sur $\RRp$ vérifie l'équation fonctionnelle $G(t+s) = G(s) G(t)$ .
+	Ceci nous donne alors $G(x) = \ee^{kx}$ avec $(k ; x) \in \RRs \times \RRp$ .
+	
+	\smallskip\noindent
+	En effet, il suffit de fixer $t \in \RRp$ puis de dériver par rapport à $s$ ce qui nous donne $G'(t+s) = G'(s) G(t)$ .
+	Comme $G$ ne peut pas être constante
+	\footnote{
+		Sur $\RRsp$, nous avons toujours $G(t) \neq 0$ et $G(t) \neq 1$ , \emph{i.e.} $F(t) \neq 1$ et $F(t) \neq 0$ par hypothèse car on n'exclut les cas de désintégrations probablement certaine et impossible.
+	},
+	on a : $k \stackrel{\text{déf}}{=} G'(0) \neq 0$ .
+	Nous avons alors pour $t \in \RRp$ quelconque $G'(t) = k G(t)$ soit une équation différentielle classique \emph{(il n'est pas gênant que nous soyons juste sur $\RRp$ au lieu de $\RR$ tout entier)}.
+
+	
+% ---------- %
+
+
+	\medskip
+	\item Sur $\RRp$ , $f(x) = F'(x) = -G'(x) = -k \ee^{kx}$ . En fait nécessairement $k < 0$ car nous devons avoir $\displaystyle \int_0^{+\infty} f(x) \dd{x} = 1$ . Faisons comme en Physique en n'utilisant que des paramètres positifs : notant $\lambda = - k > 0$ , nous avons : $f(x) = \lambda \ee^{- \lambda x}$ .
+
+
+% ---------- %
+
+
+	\medskip
+	\item Réciproquement si $f(x) = \lambda \ee^{- \lambda x}$ avec $\lambda > 0$ alors la probabilité $P$ de désintégration de loi de densité continue $f$ vérifie bien la loi \textbf{[D]} \emph{(facile à vérifier en \emph{\og remontant \fg} certains des calculs faits ci-dessus)}.
+\end{itemize}
+
+
+% ---------- %
+
+
+En résumé, si la probabilité $P$ de désintégration vérifie la loi \textbf{[D]} , alors elle suit une loi de densité continue $f$ si et seulement si sur $\RRp$ , $f(x) = \lambda \ee^{- \lambda x}$ avec $\lambda > 0$.
+
+
+% ---------- %
+
+
+\begin{remark}
+	Les physiciens appellent $\tau \stackrel{\text{déf}}{=} \frac{1}{\lambda}$ la constante de temps radioactive.
+\end{remark}
