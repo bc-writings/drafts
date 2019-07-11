@@ -5,6 +5,7 @@
 \usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
 
 \usepackage{import} 
+\usepackage{wrapfig} 
 
 \usepackage{hyperref}
 \usepackage{enumitem}
@@ -44,6 +45,9 @@
 	{tabsize=4,%
 	 frame=lines, framerule=0.3mm, framesep=2.5mm}
 
+
+\let\oldparagraph\paragraph
+\renewcommand\paragraph[1]{\bigskip\oldparagraph{#1}}
  
 	 
 \begin{document}
@@ -90,18 +94,18 @@
 
 
 
-\section{Coût marginal -- Des polynômes de degré 3}
+\section{Coût marginal -- Polynômes de degré 2 ou 3}
 
 \subimport*{modelization/}{marginal-cost}
 
 
 
-%\section{Désintégration radioactive -- Probabilités, intégrales et lois continues}
+%\section{Désintégration radioactive -- Probabilités et lois continues}
 %
 %\subimport*{modelization/}{radioactivity}
-%
-%
-%
+
+
+
 %\section{Daniel BERNOULLI, la variole au XVII\ieme{} siècle -- Des équations différentielles}
 %
 %\subimport*{modelization/}{logistic-equation}
