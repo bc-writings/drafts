@@ -1,0 +1,59 @@
+Nous allons donner deux autres méthodes de résolution
+\footnote{
+	Ces méthodes sont présentes dans le livre \emph{\og Histoires de mathématiques et de populations \fg} de Nicolas Bacaër. 
+}
+du système suivant où les fonctions $S$ et $P$ sont dérivables sur $\RRp$ .
+
+\begin{itemize}[label=\small\textbullet]
+	\item $S\,'(t) = - q_I S(t) - m(t) S(t)$
+
+	\item $P\,'(t) = - q_V q_I S(t) - m(t) P(t)$
+\end{itemize}
+
+
+% ---------- %
+
+
+\paragraph{Méthode de Daniel Bernoulli.} Le médecin suisse raisonne comme suit.
+
+\bigskip
+
+$\dfrac{S\,'(t) + q_I S(t)}{S(t)} = - m(t) = \dfrac{P\,'(t) + q_V q_I S(t)}{P(t)}$
+
+\medskip
+
+$\left( \, S\,'(t) + q_I S(t) \, \right) P(t) = \left( \, P\,'(t) + q_V q_I S(t) \, \right) S(t)$
+
+\bigskip
+
+$S\,'(t) P(t) - P\,'(t) S(t) = - q_I S(t) P(t) + q_V q_I S^2(t)$
+
+\medskip
+
+$R\,'(t) = - q_I R(t) + q_V q_I R^2(t)$ en notant $R(t) = \dfrac{S(t)}{P(t)}$ \dots
+
+
+
+% ---------- %
+
+
+\paragraph{Méthode via la dérivation logarithmique.} Supposons la fonction $m$ intégrable sur $\RRp$ . Les solutions de $S\,'(t) = - q_I S(t) - m(t) S(t)$ sont de la forme $\displaystyle S(t) = c_1 \, \exp \left( \, - q_I t - \int_0^t m(x) \dd{x} \, \right)$ où $c_1 \in \RR$ est une constante \emph{(ceci se démontre via la dérivée logarithmique de $S$)}. Concrètement, nous savons que $c_1 > 0$ .
+
+\medskip
+
+De même, les solutions de $P\,'(t) = - m(t) P(t)$ sont de la forme $\displaystyle P(t) = c_2 \, \exp \left( \, - \int_0^t m(x) \dd{x} \, \right)$ où $c_2 \in \RR$ est une constante, tandis que $P\,'(t) = - q_V q_I S(t) - m(t) P(t)$ admet la solution particulière $P(t) = q_V S(t)$ .
+Dès lors, les solutions de $P\,'(t) = - q_V q_I S(t) - m(t) P(t)$ sont du type
+$\displaystyle P(t) = c_2 \, \exp \left( \, - \int_0^t m(x) \dd{x} \, \right) + q_V S(t)$ .
+Comme $\displaystyle \exp \left( \, - \int_0^t m(x) \dd{x} \, \right) = \dfrac{1}{c_1} \, \ee^{q_I t} \, S(t)$ nous obtenons :
+
+\medskip
+
+$P(t) = \dfrac{c_2}{c_1} \, \ee^{q_I t} \, S(t) + q_V S(t)$
+
+\medskip
+
+$\dfrac{P(t)}{S(t)} = k \, \ee^{q_I t} + q_V$ avec $k = \dfrac{c_2}{c_1}$ une constante réelle
+
+\medskip
+
+$R(t) = \dfrac{S(t)}{P(t)} = \dfrac{1}{q_V + k \, \ee^{q_I t}}$ \dots

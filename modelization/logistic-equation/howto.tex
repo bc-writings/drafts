@@ -16,15 +16,12 @@ Nous allons présenter son raisonnement.
 % ---------- %
 
 
-\medskip
-
-
-Commençons par proposer une modélisation de la propagation de la variole. Pour cela nous aurons besoin des notations suivantes où l'unité de temps sera l'année.
+\paragraph{Propagation de la variole.} Pour modéliser ceci, nous aurons besoin des notations suivantes où l'unité de temps sera l'année.
 
 \begin{itemize}[label=\small\textbullet]
-	\item $q_I$ désigne la probabilité d'être infecté par la variole dans l'année.
+	\item $q_I$ désigne la probabilité d'être infecté par la variole pendant une année.
 
-	\item $q_V$ désigne la probabilité de mourrir lorsque l'on attrape la variole pour la 1\iere fois. Une personne ne mourant pas dans l'année sera considérée comme immunisée contre la variole.
+	\item $q_V$ désigne la probabilité de mourrir lorsque l'on attrape la variole pour la 1\iere fois. Une personne ne mourant pas pendant une année sera considérée comme immunisée contre la variole.
 
 	\item $m(t)$ désigne, à la fin de l'année $t$, le taux de mortalité \emph{\og normale \fg} sans tenir compte d'une épidémie de variole \emph{(l'année $0$ est celle du début de l'étude réelle)}. 
 \end{itemize}
@@ -65,7 +62,10 @@ Faisons le bilan entre l'année $t$ et l'année $(t + 1)$.
 	\end{itemize}
 
 
-	\item Donc $P(t + 1) = P(t) - q_V q_I S(t) - m(t) P(t)$
+	\item Nous en déduisons :
+	
+	\noindent
+	$P(t + 1) = P(t) - q_V q_I S(t) - m(t) P(t)$
 \end{itemize}
 
 
@@ -74,7 +74,7 @@ Notant $\deltaval{f}{a}{b} = \frac{f(a) - f(b)}{a - b}$ le taux de variation de 
 \begin{itemize}[label=\small\textbullet]
 	\item $\deltaval{S}{t}{t+1} = - q_I S(t) - m(t) S(t)$
 
-	\item $\deltaval{V}{t}{t+1} = - q_V q_I S(t) - m(t) P(t)$
+	\item $\deltaval{P}{t}{t+1} = - q_V q_I S(t) - m(t) P(t)$
 \end{itemize}
 
 
@@ -84,15 +84,18 @@ Notant $\deltaval{f}{a}{b} = \frac{f(a) - f(b)}{a - b}$ le taux de variation de 
 \medskip
 
 
-Il n'est pas aisé d'étudier des système d'équations sur des suites comme celui ci-dessus. Nous allons donc émettre de nouvelles hypothèses de modélisation pour aboutir à un modèle utilisant des équations différentielles. L'idée simple, mais peut-être un peu trop, est de négliger les variabilités excessives pendant une année, autrement dit on suppose $S$ et $P$ définies sur $\RRp$ et affines entre $t$ et $t+1$. Sous ces hypothèses fortes, nous avons alors pour $\delta t \in \intervalC{0}{1}$ :
+Il n'est pas aisé d'étudier des systèmes d'équations sur des suites comme celui ci-dessus. Nous allons donc émettre de nouvelles hypothèses de modélisation pour aboutir à un modèle utilisant des équations différentielles.
+L'idée simple, mais peut-être un peu trop, est de négliger les variabilités excessives pendant une année, autrement dit on suppose $S$ et $P$ définies sur $\RRp$ et affines entre $t$ et $t+1$.
+Sous ces hypothèses fortes, nous avons alors pour $\delta t \in \intervalC{0}{1}$ :
 
 \begin{itemize}[label=\small\textbullet]
 	\item $\deltaval{S}{t}{t + \delta t} = \deltaval{S}{t}{t+1} = - q_I S(t) - m(t) S(t)$
 
-	\item $\deltaval{V}{t}{t + \delta t} = \deltaval{V}{t}{t+1} = - q_V q_I S(t) - m(t) P(t)$
+	\item $\deltaval{P}{t}{t + \delta t} = \deltaval{P}{t}{t+1} = - q_V q_I S(t) - m(t) P(t)$
 \end{itemize}
 
-Il ne reste plus qu'à sauter le cap en supposant carrément $S$ et $P$ dérivables en chaque valeur $t$. Dès lors par passage à la limite via $\delta t \rightarrow 0^+$ sur $\intervalC{t}{t+1}$  et $\delta t \rightarrow 0^-$ sur $\intervalC{t-1}{t}$ pour $t \in \NNs$ :
+Il ne reste plus qu'à passer un cap supplémentaire en supposant $S$ et $P$ dérivables en chaque valeur $t \in \NN$ .
+Dès lors par passage à la limite via $\delta t \rightarrow 0^+$ sur $\intervalC{t}{t+1}$  et $\delta t \rightarrow 0^-$ sur $\intervalC{t-1}{t}$ pour $t \in \NNs$, on obtient :
 
 \begin{itemize}[label=\small\textbullet]
 	\item $S\,'(t) = - q_I S(t) - m(t) S(t)$
@@ -102,7 +105,7 @@ Il ne reste plus qu'à sauter le cap en supposant carrément $S$ et $P$ dérivab
 
 Quid des valeurs sur $\RRp \backslash \, \NN$ ? On peut supposer que l'on étend le système précédent de deux équations aux valeurs de $\RRp$ tout entier
 \footnote{
-	Peut-être que le lecteur aura noté une très, très grosse arnaque ici. Nous en discuterons dans la section suivante.
+	Peut-être que le lecteur aura noté une grosse arnaque ici. Nous en discuterons dans la section suivante.
 }
 et non seulement à celles de $\NN$ . Encore une hypothèse de modélisation... Notre sac d'hypothèses s'alourdit !
 
@@ -113,33 +116,24 @@ et non seulement à celles de $\NN$ . Encore une hypothèse de modélisation... 
 
 
 En résumé, nous devons trouver deux fonctions $S$ et $P$ dérivables sur $\RRp$ vérifiant les deux équations précédentes.
-A priori, ce n'est pas simple comme problème : ce qui crée une grosse difficulté c'est la présence de $m(t)$ qui n'est pas constante. Étant bloqué, essayons d'obtenir des informations sur $R(t) = \frac{S(t)}{P(t)}$ le taux des personnes saines  
-\footnote{
-	Une astuce plus technique consiste à partir de $\dfrac{- S\,'(t) - q_I S(t)}{S(t)} = m(t) = \dfrac{- P\,'(t) - q_V q_I S(t)}{P(t)}$ afin d'éliminer la fonction gênante $m(t)$.
-	C'est un peu moins immédiat...
-}.
+A priori, ce n'est pas simple comme problème : ce qui crée une petite difficulté c'est la présence de $m(t)$ dont on ne sait rien. Nous décidions de chercher à obtenir des informations sur $R(t) = \frac{S(t)}{P(t)}$ le taux des personnes saines \emph{(en annexe de cette section sont données deux autres méthodes de résolution du système ci-dessus dont celle de Daniel Bernoulli)}.
 Au passage, nous avons besoin de supposer, de façon non abusive, que $S$ et $P$ ne s'annulent jamais.
 
 \vspace{-1em}
 
 \begin{flalign*}
-	R\,'(t) &= \left( \frac{S(t)}{P(t)} \right)^\prime
-		  & \\
+	R\,'(t) 
 	      &= \frac{1}{P^2(t)} \left( \, S\,'(t) P(t) - S(t)P\,'(t) \, \right) 
 	      & \\
-	      &= \frac{1}{P^2(t)} \left( \, [- q_I S(t) - m(t) S(t)] P(t) \,-\, S(t)[- q_V q_I S(t) - m(t) P(t)] \, \right) 
-	      & \\
-	      &= \frac{1}{P^2(t)} \left( \, - q_I S(t) P(t) - m(t) S(t) P(t) \,+\, q_V q_I S^2(t) + m(t) P(t) S(t) \, \right) 
+	      &= \frac{1}{P^2(t)} \left( \, [- q_I S(t) - m(t) S(t)] \, P(t) \,-\, S(t) \, [- q_V q_I S(t) - m(t) P(t)] \, \right) 
 	      & \\
 	      &= \frac{1}{P^2(t)} \left( \, - q_I S(t) P(t) + q_V q_I S^2(t) \, \right) 
-	      & \\
-	      &=  - q_I \frac{S(t)}{P(t)} + q_V q_I \frac{S^2(t)}{P^2(t)}
 	      & \\
 	      &=  - q_I R(t) + q_V q_I R^2(t)
 	      & \\
 \end{flalign*}
 
-\vspace{-1.5em}
+\vspace{-1em}
 
 Ce qui est beau, c'est que l'on tombe sur une équation différentielle peu agressive a priori : $R\,'(t) = - q_I R(t) + q_V q_I R^2(t)$ . Quiconque connaissant les formules générales de dérivation trouvent qu'il suffit de raisonner comme suit en se souvenant que $S$ et $P$ ne s'annulent jamais et donc $R$ non plus.
 
@@ -161,3 +155,39 @@ Nous aboutissons à une simple équation différentielle linéaire du 1\ier ordr
 	Notre équation différentielle est juste sur $\RRp$ mais cela n'est pas gênant ici. 
 }.
 Nous avons finalement :$\frac{S(t)}{P(t)} = \frac{1}{q_V + k \ee^{q_I t}}$ . Tout ceci a été obtenu via de bien jolis calculs...
+
+
+\begin{remark}
+	L'équation différentielle $R\,'(t) = - q_I R(t) + q_V q_I R^2(t)$ est une équation du type $y\,' = a y (1 - b y)$ avec $a \neq 0$ et $b \neq 0$ .
+	De telles équations sont dites \emph{\og logistiques \fg} et elles se résolvent, pour les solutions ne s'annulant pas, via le changement de fonctions $f = \frac{1}{y}$ .
+\end{remark}
+
+
+% ---------- %
+
+
+\paragraph{Utilité de l'inoculation pour vacciner.} L'idée première de Daniel Bernoulli est de supposer que l'inoculation de la variole à tous les jeunes enfants les rend tous immunisés sans les tuer
+\footnote{
+	Dans le livre \emph{\og Histoires de mathématiques et de populations \fg} , Nicolas Bacaër explique la suite du raisonnement consistant à prendre en compte les effets délétères de l'inoculation dans certains cas. 
+}.
+Sous cette hypothèse, il faut étudier $Q(t) = \frac{P(t)}{N(t)}$ où $N(t)$ désigne le nombre, non nul par hypothèse, de personnes à la fin de l'année $t$ s'il n'y a aucun cas de variole. 
+En raisonnant comme ci-dessus, nous avons  $\deltaval{N}{t}{t+1} = - m(t) N(t)$ puis $N\,'(t) = - m(t) N(t)$ en supposant $N$ dérivable sur $\RRp$ .
+
+\vspace{-1em}
+
+\begin{flalign*}
+	Q\,'(t)
+		  &= \frac{1}{N^2(t)} \left( \, P\,'(t) N(t) - P(t) N\,'(t) \, \right) 
+	      & \\
+	      &= \frac{1}{N^2(t)} \left( \, [- q_V q_I S(t) - m(t) P(t)] \, N(t) + m(t) P(t) N(t) \, \right) 
+	      & \\
+	      &= - q_V q_I \frac{P(t)}{N(t)} \cdot \frac{S(t)}{P(t)}
+	      & \\
+	      &= - q_V q_I Q(t) \frac{\ee^{- q_I t}}{q_V \ee^{- q_I t} + k}
+	      \,\, \text{car $\frac{S(t)}{P(t)} = \frac{1}{q_V + k \ee^{q_I t}} =  \frac{\ee^{- q_I t}}{q_V \ee^{- q_I t} + k}$} 
+	      & \\
+\end{flalign*}
+
+\vspace{-1em}
+
+Comme $\frac{Q\,'(t)}{Q(t)} = \frac{- q_I \cdot q_V \ee^{- q_I t}}{q_V \ee^{- q_I t} + k}$ , la dérivation logarithmique nous donne $Q(t) = K \left( q_V \ee^{- q_I t} + k \right)$ avec $K \in \RRs$ une constante. Ceci permet d'évaluer l'efficacité de l'inoculation de la variole en utilisant les données du terrain pour déterminer les différents paramètres.
