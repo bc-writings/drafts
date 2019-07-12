@@ -1,1 +1,44 @@
-????
+Revenons sur la toute \emph{\og petite \fg} liste d'hypothèses de modélisation que nous avons faites.
+
+\begin{enumerate}
+	\item La probabilité $q_I$ d'être infecté dans l'année, et celle $q_V$ de mourrir dans l'année une fois infecté sont supposées indépendantes de l'année $t$ considérée.
+
+	\item On a supposé $S$ et $P$ définies sur $\RRp$ et affines entre $t$ et $t+1$.
+
+	\item Il fallu aussi ajouter la dérivabilité de $S$ et $P$ en chaque valeur $t \in \NN$ , puis carrément sur $\RRp$ tout entier.
+
+	\item Enfin nous avions besoin que $S$ et $P$ ne s'annulent jamais.
+\end{enumerate}
+
+
+% ----------- %
+
+
+\paragraph{Hypothèse 1.} Ceci sous-entend un type particulier de propagation. Par exemple, cette première hypothèse reste-t-elle valable si les personnes malades sont mises en quarantaine ? Non et c'est ce qui permet d'éradiquer des maladies très virulentes. Du point de vue de la modélisation, pour une maladie pas \emph{\og trop violente \fg} , on peut accepter la première hypothèse car des règles de quarantaines ne sont pas justifiables politiquement.
+
+
+% ----------- %
+
+
+\paragraph{Hypothèse 2.} Le passage de fonctions définies sur $\NN$ à des fonctions définies sur $\RRp$ ne pose pas de difficultés conceptuelle et concrète. Par contre, l'hypothèse d'un comportement affine entre $t$ et $t+1$ est concrètement critiquable. Penser par exemple aux maladies saisonnières comme la grippe par exemple. Mais est-ce gênant pour notre modélisation ? En fait non ! Voici pourquoi. Nous avons user d'un simple artifice mathématique qui revient à répartir les données sur l'année. Or nous ne nous intéressons qu'à ce qu'il se passe aux années $t$ et $t+1$, et non à ce qu'il arrive à l'intérieur d'une année.
+
+
+% ----------- %
+
+
+\paragraph{Hypothèse 3.} Nous arrivons ici à un classique des sciences concrètes : les fonctions concrètes étudiées sont supposées suffisamment régulières. Pourquoi fait-on ceci ? Comme nous l'avons déjà indiqué, ceci permet de faire appel à des outils mathématiques puissants du calcul différentiel car l'on dispose de moins d'outils efficaces pour étudier les suites. 
+
+\smallskip
+
+Ceci étant dit, supposer la dérivabilité juste en $t \in \NN$ et sur $\RRp$ tout entier sont deux choses différentes car dans le second cas, on va lisser le comportement des fonctions sur $\RRp$ tout entier et non juste aux valeurs étudiées. Ceci est donc une hypothèse lourde de conséqences...
+
+% ----------- %
+
+
+\paragraph{Hypothèse 4.} Ceci ne pose aucun souci sauf à vouloir étudier une population sans aucune personne saine, ou bien sans personne vivante.
+
+
+% ----------- %
+
+
+\paragraph{Conclusion.} Bien que nous ayons fait un très joli raisonnement mathématique, nous venons de voir que concrètement il y a de réelles failles de modélisation. Le modèle de Daniel Bernoulli a été critiqué par des chercheurs, bien plus compétents que l'auteur de ces lignes, si l'on en croit Nicolas Bacaër. Comme toujours en modélisation, c'est l'affrontement du modèle et des vraies données qui servira de juge d'utilité.

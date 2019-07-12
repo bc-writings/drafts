@@ -47,14 +47,22 @@
 
 
 \let\oldparagraph\paragraph
-\renewcommand\paragraph[1]{\bigskip\oldparagraph{#1}}
+\renewcommand\paragraph[1]{\bigskip\oldparagraph{{\bfseries #1}}}
  
+	 
+\let\oldsection\section
+\renewcommand\section[1]{\vfill\pagebreak\oldsection{#1}}
+ 
+
+\newcommand\deltaval[3]{%
+	\Delta{#1}^{\,#2}_{\,#3}%
+}
 	 
 \begin{document}
 
 \title{BROUILLON - Modéliser, c'est quoi.}
 \author{Christophe BAL}
-\date{11 Juillet 2019}
+\date{11 Juillet 2019 - 12 Juillet 2019}
 
 \maketitle
 
@@ -88,18 +96,10 @@
 
 
 
-\section{Où allons-nous ?}
-
 \subimport*{modelization/}{intro}
 
 
 
-%\section{Miroir plan -- Principe de moindre action et Géométrie}
-%
-%\subimport*{modelization/}{mirror}
-%
-%
-%
 
 
 \section{Coût marginal -- Polynômes de degré 2 ou 3}
@@ -114,12 +114,12 @@
 
 
 
-%\section{Daniel BERNOULLI, la variole au XVII\ieme{} siècle -- Des équations différentielles}
-%
-%\subimport*{modelization/}{logistic-equation}
-%
-%
-%
+\section{Daniel BERNOULLI et la variole au XVIII\ieme{} siècle -- Des équations différentielles non linéaires}
+
+\subimport*{modelization/}{logistic-equation}
+
+
+
 %\section{Différents modèles sont possibles}
 %
 %\subimport*{modelization/}{classify}
@@ -130,7 +130,7 @@
 
 \hrule
 
-\section{AFFAIRE À SUIVRE...}
+\oldsection{AFFAIRE À SUIVRE...}
 
 \bigskip
 

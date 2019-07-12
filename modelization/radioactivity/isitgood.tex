@@ -30,13 +30,14 @@ Démontrons alors l'existence de $\lambda \in \RRsp$ tel que $G(x) = \ee^{-\lamb
 
 	\medskip
 	\item Dans la suite, nous poserons $\alpha = G(1) \in \intervalO{0}{1}$ .
+	En particulier, $\forall n \in \NN$ , $G(n) = \alpha^n$ .
 
 	
 % ---------- %
 
 
 	\medskip
-	\item $\forall (p ; q) \in \NN \times \NNs$ , $G(p) = G \left( q \times \frac{p}{q} \right)$ , soit $\alpha ^p = G \left( \frac{p}{q} \right)^q$ .
+	\item $\forall (p ; q) \in \NN \times \NNs$ , $G(p) = G \left( q \times \frac{p}{q} \right)$ , soit $\alpha^p = G \left( \frac{p}{q} \right)^q$ .
 	Comme de plus $G > 0$ sur $\RRp$ , on a : $G \left( \frac{p}{q} \right) = \sqrt[q\,\,]{\alpha^p} = \alpha^{\frac{p}{q}}$ .
 	Autrement dit, $\forall r \in \QQp$ , $G(r) = \alpha^r$ .
 
@@ -57,7 +58,7 @@ Démontrons alors l'existence de $\lambda \in \RRsp$ tel que $G(x) = \ee^{-\lamb
 
 	\medskip
 	\item Il ne reste plus qu'a poser $\lambda = - \ln \alpha > 0$ de sorte que $G(t) = \ee^{- \lambda t}$ sur $\RRp$ .
-	Dès lors, $\displaystyle F(t) = 1 - G(t) = 1 - \ee^{- \lambda t} = \int_0^t \lambda \ee^{-\lambda x} \dd{x}$ prouve que la loi $P$ suit forcément une loi de densité continue $f(x) = \lambda \ee^{-\lambda x}$ .
+	Dès lors, $\displaystyle F(t) = 1 - G(t) = 1 - \ee^{- \lambda t} = \int_0^t \lambda \ee^{-\lambda x} \dd{x}$ prouve que la probabilité $P$ suit forcément la loi de densité continue $f(x) = \lambda \ee^{-\lambda x}$ .
 \end{itemize}
 
 	
