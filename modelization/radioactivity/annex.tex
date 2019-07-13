@@ -1,0 +1,57 @@
+Posons $F(t) = P\left( \intervalC{0}{t} \right)$ ainsi que $G(t) = 1 - F(t)$ pour $t \geq 0$ comme précédemment. On sait juste que $0 < G \leq 1$ sur $\RRp$ , que $0 < G < 1$ sur $\RRsp$ , et que $G$ est décroissante sur $\RRp$ \emph{(la monotonie découle de la croissance des probabilités)}.
+
+
+\medskip
+
+
+Reprenant le raisonnement de la section sur la modélisation, sans passer par aucun calcul intégral, nous avons de nouveau que $G(t+s) = G(s) G(t)$ pour $(t ; s) \in \left( \RRp \right)^2$ .
+Démontrons alors l'existence de $\lambda \in \RRsp$ tel que $G(x) = \ee^{-\lambda x}$.
+
+\begin{itemize}[label=\small\textbullet]
+	\item $G(0 + 0) = G(0) G(0)$ donne $G(0)(1 - G(0)) = 0$ soit $G(0) = 0$ ou $G(0) = 1$. Seul le second cas est possible.
+
+	
+% ---------- %
+
+
+	\medskip
+	\item Pour tout réel $x \geq 0$ , une récurrence facile montre que $G(nx) = G(x)^n$ pour tout naturel $n$.
+
+	
+% ---------- %
+
+
+	\medskip
+	\item Dans la suite, nous poserons $\alpha = G(1) \in \intervalO{0}{1}$ .
+	En particulier, $\forall n \in \NN$ , $G(n) = \alpha^n$ .
+
+	
+% ---------- %
+
+
+	\medskip
+	\item $\forall (p ; q) \in \NN \times \NNs$ , $G(p) = G \left( q \times \frac{p}{q} \right)$ , soit $\alpha^p = G \left( \frac{p}{q} \right)^q$ .
+	Comme de plus $G > 0$ sur $\RRp$ , on a : $G \left( \frac{p}{q} \right) = \sqrt[q\,\,]{\alpha^p} = \alpha^{\frac{p}{q}}$ .
+	Autrement dit, $\forall r \in \QQp$ , $G(r) = \alpha^r$ .
+
+	
+% ---------- %
+
+
+	\medskip
+	\item Soit enfin $x \in \RRp$ . Par densité de $\QQ$ dans $\RR$, il existe deux suites de rationnels positifs $(r_n)$ et $(R_n)$ qui convergent vers $x$ et vérifient $\forall n \in \NN$ , $r_n \leq x \leq R_n$ .
+	
+	\smallskip\noindent
+	Comme $G$ décroit, $\forall n \in \NN$ , $G(r_n) \geq G(x) \geq G(R_n)$ , soit $\alpha^{r_n} \geq G(x) \geq \alpha^{R_n}$ .
+	Par continuité de la fonction $t \rightarrow \alpha^t$ sur $\RRp$ , un passage à la limite donne $G(x) = \alpha^x$ .
+
+	
+% ---------- %
+
+
+	\medskip
+	\item Il ne reste plus qu'a poser $\lambda = - \ln \alpha > 0$ de sorte que $G(t) = \ee^{- \lambda t}$ sur $\RRp$ .
+\end{itemize}
+
+
+Finalement, $\displaystyle F(t) = 1 - G(t) = 1 - \ee^{- \lambda t} = \int_0^t \lambda \ee^{-\lambda x} \dd{x}$ prouve que la probabilité $P$ suit forcément la loi de densité continue $f(x) = \lambda \ee^{-\lambda x}$ .

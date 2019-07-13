@@ -3,9 +3,7 @@ Revenons sur la toute \emph{\og petite \fg} liste d'hypothèses de modélisation
 \begin{enumerate}
 	\item La probabilité $q_I$ d'être infecté dans l'année, et celle $q_V$ de mourrir dans l'année une fois infecté sont supposées indépendantes de l'année $t$ considérée.
 
-	\item On a supposé $S$ , $P$ et $N$ définies sur $\RRp$ et affines entre $t$ et $t+1$.
-
-	\item Il fallu aussi ajouter la dérivabilité de $S$ , $P$ et $N$ en chaque valeur $t \in \NN$ , puis carrément sur $\RRp$ tout entier.
+	\item On a supposé $S$ , $P$ et $N$ définies et dérivables sur $\RRp$ tout entier.
 
 	\item Enfin nous avions besoin que $S$ , $P$ et $N$ ne s'annulent jamais.
 \end{enumerate}
@@ -26,29 +24,30 @@ Du point de vue de la modélisation, pour une maladie pas \emph{\og trop violent
 % ----------- %
 
 
-\paragraph{Hypothèse 2.} Le passage de fonctions définies sur $\NN$ à des fonctions définies sur $\RRp$ ne pose pas de difficultés conceptuelle et concrète. Par contre, l'hypothèse d'un comportement affine entre $t$ et $t+1$ est concrètement critiquable. Penser par exemple aux maladies saisonnières comme la grippe par exemple. 
-Mais est-ce gênant pour notre modélisation ? En fait non ! Voici pourquoi. Nous avons user d'un simple artifice mathématique qui revient à répartir les données sur l'année. Or nous ne nous intéressons juste à ce qu'il se passe aux années $t$ et $t+1$, et non à ce qu'il arrive à l'intérieur d'une année.
+\paragraph{Hypothèse 2.} Le passage de fonctions définies sur $\NN$ à des fonctions définies sur $\RRp$ ne pose pas de difficultés conceptuelle et concrète. 
+
+\smallskip
+
+Ensuite arrive un grand classique des sciences du réel : les fonctions concrètes étudiées sont supposées suffisamment régulières. Pourquoi fait-on ceci ? Comme nous l'avons déjà indiqué, ceci permet de faire appel à des outils mathématiques puissants du calcul différentiel car l'on dispose de moins d'outils efficaces pour étudier les suites. 
+
+\smallskip
+
+Ceci étant dit, supposer la dérivabilité sur $\RRp$ tout entier nous amène à étudier des fonctions au comportement très lisse.
+Ainsi les solutions des équations différentielles, dites logistiques, $y\,' = a y (1 - b y)$ sont très régulières, tandis que l'équation logistique discrète $u_{n+1} = a u_n (1 - b u_n)$ peut produire des suites au comportement chaotique. 
+
+\smallskip
+
+De plus, comment passer d'une étude entre $t$ et $t + \delta t$ avec $\delta t$ aussi petit que nécessaire, au cas où $\delta t$ tend vers $0$ ? Rien ne justifie ceci sérieusement d'un point de vue concret. Nous sommes là face à un choix très fort de modélisation.
+
+\smallskip
+
+L'hypothèse 2 est donc lourde de conséquences... Ceci étant dit, cela reste un classique de la modélisation et l'histoire des sciences du réel prouve que ce type d'hypothèse est féconde à produire des modèles utiles.
 
 
 % ----------- %
 
 
-\paragraph{Hypothèse 3.} Nous arrivons ici à un classique des sciences du réel : les fonctions concrètes étudiées sont supposées suffisamment régulières. Pourquoi fait-on ceci ? Comme nous l'avons déjà indiqué, ceci permet de faire appel à des outils mathématiques puissants du calcul différentiel car l'on dispose de moins d'outils efficaces pour étudier les suites. 
-
-\smallskip
-
-Ceci étant dit, supposer la dérivabilité juste en $t \in \NN$ et sur $\RRp$ tout entier sont deux choses différentes car dans le second cas on va lisser le comportement des fonctions sur $\RRp$ tout entier et non juste aux valeurs étudiées.
-Ainsi les solutions des équations différentielles logistiques $y\,' = a y (1 - b y)$ sont régulières, tandis que l'équation logistique discrète $u_{n+1} = a u_n (1 - b u_n)$ peut produire des suites au comportement chaotique. 
-
-\smallskip
-
-L'hypothèse 3 est donc lourde de conséquences... Ceci étant dit, cela reste un classique de la modélisation.
-
-
-% ----------- %
-
-
-\paragraph{Hypothèse 4.} Ceci ne pose aucun souci sauf à vouloir étudier une population sans aucune personne saine, ou bien sans personne vivante.
+\paragraph{Hypothèse 3.} Ceci ne pose aucun souci sauf à vouloir étudier une population sans aucune personne saine, ou bien sans personne vivante.
 
 
 % ----------- %
