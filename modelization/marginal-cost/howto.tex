@@ -14,9 +14,7 @@
 
 \paragraph{Cas 1.}
 
-
-
-Supposons que des études statistiques aient montré que lorsque le nombre d'unités vendues augmente le coût marginal augmente de façon quasi linéaire.
+Supposons que des études statistiques aient montré que lorsque le nombre d'unités vendues augmente le coût marginal évolue de façon quasi linéaire.
 
 Dans ce cas, on peut faire l'approximation $C_m(x) = ax + b$ avec $(a ; b) \in \left( \RRsp \right)^2$ \emph{(cette fonction affine peut être celle obtenue via une régression linéaire par la méthode des moindres carrés)}. Nous avons alors :
 \begin{flalign*}
@@ -54,7 +52,6 @@ Avec ce modèle, nous avons $CM(x) = m x + p + \frac{q}{x}$ pour $x \in \NNs$. N
 
 \paragraph{Cas 2.}
 
-
 Supposons que des études statistiques aient montré que lorsque le nombre d'unités vendues augmente le coût marginal diminue strictement puis qu'ensuite il atteint un minimum pour enfin ne cesser d'augmenter strictement.
 Notons que le minimum est forcément positif, et la valeur où il est atteint strictement positive.
 Nous supposons de plus que les données sont telles que la courbe de $C_m$ soit quasi parabolique.
@@ -87,10 +84,11 @@ De nouveau, nous avons :
 \vspace{-1em}
 
 \begin{wrapfigure}{r}{0.3\textwidth} 
+	\vspace{-.5em}
 	\begin{center}
 		\fbox{\includegraphics[scale = .4]{marginal-cost/cubic.png}}
 	\end{center}
-	\vspace{-2em}
+	\vspace{-2.25em}
 \end{wrapfigure} 
 
 Si une étude statistique rapide sur le coût de fabrication $C$ fournit une courbe similaire à celle ci-contre, on pourra espérer modéliser correctement $C$ avec un polynôme de degré 3 comme ci-dessus. Dans ce cas, il faudra bien choisir  certaines données concrètes afin de trouver de \emph{\og bonnes \fg} valeurs des coefficients $m$ , $p$ , $q$ et $r$ . C'est à l'usage que l'on pourra voir la pertinence ou non de ces choix.
@@ -106,7 +104,7 @@ Bien que les significations concrètes de $p x$ , $q$  et $\frac{r}{x}$ peuvent 
 
 
 \begin{remark}
-	Si le coût marginal $C_m$ admet une \emph{\og courbe en U \fg}, on pourrait faire l'approximation $C_m(x) = c (x - \alpha)^{2p} + \beta$ avec $(c ; \alpha ; \beta) \in \left( \RRp \right)^3$ et $p \in \NNs$ .
+	Si le coût marginal $C_m$ admet une \emph{\og courbe en U \fg}, on pourra faire l'approximation $C_m(x) = c (x - \alpha)^{2p} + \beta$ avec $(c ; \alpha ; \beta) \in \left( \RRp \right)^3$ et $p \in \NNs$ .
 	Dans ce cas, $C(x)$ sera un polynôme de degré $(2p + 1)$. Est-ce plus efficace au final que de considérer une \emph{\og courbe en U \fg} comme quasi parabolique ?
 	Ne pas oublier qu'un modèle doit être aisément utilisable quitte à être un peu approximatif. Il est donc parfois inutile de vouloir être trop précis.
 \end{remark}
@@ -117,4 +115,17 @@ Bien que les significations concrètes de $p x$ , $q$  et $\frac{r}{x}$ peuvent 
 
 \begin{remark}
 	Plus généralement, on pourrait considérer d'autres types de fonction avec des variations collant à une étude statistique pour peu que le comportement du coût marginal $C_m$ soit relativement régulier. Le problème que l'on aura à résoudre sera soit d'évaluer simplement $\displaystyle \sum_{k = 1}^{x} C_m(k)$ pour une utilisation \emph{\og humaine \fg}, soit de le faire efficacement de façon informatique.
+\end{remark}
+
+
+% ---------------- %
+
+
+\begin{remark}
+	On justifie très souvent les deux modèles précédents via l'utilisation de l'approximation $C_m(x) \approx C\,'(x)$ , puis ensuite on utilise les polynômes ainsi trouvés pour des applications numériques avec de faibles valeurs pour $x$. On voit que cette démarche est fragile
+	\footnote{
+		L'auteur, qui enseigne les mathématiques au lycée, doit admettre qu'il utilise aussi ce type de raisonnement dans des exercices, ce qui est pédagogiquement intéressant dans le cadre du calcul de dérivées. Par contre, les élèves sont avertis de l'arnaque faite en utilisant l'expression polynomiale pour de petites valeurs de $x$.
+	}.
+	Le piège est que cette approche fournit tout de même un polynôme de degré $2$ ou $3$ suivant les hypothèses de départ.
+	Il pourrait être intéressant d'évaluer l'erreur commise par rapport à la méthodologie présentée dans ce document.
 \end{remark}

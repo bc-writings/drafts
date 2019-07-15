@@ -1,0 +1,112 @@
+Expliquons pourquoi ce qui précède est mathématiquement acceptable. Nous examinerons d'abord le cas de trois variables afin de nous permettre d'envisager sereinement le cas général via une récurrence sur le nombre de variables.
+
+
+% ---------------- %
+
+
+\paragraph{Cas avec trois variables.}
+
+Considérons une fonction réelle $f(x ; y ; z)$ définie sur $\left( \RRp \right)^3$ qui vérifie les conditions suivantes.
+
+\begin{enumerate}
+	\item $\forall (y ; z) \in \left( \RRp \right)^2$ , la fonction $x \rightarrow f(x ; y ; z)$ est proportionnelle à $x$ . 
+
+	\item $\forall (x ; z) \in \left( \RRp \right)^2$ , la fonction $y \rightarrow f(x ; y ; z)$ est proportionnelle à $y$ . 
+
+	\item $\forall (x ; y) \in \left( \RRp \right)^2$ , la fonction $z \rightarrow f(x ; y ; z)$ est proportionnelle à $z$ . 
+\end{enumerate}
+
+
+Autrement dit, nous avons :
+
+\begin{enumerate}
+	\item $\forall (y ; z) \in \left( \RRp \right)^2$ , il existe $a(y; z)$ telle que $f(x ; y ; z) = a(y ; z) x$ . 
+
+	\item $\forall (x ; z) \in \left( \RRp \right)^2$ , il existe $b(x; z)$ telle que $f(x ; y ; z) = b(x ; z) y$ . 
+
+	\item $\forall (x ; y) \in \left( \RRp \right)^2$ , il existe $c(x; y)$ telle que $f(x ; y ; z) = c(x ; y) z$ . 
+\end{enumerate}
+
+
+Nous avons alors :
+
+\smallskip
+
+$a(y ; z) x = b(x ; z) y$ sur $\left( \RRp \right)^3$ puis $\frac{a(y ; z)}{y} = \frac{b(x ; z)}{x}$ sur $\left( \RRsp \right)^3$ .
+Comme à droite et à gauche du signe égal, les expressions ne dépendent pas de $x$ et $y$ respectivement, mais peuvent dépendre de $z$ , nous avons l'existence de $d(z)$ telle que $\frac{a(y ; z)}{y} = \frac{b(x ; z)}{x} = d(z)$ d'où $f(x ; y ; z) = d(z) x y$ sur $\left( \RRsp \right)^3$ .
+
+
+\medskip
+
+Ensuite nous obtenons :
+
+\smallskip
+
+$d(z) x y = c(x ; y) z$ puis $\frac{d(z)}{z} = \frac{c(x ; y)}{xy}$ sur $\left( \RRsp \right)^3$ . Ceci prouve l'existence d'une constante $k$ telle que $\frac{d(z)}{z} = \frac{c(x ; y)}{xy} = k$ d'où $f(x ; y ; z) = k x y z$ sur $\left( \RRsp \right)^3$ .
+
+
+\medskip
+
+La formule $f(x ; y ; z) = k x y z$ reste vraie sur $\left( \RRp \right)^3$ puisque $f(x ; y ; z)$ et $k x y z$ s'annulent dès que l'une au moins des variables est nulle.
+
+% ---------------- %
+
+
+\paragraph{Cas général.}
+
+Faisons une preuve par récurrence sur $n \in \NNs$ pour démontrer la validité de la propriété $\probaset{P}(n)$ définie comme suit :
+\emph{\og Si la fonction $f$ à $n$ variables $x_1$ , ... , $x_n$ définie sur $\RRp$ est telle que chacune des fonctions $f_i : t \rightarrow f(x_1 ; ... ; x_{i-1} ; t ; x_{i+1} ; x_n)$
+\footnote{
+	Désolé pour les abus évidents de notations pour $i = 1$ et $i = n$ . 
+},
+pour $i \in \ZintervalC{1}{n}$, soit linéaire en $t$ , alors il existe une constante $k$ telle que $f(x_1 ; ... ; x_n) = k x_1 \cdots x_n$ sur $\RRp$ \fg}.
+
+\begin{itemize}[label=\small\textbullet]
+	\item \emph{Cas de base.}
+	
+	\noindent
+	$\probaset{P}(1)$ est clairement vraie.
+
+
+	\medskip
+	\item \emph{Hérédité.}
+	
+	\noindent
+	Supposons $\probaset{P}(n)$ vraie pout un naturel $n$ fixé mais quelconque, puis considérons une fonction $f$ de $(n + 1)$ variables qui vérifie les conditions et conséquences de la propriété $\probaset{P}(n + 1)$ .
+	
+	\smallskip
+	\noindent
+	Fixons $x \in \RRp$ et considérons la fonction $f_x : (x_1 ; ... ; x_n) \rightarrow f(x_1 ; ... ; x_n ; x)$ .
+	Comme $f_x$  vérifie les conditions et conséquences de la propriété $\probaset{P}(n)$ ,
+	nous avons par hypothèse de récurrence 
+	$f_x(x_1 ; ... ; x_n) = a(x) x_1 \cdots x_n$ , soit $f(x_1 ; ... ; x_n ; x) = a(x) x_1 \cdots x_n$ où $a(x)$ est une constante dépendant du réel $x$ .
+	
+	\smallskip
+	\noindent
+	D'autre part, par hypothèse $f(x_1 ; ... ; x_n ; x) = b(x_1 ; ... ; x_n) x$ où $b(x_1 ; ... ; x_n)$ est une constante dépendant des réels $x_1$ , ... , $x_n$ .
+	
+	\smallskip
+	\noindent
+	Donc sur $\left( \RRsp \right)^{n+1}$ , nous avons
+	$a(x_{n+1}) x_1 \cdots x_n = b(x_1 ; ... ; x_n) x_{n+1}$ ,
+	puis ensuite
+	$\frac{a(x_{n+1})}{x_{n+1}} = \frac{b(x_1 ; ... ; x_n)}{x_1 \cdots x_n} = k$
+	avec $k$ une constante d'où
+	$f(x_1 ; ... ; x_n ; x_{n+1}) = k x_1 \cdots x_n x_{n+1}$
+	qui est valable sur $\left( \RRsp \right)^{n+1}$ .
+	Cette formule s'étend à $\left( \RRp \right)^{n+1}$ puisque
+	$k x_1 \cdots x_n x_{n+1}$ et $f(x_1 ; ... ; x_n ; x_{n+1})$ s'annulent dès que l'une au moins des variables est nulle.
+	
+	\smallskip
+	\noindent
+	Nous avons bien déduit $\probaset{P}(n+1)$ sous l'hypothèse de la validité de $\probaset{P}(n)$ .
+
+
+	\medskip
+	\item \emph{Hérédité.}
+	
+	\smallskip
+	\noindent
+	Par récurrence sur $n \in \NNs$ , la propriété $\probaset{P}(n)$ est vraie pour tout naturel non nul $n$ .
+\end{itemize} 
+

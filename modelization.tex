@@ -23,6 +23,7 @@
 \usepackage{tcolorbox}
 \usepackage{lymath}
 
+\usepackage[version=4]{mhchem}
     
 \newtheorem{fact}{Fait}%[section]
 \newtheorem*{theorem}{Théorème}
@@ -30,6 +31,7 @@
 \newtheorem{remark}{Remarque}[section]
 \newtheorem*{proof*}{Preuve}
 
+\usepackage[version=4]{mhchem}
 \setlength\parindent{0pt}
 
 
@@ -62,7 +64,7 @@
 
 \title{BROUILLON - Modéliser, c'est quoi.}
 \author{Christophe BAL}
-\date{11 Juillet 2019 - 13 Juillet 2019}
+\date{11 Juillet 2019 - 15 Juillet 2019}
 
 \maketitle
 
@@ -95,11 +97,21 @@
 \tableofcontents
 
 
+% ----------- %
+
 
 \subimport*{modelization/}{intro}
 
 
+% ----------- %
 
+
+\section{Le principe de \og multi-proportionnalité \fg}
+
+\subimport*{modelization/}{multi-prop}
+
+
+% ----------- %
 
 
 \section{Coût marginal -- Polynômes de degré 2 ou 3}
@@ -107,17 +119,23 @@
 \subimport*{modelization/}{marginal-cost}
 
 
+% ----------- %
+
 
 \section{Désintégration radioactive -- Probabilités et lois continues, ou pas...}
 
 \subimport*{modelization/}{radioactivity}
 
 
+% ----------- %
+
 
 \section{Daniel BERNOULLI et la variole -- Équations différentielles non linéaires}
 
-\subimport*{modelization/}{logistic-equation}
+\subimport*{modelization/}{bernoulli-model}
 
+
+% ----------- %
 
 
 %\section{Différents modèles sont possibles}
