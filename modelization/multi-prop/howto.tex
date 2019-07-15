@@ -1,4 +1,4 @@
-Les sciences du réel sont avant tout des sciences de la mesure. Il peut arriver que des phénomènes fassent apparaître, via de simples mesures, de la proportionnalité sur plusieurs variables étudiées indépendamment les unes des autres : l'auteur de ces lignes parlent de \emph{\og multi-proprotionnalité \fg}. Voici des exemples classiques de ce type
+Les sciences du réel sont avant tout des sciences de la mesure. Il peut arriver que des phénomènes fassent apparaître, via de simples mesures, de la proportionnalité sur plusieurs variables étudiées indépendamment les unes des autres : l'auteur de ces lignes parlent de \emph{\og multi-proportionnalité \fg}. Voici des exemples classiques de ce type fournis par les Sciences Physiques
 \footnote{
 	L'auteur n'affirme pas que ce qui suit est effectivement ce qui a guidé l'établissement des lois présentées mais cette approche de modélisation reste concrètement très acceptable.
 	Afin de préciser le propos, une étude historique serait nécessaire mais le temps manque au papa qui écrit ces lignes...
@@ -10,7 +10,11 @@ Les sciences du réel sont avant tout des sciences de la mesure. Il peut arriver
 
 
 \begin{itemize}[label=\small\textbullet]
-	\item En Électricité, en régime continu, la tension et l'intensité du courant aux bornes d'une resistance vérifient $U = RI$ . Cette loi est dû à Georg Simon Ohm (1789 -- 1854). On imagine bien un ensemble de mesures de $U$ en fonction de $I$ faisant apparaître une relation de quasi proportionnalité du fait de certaines imprécisions de mesure. Une fois cette obesrvation faite, il devient \emph{\og naturelle \fg} de poser la loi. 
+	\item En Électricité, en régime continu, la tension et l'intensité du courant aux bornes d'une resistance vérifient $U = RI$ . Cette loi est due à Georg
+	\footnote{
+		L'absence d'un \emph{\og e \fg} final n'est pas une faute de frappe.
+	}
+	Simon Ohm (1789 -- 1854). On imagine bien un ensemble de mesures de $U$ en fonction de $I$ faisant apparaître une relation de quasi proportionnalité du fait de certaines imprécisions de mesure. Une fois cette observation faite, il devient \emph{\og naturel \fg} de poser la loi $U = RI$ . 
 
 
 % ---------------- %
@@ -18,7 +22,8 @@ Les sciences du réel sont avant tout des sciences de la mesure. Il peut arriver
 
 	\medskip
 	\item Amedeo Avogadro (1776 -- 1846) a énoncé la loi des gaz parfaits : $PV = nRT$ .
-	Dans cette relation, $V$ est un volume de gaz en $m^3$ , $P$ une pression en pascal, $T$ une température en $K$ , $n$ la quantité de matière en $mol$ , et $R \approx 8,314$ la constante des gaz parfait en $J \cdot mol^{-1} \cdot K^{-1}$ . On imagine bien ici aussi une étude d'une relation entre $P$ , $V$ et $T$ en s'intéressant à deux variables, l'autre étant fixée. Par exemple, en se fixant la quantité de matière $n$ pour commencer, on observerait alors les phénomènes suivants, sous des conditions physiques acceptables correspondant en fait au domaine de validité de la loi.
+	Dans cette relation, $V$ est un volume de gaz en $m^3$ , $P$ une pression en pascal, $T$ une température en $K$ , $n$ la quantité de matière en $mol$ , et $R \approx 8,314$ la constante des gaz parfait en $J \cdot mol^{-1} \cdot K^{-1}$ .
+	On imagine bien ici aussi une étude, à quantité de matière fixée, d'une relation entre $P$ , $V$ et $T$ en s'intéressant à deux variables, la troisième restant constante. On observerait alors les phénomènes suivants, sous des conditions physiques acceptables correspondant en fait au domaine de validité de la loi.
 	
 	\begin{enumerate}[label=(\alph*)]
 		\item $P$ étant fixé, on observe que la température est proportionnelle à $V$ d'où l'on pose $T = a(P) V$ avec $a(P)$ une constante dépendant a priori de $P$ .
@@ -28,11 +33,11 @@ Les sciences du réel sont avant tout des sciences de la mesure. Il peut arriver
 
 	\noindent
 	À ce stade, le physicien aguerri propose une formule du type $T = k P V$ avec $k$ une constante ne dépendant pas de $T$ , $P$ et $V$ .
-	Intuitivement facile à comprendre mais est-ce mathématiquement correct ? Nous allons voir dans la section suivante que oui !
+	Intuitivement c'est facile à comprendre mais est-ce mathématiquement correct ? Nous verrons dans la section suivante que oui !
 	
 	\smallskip
 	\noindent
-	Le passage de $T = k P V$ à la loi des gaz parfaits s'obtiendrait de façon analogue via l'étude d'un paramètre supplémentaire $n$ .
+	Le passage de $T = k P V$ à la loi des gaz parfaits s'obtiendrait de façon analogue via la prise en compte en plus du paramètre $n$ .
 	Le choix et la signification de la constante $R$ sont motivés par le physicien qui veut rendre sa formule la plus expressive possible.
 
 
@@ -40,33 +45,12 @@ Les sciences du réel sont avant tout des sciences de la mesure. Il peut arriver
 
 
 	\medskip
-	\item Nous devons à Isaac Newton (1642 -- 1727) la loi de l'attraction universelle qui dit que l'intensité en $N$ de la force exercée entre deux corps $A$ et $B$ est $F_{A \leftrightarrow B} = G \frac{m_A m_B}{d^2}$ avec $m_A$ et $m_B$ les masses en $kg$ des deux corps, $d$ la distance en $m$ les séparant et $G \approx 6,674$ la constante gravitationnelle en $N \cdot m^2 \cdot kg^{-2}$ .
-	Tout comme pour la loi des gaz parfaits, on pourrait imaginer étudier l'intensité relativement à $M_A$ , $m_B$ et l'inverse de $d^2$ respectivement, les deux autres paramètres étant fixés à chaque fois.
+	\item Nous devons à Isaac Newton (1642 -- 1727) la loi de l'attraction universelle qui dit que l'intensité en $N$ de la force exercée entre deux corps $A$ et $B$ est $F_{A \leftrightarrow B} = G \frac{m_A m_B}{d^2}$ avec $m_A$ et $m_B$ les masses en $kg$ de chacun des deux corps, $d$ la distance en $m$ les séparant et $G \approx 6,674$ la constante gravitationnelle en $N \cdot m^2 \cdot kg^{-2}$ .
+	Tout comme pour la loi des gaz parfaits, on pourrait imaginer étudier l'intensité relativement à $m_A$ , $m_B$ et l'inverse de $d^2$ respectivement, les deux autres paramètres étant fixés à chaque fois.
 	
 	\smallskip
 	\noindent
 	Pourquoi l'inverse de $d^2$ ? On peut imaginer une intuition relativement à l'inverse de $d$ , puis lors de mesures on s'aperçoit qu'il y a en fait une relation quadratique relativement $\frac{1}{d}$ . Dès lors, il suffit de tenter sa chance avec l'inverse de $d^2$ .
-
-
-% ---------------- %
-
-
-	\medskip
-	\item Un peu de chimie pour finir. L'étude des réactions chimiques ne se limitent pas à déterminer des coefficients stochiométriques
-	\footnote{
-		Selon le site wiktionary.org , l'étymologie du mot \emph{\og stochiométrique \fg} vient du grec ancien stoikheîon (élément) et métron (mesure).
-	}
-	pour équilibrer une équation. 	Il faut aussi en étudier la cinétique, c'est à dire la vitesse d'évolution.
-	Prenons l'équation suivante
-	\footnote{
-		Voir la page ??? de l'excellent livre \emph{\og Principes mathématiques pour biologistes, chimistes et bioingénieurs - Applications et exercices corrigés \fg} de Khalid  Addi, Daniel Goeleven et Rachid Oujja aux éditions ellipses.
-	} :
-% Source: https://tex.stackexchange.com/a/142904/6880
-	?????
-	?????
-	?????
-	?????
-	\ce{Na2SO4 ->[H2O] Na+ + SO4^2-}
 \end{itemize}
 
 
@@ -75,7 +59,7 @@ Les sciences du réel sont avant tout des sciences de la mesure. Il peut arriver
 
 \medskip
 
-Dans chacun des cas proposés, nous sommes partis d'une fonction $f$ à $n$ variables $x_1$ , ... , $x_n$ qui est proportionnelle à chaque variable $x_i$ dès que l'on fixe les autres,
+Dans chacun des cas proposés, nous avons rencontré une fonction $f$ à $n$ variables $x_1$ , ... , $x_n$ qui est proportionnelle relativement à chaque variable $x_i$ dès que l'on fixe les autres,
 puis nous sommes arrivés à une relation du type $f(x_1 ; ... ; x_n) = k x_1 \cdots x_n$ avec $k$ une constante. Bien que cela semble intuitivement clair, il serait bien de prouver la validité de cette affirmation. Ceci va être fait dans la section suivante.
 
 
@@ -83,7 +67,7 @@ puis nous sommes arrivés à une relation du type $f(x_1 ; ... ; x_n) = k x_1 \c
 
 
 \begin{remark}
-	Bien entendu une fois ces lois établies, il va falloir les valider par des mesures, étudier leur domaine de validité... Ceci se fait de façon directe et aussi indirecte : par exemple, la loi d'attraction de Newton permet de valider les observations empiriques de Kepler sur les orbites coniques des astres
+	Bien entendu une fois ces lois établies, il va falloir les valider par des mesures et étudier leur domaine d'applicabilité. Ceci se fait de façon directe et indirecte : par exemple, la loi d'attraction de Newton permet de valider les observations empiriques de Johannes Kepler (1571 -- 1630) sur les orbites coniques des astres
 	\footnote{
 		L'auteur conseille vivement au lecteur que les questions de géométrie passionnent la lecture de l'ouvrage \emph{\og Newton implique Kepler : méthodes géométriques élémentaires pour l'enseignement supérieur en mathématiques \fg} de Benoît Rittaud aux éditions ellipses.
 	}. 
