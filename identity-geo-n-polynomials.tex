@@ -1,0 +1,225 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+
+\usepackage{wrapfig} 
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{lymath}
+
+
+\newtheorem{fact}{Fait}
+\newtheorem*{fact*}{Fait}
+
+\newtheorem{example}{Exemple}
+
+\newtheorem{remark}{Remarque}
+\newtheorem*{remark*}{Remarque}
+
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+	 
+	 
+	 
+\begin{document}
+
+\title{BROUILLON - Identités remarquables via des calculs d'aires, est-ce rigoureux ?}
+\author{Christophe BAL}
+\date{16 Juillet 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+%\setcounter{tocdepth}{1}
+%\tableofcontents
+
+\vspace{1.75em}
+
+
+\begin{wrapfigure}{r}{0.45\textwidth} 
+	\vspace{-.5em}
+	\begin{center}
+		\fbox{\includegraphics[scale = .7]{identity-geo-n-polynomials/(a+b)^2.png}}
+	\end{center}
+	\vspace{-2.25em}
+\end{wrapfigure} 
+
+Les identités remarquables peuvent se découvrir facilement via de simples calculs d'aires.
+
+
+\medskip
+
+Par exemple, considérons le dessin ci-contre où $ABCD$ , $AEGF$ et $GHCK$ sont des carrés de côtés respectifs $(a + b)$ , $a$ et $b$ .
+Il est évident que nous avons alors $(a + b)^2 = a^2 + b^2 + 2 ab$ mais n'oublions que $a > 0$ et $b > 0$ \emph{(ce sont des contraintes géométriques concrètes)}.
+
+
+\medskip
+
+Comment passer à $(a + b)^2 = a^2 + b^2 + 2 ab$ pour $a$ et $b$ deux réels de signes quelconques ?
+Une première idée est tout simplement de passer par une vérification via un calcul algébrique. En résumé, on conjecture géométriquement puis on valide algébriquement.
+
+
+\medskip
+
+\begin{wrapfigure}{l}{0.45\textwidth} 
+	\vspace{-.5em}
+	\begin{center}
+		\fbox{\includegraphics[scale = .7]{identity-geo-n-polynomials/(a+b)^3.png}}
+	\end{center}
+	\vspace{-1.25em}
+\end{wrapfigure} 
+
+Bien que rigoureuse, la démarche précédente est peu satisfaisante car elle balaye d'un revers de main l'approche géométrique dont le rôle est réduit à la découverte d'une formule.
+
+
+\medskip
+
+Si l'on considère le dessin ci-contre, il est tout de même dommage de devoir passer par du calcul algébrique, un peu pénible ici, pour avoir l'identité $(a + b + c)^2 = a^2 + b^2 + c^2 + 2 ab + 2 ac + 2 bc$ avec $a$ , $b$ et $c$ des réels de signes quelconques.
+
+
+\medskip
+
+Ce qui serait bien ce serait de pouvoir dire que puisque $(a + b + c)^2 = a^2 + b^2 + c^2 + 2 ab + 2 ac + 2 bc$ est vraie si $a > 0$ , $b > 0$ et $c > 0$ , alors l'identité est automatiquement vérifiée par $a$ , $b$ et $c$ des réels de signes quelconques.
+
+
+% ----------- %
+
+
+\medskip
+
+Ce passage automatique est bien licite car nous avons le fait suivant que l'on peut appliquer à $P(a ; b) = (a + b)^2 - a^2 - b^2 - 2 ab$ et $P(a ; b : c) = (a + b + c)^2 - a^2 - b^2 - c^2 - 2 ab - 2 ac - 2 bc$ .
+
+\begin{fact*}
+	Soit $P \in \polyset{\RR}{X_1 | ... | X_n}$ un polynôme réel à $n$ variables où $n \in \NNs$ .
+	Si $P$ s'annule sur $\left( \RRsp \right)^n$ alors $P$ s'annule sur $\RR^n$ tout entier. 
+\end{fact*}
+
+
+\begin{proof}
+	Faisons une preuve par récurrence sur $n \in \NNs$ pour démontrer la validité de la propriété $\probaset{P}(n)$ définie comme suit :
+	\emph{\og 
+		Pour tout polynôme réel $P \in \polyset{\RR}{X_1 | ... | X_n}$ à $n$ variables,
+		si $P$ s'annule sur $\left( \RRsp \right)^n$ alors $P$ s'annule sur $\RR^n$ tout entier. 
+	\fg}.
+
+	\begin{itemize}[label=\small\textbullet]
+		\item \emph{Cas de base.}
+	
+		\noindent
+		$\probaset{P}(1)$ signifie qu'un polynôme réel à une variable s'annulant sur $\RRsp$ est identiquement nul sur $\RR$ tout entier.
+		
+		\smallskip
+		\noindent
+		Comme un polynôme réel non nul n'a qu'un nombre fini de racines, nous avons la validité de $\probaset{P}(1)$ .
+
+
+		\medskip
+		\item \emph{Hérédité.}
+	
+		\noindent
+		Supposons $\probaset{P}(n)$ valide pour un naturel $n$ fixé, mais quelconque, puis considérons un polynôme $P$ de $(n + 1)$ variables qui vérifie les conditions de la propriété $\probaset{P}(n + 1)$ .
+	
+		\smallskip
+		\noindent
+		Fixons $x \in \RRsp$ et considérons le polynôme $P_x(X_1 ; ... ; X_n) = P(X_1 ; ... ; X_n ; x)$ .
+		Comme $P_x$  vérifie les conditions de la propriété $\probaset{P}(n)$ ,
+		nous avons par hypothèse de récurrence 
+		$P_x(x_1 ; ... ; x_n) = 0$ soit $P(x_1 ; ... ; x_n ; x) = 0$ pour tous réels $x_1$ , ... , $x_n$ .
+	
+		\smallskip
+		\noindent
+		Fixons maintenant des réels $x_1$ , ... , $x_n$ de signes quelconques et considérons le polynôme $p(X) = P(x_1 ; ... ; x_n ; X)$ .
+		Comme $p$ vérifie $\probaset{P}(1)$ , nous avons $p(x) = 0$ soit $P(x_1 ; ... ; x_n ; x) = 0$ pour tout réel $x$ .
+	
+		\smallskip
+		\noindent
+		Finalement $P(x_1 ; ... ; x_n ; x) = 0$ pour tous réels $x_1$ , ... , $x_n$ , $x$ .
+		Nous avons bien déduit la validité de $\probaset{P}(n+1)$ à partir de celle de $\probaset{P}(n)$ .
+
+
+	\medskip
+	\item \emph{Hérédité.}
+	
+	\smallskip
+	\noindent
+	Par récurrence sur $n \in \NNs$ , la propriété $\probaset{P}(n)$ est vraie pour tout naturel non nul $n$ .
+	\end{itemize} 
+
+\end{proof}
+
+
+% ----------- %
+
+
+\begin{remark*}
+	En utilisant une approche géométrique, il devient évident, mais aussi rigoureux maintenant, d'affirmer que pour tous réels $a_1$ , ... , $a_n$ , où $n \in \NNs$ , l'on a :
+\[
+	\left( \sum_{k=1}^{n}a_k \right)^2
+	=
+	\sum_{k=1}^{n} \left( a_k \right)^2
+	+
+	2 \sum_{1 \leq i < j \leq n} a_i a_j
+\]
+\end{remark*}
+
+\end{document}
