@@ -1,0 +1,109 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+
+\usepackage{wrapfig} 
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{lymath}
+
+
+\newtheorem{fact}{Fait}
+\newtheorem*{fact*}{Fait}
+
+\newtheorem{example}{Exemple}
+
+\newtheorem{remark}{Remarque}
+\newtheorem*{remark*}{Remarque}
+
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+	 
+	 
+	 
+\begin{document}
+
+\title{BROUILLON - Dérivée et variations - Une preuve pour lycéen}
+\author{Christophe BAL}
+\date{16 Juillet 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\vspace{1em}
+
+
+Voici un classique de l'analyse : \emph{\og pour toute fonction $f$ définie et dérivable sur un intervalle non trivial $I$ , si $f\,' > 0$ alors $f$ est strictement croissante sur l'intervalle $I$ \fg}. La preuve de ce résultat n'est pas simple car il nécessite l'usage du théorème des valeurs intermédiaires.
+
+
+\medskip
+
+
+Par contre il est facile de démontrer le résultat plus restrictif suivant
+\footnote{
+	On rencontre tout le temps cette situation au lycée
+} :
+\emph{\og pour toute fonction $f$ définie et dérivable sur un intervalle non trivial $I$ , si $f\,' > 0$ et si $f\,'$ est continue sur $I$ alors $f$ est strictement croissante sur l'intervalle $I$ \fg}. 
+La démonstration utilise tout simplement la stricte positivité de l'intégrale sur $\RR$ et l'identité $f(b) - f(a) = \int_a^b f\,'(x) \dd{x}$ .
+
+\end{document}
