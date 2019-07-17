@@ -1,105 +1,7 @@
-\documentclass[12pt]{amsart}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-
-\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
-
-
-\usepackage{wrapfig} 
-
-\usepackage{hyperref}
-\usepackage{enumitem}
-\usepackage{tcolorbox}
-\usepackage{float}
-\usepackage{cleveref}
-\usepackage{multicol}
-\usepackage{fancyvrb}
-\usepackage{enumitem}
-\usepackage{amsmath}
-\usepackage{textcomp}
-\usepackage{numprint}
-\usepackage[french]{babel}
-\usepackage[
-    type={CC},
-    modifier={by-nc-sa},
-	version={4.0},
-]{doclicense}
-
-\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
-
-\usepackage{lymath}
-
-
-\newtheorem{fact}{Fait}
-\newtheorem*{fact*}{Fait}
-
-\newtheorem{example}{Exemple}
-
-\newtheorem{remark}{Remarque}
-\newtheorem*{remark*}{Remarque}
-
-\newtheorem*{proof*}{Preuve}
-
-\setlength\parindent{0pt}
-
-\floatstyle{boxed} 
-\restylefloat{figure}
-
-
-\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
-
-\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
-
-
-\DefineVerbatimEnvironment{rawcode}%
-	{Verbatim}%
-	{tabsize=4,%
-	 frame=lines, framerule=0.3mm, framesep=2.5mm}
-	 
-	 
-	 
-\begin{document}
-
-\title{BROUILLON - Identités remarquables via des calculs d'aires, est-ce rigoureux ?}
-\author{Christophe BAL}
-\date{16 Juillet 2019}
-
-\maketitle
-
-\begin{center}
-	\itshape
-	Document, avec son source \LaTeX, disponible sur la page
-	
-	\url{https://github.com/bc-writing/drafts}.
-\end{center}
-
-
-\bigskip
-
-
-\begin{center}
-	\hrule\vspace{.3em}
-	{
-		\fontsize{1.35em}{1em}\selectfont
-		\textbf{Mentions \og légales \fg}
-	}
-			
-	\vspace{0.45em}
-	\doclicenseThis
-	\hrule
-\end{center}
-
-
-%\setcounter{tocdepth}{1}
-%\tableofcontents
-
-\vspace{1.75em}
-
-
 \begin{wrapfigure}{r}{0.45\textwidth} 
 	\vspace{-.5em}
 	\begin{center}
-		\fbox{\includegraphics[scale = .7]{identities-geo-n-polynomials/(a+b)^2.png}}
+		\fbox{\includegraphics[scale = .7]{/areas-n-identities/(a+b)^2.png}}
 	\end{center}
 	\vspace{-2.25em}
 \end{wrapfigure} 
@@ -124,7 +26,7 @@ Une première idée est tout simplement de passer par une vérification via un c
 \begin{wrapfigure}{l}{0.45\textwidth} 
 	\vspace{-.5em}
 	\begin{center}
-		\fbox{\includegraphics[scale = .7]{identities-geo-n-polynomials/(a+b)^3.png}}
+		\fbox{\includegraphics[scale = .7]{identities-geo-poly-n-co/areas-n-identities/(a+b)^3.png}}
 	\end{center}
 	\vspace{-1.25em}
 \end{wrapfigure} 
@@ -198,7 +100,7 @@ Ce passage automatique est bien licite car nous avons le fait suivant que l'on p
 
 
 	\medskip
-	\item \emph{Hérédité.}
+	\item \emph{Conclusion.}
 	
 	\smallskip
 	\noindent
@@ -221,5 +123,3 @@ Ce passage automatique est bien licite car nous avons le fait suivant que l'on p
 	2 \sum_{1 \leq i < j \leq n} a_i a_j
 \]
 \end{remark*}
-
-\end{document}
