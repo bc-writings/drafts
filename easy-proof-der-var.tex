@@ -60,9 +60,9 @@
 	 
 \begin{document}
 
-\title{BROUILLON - Dérivée et variations - Une preuve pour lycéen}
+\title{BROUILLON - CANDIDAT - Dérivée et variations - Une preuve pour lycéens}
 \author{Christophe BAL}
-\date{16 Juillet 2019}
+\date{16 Juillet 2019 - 17 Juillet 2019}
 
 \maketitle
 
@@ -103,7 +103,7 @@ Voici un classique de l'analyse.
 La preuve standard de ce résultat passe par le célèbre théorème de Rolle appliqué à la fonction $g(x) = f(x) - \frac{f(a) - f(b)}{a - b} \cdot (x - a) - f(a)$ qui peut sembler un peu magique
 \footnote{
 	Pour $x \in \intervalC{a}{b}$ , $g(x)$ mesure l'écart entre la courbe $\geoset*{C}{f}$ et la droite $(AB) : y = \frac{f(a) - f(b)}{a - b} \cdot (x - a) + f(a)$ où $A(a ; f(a)) \in \geoset*{C}{f}$ et $B(b ; f(b)) \in \geoset*{C}{f}$ .
-	La fonction $g$ n'est donc pas si magique que cela...
+	Or cet écart est nul en $a$ et $b$ donc la fonction $g$ n'est pas si magique que cela...
 }.
 
 
@@ -114,11 +114,13 @@ Il se trouve que l'on peut démontrer \emph{\og plus simplement \fg} le résulta
 
 
 \begin{fact}
-	Pour toute fonction $f$ définie et dérivable sur un intervalle non trivial $\intervalC{a}{b}$ , et \textbf{de dérivée continue} 
+	Pour toute fonction $f$ définie et dérivable sur un intervalle non trivial $\intervalC{a}{b}$ ,
+	si \textbf{$f\,'$ est continue} 
 	\footnote{
 		On rencontre tout le temps cette situation au lycée.
-	}
-	sur $\intervalC{a}{b}$ , si $f\,' > 0$ sur $\intervalC{a}{b}$ alors $f$ est strictement croissante sur l'intervalle $\intervalC{a}{b}$ .
+	} 
+	sur $\intervalC{a}{b}$ avec $f\,' > 0$ sur $\intervalC{a}{b}$
+	alors $f$ est strictement croissante sur l'intervalle $\intervalC{a}{b}$ .
 \end{fact}
 
 La démonstration de ce résultat peut se faire via la stricte positivité de l'intégrale sur $\RR$ et l'identité $f(b) - f(a) = \int_a^b f\,'(x) \dd{x}$ .
@@ -126,7 +128,7 @@ La démonstration de ce résultat peut se faire via la stricte positivité de l'
 
 \begin{remark*}
 	Il est vrai que le calcul intégral n'est pas simple à définir proprement.
-	D'un autre côté le théorème de Rolle s'appuie sur un résultat topologique puissant qui affirme que l'image continue d'un compact est un compact, mai aussi sur le fait que l'intervalle $\intervalC{a}{b}$ est compact.
+	D'un autre côté le théorème de Rolle s'appuie sur un résultat topologique puissant qui affirme que l'image continue d'un compact est un compact, mais aussi sur le fait que l'intervalle $\intervalC{a}{b}$ est compact.
 	Malgré cela, l'auteur pense que d'un point de vue universitaire ce qui est affirmé dans ce document n'est qu'idioties.
 	Par contre, un lycéen a accès intuitivement très facilement à un ensemble de résultats de base sur les intégrales et il semble dès lors que l'approche ci-dessus est bien plus simple que celle passant par le théorème de Rolle et la fonction un peu magique $g$ .
 \end{remark*}
