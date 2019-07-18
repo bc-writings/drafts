@@ -34,6 +34,9 @@
 \newtheorem{fact}{Fait}
 \newtheorem*{fact*}{Fait}
 
+\newtheorem{definition}{Définition}
+\newtheorem*{definition*}{Définition}
+
 \newtheorem{example}{Exemple}
 
 \newtheorem{remark}{Remarque}
@@ -56,10 +59,13 @@
 	{Verbatim}%
 	{tabsize=4,%
 	 frame=lines, framerule=0.3mm, framesep=2.5mm}
-	 
-	 
+
+ 
 	 
 \begin{document}
+
+
+% PB de la rugieur de ce que l'on manipule : surtout pour les focntins circulaires - Indiquer comment contourner ceci !!!!
 
 \title{BROUILLON - Identités remarquables via des calculs {\og géométriques \fg}, est-ce rigoureux ?}
 \author{Christophe BAL}
@@ -98,8 +104,6 @@
 \tableofcontents
 
 
-\newpage
-
 
 \section{Echauffement avec des égalités entre des polynômes}
 
@@ -107,14 +111,8 @@
 
 
 
-\bigskip
+\section{Allons plus loin avec les formules trigonométriques}
 
-\hrule
-
-\section{AFFAIRE À SUIVRE...}
-
-\bigskip
-
-\hrule
+\subimport*{identities-geo-poly-n-co/}{trigo-identities}
 
 \end{document}
