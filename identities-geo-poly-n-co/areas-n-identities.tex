@@ -1,12 +1,20 @@
 \begin{wrapfigure}{r}{0.45\textwidth} 
-	\vspace{-.5em}
+	\vspace{-.75em}
 	\begin{center}
 		\fbox{\includegraphics[scale = .7]{/areas-n-identities/(a+b)^2.png}}
 	\end{center}
-	\vspace{-2.25em}
+	\vspace{-3em}
 \end{wrapfigure} 
 
-Les identités remarquables peuvent se découvrir facilement via de simples calculs d'aires.
+Via de simples calculs d'aires, il est très facile de découvrir les identités remarquables suivantes :
+
+\begin{itemize}[label=\small\textbullet]
+	\item $(a + b)^2 = a^2 + b^2 + 2ab$
+
+	\item $(a - b)^2 = a^2 + b^2 - 2ab$
+
+	\item $(a + b)(a - b) = a^2 - b^2$
+\end{itemize}
 
 
 \medskip
@@ -18,10 +26,11 @@ Il est évident que nous avons alors $(a + b)^2 = a^2 + b^2 + 2 ab$ mais n'oubli
 \medskip
 
 Comment passer à $(a + b)^2 = a^2 + b^2 + 2 ab$ pour $a$ et $b$ deux réels de signes quelconques ?
-Une première idée est tout simplement de passer par une vérification via un calcul algébrique. En résumé, on conjecture géométriquement puis on valide algébriquement.
+Une première idée est tout simplement de faire une vérification via un calcul algébrique. En résumé, on conjecture géométriquement puis on valide algébriquement.
 
 
-\medskip
+%\medskip
+
 
 \begin{wrapfigure}{l}{0.45\textwidth} 
 	\vspace{-.5em}
@@ -49,12 +58,21 @@ Ce qui serait bien ce serait de pouvoir dire que puisque $(a + b + c)^2 = a^2 + 
 
 \medskip
 
-Ce passage automatique est bien licite car nous avons le fait suivant que l'on peut appliquer à $P(a ; b) = (a + b)^2 - a^2 - b^2 - 2 ab$ et $P(a ; b : c) = (a + b + c)^2 - a^2 - b^2 - c^2 - 2 ab - 2 ac - 2 bc$ .
+Ce passage automatique est bien licite car nous avons le fait \ref{poly-nullity-pos} ci-après que l'on peut appliquer aux polynômes suivants.
+\begin{itemize}[label=\small\textbullet]
+	\item $P(a ; b) = (a + b)^2 - a^2 - b^2 - 2 ab$
 
-\begin{fact*}
+	\item $P(a ; b ; c) = (a + b + c)^2 - a^2 - b^2 - c^2 - 2 ab - 2 ac - 2 bc$
+\end{itemize}
+
+
+\begin{fact} \label{poly-nullity-pos}
 	Soit $P \in \polyset{\RR}{X_1 | ... | X_n}$ un polynôme réel à $n$ variables où $n \in \NNs$ .
+	
+	\smallskip
+	
 	Si $P$ s'annule sur $\left( \RRsp \right)^n$ alors $P$ s'annule sur $\RR^n$ tout entier. 
-\end{fact*}
+\end{fact}
 
 
 \begin{proof}
@@ -105,16 +123,15 @@ Ce passage automatique est bien licite car nous avons le fait suivant que l'on p
 	\smallskip
 	\noindent
 	Par récurrence sur $n \in \NNs$ , la propriété $\probaset{P}(n)$ est vraie pour tout naturel non nul $n$ .
-	\end{itemize} 
-
+	\end{itemize}
 \end{proof}
 
 
 % ----------- %
 
 
-\begin{remark*}
-	En utilisant une approche géométrique, il devient évident, mais aussi rigoureux maintenant, d'affirmer que pour tous réels $a_1$ , ... , $a_n$ , où $n \in \NNs$ , l'on a :
+\begin{example}
+	En utilisant une approche géométrique semblable à celle présentée plus haut, il devient évident, mais aussi rigoureux maintenant, d'affirmer que pour tous réels $a_1$ , ... , $a_n$ , où $n \in \NNs$ , l'on a :
 \[
 	\left( \sum_{k=1}^{n}a_k \right)^2
 	=
@@ -122,4 +139,106 @@ Ce passage automatique est bien licite car nous avons le fait suivant que l'on p
 	+
 	2 \sum_{1 \leq i < j \leq n} a_i a_j
 \]
-\end{remark*}
+\end{example}
+
+
+% ----------- %
+
+
+\begin{example}
+	Nous laissons le soin au lecteur de vérifier à l'aide d'un cube l'identité remarquable $(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3$ .
+\end{example}
+
+
+% ----------- %
+
+
+\medskip
+
+
+\begin{wrapfigure}{r}{0.45\textwidth} 
+	\vspace{-.5em}
+	\begin{center}
+		\fbox{\includegraphics[scale = .7]{/areas-n-identities/(a-b)^2.png}}
+	\end{center}
+	\vspace{-1.25em}
+\end{wrapfigure} 
+
+
+Considérons maintenant le dessin ci-contre avec $d = a - b$ et la contrainte $a > b$ . Le fait \ref{poly-nullity-pos}, bien que très utile, ne peut plus s'appliquer ici bien que nous ayons le calcul géométrique évident suivant.
+
+\smallskip
+
+$\geoset*{A}{GHCK} = \geoset*{A}{ABCD} - \geoset*{A}{ABHF} - \geoset*{A}{AEKD} + \geoset*{A}{AEGF}$
+	
+\smallskip
+	
+$(a-b)^2 = a^2 - 2ab + b^2$
+
+
+\medskip
+
+Comment faire alors pour en déduire que pour tous réels $a$ et $b$ , l'identité $(a - b)^2 = a^2 + b^2 - 2ab$ reste valable ?
+Aucune crainte à avoir car nous disposons du fait \ref{poly-nullity-interval} moins restrictif suivant. 
+
+
+\begin{fact} \label{poly-nullity-interval}
+	Soit $P \in \polyset{\RR}{X_1 | ... | X_n}$ un polynôme réel à $n$ variables où $n \in \NNs$ .
+	
+	\smallskip
+	
+	Si $\geoset{E} \subseteq \RR^n$ contient $\geoset*{E}{1} \times \cdots \times \geoset*{E}{n}$ où chaque $\geoset*{E}{k} \subseteq \RR$ est infini,
+	et si $P$ s'annule sur $\geoset{E}$ alors $P$ s'annule sur $\RR^n$ tout entier. 
+\end{fact}
+
+
+\begin{proof}
+	Il est très facile de vérifier que la preuve du fait \ref{poly-nullity-pos} s'adapte au cadre plus général proposé ici.
+\end{proof}
+
+
+% ----------- %
+
+
+\begin{example}
+Considérons le dessin ci-dessous avec $d = a - b$ et la contrainte $a > b$ afin d'établir l'identité $(a+b)(a-b) = a^2 - b^2$ .
+
+
+\smallskip
+
+\begin{center}
+	\fbox{\includegraphics[scale = .7]{/areas-n-identities/(a-b)^2.png}}
+\end{center}
+
+
+\medskip
+
+
+Commençons par des calculs géométriques simples.
+
+\smallskip
+	
+$\geoset*{A}{ABCD} - \geoset*{A}{AEGF} = \geoset*{A}{GHCK} + \geoset*{A}{EBHG} + \geoset*{A}{FGKD}$
+	
+\smallskip
+	
+$a^2 - b^2 = \geoset*{A}{GHCK} + \geoset*{A}{EBHG} + \geoset*{A}{FGKD}$
+
+
+\medskip
+
+En déplaçant ensuite le rectangle $EBHG$ comme ci-dessous, nous obtenons alors un rectangle de dimension $(a+b) \times (a-b)$ . 
+	
+
+\smallskip
+
+\begin{center}
+	\fbox{\includegraphics[scale = .7]{/areas-n-identities/(a-b)(a-b)-spe.png}}
+\end{center}
+
+
+\medskip
+
+Finalement, nous obtenons $a^2 - b^2 = (a+b)(a-b)$ si $a > b$ .
+Le fait \ref{poly-nullity-interval} permet alors d'affirmer que $\forall (a ;b) \in \RR^2$, $a^2 - b^2 = (a+b)(a-b)$ .
+\end{example}
