@@ -1,6 +1,6 @@
 Daniel Bernoulli
 \footnote{
-	Il était le fils de Jean Bernoulli (1667-1748) et le neveu de Jacques Bernoulli (1654-1705) qui étaient tous les deux des mathématiciens et physiciens suisses.
+	Il était le fils de Jean Bernoulli (1667 -- 1748) et le neveu de Jacques Bernoulli (1654 -- 1705) qui étaient tous les deux des mathématiciens et physiciens suisses.
 }
 (1700 -- 1782) était un médecin, physicien et mathématicien suisse. Il présente en 1760 à l'Académie des sciences de Paris un mémoire intitulé \emph{\og Essai d'une nouvelle analyse de la mortalité causée par la petite vérole
 \footnote{
@@ -84,20 +84,7 @@ Notant $\deltaval{f}{a}{b} = \frac{f(a) - f(b)}{a - b}$ le taux de variation de 
 \medskip
 
 
-Il n'est pas aisé d'étudier des systèmes d'équations sur des suites comme celui ci-dessus. Nous allons donc émettre de nouvelles hypothèses de modélisation pour aboutir à un modèle utilisant des équations différentielles.
-L'idée simple, mais peut-être un peu trop, est de dire que le raisonnement fait sur une année pourrait être fait de la même façon sur une portion plus petite d'années, une portion aussi petite que nécessaire. Dès lors, en considérant $S$ et $P$ définies sur $\RRp$ , et non juste sur $\NN$ , pour tout couple $(t ; \delta t) \in \RRp \times \RR$ tel que $t + \delta t \geq 0$ , nous avons :
-
-\begin{itemize}[label=\small\textbullet]
-	\item $\deltaval{S}{t}{t + \delta t} = - q_I S(t) - m(t) S(t)$
-
-	\item $\deltaval{P}{t}{t + \delta t} = - q_V q_I S(t) - m(t) P(t)$
-\end{itemize}
-
-Il ne reste plus qu'à passer un cap supplémentaire en supposant $S$ et $P$ dérivables sur $\RRp$ .
-Dès lors par passage à la limite via $\delta t \rightarrow 0$ , ou juste $\delta t \rightarrow 0^+$ pour $t = 0$ , on obtient
-\footnote{
-	Peut-être que le lecteur aura noté une grosse arnaque ici. Nous en discuterons dans la section suivante.
-} :
+Comme dans la sous-section \ref{malthus-model} avec le modèle de Malthus, nous passons de suites à des fonctions dérivables, et de taux de variation à des dérivées. Ceci nous donne : 
 
 \begin{itemize}[label=\small\textbullet]
 	\item $S\,'(t) = - q_I S(t) - m(t) S(t)$
@@ -133,7 +120,7 @@ Au passage, nous avons besoin de supposer, de façon non abusive, que $S$ et $P$
 
 \vspace{-1em}
 
-Ce qui est beau, c'est que l'on tombe sur une équation différentielle peu agressive a priori : $R\,'(t) = - q_I R(t) + q_V q_I R^2(t)$ . Quiconque connaissant les formules générales de dérivation trouvent qu'il suffit de raisonner comme suit en se souvenant que $S$ et $P$ ne s'annulent jamais et donc $R$ non plus.
+Ce qui est beau, c'est que l'on tombe sur une équation différentielle peu agressive a priori : $R\,'(t) = - q_I R(t) + q_V q_I R^2(t)$ . Il suffit de raisonner comme suit en se souvenant que $S$ et $P$ ne s'annulent jamais et donc $R$ non plus.
 
 \vspace{-1em}
 
@@ -152,17 +139,12 @@ Nous aboutissons à une simple équation différentielle linéaire du 1\ier ordr
 \footnote{
 	Notre équation différentielle est juste sur $\RRp$ mais cela n'est pas gênant ici. 
 }.
-Nous avons finalement :$\frac{S(t)}{P(t)} = \frac{1}{q_V + k \ee^{q_I t}}$ . Tout ceci a été obtenu via de bien jolis calculs...
+Nous avons finalement : $\frac{S(t)}{P(t)} = \frac{1}{q_V + k \ee^{q_I t}}$ . Tout ceci a été obtenu via de bien jolis calculs...
 
 
 \begin{remark}
-	L'équation différentielle $R\,'(t) = - q_I R(t) + q_V q_I R^2(t)$ est une équation du type $y\,' = a y (1 - b y)$ avec $a \neq 0$ et $b \neq 0$ .
-	De telles équations sont dites \emph{\og logistiques \fg} 
-	\footnote{
-		Pierre François Verhulst (1804 -- 1849) a proposé l'équation différentielle $y\,' = a y (1 - b y)$ pour modéliser une évolution de population à croissance non exponentielle.
-		C'est à lui que l'on doit l'appellation \emph{\og logistique \fg} sans en expliquer la raison. 
-	}.
-	Elles se résolvent, pour les solutions ne s'annulant pas, via le changement de fonctions $f = \frac{1}{y}$ .
+	L'équation différentielle $R\,'(t) = - q_I R(t) + q_V q_I R^2(t)$ est une équation du type $y\,' = a y (1 - b y)$ avec $a < 0$ et $b > 0$ .
+	Ceci est similaire à l'équation \emph{\og logistique \fg} de Pierre François Verhulst vue dans la section \ref{malthus-verhulst}.
 \end{remark}
 
 

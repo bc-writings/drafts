@@ -24,9 +24,13 @@
 \usepackage{lymath}
     
 \newtheorem{fact}{Fait}%[section]
+
 \newtheorem*{theorem}{Théorème}
+
 \newtheorem{example}{Exemple}[section]
+
 \newtheorem{remark}{Remarque}[section]
+
 \newtheorem*{proof*}{Preuve}
 
 \usepackage{chemist}
@@ -64,7 +68,8 @@
 
 \title{BROUILLON - Modéliser, c'est quoi.}
 \author{Christophe BAL}
-\date{11 Juillet 2019 - 15 Juillet 2019}
+\date{11 Juillet 2019 - 19 Juillet 2019}
+
 
 \maketitle
 
@@ -93,7 +98,7 @@
 
 
 
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}
 \tableofcontents
 
 
@@ -130,9 +135,27 @@
 % ----------- %
 
 
-\section{Daniel BERNOULLI et la variole -- Équations différentielles non linéaires}
+\section{Dynamique des populations avec Malthus -- Suites géométriques et la fonction exponentielle}
 
-\subimport*{modelization/}{bernoulli-model}
+\subimport*{modelization/}{malthus-pop}
+
+
+% ----------- %
+
+
+\section{Dynamique des populations avec Verhulst -- Une équation différentielle non linéaire}
+\label{verhulst}
+
+\subimport*{modelization/}{verhulst-pop}
+
+
+% ----------- %
+
+
+\section{Daniel BERNOULLI et la variole -- Un système d'équations différentielles}
+\label{bernoulli-model}
+
+\subimport*{modelization/}{bernoulli-smallpox}
 
 
 % ----------- %

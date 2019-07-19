@@ -1,0 +1,46 @@
+Thomas Robert Malthus (1766 -- 1834) , un économiste britannique, a proposé le modèle de croissance d'une population suivant : \emph{\og les taux de naissance et de décès sont des constantes \fg}. Pour étudier cette hypothèse, introduisons les notations suivantes.
+
+\begin{itemize}[label=\small\textbullet]
+	\item $P(t)$ est le nombre de personnes à la fin de l'année $t$ .
+
+	\item $f \in \intervalC{0}{1}$ est le taux de natalité supposé constant.
+
+	\item $m \in \intervalC{0}{1}$ est le taux de mortalité supposé lui-aussi constant.
+\end{itemize}
+
+
+Dès lors, nous avons la relation $P(t+1) = P(t) + f P(t) - m P(t)$ , ce qui peut aussi s'écrire en terme de taux d'évolution $P(t+1) - P(t) = f P(t) - m P(t)$ .
+
+\begin{itemize}[label=$\rightarrow$]	
+	\item $f P(t)$ est le nombre de nouveaux nés durant l'année $t$ .
+
+	\item $m P(t)$ est le nombre des personnes décédées durant l'année $t$ .
+\end{itemize}
+	
+
+Posant $k = f - m$ , nous avons $P(t+1)= (1 + k) P(t)$ . Ceci définit une suite géométrique et nous avons alors $\forall t \in \NN$ , $P(t)= (1 + k)^t P(0)$ .
+
+
+\medskip
+
+Il se trouve que Thomas Robert Malthus va plus loin dans son raisonnement en considérant $t \in \RRp$ et en proposant la relation $P\,'(t) = k P(t)$ . Il est connu que cette équation différentielle a pour solution $P(t) = P(0) \ee^{kt}$ .
+
+
+\medskip
+
+Nous allons proposer une explication du choix ainsi fait. Notons $\deltaval{f}{a}{b} = \frac{f(a) - f(b)}{a - b}$ le taux de variation de la fonction $f$ entre $a$ et $b$ distincts.
+L'idée simple, mais peut-être un peu trop, est de dire que le raisonnement fait sur une année pourrait être fait de la même façon sur une portion plus petite d'années, une portion aussi petite que nécessaire. Dès lors, en considérant $P$ définie sur $\RRp$ , et non juste sur $\NN$ , pour tout couple $(t ; \delta t) \in \RRp \times \RR$ tel que $t + \delta t \geq 0$ , nous avons : $\deltaval{P}{t}{t + \delta t} = k P(t)$ .
+Il ne reste plus qu'à passer un cap supplémentaire en supposant $P$ dérivable sur $\RRp$ .
+Dès lors par passage à la limite via $\delta t \rightarrow 0$ , ou bien juste $\delta t \rightarrow 0^+$ pour $t = 0$ , on obtient
+\footnote{
+	Peut-être que le lecteur aura noté une grosse arnaque ici. Nous en discuterons dans la section suivante.
+} : $P\,'(t) = k P(t)$ .
+
+
+\medskip
+
+Il semble malgré tout étrange que Thomas Robert Malthus ne se soit pas satisfait de la suite géométrique  $P(t) = (1 + k)^t P(0)$ qui est simple à manipuler même sans calculateur électronique.
+Au passage, on pourrait évaluer l'erreur commise
+$(1 + k)^t P(0) - P(0) \ee^{kt} = P(0) \left( \ee^{t \ln (1 + k) } - \ee^{kt} \right)$
+suivant les valeurs de $k \in \intervalOC{-1}{1}$ via la détermination des maxima naturels des fonctions $f_k$ définies sur $\RRp$ par $f_k(t) = \ee^{t \ln (1 + k) } - \ee^{kt}$ .
+

@@ -1,0 +1,66 @@
+La grosse faiblesse du modèle de Malthus, lequel produit une fonction à la croissance exponentielle dès que le taux de natalité est supérieur à celui de la mortalité, est que ces deux taux sont supposés constants.
+On peut alors considérer ces taux comme étant des fonctions.
+La question se posant ensuite est de savoir de quelle variables dépendent ces taux. Du temps uniquement ? De la taille de la population uniquement ? Des deux 
+\footnote{
+	\dots mon capitaine.
+} ?
+Ayant noté les faiblesses du modèle de Malthus, le mathématicien belge Pierre François Verhulst (1804 -- 1849) propose les fonctions suivantes où $P(t)$ est le nombre d'individus à la fin de l'année $t$ .
+
+\begin{itemize}[label=\small\textbullet]
+	\item Le taux de natalité est une fonction affine croissante dépendant du nombre d'individus.
+	Donc pour l'année $t$ , ce taux sera du type $f(t) = \alpha P(t) + \beta$ avec $(\alpha ; \beta) \in \left( \RRsp \right)^2$ .
+
+	\item Le taux de mortalité une fonction affine décroissante dépendant du nombre d'individus.
+	Donc pour l'année $t$ , ce taux sera du type $m(t) = q P(t) + r$ avec $(q ; r) \in \RRsn \times \RRsp$ .
+\end{itemize}
+
+Dès lors, le taux d'évolution $P(t+1) - P(t)$ est 
+$f(t) P(t) - m(t) P(t) = P(t) \left( A - B P(t) \right)$ en posant $A = \alpha - q \in \RRp$ et $B = -\beta + r \in \RR$ \emph{(la justification du choix d'un signe moins apparaitra plus bas)}.
+
+
+\medskip
+
+
+À ce stade, nous avons une équation de récurrence du type $u_{n+1} = u_n (A - B u_n)$ . Il se trouve que le comportement de ces suites peut être de type chaotique. Il devient alors plus facile de passer par un modèle différentielle, c'est à dire de passer de suites à des fonctions dérivables comme dans le modèle de Malthus. Ceci nous donne : $P\,'(t) = P(t) \left( A - B P(t) \right)$ . La fonction $P$ vérifie donc l'équation différentielle $y\,' = y (A - B y)$ .
+
+
+\medskip
+
+Nous allons supposer $A > 0$ , le cas $A = 0$ sera examiné plus bas en remarque. Sous cette hypothèse, $y\,' = y (A - B y)$ se réécrit $y\,' = a y (1 - b y)$ avec $a = A > 0$ et $b = \frac{B}{A}$ . 
+Nous allons établir juste après que $b > 0$ pour le modèle étudié
+\footnote{
+	Ceci justifie ce signe moins a priori étrange.
+}.
+Pour $(a ; b) \in \left( \RRsp \right)^2$ , Pierre François Verhulst qualifie $y\,' = a y (1 - b y)$ d'équation \emph{\og logistique \fg} sans que l'on sache vraiment pourquoi.
+
+
+\medskip
+
+Justifions que $b > 0$ pour notre modèle. Pour cela, nous allons tout simplement résoudre $y\,' = a y (1 - b y)$ , ce qui se fait facilement comme suit en supposant que $P$ ne s'annule jamais \emph{(hypothèse qui concrètement ne pose pas de problème)}.
+
+\vspace{-1em}
+
+\begin{flalign*}
+	P\,'(t) = a P(t) \left(1 - b P(t) \right)
+		& \Longleftrightarrow  - \frac{P\,'(t)}{P^2(t)} = - \frac{a}{P(t)} + ab
+		& \\
+		& \Longleftrightarrow  f\,'(t) = - a f(t) + ab  
+				\,\, \text{où on a posé $f(t) = \frac{1}{P(t)}$ .}
+		& \\
+\end{flalign*}
+
+\vspace{-1em}
+
+Nous aboutissons à une simple équation différentielle linéaire du 1\ier ordre et il est connu que nécessairement $f(t) = b + k \ee^{-a t}$ où $k \in \RR$ est une constante dépendant des conditions réelles.
+Nous avons finalement : $P(t) = \frac{1}{b + k \ee^{-a t}}$ . Faisant tendre $t$ vers $+\infty$ , nous avons que $\frac{1}{b}$ correspond au nombre d'individus lorsque la population se stabilise, d'où $b > 0$ comme annoncé.
+
+
+\medskip
+
+Pierre François Verhulst rend l'équation plus expressive en écrivant $y\,' = a y \left( 1 - \frac{y}{K} \right)$ avec $K = \frac{1}{b}$ qui a la même dimension que $P(t)$ , de sorte que $P(t) = \frac{K}{1 + k K \ee^{-a t}}$ peut se réécrire $P(t) = \frac{K}{1 + \left( \frac{K}{P(0)} - 1 \right) \ee^{-a t}}$ .
+
+
+
+\begin{remark}
+	Dans  $y\,' = y (A - B y)$ , si $A = 0$ , nous obtenons $y\,' = - B y^2$ dont les solutions ne s'annulant pas sont du type $\frac{1}{k + B t}$ avec $k$ une constante. Appliqué à notre contexte, ceci fournirait une population $P(t) = k + B t$ évoluant de façon linéaire, une modélisation qui n'est pas du tout crédible. 
+\end{remark}

@@ -1,0 +1,37 @@
+Notons que pour $f > m$ , soit $k > 0$ , la suite $(1 + k)^t P(0)$ et la fonction $P(0) \ee^{kt}$ tendant vers $+\infty$ . Nous voyons ainsi que la modélisation précédente aura forcément un domaine d'applicabilité très réduit dans le temps. Ceci étant noté, analysons les hypothèses faites.
+
+
+\paragraph{Hypothèse 1.} 
+Tout d'abord, $f$ et $m$, les taux de natalité et de mortalité, sont supposés constants. Cette hypothèse est clairement critiquable. En fait elle ne tient aucunement compte d'agents extérieurs agissant sur les valeurs des taux. Ceci étant indiqué, si l'on considère le développement de cellules bilogiques dans un substrat propice, on aura $f = 1$ et $m = 0$ .
+
+
+
+\paragraph{Hypothèse 2.} 
+La relation $P(t+1) = P(t) + f P(t) - m P(t)$ ne tient compte d'aucun acteur environnemental extérieur car seul la quantité $P$ est utilisée. Que devient le modèle en cas d'épidémie où il faudrait distinguer les personnes malades de celles saines ? La section \ref{bernoulli-model} propose un exemple d'une telle situation. 
+	
+	
+\paragraph{Hypothèse 3 faite par Thomas Robert Malthus.} Le passage de fonctions définies sur $\NN$ à des fonctions définies sur $\RRp$ ne pose pas de difficultés conceptuelle et concrète. 
+
+\smallskip
+
+Ensuite arrive un grand classique des sciences du réel : les fonctions concrètes étudiées sont supposées suffisamment régulières. Pourquoi fait-on ceci ? Ceci permet de faire appel à des outils mathématiques puissants du calcul différentiel car l'on dispose de moins d'outils efficaces pour étudier les suites. 
+
+\smallskip
+
+Ceci étant dit, supposer la dérivabilité sur $\RRp$ tout entier nous amène à étudier des fonctions au comportement très lisse.
+Ainsi les solutions des équations différentielles, dites logistiques, $y\,' = a y (1 - b y)$ sont très régulières, tandis que l'équation logistique discrète $u_{n+1} = a u_n (1 - b u_n)$ peut produire des suites au comportement chaotique. 
+
+\smallskip
+
+De plus, comment passer d'une étude entre $t$ et $t + \delta t$ avec $\delta t$ aussi petit que nécessaire, au cas où $\delta t$ tend vers $0$ ? Rien ne justifie ceci sérieusement d'un point de vue concret. Nous sommes là face à un choix très fort de modélisation.
+
+\smallskip
+
+L'hypothèse 3 est donc lourde de conséquences... Ceci étant dit, cela reste un classique de la modélisation et l'histoire des sciences du réel prouve que ce type d'hypothèse est féconde à produire des modèles utiles.
+
+
+% ----------- %
+
+
+\paragraph{Conclusion.}
+Le modèle est globalement fragile et ne correspond qu'à des cas concrets très rares. Ceci a été constaté assez vite et a poussé Pierre François Verhulst à proposer une autre modélisation que nous allons découvrir dans la section suivante.
