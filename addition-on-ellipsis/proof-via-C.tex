@@ -1,0 +1,71 @@
+Travaillons dans le plan complexe associé au repère $\paxes{O | I | J}$ .
+Nous posons $z_A = \ee^{\ii a}$ et $z_B = \ee^{\ii b}$ avec $(a ; b) \in \RR^2$ .
+Nous avons alors $z_S = \ee^{\ii (a + b)}$ .  
+
+
+\medskip
+
+
+\textbf{Cas 1.} \emph{Supposons que $a \not\equiv b \,\, [2\pi]$ , soit $A \neq B$ .}
+
+\medskip
+
+Tout d'abord, nous avons $z_{\vect{AB}} = \ee^{\ii b}- \ee^{\ii a}$ et $z_{\vect{IS}} = \ee^{\ii (a + b)} - 1$. Nous devons trouver un réel $k \in \RR$ tel que $z_{\vect{IS}} = k z_{\vect{AB}}$ . Dans la suite, nous noterons $s = a + b$ . Nous avons alors :
+\begin{flalign*}
+	z_{\vect{IS}} 
+		&= \ee^{\ii s} - 1
+		& \\
+		&= \ee^{\ii s / 2} \left( \ee^{\ii s / 2} - \ee^{- \ii s / 2} \right)
+		& \\
+		&= \ee^{\ii s / 2} \cdot 2 \ii \sin(0,5 s)
+		& \\
+		&= 2 \ii \sin(0,5 s) \ee^{\ii s / 2}
+		& \\
+\end{flalign*}
+
+\vspace{-1em}
+
+A l'aide de la même technique classique précédente, notant $d = b - a$, nous obtenons :
+\begin{flalign*}
+	z_{\vect{AB}} 
+		&= \ee^{\ii b}- \ee^{\ii a}
+		& \\
+		&= \ee^{\ii a} \left( \ee^{\ii d} - 1 \right)
+		& \\
+		&= \ee^{\ii a} \cdot 2 \ii \sin(0,5 d) \ee^{\ii d / 2}
+		& \\
+		&= 2 \ii \sin(0,5 d) \ee^{\ii s / 2}
+		& \text{En effet, $d + 2 a = s$.} \\
+\end{flalign*}
+
+\vspace{-1em}
+
+
+Comme $d \neq 0$ par hypothèse, nous avons $z_{\vect{IS}} = k z_{\vect{AB}}$ en posant $k = \frac{\sin(0,5 s)}{\sin(0,5 d)}$ qui est un réel.
+
+
+
+\bigskip
+
+\textbf{Cas 2.} \emph{Supposons que $a \equiv b \,\, [2\pi]$ , soit $A = B$ .}
+
+\medskip
+
+Nous devons prouver l'orthogonalité des vecteurs $\vect{OA}$ et $\vect{IS}$ avec ici $z_S = \ee^{2 \ii a}$ .
+Ceci découle de la nullité de la partie réelle du produit suivant
+\footnote{
+	Se souvenir que $(x + \ii y) \, \overline{(x' + \ii y')} = xx' + yy' +\ii (x'y - xy')$ .
+}.
+\begin{flalign*}
+	z_{\vect{OA}} \, \overline{z_{\vect{IS}}}
+		&= \ee^{\ii a} \, \overline{\left( \ee^{2 \ii a} - 1 \right)}
+		& \\
+		&= \ee^{\ii a} \, \left( \ee^{- 2 \ii a} - 1 \right)
+		& \\
+		&= \ee^{- \ii a} - \ee^{\ii a}
+		& \\
+		&= 2 \ii \sin a
+		& \\
+\end{flalign*}
+
+\vspace{-1em}
