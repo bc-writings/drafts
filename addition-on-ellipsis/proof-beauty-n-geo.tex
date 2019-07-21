@@ -1,0 +1,100 @@
+Bien qu'un peu longue à rédiger, la preuve présentée ici est presque évidente par simple lecture des dessins bien codés ci-après.
+
+
+\bigskip
+
+
+\textbf{Cas 1.} \emph{Supposons que $A \neq B$ .}
+
+\medskip
+
+Nous avons donc une situation du type suivant où sont indiqués des angles très intéressants comme nous allons le constater tout de suite.
+
+\smallskip
+\begin{center}
+	\fbox{\includegraphics[scale = .75]{addition-on-ellipsis/proof/rotation-A-not-B.png}}
+\end{center}
+\smallskip
+
+Comme 
+$\angleorient{\vect{OB}}{\vect{OS}}
+= \angleorient{\vect{OB}}{\vect{OI}}
++ \angleorient{\vect{OI}}{\vect{OS}}$
+et
+$\angleorient{\vect{OI}}{\vect{OS}}
+= \angleorient{\vect{OI}}{\vect{OA}}
++ \angleorient{\vect{OI}}{\vect{OB}}$ 
+par définition de $S$ , nous avons :
+$\angleorient{\vect{OB}}{\vect{OS}}
+= \angleorient{\vect{OI}}{\vect{OA}}$
+.
+
+
+\smallskip
+
+Ensuite, notant $M$ le milieu de $[AB]$ , la médiane $(OM)$ est aussi une bissectrice du triangle $BOA$ isocèle en $O$ de sorte que
+$\angleorient{\vect{OM}}{\vect{OB}} 
+= - \angleorient{\vect{OM}}{\vect{OA}}$ 
+.
+
+
+\smallskip
+
+Notant $\Pi$ l'angle plat, nous avons alors :
+\begin{flalign*}
+	\angleorient{\vect{MO}}{\vect{OS}}
+		&= \Pi 
+		 + \angleorient{\vect{OM}}{\vect{OB}}
+		 + \angleorient{\vect{OB}}{\vect{OS}}
+		& \\
+		&= \Pi
+		 - \angleorient{\vect{OM}}{\vect{OA}}
+		 + \angleorient{\vect{OI}}{\vect{OA}}
+		& \\
+		&= \Pi
+		 + \angleorient{\vect{OA}}{\vect{OM}}
+		 + \angleorient{\vect{OI}}{\vect{OA}}
+		& \\
+		&= \Pi
+		 + \angleorient{\vect{OI}}{\vect{OM}}
+		& \\
+		&= \angleorient{\vect{OI}}{- \, \vect{OM}}
+		& \\
+		&= \angleorient{\vect{OI}}{\vect{MO}}
+		& \\
+		&= - \angleorient{\vect{MO}}{\vect{OI}}
+		& \\
+\end{flalign*}
+
+\vspace{-1.5em}
+
+
+Comme
+$\angleorient{\vect{MO}}{\vect{OS}} 
+= - \angleorient{\vect{MO}}{\vect{OI}}$ ,
+la droite $(OM)$ est aussi une bissectrice du triangle $SOI$ isocèle en $O$ .
+Or la bissectrice issue du sommet principal d'un triangle isocèle est aussi une hauteur d'où $(OM) \,\bot\, (AB)$ et $(OM) \,\bot\, (SI)$ puis $(AB) \,/\!/\, (SI)$ comme souhaité.
+
+
+
+\bigskip
+
+\textbf{Cas 2.} \emph{Supposons que $A = B$ .}
+
+\medskip
+
+Tout est dans le dessin suivant ou presque. Nous allons rédiger cela proprement.
+
+\smallskip
+\begin{center}
+	\fbox{\includegraphics[scale = .75]{addition-on-ellipsis/proof/rotation-A-is-B.png}}
+\end{center}
+\smallskip
+
+Il est immédiat que
+$\angleorient{\vect{OI}}{\vect{OA}}
+= \angleorient{\vect{OA}}{\vect{OS}}$ ,
+puis que
+$- \angleorient{\vect{AO}}{\vect{OI}}
+= \angleorient{\vect{AO}}{\vect{OS}}$ .
+Donc la droite $(AO)$ est la bissectrice issue du sommet principal du triangle isocèle $SOI$ d'où $(AO) \,\bot\, (SI)$ . Il est alors clair que $(SI)$ est parallèle à la tangente en $A$ au cercle.
