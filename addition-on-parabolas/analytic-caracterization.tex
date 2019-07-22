@@ -1,0 +1,69 @@
+Finissons ce document avec un résultat plus technique en nous demandant quelles peuvent être les fonctions $f$ définies et dérivables sur $\RR$ qui vérifient les propriétés suivantes utilisées dans la démonstration de la section \ref{proof}.
+\begin{enumerate}
+	\item $\forall (a ; b) \in \RR^2$ , si $a \neq b$ alors $\frac{f(a) - f(b)}{a - b} = \frac{f(a + b)}{a + b}$ .
+
+	\item $f$ est paire et $f(0) = 0$ .
+
+	\item $\forall a \in \RRs$ , $f\,'(a) = \frac{f(2 a)}{2 a}$ . Notons que cette propriété est en fait une conséquence de la première via un passage à la limite de $b$ vers $a$ .
+\end{enumerate}
+
+
+\medskip
+
+
+La fonction $f$ doit être une solution sur $\RR$ de l'équation différentielle $2 x \, y\,'(x) = y(2x)$ qui n'est pas très sympathique car d'un côté il a $x$ comme variable et de l'autre il y a $2x$ !
+Pour avancer, nous allons nous restreindre au cas où $f$ est la restriction d'une fonction $\widetilde{f}$ définie et holomorphe sur $\CC$ , c'est à dire telle que $\forall \omega \in \CC$ , la limite $\displaystyle \lim_{\stackrel{\abs{z - \omega} \, \rightarrow \, 0}{z \neq \omega}} \frac{\widetilde{f}(z) - \widetilde{f}(\omega)}{z - \omega}$ existe dans $\CC$ .
+
+
+On sait alors qu'il existe $R > 0$ tel que $\abs{z} < R$ implique
+$\displaystyle \widetilde{f}(z) = \sum_{k = 0}^{+ \infty} c_k z^k$ , ce développement étant unique car $c_k = \frac{\derpow[k]{f}(0)}{k!}$ , et aussi que les éventuels zéros $\lambda$ de $\widetilde{f}$ sont isolés, c'est à dire qu'il existe un voisinage de $\lambda$ sur lequel $\widetilde{f}$ ne s'annule qu'en $\lambda$ . Nous admettrons ces deux faits de l'analyse complexe car les prouver nous amènerait trop loin.
+
+
+\medskip
+
+Nous admettrons aussi que $\forall x \in \RR$ , $2 x \, f\,'(x) = f(2x)$ implique $\forall z \in \CC$ , $2 z \, \widetilde{f}\,'(z) = \widetilde{f}(2z)$ \emph{(ceci vient principalement de la propriété des zéros isolés et du fait que toute fonction holomorphe l'est à tout ordre)}. 
+
+
+\medskip
+
+Dès que $\abs{z} < 0,5 R$ , nous avons alors :
+\begin{flalign*}
+	2 z \, \widetilde{f}\,'(z) = \widetilde{f}(2z)
+		&\Longleftrightarrow
+		2 z \sum_{k = 0}^{+ \infty} k c_k z^{k - 1}
+		=
+		\sum_{k = 0}^{+ \infty} c_k (2z)^k
+		& \\
+		&\Longleftrightarrow
+		\sum_{k = 0}^{+ \infty} 2 k c_k z^k
+		=
+		\sum_{k = 0}^{+ \infty} c_k (2z)^k
+		& \\
+		&\Longleftrightarrow
+		\forall k \in \NN \, , \, 2 k c_k = 2^k c_k
+		& \\
+		&\Longleftrightarrow
+		c_1 
+		\,\,
+		\text{et}
+		\,\,
+		c_2
+		\,\,
+		\text{quelconques et}
+		\,\,
+		\forall k \in \NNs - \geneset{1 ; 2} \, , \, c_k = 0
+		& \\
+		&\Longleftrightarrow
+		\widetilde{f}(z) = c_1 z + c_2 z^2
+		& \\
+\end{flalign*}
+
+\vspace{-1em}
+
+
+Le principe des zéros isolés et le fait que  $\widetilde{f}(z)$ et $c_1 z + c_2 z^2$ soient holomorphes sur $\CC$ nous donnent que $\widetilde{f}(z) = c_1 z + c_2 z^2$ sur $\CC$ tout entier, et donc $f(x) = c_1 x + c_2 x^2$ sur $\RR$ .
+
+
+\medskip
+
+Compte tenu de la section précédente, la condition nécessaire ci-dessus est aussi suffisante. Nous avons donc obtenu une caractérisation des fonctions trinômes nulles en zéro parmi les fonctions qui sont la restriction d'une fonction définie et holomorphe sur $\CC$ .
