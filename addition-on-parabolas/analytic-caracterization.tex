@@ -12,8 +12,11 @@ Finissons ce document avec un résultat plus technique en nous demandant quelles
 
 
 La fonction $f$ doit être une solution sur $\RR$ de l'équation différentielle $2 x \, y\,'(x) = y(2x)$ qui n'est pas très sympathique car d'un côté il a $x$ comme variable et de l'autre il y a $2x$ !
-Pour avancer, nous allons nous restreindre au cas où $f$ est la restriction d'une fonction $\widetilde{f}$ définie et holomorphe sur $\CC$ , c'est à dire telle que $\forall \omega \in \CC$ , la limite $\displaystyle \lim_{\stackrel{\abs{z - \omega} \, \rightarrow \, 0}{z \neq \omega}} \frac{\widetilde{f}(z) - \widetilde{f}(\omega)}{z - \omega}$ existe dans $\CC$ .
+Pour avancer, nous allons nous restreindre au cas où $f$ est la restriction d'une fonction $\widetilde{f}$ définie et holomorphe sur $\CC$ , c'est à dire telle que $\forall \omega \in \CC$ , la limite $\displaystyle \lim_{\stackrel{\abs{z - \omega} \, \rightarrow \, 0}{z \neq \omega}} \frac{\widetilde{f}(z) - \widetilde{f}(\omega)}{z - \omega}$ existe dans $\CC$
+\emph{(par exemple, les fonctions $\exp$ , $\cos$ et $\sin$ vérifient cette hypothèse)}.
 
+
+\medskip
 
 On sait alors qu'il existe $R > 0$ tel que $\abs{z} < R$ implique
 $\displaystyle \widetilde{f}(z) = \sum_{k = 0}^{+ \infty} c_k z^k$ , ce développement étant unique car $c_k = \frac{\derpow[k]{f}(0)}{k!}$ , et aussi que les éventuels zéros $\lambda$ de $\widetilde{f}$ sont isolés, c'est à dire qu'il existe un voisinage de $\lambda$ sur lequel $\widetilde{f}$ ne s'annule qu'en $\lambda$ . Nous admettrons ces deux faits de l'analyse complexe car les prouver nous amènerait trop loin.
