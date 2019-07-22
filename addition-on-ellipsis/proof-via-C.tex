@@ -41,7 +41,7 @@ A l'aide de la même technique classique précédente, notant $d = b - a$, nous 
 \vspace{-1em}
 
 
-Comme $d \not\equiv 0 \,\, [2\pi]$ par hypothèse, soit de façon équivalente $0,5 d \not\equiv 0 \,\, [\pi]$ , nous avons donc $z_{\vect{IS}} = k z_{\vect{AB}}$ où $k = \frac{\sin(0,5 s)}{\sin(0,5 d)} \in \RR$ .
+Comme $d \not\equiv 0 \,\, [2\pi]$ par hypothèse, soit de façon équivalente $0,5 d \not\equiv 0 \,\, [\pi]$ , nous avons finalement $z_{\vect{IS}} = k z_{\vect{AB}}$ où $k = \frac{\sin(0,5 s)}{\sin(0,5 d)} \in \RR$ .
 
 
 
@@ -54,7 +54,15 @@ Comme $d \not\equiv 0 \,\, [2\pi]$ par hypothèse, soit de façon équivalente $
 Nous devons prouver l'orthogonalité des vecteurs $\vect{OA}$ et $\vect{IS}$ avec ici $z_S = \ee^{2 \ii a}$ .
 Ceci découle de la nullité de la partie réelle du produit suivant
 \footnote{
-	Se souvenir que $(x + \ii y) \, \overline{(x' + \ii y')} = xx' + yy' +\ii (x'y - xy')$ .
+	Se souvenir que 
+	$(x + \ii y) \, \overline{(x' + \ii y')} = xx' + yy' +\ii (x'y - xy')$ .
+	Notez que cette identité est un deux-en-un contenant le produit scalaire et le déterminant des vecteurs $\vect{u}$ et $\vect{v}$ d'affixes complexes respectives $(x + \ii y)$ et $(x' + \ii y')$ .
+	Si $\vect{u} \neq \vect{0}$ et $\vect{v} \neq \vect{0}$ ,
+	la notation exponentielle nous donne sans effort que
+	$\cos \theta = \frac{\dotprod{\vect{u}}{\vect{v}}}{\norm{\vect{u}} \cdot \norm{\vect{v}}}$
+	et
+	$\sin \theta = \frac{\det\left ( \vect{u} ; \vect{v} \right)}{\norm{\vect{u}} \cdot \norm{\vect{v}}}$
+	où $\theta$ est une mesure en radians de l'angle orienté $\angleorient{\vect{u}}{\vect{v}}$.
 }.
 \begin{flalign*}
 	z_{\vect{OA}} \,\, \overline{z_{\vect{IS}} \vphantom{T}}

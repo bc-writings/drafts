@@ -1,0 +1,77 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\usepackage{lymath}
+
+\DeclareMathOperator{\taille}{\tau}
+
+\newtheorem{fact}{Fait}
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+
+\newcommand\squote[1]{\og #1 \fg{}}
+
+
+\begin{document}
+
+\title{BROUILLON - Faire des produits sur une hyperbole}
+\author{Christophe BAL}
+\date{22 Juillet 2019}
+\maketitle
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+
+
+\section{\texorpdfstring{Comment additionner des nombres grâce à l'hyperbole d'équation $y = \frac{1}{x}$}%
+                        {Comment additionner des nombres grâce à l'hyperbole d'équation y = 1/x}}
+
+\input{product-on-hyperbolas/conjecture}
+
+
+
+\section{Preuve de la validité de la conjecture} \label{proof}
+
+\input{product-on-hyperbolas/proof}
+
+
+
+\section{\texorpdfstring{Toute hyoerbole d'équation $y = \frac{a x + b}{c x + d}$ a une structure de groupe}%
+                        {Toute hyoerbole d'équation y = (a x + b) / (c x + d) a une structure de groupe}}
+      
+\input{product-on-hyperbolas/group}
+
+\end{document}
