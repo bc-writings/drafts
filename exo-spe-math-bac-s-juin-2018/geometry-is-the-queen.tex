@@ -37,6 +37,11 @@ $\begin{pmatrix}
 \begin{pmatrix} 
   x' \\ 
   y'
+\end{pmatrix}
+=
+\begin{pmatrix}
+  x x' + 8 y y' \\ 
+  x y' + x' y 
 \end{pmatrix}$ .
 
 
@@ -199,7 +204,10 @@ Prouvons la validité de notre conjecture. Nous confondrons les points avec les 
 	\smallskip
 	
 	\noindent
-	Dans ce cas, il est immédiat que les points $M$ et $N$ sont inversibles, \emph{i.e.} $x_M = x_N$ et $y_M = -y_N$.
+	Dans ce cas, comme $x_M = x_N$ et $y_M = -y_N$ , nous avons
+	$x_M x_N + 8 y_M y_N = x_M^2 - 8 y_M^2 = 1$
+	et
+	$y_M x_N + x_M y_N = 0$ .
 	Ceci justifie que $P = E$ .
 
 % --------------- %
