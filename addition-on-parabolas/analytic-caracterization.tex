@@ -2,7 +2,7 @@ Finissons ce document avec un résultat plus technique en nous demandant quelles
 \begin{enumerate}
 	\item $\forall (a ; b) \in \RR^2$ , si $a \neq b$ alors $\frac{f(a) - f(b)}{a - b} = \frac{f(a + b)}{a + b}$ .
 
-	\item $f$ est paire et $f(0) = 0$ .
+	\item $f(0) = 0$ .
 
 	\item $\forall a \in \RRs$ , $f\,'(a) = \frac{f(2 a)}{2 a}$ . Notons que cette propriété est en fait une conséquence de la première via un passage à la limite de $b$ vers $a$ .
 \end{enumerate}
@@ -12,14 +12,15 @@ Finissons ce document avec un résultat plus technique en nous demandant quelles
 
 
 La fonction $f$ doit être une solution sur $\RR$ de l'équation différentielle $2 x \, y\,'(x) = y(2x)$ qui n'est pas très sympathique car d'un côté il a $x$ comme variable et de l'autre il y a $2x$ !
-Pour avancer, nous allons nous restreindre au cas où $f$ est la restriction d'une fonction $\widetilde{f}$ définie et holomorphe sur $\CC$ , c'est à dire telle que $\forall \omega \in \CC$ , la limite $\displaystyle \lim_{\stackrel{\abs{z - \omega} \, \rightarrow \, 0}{z \neq \omega}} \frac{\widetilde{f}(z) - \widetilde{f}(\omega)}{z - \omega}$ existe dans $\CC$
-\emph{(par exemple, les fonctions $\exp$ , $\cos$ et $\sin$ vérifient cette hypothèse)}.
+Pour avancer, nous allons nous limiter au cas où $f$ est la restriction d'une fonction $\widetilde{f}$ définie et holomorphe sur $\CC$ , c'est à dire telle que $\forall \omega \in \CC$ , la limite $\displaystyle \lim_{\stackrel{\abs{z - \omega} \, \rightarrow \, 0}{z \neq \omega}} \frac{\widetilde{f}(z) - \widetilde{f}(\omega)}{z - \omega}$ existe dans $\CC$
+\emph{(par exemple, les fonctions polynomiales vérifient cette hypothèse)}.
 
 
 \medskip
 
 On sait alors qu'il existe $R > 0$ tel que $\abs{z} < R$ implique
-$\displaystyle \widetilde{f}(z) = \sum_{k = 0}^{+ \infty} c_k z^k$ , ce développement étant unique car $c_k = \frac{\derpow[k]{f}(0)}{k!}$ , et aussi que les éventuels zéros $\lambda$ de $\widetilde{f}$ sont isolés, c'est à dire qu'il existe un voisinage de $\lambda$ sur lequel $\widetilde{f}$ ne s'annule qu'en $\lambda$ . Nous admettrons ces deux faits de l'analyse complexe car les prouver nous amènerait trop loin.
+$\displaystyle \widetilde{f}(z) = \sum_{k = 0}^{+ \infty} c_k z^k$ , ce développement étant unique car $c_k = \frac{\derpow[k]{f}(0)}{k!}$ .
+De plus, on a le résultat fort suivant : les éventuels zéros $\lambda$ de $\widetilde{f}$ sont isolés, c'est à dire qu'il existe un voisinage de $\lambda$ sur lequel $\widetilde{f}$ ne s'annule qu'en $\lambda$ . Nous admettrons ces deux faits de l'analyse complexe car les prouver nous amènerait trop loin.
 
 
 \medskip
