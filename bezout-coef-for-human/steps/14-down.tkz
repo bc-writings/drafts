@@ -1,0 +1,21 @@
+\begin{tikzpicture}
+    \matrix[matrix of nodes,
+        row sep    = 1em,
+        column sep = 1.5em,
+    ](mat){
+          & |[gs]|$141$ &           \\
+|[gs]|$5$ & |[gs]|$27$  & |[bf]|$4$ \\
+|[bf]|$4$ & |[be]|$6$   & |[bf]|$1$ \\
+|[gs]|$2$ & |[gs]|$3$   & |[bf]|$0$ \\
+          & |[gs]|$0$   & |[gs]|$1$ \\
+    };
+
+    \draw[red] (mat-3-1) -- (mat-3-3)
+                node[midway,draw,oc]{$\times$};
+
+    \draw[red] (mat-3-3.east) -- ++ (2.5em,0) |- (mat-4-3.east)
+                node[pos=0.25,draw,oc](plus){$+$}
+                node[above right=3em and -1.25em of plus,fe] (f){$4 \times 1 + 0 = 4$} ;
+
+    \draw[red,-triangle 60] (plus) -| (f) (f.west) --  ++(-1.75em,0);
+\end{tikzpicture}

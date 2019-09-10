@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+    \matrix[matrix of nodes,
+        row sep    = 1em,
+        column sep = 1.5em,
+    ](mat){
+          & |[gs]|$141$ &                            \\
+|[gs]|$5$ & |[gs]|$27$  &                            \\
+|[gs]|$4$ & |[bf]|$6$   &                            \\
+|[ea]|$2$ & |[bf]|$3$   & |[le]|$6 = 2 \times 3 + 0$ \\
+          & |[ea]|$0$   &                            \\
+    };
+\end{tikzpicture}

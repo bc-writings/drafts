@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+    \matrix[matrix of nodes,
+        row sep    = 1em,
+        column sep = 1.5em,
+    ](mat){
+          & |[gs]|$141$ \\
+|[gs]|$5$ & |[bf]|$27$  \\
+          & |[bf]|$6$   \\
+    };
+\end{tikzpicture}
