@@ -19,7 +19,7 @@ a, b = 141, 27
 SUBDIR = "27-141"
 
 SHOW_ALL = True
-SHOW_ALL = False
+# SHOW_ALL = False
 
 
 # --------------- #
@@ -58,7 +58,7 @@ def buildalltikz(a, b):
     matrix_tikzcodes = downsteps(coefmat)
 
     for i, step in enumerate(matrix_tikzcodes, 1):
-        stepfile = STEPS_DIR / f"{i}-step.tkz"
+        stepfile = STEPS_DIR / f"down-{i}.tkz"
 
         with stepfile.open(
             mode     = "w",
@@ -71,8 +71,6 @@ def buildalltikz(a, b):
 
             f.write(matrix_tikzcode)
 
-    inext = i + 1
-
     print("* DOWN PHASE [END] - TiKz codes has been build.")
 
 # Up phase
@@ -81,14 +79,14 @@ def buildalltikz(a, b):
     coefmat                  = upcoefs(coefmat)
     matrix_tikzcodes, extras = upsteps(coefmat)
 
-    for i, step in enumerate(matrix_tikzcodes, inext):
-        stepfile = STEPS_DIR / f"{i}-step.tkz"
+    for i, step in enumerate(matrix_tikzcodes, 1):
+        stepfile = STEPS_DIR / f"up-{i}.tkz"
 
         with stepfile.open(
             mode     = "w",
             encoding = "utf-8"
         ) as f:
-            onextra = extras[i - inext]
+            onextra = extras[i-1]
 
             matrix_tikzcode = TIKZ_TEMPLATE.format(
                 MATRIX = f"\n{pymat2tikzmat(step)}\n    ",
@@ -97,7 +95,6 @@ def buildalltikz(a, b):
 
             f.write(matrix_tikzcode)
 
-    inext     = i + 1
     laststep = step
 
     print("* UP PHASE [END] - Building the TiKz codes...")
@@ -116,7 +113,7 @@ def buildalltikz(a, b):
                node[pos=2.05, lfe] (f){{${coefmat[0][1]} \\times {coefmat[1][2]} - {coefmat[0][2]} \\times {coefmat[1][1]} = {result}$}};
     """.rstrip()
 
-    laststepfile = STEPS_DIR / f"{inext}-step.tkz"
+    laststepfile = STEPS_DIR / "last.tkz"
 
     with laststepfile.open(
         mode     = "w",

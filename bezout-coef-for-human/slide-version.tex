@@ -124,9 +124,11 @@
 \begin{document}
 
 \begin{frame}
+	\frametitle{Coefficients de Bachet-Bézout pour les humains}
+	
 	\centering
 	
-	Un moyen efficace de trouver des coeficients de Bézou-Bachet.
+	Un moyen efficace de trouver des coefficients de Bachet-Bézout.
 	
 	\bigskip
 	
@@ -134,14 +136,40 @@
 \end{frame}
 
 	
-\foreach \n in {1,...,18}{
-	\begin{frame}
-	\input{steps/27-141/\n-step.tkz}
+\foreach \n in {1,...,9}{	
+	\begin{frame}[t]
+		\frametitle{Algorithme d'Euclide posé verticalement}
+	
+		\phantom{X}
+	
+		\input{steps/27-141/down-\n.tkz}
 	\end{frame}
 }
 
+	
+\foreach \n in {1,...,8}{	
+	\begin{frame}[t]
+		\frametitle{Remontée astucieuse des calculs}
+	
+		\phantom{X}
+	
+		\input{steps/27-141/up-\n.tkz}
+	\end{frame}
+}
+
+	
+\begin{frame}[t]
+	\frametitle{Le tour est joué}
+	
+	\phantom{X}
+	
+	\input{steps/27-141/last.tkz}
+\end{frame}
+
 
 \begin{frame}
+	\frametitle{Conclusion}
+	
 	\centering
 	
 	Finalement nous avons :
@@ -164,7 +192,7 @@
 	
 	\medskip
 	
-	\fcolorbox{red}{white}{$27 \times 21 - 141 \times 4 = pgcd(27 , 141)$}
+	\fcolorbox{red}{white}{$27 \times 21 - 141 \times 4 = \mathrm{pgcd}(27 , 141)$}
 \end{frame}
 
 \end{document}
