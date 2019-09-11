@@ -37,14 +37,14 @@ La représentation symbolique \myquote{complète} ci-dessous donne $aY - bX = \p
 \subsection{Avec des matrices pour y voir plus clair}
 
 Oublions tout ce que nous avons vu précédemment.
-Soit $(a ; b) \in \NNs \!\times \NNs$ avec $a > b$, nous cherchons $(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$. La petite astuce est de voir $au + bv = \det M$ où 
+Soit $(a ; b) \in \NNs \!\times \NNs$ avec $a > b$. Nous cherchons $(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$. La petite astuce est de noter que $au + bv = \det M$ où 
 $M 
  =
  \begin{pmatrix}
 	a & -v \\ 
 	b & u
  \end{pmatrix}$.
-Nous allons noter $X = -v$ et $Y = u$ de sorte que 
+Nous allons poser $X = -v$ et $Y = u$ de sorte que 
 $M 
  =
  \begin{pmatrix}
@@ -56,7 +56,7 @@ $M
 \medskip
 
 
-Soit ensuite $a = qb + r$ la division euclidienne de $a$ par $b$. L'algorithme d'Euclide nous fait ensuite travailler avec $(b ; r)$ au lieu de $(a ; b)$. Comme $r = a - qb$, on peut considérer la matrice
+Soit ensuite $a = qb + r$ la division euclidienne de $a$ par $b$. L'algorithme d'Euclide nous fait alors travailler avec $(b ; r)$ au lieu de $(a ; b)$. Comme $r = a - qb$, on peut considérer la matrice
 $N 
  =
  \begin{pmatrix}
@@ -118,14 +118,14 @@ puis introduisons les notations suivantes.
           	  r_k     & Z_k     \\ 
           	  r_{k+1} & Z_{k+1}
            \end{pmatrix}$
-          pour $n \in \NN$ et
+          pour $k \in \NN$ et
 	      $Q_k 
            =
            \begin{pmatrix}
           	  0 & 1     \\ 
           	  1 & - q_k
            \end{pmatrix}$
-          pour $n \in \NNs$ de sorte que nous avons $M_{k+1} = Q_{k+1} \cdot M_k$. Il est immédiat que $Q_k$ est inversible d'inverse
+          pour $k \in \NNs$ de sorte que nous avons $M_{k+1} = Q_{k+1} \cdot M_k$. Il est immédiat que $Q_k$ est inversible d'inverse
 	      $R_k 
            =
            \begin{pmatrix}
@@ -171,7 +171,12 @@ $M_n
  \medskip
  
  
-Comme $\det M_0 = \pm 1 \det M_n$ car $\det R_k = -1$, il suffit de choisir $Z_n = 0$ et $Z_{n+1} = 1$ pour avoir $aY - bX = \pm \pgcd(a ; b)$. Voilà comment découvrir la méthode visuelle vue précédemment.
+Comme $\det M_0 = \pm 1 \det M_n$ car $\det R_k = -1$, il suffit de choisir $Z_{n+1} = 1$, avec $Z_n$ quelconque, pour avoir $aY - bX = \pm \pgcd(a ; b)$. Voilà comment découvrir la méthode visuelle vue précédemment où le choix $Z_n = 0$ simplifie les tous premiers calculs.
+
+
+\begin{remark}
+	Comme $Z_n$ peut être quelconque, nous pouvons produire une infinité de coefficients de \bb.
+\end{remark}
 
 
 
