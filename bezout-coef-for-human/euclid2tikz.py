@@ -1,3 +1,6 @@
+# Source for the TiKZ decorated paths
+#     * https://tex.stackexchange.com/a/507419/6880
+
 from copy import deepcopy
 
 from mistool.os_use import PPath
@@ -13,13 +16,20 @@ from euclid2tikz.tikzit import *
 
 a, b = 141, 27
 
+SUBDIR = "27-141"
+
+SHOW_ALL = True
+SHOW_ALL = False
+
 
 # --------------- #
 # -- CONSTANTS -- #
 # --------------- #
 
 THIS_DIR      = PPath(__file__).parent
-STEPS_DIR     = THIS_DIR / "steps"
+STEPS_DIR     = THIS_DIR / "steps" / SUBDIR
+
+STEPS_DIR.create("dir")
 
 with (THIS_DIR / "config" / "minitikz.tex").open(
     mode     = "r",
@@ -40,7 +50,7 @@ for old, new in [
 # -- FUNCTIONS -- #
 # --------------- #
 
-def buildtikz(a, b):
+def buildalltikz(a, b):
 # Down phase
     print("* DOWN PHASE [START] - Building the TiKz codes...")
 
@@ -48,7 +58,7 @@ def buildtikz(a, b):
     matrix_tikzcodes = downsteps(coefmat)
 
     for i, step in enumerate(matrix_tikzcodes, 1):
-        stepfile = STEPS_DIR / f"{i}-down.tkz"
+        stepfile = STEPS_DIR / f"{i}-step.tkz"
 
         with stepfile.open(
             mode     = "w",
@@ -72,7 +82,7 @@ def buildtikz(a, b):
     matrix_tikzcodes, extras = upsteps(coefmat)
 
     for i, step in enumerate(matrix_tikzcodes, inext):
-        stepfile = STEPS_DIR / f"{i}-down.tkz"
+        stepfile = STEPS_DIR / f"{i}-step.tkz"
 
         with stepfile.open(
             mode     = "w",
@@ -87,11 +97,48 @@ def buildtikz(a, b):
 
             f.write(matrix_tikzcode)
 
+    inext     = i + 1
+    laststep = step
+
     print("* UP PHASE [END] - Building the TiKz codes...")
+
+# Showing the merly Bézout-Bachet coefficients.
+    print("* BÉZOUT-BACHET COEFS [START] - Building the TiKz codes...")
+
+    result = coefmat[0][1]*coefmat[1][2] - coefmat[0][2]*coefmat[1][1]
+
+    lastextra = f"""
+    \\draw[fe] (mat-1-2.north west) -- (mat-1-3.north east)
+           -- (mat-2-3.south east) -- (mat-2-2.south west)
+           -- (mat-1-2.north west);
+
+    \\draw[red,-triangle 60] (mat-1-3.north east) -- ++ (0,-2.5em) |- ++ (3em,0)
+               node[pos=2.05, lfe] (f){{${coefmat[0][1]} \\times {coefmat[1][2]} - {coefmat[0][2]} \\times {coefmat[1][1]} = {result}$}};
+    """.rstrip()
+
+    laststepfile = STEPS_DIR / f"{inext}-step.tkz"
+
+    with laststepfile.open(
+        mode     = "w",
+        encoding = "utf-8"
+    ) as f:
+        matrix_tikzcode = TIKZ_TEMPLATE.format(
+            MATRIX = f"\n{pymat2tikzmat(laststep)}\n    ",
+            EXTRA  = lastextra
+        )
+
+        f.write(matrix_tikzcode)
+
+    print("* BÉZOUT-BACHET COEFS [END] - Building the TiKz codes...")
+
 
 # ----------------- #
 # -- LET'S START -- #
 # ----------------- #
 
 if __name__ == "__main__":
-    buildtikz(a, b)
+    if SHOW_ALL:
+        buildalltikz(a, b)
+
+    else:
+        buildmaintikz(a, b)

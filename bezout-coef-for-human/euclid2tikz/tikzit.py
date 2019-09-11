@@ -1,7 +1,11 @@
+from copy import deepcopy
+
 from .config import *
 
 
 def pymat2tikzmat(matrix):
+    matrix = deepcopy(matrix)
+
 # Complete rows such as to have a real matrice.
     width = max(len(row) for row in matrix)
 
