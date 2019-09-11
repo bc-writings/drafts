@@ -8,18 +8,22 @@ Sur le lieu de téléchargement de ce document se trluve un fichier \verb+PDF+ d
 
 \subsection{Phase 1 -- Au début était l'algorithme d'Euclide}
 
-Pour chercher des coefficients de \bb{} pour $(a ; b) = (27 ; 141)$, on commence par appliquer l'algorithme d'Euclide \myquote{verticalement} comme suit.
+Pour chercher des coefficients de \bb pour $(a ; b) = (27 ; 141)$, on commence par appliquer l'algorithme d'Euclide \myquote{verticalement} comme suit.
 
 \begin{multicols}{2}
-	\showstep{1}{tikz/27-141[all]/down-1}{le plus grand naturel est mis au-dessus.}
+	\showstep{Étape 1: le plus grand naturel est mis au-dessus.}{tikz/27-141[all]/down-1}
 
-	\showstep{2}{tikz/27-141[all]/down-2}{deux naturels à diviser.}
+	\columnbreak
+	
+	\showstep{Étape 2: deux naturels à diviser.}{tikz/27-141[all]/down-2}
 \end{multicols}
 
 \begin{multicols}{2}
-	\showstep{3}{tikz/27-141[all]/down-3}{première division euclidienne.}
+	\showstep{Étape 3: première division euclidienne.}{tikz/27-141[all]/down-3}
 
-	\showstep{4}{tikz/27-141[all]/down-4}{on passe aux deux naturels suivants.}
+	\columnbreak
+	
+	\showstep{Étape 4: on passe aux deux naturels suivants.}{tikz/27-141[all]/down-4}
 \end{multicols}
 
 
@@ -28,7 +32,7 @@ Pour chercher des coefficients de \bb{} pour $(a ; b) = (27 ; 141)$, on commence
 
 En répétant ce processus, nous arrivons à la représentation suivante.
 
-\showstepnovfill{finale (1\iere{} phase)}{tikz/27-141[main]/down}{l'algorithme d'Euclide \myquote{vertical}.}
+\showstepnovfill{Étape finale (1\iere phase): l'algorithme d'Euclide \myquote{vertical}.}{tikz/27-141[main]/down}
 
 
 % --------------- %
@@ -39,14 +43,16 @@ En répétant ce processus, nous arrivons à la représentation suivante.
 La méthode classique consiste à remonter les calculs. Mais comment faire cette remontée tout en évitant un claquage neuronal ? L'astuce est la suivante.
 
 \begin{multicols}{2}
-	\showstep{1}{tikz/27-141[all]/up-1}{ajout d'une nouvelle colonne.}
+	\showstep{Étape 1: ajout d'une nouvelle colonne.}{tikz/27-141[all]/up-1}
 
-	\showstep{2}{tikz/27-141[all]/up-2}{on n'utilise pas la colonne centrale.}
+	\columnbreak
+	
+	\showstep{Étape 2: on n'utilise pas la colonne centrale.}{tikz/27-141[all]/up-2}
 \end{multicols}
 
-\showstepnovfill{3}{tikz/27-141[all]/up-3}{on fait une sorte de division \myquote{inversée}.}
+\showstepnovfill{Étape 3: on fait une sorte de division \myquote{inversée}.}{tikz/27-141[all]/up-3}
 
-\showstepnovfill{4}{tikz/27-141[all]/up-4}{on passe aux trois naturels suivants.}
+\showstepnovfill{Étape 4: on passe aux trois naturels suivants.}{tikz/27-141[all]/up-4}
 
 
 \medskip
@@ -54,7 +60,7 @@ La méthode classique consiste à remonter les calculs. Mais comment faire cette
 
 En répétant ce processus, nous arrivons à la représentation suivante.
 
-\showstepnovfill{finale (2\ieme{} phase)}{tikz/27-141[main]/up}{remontée à mains nues des calculs.}
+\showstepnovfill{Étape finale (2\ieme phase): remontée à mains nues des calculs.}{tikz/27-141[main]/up}
 
 
 % --------------- %
@@ -62,13 +68,13 @@ En répétant ce processus, nous arrivons à la représentation suivante.
 
 \subsection{Et voilà comment conclure !}
 
-\showstepnovfill{finale (la vraie)}{tikz/27-141[main]/last}{on finit avec un produit en croix.}
+\showstepnovfill{Étape finale (la vraie): on finit avec un produit en croix.}{tikz/27-141[main]/last}
 
 
 \medskip
 
 
-Des coefficients de \bb{} s'obtiennent sans souci via l'équivalence suivante où nous avons $3 = \mathrm{pgcd}(27 , 141)$.
+Des coefficients de \bb s'obtiennent sans souci via l'équivalence suivante où nous avons $3 = \mathrm{pgcd}(27 , 141)$.
 \[141 \times 4 - 27 \times 21 = -3 \,\Longleftrightarrow\, 27 \times 21 - 141 \times 4 = 3\]
 
 

@@ -1,1 +1,67 @@
-????
+\subsection{Avec des arguments élémentaires} Commençons par une preuve explicative qui malheureusement ne nous permet pas de voir d'où vient l'astuce \emph{(nous explorerons ceci dans la sous-section suivante)}. 
+
+\showstepnovfill{Calculs faits dans les deux phases.}{tikz/why/twophases-focus}
+
+
+\bigskip
+
+
+Par construction, nous avons $a = qb + r$ et $X = qY + Z$. Ceci nous donne :
+
+\vspace{-1em}
+
+\begin{flalign*}
+	d &= aY - bX               & \\
+	  &= (qb + r)Y - b(qY + Z) & \\
+	  &= rY - bZ               & \\
+	  &= -e                    & \\
+\end{flalign*}
+
+\vspace{-1em}
+
+
+Donc si l'on fait \myquote{glisser} des carrés sur les deux colonnes de gauche, les produits en croix dans ces carrés ne différeront que de leur signe. 
+
+
+\medskip
+
+
+Grâce à la représentation finale ci-dessous, nous obtenons $aY - bX = \pm \pgcd(a ; b)$ car le dernier reste non nul de l'algorithme d'Euclide est $\pgcd(a ; b)$. Ceci prouve la validité de la méthode dans le cas général. On comprend au passage l'ajout initial du $0$ et du $1$ dans la 3\ieme{} colonne \emph{(bien entendu, $(-1)$ aurait aussi pu convenir)}.
+
+\showstepnovfill{Une représentation symbolique au complet.}{tikz/why/twophases-all}
+	
+
+% --------------- %
+
+
+\subsection{Avec des matrices pour aller plus loin}
+
+Reprenons le cas de base suivant mais an l'analysant à l'aune des matrices.
+
+\showstepnovfill{Calculs faits dans les deux phases.}{tikz/why/twophases-focus}
+
+
+\medskip
+
+
+Notant
+$M 
+ =
+ \begin{pmatrix}
+	a & X \\ 
+	b & Y
+ \end{pmatrix}$,
+et
+$N 
+ =
+ \begin{pmatrix}
+	b & Y \\ 
+	r & Z
+ \end{pmatrix}$,
+nous avons $d = \det M$ et $e = \det N$.
+
+
+\medskip
+
+
+Comme 

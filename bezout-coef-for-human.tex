@@ -11,6 +11,7 @@
 \usepackage{cleveref}
 \usepackage{multicol}
 \usepackage{amsmath}
+\usepackage{nicematrix}
 \usepackage[french]{babel}
 \usepackage[
     type={CC},
@@ -51,29 +52,25 @@
 \newcommand\bb{Bachet-Bézout}
 
 % Arguments
-%    #1 Number of the step
+%    #1 Caption
 %    #2 TiKZ file
-%    #3 Caption
 
-\newcommand\showstep[3]{
+\newcommand\showstep[2]{
     \begin{center}
         \input{bezout-coef-for-human/#2.tkz}
     
         \vfill
-        \small
-        \itshape
-        Étape #1: #3
+        
+        \small \itshape #1
     \end{center}    
 }
 
 
-\newcommand\showstepnovfill[3]{
+\newcommand\showstepnovfill[2]{
     \begin{center}
         \input{bezout-coef-for-human/#2.tkz}
   
-        \small
-        \itshape
-        Étape #1: #3
+        \small \itshape #1
     \end{center}    
 }
 
@@ -93,8 +90,8 @@
     gs/.style={
         rectangle,
         thick,
-        text width=3em,
-           align=center,
+        text width=3.5em,
+        align=center,
         draw=white,
         rounded corners,
         minimum height=2em
@@ -105,7 +102,7 @@
         draw=blue,
         thick,
         fill=blue!20,
-        text width=3em,
+        text width=3.5em,
         align=center,
         rounded corners,
         minimum height=2em
@@ -116,7 +113,7 @@
         thick,
         rounded corners,
         minimum height=2em,
-        text width=3em,
+        text width=3.5em,
         align=center,
         draw=gray,
            text=darkgray
@@ -127,7 +124,7 @@
         thick,
         rounded corners,
         minimum height=2em,
-        text width=3em,
+        text width=3.5em,
         align=center,
         draw=gray,
         text=darkgray
@@ -150,7 +147,7 @@
         thick,
         rounded corners,
         minimum height=2em,
-        text width=3em,
+        text width=3.5em,
         align=center,
     },
     % Focus effect
@@ -164,7 +161,18 @@
         draw=red,
         text=magenta
     },
-    % Focus effect
+    % Focus effect Bis
+    feb/.style={
+        rectangle,
+        thick,
+        rounded corners,
+        minimum height=2em,
+        text width=8em,
+        align=center,
+        draw=blue,
+        text=violet
+    },
+    % Long focus effect
     lfe/.style={
         rectangle,
         thick,
@@ -174,7 +182,18 @@
         align=center,
         draw=red,
         text=magenta
-    }
+    },
+    % Long focus effect bis
+    lfeb/.style={
+        rectangle,
+        thick,
+        rounded corners,
+        minimum height=2em,
+        text width=12em,
+        align=center,
+        draw=blue,
+        text=violet
+    },
 }
       
 

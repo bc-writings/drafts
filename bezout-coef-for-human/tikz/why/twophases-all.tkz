@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+    \matrix[matrix of nodes,
+        row sep    = 1em,
+        column sep = 1.5em,
+    ](mat){
+               & |[gs]|$r_0 = a$ & |[gs]|$Z_0 = X$  \\
+|[gs]|$q_1$    & |[gs]|$r_1 = b$ & |[gs]|$Z_1 = Y$  \\
+|[gs]|$q_2$    & |[gs]|$r_2$     & |[gs]|$Z_2$      \\
+|[gs]|$\vdots$ & |[gs]|$\vdots$  & |[gs]|$\vdots$   \\
+|[gs]|$q_n$    & |[gs]|$r_n$     & |[gs]|$Z_n = 0$  \\
+               & |[gs]|$0$       & |[gs]|$1$        \\
+    };
+
+    \draw[fe] (mat-1-2.north west) -- (mat-1-3.north east)
+           -- (mat-2-3.south east) -- (mat-2-2.south west)
+           -- (mat-1-2.north west);
+
+    \draw[red,-triangle 60] (mat-1-3.north east) -- ++ (0,-2.5em) |- ++ (3em,0)
+               node[pos=1.74, fe] (f){$aY - bX$};
+
+    \draw[feb] (mat-5-2.north west) -- (mat-5-3.north east)
+           -- (mat-6-3.south east) -- (mat-6-2.south west)
+           -- (mat-5-2.north west);
+
+    \draw[blue,-triangle 60] (mat-5-3.north east) -- ++ (0,-2.5em) |- ++ (3em,0)
+               node[pos=1.74, feb] (f){$r_n$};
+\end{tikzpicture}
