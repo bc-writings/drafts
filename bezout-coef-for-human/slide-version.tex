@@ -25,101 +25,92 @@
 
 
 \tikzset{
-	% Operator in a circle
-	oc/.style={
-		circle,
-		draw,
-		fill=white,
-		inner sep=1pt, 
-		outer sep=1pt
+	% Common style
+	common/.style={
+		rectangle, 
+		thick,
+		rounded corners,
+		align=center,
+		minimum height=2em
 	},
-	% Good spacing hack (the ghost mode)
-	gs/.style={
-		rectangle,
-	    thick,
-    	text width=3em,
-   		align=center,
-        draw=white,
-    	rounded corners,
-    	minimum height=2em
-	},
-	% Blue frame
-	bf/.style={
-		rectangle,
-    	draw=blue,
-    	thick,
-    	fill=blue!20,
-    	text width=3em,
-    	align=center,
-    	rounded corners,
-    	minimum height=2em
-	},
-	% Explain remained
-	er/.style={
-		rectangle,
-    	thick,
-    	rounded corners,
-    	minimum height=2em,
-        text width=3em,
-    	align=center,
-		draw=gray,
-   		text=darkgray
-	},
-	% Explain activated
-	ea/.style={
-    	rectangle,
-        thick,
-        rounded corners,
-        minimum height=2em,
-        text width=3em,
-        align=center,
-    	draw=gray,
-        text=darkgray
-	},
-	% Long explain activated
-	le/.style={
-    	rectangle,
-        thick,
-        rounded corners,
-        minimum height=2em,
-        text width=8em,
-        align=center,
-    	draw=gray,
-        text=darkgray
-	},
-	% Blur effect
-	be/.style={
-		opacity = 0.3,
-    	rectangle,
-        thick,
-        rounded corners,
-        minimum height=2em,
-        text width=3em,
-        align=center,
+    % Operator in a circle
+    oc/.style={
+        circle,
+        draw,
+        fill=white,
+        inner sep=1pt, 
+        outer sep=1pt
     },
-	% Focus effect
+    % Good spacing hack (the ghost mode)
+    gs/.style={
+        common,
+        text width=3.5em,
+        draw=white
+    },
+    % Blue frame
+    bf/.style={
+        common,
+        draw=blue,
+        fill=blue!20,
+        text width=3.5em,
+    },
+    % Explain remained
+    er/.style={
+        common,
+        text width=3.5em,
+        draw=gray,
+        text=darkgray
+    },
+    % Explain activated
+    ea/.style={
+        common,
+        text width=3.5em,
+        draw=gray,
+        text=darkgray
+    },
+    % Long explain activated
+    le/.style={
+        common,
+        text width=8em,
+        draw=gray,
+        text=darkgray
+    },
+    % Blur effect
+    be/.style={
+        common,
+        opacity = 0.3,
+        text width=3.5em,
+    },
+    % Focus effect
     fe/.style={
-    	rectangle,
-        thick,
-        rounded corners,
-        minimum height=2em,
+        common,
         text width=8em,
-        align=center,
         draw=red,
         text=magenta
     },
-	% Focus effect
+    % Focus effect Bis
+    feb/.style={
+        common,
+        text width=8em,
+        draw=blue,
+        text=violet
+    },
+    % Long focus effect
     lfe/.style={
-    	rectangle,
-        thick,
-        rounded corners,
-        minimum height=2em,
+        common,
         text width=12em,
-        align=center,
         draw=red,
         text=magenta
-    }
+    },
+    % Long focus effect bis
+    lfeb/.style={
+        common,
+        text width=12em,
+        draw=blue,
+        text=violet
+    },
 }
+
       
 \begin{document}
 

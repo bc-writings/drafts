@@ -1,24 +1,20 @@
 \begin{tikzpicture}
-    \matrix[matrix of nodes,
+    \matrix[matrix of nodes,nodes=gs,
         row sep    = 1em,
         column sep = 1.5em,
     ](mat){
-          & |[gs]|$a$ & |[gs]|$X$ \\
-|[gs]|$q$ & |[gs]|$b$ & |[gs]|$Y$  \\
-          & |[gs]|$r$ & |[gs]|$Z$  \\
+    & $a$ & $X$ \\
+$q$ & $b$ & $Y$  \\
+    & $r$ & $Z$  \\
     };
 
-    \draw[fe] (mat-1-2.north west) -- (mat-1-3.north east)
-           -- (mat-2-3.south east) -- (mat-2-2.south west)
-           -- (mat-1-2.north west);
+    \node[fit=(mat-1-2) (mat-2-3),inner xsep=1em,rc,red] (F1){};
 
-    \draw[red,-triangle 60] (mat-1-3.north east) -- ++ (0,-2.5em) |- ++ (3em,0)
-               node[pos=2.05, lfe] (f){$aY - bX = d$};
+    \draw[red,-triangle 60] (F1.east) -- ++ (2.5em,0)
+               node[right, lfe] (f){$aY - bX = d$};
 
-    \draw[feb] (mat-2-2.north west) -- (mat-2-3.north east)
-           -- (mat-3-3.south east) -- (mat-3-2.south west)
-           -- (mat-2-2.north west);
+    \node[inner xsep=1.5em,fit=(mat-2-2) (mat-3-3),rc,blue] (F2){};
 
-    \draw[blue,-triangle 60] (mat-2-3.north east) -- ++ (0,-2.5em) |- ++ (3em,0)
-               node[pos=2.05, lfeb] (f){$bZ - rY = e$};
+    \draw[blue,-triangle 60] (F2.east) -- ++ (2em,0)
+               node[right,lfeb] (f){$bZ - rY = e$};
 \end{tikzpicture}

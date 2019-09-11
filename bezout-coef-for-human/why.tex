@@ -20,48 +20,158 @@ Par construction, nous avons $a = qb + r$ et $X = qY + Z$. Ceci nous donne :
 \vspace{-1em}
 
 
-Donc si l'on fait \myquote{glisser} des carrés sur les deux colonnes de gauche, les produits en croix dans ces carrés ne différeront que de leur signe. 
+Donc si l'on fait \myquote{glisser} des carrés sur les deux colonnes de droite, les produits en croix dans ces carrés ne différeront que par leur signe. 
 
 
 \medskip
 
 
-Grâce à la représentation finale ci-dessous, nous obtenons $aY - bX = \pm \pgcd(a ; b)$ car le dernier reste non nul de l'algorithme d'Euclide est $\pgcd(a ; b)$. Ceci prouve la validité de la méthode dans le cas général. On comprend au passage l'ajout initial du $0$ et du $1$ dans la 3\ieme{} colonne \emph{(bien entendu, $(-1)$ aurait aussi pu convenir)}.
+La représentation symbolique \myquote{complète} ci-dessous donne $aY - bX = \pm \pgcd(a ; b)$ car le dernier reste non nul de l'algorithme d'Euclide est $\pgcd(a ; b)$. Ceci prouve la validité de la méthode dans le cas général. On comprend au passage l'ajout initial du $0$ et du $1$ dans la 3\ieme{} colonne \emph{(bien entendu, $(-1)$ aurait aussi pu convenir)}.
 
-\showstepnovfill{Une représentation symbolique au complet.}{tikz/why/twophases-all}
+\showstepnovfill{Représentation symbolique au complet.}{tikz/why/twophases-all-decorated}
 	
 
 % --------------- %
 
 
-\subsection{Avec des matrices pour aller plus loin}
+\subsection{Avec des matrices pour y voir plus clair}
 
-Reprenons le cas de base suivant mais an l'analysant à l'aune des matrices.
-
-\showstepnovfill{Calculs faits dans les deux phases.}{tikz/why/twophases-focus}
-
-
-\medskip
-
-
-Notant
+Oublions tout ce que nous avons vu précédemment.
+Soit $(a ; b) \in \NNs \!\times \NNs$ avec $a > b$, nous cherchons $(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$. La petite astuce est de voir $au + bv = \det M$ où 
+$M 
+ =
+ \begin{pmatrix}
+	a & -v \\ 
+	b & u
+ \end{pmatrix}$.
+Nous allons noter $X = -v$ et $Y = u$ de sorte que 
 $M 
  =
  \begin{pmatrix}
 	a & X \\ 
 	b & Y
- \end{pmatrix}$,
-et
+ \end{pmatrix}$.
+ 
+
+\medskip
+
+
+Soit ensuite $a = qb + r$ la division euclidienne de $a$ par $b$. L'algorithme d'Euclide nous fait ensuite travailler avec $(b ; r)$ au lieu de $(a ; b)$. Comme $r = a - qb$, on peut considérer la matrice
 $N 
+ =
+ \begin{pmatrix}
+	a - qb & X - qY \\ 
+	b      & Y
+ \end{pmatrix}$
+qui vérifie $\det N = \det M$ puis, afin d'avoir $b$ en haut, la matrice
+$P 
+ =
+ \begin{pmatrix}
+	b      & Y      \\
+	a - qb & X - qY 
+ \end{pmatrix}$
+qui vérifie $\det P = -\det M$.
+ 
+
+\medskip
+
+
+Notant $Z = X - qY$, de sorte que 
+$P 
  =
  \begin{pmatrix}
 	b & Y \\ 
 	r & Z
  \end{pmatrix}$,
-nous avons $d = \det M$ et $e = \det N$.
+nous avons $X = Z + qY$. Ceci justifie la construction utilisée lors de la phase de remontée.
+ 
+
+\bigskip
 
 
-\medskip
+Pour passer à une nouvelle preuve, notons que
+$\begin{pmatrix}
+	b & Y \\ 
+	r & Z
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+	0 & 1  \\ 
+	1 & -q
+ \end{pmatrix}
+ \cdot
+ \begin{pmatrix}
+	a & X \\ 
+	b & Y
+ \end{pmatrix}$
+puis introduisons les notations suivantes.
+
+\begin{itemize}[label=\small\textbullet]
+	\item $r_0 = a$, $r_1 = b$, $Z_0 = X$, $Z_1 = Y$
+
+	\item Pour $k \in \NNs$, on note $r_{k-1} = r_k q_k + r_{k+1}$ la division euclidienne de $r_{k-1}$ par $r_k$, puis ensuite on pose $Z_{k+1} = Z_{k-1} - Z_k q_k$ de sorte que $Z_{k-1} = Z_k q_k + Z_{k+1}$.
+
+	\item On note enfin
+	      $M_k 
+           =
+           \begin{pmatrix}
+          	  r_k     & Z_k     \\ 
+          	  r_{k+1} & Z_{k+1}
+           \end{pmatrix}$
+          pour $n \in \NN$ et
+	      $Q_k 
+           =
+           \begin{pmatrix}
+          	  0 & 1     \\ 
+          	  1 & - q_k
+           \end{pmatrix}$
+          pour $n \in \NNs$ de sorte que nous avons $M_{k+1} = Q_{k+1} \cdot M_k$. Il est immédiat que $Q_k$ est inversible d'inverse
+	      $R_k 
+           =
+           \begin{pmatrix}
+          	  q_k & 1 \\ 
+          	  1   & 0
+           \end{pmatrix}$
+          avec $\det R_k = -1$.
+\end{itemize}
 
 
-Comme 
+L'algorithme d'Euclide nous donne l'existence de $n \in \NN$ un indice minimal tel que $r_{n+1} = 0$.
+Nous savons que $r_n = \pgcd(a ; b)$.
+Comme
+$\displaystyle M_n = \prod_{k = n}^{1} Q_k \cdot M_0$,
+nous avons
+$\displaystyle M_0 = \prod_{k = 1}^{n} R_k \cdot M_n$
+avec
+$M_0
+ =
+ \begin{pmatrix}
+    r_0 & Z_0 \\ 
+    r_1 & Z_1
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+    a & X \\ 
+    b & Y
+ \end{pmatrix}$
+et
+$M_n
+ =
+ \begin{pmatrix}
+    r_n & Z_n     \\ 
+    0   & Z_{n+1}
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+    \pgcd(a ; b) & Z_n     \\ 
+    0            & Z_{n+1}
+ \end{pmatrix}$.
+ 
+ 
+ \medskip
+ 
+ 
+Comme $\det M_0 = \pm 1 \det M_n$ car $\det R_k = -1$, il suffit de choisir $Z_n = 0$ et $Z_{n+1} = 1$ pour avoir $aY - bX = \pm \pgcd(a ; b)$. Voilà comment découvrir la méthode visuelle vue précédemment.
+
+
+
