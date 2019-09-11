@@ -5,19 +5,12 @@
 \usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
 
 
-\usepackage{wrapfig} 
-
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{tcolorbox}
-\usepackage{float}
 \usepackage{cleveref}
 \usepackage{multicol}
-\usepackage{fancyvrb}
-\usepackage{enumitem}
 \usepackage{amsmath}
-\usepackage{textcomp}
-\usepackage{numprint}
 \usepackage[french]{babel}
 \usepackage[
     type={CC},
@@ -25,7 +18,8 @@
     version={4.0},
 ]{doclicense}
 
-\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+\usepackage{tikz}
+\usetikzlibrary{arrows, matrix, positioning}
 
 \usepackage{lymath}
 
@@ -42,27 +36,155 @@
 
 \setlength\parindent{0pt}
 
-\floatstyle{boxed} 
-\restylefloat{figure}
+
+% -- NEW ENVIRONMENTS -- %
 
 
-\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
-
-\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
 
 
-\DefineVerbatimEnvironment{rawcode}%
-    {Verbatim}%
-    {tabsize=4,%
-     frame=lines, framerule=0.3mm, framesep=2.5mm}
-     
+% -- NEW MACROS -- %
+
+\newcommand\ph{\phantom{x}}
+
+\newcommand\myquote[1]{\emph{\og #1 \fg}}
+
+\newcommand\bb{Bachet-Bézout}
+
+% Arguments
+%    #1 Number of the step
+%    #2 TiKZ file
+%    #3 Caption
+
+\newcommand\showstep[3]{
+    \begin{center}
+        \input{bezout-coef-for-human/#2.tkz}
+    
+        \vfill
+        \small
+        \itshape
+        Étape #1: #3
+    \end{center}    
+}
+
+
+\newcommand\showstepnovfill[3]{
+    \begin{center}
+        \input{bezout-coef-for-human/#2.tkz}
+  
+        \small
+        \itshape
+        Étape #1: #3
+    \end{center}    
+}
+
+
+% -- SETTINGS -- %
+
+\tikzset{
+    % Operator in a circle
+    oc/.style={
+        circle,
+        draw,
+        fill=white,
+        inner sep=1pt, 
+        outer sep=1pt
+    },
+    % Good spacing hack (the ghost mode)
+    gs/.style={
+        rectangle,
+        thick,
+        text width=3em,
+           align=center,
+        draw=white,
+        rounded corners,
+        minimum height=2em
+    },
+    % Blue frame
+    bf/.style={
+        rectangle,
+        draw=blue,
+        thick,
+        fill=blue!20,
+        text width=3em,
+        align=center,
+        rounded corners,
+        minimum height=2em
+    },
+    % Explain remained
+    er/.style={
+        rectangle,
+        thick,
+        rounded corners,
+        minimum height=2em,
+        text width=3em,
+        align=center,
+        draw=gray,
+           text=darkgray
+    },
+    % Explain activated
+    ea/.style={
+        rectangle,
+        thick,
+        rounded corners,
+        minimum height=2em,
+        text width=3em,
+        align=center,
+        draw=gray,
+        text=darkgray
+    },
+    % Long explain activated
+    le/.style={
+        rectangle,
+        thick,
+        rounded corners,
+        minimum height=2em,
+        text width=8em,
+        align=center,
+        draw=gray,
+        text=darkgray
+    },
+    % Blur effect
+    be/.style={
+        opacity = 0.3,
+        rectangle,
+        thick,
+        rounded corners,
+        minimum height=2em,
+        text width=3em,
+        align=center,
+    },
+    % Focus effect
+    fe/.style={
+        rectangle,
+        thick,
+        rounded corners,
+        minimum height=2em,
+        text width=8em,
+        align=center,
+        draw=red,
+        text=magenta
+    },
+    % Focus effect
+    lfe/.style={
+        rectangle,
+        thick,
+        rounded corners,
+        minimum height=2em,
+        text width=12em,
+        align=center,
+        draw=red,
+        text=magenta
+    }
+}
+      
+
      
      
 \begin{document}
 
-\title{BROUILLON - CANDIDAT - Algorithme d'Euclide et coefficients de Bachet-Bézout pour les humains}
+\title{BROUILLON - Algorithme d'Euclide et coefficients de Bachet-Bézout pour les humains}
 \author{Christophe BAL}
-\date{6 Septembre 2019}
+\date{11 Septembre 2019}
 
 \maketitle
 
@@ -94,59 +216,46 @@
 \tableofcontents
 
 
-\section{????}
-
-????
+% --------------- %
 
 
-\begin{tikzpicture}
-    \matrix[
-        row sep    = .5em,
-        column sep = 1.5em,
-    block/.style={
-      rectangle,
-      draw=blue,
-      thick,
-      fill=blue!20,
-      text width=5em,
-      align=center,
-      rounded corners,
-      minimum height=2em
-    },
-    ]{
-                     & \node[block] {$9665$};      &                \\
-        \node {$2$}; & \node[block] {$488888887$}; & \node {$3$};   \\
-                     & \node {$777$};              & \node {$11$};  \\
-                     &                             & \node {$99$};  \\
-      };
-\end{tikzpicture}
+\newpage
+
+\section{Où allons-nous ?}
+
+\input{bezout-coef-for-human/intro}
 
 
-\section{????}
-
-????
+% --------------- %
 
 
-\begin{tikzpicture}
-    \matrix[
-        row sep    = 1em,
-        column sep = 1.5em,
-    block/.style={
-      rectangle,
-      draw=blue,
-      thick,
-      fill=blue!20,
-      text width=5em,
-      align=center,
-      rounded corners,
-      minimum height=2em
-    },
-    ]{
-                            & \node {$9665$};      &                \\
-        \node[block] {$2$}; & \node {$488888887$}; & \node[block] {$3$};   \\
-                            & \node {$777$};       & \node[block] {$11$};  \\
-                            &                      & \node {$99$};  \\
-      };
-\end{tikzpicture}
+\section{L'algorithme \myquote{human friendly} appliqué de façon magique}
 
+\input{bezout-coef-for-human/how-to}
+
+
+% --------------- %
+
+
+\section{Pourquoi cela marche-t-il ?}
+
+\input{bezout-coef-for-human/why}
+
+
+% --------------- %
+
+
+%\section{Des algorithmes \myquote{computer friendly}, de grands classiques}
+
+%\input{bezout-coef-for-human/computer}
+
+\bigskip
+
+\hrule
+
+\section{AFFAIRE À SUIVRE...}
+
+\bigskip
+
+\hrule
 \end{document}
