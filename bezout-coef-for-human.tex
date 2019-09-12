@@ -22,7 +22,9 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows, matrix, positioning,fit}
 
+
 \usepackage{lymath}
+\usepackage{lyalgo}
 
 
 \newtheorem{fact}{Fait}
@@ -90,7 +92,8 @@
     }, 
 	% Common
     rc/.style={rectangle,
-        thick,rounded corners,draw},
+        thick,rounded corners,draw,
+        minimum height=2em},
     % Operator in a circle
     oc/.style={
         circle,
@@ -133,7 +136,9 @@
     },
     % Blur effect
     be/.style={
-        rc,
+        rectangle,
+        thick,rounded corners,
+        minimum height=2em,
         align=center,
         opacity = 0.3,
         text width=3.5em,
@@ -177,7 +182,7 @@
      
 \begin{document}
 
-\title{BROUILLON - Algorithme d'Euclide et coefficients de Bachet-Bézout pour les humains}
+\title{BROUILLON - \\NOTER QUE L'ON A EN FAIT UNE DIFFÉRENCE QU'AVEC DES COEFS NATURELS !!!! \\Algorithme d'Euclide et coefficients de Bachet-Bézout pour les humains}
 \author{Christophe BAL}
 \date{11 Septembre 2019}
 
@@ -222,7 +227,7 @@
 % --------------- %
 
 
-\section{L'algorithme \myquote{human friendly} appliqué de façon magique}
+\section{L'algorithme \og human friendly \fg{} appliqué de façon magique}
 
 \input{bezout-coef-for-human/how-to}
 

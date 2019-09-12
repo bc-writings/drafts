@@ -1,14 +1,14 @@
 \subsection{Un exemple complet façon \myquote{diaporama}}
 
-Sur le lieu de téléchargement de ce document se trluve un fichier \verb+PDF+ de chemin relatif \verb+bezout-coef-for-human/slide-version.pdf+ présentant la méthode sous la forme d'un diaporama. Nous vous conseillons de le regarder avant de lire les explications suivantes.
+Sur le lieu de téléchargement de ce document se trouve un fichier \verb+PDF+ de chemin relatif \verb+bezout-coef-for-human/slide-version.pdf+ présentant la méthode sous la forme d'un diaporama. Nous vous conseillons de le regarder avant de lire les explications ci-après.
 
 
 % --------------- %
 
 
-\subsection{Phase 1 -- Au début était l'algorithme d'Euclide}
+\subsection{Phase 1 -- Au début était l'algorithme d'Euclide...}
 
-Pour chercher des coefficients de \bb pour $(a ; b) = (27 ; 141)$, on commence par appliquer l'algorithme d'Euclide \myquote{verticalement} comme suit.
+Pour chercher des coefficients de \bb{} pour $(a ; b) = (27 ; 141)$, on commence par appliquer l'algorithme d'Euclide \myquote{verticalement} comme suit.
 
 \begin{multicols}{2}
 	\showstep{Étape 1: le plus grand naturel est mis au-dessus.}{tikz/27-141[all]/down-1}
@@ -30,7 +30,7 @@ Pour chercher des coefficients de \bb pour $(a ; b) = (27 ; 141)$, on commence p
 \medskip
 
 
-En répétant ce processus, nous arrivons à la représentation suivante.
+En répétant ce processus, nous arrivons à la représentation suivante où nous n'avons pas besoin de garder la trace des divisions euclidiennes.
 
 \showstepnovfill{Étape finale (1\iere phase): l'algorithme d'Euclide \myquote{vertical}.}{tikz/27-141[main]/down}
 
@@ -64,7 +64,7 @@ La méthode classique consiste à remonter les calculs. Mais comment faire cette
 
 En répétant ce processus, nous arrivons à la représentation suivante.
 
-\showstepnovfill{Étape finale (2\ieme phase): remontée à mains nues des calculs.}{tikz/27-141[main]/up}
+\showstepnovfill{Étape finale (2\ieme phase): remontée en voie libre des calculs.}{tikz/27-141[main]/up}
 
 
 % --------------- %
@@ -78,7 +78,7 @@ En répétant ce processus, nous arrivons à la représentation suivante.
 \medskip
 
 
-Des coefficients de \bb s'obtiennent sans souci via l'équivalence suivante où nous avons $3 = \mathrm{pgcd}(27 , 141)$.
+Des coefficients de \bb{} s'obtiennent sans souci via l'équivalence suivante où nous avons $3 = \mathrm{pgcd}(27 , 141)$.
 \[141 \times 4 - 27 \times 21 = -3 \,\Longleftrightarrow\, 27 \times 21 - 141 \times 4 = 3\]
 
 

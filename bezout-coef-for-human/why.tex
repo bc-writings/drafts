@@ -50,7 +50,11 @@ $M
  \begin{pmatrix}
 	a & X \\ 
 	b & Y
- \end{pmatrix}$.
+ \end{pmatrix}$
+ et raisonner en supposant l'existence de $u$ et $v$
+ \footnote{
+ 	Ce n'est qu'à la fin de la preuve que nous aurons effectivement prouver l'existence de $u$ et $v$. 
+ }.
  
 
 \medskip
@@ -107,7 +111,7 @@ $\begin{pmatrix}
 puis introduisons les notations suivantes.
 
 \begin{itemize}[label=\small\textbullet]
-	\item $r_0 = a$, $r_1 = b$, $Z_0 = X$, $Z_1 = Y$
+	\item $r_0 = a$, $r_1 = b$, $Z_0 = X$ et $Z_1 = Y$ où $Z_0$ et $Z_1$ ne sont pas connus pour le moment.
 
 	\item Pour $k \in \NNs$, on note $r_{k-1} = r_k q_k + r_{k+1}$ la division euclidienne de $r_{k-1}$ par $r_k$, puis ensuite on pose $Z_{k+1} = Z_{k-1} - Z_k q_k$ de sorte que $Z_{k-1} = Z_k q_k + Z_{k+1}$.
 
@@ -125,7 +129,7 @@ puis introduisons les notations suivantes.
           	  0 & 1     \\ 
           	  1 & - q_k
            \end{pmatrix}$
-          pour $k \in \NNs$ de sorte que nous avons $M_{k+1} = Q_{k+1} \cdot M_k$. Il est immédiat que $Q_k$ est inversible d'inverse
+          pour $k \in \NNs$ de sorte que nous avons $M_{k+1} = Q_{k+1} \cdot M_k$ pour $k \in \NN$. Il est immédiat que $Q_k$ est inversible d'inverse
 	      $R_k 
            =
            \begin{pmatrix}
