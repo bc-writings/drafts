@@ -140,8 +140,9 @@ puis introduisons les notations suivantes.
 \end{itemize}
 
 
-L'algorithme d'Euclide nous donne l'existence de $n \in \NN$ un indice minimal tel que $r_{n+1} = 0$.
-Nous savons que $r_n = \pgcd(a ; b)$.
+L'algorithme d'Euclide nous donne l'existence de $n \in \NN$ un indice minimal tel que $r_{n+1} = 0$ et $r_n = \pgcd(a ; b)$.
+
+
 Comme
 $\displaystyle M_n = \prod_{k = n}^{1} Q_k \cdot M_0$,
 nous avons
@@ -175,12 +176,9 @@ $M_n
  \medskip
  
  
-Comme $\det M_0 = \pm 1 \det M_n$ car $\det R_k = -1$, il suffit de choisir $Z_{n+1} = 1$, avec $Z_n$ quelconque, pour avoir $aY - bX = \pm \pgcd(a ; b)$. Voilà comment découvrir la méthode visuelle vue précédemment où le choix $Z_n = 0$ simplifie les tous premiers calculs.
+Comme $\det M_0 = \pm 1 \det M_n$ car $\det R_k = -1$, il suffit de choisir $Z_{n+1} = 1$, avec $Z_n$ quelconque, pour avoir $aY - bX = \pm \pgcd(a ; b)$. Voilà comment découvrir la méthode visuelle vue précédemment où le choix particulier $Z_n = 0$ simplifie les tous premiers calculs.
 
 
 \begin{remark}
-	Comme $Z_n$ peut être quelconque, nous pouvons produire une infinité de coefficients de \bb.
+	Comme $Z_n$ peut être quelconque, nous pouvons produire une infinité de coefficients de \bb. Cele vient du fait que les étapes de \emph{\og remontée \fg} sont du type $Z_{k-1} = Z_k q_k + Z_{k+1}$ toujours avec $q_k > 0$.
 \end{remark}
-
-
-
