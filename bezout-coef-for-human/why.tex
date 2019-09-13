@@ -26,7 +26,7 @@ Donc si l'on fait \myquote{glisser} des carrés sur les deux colonnes de droite,
 \medskip
 
 
-La représentation symbolique \myquote{complète} ci-dessous donne $aY - bX = \pm \pgcd(a ; b)$ car le dernier reste non nul de l'algorithme d'Euclide est $\pgcd(a ; b)$. Ceci prouve la validité de la méthode dans le cas général. On comprend au passage l'ajout initial du $0$ et du $1$ dans la 3\ieme{} colonne \emph{(bien entendu, $(-1)$ aurait aussi pu convenir)}.
+La représentation symbolique \myquote{complète} ci-dessous donne $aY - bX = \pm \pgcd(a ; b)$ car le dernier reste non nul de l'algorithme d'Euclide est $\pgcd(a ; b)$. Ceci prouve la validité de la méthode dans le cas général. On comprend au passage l'ajout initial du $0$ et du $1$ dans la 3\ieme{} colonne. Bien entendu, $(-1)$ aurait pu convenir à la place de $1$, et l'on constate que $0$ peut être remplacé par n'importe quelle valeur entière.
 
 \showstepnovfill{Représentation symbolique au complet.}{tikz/why/twophases-all-decorated}
 	
@@ -180,5 +180,9 @@ Comme $\det M_0 = \pm 1 \det M_n$ car $\det R_k = -1$, il suffit de choisir $Z_{
 
 
 \begin{remark}
-	Comme $Z_n$ peut être quelconque, nous pouvons produire une infinité de coefficients de \bb. Cele vient du fait que les étapes de \emph{\og remontée \fg} sont du type $Z_{k-1} = Z_k q_k + Z_{k+1}$ toujours avec $q_k > 0$.
+	Comme $Z_n$ peut être quelconque, nous pouvons produire une infinité de coefficients de \bb. En effet, les étapes de \emph{\og remontée \fg} sont du type $Z_{k-1} = Z_k q_k + Z_{k+1}$ avec toujours $q_k > 0$, donc des valeurs naturelles non nulles
+	\footnote{
+		En fait, il n'est pas besoin d'imposer une condition particulière à $Z_n$. A vous de voir pourquoi.
+	}
+	différentes de $Z_n$ produiront des valeurs différentes de $Z_0$.
 \end{remark}
