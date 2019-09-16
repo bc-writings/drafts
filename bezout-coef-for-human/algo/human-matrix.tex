@@ -1,0 +1,49 @@
+Voici la version matricielle de l'algorithme de remontée et descente où de nouveau on limite l'impact sur la mémoire. La matrice $R$ correspond au produit cumulé des matrices $R_k$.
+
+
+\begin{algo}
+	\caption{Descente et remontée via les matrices} \label{algo-human-matrix}
+	%%%
+    \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $b \leq a$}
+    \Result{$(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$}
+	\addalgoblank
+    \Actions{
+		$a_0 \Store a$
+		\SequSep
+		$\varepsilon \Store 1$
+		\\
+    	$R \Store \begin{pmatrix}
+					1 & 0 \\
+					0 & 1
+		  		  \end{pmatrix}$
+        \\
+        \addalgoblank
+        \While{$b \neq 0$}{
+			$a = q b + r$ est la division euclidienne standard.
+			\\
+			$R \Store R \cdot \begin{pmatrix}
+								 q & 1 \\
+								 1 & 0
+		  		  			  \end{pmatrix}$
+			\\
+			$a \Store b$
+			\SequSep
+			$b \Store r$
+			\\
+			\addalgoblank
+        	$\varepsilon \Store (- \varepsilon)$
+		}
+		$R \Store R \cdot \begin{pmatrix}
+							 a_0 & 0           \\
+							 0   & \varepsilon
+		  		  		  \end{pmatrix}$
+		\\
+		$u \Store R_{22}$
+		\SequSep
+		$v \Store (- R_{12})$
+		\\
+		\addalgoblank
+		\Return{$(u ; v)$}
+	}
+\end{algo}
+
