@@ -74,17 +74,17 @@ Nous voilà prêts à proposer un algorithme classique et efficace pour détermi
         \While{$b \neq 0$}{
 			$a = q b + r$ est la division euclidienne standard.
 			\\
-			$temp_u \Store u^{\prime\prime}$
+			$temp_u \Store u^{\prime} - q u^{\prime\prime}$
 			\SequSep
-			$temp_v \Store v^{\prime\prime}$
+			$u^{\prime} \Store u^{\prime\prime}$
+			\SequSep
+			$u^{\prime\prime} \Store temp_u$
 			\\
-			$u^{\prime\prime} \Store u^{\prime} - q u^{\prime\prime}$
+			$temp_v \Store v^{\prime} - q v^{\prime\prime}$
 			\SequSep
-			$v^{\prime\prime} \Store v^{\prime} - q v^{\prime\prime}$
-			\\
-			$u^{\prime} \Store temp_u$
+			$v^{\prime} \Store v^{\prime\prime}$
 			\SequSep
-			$v^{\prime} \Store temp_v$
+			$v^{\prime\prime} \Store temp_v$
 		}
 		\Return{$(u^{\prime\prime} ; v^{\prime\prime})$}
 	}
