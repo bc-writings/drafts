@@ -3,7 +3,7 @@ Il n'est pas dur de coder directement la méthode humaine par descente puis remo
 	Sur le lieu de téléchargement du document que vous lisez, se trouvent les fichiers \texttt{down.py} et \texttt{up.py} dans le dossier \texttt{bezout-coef-for-human/euclid2tikz}.
 	Ces codes traduisent directement la méthode à la main par descente puis remontée.
 }.
-Voici un algorithme où $\star$ est un symbole à part, $R[-1]$ le dernier élément de la liste $R$, $R[-2]$ l'avant-dernier \dots{} , et enfin $[x, y] + [r, s, t] \eqdef [x, y, r, s, t]$ \emph{(additionner des listes c'est les concaténer)}.
+Voici un algorithme, peu efficace mais instructif, où $\star$ est un symbole à part, $R[-1]$ le dernier élément de la liste $R$ et $R[-2]$ l'avant-dernier, et enfin $[x, y] + [r, s, t] \eqdef [x, y, r, s, t]$ \emph{(additionner des listes c'est les concaténer et donc $R + [r]$ est un raccourci pour \emph{\og on ajoute l'élément $r$ à droite de la liste $R$ \fg})}.
 
 
 \begin{algo}
@@ -38,7 +38,7 @@ Voici un algorithme où $\star$ est un symbole à part, $R[-1]$ le dernier élé
 		}
 		\addalgoblank
     	\Comment{Phase de remontée}
-        \Comment{$X$ est une liste qui va stocker les entiers tout à droite.}
+        \Comment{$Z$ est une liste qui va stocker les entiers tout à droite.}
         \addalgoblank
 		$\varepsilon \Store 1$
 		\SequSep

@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+    \matrix[matrix of nodes,
+        row sep    = 1em,
+        column sep = 1.5em,
+    ](mat){
+               & |[gs]|$r_0 = a$ & |[gs]|$Z_0$      \\
+|[gs]|$q_1$    & |[gs]|$r_1 = b$ & |[gs]|$Z_1$      \\
+|[gs]|$q_2$    & |[gs]|$r_2$     & |[gs]|$Z_2$      \\
+|[gs]|$\vdots$ & |[gs]|$\vdots$  & |[gs]|$\vdots$   \\
+|[gs]|$q_n$    & |[gs]|$r_n$     & |[gs]|$Z_n$      \\
+               & |[gs]|$r_{n+1}$ & |[gs]|$Z_{n+1}$  \\
+    };
+\end{tikzpicture}

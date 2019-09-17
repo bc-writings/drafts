@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+    \matrix[matrix of nodes,nodes=gs,
+        row sep    = 1em,
+        column sep = 1.5em,
+    ](mat){
+    & $a$ & $X$ \\
+$q$ & $b$ & $Y$  \\
+    & $r$ & $Z$  \\
+    };
+
+    \node[fit=(mat-1-2) (mat-2-3),inner xsep=1em,rc,red] (F1){};
+
+    \node[inner xsep=1.5em,fit=(mat-2-2) (mat-3-3),rc,blue] (F2){};
+\end{tikzpicture}

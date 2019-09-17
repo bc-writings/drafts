@@ -1,1 +1,91 @@
-TODO
+Dans la section \ref{elementary-proof}, nous avons vu que la clé de la réussite de l'algorithme de descente et remontée est l'égalité $aY - bX = bZ - rY$ dans la représentation ci-dessous où $a = qb + r$ est la division euclidienne standard et $X = qY + Z$. 
+
+\showstepnovfill{Calculs faits dans les deux phases.}{tikz/why/twophases-focus-short}
+
+
+\medskip
+
+
+Nous avons donc exhibé un invariant et dès que l'on arrive à $r = 0$, c'est à dire à la fin de la phase de descente, nous pouvons avoir $bZ - rY = \pgcd(a ; b)$ grâce au choix $Z = 1$, et du coup en remontant les calculs nous arrivons à nos fins \emph{(au signe près)}.
+
+
+\medskip
+
+
+La méthode précédente est peu efficace à cause de la nécessité de mémoriser certains calculs pour la phase de remontée. Ceci est une contrainte forte !
+Nous allons essayer de nous passer de cette nécessité de mémoriser des choses.
+Pour cela repartons de la représentation symbolique \myquote{complète} ci-dessous où $r_{n+1} = 0$ et $r_n = \pgcd(a ; b)$.
+
+\showstepnovfill{Représentation symbolique au complet où $r_{n+1} = 0$.}{tikz/why/twophases-all-no-Z0}
+
+
+\medskip
+
+
+Ce qui fait fonctionner l'algorithme de descente puis remontée c'est que les $r_k$ et les $Z_k$ vérifient la même relation de récurrence.
+
+\begin{enumerate}
+	\item $r_{k+2} = r_k - q_{k+1} r_{k+1}$ car $r_k = q_{k+1} r_{k+1} + r_{k+2}$ est la division euclidienne standard.
+
+	\item $Z_{k+2} = Z_k - q_{k+1} Z_{k+1}$ soit $Z_k = q_{k+1} Z_{k+1} + Z_{k+2}$ par définition.
+\end{enumerate}
+
+
+Nous allons essayer de construire deux suites $(u_k)$ et $(v_k)$ telles que $a u_k + b v_k = r_k$ car nous aurons alors la relation de \bb{} $a u_n + b v_n = r_n = \pgcd(a;b)$.
+Étant donné ce qui précède, il est maintenant naturel de supposer que $u_{k+2} = u_k - q_{k+1} u_{k+1}$ et $v_{k+2} = v_k - q_{k+1} v_{k+1}$.
+En effet, ceci nous donne :
+\begin{flalign*}
+	a u_{k+2} + b v_{k+2} 
+		&= a(u_k - q_{k+1} u_{k+1}) + b(v_k - q_{k+1} v_{k+1}) &\\
+		&= a u_k + b v_k  - q_{k+1} (a u_{k+1} + b v_{k+1})    &\\
+		&= r_k  - q_{k+1} r_{k+1}    &\\
+		&= r_{k+2}    
+\end{flalign*}
+
+
+Il nous reste à trouver les valeurs initiales. Ceci est immédiat puisque nous avons :
+
+\begin{enumerate}
+	\item $a u_0 + b v_0 = r_0 = a$ donc $(u_0 ; v_0) = (1 ; 0)$ s'impose.
+
+	\item $a u_1 + b v_1 = r_1 = b$ donc $(u_1 ; v_1) = (0 ; 1)$ s'impose.
+\end{enumerate}
+
+
+Nous voilà prêts à proposer un algorithme classique et efficace pour déterminer des coefficients de \bb.
+
+
+\begin{algo}
+	\caption{Classique et efficace} \label{algo-efficient}
+	%%%
+    \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $b \leq a$}
+    \Result{$(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$}
+	\addalgoblank
+    \Actions{
+		$u^{\prime} \Store 1$
+		\SequSep
+		$u^{\prime\prime} \Store 0$
+		\\
+    	$v^{\prime} \Store 0$
+		\SequSep
+		$v^{\prime\prime} \Store 1$
+		\\
+		\addalgoblank
+        \While{$b \neq 0$}{
+			$a = q b + r$ est la division euclidienne standard.
+			\\
+			$temp_u \Store u^{\prime\prime}$
+			\SequSep
+			$temp_v \Store v^{\prime\prime}$
+			\\
+			$u^{\prime\prime} \Store u^{\prime} - q u^{\prime\prime}$
+			\SequSep
+			$v^{\prime\prime} \Store v^{\prime} - q v^{\prime\prime}$
+			\\
+			$u^{\prime} \Store temp_u$
+			\SequSep
+			$v^{\prime} \Store temp_v$
+		}
+		\Return{$(u^{\prime\prime} ; v^{\prime\prime})$}
+	}
+\end{algo}

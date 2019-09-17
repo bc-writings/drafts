@@ -1,13 +1,12 @@
-Les deux algorithmes \ref{algo-human-paper-bis} et  \ref{algo-human-matrix} sont informatiquement très maladroits. Voici pourquoi.
+Les algorithmes \ref{algo-human-paper-bis} et \ref{algo-human-matrix} vus ci-dessus sont informatiquement très maladroits. Voici pourquoi.
 
 \begin{enumerate}
-	\item L'algorithme \ref{algo-human-paper-bis} utilise une liste de taille la somme de $1$ et du nombre d'étapes de l'algo\-rithme d'Euclide.
-	Dans la section \ref{euclide-complexity}, nous verrons que ce nombre d'étapes est environ égal à $5$ fois le nombre de chiffres de l'écriture décimale du plus petit des deux entiers.
-	Donc si l'on travaille avec des entiers de tailles assez grande, la taille de la liste risque de devenir problématique.
+	\item L'algorithme \ref{algo-human-paper-bis} utilise une liste de taille la somme de $1$ et du nombre d'étapes de l'algo\-rithme d'Euclide pour calculer $\pgcd(a ; b)$.
+	Dans la section \ref{euclide-complexity}, nous verrons que ce nombre d'étapes est environ égal à $5$ fois le nombre de chiffres de l'écriture décimale du plus petit des deux entiers $a$ et $b$.
+	Donc si l'on travaille avec des entiers de tailles assez grandes, la taille de la liste risque de devenir problématique.
 
 
-	\item Le problème avec l'algorithme \ref{algo-human-matrix} est le produit cumulé des matrices. Il serait bien de pouvoir s'en passer !
+	\item Le problème avec l'algorithme \ref{algo-human-matrix} est le produit cumulé des matrices qui cache beaucoup d'opérations intermédiaires. Il serait bien de pouvoir s'en passer !
 \end{enumerate}
 
 Dans la section qui suit nous allons voir que l'on peut chercher plus efficacement des coefficients de \bb{}.
-Nous expliquerons que cette nouvelle approche a une mécanique cachée très proche de celle de l'algorithme \ref{algo-human-paper}.
