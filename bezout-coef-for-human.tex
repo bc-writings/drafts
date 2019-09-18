@@ -181,9 +181,9 @@
      
 \begin{document}
 
-\title{BROUILLON - Algorithme d'Euclide et coefficients de Bachet-Bézout pour les humains}
+\title{BROUILLON - Des coefficients de Bachet-Bézout pour les humains}
 \author{Christophe BAL}
-\date{10 Sept. 2019 - 17  Sept. 2019}
+\date{10 Sept. 2019 - 18 Sept. 2019}
 
 \maketitle
 
@@ -249,9 +249,27 @@
 
 
 \newpage
-\section{Des coefficients via des algorithmes programmables}
+\section{Des coefficients via des algorithmes programmables (Erreur dans les encadrements - vite corrigé !)}
 
-\input{bezout-coef-for-human/algo}
+\input{bezout-coef-for-human/algo-human}
+
+
+% --------------- %
+
+
+\newpage
+\section{Un algorithme classique bien plus efficace}
+
+\input{bezout-coef-for-human/algo-efficient}
+
+
+% --------------- %
+
+
+\newpage
+\section{Une infinité de coefficients de \bb}
+
+\input{bezout-coef-for-human/coef-infinity}
 
 
 % --------------- %
@@ -262,21 +280,6 @@
 
 %\input{bezout-coef-for-human/euclide-complexity}
 
-
-% --------------- %
-
-
-%\newpage
-%\section{Trouver de bons coefficients de \bb}
-
-%\input{bezout-coef-for-human/good-coef}
-
-
-
-%%%% coef inf en val absolue à a et b dans l'laog de montée et descente (m^ê relation de récu doù facil à prouver) 
-%%%%
-%%%% montrere aussi toutes les solutions via au + bv = aU + bV  <==> a(u-U)=b(V-v) 
-%%%% on divise par pgcd et alors lemme euclide donne toutes le spossibilité
 
 
 \bigskip

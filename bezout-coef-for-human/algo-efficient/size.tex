@@ -1,0 +1,148 @@
+Dans l'algorithme précédent nous avons défini les suites $(u_k)$ et $(v_k)$ par les relations de récurrence $u_{k+2} = u_k - q_{k+1} u_{k+1}$ et $v_{k+2} = v_k - q_{k+1} v_{k+1}$ couplées avec les conditions initiales  $(u_0 ; v_0) = (1 ; 0)$ et $(u_1 ; v_1) = (0 ; 1)$ où les $q_k$ sont les quotients intermédiaires de l'algorithme d'Euclide.
+Ces suites fournissent les coefficients de \bb{} $u_n$ et $v_n$.
+
+
+\medskip
+
+
+Reprenons une interprétation matricielle comme nous l'avions fait de façon féconde pour l'algorithme de descente puis remontée. Posant
+$A_k = \begin{pmatrix}
+			u_k     & v_k     \\
+			u_{k+1}	& v_{k+1}	
+       \end{pmatrix}$,
+nous avons $A_{k+1} = Q_k A_k$ où
+$Q_k = \begin{pmatrix}
+			0 & 1     \\
+			1 & - q_k		
+       \end{pmatrix}$.
+Ceci nous fournit l'invariant $\det A_{k+1} = - \det A_k = \pm \det A_0 = \pm 1$
+\footnote{
+ 	Nous venons d'établir que  $u_k v_{k+1} - u_{k+1} v_k = \pm 1$, une identité qui ne coule pas de source sans utiliser des matrices.
+}.
+
+
+\medskip
+
+
+Commençons par tenter d'évaluer la taille de $u_{n+1}$. Par construction, notant $d = \pgcd(a;b)$, nous avons
+$A_n
+ \begin{pmatrix}
+ 	a  \\
+	b	
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+ 	r_n     \\
+	r_{n+1}	
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+ 	d \\
+	0	
+ \end{pmatrix}$.
+
+
+\medskip
+
+
+Posant ensuite $a^\prime = \frac{a}{d}$ et  $b^\prime = \frac{b}{d}$, nous avons
+$A_n
+ \begin{pmatrix}
+ 	a^\prime  \\
+	b^\prime
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+ 	1 \\
+	0	
+ \end{pmatrix}$.
+Ceci nous permet d'avoir
+$\begin{pmatrix}
+ 	a^\prime  \\
+	b^\prime
+ \end{pmatrix}
+ =
+ A_n^{-1}
+ \begin{pmatrix}
+ 	1 \\
+	0	
+ \end{pmatrix}
+ =
+ \pm
+ \begin{pmatrix}
+	 v_{n+1}  & -v_n     \\
+	 -u_{n+1} & u_n	
+ \end{pmatrix}
+ \begin{pmatrix}
+ 	1 \\
+	0	
+ \end{pmatrix}
+ =
+ \pm
+ \begin{pmatrix}
+ 	v_{n+1}  \\
+	-u_{n+1}	
+ \end{pmatrix}$
+grâce à $\det A_n = \pm 1$.
+Nous avons établi que $a^\prime = \pm v_{n+1}$ et $b^\prime = \mp u_{n+1}$. Il nous reste à \myquote{remonter la récurrence} pour déduire de $u_{n+1} = \pm b^\prime$ des majorations des valeurs des précédents $u_k$.
+
+
+\medskip
+
+
+Une étude informatique
+\footnote{
+	Sur le lieu de téléchargement de ce document, voir le fichier \texttt{Python} ayant pour chemin relatif \texttt{bezout-coef-for-human/algo-efficient/bachetbezout.py}.
+}
+permet de conjecturer rapidement les choses suivantes.
+
+\begin{itemize}[label = \small\textbullet]
+	\item $\forall k \in \ZintervalC{0}{n+1}$, $u_{2p} \geq 0$ si $k = 2p$ est pair et $u_{2p+1} \leq 0$ si $k = 2p+1$ est impair.
+
+
+	\item La suite $\left( \abs{u_k} \right)_{k \in \ZintervalC{1}{n+1}}$ semble être croissante. Si tel est le cas, nous aurons la majoration $\abs{u_k} \leq b^\prime$ pour $k \in \ZintervalC{1}{n+1}$ \emph{(en réalité, nous allons faire un peu mieux)}.
+\end{itemize}
+
+
+\medskip
+
+
+Commençons par démontrer par récurrence sur $p \in \NN$ que si $2p \leq n+1$ alors $u_{2p} \geq 0$, et si $2p + 1 \leq n+1$ alors $u_{2p+1} \leq 0$.
+
+\begin{itemize}[label = \small\textbullet]
+	\item \textbf{Cas de base:} comme $(u_0 ; u_1) = (1 ; 0)$, nous avons bien le début de la récurrence.
+
+
+	\item  \textbf{Hérédité:} supposons avoir $2(p+1) \leq n+1$. Comme $2p < 2p + 1 \leq n$, nous avons par hypothèse de récurrence $u_{2p} \geq 0$ et $u_{2p+1} \leq 0$.
+	
+	\noindent
+	$u_{2p+2} = u_{2p} - q_{2p+1} u_{2p+1}$ implique que 
+	$u_{2p+2} \geq - q_{2p+1} u_{2p+1} = \abs{q_{2p+1} u_{2p+1}} \geq 0$.
+	Nous obtenons au passage une minoration précise à savoir que $\abs{u_{2p+2}} \geq q_{2p+1} \abs{u_{2p+1}}$.
+	
+	
+	\medskip
+	\noindent
+	Supposons ensuite avoir $2(p+1) + 1 \leq n+1$. De nouveau $u_{2p} \geq 0$ et $u_{2p+1} \leq 0$ par hypothèse de récurrence.
+	
+	\noindent
+	$u_{2p+3} = u_{2p+1} - q_{2p+2} u_{2p+2}$ implique que
+	$u_{2p+3} \leq - q_{2p+2} u_{2p+2} \leq 0$.
+	Nous obtenons au passage une minoration précise à savoir que $\abs{u_{2p+3}} \geq q_{2p+2} \abs{u_{2p+2}}$.
+\end{itemize}
+
+
+La preuve par récurrence précédente nous a fourni $\abs{u_{k+1}} \geq q_k \abs{u_k}$ dès que $k \in \ZintervalC{1}{n}$. Ceci implique la croissance de la suite $\left( \abs{u_k} \right)_{k \in \ZintervalC{1}{n+1}}$.
+De plus dans la section \ref{human-size}, nous avons vu que $q_n \geq 2$. Combiné avec $\abs{u_{n+1}} \geq q_n \abs{u_n}$, ceci nous donne $\abs{u_n} \leq \frac{1}{2} \abs{u_{n+1}} = \frac{b^\prime}{2}$ puis $\forall k \in \ZintervalC{1}{n}$, $\abs{u_k} \leq \frac{b^\prime}{2}$. On prendra garde au cas particulier de $\abs{u_0} = 1$. Or $\abs{u_0} > \frac{b^\prime}{2}$ n'est possible que si $b^\prime = 1$, c'est à dire si $b$ divise $a$.
+
+
+\medskip
+
+
+Le cas de la suite $(v_k)$ est similaire à traiter, sans particularité pour $v_0$. On obtient donc $\forall k \in \ZintervalC{0}{n}$, $\abs{v_k} \leq \frac{a^\prime}{2}$.
+
+
+\medskip
+
+
+En résumé, nous n'avons de nouveau pas d'explosion des tailles des nombres $u_k$ et $v_k$. Ceci rend donc l'algorithme \ref{algo-efficient} à la fois efficace en nombre d'opérations et utilisables concrètement en terme de faisabilité des calculs.

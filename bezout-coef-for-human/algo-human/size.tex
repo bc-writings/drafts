@@ -1,0 +1,75 @@
+Nous redonnons la représentation symbolique complète, ceci afin de rappeler les notations utilisées. 
+
+\showstepnovfill{Représentation symbolique au complet.}{tikz/why/twophases-all}
+
+
+\medskip
+
+
+Pour $k \in \ZintervalC{1}{n}$, nous savons que $Z_{k-1} = q_k Z_k + Z_{k+1}$ avec $(Z_{n} ; Z_{n+1}) = (0 ; 1)$, et aussi que $r_{k-1} = q_k r_k + r_{k+1}$ avec $(r_{n} ; r_{n+1}) = (\pgcd(a;b) ; 0)$.
+
+
+\vspace{-.25em}
+\begin{itemize}[label = \small\textbullet]
+	\item Le cas minimal est $n = 1$ puisque $1 \leqhyp b \leqhyp a$.
+	Nous devons donc calculer au moins un quotient $q_k$.
+
+
+	\item Nous avons clairement $0 \leq Z_n < r_n$.
+
+
+	\item
+	Comme $Z_{n-1} = q_n Z_n + Z_{n+1} = 1$ et $r_{n-1} = q_n r_n + r_{n+1} = q_n r_n$, et comme de plus $r_n < r_{n-1}$ par définition de la division euclidienne standard, nous avons $q_n \geq 2$ puis $1 \leq Z_{n-1} < r_{n-1}$.
+	
+	\item Supposons maintenant que $n > 1$. Comme $Z_{n-2} = q_{n-1} Z_{n-1} + Z_{n}$, il est clair que $Z_{n-2} \geq 1$.
+	De plus, nous avons :
+	
+	\smallskip
+	
+	\noindent
+	$Z_{n-2}
+	 = q_{n-1} Z_{n-1} + Z_{n}$
+
+	\noindent
+	$\phantom{Z_{n-2}}
+	 < q_{n-1} r_{n-1} + r_n$
+
+	\noindent
+	$\phantom{Z_{n-2}}
+	 = r_{n-2}$
+	 
+	
+	\item Une récurrence descendante finie nous donne que $\forall k \in \ZintervalC{0}{n}$, $0 \leq Z_k < r_k$.
+	Nous savons aussi que $\forall k \in \ZintervalC{0}{n-1}$, $1 \leq Z_k < r_k$.
+\end{itemize}
+
+
+\medskip
+
+
+D'après ce qui précède et comme de plus la suite finie $(r_k)_{0 \leq k \leq n+1}$ est décroissante, nous savons que $\forall k \in \ZintervalC{1}{n-1}$, $1 \leq Z_k < r_1 = b$ et $1 \leq Z_0 < r_0 = a$.
+En particulier $(u ; v) = \pm (Z_1 ; -Z_0)$ qui est tel que $au + bv = \pgcd(a;b)$ vérifie aussi $1 \leq \abs{u} < b$ et $1 \leq \abs{v} < a$.
+
+
+\begin{remark}
+	Le résultat précédent empêche toute explosion en taille des calculs intermédiaires. Ceci est une très bonne chose !
+\end{remark}
+
+\begin{remark}
+	Il n'est pas dur de vérifier que la suite $(Z_k)_{0 \leq k \leq n}$ est strictement décroisante.
+\end{remark}
+
+
+\begin{remark}
+	Notant $d = \pgcd(a ; b)$, nous avons en fait $0 \leq \abs{u} < \frac{b}{2d}$ et $0 \leq \abs{v} < \frac{a}{2d}$, et plus généralement  $\forall k \in \ZintervalC{1}{n}$, $0 \leq Z_k < \frac{b}{2d}$.
+	Ceci vient des deux constatations suivantes.
+	
+	\begin{enumerate}
+		\item Tout d'abord en notant que $r_n \leq \frac{1}{2} r_{n-1}$, nous avons $0 \leq \abs{u} < \frac{b}{2}$ et $0 \leq \abs{v} < \frac{a}{2}$.
+
+
+		\item Posons $a^\prime = \frac{a}{d}$ et $b^\prime = \frac{b}{d}$.
+		Les suites $(q^\prime_k)_k$ et $(r^\prime_k)_k$ associées à $a^\prime$ et $b^\prime$ sont tout simplement $(q_k)_k$ et $\left( \frac{r_k}{d} \right)_k$, la deuxième suite n'étant pas utilisée pour la phase de remontée. Pour comprendre cela il suffit de noter que si $a = bq + r$ désigne la division euclidienne standard alors $\frac{a}{d} = \frac{b}{d}q + \frac{r}{d}$ en est aussi une.
+	\end{enumerate}
+\end{remark}
+

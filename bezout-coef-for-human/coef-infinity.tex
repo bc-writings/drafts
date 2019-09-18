@@ -1,0 +1,24 @@
+Les algorithmes \ref{algo-human-paper-bis}, \ref{algo-human-matrix} et \ref{algo-efficient} nous donnent l'existence de coefficients de \bb{} $u$ et $v$ pour $(a ; b) \in \NNs \!\times \NNs$ avec $b \leq a$ de sorte que l'on ait $a u + b v = d$ où $d = \pgcd(a ; b)$.
+
+
+\medskip
+
+
+Considérons un autre couple $(x ; y) \in \ZZ \times \ZZ$ tel que $a x + b y = d$. Par soustraction, nous avons $a(x - u) + b(y - v) = 0$ soit $a(x - u) = - b(y - v)$ puis $a^\prime(x - u) = - b^\prime(y - v)$ en posant $a^\prime = \frac{a}{d}$ et  $b^\prime = \frac{b}{d}$.
+
+
+\medskip
+
+
+Comme $\pgcd(a^\prime ; b^\prime) = 1$, d'après le lemme de Gauss $a^\prime \,|\, (y - v)$ soit $\exists k \in \ZZ$ tel que $y - v = k a^\prime$ d'où $a^\prime(x - u) = - b^\prime k a^\prime$ puis $x - u = - k b^\prime$. 
+
+
+\medskip
+
+
+En résumé, il est nécessaire que $x = u - k b^\prime$ et $y = v + k a^\prime$ où $k \in \ZZ$. Cette condition étant clairement suffisante, nous savons que tous les coefficients de \bb{} sont du type $(x ; y) = (u - k \frac{b}{d} ; v + k \frac{a}{d})$ avec $k \in \ZZ$.
+
+
+\begin{remark}
+	Comme pour deux valeurs consécutives de $k \in \ZZ$, les $(u - k b^\prime)$ et $(v + k a^\prime)$ associés ne différent en valeur absolue que de $b^\prime$ et $a^\prime$ respectivement, nous pouvons affirmer qu'il n'existe qu'un seul couple $(u ; v)$ de coefficients de \bb{} tel que $\abs{u} \leq \frac{b^\prime}{2}$ et $\abs{v} \leq \frac{a^\prime}{2}$.
+\end{remark}
