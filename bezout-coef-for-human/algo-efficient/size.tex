@@ -84,7 +84,7 @@ $\begin{pmatrix}
 	-u_{n+1}	
  \end{pmatrix}$
 grâce à $\det A_n = \pm 1$.
-Nous avons établi que $a^\prime = \pm v_{n+1}$ et $b^\prime = \mp u_{n+1}$. Il nous reste à \myquote{remonter la récurrence} pour déduire de $u_{n+1} = \pm b^\prime$ des majorations des valeurs des précédents $u_k$.
+Nous avons établi que $a^\prime = \pm v_{n+1}$ et $b^\prime = \mp u_{n+1}$. Il nous reste à \myquote{remonter la récurrence} pour déduire de $u_{n+1} = \pm b^\prime$ des majorations des valeurs des précédents $u_k$. Le cas des $v_k$ sera similaire à traiter comme nous allons le constater.
 
 
 \medskip
@@ -118,7 +118,7 @@ Commençons par démontrer par récurrence sur $p \in \NN$ que si $2p \leq n+1$ 
 	\noindent
 	$u_{2p+2} = u_{2p} - q_{2p+1} u_{2p+1}$ implique que 
 	$u_{2p+2} \geq - q_{2p+1} u_{2p+1} = \abs{q_{2p+1} u_{2p+1}} \geq 0$.
-	Nous obtenons au passage une minoration précise à savoir que $\abs{u_{2p+2}} \geq q_{2p+1} \abs{u_{2p+1}}$.
+	Nous obtenons au passage une information précise à savoir que $\abs{u_{2p+2}} \geq q_{2p+1} \abs{u_{2p+1}}$.
 	
 	
 	\medskip
@@ -128,12 +128,18 @@ Commençons par démontrer par récurrence sur $p \in \NN$ que si $2p \leq n+1$ 
 	\noindent
 	$u_{2p+3} = u_{2p+1} - q_{2p+2} u_{2p+2}$ implique que
 	$u_{2p+3} \leq - q_{2p+2} u_{2p+2} \leq 0$.
-	Nous obtenons au passage une minoration précise à savoir que $\abs{u_{2p+3}} \geq q_{2p+2} \abs{u_{2p+2}}$.
+	Nous obtenons au passage une information précise à savoir que $\abs{u_{2p+3}} \geq q_{2p+2} \abs{u_{2p+2}}$.
 \end{itemize}
 
 
 La preuve par récurrence précédente nous a fourni $\abs{u_{k+1}} \geq q_k \abs{u_k}$ dès que $k \in \ZintervalC{1}{n}$. Ceci implique la croissance de la suite $\left( \abs{u_k} \right)_{k \in \ZintervalC{1}{n+1}}$.
-De plus dans la section \ref{human-size}, nous avons vu que $q_n \geq 2$. Combiné avec $\abs{u_{n+1}} \geq q_n \abs{u_n}$, ceci nous donne $\abs{u_n} \leq \frac{1}{2} \abs{u_{n+1}} = \frac{b^\prime}{2}$ puis $\forall k \in \ZintervalC{1}{n}$, $\abs{u_k} \leq \frac{b^\prime}{2}$. On prendra garde au cas particulier de $\abs{u_0} = 1$. Or $\abs{u_0} > \frac{b^\prime}{2}$ n'est possible que si $b^\prime = 1$, c'est à dire si $b$ divise $a$.
+De plus dans la section \ref{human-size}, nous avons vu que $q_n \geq 2$. Combiné avec $\abs{u_{n+1}} \geq q_n \abs{u_n}$, ceci nous donne $\abs{u_n} \leq \frac{1}{2} \abs{u_{n+1}} = \frac{b^\prime}{2}$ puis $\forall k \in \ZintervalC{1}{n}$, $\abs{u_k} \leq \frac{b^\prime}{2}$.
+
+
+\medskip
+
+
+On prendra garde au cas particulier de $\abs{u_0} = 1$ de sorte que $\abs{u_0} > \frac{b^\prime}{2}$ n'est possible que si $b^\prime = 1$, c'est à dire si $b$ divise $a$. Cela est sans intérêt car nous avons forcément $n \geq 1$ et donc on se soucie peu du cas particulier de $\abs{u_0}$. 
 
 
 \medskip
@@ -145,4 +151,4 @@ Le cas de la suite $(v_k)$ est similaire à traiter, sans particularité pour $v
 \medskip
 
 
-En résumé, nous n'avons de nouveau pas d'explosion des tailles des nombres $u_k$ et $v_k$. Ceci rend donc l'algorithme \ref{algo-efficient} à la fois efficace en nombre d'opérations et utilisables concrètement en terme de faisabilité des calculs.
+En résumé, nous n'avons de nouveau pas d'explosion des tailles des nombres $u_k$ et $v_k$. Ceci rend donc l'algorithme \ref{algo-efficient} à la fois efficace dans sa gestion de la mémoire et peu gourmands en calculs intermédiaires.

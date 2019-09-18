@@ -11,7 +11,7 @@ Pour $k \in \ZintervalC{1}{n}$, nous savons que $Z_{k-1} = q_k Z_k + Z_{k+1}$ av
 
 \vspace{-.25em}
 \begin{itemize}[label = \small\textbullet]
-	\item Le cas minimal est $n = 1$ puisque $1 \leqhyp b \leqhyp a$.
+	\item Le cas minimal est $n = 1$ puisque $1 \leqhyp b \leqhyp a$ \emph{(en fait $n = 1$ correspond au cas où $b \;|\, a$)}.
 	Nous devons donc calculer au moins un quotient $q_k$.
 
 
@@ -19,7 +19,7 @@ Pour $k \in \ZintervalC{1}{n}$, nous savons que $Z_{k-1} = q_k Z_k + Z_{k+1}$ av
 
 
 	\item
-	Comme $Z_{n-1} = q_n Z_n + Z_{n+1} = 1$ et $r_{n-1} = q_n r_n + r_{n+1} = q_n r_n$, et comme de plus $r_n < r_{n-1}$ par définition de la division euclidienne standard, nous avons $q_n \geq 2$ puis $1 \leq Z_{n-1} < r_{n-1}$.
+	Comme $Z_{n-1} = q_n Z_n + Z_{n+1} = 1$, $r_{n-1} = q_n r_n + r_{n+1} = q_n r_n$ et $r_n < r_{n-1}$ par définition de la division euclidienne standard, nous avons $1 \leq Z_{n-1} < r_{n-1}$. Notons au passage que $q_n \geq 2$.
 	
 	\item Supposons maintenant que $n > 1$. Comme $Z_{n-2} = q_{n-1} Z_{n-1} + Z_{n}$, il est clair que $Z_{n-2} \geq 1$.
 	De plus, nous avons :
@@ -40,15 +40,14 @@ Pour $k \in \ZintervalC{1}{n}$, nous savons que $Z_{k-1} = q_k Z_k + Z_{k+1}$ av
 	 
 	
 	\item Une récurrence descendante finie nous donne que $\forall k \in \ZintervalC{0}{n}$, $0 \leq Z_k < r_k$.
-	Nous savons aussi que $\forall k \in \ZintervalC{0}{n-1}$, $1 \leq Z_k < r_k$.
 \end{itemize}
 
 
 \medskip
 
 
-D'après ce qui précède et comme de plus la suite finie $(r_k)_{0 \leq k \leq n+1}$ est décroissante, nous savons que $\forall k \in \ZintervalC{1}{n-1}$, $1 \leq Z_k < r_1 = b$ et $1 \leq Z_0 < r_0 = a$.
-En particulier $(u ; v) = \pm (Z_1 ; -Z_0)$ qui est tel que $au + bv = \pgcd(a;b)$ vérifie aussi $1 \leq \abs{u} < b$ et $1 \leq \abs{v} < a$.
+D'après ce qui précède et comme de plus la suite finie $(r_k)_{0 \leq k \leq n+1}$ est décroissante, nous savons que $\forall k \in \ZintervalC{1}{n}$, $0 \leq Z_k < r_1 = b$ et $0 \leq Z_0 < r_0 = a$.
+En particulier $(u ; v) = \pm (Z_1 ; -Z_0)$ qui est tel que $au + bv = \pgcd(a;b)$ vérifie aussi $0 \leq \abs{u} < b$ et $0 \leq \abs{v} < a$.
 
 
 \begin{remark}
