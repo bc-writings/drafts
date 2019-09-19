@@ -15,10 +15,10 @@ Cette section indiquera la place définitve des brouillons qui ne sont plus ici.
 TABLE DES MATIÈRES
 ==================
 
-MATHÉMATIQUES
--------------
+ALGORITHMIQUE ET INFORMATIQUE THÉORIQUE
+---------------------------------------
 
-Voir le dossier `math`.
+Voir le dossier `algo-info`.
 
   1. `bezout-coef-for-human`
 
@@ -32,10 +32,10 @@ Voir le dossier `math`.
 
 
 
-ALGORITHMIQUE ET INFORMATIQUE THÉORIQUE
----------------------------------------
+MATHÉMATIQUES
+-------------
 
-Voir le dossier `algo-info`.
+Voir le dossier `math`.
 
   1. `addition-on-ellipsis`
 
