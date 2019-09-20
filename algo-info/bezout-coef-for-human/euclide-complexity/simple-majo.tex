@@ -1,0 +1,38 @@
+Dans la représentation ci-dessous, $(q_k)_{1 \leq k \leq n}$ est la suite des quotients intermédiaires et $(r_k)_{2 \leq k \leq n}$ celle des restes.
+
+\showstepnovfill{L'\algoeucl{} au complet.}{tikz/why/algo-euclide-all}
+
+
+\medskip
+
+
+Nous savons que $(q_k)_{1 \leq k \leq n} \subseteq \NNs$ et que $(r_k)_{1 \leq k \leq n} \subseteq \NNs$ est strictement décroissante.
+Comme $r_k = q_{k+1} r_{k+1} + r_{k+2}$ si $1 \leq k \leq n-2$, nous avons $r_k \geq r_{k+1} + r_{k+2} > 2 r_{k+2}$ d'où $r_k > 2 r_{k+2}$ dès que $1 \leq k \leq n-2$.
+Ceci nous donne les majorations suivantes.
+
+\begin{itemize}[label=\small\textbullet]
+	\item \textbf{Cas $n = 2p \geq 2$ est pair.}
+	       Comme $b > r_2 > 2 r_4 > \dots > 2^{p-1} r_{2p} \geq 2^{p-1}$ où $r_{2p} = r_n$, nous avons $\log(2^{p-1}) < \log b$ puis $p < 1 + \frac{\log b}{\log 2}$ où $\log$ désigne le logarithme décimal.
+	       Donc $n < 2 + 2 \frac{\log b}{\log 2}$ ici.
+
+
+	\item \textbf{Cas $n = 2p+1$ est impair.}
+	       Comme $b = r_1 > 2 r_3 > \dots > 2^p r_{2p+1} \geq 2^p$ où $r_{2p+1} = r_n$, nous avons $\log(2^p) < \log b$ puis $p < \frac{\log b}{\log 2}$.
+	       Donc $n < 1 + 2 \frac{\log b}{\log 2}$ ici.
+\end{itemize}
+
+
+Dans les deux cas, nous avons $n < 2 + 2 \frac{\log b}{\log 2}$.
+Comme $\frac{2}{\log 2} \approx 6,65$, notant $d$ le nombre de chiffres décimaux de $b$, de sorte que $\log b \leq d + 1$, nous avons l'estimation $n < 2 + 14(d+1)$ soit $n < 14d + 16$ puis $n \leq 14d + 15$.
+
+
+\medskip
+
+
+En résumé, l'\algoeucl{} appliqué à $(a ; b) \in \NNs \!\times \NNs$ avec $a > b$ demandera au maximum $14d + 15$ étapes où $d$ est le nombre de chiffres décimaux de $b$.
+
+
+\begin{remark}
+	Cette estimation rapide à établir est un peu grossière. Elle est a tout de même le mérite de montrer que le nombre d'étapes augmente de façon logarithmique par rapport à $b$, le plus petit des entiers naturels $a$ et $b$.
+\end{remark}
+

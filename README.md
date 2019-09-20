@@ -24,7 +24,7 @@ Voir le dossier `algo-info`.
 
   1. `black-and-white-leapfrog`
 
-  1. `couning-bits-1-in-memory`
+  1. `counting-bits-1-in-memory`
 
   1. `shift-this-int-right`
 
