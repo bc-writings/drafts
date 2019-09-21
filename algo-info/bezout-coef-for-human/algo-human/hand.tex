@@ -9,7 +9,7 @@ Voici un algorithme, peu efficace mais instructif, où $\star$ est un symbole à
 \begin{algo}
 	\caption{Descente et remontée avec du papier et un crayon} \label{algo-human-paper}
 	%%%
-    \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $b \leq a$}
+    \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $a \geq b$}
     \Result{$(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$}
 	\addalgoblank
     \Actions{
@@ -77,7 +77,7 @@ On peut donc proposer la variante suivante programmable qui est à la fois proch
 \begin{algo}
 	\caption{Descente et remontée moins mémophage} \label{algo-human-paper-bis}
 	%%%
-    \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $b \leq a$}
+    \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $a \geq b$}
     \Result{$(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$}
 	\addalgoblank
     \Actions{

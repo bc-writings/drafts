@@ -5,11 +5,11 @@
         column sep = 1.5em,
         nodes      = gs
     ](mat){
-                 & $r_0 = a$  \\
-		$q_1$    & $r_1 = b$  \\
-		$q_2$    & $r_2$      \\
-		$\vdots$ & $\vdots$   \\
-		$q_n$    & $r_n > 0$  \\
-                 & $0$        \\
+                 & $r_0 = a$     \\
+		$q_1$    & $r_1 = b$     \\
+		$q_2$    & $r_2$         \\
+		$\vdots$ & $\vdots$      \\
+		$q_n$    & $r_n \neq 0$  \\
+                 & $0$           \\
     };
 \end{tikzpicture}
