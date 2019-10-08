@@ -27,7 +27,7 @@ Notons au passage que nous passons d'un algorithme a priori indéterministe, car
 \end{algo}
 
 
-Il est aisée d'implémenter cet algorithme en Python. Le code suivant ne révèle aucun test raté.
+Il est aisée de traduire cet algorithme en Python. Le code suivant ne révèle aucun test raté.
 
 \medskip
 
@@ -37,7 +37,7 @@ Il est aisée d'implémenter cet algorithme en Python. Le code suivant ne révè
 \medskip
 
 
-Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $n!$, il en sera de même pour \ref{nat-algo}. Nous allons en fait prouver la validité de l'algorithme ci-dessous où $\polyset{\RR_{n}}{X}$ désigne l'ensemble des polynômes réels de degré $n \in \NNs$.
+Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $n!$, il en sera de même pour \ref{nat-algo}. Ceci va découler de la validité de l'algorithme ci-dessous où $\polyset{\RR_{n}}{X}$ désigne l'ensemble des polynômes réels de degré $n \in \NNs$.
 
 \medskip
 
@@ -45,12 +45,12 @@ Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $
 	\caption{Version polynomiale élargie} \label{gene-poly-algo}
 
 	\In{$P \in \polyset{\RR_{n}}{X}$ de coefficient dominant $a_n$}
-	\Out{$a_n \, n!$}
+	\Out{$n! \, a_n$}
 	
 	\addalgoblank
 	
 	\Actions{
-		$L \Store [ P(X) , P(X+1) , \dots , P(X+n) ]$
+		$L \Store \List{P(X) , P(X+1) , \dots , P(X+n)}$
 		\\
 		\addalgoblank
 		\While{$taille(L) \neq 1$}{
@@ -67,17 +67,32 @@ Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $
 \end{algo}
 
 
-{\Huge PREUVE: TODO}
+\medskip
 
 
-%
-%We start with the list $[P(X) , P(X+1) , P(X+2) , ... , P(X+n)]$ with a polynomial $P$.
-%
-%The next list is $[P(X+1) - P(X) , P(X+2) - P(X+1) , P(X+3) - P(X+2) , ... , P(X+n) - P(X+n-1)]$ that is $[Q(X) , Q(X+1) , Q(X+2) , ... , Q(X+n-1)]$ with $Q(X) \eqdef P(X+1) - P(X)$.
-%
-%If $P(X) = a_n X^n + ...$ then $P(X+1) - P(X) = n a_n X^{n-1} + ...$ because $(X+1)^k - X^k = k X^{k-1} + ...$
-%
-%An easy recurrence gives the result by noting the decrease of the degree of the polynomials involved at each iteration.
-%
-%The advantage of this proof is that it show where the trick comes from.
-%
+Pourquoi cet algorithme est-il valide ? Pour la suite, nous posons $P(x) = \dsum_{k=0}^{n} a_k X^k$.
+
+\begin{enumerate}
+	\item Il est immédiat que $\forall k \in \NNs$, $(X+1)^k - X^k = kX^{k-1} + R(X)$ où $\deg R < k-1$ avec la convention $\deg 0 = - \infty$.
+
+% ----------------- %
+
+	\item Le point précédent donne sans effort $P(X+1) - P(X) = n a_n X^{n-1} + S(X)$ où le polynôme $S$ vérifie $\deg S < n-1$. Tout est dit comme nous allons le voir.
+
+% ----------------- %
+
+	\item A la 1\iere{} itération de la boucle, la liste 
+			  $\List{P(X) , P(X+1) , \dots , P(X+n)}$
+	 	  est transformée en 
+		      $\List{P(X+1) - P(X) , P(X+2) - P(X+1) , \dots , P(X+n) - P(X+n-1)}$
+		  soit $\List{Q(X) , Q(X+1) , \dots , Q(X+n-1)}$ si l'on pose $Q(X) = P(X+1) - P(X)$ qui a pour coefficient dominant $n a_n$ et pour degré $\deg Q = n - 1$.
+
+% ----------------- %
+
+	\item Il est alors facile de faire une récurrence pour prouver que la boucle se finit en fournissant ce qui est annoncé.  
+\end{enumerate}
+
+Joli, efficace et éclairant sur le pourquoi du comment. Il se trouve que l'algorithme \ref{nat-algo} cache aussi une formule combinatoire très intéressante comme nous allons le voir dans la section qui suit où nous allons reprendre la démarche découverte sur le site \href{https://mathlesstraveled.com}{The Math Less Traveled}
+\footnote{
+	Chercher l'article \emph{\og A combinatorial proof \fg} en 2019.
+} 
