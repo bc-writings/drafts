@@ -24,6 +24,11 @@
 \usepackage{lymath}
 \usepackage{lyalgo}
 
+% Source
+%	* https://tex.stackexchange.com/a/51515/6880
+\usepackage{minted}
+\usemintedstyle{bw}
+\renewcommand{\ttdefault}{pcr}
 
 \newtheorem{fact}{Fait}[section]
 \newtheorem{example}{Exemple}[section]
@@ -41,18 +46,32 @@
 \newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
 
 
-\DefineVerbatimEnvironment{rawcode}%
-	{Verbatim}%
-	{tabsize=4,%
-	 frame=lines, framerule=0.3mm, framesep=2.5mm}
-	 
-	 
-	 
+\newcommand\inputcode[2]{
+	\bgroup
+	\centering
+	\begin{tcolorbox}[
+%		width        = #1\linewidth,
+%		title        = #2,
+		title        = Code Python,
+		fonttitle    = \bfseries\itshape\small,
+		coltitle     = black,
+		colbacktitle = black!10!white,
+		colback      = white,
+		breakable,
+		center title]
+		\small
+		\inputminted{#1}{#2}
+	\end{tcolorbox}
+	\egroup
+}
+
+
+
 \begin{document}
 
-\title{BROUILLON - Soustraire les puissances n\ieme{} de $n$ naturels consécutifs}
+\title{BROUILLON - Soustraire les puissances n\ieme{} de n naturels consécutifs}
 \author{Christophe BAL}
-\date{30 Septembre 2019}
+\date{3 Octobre 2019 -- 8 Octobre 2019}
 
 \maketitle
 
@@ -86,10 +105,41 @@
 
 
 
-\section{La puissance de la différence}
+\newpage
+\section{Faire la différence avec des puissances}
 
-\input{diff-n-cons-int-to-the-power-of-n/conjecture}
+\input{diff-n-cons-int-to-the-power-of-n/the-pretty-algo}
 
 
+
+
+\newpage
+\section{Expérimentations et conjecture}
+
+\input{diff-n-cons-int-to-the-power-of-n/experimentation}
+
+
+
+\newpage
+\section{Une preuve polynomiale}
+
+\input{diff-n-cons-int-to-the-power-of-n/polynomial-proof}
+
+
+
+\bigskip
+
+\hrule
+
+\section{AFFAIRE À SUIVRE...}
+
+\bigskip
+
+\hrule
+
+
+%\section{Une preuve combinatoire}
+%
+%\input{diff-n-cons-int-to-the-power-of-n/combinatorial-proof}
 
 \end{document}
