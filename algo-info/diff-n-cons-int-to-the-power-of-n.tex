@@ -21,6 +21,12 @@
 
 \newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
 
+\newcommand\ourapplis{\setgeo*{A}{n \to k+n}}
+
+\newcommand\npermu{\setgeo*{P}{n}}
+
+\newcommand\badapplis[1]{\setgeo*{M}{#1}}
+
 \usepackage{lymath}
 \usepackage{lyalgo}
 
@@ -69,9 +75,9 @@
 
 \begin{document}
 
-\title{BROUILLON - Soustraire les puissances n\ieme{} de n naturels consécutifs}
+\title{BROUILLON - Soustraire les puissances n\ieme{} de (n+1) naturels consécutifs}
 \author{Christophe BAL}
-\date{3 Octobre 2019 -- 8 Octobre 2019}
+\date{3 Octobre 2019 -- 21 Octobre 2019}
 
 \maketitle
 
@@ -127,19 +133,16 @@
 
 
 
-\bigskip
+\newpage
+\section{Une très jolie identité binomiale}
 
-\hrule
-
-\section{AFFAIRE À SUIVRE...}
-
-\bigskip
-
-\hrule
+\input{diff-n-cons-int-to-the-power-of-n/awesome-binomial-identity}
 
 
-%\section{Une preuve combinatoire}
-%
-%\input{diff-n-cons-int-to-the-power-of-n/combinatorial-proof}
+\newpage
+\section{Une preuve combinatoire}
+
+\input{diff-n-cons-int-to-the-power-of-n/combinatorial-proof}
+
 
 \end{document}

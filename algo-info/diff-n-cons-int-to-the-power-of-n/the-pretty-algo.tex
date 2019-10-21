@@ -18,7 +18,7 @@ Considérons l'algorithme suivant dont nous allons donner des cas d'application 
 			$newL \Store \EmptyList$
 			\\
 			\ForRange*{i}{1}{taille(L) - 1}{
-				Ajouter $(L[i + 1] - L[i])$ à droite de $newL$.
+				\Append{$newL$}{$(L[i + 1] - L[i])$}
 			}
 			$L \Store newL$
 		}

@@ -1,4 +1,4 @@
-Voici une légère modification de l'algorithme \ref{nat-algo} où l'on manipule des polynômes dans $\polyset{\RR}{X}$.
+Voici une légère modification de l'algorithme \ref{nat-algo} où l'on manipule des polynômes dans $\setpoly{\RR}{X}$.
 Notons au passage que nous passons d'un algorithme a priori indéterministe, car on fait un choix de naturels consécutifs, à un autre complètement déterministe.
 
 \begin{algo}
@@ -17,7 +17,7 @@ Notons au passage que nous passons d'un algorithme a priori indéterministe, car
 			$newL \Store \EmptyList$
 			\\
 			\ForRange*{i}{1}{taille(L) - 1}{
-				Ajouter $(L[i + 1] - L[i])$ à droite de $newL$.
+				\Append{$newL$}{$(L[i + 1] - L[i])$}
 			}
 			$L \Store newL$
 		}
@@ -37,14 +37,14 @@ Il est aisée de traduire cet algorithme en Python. Le code suivant ne révèle 
 \medskip
 
 
-Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $n!$, il en sera de même pour \ref{nat-algo}. Ceci va découler de la validité de l'algorithme ci-dessous où $\polyset{\RR_{n}}{X}$ désigne l'ensemble des polynômes réels de degré $n \in \NNs$.
+Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $n!$, il en sera de même pour \ref{nat-algo}. Ceci découle directement de la validité de l'algorithme ci-dessous où $\setpoly{\RR_{n}}{X}$ désigne l'ensemble des polynômes réels de degré $n \in \NNs$.
 
 \medskip
 
 \begin{algo}
 	\caption{Version polynomiale élargie} \label{gene-poly-algo}
 
-	\In{$P \in \polyset{\RR_{n}}{X}$ de coefficient dominant $a_n$}
+	\In{$P \in \setpoly{\RR_{n}}{X}$ de coefficient dominant $a_n$}
 	\Out{$n! \, a_n$}
 	
 	\addalgoblank
@@ -57,7 +57,7 @@ Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $
 			$newL \Store \EmptyList$
 			\\
 			\ForRange*{i}{1}{taille(L) - 1}{
-				Ajouter $(L[i + 1] - L[i])$ à droite de $newL$.
+				\Append{$newL$}{$(L[i + 1] - L[i])$}
 			}
 			$L \Store newL$
 		}
@@ -71,7 +71,6 @@ Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $
 
 
 Pourquoi cet algorithme est-il valide ? Pour la suite, nous posons $P(x) = \dsum_{k=0}^{n} a_k X^k$.
-
 \begin{enumerate}
 	\item Il est immédiat que $\forall k \in \NNs$, $(X+1)^k - X^k = kX^{k-1} + R(X)$ où $\deg R < k-1$ avec la convention $\deg 0 = - \infty$.
 
@@ -85,14 +84,16 @@ Pourquoi cet algorithme est-il valide ? Pour la suite, nous posons $P(x) = \dsum
 			  $\List{P(X) , P(X+1) , \dots , P(X+n)}$
 	 	  est transformée en 
 		      $\List{P(X+1) - P(X) , P(X+2) - P(X+1) , \dots , P(X+n) - P(X+n-1)}$
-		  soit $\List{Q(X) , Q(X+1) , \dots , Q(X+n-1)}$ si l'on pose $Q(X) = P(X+1) - P(X)$ qui a pour coefficient dominant $n a_n$ et pour degré $\deg Q = n - 1$.
+		  soit $\List{Q(X) , Q(X+1) , \dots , Q(X+n-1)}$
+		  en posant $Q(X) = P(X+1) - P(X)$, un polynôme qui a pour coefficient dominant $n a_n$ et pour degré $\deg Q = n - 1$.
 
 % ----------------- %
 
 	\item Il est alors facile de faire une récurrence pour prouver que la boucle se finit en fournissant ce qui est annoncé.  
 \end{enumerate}
 
-Joli, efficace et éclairant sur le pourquoi du comment. Il se trouve que l'algorithme \ref{nat-algo} cache aussi une formule combinatoire très intéressante comme nous allons le voir dans la section qui suit où nous allons reprendre la démarche découverte sur le site \href{https://mathlesstraveled.com}{The Math Less Traveled}
+Joli, efficace et éclairant sur le pourquoi du comment. Il se trouve que l'algorithme \ref{nat-algo} cache aussi une formule combinatoire très intéressante comme nous allons le voir dans les sections à venir.
+L'exposé qui suit reprend la démarche proposée sur le site \href{https://mathlesstraveled.com}{The Math Less Traveled}
 \footnote{
-	Chercher l'article \emph{\og A combinatorial proof \fg} en 2019.
+	Chercher les articles \emph{\og A combinatorial proof \fg} publiés courant septembre 2019.
 } 
