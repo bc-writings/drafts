@@ -16,7 +16,7 @@ Nous noterons $\npermu$  l'ensemble des permutations de $[[n]]$ sur $[[n]] \subs
 
 
 Soit donc $a \in \ourapplis$. Pour que $a$ ne soit pas une permutation sur $[[n]]$ il faut et il suffit que $\setproba*{I}{a}$ l'image de $a$ ne soit pas $[[n]]$.
-Pour $i \in \ZintervalC{1}{n}$, notons alors $\badapplis{i}$ l'ensemble des applications $a$ telles que $\setproba*{I}{a}$ ne contienne pas l'élément $i$ de sorte que $\npermu = \badapplis{0} - \displaystyle\mathop{\cup}_{i=1}^{n} \badapplis{i}$.
+Pour $i \in \ZintervalC{1}{n}$, notons alors $\badapplis{i}$ l'ensemble des applications $a$ telles que $\setproba*{I}{a}$ ne contienne pas l'élément $i$ de sorte que $\npermu = \ourapplis - \displaystyle\mathop{\cup}_{i=1}^{n} \badapplis{i}$.
 Le principe d'inclusion-exclusion, le PIE pour les intimes, nous permet alors de faire les calculs suivants.
 \begin{flalign*}
 	n!
