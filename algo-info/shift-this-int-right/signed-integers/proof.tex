@@ -1,5 +1,9 @@
 Revenons à nos entiers signés écrits sur $8$ bits en reprenant le calcul de $84 - 101 = -17$ tout en nous inspirant de ce qui a été vu dans la section précédente avec la base $10$.
-Ici $128$ joue le même rôle que $1000$ avant. Nous avons ajouté des cases grises pour le bit du calcul intermédiaire, et nous avons indiqué les complémentations en mettant sur fond vert les bits les plus à gauche..
+Ici $256 = 2^8$ joue le même rôle que $1000 = 10^3$ avant. Nous avons ajouté des cases grises pour le bit du calcul intermédiaire, et nous avons indiqué les complémentations
+\footnote{
+	Nous utiliserons \emph{\og complémentation \fg} comme abréviation de \emph{\og complément à $2$ plus un \fg}. 
+}
+en mettant sur fond vert les bits les plus à gauche..
 
 \medskip
 
@@ -21,13 +25,13 @@ Ici $128$ joue le même rôle que $1000$ avant. Nous avons ajouté des cases gri
 
 \medskip
 
-La dernière complémentation avec ajout d'un signe vient du $O$ sur fond gris et du fait q'une seule complémentation préparatoire a été faite avant.
+La dernière complémentation avec ajout d'un signe vient du $0$ sur fond gris et du fait qu'une seule complémentation préparatoire a été faite avant.
 Tout s'éclaire !
 
 
 \smallskip
 
-Reprenons de même le cas de $84 - 61 = 23$ où l'on avait une retenue à ignorer. On fait comme précédemment mais en utilisant que les $8$ bits disponibles.
+Reprenons de même le cas de $84 - 61 = 23$ où l'on avait une retenue à ignorer. On fait comme précédemment.
 
 \medskip
 
@@ -58,7 +62,7 @@ Avec le nouvel éclairage, nous n'avons qu'à garder les bits sur fond blanc, le
 \smallskip
 
 
-Dans les deux cas précédents, au lieu de considérer un bit intermédiaire, il suffit d'effectuer directement le calcul de retenue sur le bit de gauche modulo deux, ce calcul traduisant celui sur le nombre de complémentations préparatoires et du chiffre intermédiaire en gris dans nos deux exemples ci-dessus. On peut ainsi faire plus directement comme suit.
+Dans les deux cas précédents, au lieu de considérer un bit intermédiaire, il suffit d'effectuer directement le calcul de retenue sur le bit de gauche modulo $2$, ce calcul traduisant celui sur le nombre de complémentations préparatoires et du chiffre intermédiaire en gris dans nos deux exemples ci-dessus. On peut ainsi faire plus directement comme suit.
 \begin{multicols}{2}
 \begin{center}
 \begin{tabular}{ll}
