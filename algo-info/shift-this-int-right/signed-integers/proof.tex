@@ -1,7 +1,65 @@
-Revenons à nos entiers signés écrits sur $8$ bits. Reprenons le calcul de $84 - 101 = -17$ en nous inspirant de ce qui a été vu dans la section précédente avec la base $10$. Ici $\bullet$ indique une ligne où a été fait le calcul d'un complément à $1$ plus $1$.
+Revenons à nos entiers signés écrits sur $8$ bits en reprenant le calcul de $84 - 101 = -17$ tout en nous inspirant de ce qui a été vu dans la section précédente avec la base $10$.
+Ici $128$ joue le même rôle que $1000$ avant. Nous avons ajouté des cases grises pour le bit du calcul intermédiaire, et nous avons indiqué les complémentations en mettant sur fond vert les bits les plus à gauche..
 
 \medskip
 
+\begin{center}
+\begin{tabular}{ll}
+	    & \!\!\binary{Za1010100}  	\\
+	$-$ & \!\!\binary{Za1100101} 	\\[.8ex]
+	\hline
+	\hline 							\\[-2ex]
+	    & \!\!\binary{Za1010100} 	\\
+	$+$ & \!\!\binary{*a0011011} 	\\[.8ex]
+	\hline \\[-2ex]
+	$=$ & \!\!\binary{Uz1101111} 	\\[.8ex]
+	\hline
+	\hline 							\\[-2ex]
+	$-$ & \!\!\binary{ca0010001} 	\\
+\end{tabular}
+\end{center}
+
+\medskip
+
+La dernière complémentation avec ajout d'un signe vient du $O$ sur fond gris et du fait q'une seule complémentation préparatoire a été faite avant.
+Tout s'éclaire !
+
+
+\smallskip
+
+Reprenons de même le cas de $84 - 61 = 23$ où l'on avait une retenue à ignorer. On fait comme précédemment mais en utilisant que les $8$ bits disponibles.
+
+\medskip
+
+\begin{center}
+\begin{tabular}{ll}
+	    & \!\!\binary{Za1010100}  	\\
+	$-$ & \!\!\binary{Za0111101} 	\\[.8ex]
+	\hline
+	\hline 							\\[-2ex]
+	    & \!\!\binary{Za1010100} 	\\
+	$+$ & \!\!\binary{*a1000011} 	\\[.8ex]
+	\hline \\[-2ex]
+	$=$ & \!\!\binary{Uu0010111} 	\\[.8ex]
+	\hline
+	\hline 							\\[-2ex]
+	$+$ & \!\!\binary{Za0010111} 	\\
+\end{tabular}
+\end{center}
+
+\medskip
+
+Avec le nouvel éclairage, nous n'avons qu'à garder les bits sur fond blanc, le signe du résultat étant positif
+\footnote{
+	Il y a eu une seule complémentation préparatoire et le bit intermédiaire est $1$.
+}.
+
+
+\smallskip
+
+
+Dans les deux cas précédents, au lieu de considérer un bit intermédiaire, il suffit d'effectuer directement le calcul de retenue sur le bit de gauche modulo deux, ce calcul traduisant celui sur le nombre de complémentations préparatoires et du chiffre intermédiaire en gris dans nos deux exemples ci-dessus. On peut ainsi faire plus directement comme suit.
+\begin{multicols}{2}
 \begin{center}
 \begin{tabular}{ll}
 	    & \!\!\binary{Z1010100}  	\\
@@ -9,20 +67,18 @@ Revenons à nos entiers signés écrits sur $8$ bits. Reprenons le calcul de $84
 	\hline
 	\hline 							\\[-2ex]
 	    & \!\!\binary{Z1010100} 	\\
-	$+$ & \!\!\binary{o0011011} 	\\[.8ex]
+	$+$ & \!\!\binary{*0011011} 	\\[.8ex]
 	\hline \\[-2ex]
-	$=$ & \!\!\binary{Z1101111} 	\\[.8ex]
+	$=$ & \!\!\binary{U1101111} 	\\[.8ex]
 	\hline
 	\hline 							\\[-2ex]
-	$-$ & \!\!\binary{o0010001} 	\\
+	$-$ & \!\!\binary{c0010001} 	\\
 \end{tabular}
 \end{center}
 
-\medskip
+\null\vfill
 
-Tout s'éclaire ! Reprenons le cas de $84 - 61 = 23$ où l'on avait une retenue à ignorer.
-
-\medskip
+\columnbreak
 
 \begin{center}
 \begin{tabular}{ll}
@@ -31,20 +87,24 @@ Tout s'éclaire ! Reprenons le cas de $84 - 61 = 23$ où l'on avait une retenue 
 	\hline
 	\hline 							\\[-2ex]
 	    & \!\!\binary{Z1010100} 	\\
-	$+$ & \!\!\binary{o1000011} 	\\[.8ex]
+	$+$ & \!\!\binary{*1000011} 	\\[.8ex]
 	\hline \\[-2ex]
-	$=$ & \!\!\binary{U0010111} 	\\[.8ex]
+	$=$ & \!\!\binary{Z0010111} 	\\[.8ex]
 	\hline
 	\hline 							\\[-2ex]
 	$+$ & \!\!\binary{Z0010111} 	\\
 \end{tabular}
 \end{center}
+\end{multicols}
 
-\medskip
 
-Avec le nouvel éclairage, nous notons qu'en fait les bits rouges ne servent qu'à indiquer s'il faut ou non effectuer un complément à $1$ plus $1$ en changeant de signe.
-Avec la façon de stocker les entiers signés, nous avons alors les correspondances suivantes où les entiers additionnés $a$ et $b$ sont dans $\intervalC{-128}{127}$ et leur somme aussi, ce qui revient à ne considérer que les cas de non dépassement de capacité.
-Ci-après, \binary{*} et les cases sur fond gris indiquent l'utilisation d'un complément à $1$ plus $1$ que nous avions noté \binary{o} ci-dessus, et le symbole $\sim$ est pour le calcul de la somme sans le bit de signe qui lui entre en jeu dans la ligne avec le signe $=$ .
+
+
+
+
+\smallskip
+
+Plus généralement, avec la façon de stocker les entiers signés, nous avons alors les correspondances suivantes où les entiers additionnés $a$ et $b$ sont dans $\intervalC{-128}{127}$ et leur somme aussi, ce qui revient à ne considérer que les cas de non dépassement de capacité.
 \begin{multicols}{4}
     \begin{center}
 	\begin{tabular}{ll}
@@ -53,12 +113,9 @@ Ci-après, \binary{*} et les cases sur fond gris indiquent l'utilisation d'un co
 	\hline
 	\hline 						\\[-2ex]
 	    & \!\!\binary{Z-} 		\\
-	$+$ & \!\!\binary{*+} 		\\[.8ex]
+	$+$ & \!\!\binary{*-} 		\\[.8ex]
 	\hline \\[-2ex]
-	$\sim$ & \!\!\binary{Z-} 	\\[.8ex]
-	\hline
-	\hline 						\\[-2ex]
-	$=$ & \!\!\binary{U-} 		\\
+	$=$ & \!\!\binary{Z-} 	\\
 	\end{tabular}
 	
 	\medskip\itshape\footnotesize
@@ -80,12 +137,9 @@ Ci-après, \binary{*} et les cases sur fond gris indiquent l'utilisation d'un co
 	\hline
 	\hline 						\\[-2ex]
 	    & \!\!\binary{Z-} 		\\
-	$+$ & \!\!\binary{*+} 		\\[.8ex]
+	$+$ & \!\!\binary{*-} 		\\[.8ex]
 	\hline \\[-2ex]
-	$\sim$ & \!\!\binary{U-} 	\\[.8ex]
-	\hline
-	\hline 						\\[-2ex]
-	$=$ & \!\!\binary{Z-} 		\\
+	$=$ & \!\!\binary{U-} 	\\
 	\end{tabular}
 	
 	\medskip\itshape\footnotesize
@@ -106,13 +160,10 @@ Ci-après, \binary{*} et les cases sur fond gris indiquent l'utilisation d'un co
 	$-$ & \!\!\binary{Z-} 		\\[.8ex]
 	\hline
 	\hline 						\\[-2ex]
-	    & \!\!\binary{*+} 		\\
-	$+$ & \!\!\binary{*+} 		\\[.8ex]
+	    & \!\!\binary{*-} 		\\
+	$+$ & \!\!\binary{*-} 		\\[.8ex]
 	\hline \\[-2ex]
-	$\sim$ & \!\!\binary{Z-} 	\\[.8ex]
-	\hline
-	\hline 						\\[-2ex]
-	$=$ & \!\!\binary{Z-} 		\\
+	$=$ & \!\!\binary{Z-} 	\\
 	\end{tabular}
 	
 	\medskip\itshape\footnotesize
@@ -133,13 +184,10 @@ Ci-après, \binary{*} et les cases sur fond gris indiquent l'utilisation d'un co
 	$-$ & \!\!\binary{Z-} 		\\[.8ex]
 	\hline
 	\hline 						\\[-2ex]
-	    & \!\!\binary{*+} 		\\
-	$+$ & \!\!\binary{*+} 		\\[.8ex]
+	    & \!\!\binary{*-} 		\\
+	$+$ & \!\!\binary{*-} 		\\[.8ex]
 	\hline \\[-2ex]
-	$\sim$ & \!\!\binary{U-} 	\\[.8ex]
-	\hline
-	\hline 						\\[-2ex]
-	$=$ & \!\!\binary{U-} 		\\
+	$=$ & \!\!\binary{U-} 	\\
 	\end{tabular}
 	
 	\medskip\itshape\footnotesize

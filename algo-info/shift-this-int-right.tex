@@ -20,11 +20,10 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
-
 \usepackage{pgffor}
       
 \usepackage{lymath}
-
+\usepackage{circledsteps}
     
 \newtheorem{fact}{Fait}%[section]
 
@@ -39,7 +38,9 @@
 \setlength\parindent{0pt}
 
 
-\DeclareMathMacro{\ediv}{\operatorname{div}}
+
+
+\DeclareMathMacro{\ediv}{\operatorname{\div}}
 
 
 \newcommand\centerit[1]{%%
@@ -50,6 +51,9 @@
 	\end{center}
 }
 
+
+\newcommand\sign[1]{\fbox{\scriptsize $#1$}}
+\newcommand\phantomsign{\phantom{\sign{-}}}
 
 
 % Source pour le \@tfor :
@@ -106,6 +110,11 @@
 
 % Let's go !
 	\newcommand\onefortwocomplemen{\fixedboxcolored{black}{green!15}{\bfseries 1}}
+
+
+\newcommand\zerofortwocomplemen{\fixedboxcolored{black}{green!15}{\bfseries 0}}
+
+
 	\newcommand\twocomplement{\fixedboxwill{$\bullet$}}
 
 	\newcommand\@empty@content{\phantom{?}}
@@ -168,6 +177,7 @@
 			\if\next +\myellipsishas{}\else%
 			%
 			\if\next *\onefortwocomplemen{}\else%
+			\if\next c\zerofortwocomplemen{}\else%
 			\if\next o\twocomplement{}\else%
 		    %
 \quad {\bfseries [[ illegal character : \, {\normalfont \next{}} \, ]]} \quad % BUG
@@ -187,6 +197,7 @@
 			\fi%  B
 			%
 			\fi%  *
+			\fi%  c
 			\fi%  o
 		}%
 	}
@@ -223,9 +234,9 @@
  
 \begin{document}
 
-\title{BROUILLON - CANDIDAT - Quels décalages entre les entiers signés et les non signés ?}
+\title{BROUILLON - NON !!!! CANDIDAT - Quels décalages entre les entiers signés et les non signés ?}
 \author{Christophe BAL}
-\date{17 Mars 2019}
+\date{17 Mars 2019 - 11 Janvier 2020}
 
 \maketitle
 
@@ -256,6 +267,7 @@
 \bigskip
 \setcounter{tocdepth}{2}
 \tableofcontents
+
 
 
 % ----------------- %
