@@ -1,0 +1,115 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{nicefrac}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+
+% Source: https://tex.stackexchange.com/a/499279/6880
+\usepackage{catchfile,tikz}
+
+\newcommand{\getdir}[2]{\CatchFileDef#1{|"#2"}{\endlinechar=-1 }}
+
+
+\setlength\parindent{0pt}
+
+
+
+
+\makeatletter
+	\newcommand\law{\@ifstar\@law@star\@law@nostar}
+
+	\newcommand\@law@nostar[3]{%
+		\@law@abstract{de }{#1}{#2}{#3}%
+	}
+
+	\newcommand\@law@star[3]{%
+		\@law@abstract{d'}{#1}{#2}{#3}%
+	}
+	
+	\newcommand\@law@abstract[4]{
+		
+		\bigskip
+		\hrule
+		\bigskip
+		
+		\textbf{Loi #1#2 :}
+			\textit{\og #3 \fg}
+			\if #4\empty\else
+			
+			\smallskip
+			
+			\textbf{\itshape\textcolor{blue}{#4}}%
+			\fi
+	}
+\makeatother
+
+	 
+\begin{document}
+
+\title{BROUILLON - CANDIDAT - Les 13\,+\,1 lois du temps en informatique}
+\author{Christophe BAL}
+\date{25 Janvier 2020}
+
+\maketitle
+
+%\begin{center}
+%	\itshape
+%	Document, avec son source \LaTeX, disponible sur la page
+%	
+%	\url{https://github.com/bc-writing/drafts}.
+%\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\vspace{1em}
+
+
+
+\getdir{\myfilelist}{ls -m ./laws-of-time/*-*.tex}
+
+\foreach\file in\myfilelist{
+  \input{\file}
+}
+
+
+\bigskip
+\hrule
+\newpage
+
+
+\end{document}
