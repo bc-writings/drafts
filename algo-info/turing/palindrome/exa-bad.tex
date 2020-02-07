@@ -1,0 +1,101 @@
+Voici les grandes étapes présentées sur deux colonnes.
+
+
+\begin{multicols}{2}
+
+% GESTION DE LA LETTRE LA PLUS À DROITE
+
+\emptybox\emptybox%
+	\boxit{a}\boxit{b}\boxit{b}\boxit{c}\boxit{a}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox}%
+	\head
+
+
+\medskip % RECHERCHE DE LA DERNIÈRE LETTRE
+\emptybox\emptybox%
+	\fboxit{a}\boxit{b}\boxit{b}\boxit{c}\boxit{a}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip % BONNE LETTRE
+\emptybox\emptybox%
+	\fboxit{a}\boxit{b}\boxit{b}\boxit{c}\fboxit{a}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip % EFFACEMENT DES LETTRES
+\emptybox\emptybox%
+	\emptybox\boxit{b}\boxit{b}\boxit{c}\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox}%
+	\head
+
+\vfill\null
+\columnbreak
+
+\medskip % GESTION DE LA NOUVELLE LETTRE LA PLUS À DROITE
+\emptybox\emptybox%
+	\emptybox\fboxit{b}\boxit{b}\boxit{c}\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox}%
+	\head
+
+
+\medskip % RECHERCHE DE LA DERNIÈRE LETTRE
+\emptybox\emptybox%
+	\emptybox\fboxit{b}\boxit{b}\boxit{c}\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip % MAUVAISE LETTRE
+\emptybox\emptybox%
+	\emptybox\fboxit{b}\boxit{b}\wboxit{c}\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox\emptybox\emptybox}%
+	\head
+
+\end{multicols}
+
+
+\vspace{-1em}
+
+Qu'a-t-on fait ?
+\begin{enumerate}
+	\item On note la lettre pointée par la tête de lecture symbolisée ici par la flèche verticale $\uparrow$ .
+	      Commence alors une phase de recherche d'une lettre connue.
+
+	\item On avance tant que l'on ne rencontre par une case vide. Une fois celle-ci repérée on revient d'une case en arrière.
+	
+	\item On compare alors la lettre pointée par la tête de lecture avec celle de la phase de recherche en cours. Deux cas sont possibles.
+	\begin{enumerate}
+		\item Si les lettres sont différentes alors on ne fait plus rien. 
+		      On a un état bloquant et le mot n'est pas validé.
+
+		\item Si les lettres sont identiques alors on efface la lettre en cours puis on va vers la gauche jusqu'à la prochaine case vide. 
+		      Une fois celle-ci trouvée, on avance d'une case vers la droite pour effacer son contenu, puis on avance d'une autre case vers la droite pour recommencer les actions à partir du point 1.
+	\end{enumerate}
+\end{enumerate}
+
+
+La méthode ci-dessus est en fait incomplète comme nous allons le voir dans la section suivante avec un exemple de palindrome à repérer.
+

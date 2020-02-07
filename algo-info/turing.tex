@@ -1,0 +1,108 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[a4paper, 12pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=1.95cm, right=1.95cm]{geometry}
+
+\usepackage[french]{babel}
+\usepackage{listings}
+
+\usepackage[fr, apmep]{lyxam}
+\usepackage{lymath}
+\usepackage{fancyvrb}
+\usepackage{bera}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{setspace}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning, calc} 
+
+
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+
+\newcommand\boxit[1]{\fbox{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
+\newcommand\fboxit[1]{\fcolorbox{black}{yellow}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
+\newcommand\nboxit[1]{\fcolorbox{black}{lightgray}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
+\newcommand\wboxit[1]{\fcolorbox{black}{red}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
+\newcommand\noboxit[1]{\fcolorbox{white}{white}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
+
+\newcommand\emptybox{\boxit{\phantom{A}}}
+
+\newcommand\head{\noboxit{$\uparrow$}}
+
+
+\begin{document}
+
+\title{BROUILLON - Quelques machines de Turing}
+\author{Christophe BAL}
+\date{7 Février 2020}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\bigskip
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+
+\newpage
+\section{Détecter les palindromes}
+
+	\subsection{Un exemple avec le mot abbca}
+
+		\input{turing/palindrome/exa-bad.tex}
+
+
+	\subsection{Un exemple avec le mot abbcbba}
+
+		\input{turing/palindrome/exa-good.tex}
+
+
+	\subsection{La table de transition} \label{duplicate-table}
+
+		\input{turing/palindrome/table.tex}
+
+
+	\subsection{Coder pour tester}
+
+		\input{turing/palindrome/coding.tex}
+
+
+
+\end{document}
