@@ -1,7 +1,9 @@
 Formalisons les étapes utilisées dans les exemples précédents pour des mots sur l'alphabet $\setgene{\text{a} ; \text{b} ; \text{c}}$ \emph{(la méthode est généralisable sans souci)}. Nous avons besoin des états suivants.
 
 \begin{itemize}[label = \small\textbullet]
-	\item $q_0$ est l'état initial mais aussi celui pour chaque début de nouvelle recherche de lettres identiques en début et en fin de mot.
+	\item $q_0$ est l'état initial.
+
+	\item $q_1$ est l'état pour chaque début de nouvelle recherche de lettres identiques en début et en fin de mot à partir de la deuxième lettre.
 
 	\item Il nous faut des états pour rechercher une lettre identique à droite, ce sera les états $d_\text{a}$ , $d_\text{b}$ et $d_\text{c}$ .
 	
@@ -12,7 +14,7 @@ Formalisons les étapes utilisées dans les exemples précédents pour des mots 
 	\item Enfin l'état $f$ sera notre état final indiquant qu'un mot est bien un palindrome.
 \end{itemize}
 
-Voici finalement la table des transitions de notre machine de Turing pour repérer les palindromes sur l'alphabet $\setgene{\text{a} ; \text{b} ; \text{c}}$. Notez bien les transitions $(q_0 , B)$ et $(e , B)$ importantes pour arriver à l'état final.
+Voici finalement la table des transitions de notre machine de Turing pour repérer les palindromes sur l'alphabet $\setgene{\text{a} ; \text{b} ; \text{c}}$.
 \begin{center}
 	\begin{tabular}{|c||c|c|c|c|}
 		\hline
@@ -24,6 +26,12 @@ Voici finalement la table des transitions de notre machine de Turing pour repér
 		\hline
 		\hline
 		$q_0$
+			& $(d_\text{a} , \text{a} , D)$
+			& $(d_\text{b} , \text{b} , D)$
+			& $(d_\text{c} , \text{c} , D)$
+			& \\
+		\hline
+		$q_1$
 			& $(d_\text{a} , \text{a} , D)$
 			& $(d_\text{b} , \text{b} , D)$
 			& $(d_\text{c} , \text{c} , D)$
@@ -75,10 +83,10 @@ Voici finalement la table des transitions de notre machine de Turing pour repér
 			& $(e , B        , D)$ \\
 		\hline
 		$e$
-			& $(q_0 , B , D)$
-			& $(q_0 , B , D)$
-			& $(q_0 , B , D)$
-			& $(q_0 , B , D)$ \\
+			& $(q_1 , B , D)$
+			& $(q_1 , B , D)$
+			& $(q_1 , B , D)$
+			& $(q_1 , B , D)$ \\
 		\hline
 	\end{tabular}
 \end{center}
