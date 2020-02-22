@@ -1,0 +1,44 @@
+Pour formaliser les étapes à suivre, on va écrire une table des transitions.
+Nous travaillons avec des mots sur l'alphabet $\setgene{0 ; 1}$ et nous allons utiliser les états de transition suivants.
+
+\begin{itemize}[label = \small\textbullet]
+	\item $q_0$ est l'état initial avant tout déplacement.
+
+	\item $\ell_0$ et $\ell_1$ sont les états indiquant que la dernière
+	\footnote{
+		$\ell$ pour \og{} last \fg{}.
+	}
+	case visitée contenait un $0$ ou un $1$ respectivement.
+
+	\item L'état $f$ sera notre état final indiquant qu'un mot est bien l'écriture binaire d'un naturel pair.
+\end{itemize}
+
+Voici la table des transitions de notre machine de Turing où $B$ indique une case vide, tandis que $D$ et $G$ demandent de déplacer la tête de lecture \head{} vers la droite et la gauche respectivement, tandis que $I$ indique de ne pas faire bouger cette tête.
+\begin{center}
+	\begin{tabular}{|c||c|c|c|}
+		\hline
+		$\delta$ 
+			& $0$ 
+			& $1$
+			& $B$ \\
+		\hline
+		\hline
+		$q_0$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& \\
+		\hline
+		\hline
+		$\ell_0$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& $(f , B , I)$\\
+		\hline
+		$\ell_1$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& \\
+		\hline
+	\end{tabular}
+\end{center}
+

@@ -1,0 +1,3 @@
+name: Écriture binaire d'un pair multiple de 3 - Deux bandes
+init: q0
+accept: f

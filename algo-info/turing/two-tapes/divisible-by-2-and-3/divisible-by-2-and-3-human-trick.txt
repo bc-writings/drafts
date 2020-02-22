@@ -1,0 +1,85 @@
+name: Écriture binaire d'un pair multiple de 3 - Une bande optimisée
+init: q0
+accept: f
+
+
+// ------------------- //
+// -- MULTIPLE DE 2 -- //
+// ------------------- //
+
+// -- A DROITE TOUTE -- //
+
+q0,0
+l0,0,>
+
+q0,1
+l1,1,>
+
+
+l0,0
+l0,0,>
+
+l0,1
+l1,1,>
+
+l0,_
+sp0,_,<
+
+
+l1,0
+l0,0,>
+
+l1,1
+l1,1,>
+
+
+// ------------------- //
+// -- MULTIPLE DE 3 -- //
+// ------------------- //
+
+// -- CUMUL "NOUVELLE POSITION IMPAIRE" -- //
+
+sp0,0
+si0,0,<
+
+sp0,1
+si1,1,<
+
+sp0,_
+f,_,-
+
+sp1,0
+si1,0,<
+
+sp1,1
+si2,1,<
+
+sp2,0
+si2,0,<
+
+sp2,1
+si0,1,<
+
+
+// -- CUMUL "NOUVELLE POSITION PAIRE" -- //
+
+si0,0
+sp0,0,<
+
+si0,1
+sp2,1,<
+
+si0,_
+f,_,-
+
+si1,0
+sp1,0,<
+
+si1,1
+sp0,1,<
+
+si2,0
+sp2,0,<
+
+si2,1
+sp1,1,<

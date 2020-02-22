@@ -1,0 +1,87 @@
+Commençons par un exemple simple qui va nous permettre de fixer les notations que nous allons utiliser.
+Voyons comment repérer un entier naturel pair à partir de son écriture binaire.
+La réponse est évidente : un naturel est pair si et seulement si son écriture binaire se finit par un zéro.
+Il suffit donc de parcourir cette écriture binaire et d'analyser le chiffre le plus à droite. Ceci se schématise comme suit où \head{} indique la tête de lecture.
+
+\begin{multicols}{2}
+
+%
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{0}\boxit{1}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{%
+	\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{0}\boxit{1}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{%
+	\emptybox\emptybox
+	\emptybox}%
+	\head
+
+
+\medskip %
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{0}\boxit{1}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{%
+	\emptybox\emptybox
+	\emptybox\emptybox}%
+	\head
+
+
+\vfill\null
+\columnbreak
+
+\medskip %
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{0}\boxit{1}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{%
+	\emptybox\emptybox
+	\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{0}\boxit{1}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{%
+	\emptybox\emptybox
+	\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{0}\boxit{1}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{%
+	\emptybox\emptybox
+	\emptybox\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+\vfill\null
+\end{multicols}
+
+\vspace{-1em}
+
+Pourquoi s'arrêter à la première case vide ? L'idée va être de garder en mémoire la valeur de la dernière case visitée.
+Dans notre exemple, lors du dernier mouvement, on sait que la case précédente était un $1$ et donc que l'écriture binaire n'est pas celle d'un entier naturel pair.

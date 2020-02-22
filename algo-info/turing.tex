@@ -9,6 +9,8 @@
 \usepackage[french]{babel}
 \usepackage{listings}
 
+\usepackage[hidelinks]{hyperref}
+
 \usepackage[fr, apmep]{lyxam}
 \usepackage{lymath}
 \usepackage{fancyvrb}
@@ -24,6 +26,8 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows,positioning, calc} 
 
+\usepackage{fancyvrb}
+
 
 \usepackage[
     type={CC},
@@ -35,19 +39,27 @@
 \newcommand\boxit[1]{\fbox{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
 \newcommand\fboxit[1]{\fcolorbox{black}{yellow}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
 \newcommand\nboxit[1]{\fcolorbox{black}{lightgray}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
-\newcommand\wboxit[1]{\fcolorbox{black}{red}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
+\newcommand\wboxit[1]{\fcolorbox{black}{red!50}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
 \newcommand\noboxit[1]{\fcolorbox{white}{white}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
 
 \newcommand\emptybox{\boxit{\phantom{A}}}
 
 \newcommand\head{\noboxit{$\uparrow$}}
+\newcommand\deah{\noboxit{$\downarrow$}}
+
+
+\newcommand\twocoord[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+
+
+\newcommand\myquote[1]{\emph{\og #1 \fg}}
+
 
 
 \begin{document}
 
-\title{BROUILLON - Quelques machines de Turing}
+\title{BROUILLON - Quelques machines de Turing déterministes}
 \author{Christophe BAL}
-\date{7 Février 2020}
+\date{7 Février 2020 -- 22 Février 2020}
 
 \maketitle
 
@@ -82,27 +94,49 @@
 
 
 \newpage
-\section{Détecter les palindromes}
+\section{Écriture binaire des naturels pairs}
 
-	\subsection{Un exemple avec le mot abbca}
-
-		\input{turing/palindrome/exa-bad.tex}
+	\input{turing/divisible-by-2.tex}
 
 
-	\subsection{Un exemple avec le mot abbcbba}
+\newpage
+\section{Écriture binaire des multiples de 3} \label{divisibility-by-3}
 
-		\input{turing/palindrome/exa-good.tex}
-
-
-	\subsection{La table de transition} \label{duplicate-table}
-
-		\input{turing/palindrome/table.tex}
+	\input{turing/divisible-by-3.tex}
 
 
-	\subsection{Coder pour tester}
+\newpage
+\section{Écriture binaire des naturels impairs ou de ceux non multiples de 3}
 
-		\input{turing/palindrome/coding.tex}
+	\input{turing/not-divisible-by-2-or-3.tex}
 
+
+\newpage
+\section{Avec deux bandes}
+
+	Dans cette section, nous cherchons à proposer des méthodes généralistes automatisables mais non nécessairement optimales.
+	Voir à ce sujet la section \ref{better-2-and-3}.
+
+	\input{turing/two-tapes.tex}
+
+
+\newpage
+\section{Détecter les palindromes avec une seule bande}
+
+	\input{turing/palindrome.tex}
+
+
+
+\newpage
+\section{Détecter les palindromes avec deux bandes}
+
+	\input{turing/palindrome-2-tapes.tex}
+
+
+\newpage
+\section{Jouer à saute moutons en bicolorama}
+
+	\input{turing/black-and-white-leapfrog.tex}
 
 
 \end{document}

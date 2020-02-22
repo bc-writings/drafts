@@ -1,0 +1,65 @@
+Si l'on sort des méthodes généralistes et automatisables, on peut faire une table plus simple.
+En effet, pour tester si l'on a un multiple de $3$, nous partons de la droite.
+Or nous savons aussi que le dernier chiffre lu à droite nous permet de savoir si l'on a ou non un nombre pair.
+Il suffit donc lors du déplacement à droite de garder la trace de ce dernier chiffre, puis de continuer le travail si l'on a bien un zéro final.
+Ceci nous donne ci-après une table des transitions plus courte que les précédentes.
+
+\begin{center}
+	\begin{tabular}{|c||c|c|c|}
+% MUTIPLE OF 3
+		\hline
+		$\delta$ 
+			& $0$ 
+			& $1$
+			& $B$ \\
+		\hline
+		\hline
+		$q_0$ 
+			& $(\ell_0 , 0, D)$ 
+			& $(\ell_1 , 1, D)$
+			&  \\
+		\hline
+		$\ell_0$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& $(sp_0   , B , G)$ \\
+		\hline
+		$\ell_1$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			&                    \\
+		\hline
+		\hline
+		$sp_0$ 
+			& $(si_0 , 0, G)$ 
+			& $(si_1 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		$sp_1$ 
+			& $(si_1 , 0, G)$ 
+			& $(si_2 , 1, G)$
+			&                 \\
+		\hline
+		$sp_2$ 
+			& $(si_2 , 0, G)$ 
+			& $(si_0 , 1, G)$
+			&                 \\
+		\hline
+		\hline
+		$si_0$ 
+			& $(sp_0 , 0, G)$ 
+			& $(sp_2 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		$si_1$ 
+			& $(sp_1 , 0, G)$ 
+			& $(sp_0 , 1, G)$
+			&                 \\
+		\hline
+		$si_2$ 
+			& $(sp_2 , 0, G)$ 
+			& $(sp_1 , 1, G)$
+			&                 \\
+		\hline
+	\end{tabular}
+\end{center}

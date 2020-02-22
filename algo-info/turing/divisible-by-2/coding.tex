@@ -1,0 +1,16 @@
+Sur le site de téléchargement de ce document se trouve le fichier \verb+divisible-by-2.txt+ dans le sous-dossier \verb+turing/divisible-by-2+.
+Il contient le code suivant utilisable pour des tests manuels sur le site \url{https://turingmachinesimulator.com}. Nous expliquons comme cela fonctionne juste après.
+
+\VerbatimInput[frame=single]{turing/divisible-by-2/divisible-by-2.txt}
+
+Le langage utilisé est simple à comprendre.
+\begin{enumerate}
+	\item Les lignes commençant par \verb+//+ sont des commentaires.
+
+	\item \verb+name: Écriture binaire d’un pair+ définit le nom de la machine. C'est utile pour stocker ses machines sur le site.
+	
+	\item \verb+init: q0+ et \verb+accept: f+ définissent les états initial et final.
+	
+	\item Enfin des lignes successives du type \verb+q,s+ et \verb+q',s',>+ indiquent que si l'état courant est \verb+q+ lorsque la tête de lecture est sur le symbole \verb+s+ alors l'état devient \verb+q'+ et le symbole \verb+s'+, la tête de lecture se déplaçant vers la droite.
+	Il est possible de rester immobile via \verb+-+ ou d'aller vers la gauche via \verb+<+ et de plus le symbole \verb+_+ sert pour une case vide.
+\end{enumerate}

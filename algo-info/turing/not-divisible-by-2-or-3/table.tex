@@ -1,0 +1,95 @@
+Une méthode simple et généraliste consiste à modifier les tables des transitions précédentes mécaniquement en respectant les deux règles suivantes.
+\begin{enumerate}
+	\item Toutes les cellules qui contiennent l'état final sont vidées.
+
+	\item Toutes les cases vides, sauf celle correspondant à la case vide et l'état initial, sont remplies pour indiquer un passage à l'état final. 
+	      \textbf{La cellule non traitée l'est afin d'éviter d'accepter le mot vide.} 
+\end{enumerate}
+
+
+
+Ceci nous donne la table des transitions ci-après pour les naturels impairs.
+\begin{center}
+	\begin{tabular}{|c||c|c|c|}
+		\hline
+		$\delta$ 
+			& $0$ 
+			& $1$
+			& $B$ \\
+		\hline
+		\hline
+		$q_0$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			&                     \\
+		\hline
+		\hline
+		$\ell_0$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			&                     \\
+		\hline
+		$\ell_1$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& $(f      , B , I)$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+Pour les non multiples de $3$, on obtient la table des transitions suivante.
+\begin{center}
+	\begin{tabular}{|c||c|c|c|}
+		\hline
+		$\delta$ 
+			& $0$ 
+			& $1$
+			& $B$ \\
+		\hline
+		\hline
+		$q_0$ 
+			& $(d , 0, D)$ 
+			& $(d , 1, D)$
+			&  \\
+		\hline
+		$d$ 
+			& $(d , 0, D)$ 
+			& $(d , 1, D)$
+			& $(sp_0, B, G)$ \\
+		\hline
+		\hline
+		$sp_0$ 
+			& $(si_0 , 0, G)$ 
+			& $(si_1 , 1, G)$
+			&                 \\
+		\hline
+		$sp_1$ 
+			& $(si_1 , 0, G)$ 
+			& $(si_2 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		$sp_2$ 
+			& $(si_2 , 0, G)$ 
+			& $(si_0 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		\hline
+		$si_0$ 
+			& $(sp_0 , 0, G)$ 
+			& $(sp_2 , 1, G)$
+			&                 \\
+		\hline
+		$si_1$ 
+			& $(sp_1 , 0, G)$ 
+			& $(sp_0 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		$si_2$ 
+			& $(sp_2 , 0, G)$ 
+			& $(sp_1 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+	\end{tabular}
+\end{center}
+

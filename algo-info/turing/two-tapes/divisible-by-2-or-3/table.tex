@@ -1,0 +1,294 @@
+La méthodologie est ici assez simple. On reprend l'une des tables vues précédemment.
+Vous avez dû noter que sont utilisés des états passerelles pour passer la main au 2\ieme{} traitement. On va donc rendre tous ces états finaux.
+Ceci ne suffit pas car il faut aussi que les états bloquants
+\footnote{
+	Il faut bien entendu penser à traiter les états bloquants non indiqués sur la table initiale !
+}
+de la 1\iere{} machine donne la main à la seconde en faisant tout de même attention pour les machines à une seule bande à bien replacer la tête de lecture \emph{(dans notre cas, ce problème ne se pose pas, ce qui nous enlève un peu de travail)}.
+Nous avons alors les trois tables des transitions suivantes.
+
+
+
+\begin{center}
+	\emph{\bfseries Table à une bande \myquote{automatique}}
+	
+	\smallskip
+	\begin{tabular}{|c||c|c|c|}
+% MUTIPLE OF 3
+		\hline
+		$\delta$ 
+			& $0$ 
+			& $1$
+			& $B$ \\
+		\hline
+		\hline
+		$q_0$ 
+			& $(d , 0, D)$ 
+			& $(d , 1, D)$
+			&  \\
+		\hline
+		$d$ 
+			& $(d , 0, D)$ 
+			& $(d , 1, D)$
+			& $(sp_0, B, G)$ \\
+		\hline
+		\hline
+		$sp_0$ 
+			& $(si_0 , 0, G)$ 
+			& $(si_1 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		$sp_1$ 
+			& $(si_1 , 0, G)$ 
+			& $(si_2 , 1, G)$
+			& $(m    , B, I)$ \\
+		\hline
+		$sp_2$ 
+			& $(si_2 , 0, G)$ 
+			& $(si_0 , 1, G)$
+			& $(m    , B, I)$ \\
+		\hline
+		\hline
+		$si_0$ 
+			& $(sp_0 , 0, G)$ 
+			& $(sp_2 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		$si_1$ 
+			& $(sp_1 , 0, G)$ 
+			& $(sp_0 , 1, G)$
+			& $(m    , B, I)$ \\
+		\hline
+		$si_2$ 
+			& $(sp_2 , 0, G)$ 
+			& $(sp_1 , 1, G)$
+			& $(m    , B, I)$ \\
+		\hline
+% PARITY
+		\hline
+		$m$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& $(m      , B , D)$ \\
+		\hline
+		\hline
+		$\ell_0$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& $(f      , B , I)$ \\
+		\hline
+		$\ell_1$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			&                    \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+
+\begin{center}
+	\emph{\bfseries Table \myquote{optimisée}}
+	
+	\smallskip
+	\begin{tabular}{|c||c|c|c|}
+% MUTIPLE OF 3
+		\hline
+		$\delta$ 
+			& $0$ 
+			& $1$
+			& $B$ \\
+		\hline
+		\hline
+		$q_0$ 
+			& $(\ell_0 , 0, D)$ 
+			& $(\ell_1 , 1, D)$
+			&  \\
+		\hline
+		$\ell_0$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& $(f      , B , G)$ \\
+		\hline
+		$\ell_1$
+			& $(\ell_0 , 0 , D)$
+			& $(\ell_1 , 1 , D)$
+			& $(sp_0   , B , G)$ \\
+		\hline
+		\hline
+		$sp_0$ 
+			& $(si_0 , 0, G)$ 
+			& $(si_1 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		$sp_1$ 
+			& $(si_1 , 0, G)$ 
+			& $(si_2 , 1, G)$
+			&                 \\
+		\hline
+		$sp_2$ 
+			& $(si_2 , 0, G)$ 
+			& $(si_0 , 1, G)$
+			&                 \\
+		\hline
+		\hline
+		$si_0$ 
+			& $(sp_0 , 0, G)$ 
+			& $(sp_2 , 1, G)$
+			& $(f    , B, I)$ \\
+		\hline
+		$si_1$ 
+			& $(sp_1 , 0, G)$ 
+			& $(sp_0 , 1, G)$
+			&                 \\
+		\hline
+		$si_2$ 
+			& $(sp_2 , 0, G)$ 
+			& $(sp_1 , 1, G)$
+			&                 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+
+
+\begin{center}
+	\emph{\bfseries Table à deux bandes}
+	
+	\smallskip
+	\emph{\small Phase 1 : copie de l'entrée.}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c|c|c|}
+		\hline
+		$\delta$ 
+			& $\twocoord{0}{B}$ 
+			& $\twocoord{1}{B}$ 
+			& $\twocoord{B}{B}$ 
+			& $\twocoord{0}{0}$ 
+			& $\twocoord{1}{1}$ \\
+		\hline
+		\hline
+		$q_0$ 
+			& $\left( c, \twocoord{0}{0}, \twocoord{D}{D} \right)$ 
+			& $\left( c, \twocoord{1}{1}, \twocoord{D}{D} \right)$
+			&                   
+			&                   
+			&                                                      \\
+		\hline
+		$c$ 
+			& $\left( c, \twocoord{0}{0}, \twocoord{D}{D} \right)$ 
+			& $\left( c, \twocoord{1}{1}, \twocoord{D}{D} \right)$
+			& $\left( g, \twocoord{B}{B}, \twocoord{G}{G} \right)$
+			&                   
+			&                                                      \\
+		\hline
+		$g$ 
+			&                     
+			&                   
+			& $\left( t_m, \twocoord{B}{B}, \twocoord{D}{D} \right)$
+			& $\left( g  , \twocoord{0}{0}, \twocoord{G}{G} \right)$ 
+			& $\left( g  , \twocoord{1}{1}, \twocoord{G}{G} \right)$ \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}
+
+
+
+\begin{center}
+	\emph{\small Phase 2 : a-t-on un multiple de $3$ via la bande du haut ?}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c||}
+		\hline
+		$\delta$ 
+			& $\twocoord{0}{\bullet}$ 
+			& $\twocoord{1}{\bullet}$ 
+			& $\twocoord{B}{\bullet}$  \\
+		\hline
+		\hline
+		$t_m$ 
+			& $\left( d , \twocoord{0}{\bullet}, \twocoord{D}{I} \right)$ 
+			& $\left( d , \twocoord{1}{\bullet}, \twocoord{D}{I} \right)$
+			&  \\
+		\hline
+		$d$ 
+			& $\left( d   , \twocoord{0}{\bullet}, \twocoord{D}{I} \right)$ 
+			& $\left( d   , \twocoord{1}{\bullet}, \twocoord{D}{I} \right)$
+			& $\left( sp_0, \twocoord{B}{\bullet}, \twocoord{G}{I} \right)$ \\
+		\hline
+		\hline
+		$sp_0$ 
+			& $\left( si_0 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
+			& $\left( si_1 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
+			& $\left( f    , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+		\hline
+		$sp_1$ 
+			& $\left( si_1 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
+			& $\left( si_2 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
+			& $\left( t_p  , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+		\hline
+		$sp_2$ 
+			& $\left( si_2 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
+			& $\left( si_0 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
+			& $\left( t_p  , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+		\hline
+		\hline
+		$si_0$ 
+			& $\left( sp_0 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
+			& $\left( sp_2 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
+			& $\left( f    , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+		\hline
+		$si_1$ 
+			& $\left( sp_1 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
+			& $\left( sp_0 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
+			& $\left( t_p  , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+		\hline
+		$si_2$ 
+			& $\left( sp_2 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
+			& $\left( sp_1 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
+			& $\left( t_p  , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}
+
+
+
+
+\begin{center}
+	\emph{\small Phase 3 : a-t-on un multiple de $3$ qui est aussi pair via la bande du bas ?}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c||}
+		\hline
+		$\delta$ 
+			& $\twocoord{\bullet}{0}$ 
+			& $\twocoord{\bullet}{1}$ 
+			& $\twocoord{\bullet}{B}$  \\
+		\hline
+		\hline
+		$t_p$
+			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$
+			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
+			&                                                                   \\
+		\hline
+		\hline
+		$\ell_0$
+			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$
+			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
+			& $\left( f      , \twocoord{\bullet}{B} , \twocoord{I}{I} \right)$ \\
+		\hline
+		$\ell_1$
+			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$
+			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
+			&                                                                   \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}

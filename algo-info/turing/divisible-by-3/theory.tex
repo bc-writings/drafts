@@ -1,0 +1,162 @@
+Le problème est ici plus intéressant que celui de l'écriture binaire d'un naturel pair.
+Tout le monde connaît le critère de divisibilité par $3$ d'un entier écrit en base $10$.
+Par exemple, $1234567$ n'est pas divisible par $3$ car $1 + 2 + 3 + 4 + 5 + 6 + 7 = 28$ ne l'est pas. Ce critère fonctionne car $10 = 3^2 + 1 = 3k + 1$ nous donne ce qui suit où les $k_i$ sont des naturels
+\footnote{
+	Tout n'est en fait que du calcul modulo $3$.
+}.
+\begin{flalign*}
+1234567
+	&= 123456 \times 10 + 7             && \\
+	&= 3 k_1 + 123456 + 7               && \\
+	&= 3 k_1 + 12345 \times 10 + 6 + 7  && \\
+	&= 3 k_2 + 6 + 7                    && \\
+	&\,\,\,\vdots                       && \\	
+	&= 3 k_6 + 1 + 2 + 3 + 4 + 5 + 6 + 7
+\end{flalign*}
+
+Comme $4 = 3 + 1$, on peut de même à partir d'une écriture en base $4$ comme $[1203]_4$ déterminer si un nombre est divisible par $3$ en faisant ici
+$[1]_4 + [2]_4 + [0]_4 + [3]_4 = [12]_4$ puis $[1]_4 + [2]_4 = [3]_4$ pour conclure que $[1203]_4 = 64 + 2 \times 16 + 3 = 99$ est un multiple de $3$.
+
+\medskip
+
+Le passage aux écritures binaires devient maintenant assez simple.
+Notons pour commencer que par exemple
+$[101101]_2 = [231]_4$ via $[10]_2 = 2$, $[11]_2 = 3$ et $[01]_2 = 1$.
+Voici alors comment analyser ce nombre via une machine de Turing. On a jouter à droite de la tête de lecture un état permettant de calculer le cumul en base $4$ des chiffres modulo $3$ en tenant compte de la parité de l'indice de position du chiffre qui vient d'être lu.
+
+\begin{multicols}{2}
+
+% 
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{1}\boxit{1}\boxit{0}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox}%
+	\head{}$[q_0]$
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{1}\boxit{1}\boxit{0}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox
+	\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox}%
+	\head{}$[d]$
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{1}\boxit{1}\boxit{0}\boxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox
+	\emptybox\emptybox\emptybox\emptybox\emptybox}%
+	\head{}$[sp_0]$
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{1}\boxit{1}\boxit{0}\nboxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox
+	\emptybox\emptybox\emptybox\emptybox}%
+	\head{}$[si_1]$
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{1}\boxit{1}\nboxit{0}\nboxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox
+	\emptybox\emptybox\emptybox}%
+	\head{}$[sp_1]$
+
+\vfill\null
+\columnbreak
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\boxit{1}\fboxit{1}\nboxit{0}\nboxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox
+	\emptybox\emptybox}%
+	\head{}$[si_2]$
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\boxit{1}\boxit{0}\fboxit{1}\fboxit{1}\nboxit{0}\nboxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox
+	\emptybox}%
+	\head{}$[sp_1]$
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\boxit{1}\wboxit{0}\fboxit{1}\fboxit{1}\nboxit{0}\nboxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox}%
+	\head{}$[si_1]$
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\wboxit{1}\wboxit{0}\fboxit{1}\fboxit{1}\nboxit{0}\nboxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox}%
+	\head{}$[sp_0]$
+
+% 
+
+\medskip
+
+\emptybox\emptybox%
+	\wboxit{1}\wboxit{0}\fboxit{1}\fboxit{1}\nboxit{0}\nboxit{1}%
+\emptybox\emptybox
+
+\phantom{\emptybox}%
+	\head{} $[f]$
+
+\vfill\null
+\end{multicols}
+
+
+\vspace{-1em}
+
+Voici les points clés dans les étapes ci-dessus.
+\begin{enumerate}
+	\item Si la tête de lecture est sous un chiffre d'indice de position $(2k+1)$, il suffit d'effectuer modulo $3$ l'ajout en base $4$ de la valeur de la case. Les valeurs possibles seront donc $0$, $1$ et $2$ mais pas $3$ qu'on fait passer à $0$.
+	      Ce calcul se justifie par le fait que l'on passe à un nouveau chiffre de poids plus fort en base $4$.
+
+
+	\item Si la tête de lecture est sous un chiffre d'indice de position $2k$, il suffit d'effectuer modulo $3$ l'ajout en base $4$ du double de la valeur de la case.
+\end{enumerate}
+
+
+
