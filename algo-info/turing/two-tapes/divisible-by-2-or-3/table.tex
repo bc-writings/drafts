@@ -1,5 +1,5 @@
-La méthodologie est ici assez simple. On reprend l'une des tables vues précédemment.
-Vous avez dû noter que sont utilisés des états passerelles pour passer la main au 2\ieme{} traitement. On va donc rendre tous ces états finaux.
+La méthodologie est ici assez simple. On reprend l'une des tables vues dans la section précédente.
+Vous avez dû noter que des états passerelles sont utilisés pour passer la main au 2\ieme{} traitement. On va donc rendre tous ces états finaux.
 Ceci ne suffit pas car il faut aussi que les états bloquants
 \footnote{
 	Il faut bien entendu penser à traiter les états bloquants non indiqués sur la table initiale !
@@ -153,6 +153,9 @@ Nous avons alors les trois tables des transitions suivantes.
 
 
 
+\newpage
+
+
 \begin{center}
 	\emph{\bfseries Table à deux bandes}
 	
@@ -203,7 +206,7 @@ Nous avons alors les trois tables des transitions suivantes.
 	
 	\smallskip
 	\renewcommand{\arraystretch}{1.25}
-	\begin{tabular}{|c||c|c|c||}
+	\begin{tabular}{|c||c|c|c|}
 		\hline
 		$\delta$ 
 			& $\twocoord{0}{\bullet}$ 
@@ -261,11 +264,11 @@ Nous avons alors les trois tables des transitions suivantes.
 
 
 \begin{center}
-	\emph{\small Phase 3 : a-t-on un multiple de $3$ qui est aussi pair via la bande du bas ?}
+	\emph{\small Phase 3 : a-t-on un non multiple de $3$ qui est pair via la bande du bas ?}
 	
 	\smallskip
 	\renewcommand{\arraystretch}{1.25}
-	\begin{tabular}{|c||c|c|c||}
+	\begin{tabular}{|c||c|c|c|}
 		\hline
 		$\delta$ 
 			& $\twocoord{\bullet}{0}$ 

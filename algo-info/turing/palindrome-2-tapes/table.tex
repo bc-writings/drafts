@@ -1,93 +1,63 @@
-Formalisons les étapes utilisées dans les exemples précédents pour des mots sur l'alphabet $\setgene{\text{a} ; \text{b} ; \text{c}}$ \emph{(la méthode est généralisable sans souci)}. Nous avons besoin des états suivants.
+Nous donnons directement la table des transitions scindée en morceaux pour en faciliter la compréhension. Notez au passage que le nombre d'états ne dépend plus des lettres utilisées contrairement à la table présentée dans la section \ref{table-palindrome-1-tape}.
 
-\begin{itemize}[label = \small\textbullet]
-	\item $q_0$ est l'état initial.
 
-	\item $q_1$ est l'état pour chaque début de nouvelle recherche de lettres identiques en début et en fin de mot à partir de la deuxième lettre.
-
-	\item Il nous faut des états pour rechercher une lettre identique à droite, ce sera les états $d_\text{a}$ , $d_\text{b}$ et $d_\text{c}$ .
-	
-	\item Les états précédents vont en fait nous permettre d'arriver sur la case vide à droite de la dernière lettre. Nous ajoutons donc les états $v_\text{a}$ , $v_\text{b}$ et $v_\text{c}$ pour valider ou non la dernière lettre.
-	
-	\item Il nous faut aussi un état $g$ pour retourner vers la gauche recommencer l'analyse avec la lettre suivante ainsi qu'un état $e$ pour effacer la 1\iere{} lettre qui avait été repérée.
-	
-	\item Enfin l'état $f$ sera notre état final indiquant qu'un mot est bien un palindrome.
-\end{itemize}
-
-Voici finalement la table des transitions de notre machine de Turing pour repérer les palindromes sur l'alphabet $\setgene{\text{a} ; \text{b} ; \text{c}}$.
 \begin{center}
+	\emph{\small Phase 1 : copie du mot suivi du retour vers la gauche en haut.}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
 	\begin{tabular}{|c||c|c|c|c|}
 		\hline
-		$\delta$ 
-			& a 
-			& b 
-			& c 
-			& $B$ \\
+		$\delta$
+			& $\twocoord{a}{B}$
+			& $\twocoord{b}{B}$
+			& $\twocoord{c}{B}$
+			& $\twocoord{B}{B}$ \\
 		\hline
 		\hline
 		$q_0$
-			& $(d_\text{a} , \text{a} , D)$
-			& $(d_\text{b} , \text{b} , D)$
-			& $(d_\text{c} , \text{c} , D)$
-			& \\
+			& $\left( d , \twocoord{a}{a} , \twocoord{D}{D} \right)$
+			& $\left( d , \twocoord{b}{b} , \twocoord{D}{D} \right)$
+			& $\left( d , \twocoord{c}{c} , \twocoord{D}{D} \right)$
+			&                                                        \\
 		\hline
-		$q_1$
-			& $(d_\text{a} , \text{a} , D)$
-			& $(d_\text{b} , \text{b} , D)$
-			& $(d_\text{c} , \text{c} , D)$
-			& $(f          , B        , D)$ \\
-		\hline
-		\hline
-		$d_a$
-			& $(d_\text{a} , \text{a} , D)$
-			& $(d_\text{a} , \text{b} , D)$
-			& $(d_\text{a} , \text{c} , D)$
-			& $(v_\text{a} , B        , G)$ \\
-		\hline
-		$d_b$
-			& $(d_\text{b} , \text{a} , D)$
-			& $(d_\text{b} , \text{b} , D)$
-			& $(d_\text{b} , \text{c} , D)$
-			& $(v_\text{b} , B        , G)$ \\
-		\hline
-		$d_c$
-			& $(d_\text{c} , \text{a} , D)$
-			& $(d_\text{c} , \text{b} , D)$
-			& $(d_\text{c} , \text{c} , D)$
-			& $(v_\text{c} , B        , G)$ \\
-		\hline
-		\hline
-		$v_a$
-			& $(g , B , G)$
-			& 
-			& 
-			&  \\
-		\hline
-		$v_b$
-			& 
-			& $(g , B , G)$
-			& 
-			&  \\
-		\hline
-		$v_c$
-			& 
-			& 
-			& $(g , B , G)$
-			&  \\
-		\hline
+		$d$
+			& $\left( d , \twocoord{a}{a} , \twocoord{D}{D} \right)$
+			& $\left( d , \twocoord{b}{b} , \twocoord{D}{D} \right)$
+			& $\left( d , \twocoord{c}{c} , \twocoord{D}{D} \right)$
+			& $\left( g , \twocoord{B}{B} , \twocoord{G}{I} \right)$ \\
 		\hline
 		$g$
-			& $(g , \text{a} , G)$
-			& $(g , \text{b} , G)$
-			& $(g , \text{c} , G)$
-			& $(e , B        , D)$ \\
-		\hline
-		$e$
-			& $(q_1 , B , D)$
-			& $(q_1 , B , D)$
-			& $(q_1 , B , D)$
-			& $(q_1 , B , D)$ \\
+			& $\left( g   , \twocoord{a}{B} , \twocoord{G}{I} \right)$
+			& $\left( g   , \twocoord{b}{b} , \twocoord{G}{I} \right)$
+			& $\left( g   , \twocoord{c}{c} , \twocoord{G}{I} \right)$
+			& $\left( s_0 , \twocoord{B}{B} , \twocoord{D}{G} \right)$ \\
 		\hline
 	\end{tabular}
+	\renewcommand{\arraystretch}{1}
 \end{center}
 
+
+\begin{center}
+	\emph{\small Phase 2 : comparaison \emph{\og inversée \fg} du mot et de sa copie.}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c|c|}
+		\hline
+		$\delta$
+			& $\twocoord{a}{a}$
+			& $\twocoord{b}{b}$
+			& $\twocoord{c}{c}$
+			& $\twocoord{B}{B}$ \\
+		\hline
+		\hline
+		$s_0$
+			& $\left( s_0 , \twocoord{a}{a} , \twocoord{D}{G} \right)$
+			& $\left( s_0 , \twocoord{b}{b} , \twocoord{D}{G} \right)$
+			& $\left( s_0 , \twocoord{c}{c} , \twocoord{D}{G} \right)$
+			& $\left( f   , \twocoord{B}{B} , \twocoord{I}{I} \right)$ \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}

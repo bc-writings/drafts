@@ -2,7 +2,10 @@ Une méthode simple et généraliste consiste à modifier les tables des transit
 \begin{enumerate}
 	\item Toutes les cellules qui contiennent l'état final sont vidées.
 
-	\item Toutes les cases vides, sauf celle correspondant à la case vide et l'état initial, sont remplies pour indiquer un passage à l'état final. 
+	\item Toutes les cases vides, sauf celle correspondant à la case vide et l'état initial, sont remplies pour indiquer un passage à l'état final
+		  \footnote{
+			Ne pas oublier de traiter les états bloquants non indiqués sur la table initiale !
+		  }.
 	      \textbf{La cellule non traitée l'est afin d'éviter d'accepter le mot vide.} 
 \end{enumerate}
 

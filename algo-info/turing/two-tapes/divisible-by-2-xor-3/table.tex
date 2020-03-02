@@ -1,1 +1,99 @@
-?????
+On cherche ici à faire une table pour un ou exclusif.
+En utilisant l'identité booléenne $A \boolope{ OUEX } B \eqid* (\boolope{NON } A \boolope{ ET } B) \boolope{ OU } (A \boolope{ ET NON } B)$, nous pouvons appliquer ce que nous avons utilisé précédemment pour traduire les opérateurs logiques $\boolope{ET}$, $\boolope{OU}$ et $\boolope{NON}$.
+Bien que théoriquement correct, ce raisonnement automatique va nous conduire à une trop \myquote{grosse} table des transitions.
+
+
+\medskip
+
+
+Pour obtenir une table de taille raisonnable, nous allons ajouter une nouvelle bande.
+Expliquons comment faire automatiquement via la table \myquote{optimisée} de la section \ref{2-or-3} \emph{(la méthode présentée est généralisable aux tables à plusieurs bandes)}.
+\begin{enumerate}
+	\item La bande supplémentaire va juste nous servir à \myquote{compter} les cas gagnants.
+
+	\item Nous allons court-circuiter le 1\ier{} cas final en passant via l'état $presp_0$ avant d'aller à l'état $sp_0$ qui sert à passer la main à la 2\ieme{} machine.
+	      Ce court-circuit nous sert à garder la trace du succès du 1\ier{} test.
+
+	\item Il reste à gérer les états bloquants de la 2\ieme{} machine lorsque la 1\iere{} a fonctionné.
+\end{enumerate}
+
+
+\begin{center}
+	\emph{\bfseries Table \myquote{optimisée}}
+	
+	\smallskip
+	\begin{tabular}{|c||c|c|c|c|}
+% MUTIPLE OF 3
+		\hline
+		$\delta$ 
+			& $\twocoord{\bullet}{0}$ 
+			& $\twocoord{\bullet}{1}$
+			& $\twocoord{B}{B}$       
+			& $\twocoord{1}{B}$       \\
+		\hline
+		\hline
+		$q_0$ 
+			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$ 
+			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
+			&                   
+			&                                                                   \\
+		\hline
+		$\ell_0$
+			& $\left( \ell_0  , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$ 
+			& $\left( \ell_1  , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
+			& $\left( presp_0 , \twocoord{1}{B}       , \twocoord{I}{I} \right)$
+			&                                                                    \\
+		\hline
+		$presp_0$
+			&  
+			&  
+			& 
+			& $\left( sp_0 , \twocoord{1}{B} , \twocoord{I}{G} \right)$ \\
+		\hline
+		$\ell_1$
+			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$ 
+			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
+			& $\left( sp_0   , \twocoord{B}{B}       , \twocoord{I}{G} \right)$
+			&                                                                   \\
+		\hline
+		\hline
+		$sp_0$ 
+			& $\left(si_0 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
+			& $\left(si_1 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			& $\left(f    , \twocoord{B}{B}       , \twocoord{I}{I} \right)$
+			&                                                                \\
+		\hline
+		$sp_1$ 
+			& $\left(si_1 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
+			& $\left(si_2 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			&
+			& $\left(f    , \twocoord{1}{B}       , \twocoord{I}{I} \right)$ \\
+		\hline
+		$sp_2$ 
+			& $\left(si_2 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
+			& $\left(si_0 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			&
+			& $\left(f    , \twocoord{1}{B}       , \twocoord{I}{I} \right)$ \\
+		\hline
+		\hline
+		$si_0$ 
+			& $\left(sp_0 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
+			& $\left(sp_2 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			& $\left(f    , \twocoord{B}{B}       , \twocoord{I}{I} \right)$
+			&                                                                \\
+		\hline
+		$si_1$ 
+			& $\left(sp_1 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
+			& $\left(sp_0 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			&
+			& $\left(f    , \twocoord{1}{B}       , \twocoord{I}{I} \right)$ \\
+		\hline
+		$si_2$ 
+			& $\left(sp_2 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
+			& $\left(sp_1 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			&
+			& $\left(f    , \twocoord{1}{B}       , \twocoord{I}{I} \right)$ \\
+		\hline
+	\end{tabular}
+\end{center}
+

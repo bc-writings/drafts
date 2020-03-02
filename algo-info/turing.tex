@@ -1,4 +1,4 @@
-% !TEX encoding = UTF-8 Unicode
+ % !TEX encoding = UTF-8 Unicode
 \documentclass[a4paper, 12pt]{scrartcl}
 
 \usepackage[utf8]{inputenc}
@@ -48,18 +48,21 @@
 \newcommand\deah{\noboxit{$\downarrow$}}
 
 
-\newcommand\twocoord[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\newcommand\twocoord[2]{{\scriptsize\begin{matrix}#1\\#2\end{matrix}}}
+\newcommand\threecoord[3]{{\scriptsize\begin{matrix}#1\\#2\\#3\end{matrix}}}
 
 
 \newcommand\myquote[1]{\emph{\og #1 \fg}}
 
+
+\newcommand\boolope[1]{\text{\bfseries#1}}
 
 
 \begin{document}
 
 \title{BROUILLON - Quelques machines de Turing déterministes}
 \author{Christophe BAL}
-\date{7 Février 2020 -- 22 Février 2020}
+\date{7 Février 2020 -- 2 Mars 2020}
 
 \maketitle
 

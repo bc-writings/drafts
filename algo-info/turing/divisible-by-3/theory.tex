@@ -2,7 +2,7 @@ Le problème est ici plus intéressant que celui de l'écriture binaire d'un nat
 Tout le monde connaît le critère de divisibilité par $3$ d'un entier écrit en base $10$.
 Par exemple, $1234567$ n'est pas divisible par $3$ car $1 + 2 + 3 + 4 + 5 + 6 + 7 = 28$ ne l'est pas. Ce critère fonctionne car $10 = 3^2 + 1 = 3k + 1$ nous donne ce qui suit où les $k_i$ sont des naturels
 \footnote{
-	Tout n'est en fait que du calcul modulo $3$.
+	Tout ceci n'est en fait que du calcul modulo $3$.
 }.
 \begin{flalign*}
 1234567
@@ -21,7 +21,9 @@ $[1]_4 + [2]_4 + [0]_4 + [3]_4 = [12]_4$ puis $[1]_4 + [2]_4 = [3]_4$ pour concl
 
 Le passage aux écritures binaires devient maintenant assez simple.
 Notons pour commencer que par exemple
-$[101101]_2 = [231]_4$ via $[10]_2 = 2$, $[11]_2 = 3$ et $[01]_2 = 1$.
+$[101101]_2 = [231]_4$ 
+s'obtient sans effort via
+$[10]_2 = 2$, $[11]_2 = 3$ et $[01]_2 = 1$.
 Voici alors comment analyser ce nombre via une machine de Turing. On a jouter à droite de la tête de lecture un état permettant de calculer le cumul en base $4$ des chiffres modulo $3$ en tenant compte de la parité de l'indice de position du chiffre qui vient d'être lu.
 
 \begin{multicols}{2}
