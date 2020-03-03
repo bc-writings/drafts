@@ -26,67 +26,67 @@ Voici finalement la table des transitions de notre machine de Turing pour repér
 		\hline
 		\hline
 		$q_0$
-			& $(d_\text{a} , \text{a} , D)$
-			& $(d_\text{b} , \text{b} , D)$
-			& $(d_\text{c} , \text{c} , D)$
-			& \\
+			& \transition{d_\text{a}}{\text{a}}{D}
+			& \transition{d_\text{b}}{\text{b}}{D}
+			& \transition{d_\text{c}}{\text{c}}{D}
+			&                                      \\
 		\hline
 		$q_1$
-			& $(d_\text{a} , \text{a} , D)$
-			& $(d_\text{b} , \text{b} , D)$
-			& $(d_\text{c} , \text{c} , D)$
-			& $(f          , B        , I)$ \\
+			& \transition{d_\text{a}}{\text{a}}{D}
+			& \transition{d_\text{b}}{\text{b}}{D}
+			& \transition{d_\text{c}}{\text{c}}{D}
+			& \transition{f         }{B       }{I} \\
 		\hline
 		\hline
 		$d_a$
-			& $(d_\text{a} , \text{a} , D)$
-			& $(d_\text{a} , \text{b} , D)$
-			& $(d_\text{a} , \text{c} , D)$
-			& $(v_\text{a} , B        , G)$ \\
+			& \transition{d_\text{a}}{\text{a}}{D}
+			& \transition{d_\text{a}}{\text{b}}{D}
+			& \transition{d_\text{a}}{\text{c}}{D}
+			& \transition{v_\text{a}}{B       }{G} \\
 		\hline
 		$d_b$
-			& $(d_\text{b} , \text{a} , D)$
-			& $(d_\text{b} , \text{b} , D)$
-			& $(d_\text{b} , \text{c} , D)$
-			& $(v_\text{b} , B        , G)$ \\
+			& \transition{d_\text{b}}{\text{a}}{D}
+			& \transition{d_\text{b}}{\text{b}}{D}
+			& \transition{d_\text{b}}{\text{c}}{D}
+			& \transition{v_\text{b}}{B       }{G} \\
 		\hline
 		$d_c$
-			& $(d_\text{c} , \text{a} , D)$
-			& $(d_\text{c} , \text{b} , D)$
-			& $(d_\text{c} , \text{c} , D)$
-			& $(v_\text{c} , B        , G)$ \\
+			& \transition{d_\text{c}}{\text{a}}{D}
+			& \transition{d_\text{c}}{\text{b}}{D}
+			& \transition{d_\text{c}}{\text{c}}{D}
+			& \transition{v_\text{c}}{B       }{G} \\
 		\hline
 		\hline
 		$v_a$
-			& $(g , B , G)$
+			& \transition{g}{B}{G}
 			& 
 			& 
-			&  \\
+			&                      \\
 		\hline
 		$v_b$
 			& 
-			& $(g , B , G)$
+			& \transition{g}{B}{G}
 			& 
-			&  \\
+			&                      \\
 		\hline
 		$v_c$
 			& 
 			& 
-			& $(g , B , G)$
-			&  \\
+			& \transition{g}{B}{G}
+			&                      \\
 		\hline
 		\hline
 		$g$
-			& $(g , \text{a} , G)$
-			& $(g , \text{b} , G)$
-			& $(g , \text{c} , G)$
-			& $(e , B        , D)$ \\
+			& \transition{g}{\text{a}}{G}
+			& \transition{g}{\text{b}}{G}
+			& \transition{g}{\text{c}}{G}
+			& \transition{e}{B       }{D} \\
 		\hline
 		$e$
-			& $(q_1 , B , D)$
-			& $(q_1 , B , D)$
-			& $(q_1 , B , D)$
-			& $(q_1 , B , D)$ \\
+			& \transition{q_1}{B}{D}
+			& \transition{q_1}{B}{D}
+			& \transition{q_1}{B}{D}
+			& \transition{q_1}{B}{D} \\
 		\hline
 	\end{tabular}
 \end{center}

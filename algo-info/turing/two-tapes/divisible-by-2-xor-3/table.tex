@@ -15,6 +15,7 @@ Expliquons comment faire automatiquement via la table \myquote{optimisée} de la
 	      Ce court-circuit nous sert à garder la trace du succès du 1\ier{} test.
 
 	\item Il reste à gérer les états bloquants de la 2\ieme{} machine lorsque la 1\iere{} a fonctionné.
+	      Dans l'optique d'utilisation séquentielle de machines, nous remettons à zéro la bande supplémentaire.
 \end{enumerate}
 
 
@@ -33,66 +34,66 @@ Expliquons comment faire automatiquement via la table \myquote{optimisée} de la
 		\hline
 		\hline
 		$q_0$ 
-			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$ 
-			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
+			& \transition{\ell_0}{\twocoord{\bullet}{0}}{\twocoord{I}{D}} 
+			& \transition{\ell_1}{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
 			&                   
-			&                                                                   \\
+			&                                                             \\
 		\hline
 		$\ell_0$
-			& $\left( \ell_0  , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$ 
-			& $\left( \ell_1  , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
-			& $\left( presp_0 , \twocoord{1}{B}       , \twocoord{I}{I} \right)$
-			&                                                                    \\
+			& \transition{\ell_0 }{\twocoord{\bullet}{0}}{\twocoord{I}{D}} 
+			& \transition{\ell_1 }{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
+			& \transition{presp_0}{\twocoord{1}{B}      }{\twocoord{I}{I}}
+			&                                                              \\
 		\hline
 		$presp_0$
 			&  
 			&  
 			& 
-			& $\left( sp_0 , \twocoord{1}{B} , \twocoord{I}{G} \right)$ \\
+			& \transition{sp_0}{\twocoord{1}{B}}{\twocoord{I}{G}} \\
 		\hline
 		$\ell_1$
-			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$ 
-			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
-			& $\left( sp_0   , \twocoord{B}{B}       , \twocoord{I}{G} \right)$
-			&                                                                   \\
+			& \transition{\ell_0}{\twocoord{\bullet}{0}}{\twocoord{I}{D}} 
+			& \transition{\ell_1}{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
+			& \transition{sp_0  }{\twocoord{B}{B}      }{\twocoord{I}{G}}
+			&                                                             \\
 		\hline
 		\hline
 		$sp_0$ 
-			& $\left(si_0 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
-			& $\left(si_1 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
-			& $\left(f    , \twocoord{B}{B}       , \twocoord{I}{I} \right)$
-			&                                                                \\
+			& \transition{si_0}{\twocoord{\bullet}{0}}{\twocoord{I}{G}} 
+			& \transition{si_1}{\twocoord{\bullet}{1}}{\twocoord{I}{G}}
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}}
+			&                                                           \\
 		\hline
 		$sp_1$ 
-			& $\left(si_1 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
-			& $\left(si_2 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			& \transition{si_1}{\twocoord{\bullet}{0}}{\twocoord{I}{G}} 
+			& \transition{si_2}{\twocoord{\bullet}{1}}{\twocoord{I}{G}}
 			&
-			& $\left(f    , \twocoord{1}{B}       , \twocoord{I}{I} \right)$ \\
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}} \\
 		\hline
 		$sp_2$ 
-			& $\left(si_2 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
-			& $\left(si_0 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			& \transition{si_2}{\twocoord{\bullet}{0}}{\twocoord{I}{G}} 
+			& \transition{si_0}{\twocoord{\bullet}{1}}{\twocoord{I}{G}}
 			&
-			& $\left(f    , \twocoord{1}{B}       , \twocoord{I}{I} \right)$ \\
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}} \\
 		\hline
 		\hline
 		$si_0$ 
-			& $\left(sp_0 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
-			& $\left(sp_2 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
-			& $\left(f    , \twocoord{B}{B}       , \twocoord{I}{I} \right)$
-			&                                                                \\
+			& \transition{sp_0}{\twocoord{\bullet}{0}}{\twocoord{I}{G}} 
+			& \transition{sp_2}{\twocoord{\bullet}{1}}{\twocoord{I}{G}}
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}}
+			&                                                           \\
 		\hline
 		$si_1$ 
-			& $\left(sp_1 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
-			& $\left(sp_0 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			& \transition{sp_1}{\twocoord{\bullet}{0}}{\twocoord{I}{G}} 
+			& \transition{sp_0}{\twocoord{\bullet}{1}}{\twocoord{I}{G}}
 			&
-			& $\left(f    , \twocoord{1}{B}       , \twocoord{I}{I} \right)$ \\
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}} \\
 		\hline
 		$si_2$ 
-			& $\left(sp_2 , \twocoord{\bullet}{0} , \twocoord{I}{G} \right)$ 
-			& $\left(sp_1 , \twocoord{\bullet}{1} , \twocoord{I}{G} \right)$
+			& \transition{sp_2}{\twocoord{\bullet}{0}}{\twocoord{I}{G}} 
+			& \transition{sp_1}{\twocoord{\bullet}{1}}{\twocoord{I}{G}}
 			&
-			& $\left(f    , \twocoord{1}{B}       , \twocoord{I}{I} \right)$ \\
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}} \\
 		\hline
 	\end{tabular}
 \end{center}

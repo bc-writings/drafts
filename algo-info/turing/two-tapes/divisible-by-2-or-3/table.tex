@@ -23,64 +23,64 @@ Nous avons alors les trois tables des transitions suivantes.
 		\hline
 		\hline
 		$q_0$ 
-			& $(d , 0, D)$ 
-			& $(d , 1, D)$
-			&  \\
+			& \transition{d}{0}{D} 
+			& \transition{d}{1}{D}
+			&                      \\
 		\hline
 		$d$ 
-			& $(d , 0, D)$ 
-			& $(d , 1, D)$
-			& $(sp_0, B, G)$ \\
+			& \transition{d   }{0}{D} 
+			& \transition{d   }{1}{D}
+			& \transition{sp_0}{B}{G} \\
 		\hline
 		\hline
 		$sp_0$ 
-			& $(si_0 , 0, G)$ 
-			& $(si_1 , 1, G)$
-			& $(f    , B, I)$ \\
+			& \transition{si_0}{0}{G} 
+			& \transition{si_1}{1}{G}
+			& \transition{f   }{B}{I} \\
 		\hline
 		$sp_1$ 
-			& $(si_1 , 0, G)$ 
-			& $(si_2 , 1, G)$
-			& $(m    , B, I)$ \\
+			& \transition{si_1}{0}{G} 
+			& \transition{si_2}{1}{G}
+			& \transition{m   }{B}{I} \\
 		\hline
 		$sp_2$ 
-			& $(si_2 , 0, G)$ 
-			& $(si_0 , 1, G)$
-			& $(m    , B, I)$ \\
+			& \transition{si_2}{0}{G} 
+			& \transition{si_0}{1}{G}
+			& \transition{m   }{B}{I} \\
 		\hline
 		\hline
 		$si_0$ 
-			& $(sp_0 , 0, G)$ 
-			& $(sp_2 , 1, G)$
-			& $(f    , B, I)$ \\
+			& \transition{sp_0}{0}{G} 
+			& \transition{sp_2}{1}{G}
+			& \transition{f   }{B}{I} \\
 		\hline
 		$si_1$ 
-			& $(sp_1 , 0, G)$ 
-			& $(sp_0 , 1, G)$
-			& $(m    , B, I)$ \\
+			& \transition{sp_1}{0}{G} 
+			& \transition{sp_0}{1}{G}
+			& \transition{m   }{B}{I} \\
 		\hline
 		$si_2$ 
-			& $(sp_2 , 0, G)$ 
-			& $(sp_1 , 1, G)$
-			& $(m    , B, I)$ \\
+			& \transition{sp_2}{0}{G} 
+			& \transition{sp_1}{1}{G}
+			& \transition{m   }{B}{I} \\
 		\hline
 % PARITY
 		\hline
 		$m$
-			& $(\ell_0 , 0 , D)$
-			& $(\ell_1 , 1 , D)$
-			& $(m      , B , D)$ \\
+			& \transition{\ell_0}{0}{D}
+			& \transition{\ell_1}{1}{D}
+			& \transition{m     }{B}{D} \\
 		\hline
 		\hline
 		$\ell_0$
-			& $(\ell_0 , 0 , D)$
-			& $(\ell_1 , 1 , D)$
-			& $(f      , B , I)$ \\
+			& \transition{\ell_0}{0}{D}
+			& \transition{\ell_1}{1}{D}
+			& \transition{f     }{B}{I} \\
 		\hline
 		$\ell_1$
-			& $(\ell_0 , 0 , D)$
-			& $(\ell_1 , 1 , D)$
-			&                    \\
+			& \transition{\ell_0}{0}{D}
+			& \transition{\ell_1}{1}{D}
+			&                           \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -101,51 +101,51 @@ Nous avons alors les trois tables des transitions suivantes.
 		\hline
 		\hline
 		$q_0$ 
-			& $(\ell_0 , 0, D)$ 
-			& $(\ell_1 , 1, D)$
-			&  \\
+			& \transition{\ell_0}{0}{D} 
+			& \transition{\ell_1}{1}{D}
+			&                           \\
 		\hline
 		$\ell_0$
-			& $(\ell_0 , 0 , D)$
-			& $(\ell_1 , 1 , D)$
-			& $(f      , B , G)$ \\
+			& \transition{\ell_0}{0}{D}
+			& \transition{\ell_1}{1}{D}
+			& \transition{f     }{B}{G} \\
 		\hline
 		$\ell_1$
-			& $(\ell_0 , 0 , D)$
-			& $(\ell_1 , 1 , D)$
-			& $(sp_0   , B , G)$ \\
+			& \transition{\ell_0}{0}{D}
+			& \transition{\ell_1}{1}{D}
+			& \transition{sp_0  }{B}{G} \\
 		\hline
 		\hline
 		$sp_0$ 
-			& $(si_0 , 0, G)$ 
-			& $(si_1 , 1, G)$
-			& $(f    , B, I)$ \\
+			& \transition{si_0}{0}{G} 
+			& \transition{si_1}{1}{G}
+			& \transition{f   }{B}{I} \\
 		\hline
 		$sp_1$ 
-			& $(si_1 , 0, G)$ 
-			& $(si_2 , 1, G)$
-			&                 \\
+			& \transition{si_1}{0}{G} 
+			& \transition{si_2}{1}{G}
+			&                         \\
 		\hline
 		$sp_2$ 
-			& $(si_2 , 0, G)$ 
-			& $(si_0 , 1, G)$
-			&                 \\
+			& \transition{si_2}{0}{G} 
+			& \transition{si_0}{1}{G}
+			&                         \\
 		\hline
 		\hline
 		$si_0$ 
-			& $(sp_0 , 0, G)$ 
-			& $(sp_2 , 1, G)$
-			& $(f    , B, I)$ \\
+			& \transition{sp_0}{0}{G} 
+			& \transition{sp_2}{1}{G}
+			& \transition{f   }{B}{I} \\
 		\hline
 		$si_1$ 
-			& $(sp_1 , 0, G)$ 
-			& $(sp_0 , 1, G)$
-			&                 \\
+			& \transition{sp_1}{0}{G} 
+			& \transition{sp_0}{1}{G}
+			&                         \\
 		\hline
 		$si_2$ 
-			& $(sp_2 , 0, G)$ 
-			& $(sp_1 , 1, G)$
-			&                 \\
+			& \transition{sp_2}{0}{G} 
+			& \transition{sp_1}{1}{G}
+			&                         \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -175,25 +175,25 @@ Nous avons alors les trois tables des transitions suivantes.
 		\hline
 		\hline
 		$q_0$ 
-			& $\left( c, \twocoord{0}{0}, \twocoord{D}{D} \right)$ 
-			& $\left( c, \twocoord{1}{1}, \twocoord{D}{D} \right)$
+			& \transition{c}{\twocoord{0}{0}}{\twocoord{D}{D}} 
+			& \transition{c}{\twocoord{1}{1}}{\twocoord{D}{D}}
 			&                   
 			&                   
-			&                                                      \\
+			&                                                  \\
 		\hline
 		$c$ 
-			& $\left( c, \twocoord{0}{0}, \twocoord{D}{D} \right)$ 
-			& $\left( c, \twocoord{1}{1}, \twocoord{D}{D} \right)$
-			& $\left( g, \twocoord{B}{B}, \twocoord{G}{G} \right)$
+			& \transition{c}{\twocoord{0}{0}}{\twocoord{D}{D}} 
+			& \transition{c}{\twocoord{1}{1}}{\twocoord{D}{D}}
+			& \transition{g}{\twocoord{B}{B}}{\twocoord{G}{G}}
 			&                   
-			&                                                      \\
+			&                                                  \\
 		\hline
 		$g$ 
 			&                     
 			&                   
-			& $\left( t_m, \twocoord{B}{B}, \twocoord{D}{D} \right)$
-			& $\left( g  , \twocoord{0}{0}, \twocoord{G}{G} \right)$ 
-			& $\left( g  , \twocoord{1}{1}, \twocoord{G}{G} \right)$ \\
+			& \transition{t_m}{\twocoord{B}{B}}{\twocoord{D}{D}}
+			& \transition{g  }{\twocoord{0}{0}}{\twocoord{G}{G}} 
+			& \transition{g  }{\twocoord{1}{1}}{\twocoord{G}{G}} \\
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}
@@ -215,46 +215,46 @@ Nous avons alors les trois tables des transitions suivantes.
 		\hline
 		\hline
 		$t_m$ 
-			& $\left( d , \twocoord{0}{\bullet}, \twocoord{D}{I} \right)$ 
-			& $\left( d , \twocoord{1}{\bullet}, \twocoord{D}{I} \right)$
-			&  \\
+			& \transition{d}{\twocoord{0}{\bullet}}{\twocoord{D}{I}} 
+			& \transition{d}{\twocoord{1}{\bullet}}{\twocoord{D}{I}}
+			&                                                        \\
 		\hline
 		$d$ 
-			& $\left( d   , \twocoord{0}{\bullet}, \twocoord{D}{I} \right)$ 
-			& $\left( d   , \twocoord{1}{\bullet}, \twocoord{D}{I} \right)$
-			& $\left( sp_0, \twocoord{B}{\bullet}, \twocoord{G}{I} \right)$ \\
+			& \transition{d   }{\twocoord{0}{\bullet}}{\twocoord{D}{I}} 
+			& \transition{d   }{\twocoord{1}{\bullet}}{\twocoord{D}{I}}
+			& \transition{sp_0}{\twocoord{B}{\bullet}}{\twocoord{G}{I}} \\
 		\hline
 		\hline
 		$sp_0$ 
-			& $\left( si_0 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
-			& $\left( si_1 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
-			& $\left( f    , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+			& \transition{si_0}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{si_1}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{f   }{\twocoord{B}{\bullet}}{\twocoord{I}{I}} \\
 		\hline
 		$sp_1$ 
-			& $\left( si_1 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
-			& $\left( si_2 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
-			& $\left( t_p  , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+			& \transition{si_1}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{si_2}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{t_p }{\twocoord{B}{\bullet}}{\twocoord{I}{I}} \\
 		\hline
 		$sp_2$ 
-			& $\left( si_2 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
-			& $\left( si_0 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
-			& $\left( t_p  , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+			& \transition{si_2}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{si_0}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{t_p }{\twocoord{B}{\bullet}}{\twocoord{I}{I}} \\
 		\hline
 		\hline
 		$si_0$ 
-			& $\left( sp_0 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
-			& $\left( sp_2 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
-			& $\left( f    , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+			& \transition{sp_0}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{sp_2}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{f   }{\twocoord{B}{\bullet}}{\twocoord{I}{I}} \\
 		\hline
 		$si_1$ 
-			& $\left( sp_1 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
-			& $\left( sp_0 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
-			& $\left( t_p  , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+			& \transition{sp_1}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{sp_0}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{t_p }{\twocoord{B}{\bullet}}{\twocoord{I}{I}} \\
 		\hline
 		$si_2$ 
-			& $\left( sp_2 , \twocoord{0}{\bullet}, \twocoord{G}{I} \right)$ 
-			& $\left( sp_1 , \twocoord{1}{\bullet}, \twocoord{G}{I} \right)$
-			& $\left( t_p  , \twocoord{B}{\bullet}, \twocoord{I}{I} \right)$ \\
+			& \transition{sp_2}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{sp_1}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{t_p }{\twocoord{B}{\bullet}}{\twocoord{I}{I}} \\
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}
@@ -277,20 +277,20 @@ Nous avons alors les trois tables des transitions suivantes.
 		\hline
 		\hline
 		$t_p$
-			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$
-			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
-			&                                                                   \\
+			& \transition{\ell_0}{\twocoord{\bullet}{0}}{\twocoord{I}{D}}
+			& \transition{\ell_1}{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
+			&                                                             \\
 		\hline
 		\hline
 		$\ell_0$
-			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$
-			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
-			& $\left( f      , \twocoord{\bullet}{B} , \twocoord{I}{I} \right)$ \\
+			& \transition{\ell_0}{\twocoord{\bullet}{0}}{\twocoord{I}{D}}
+			& \transition{\ell_1}{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
+			& \transition{f     }{\twocoord{\bullet}{B}}{\twocoord{I}{I}} \\
 		\hline
 		$\ell_1$
-			& $\left( \ell_0 , \twocoord{\bullet}{0} , \twocoord{I}{D} \right)$
-			& $\left( \ell_1 , \twocoord{\bullet}{1} , \twocoord{I}{D} \right)$
-			&                                                                   \\
+			& \transition{\ell_0}{\twocoord{\bullet}{0}}{\twocoord{I}{D}}
+			& \transition{\ell_1}{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
+			&                                                             \\
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}

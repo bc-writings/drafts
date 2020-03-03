@@ -24,19 +24,19 @@ Voici la table des transitions de notre machine de Turing où $B$ indique une ca
 		\hline
 		\hline
 		$q_0$
-			& $(\ell_0 , 0 , D)$
-			& $(\ell_1 , 1 , D)$
+			& \transition{\ell_0}{0}{D}
+			& \transition{\ell_1}{1}{D}
 			& \\
 		\hline
 		\hline
 		$\ell_0$
-			& $(\ell_0 , 0 , D)$
-			& $(\ell_1 , 1 , D)$
-			& $(f , B , I)$\\
+			& \transition{\ell_0}{0}{D}
+			& \transition{\ell_1}{1}{D}
+			& \transition{f     }{B}{I}      \\
 		\hline
 		$\ell_1$
-			& $(\ell_0 , 0 , D)$
-			& $(\ell_1 , 1 , D)$
+			& \transition{\ell_0}{0}{D}
+			& \transition{\ell_1}{1}{D}
 			& \\
 		\hline
 	\end{tabular}

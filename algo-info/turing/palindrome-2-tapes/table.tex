@@ -1,4 +1,4 @@
-Nous donnons directement la table des transitions scindée en morceaux pour en faciliter la compréhension. Notez au passage que le nombre d'états ne dépend plus des lettres utilisées contrairement à la table présentée dans la section \ref{table-palindrome-1-tape}.
+Nous donnons directement la table des transitions scindée en morceaux pour en faciliter la compréhension. Notez au passage que le nombre d'états ne dépend plus des lettres utilisées contrairement à la table présentée dans la section \ref{table-palindrome-1-tape}, cette dernière ayant des dimensions dépendant du nombres de lettres \emph{(on voit donc ici toute la puissance de l'ajout d'une 2\ieme{} bande)}.
 
 
 \begin{center}
@@ -16,22 +16,22 @@ Nous donnons directement la table des transitions scindée en morceaux pour en f
 		\hline
 		\hline
 		$q_0$
-			& $\left( d , \twocoord{a}{a} , \twocoord{D}{D} \right)$
-			& $\left( d , \twocoord{b}{b} , \twocoord{D}{D} \right)$
-			& $\left( d , \twocoord{c}{c} , \twocoord{D}{D} \right)$
+			& \transition{d}{\twocoord{a}{a}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{b}{b}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{c}{c}}{\twocoord{D}{D}}
 			&                                                        \\
 		\hline
 		$d$
-			& $\left( d , \twocoord{a}{a} , \twocoord{D}{D} \right)$
-			& $\left( d , \twocoord{b}{b} , \twocoord{D}{D} \right)$
-			& $\left( d , \twocoord{c}{c} , \twocoord{D}{D} \right)$
-			& $\left( g , \twocoord{B}{B} , \twocoord{G}{I} \right)$ \\
+			& \transition{d}{\twocoord{a}{a}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{b}{b}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{c}{c}}{\twocoord{D}{D}}
+			& \transition{g}{\twocoord{B}{B}}{\twocoord{G}{I}} \\
 		\hline
 		$g$
-			& $\left( g   , \twocoord{a}{B} , \twocoord{G}{I} \right)$
-			& $\left( g   , \twocoord{b}{b} , \twocoord{G}{I} \right)$
-			& $\left( g   , \twocoord{c}{c} , \twocoord{G}{I} \right)$
-			& $\left( s_0 , \twocoord{B}{B} , \twocoord{D}{G} \right)$ \\
+			& \transition{g}{\twocoord{a}{B}}{\twocoord{G}{I}}
+			& \transition{g}{\twocoord{b}{b}}{\twocoord{G}{I}}
+			& \transition{g}{\twocoord{c}{c}}{\twocoord{G}{I}}
+			& \transition{t}{\twocoord{B}{B}}{\twocoord{D}{G}} \\
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}
@@ -52,11 +52,11 @@ Nous donnons directement la table des transitions scindée en morceaux pour en f
 			& $\twocoord{B}{B}$ \\
 		\hline
 		\hline
-		$s_0$
-			& $\left( s_0 , \twocoord{a}{a} , \twocoord{D}{G} \right)$
-			& $\left( s_0 , \twocoord{b}{b} , \twocoord{D}{G} \right)$
-			& $\left( s_0 , \twocoord{c}{c} , \twocoord{D}{G} \right)$
-			& $\left( f   , \twocoord{B}{B} , \twocoord{I}{I} \right)$ \\
+		$t$
+			& \transition{t}{\twocoord{a}{a}}{\twocoord{D}{G}}
+			& \transition{t}{\twocoord{b}{b}}{\twocoord{D}{G}}
+			& \transition{t}{\twocoord{c}{c}}{\twocoord{D}{G}}
+			& \transition{f}{\twocoord{B}{B}}{\twocoord{I}{I}} \\
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}
