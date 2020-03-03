@@ -43,9 +43,25 @@
 \newcommand\noboxit[1]{\fcolorbox{white}{white}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
 
 \newcommand\emptybox{\boxit{\phantom{A}}}
+\newcommand\wemptybox{\wboxit{\phantom{A}}}
 
 \newcommand\head{\noboxit{$\uparrow$}}
 \newcommand\deah{\noboxit{$\downarrow$}}
+
+
+\newcommand\boxedU{\boxit{\bfseries ?}}
+\newcommand\boxedB{\boxit{\bfseries K}}
+\newcommand\boxedW{\boxit{\bfseries W}}
+
+\newcommand\fboxedB{\fboxit{\bfseries K}}
+\newcommand\fboxedW{\fboxit{\bfseries W}}
+
+\newcommand\nboxedB{\nboxit{\bfseries K}}
+\newcommand\nboxedW{\nboxit{\bfseries W}}
+
+\newcommand\wboxedB{\wboxit{\bfseries K}}
+\newcommand\wboxedW{\wboxit{\bfseries W}}
+
 
 
 \newcommand\twocoord[2]{{\scriptsize\begin{matrix}#1\\#2\end{matrix}}}
@@ -138,12 +154,6 @@
 \section{Détecter les palindromes avec deux bandes}
 
 	\input{turing/palindrome-2-tapes.tex}
-
-
-\newpage
-\section{Jouer à saute moutons en bicolorama}
-
-	\input{turing/black-and-white-leapfrog.tex}
 
 
 \end{document}

@@ -9,29 +9,29 @@ Nous donnons directement la table des transitions scindée en morceaux pour en f
 	\begin{tabular}{|c||c|c|c|c|}
 		\hline
 		$\delta$
-			& $\twocoord{a}{B}$
-			& $\twocoord{b}{B}$
-			& $\twocoord{c}{B}$
-			& $\twocoord{B}{B}$ \\
+			& $\twocoord{\text{a}}{B}$
+			& $\twocoord{\text{b}}{B}$
+			& $\twocoord{\text{c}}{B}$
+			& $\twocoord{B}{B}$        \\
 		\hline
 		\hline
 		$q_0$
-			& \transition{d}{\twocoord{a}{a}}{\twocoord{D}{D}}
-			& \transition{d}{\twocoord{b}{b}}{\twocoord{D}{D}}
-			& \transition{d}{\twocoord{c}{c}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{\text{a}}{\text{a}}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{\text{b}}{\text{b}}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{\text{c}}{\text{c}}}{\twocoord{D}{D}}
 			&                                                        \\
 		\hline
 		$d$
-			& \transition{d}{\twocoord{a}{a}}{\twocoord{D}{D}}
-			& \transition{d}{\twocoord{b}{b}}{\twocoord{D}{D}}
-			& \transition{d}{\twocoord{c}{c}}{\twocoord{D}{D}}
-			& \transition{g}{\twocoord{B}{B}}{\twocoord{G}{I}} \\
+			& \transition{d}{\twocoord{\text{a}}{\text{a}}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{\text{b}}{\text{b}}}{\twocoord{D}{D}}
+			& \transition{d}{\twocoord{\text{c}}{\text{c}}}{\twocoord{D}{D}}
+			& \transition{g}{\twocoord{B}{B}              }{\twocoord{G}{I}} \\
 		\hline
 		$g$
-			& \transition{g}{\twocoord{a}{B}}{\twocoord{G}{I}}
-			& \transition{g}{\twocoord{b}{b}}{\twocoord{G}{I}}
-			& \transition{g}{\twocoord{c}{c}}{\twocoord{G}{I}}
-			& \transition{t}{\twocoord{B}{B}}{\twocoord{D}{G}} \\
+			& \transition{g}{\twocoord{\text{a}}{B}       }{\twocoord{G}{I}}
+			& \transition{g}{\twocoord{\text{b}}{\text{b}}}{\twocoord{G}{I}}
+			& \transition{g}{\twocoord{\text{c}}{\text{c}}}{\twocoord{G}{I}}
+			& \transition{t}{\twocoord{B}{B}              }{\twocoord{D}{G}} \\
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}
@@ -46,17 +46,17 @@ Nous donnons directement la table des transitions scindée en morceaux pour en f
 	\begin{tabular}{|c||c|c|c|c|}
 		\hline
 		$\delta$
-			& $\twocoord{a}{a}$
-			& $\twocoord{b}{b}$
-			& $\twocoord{c}{c}$
-			& $\twocoord{B}{B}$ \\
+			& $\twocoord{\text{a}}{\text{a}}$
+			& $\twocoord{\text{b}}{\text{b}}$
+			& $\twocoord{\text{c}}{\text{c}}$
+			& $\twocoord{B}{B}$               \\
 		\hline
 		\hline
 		$t$
-			& \transition{t}{\twocoord{a}{a}}{\twocoord{D}{G}}
-			& \transition{t}{\twocoord{b}{b}}{\twocoord{D}{G}}
-			& \transition{t}{\twocoord{c}{c}}{\twocoord{D}{G}}
-			& \transition{f}{\twocoord{B}{B}}{\twocoord{I}{I}} \\
+			& \transition{t}{\twocoord{\text{a}}{\text{a}}}{\twocoord{D}{G}}
+			& \transition{t}{\twocoord{\text{b}}{\text{b}}}{\twocoord{D}{G}}
+			& \transition{t}{\twocoord{\text{c}}{\text{c}}}{\twocoord{D}{G}}
+			& \transition{f}{\twocoord{B}{B}              }{\twocoord{I}{I}} \\
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}

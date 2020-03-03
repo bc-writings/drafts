@@ -18,6 +18,11 @@ Expliquons comment faire automatiquement via la table \myquote{optimisée} de la
 \end{enumerate}
 
 
+\medskip
+
+Nous utilisons $\twocoord{0}{\bullet}$ pour simplifier la table. Dans cette écriture, {\scriptsize$\bullet$} indique un caractère quelconque. Dans une transition, il indique le caractère initial qui est donc inchangé.
+
+
 \begin{center}
 	\emph{\small Phase 1 : a-t-on un pair via la bande du bas ?}
 	
@@ -55,66 +60,52 @@ Expliquons comment faire automatiquement via la table \myquote{optimisée} de la
 	\emph{\small Phase 2 : a-t-on un multiple de $3$ via la bande du bas ?}
 	
 	\smallskip
-	\begin{tabular}{|c||c|c|c|c|c|c|}
+	\begin{tabular}{|c||c|c|c|c|}
 % MUTIPLE OF 3
 		\hline
 		$\delta$ 
-			& $\twocoord{0}{B}$ 
-			& $\twocoord{1}{B}$
-			& $\twocoord{0}{1}$ 
-			& $\twocoord{1}{1}$
+			& $\twocoord{0}{\bullet}$ 
+			& $\twocoord{1}{\bullet}$
 			& $\twocoord{B}{B}$       
 			& $\twocoord{B}{1}$ \\
 		\hline
 		\hline
 		$sp_0$ 
-			& \transition{si_0}{\twocoord{0}{B}}{\twocoord{G}{I}} 
-			& \transition{si_1}{\twocoord{1}{B}}{\twocoord{G}{I}}
-			& \transition{si_0}{\twocoord{0}{1}}{\twocoord{G}{I}} 
-			& \transition{si_1}{\twocoord{1}{1}}{\twocoord{G}{I}}
-			& \transition{f   }{\twocoord{B}{B}}{\twocoord{I}{I}}
-			&                                                     \\
+			& \transition{si_0}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{si_1}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}}
+			&                                                           \\
 		\hline
 		$sp_1$ 
-			& \transition{si_1}{\twocoord{0}{B}}{\twocoord{G}{I}} 
-			& \transition{si_2}{\twocoord{1}{B}}{\twocoord{G}{I}}
-			& \transition{si_1}{\twocoord{0}{1}}{\twocoord{G}{I}} 
-			& \transition{si_2}{\twocoord{1}{1}}{\twocoord{G}{I}}
+			& \transition{si_1}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{si_2}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
 			&
-			& \transition{f   }{\twocoord{B}{B}}{\twocoord{I}{I}} \\
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}} \\
 		\hline
 		$sp_2$ 
-			& \transition{si_2}{\twocoord{0}{B}}{\twocoord{G}{I}} 
-			& \transition{si_0}{\twocoord{1}{B}}{\twocoord{G}{I}}
-			& \transition{si_2}{\twocoord{0}{1}}{\twocoord{G}{I}} 
-			& \transition{si_0}{\twocoord{1}{1}}{\twocoord{G}{I}}
+			& \transition{si_2}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{si_0}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
 			&
-			& \transition{f   }{\twocoord{B}{B}}{\twocoord{I}{I}} \\
+			& \transition{f   }{\twocoord{B}{B}}{\twocoord{I}{I}}       \\
 		\hline
 		\hline
 		$si_0$ 
-			& \transition{sp_0}{\twocoord{0}{B}}{\twocoord{G}{I}} 
-			& \transition{sp_2}{\twocoord{1}{B}}{\twocoord{G}{I}}
-			& \transition{sp_0}{\twocoord{0}{1}}{\twocoord{G}{I}} 
-			& \transition{sp_2}{\twocoord{1}{1}}{\twocoord{G}{I}}
-			& \transition{f   }{\twocoord{B}{B}}{\twocoord{I}{I}}
-			&                                                     \\
+			& \transition{sp_0}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{sp_2}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}}
+			&                                                           \\
 		\hline
 		$si_1$ 
-			& \transition{sp_1}{\twocoord{0}{B}}{\twocoord{G}{I}} 
-			& \transition{sp_0}{\twocoord{1}{B}}{\twocoord{G}{I}}
-			& \transition{sp_1}{\twocoord{0}{1}}{\twocoord{G}{I}} 
-			& \transition{sp_0}{\twocoord{1}{1}}{\twocoord{G}{I}}
+			& \transition{sp_1}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{sp_0}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
 			&
-			& \transition{f   }{\twocoord{B}{B}}{\twocoord{I}{I}} \\
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}} \\
 		\hline
 		$si_2$ 
-			& \transition{sp_2}{\twocoord{0}{B}}{\twocoord{G}{I}} 
-			& \transition{sp_1}{\twocoord{1}{B}}{\twocoord{G}{I}}
-			& \transition{sp_2}{\twocoord{0}{1}}{\twocoord{G}{I}} 
-			& \transition{sp_1}{\twocoord{1}{1}}{\twocoord{G}{I}}
+			& \transition{sp_2}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
+			& \transition{sp_1}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
 			&
-			& \transition{f   }{\twocoord{B}{B}}{\twocoord{I}{I}} \\
+			& \transition{f   }{\twocoord{B}{B}      }{\twocoord{I}{I}} \\
 		\hline
 	\end{tabular}
 \end{center}
