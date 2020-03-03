@@ -167,8 +167,6 @@ $g$ pour \myquote{retourner à gauche},
 $t_m$ pour \myquote{tester un multiple de $3$} et
 $t_p$ pour \myquote{tester un pair}.
 Nous avons éclaté la table en plusieurs parties car le procédé choisi, bien qu'automatisable, fait exploser le nombre de cas à traiter.
-De plus pour alléger la présentation, nous utilisons $\twocoord{1}{\bullet}$ pour indiquer un $1$ au-dessus de n'importe quelle case
-\emph{(lorsque ce raccourci est utilisé pour une règle d'écriture, ceci indique que le caractère correspondant à $\bullet$ est inchangé)}.
 
 \begin{center}
 	\emph{\small Phase 1 : copie de l'entrée.}
@@ -202,7 +200,7 @@ De plus pour alléger la présentation, nous utilisons $\twocoord{1}{\bullet}$ p
 		$g$ 
 			&                     
 			&                   
-			& \transition{t_m}{\twocoord{B}{B}}{\twocoord{D}{D}}
+			& \transition{t_m}{\twocoord{B}{B}}{\twocoord{D}{I}}
 			& \transition{g  }{\twocoord{0}{0}}{\twocoord{G}{G}} 
 			& \transition{g  }{\twocoord{1}{1}}{\twocoord{G}{G}} \\
 		\hline
@@ -220,51 +218,51 @@ De plus pour alléger la présentation, nous utilisons $\twocoord{1}{\bullet}$ p
 	\begin{tabular}{|c||c|c|c|}
 		\hline
 		$\delta$ 
-			& $\twocoord{0}{\bullet}$ 
-			& $\twocoord{1}{\bullet}$ 
-			& $\twocoord{B}{\bullet}$  \\
+			& $\twocoord{0}{B}$ 
+			& $\twocoord{1}{B}$ 
+			& $\twocoord{B}{B}$  \\
 		\hline
 		\hline
 		$t_m$ 
-			& \transition{d}{\twocoord{0}{\bullet}}{\twocoord{D}{I}} 
-			& \transition{d}{\twocoord{1}{\bullet}}{\twocoord{D}{I}}
+			& \transition{d}{\twocoord{0}{B}}{\twocoord{D}{I}} 
+			& \transition{d}{\twocoord{1}{B}}{\twocoord{D}{I}}
 			&                                                           \\
 		\hline
 		$d$ 
-			& \transition{d   }{\twocoord{0}{\bullet}}{\twocoord{D}{I}} 
-			& \transition{d   }{\twocoord{1}{\bullet}}{\twocoord{D}{I}}
-			& \transition{sp_0}{\twocoord{B}{\bullet}}{\twocoord{G}{I}} \\
+			& \transition{d   }{\twocoord{0}{B}}{\twocoord{D}{I}} 
+			& \transition{d   }{\twocoord{1}{B}}{\twocoord{D}{I}}
+			& \transition{sp_0}{\twocoord{B}{B}}{\twocoord{G}{I}} \\
 		\hline
 		\hline
 		$sp_0$ 
-			& \transition{si_0}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
-			& \transition{si_1}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
-			& \transition{t_p }{\twocoord{B}{\bullet}}{\twocoord{I}{I}} \\
+			& \transition{si_0}{\twocoord{0}{B}}{\twocoord{G}{I}} 
+			& \transition{si_1}{\twocoord{1}{B}}{\twocoord{G}{I}}
+			& \transition{t_p }{\twocoord{B}{B}}{\twocoord{I}{D}} \\
 		\hline
 		$sp_1$ 
-			& \transition{si_1}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
-			& \transition{si_2}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{si_1}{\twocoord{0}{B}}{\twocoord{G}{I}} 
+			& \transition{si_2}{\twocoord{1}{B}}{\twocoord{G}{I}}
 			&                                                           \\
 		\hline
 		$sp_2$ 
-			& \transition{si_2}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
-			& \transition{si_0}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{si_2}{\twocoord{0}{B}}{\twocoord{G}{I}} 
+			& \transition{si_0}{\twocoord{1}{B}}{\twocoord{G}{I}}
 			&                                                           \\
 		\hline
 		\hline
 		$si_0$ 
-			& \transition{sp_0}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
-			& \transition{sp_2}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
-			& \transition{t_p }{\twocoord{B}{\bullet}}{\twocoord{I}{I}} \\
+			& \transition{sp_0}{\twocoord{0}{B}}{\twocoord{G}{I}} 
+			& \transition{sp_2}{\twocoord{1}{B}}{\twocoord{G}{I}}
+			& \transition{t_p }{\twocoord{B}{B}}{\twocoord{I}{D}} \\
 		\hline
 		$si_1$ 
-			& \transition{sp_1}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
-			& \transition{sp_0}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{sp_1}{\twocoord{0}{B}}{\twocoord{G}{I}} 
+			& \transition{sp_0}{\twocoord{1}{B}}{\twocoord{G}{I}}
 			&                                                           \\
 		\hline
 		$si_2$ 
-			& \transition{sp_2}{\twocoord{0}{\bullet}}{\twocoord{G}{I}} 
-			& \transition{sp_1}{\twocoord{1}{\bullet}}{\twocoord{G}{I}}
+			& \transition{sp_2}{\twocoord{0}{B}}{\twocoord{G}{I}} 
+			& \transition{sp_1}{\twocoord{1}{B}}{\twocoord{G}{I}}
 			&                                                           \\
 		\hline
 	\end{tabular}
@@ -273,7 +271,7 @@ De plus pour alléger la présentation, nous utilisons $\twocoord{1}{\bullet}$ p
 
 
 
-\newpage
+
 
 
 \begin{center}
@@ -284,26 +282,26 @@ De plus pour alléger la présentation, nous utilisons $\twocoord{1}{\bullet}$ p
 	\begin{tabular}{|c||c|c|c|}
 		\hline
 		$\delta$ 
-			& $\twocoord{\bullet}{0}$ 
-			& $\twocoord{\bullet}{1}$ 
-			& $\twocoord{\bullet}{B}$  \\
+			& $\twocoord{B}{0}$ 
+			& $\twocoord{B}{1}$ 
+			& $\twocoord{B}{B}$ \\
 		\hline
 		\hline
 		$t_p$
-			& \transition{\ell_0}{\twocoord{\bullet}{0}}{\twocoord{I}{D}}
-			& \transition{\ell_1}{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
-			&                                                             \\
+			& \transition{\ell_0}{\twocoord{B}{0}}{\twocoord{I}{D}}
+			& \transition{\ell_1}{\twocoord{B}{1}}{\twocoord{I}{D}}
+			&                                                       \\
 		\hline
 		\hline
 		$\ell_0$
-			& \transition{\ell_0}{\twocoord{\bullet}{0}}{\twocoord{I}{D}}
-			& \transition{\ell_1}{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
-			& \transition{f     }{\twocoord{\bullet}{B}}{\twocoord{I}{I}} \\
+			& \transition{\ell_0}{\twocoord{B}{0}}{\twocoord{I}{D}}
+			& \transition{\ell_1}{\twocoord{B}{1}}{\twocoord{I}{D}}
+			& \transition{f     }{\twocoord{B}{B}}{\twocoord{I}{I}} \\
 		\hline
 		$\ell_1$
-			& \transition{\ell_0}{\twocoord{\bullet}{0}}{\twocoord{I}{D}}
-			& \transition{\ell_1}{\twocoord{\bullet}{1}}{\twocoord{I}{D}}
-			&                                                             \\
+			& \transition{\ell_0}{\twocoord{B}{0}}{\twocoord{I}{D}}
+			& \transition{\ell_1}{\twocoord{B}{1}}{\twocoord{I}{D}}
+			&                                                       \\
 		\hline
 	\end{tabular}
 	\renewcommand{\arraystretch}{1}

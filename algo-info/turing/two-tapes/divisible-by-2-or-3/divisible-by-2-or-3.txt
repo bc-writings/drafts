@@ -1,4 +1,4 @@
-name: Écriture binaire d'un pair multiple de 3 - Deux bandes
+name: Écriture binaire d'un pair et/ou d'un multiple de 3 - Deux bandes
 init: q0
 accept: f
 
@@ -99,9 +99,22 @@ sp1,1,_,<,-
 
 
 sp0,_,_
+f,_,_,-,-
+
+sp1,_,_
 tp,_,_,-,>
 
+sp2,_,_
+tp,_,_,-,>
+
+
 si0,_,_
+f,_,_,-,-
+
+si1,_,_
+tp,_,_,-,>
+
+si2,_,_
 tp,_,_,-,>
 
 
