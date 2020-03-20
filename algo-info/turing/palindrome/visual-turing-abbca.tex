@@ -1,0 +1,74 @@
+\begin{multicols}{2}
+
+% GESTION DE LA LETTRE LA PLUS À DROITE
+
+\emptybox\emptybox%
+	\boxit{a}\boxit{b}\boxit{b}\boxit{c}\boxit{a}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox}%
+	\head
+
+
+\medskip % RECHERCHE DE LA DERNIÈRE LETTRE
+\emptybox\emptybox%
+	\fboxit{a}\boxit{b}\boxit{b}\boxit{c}\boxit{a}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip % BONNE LETTRE
+\emptybox\emptybox%
+	\fboxit{a}\boxit{b}\boxit{b}\boxit{c}\fboxit{a}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip % EFFACEMENT DES LETTRES
+\emptybox\emptybox%
+	\emptybox\boxit{b}\boxit{b}\boxit{c}\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox}%
+	\head
+
+\vfill\null
+\columnbreak
+
+\medskip % GESTION DE LA NOUVELLE LETTRE LA PLUS À DROITE
+\emptybox\emptybox%
+	\emptybox\fboxit{b}\boxit{b}\boxit{c}\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox}%
+	\head
+
+
+\medskip % RECHERCHE DE LA DERNIÈRE LETTRE
+\emptybox\emptybox%
+	\emptybox\fboxit{b}\boxit{b}\boxit{c}\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip % MAUVAISE LETTRE
+\emptybox\emptybox%
+	\emptybox\fboxit{b}\boxit{b}\wboxit{c}\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox%
+	\emptybox\emptybox\emptybox}%
+	\head
+
+\end{multicols}
