@@ -43,6 +43,7 @@
 \newcommand\noboxit[1]{\fcolorbox{white}{white}{\makebox[.85em]{#1}\vphantom{$pX^M$}}}
 
 \newcommand\emptybox{\boxit{\phantom{A}}}
+\newcommand\nemptybox{\nboxit{\phantom{A}}}
 \newcommand\wemptybox{\wboxit{\phantom{A}}}
 
 \newcommand\head{\noboxit{$\uparrow$}}
@@ -82,7 +83,7 @@
 
 \title{BROUILLON - Quelques machines de Turing déterministes}
 \author{Christophe BAL}
-\date{7 Février 2020 -- 9 Mars 2020}
+\date{7 Février -- 20 Mars 2020}
 
 \maketitle
 
@@ -137,7 +138,7 @@
 \newpage
 \section{Avec deux bandes}
 
-	Dans cette section, \textbf{nous cherchons à proposer des méthodes généralistes automatisables mais non nécessairement optimales}
+	Dans cette section, \textbf{nous cherchons à proposer des méthodes généralistes automatiques mais non nécessairement optimales}
 	\emph{(voir à ce sujet la section \ref{better-2-and-3})}.
 
 	\input{turing/two-tapes.tex}
@@ -154,6 +155,13 @@
 \section{Détecter les palindromes avec deux bandes}
 
 	\input{turing/palindrome-2-tapes.tex}
+
+
+
+\newpage
+\section{Deux fois plus de b que de a}
+
+	\input{turing/twice-more-b-than-a.tex}
 
 
 \end{document}

@@ -1,0 +1,40 @@
+La table des transitions de la méthode proposée est facile à établir. Là voici.
+\begin{center}
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c|c|}
+		\hline
+		$\delta$
+			& $\threecoord{\text{a}}{B       }{B       }$
+			& $\threecoord{\text{b}}{B       }{B       }$
+			& $\threecoord{B       }{B       }{B       }$
+			& $\threecoord{B       }{\text{X}}{\text{X}}$        \\
+		\hline
+		\hline
+		$q_0$
+			& \transition{q^{\,\prime}_a}{\threecoord{\text{a}}{\text{X}}{B       }}{\threecoord{I}{D}{I}}
+			& \transition{d             }{\threecoord{\text{b}}{B       }{\text{X}}}{\threecoord{D}{I}{D}}
+			&
+			&                                                                                \\
+		\hline
+		$q^{\,\prime}_a$
+			& \transition{d}{\threecoord{\text{a}}{\text{X}}{B}}{\threecoord{D}{D}{I}}
+			&
+			&
+			&                                                                    \\
+		\hline
+		$d$
+			& \transition{q^{\,\prime}_a}{\threecoord{\text{a}}{\text{X}}{B       }}{\threecoord{I}{D}{I}}
+			& \transition{d             }{\threecoord{\text{b}}{B       }{\text{X}}}{\threecoord{D}{I}{D}}
+			& \transition{g             }{\threecoord{B       }{B       }{B       }}{\threecoord{I}{G}{G}}
+			&                                                                                \\
+		\hline
+		\hline
+		$g$
+			&
+			&
+			& \transition{f}{\threecoord{B}{B}{B}}{\threecoord{I}{I}{I}}
+			& \transition{g}{\threecoord{B}{\text{X}}{\text{X}}}{\threecoord{I}{G}{G}} \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}

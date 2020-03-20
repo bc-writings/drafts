@@ -1,0 +1,98 @@
+name: Deux fois plus de b que de a - Une seule bande
+init: q0
+accept: f
+
+
+// ------------------ //
+// -- TRI À BULLES -- //
+// ------------------ //
+
+q0,a
+sa,a,>
+
+q0,b
+sb,b,>
+
+
+sa,a
+sa,a,>
+
+sa,b
+sb,b,>
+
+sa,_
+eb,_,<
+
+
+sb,a
+spb,b,<
+
+sb,b
+sb,b,>
+
+sb,_
+eb,_,<
+
+
+spb,b
+sppb,a,>
+
+
+sppb,a
+spb,b,<
+
+sppb,b
+sppb,b,>
+
+sppb,_
+g,_,<
+
+
+g,a
+g,a,<
+
+g,b
+g,b,<
+
+g,_
+q0,_,>
+
+
+
+// ---------------- //
+// -- EFFACEMENT -- //
+// ---------------- //
+
+eb,b
+epb,_,<
+
+eb,_
+f,_,-
+
+
+epb,b
+ga,_,<
+
+
+ga,a
+ga,a,<
+
+ga,b
+ga,b,<
+
+ga,_
+ea,_,>
+
+
+ea,a
+db,_,>
+
+
+db,a
+db,a,>
+
+db,b
+db,b,>
+
+db,_
+eb,_,<

@@ -1,0 +1,173 @@
+Il a été facile de résoudre la problème avec trois bandes. Essayons de voir si l'on peut se limiter à une seule bande
+\footnote{
+	Théoriquement on sait que toute machine à $n$ bandes peut être traduite en une machine à une seule bande.
+	Malheureusement le procédé ne produit pas forcément des machines qu'un humain aurait conçu tout seul donc nous allons laisser de côté ce procédé.
+}
+en n'utilisant pas la lettre supplémentaire X
+\footnote{
+	Là est le mini-défi.
+}.
+Voici les grandes lignes de la méthode.
+
+\begin{multicols}{2}
+%
+\emptybox\emptybox%
+	\wboxit{\text{b}}\fboxit{\text{a}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}\fboxit{\text{a}}\wboxit{\text{b}}\fboxit{\text{a}}\wboxit{\text{b}}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+
+\emptybox\emptybox%
+	\fboxit{\text{a}}\fboxit{\text{a}}\fboxit{\text{a}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+
+\emptybox\emptybox%
+	\fboxit{\text{a}}\fboxit{\text{a}}\fboxit{\text{a}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}\emptybox\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox}%
+	\head
+
+
+\medskip %
+
+
+\emptybox\emptybox%
+	\emptybox\fboxit{\text{a}}\fboxit{\text{a}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}\wboxit{\text{b}}\emptybox\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+
+\emptybox\emptybox%
+	\emptybox\fboxit{\text{a}}\fboxit{\text{a}}\wboxit{\text{b}}\wboxit{\text{b}}\emptybox\emptybox\emptybox\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+
+\emptybox\emptybox%
+	\emptybox\emptybox\fboxit{\text{a}}\wboxit{\text{b}}\wboxit{\text{b}}\emptybox\emptybox\emptybox\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+
+\emptybox\emptybox%
+	\emptybox\emptybox\fboxit{\text{a}}\emptybox\emptybox\emptybox\emptybox\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox\emptybox}%
+	\head
+
+
+\medskip %
+
+
+\emptybox\emptybox%
+	\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox\emptybox%
+\emptybox\emptybox
+
+\phantom{\emptybox\emptybox\emptybox\emptybox\emptybox}%
+	\head
+
+\end{multicols}
+
+
+On aboutit alors à la table des transitions suivante où le plus délicat est la réorganisation des a et des b
+\emph{(on effectue un tri à bulles)}.
+L'état $g$ et ceux de type $s$ sont chargés de cette réorganisation, tandis que les états de type $e$ s'occupent de la procédure d'effacement.
+
+
+\begin{center}
+	\begin{tabular}{|c||c|c|c|}
+% MUTIPLE OF 3
+		\hline
+		$\delta$ 
+			& a 
+			& b
+			& $B$ \\
+		\hline
+		\hline
+		$q_0$ 
+			& \transition{s_a}{\text{a}}{D} 
+			& \transition{s_b}{\text{b}}{D}
+			&                        \\
+		\hline
+		$s_a$ 
+			& \transition{s_a}{\text{a}}{D} 
+			& \transition{s_b}{\text{b}}{D}
+			& \transition{e_b}{B       }{G} \\
+		\hline
+		$s_b$ 
+			& \transition{s^{\,\prime}_b}{\text{b}}{G}
+			& \transition{s_b           }{\text{b}}{D}
+			& \transition{e_b           }{B       }{G} \\
+		\hline
+		$s^{\,\prime}_b$ 
+			&
+			& \transition{s^{\,\prime\prime}_b}{\text{a}}{D}
+			&                                         \\
+		\hline
+		$s^{\,\prime\prime}_b$ 
+			& \transition{s^{\,\prime}_b       }{\text{b}}{G}
+			& \transition{s^{\,\prime\prime}_b }{\text{b}}{D}
+			& \transition{g                    }{\text{b}}{G} \\
+		\hline
+		$g$ 
+			& \transition{g  }{\text{a}}{G}
+			& \transition{g  }{\text{b}}{G}
+			& \transition{q_0}{B       }{D} \\
+		\hline
+		\hline
+		$e_b$ 
+			&
+			& \transition{e^{\,\prime}_b}{B}{G} 
+			& \transition{f             }{B}{I} \\
+		\hline
+		$e^{\,\prime}_b$
+			&
+			& \transition{g_a}{B}{G} 
+			&                        \\
+		\hline
+		$g_a$
+			& \transition{g_a}{\text{a}}{G}
+			& \transition{g_a}{\text{b}}{G}
+			& \transition{e_a}{B       }{D} \\
+		\hline
+		$e_a$
+			& \transition{d_b}{B}{D}
+			& 
+			&                        \\
+		\hline
+		$d_b$
+			& \transition{d_b}{\text{a}}{D}
+			& \transition{d_b}{\text{b}}{D}
+			& \transition{e_b}{B       }{G} \\
+		\hline
+	\end{tabular}
+\end{center}
