@@ -1,0 +1,142 @@
+\begin{frame}
+	\begin{center}
+		\Large
+		Pouvons-nous généraliser au cas
+		
+		\bigskip
+		
+		des puissances successives de $3$ ?
+	\end{center}
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \centering
+  \begin{forest}
+    /tikz/every label/.append style={text height=1ex, label distance=3pt},
+    for tree={
+      circle,
+      draw,
+      very thick,
+      edge={very thick},
+      s sep+=2pt,
+      fill=red!15,
+      minimum size=23pt,
+      bottom up,
+    }
+    [{1}\vphantom{$1_x^M$}
+      [{2}\vphantom{$1_x^M$}, not before=2,
+        [{5}\vphantom{$1_x^M$}, not before=3]
+        [{6}\vphantom{$1_x^M$}, not before=3]
+        [{7}\vphantom{$1_x^M$}, not before=3]
+      ]
+      [{3}\vphantom{$1_x^M$}, not before=2,
+        [{8}\vphantom{$1_x^M$}, not before=3]
+        [{9}\vphantom{$1_x^M$}, not before=3]
+        [{10}, not before=3]
+      ]
+      [{4}\vphantom{$1_x^M$}, not before=2,
+        [{11}, not before=3]
+        [{12}, not before=3]
+        [{13}, not before=3]
+      ]
+    ]
+  \end{forest}
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \centering
+  \begin{forest}
+    /tikz/every label/.append style={text height=1ex, label distance=3pt},
+    for tree={
+      circle,
+      draw,
+      very thick,
+      edge={very thick},
+      s sep+=2pt,
+      fill=red!15,
+      minimum size=23pt,
+      bottom up,
+    }
+    [\phantom{11}
+      [\phantom{11}
+        [\phantom{11}]
+        [\phantom{11}]
+        [\phantom{11}]
+      ]
+      [\phantom{11}
+        [\phantom{11}]
+        [\phantom{11}]
+        [\phantom{11}]
+      ]
+      [\phantom{11}
+        [\phantom{11}]
+        [\phantom{11}]
+        [\phantom{11}]
+      ]
+    ]
+  \end{forest}
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \centering\scriptsize
+  \scalebox{0.925}{
+      \begin{forest}
+        /tikz/every label/.append style={text height=1ex, label distance=3pt},
+        for tree={
+          circle,
+          draw,
+          very thick,
+          edge={very thick},
+          s sep+=2pt,
+          fill=blue!15,
+          minimum size=23pt,
+          bottom up,
+        }
+        [\updown{1}{2}\vphantom{\updown{11}{12}}
+          [\updown{3}{4}\vphantom{\updown{11}{12}}
+            [\updown{9}{10}\vphantom{\updown{11}{12}}]
+            [\updown{11}{12}]
+            [\updown{13}{14}]
+          ]
+          [\updown{5}{6}
+            [\updown{15}{16}]
+            [\updown{17}{18}]
+            [\updown{19}{20}]
+          ]
+          [\updown{7}{8}
+            [\updown{21}{22}]
+            [\updown{23}{24}]
+            [\updown{25}{26}]
+          ]
+        ]
+      \end{forest}
+  }
+\end{frame}
+
+
+% -------------- %
+
+
+\begin{frame}
+	\begin{center}
+		\Large
+		Nous avons découvert assez vite la formule :
+		
+		\bigskip
+		
+		$2 \, (1 + 3 + 3^2 + \cdots + 3^n) = 3^{n+1} - 1$.
+	\end{center}
+\end{frame}
+

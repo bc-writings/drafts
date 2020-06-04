@@ -54,7 +54,7 @@ La formule $f(x ; y ; z) = k x y z$ reste vraie sur $\left( \RRp \right)^3$ puis
 
 \paragraph{Cas général.}
 
-Faisons une preuve par récurrence sur $n \in \NNs$ pour démontrer la validité de la propriété $\probaset{P}(n)$ définie comme suit :
+Faisons une preuve par récurrence sur $n \in \NNs$ pour démontrer la validité de la propriété $\setproba{P}(n)$ définie comme suit :
 \emph{\og Pour toute fonction $f$ à $n$ variables $x_1$ , ... , $x_n$ définie sur $\RRp$ telle que chacune des fonctions $f_i : t \rightarrow f(x_1 ; ... ; x_{i-1} ; t ; x_{i+1} ; x_n)$
 \footnote{
 	Désolé pour les abus évidents de notations pour $i = 1$ et $i = n$ . 
@@ -65,19 +65,19 @@ pour $i \in \ZintervalC{1}{n}$, soit linéaire en $t$ , il existe une constante 
 	\item \emph{Cas de base.}
 	
 	\noindent
-	$\probaset{P}(1)$ est clairement vraie.
+	$\setproba{P}(1)$ est clairement vraie.
 
 
 	\medskip
 	\item \emph{Hérédité.}
 	
 	\noindent
-	Supposons $\probaset{P}(n)$ valide pour un naturel $n$ fixé, mais quelconque, puis considérons une fonction $f$ de $(n + 1)$ variables qui vérifie les conditions de la propriété $\probaset{P}(n + 1)$ .
+	Supposons $\setproba{P}(n)$ valide pour un naturel $n$ fixé, mais quelconque, puis considérons une fonction $f$ de $(n + 1)$ variables qui vérifie les conditions de la propriété $\setproba{P}(n + 1)$ .
 	
 	\smallskip
 	\noindent
 	Fixons $x \in \RRp$ et considérons la fonction $f_x : (x_1 ; ... ; x_n) \rightarrow f(x_1 ; ... ; x_n ; x)$ .
-	Comme $f_x$  vérifie les conditions de la propriété $\probaset{P}(n)$ ,
+	Comme $f_x$  vérifie les conditions de la propriété $\setproba{P}(n)$ ,
 	nous avons par hypothèse de récurrence 
 	$f_x(x_1 ; ... ; x_n) = a(x) x_1 \cdots x_n$ , soit $f(x_1 ; ... ; x_n ; x) = a(x) x_1 \cdots x_n$ où $a(x)$ est une constante dépendant du réel $x$ .
 	
@@ -99,7 +99,7 @@ pour $i \in \ZintervalC{1}{n}$, soit linéaire en $t$ , il existe une constante 
 	
 	\smallskip
 	\noindent
-	Nous avons bien déduit la validité de $\probaset{P}(n+1)$ à partir de celle de $\probaset{P}(n)$ .
+	Nous avons bien déduit la validité de $\setproba{P}(n+1)$ à partir de celle de $\setproba{P}(n)$ .
 
 
 	\medskip
@@ -107,6 +107,6 @@ pour $i \in \ZintervalC{1}{n}$, soit linéaire en $t$ , il existe une constante 
 	
 	\smallskip
 	\noindent
-	Par récurrence sur $n \in \NNs$ , la propriété $\probaset{P}(n)$ est vraie pour tout naturel non nul $n$ .
+	Par récurrence sur $n \in \NNs$ , la propriété $\setproba{P}(n)$ est vraie pour tout naturel non nul $n$ .
 \end{itemize} 
 
