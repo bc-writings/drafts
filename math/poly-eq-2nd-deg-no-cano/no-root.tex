@@ -1,0 +1,92 @@
+Soient $f(x) = a \, x^2 + b \, x + c$ où $a \neq 0$ et $\setgeo*{C}{f}$ la représentation graphique de $f$ vue comme fonction de $\RR$ dans $\RR$.
+
+\medskip
+
+Graphiquement on constate vite que $\setgeo*{C}{f}$ possède un axe de symétrique $\setgeo{d}: x = m$ où $m$ se calcule come suit où $(\alpha ; \beta) \in \RR^2$.
+
+\medskip
+
+\begin{explain}[style = sar, ope = \iff] 
+	f(\alpha) = f(\beta)
+		\explnext{}
+	a \, \alpha^2 + b \, \alpha + c = a \, \beta^2 + b \, \beta + c
+		\explnext{}
+	a(\alpha^2 - \beta^2) + b(\alpha - \beta) = 0
+		\explnext{}
+	(\alpha - \beta) (a (\alpha + \beta) + b) = 0
+		\explnext{}
+	\dfrac{\alpha + \beta}{2} = - \dfrac{b}{2a}
+\end{explain}
+
+\medskip
+
+Notons $m = - \dfrac{b}{2a}$
+\footnote{
+	Nous n'avons pas prouver la propriété de symétrie car nous n'en aurons pas besoin.
+	Ceci se fait en montrant que $\forall x \in \RR$, $f(m- x) = f(m + x)$.
+	Cette égalité est évidente dès lors que l'on a $f(x) - f(m) = a(x - m)^2$, une identité que nous allons prouver bientôt.
+}.
+Il est aussi aisé de conjecturer que $f(m)$ est un extremum de $f$ vue comme fonction de $\RR$ dans $\RR$. Ceci rend naturel le calcul suivant qui reprend la factorisation précédente.
+
+\medskip
+
+\begin{explain}[style = sar] 
+	f(x) - f(m)
+		\explnext{}
+	(x - m) (a \, x + a \, m + b)
+		\explnext{$m = - \dfrac{b}{2a} \iff 2am = - b \iff am + b = - am$}
+	(x - m) (a \, x - a \, m)
+		\explnext{}
+	a(x - m)^2
+\end{explain}
+
+\medskip
+
+Ce qui précède montre aussi que 
+si $a > 0$ alors $f(m)$ est un minimum et
+si $a < 0$ alors $f(m)$ est un maximum. On peut maintenant savoir quand $f$ n'admet aucun zéro réel.
+
+\begin{enumerate}
+	\item \textbf{Cas 1 : $a > 0$}
+	
+		  \smallskip
+		  
+		  $f$ n'a pas de zéro si et seulement si $f(m) > 0$. Voyons ce que cela implique.
+		  
+		  \begin{explain}[style = sar, ope = \iff]
+		  		f(m) > 0
+					\explnext{}
+				a \, m^2 + b \, m + c > 0
+					\explnext{}
+				a \cdot \dfrac{b^2}{4 a^2} - b \cdot \dfrac{b}{2a} + c > 0
+					\explnext{}
+				- \dfrac{b^2}{4 a} + c > 0
+					\explnext{$4 a > 0$}
+				- b^2 + 4 a c > 0
+		  \end{explain}
+
+
+
+	\item \textbf{Cas 2 : $a < 0$}
+	
+		  \smallskip
+		  
+		  $f$ n'a pas de zéro si et seulement si $f(m) < 0$. Cela implique ce qui suit.
+		  
+		  \begin{explain}[style = sar, ope = \iff]
+		  		f(m) < 0
+					\explnext{}
+				- \dfrac{b^2}{4 a} + c < 0
+					\explnext{$4 a < 0$}
+				- b^2 + 4 a c > 0
+		  \end{explain}
+\end{enumerate}
+ 
+
+Nous retombons sur le critère classique suivant : $a \, x^2 + b \, x + c$ n'a pas de zéro réel si et seulement si $- b^2 + 4 a c > 0$, soit de façon équivalente si et seulement si $b^2 - 4 a c < 0$.
+
+\medskip
+
+Notons que notre mode de raisonnement ne permet pas de privilégier le 2\ieme{} critère, ce dernier est en fait naturel uniquement si l'on passe via la forme canonique, ou bien lorsque l'on trouvera des formules calculant les zéros de $f$ lorsque ces derniers existent \emph{(c'est ce que nous allons faire dans la section suivante)}.
+
+

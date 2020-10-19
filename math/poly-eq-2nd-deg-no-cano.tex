@@ -1,0 +1,75 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\usepackage{tnsmath}
+
+\DeclareMathOperator{\taille}{\tau}
+
+\newtheorem{fact}{Fait}
+\newtheorem*{proof*}{Preuve}
+
+\newtheorem{remark}{Remarque}[section]
+
+\setlength\parindent{0pt}
+
+
+\newcommand\squote[1]{\og #1 \fg{}}
+
+
+\begin{document}
+
+\title{BROUILLON - En finir avec la forme canonique du trinôme... \\ MANQUE DES DESSINS !}
+\author{Christophe BAL}
+\date{18 Octobre 2020}
+\maketitle
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% ------------- %
+
+
+\newpage
+\section{Critère pour la non existence d'une racine réelle}
+
+\input{poly-eq-2nd-deg-no-cano/no-root}
+
+
+% ------------- %
+
+
+\section{Quand au moins une racine réelle existe}
+
+\input{poly-eq-2nd-deg-no-cano/one-root-or-more}
+
+\end{document}
