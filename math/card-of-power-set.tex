@@ -1,0 +1,156 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{import} 
+\usepackage{wrapfig}
+
+
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+\usepackage{textcomp}
+\usepackage{tcolorbox}
+\usepackage{tnsmath}
+    
+\newtheorem{fact}{Fait}%[section]
+
+\newtheorem*{theorem}{Théorème}
+
+\newtheorem{example}{Exemple}[section]
+
+\newtheorem{remark}{Remarque}[section]
+
+\newtheorem*{proof*}{Preuve}
+
+\usepackage{chemist}
+
+
+\setlength\parindent{0pt}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloorx}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+
+
+\let\oldparagraph\paragraph
+\renewcommand\paragraph[1]{\bigskip\oldparagraph{{\bfseries #1}}}
+ 
+	 
+\let\oldsection\section
+\renewcommand\section[1]{\vfill\pagebreak\oldsection{#1}}
+ 
+
+\newcommand\deltaval[3]{%
+	\Delta{#1}^{\,#2}_{\,#3}%
+}
+	 
+\begin{document}
+
+\title{Nombre de sous-ensembles d'un ensemble fini\\Une preuve très élémentaire.}
+\author{Christophe BAL}
+\date{19 Octobre 2020}
+
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\bigskip
+
+
+% ----------- %
+
+Voici comment expliquer rapidement à un lycéen
+\footnote{
+	Bien entendu on adaptera le formalisme pour rendre digeste les principes élémentaires utilisés.
+}
+qu'un ensemble $\setgeo{E}$ de $n$ éléments permet de fabriquer $2^n$ sous-ensembles ayant de $0$ à $n$ éléments. Sans entrer dans le détail d'une récurrence, voici comment faire où si besoin le cas 1 peut être omis.
+
+\begin{enumerate}
+	\medskip
+	\item $\emptyset$ est le seul ensemble à $0$ élément. Son seul sous-ensemble est $\emptyset$. On a bien $1 = 2^0$.
+
+
+	\medskip
+	\item Soit $\setgeo{E} = \setgene{\spadesuit}$ un ensemble avec un seul élément. Cet ensemble contient $2$ sous-ensembles, à savoir $\emptyset$ et $\setgene{\spadesuit}$. On a bien $2 = 2^1$.
+
+
+	\medskip
+	\item Soit $\setgeo{E} = \setgene{\spadesuit_1 ; \spadesuit_2}$ un ensemble avec deux éléments.
+	      Cet ensemble contient les $4 = 2^2$ sous-ensembles
+	      $\emptyset$ , $\setgene{\spadesuit_1}$ ,
+	      $\setgene{\spadesuit_2}$ et $\setgene{\spadesuit_1 ; \spadesuit_2}$.
+	
+	      \noindent
+	      Le pont clé est de noter que
+	      $\setgene{\spadesuit_2} = \emptyset \cup \setgene{\spadesuit_2}$ et
+	      $\setgene{\spadesuit_1 ; \spadesuit_2} = \setgene{\spadesuit_1} \cup \setgene{\spadesuit_2}$.
+
+	\medskip
+	\item Soit maintenant $\setgeo{E} = \setgene{\spadesuit_1 ; \dots ; \spadesuit_{n+1}}$ un ensemble avec $(n+1)$ éléments.
+		  Les sous-ensembles de $\setgeo{E}$ se classent en deux catégories.
+		  
+		  \begin{enumerate}
+		  		\smallskip
+				\item \textbf{Catégorie 1 :} les sous-ensembles ne contenant pas $\spadesuit_{n+1}$.
+				      Il y en a autant que de sous-ensembles de $\setgeo{F} = \setgene{\spadesuit_1 ; \dots ; \spadesuit_{n}}$.
+		  		
+				\smallskip
+				\item \textbf{Catégorie 2 :} les sous-ensembles contenant $\spadesuit_{n+1}$.
+				      De tels sous-ensembles s'obtiennent à partir de sous-ensembles de $\setgeo{F}$ en leur adjoignant $\spadesuit_{n+1}$.
+				      Ceci démontre qu'il y a autant de sous-ensembles de catégorie 2 que de sous-ensembles de $\setgeo{F}$.
+		  \end{enumerate}
+
+		  \noindent
+		  Finalement le nombre de sous-ensembles de $\setgeo{E}$ est deux fois plus grand que celui de $\setgeo{F}$.
+
+
+	\medskip
+	\item Finalement de proche en proche, ou plus rigoureusement via une récurrence, nous avons sans effort qu'un ensemble $\setgeo{E}$ de $n$ éléments permet de fabriquer $2^n$ sous-ensembles ayant de $0$ à $n$ éléments.
+\end{enumerate}
+
+\end{document}
