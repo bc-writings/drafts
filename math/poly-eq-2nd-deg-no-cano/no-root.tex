@@ -20,7 +20,7 @@ Graphiquement on constate vite que $\setgeo*{C}{f}$ possède un axe de symétriq
 
 \medskip
 
-Notons $m = - \dfrac{b}{2a}$
+Nécessairement $m = - \dfrac{b}{2a}$
 \footnote{
 	Nous n'avons pas prouver la propriété de symétrie car nous n'en aurons pas besoin.
 	Ceci se fait en montrant que $\forall x \in \RR$, $f(m- x) = f(m + x)$.
@@ -34,7 +34,16 @@ Il est aussi aisé de conjecturer que $f(m)$ est un extremum de $f$ vue comme fo
 	f(x) - f(m)
 		\explnext{}
 	(x - m) (a \, x + a \, m + b)
-		\explnext{$m = - \dfrac{b}{2a} \iff 2am = - b \iff am + b = - am$}
+		\explnext{%
+			\tiny%
+			\begin{explain}[style = sar, ope = \iff]
+				m = - \dfrac{b}{2a}
+					\explnext{}	
+				2am = - b
+					\explnext{}	
+				am + b = - am
+			\end{explain}%
+		}
 	(x - m) (a \, x - a \, m)
 		\explnext{}
 	a(x - m)^2
@@ -61,7 +70,7 @@ si $a < 0$ alors $f(m)$ est un maximum. On peut maintenant savoir quand $f$ n'ad
 				a \cdot \dfrac{b^2}{4 a^2} - b \cdot \dfrac{b}{2a} + c > 0
 					\explnext{}
 				- \dfrac{b^2}{4 a} + c > 0
-					\explnext{$4 a > 0$}
+					\explnext{\tiny$4 a > 0$}
 				- b^2 + 4 a c > 0
 		  \end{explain}
 
@@ -77,7 +86,7 @@ si $a < 0$ alors $f(m)$ est un maximum. On peut maintenant savoir quand $f$ n'ad
 		  		f(m) < 0
 					\explnext{}
 				- \dfrac{b^2}{4 a} + c < 0
-					\explnext{$4 a < 0$}
+					\explnext{\tiny$4 a < 0$}
 				- b^2 + 4 a c > 0
 		  \end{explain}
 \end{enumerate}

@@ -1,4 +1,5 @@
 Soit $f(x) = a \, x^2 + b \, x + c$ où $a \neq 0$ tel qu'il existe $\alpha \in \RR$ annulant $f$.
+La section précédente implique que nécessairement $b^2 - 4 ac \geq 0$ .
 
 \medskip
 
@@ -17,17 +18,18 @@ $\alpha \cdot \beta = \dfrac{c}{a}$ .
 Exploitons ici aussi l'usage de $m = - \dfrac{b}{2a}$ de sorte que
 $\dfrac{\alpha + \beta}{2} = m$
 \emph{(ceci est aussi une conséquence de l'égalité $f(\alpha) = f(\beta)$)}.
-On va paramétrer notre problème relativement à $m$ en posant
-$\delta = \alpha - m = \dfrac{\alpha - \beta}{2}$ de sorte que
-$m - \beta = \delta$.
-Comme $\alpha = m + \delta$ et $\beta = m - \delta$, nous avons :
+On va paramétrer notre problème relativement à $m$.
+Pour cela posons
+$\delta = \dfrac{\beta - \alpha}{2}$ de sorte que
+$\alpha = m - \delta$ et $\beta = m + \delta$.
+Nous obtenons alors :
 
 \medskip
 
 \begin{explain}[style = sar, ope = \iff]
 	\alpha \cdot \beta = \dfrac{c}{a}
 		\explnext{}
-	(m + \delta)(m - \delta) = \dfrac{c}{a}
+	(m - \delta)(m + \delta) = \dfrac{c}{a}
 		\explnext{}
 	m^2 - \delta^2 = \dfrac{c}{a}
 		\explnext{}
@@ -36,11 +38,11 @@ Comme $\alpha = m + \delta$ et $\beta = m - \delta$, nous avons :
 	\delta^2 = \dfrac{b^2}{4a^2} - \dfrac{c}{a}
 		\explnext{}
 	\delta^2 = \dfrac{b^2 - 4 ac}{4a^2}
-		\explnext{$b^2 - 4 ac \geq 0$}
+		\explnext{\tiny$b^2 - 4 ac \geq 0$}
 	\delta = \pm \dfrac{\sqrt{b^2 - 4 ac}}{2 a}
 \end{explain}
 
 \medskip
 
-Nous avons donc établi que si $\alpha$ et $\beta$ sont deux zéros de $f$ alors $b^2 - 4 ac \geq 0$ et les zéros sont $\dfrac{-b \pm \sqrt{b^2 - 4 ac}}{2 a}$ .
+Nous avons donc établi que si $\alpha$ et $\beta$ sont deux zéros, éventuellement confondus, de $f$ alors $b^2 - 4 ac \geq 0$ et les zéros sont $\dfrac{-b \pm \sqrt{b^2 - 4 ac}}{2 a}$ .
 La réciproque est immédiate.
