@@ -1,0 +1,15 @@
+À l'automne 1960, lors d'un séminaire organisé par Kolmogorov, ce dernier parla de la conjecture suivante :
+\emph{\og Une multiplication de deux nombres de $n$ chiffres ne peut être réalisée en moins de $\bigO(n^2)$ opérations élémentaires \fg}.
+
+\medskip
+
+Karatsuba, qui avait assisté au séminaire, mit une semaine pour proposer une méthode en $\bigO(n^{\lg 3})$ opérations élémentaires
+\footnote{
+	La fonction $\lg$ désigne le logarithme binaire c'est à dire celui en base $2$.	
+},
+contredisant ainsi le grand Kolmogorov
+\footnote{
+	Il semblerait que Kolomogorov ait été très secoué par cette découverte, voire vexé.
+	En effet, en 1962 Kolmogorov écrivit un article, sans doute avec Yuri Ofman l'un de ses élèves, sans en informer Karatsuba qui n'apprit l'existence de l'article que plus tard, lors de sa réédition. 
+}.
+Nous allons présenter cet algorithme en le redécouvrant de façon très \og naturelle \fg.

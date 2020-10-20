@@ -1,0 +1,108 @@
+Comment calculer efficacement le produit $p = 12\,345\,678 \cdot 87\,654\,321$ , c'est à dire en faisant le moins de multiplications possibles ?
+
+\medskip
+
+La 1\iere{} idée de la méthode de Karatsuba est de procéder comme suit.
+
+\begin{enumerate}
+	\item 
+	\begin{explain}[style = sar]
+		p
+			\explnext{}
+		(1\,234 \cdot 10^4 + 5\,678) \, (8\,765 \cdot 10^4 + 4\,321)
+			\explnext{}
+		1\,234 \cdot 8\,765 \cdot 10^8
+		+ (1\,234 \cdot 4\,321 + 5\,678 \cdot 8\,765) \cdot 10^4
+		+ 5\,678 \cdot 4\,321)
+	\end{explain}
+	
+	\item On procède alors de façon analogue pour chaque nouveau produit \emph{(nous allons voir que Karatsuba a été très malin pour gérer cette étape)}. Concentrons-nous juste sur $q = 1\,234 \cdot 8\,765$ par exemple.
+	 
+	\leavevmode\kern-1.75em
+	\begin{explain}[style = sar]
+		q
+			\explnext{}
+		(12 \cdot 10^2 + 34) \, (87 \cdot 10^2 + 65)
+			\explnext{}
+		12 \cdot 87 \cdot 10^4
+		+ (12 \cdot 65 + 34 \cdot 87) \cdot 10^2
+		+ 34 \cdot 65
+	\end{explain}
+	
+	\item Il reste alors des \og dernières \fg{} étapes du type suivant en considérant $r = 12 \cdot 65$.
+	 
+	\leavevmode\kern-1.75em
+	\begin{explain}[style = sar]
+		r
+			\explnext{}
+		(1 \cdot 10 + 2) \, (6 \cdot 10 + 5)
+			\explnext{}
+		1 \cdot 2 \cdot 10^2
+		+ (1 \cdot 6 + 2 \cdot 6) \cdot 10
+		+ 2 \cdot 5
+	\end{explain}
+\end{enumerate}
+
+
+\medskip
+
+
+Les habitués de l'algorithmique reconnaissent ici une approche de type \og diviser pour mieux régner \fg. Pour simplifier nous allons considérer des nombres à $n = 2^k$ chiffres quitte à rajouter des zéros inutiles à gauche.
+La 1\iere{} idée consiste donc à considérer
+$(a \cdot 10^{n/2} + b) \, (A \cdot 10^{n/2} + B)$
+via
+$a \cdot A \cdot 10^n + (a \cdot B + A \cdot b) \cdot 10^{n/2} + b \cdot B$
+où
+$(a ; b ; c ; d) \in \ZintervalC{0}{10^{n/2} - 1}$.
+
+
+\bigskip
+
+
+Essayons de voir si l'on peut éviter de faire le calcul de tous les 4 produits $a \cdot A$ ,  $a \cdot B$ , $b \cdot B$ et $b \cdot A$ . 
+Pour cela nous allons prendre un peu de recul
+\footnote{
+	L'auteur de ces notes ne sait pas ce qui a réellement guidé Karatsuba dans sa découverte.
+}
+en considérant le polynôme $P(X) = (a \cdot X + b) \, (A \cdot X + B)$ et posons $P(X) = c_2 \cdot X^2 + c_1 \cdot X + c_0$ . Projetons-nous alors un peu plus loin pour avancer...
+
+\begin{enumerate}
+	\item $c_0 = P(0)$ c'est à dire $c_0 = b \cdot B$ .
+
+	
+	\item $c_2 = a \cdot A$ peut être vue comme la valeur à l'infini du polynôme $P$. Si l'on reste dans le cadre réel, on peut penser à un équivalent en $+\infty$. On peut en fait donner une définition très algébrique en considérant l'homogénéisé
+	\footnote{
+		Ce genre de considération est naturelle quand l'on fait de la géométrie projective.
+		Le point $(1 ; 0)$ est un point à l'infini du plan projectif.
+	}
+	de $P$ qui est par définition le polynôme $P_h(X ; T) = c_2 \cdot X^2 + c_1 \cdot X \cdot T + c_0 \cdot T^2$ .
+	Dès lors, nous avons : $P_h(1 ; 0) = c_2$ .
+
+	
+	\item
+	\begin{explain}[style = sar, ope = \iff]
+		P(1) = c_2 + c_1 + c_0
+			\explnext{}
+		c_1 = P(1) - c_2 - c_0
+			\explnext{}
+		c_1 = (a + b) \, (A + B) - c_2 - c_0
+	\end{explain}
+	
+	
+	\item En résumé, 
+	$c_0 = b \cdot B$ ,
+	$c_2 = a \cdot A$
+	et surtout 
+	$c_1 = (a + b) \, (A + B) - c_2 - c_0$ .
+	Donc il suffit de calculer les trois produits
+	$c_0 = b \cdot B$ ,
+	$c_2 = a \cdot A$
+	et 
+	$(a + b) \, (A + B)$,
+	pour avoir au passage $c_1$ ,
+	puis d'utiliser
+	$(a \cdot X + b) \, (A \cdot X + B) %
+	 = %
+	 c_2 \cdot 10^n + c_1 \cdot 10^{n/2} + c_0$ .
+	Joli ! Non ?
+\end{enumerate}

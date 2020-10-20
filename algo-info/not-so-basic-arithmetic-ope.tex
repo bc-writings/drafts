@@ -1,0 +1,111 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{tnsmath}
+\usepackage{tnsalgo}
+
+
+\newtheorem{fact}{Fait}[section]
+\newtheorem{example}{Exemple}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+	 
+	 
+	 
+\begin{document}
+
+\title{BROUILLON - Des opérations (pas si) simples}
+\author{Christophe BAL}
+\date{20 Octobre 2020}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\bigskip
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% ------------- %
+
+
+\newpage
+
+\section{Multiplication efficace avec Alexevich Karatsuba}
+
+	\subsection{Une petite histoire dans la grande}
+	\input{not-so-basic-arithmetic-ope/product-karatsuba-anecdote}
+
+
+	\subsection{Multiplier efficacement deux grands nombres}
+	\input{not-so-basic-arithmetic-ope/product-karatsuba-algo}
+
+
+	\subsection{Un petit détour du côté du produit de deux entiers à deux chiffres}
+	\input{not-so-basic-arithmetic-ope/product-karatsuba-two-digits}
+
+
+%	\subsection{Complexité algorithmique}
+%	\input{not-so-basic-arithmetic-ope/product-karatsuba-complexity}
+
+
+\end{document}
