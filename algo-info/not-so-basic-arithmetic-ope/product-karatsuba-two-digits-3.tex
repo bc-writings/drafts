@@ -1,0 +1,56 @@
+\subsubsection{Sans Karatsuba}
+
+Le calcul directement via
+$a \cdot A \cdot 10^2 + (a \cdot B + A \cdot b) \cdot 10 + b \cdot B$
+donne une méthode utile pour un calcul mental sans crayon ni papier car les calculs se font au fil de l'eau de la droite vers la gauche avec très peu de calculs intermédiaires à retenir
+\footnote{
+	Remarquons au passage qu'il est en fait plus facile de travailler de la gauche vers la droite car les résultats à retenir sont de plus en plus précis.
+	Ici on garderait en mémoire
+	$35$ ,
+	$370$ ,
+	$412$
+	et finalement
+	$4144$.
+	En travaillant de droite à gauche on doit retenir
+	$24$ ,
+	$224$ ,
+	$644$.
+	et enfin
+	$4144$.
+}.
+	
+\begin{center}
+	$\begin{NiceMatrix}
+		           & \phPLUS{} &            & \phPLUS{} & 5         & \phPLUS{} & 6
+        \\
+                   &           &            &           &           &           &
+        \\
+		           &           &            &           & 7         & \phPLUS{} & 4
+        \\
+        \cline{1-7}
+		           &           &            &           & \GREEN{}2 &           & \GREEN{}4
+        \\
+		           &           & \RED{}2    &           & \RED{}0   &           &
+        \\
+        \cline{1-7}
+		           &           & \GRAY{}2    &           & \GRAY{}2 &           & \GRAY{}4
+        \\
+		           &           & \BLUE{}4    &           & \BLUE{}2 &           &
+        \\
+        \cline{1-7}
+		           &           & \GRAY{}6    &           & \GRAY{}4 &           & \GRAY{}4
+        \\
+		\ORANGE{}3 &           & \ORANGE{}5  &           &          &           &
+        \\
+        \cline{1-7}
+		4          &           & 1           &           & 4        &           & 4
+        \\
+		\CodeAfter
+        \begin{tikzpicture}[shorten > = 1mm, shorten < = 1mm, line width=.75pt,>=stealth]
+            \draw [orange, <->]        (1-5.south) -- (3-5.north) ;
+            \draw [green!50!blue, <->] (1-7.south) -- (3-7.north) ;
+            \draw [red, <->]           (1-5.south) -- (3-7.north) ;
+            \draw [blue, <->]          (1-7.south) -- (3-5.north) ;
+        \end{tikzpicture}
+    \end{NiceMatrix}$
+\end{center}

@@ -36,23 +36,27 @@
 \restylefloat{figure}
 
 
-\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
 
-\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+\newcommand\RED{\color{red}}
+\newcommand\GREEN{\color{green!50!blue}}
+\newcommand\ORANGE{\color{orange}}
+\newcommand\BLUE{\color{blue}}
+\newcommand\GRAY{\color{gray!80!white}}
 
+\newcommand\PLUS{\RED{\text{\bfseries+}}}
+\newcommand\phPLUS{\phantom{\PLUS}}
 
-\DefineVerbatimEnvironment{rawcode}%
-	{Verbatim}%
-	{tabsize=4,%
-	 frame=lines, framerule=0.3mm, framesep=2.5mm}
-	 
-	 
+\newcommand\MINUS{\RED{\text{\bfseries--}}}
+\newcommand\phMINUS{\phantom{\MINUS}}
+
+\newcommand\EXPL[1]{\raisebox{.5ex}{\text{\tiny $#1$}}}
+
 	 
 \begin{document}
 
 \title{BROUILLON - Des opérations (pas si) simples}
 \author{Christophe BAL}
-\date{20 Octobre 2020}
+\date{20 Octobre 2020 -- 21 Octobre 2020}
 
 \maketitle
 
@@ -101,7 +105,9 @@
 
 
 	\subsection{Un petit détour du côté du produit de deux entiers à deux chiffres}
-	\input{not-so-basic-arithmetic-ope/product-karatsuba-two-digits}
+	\input{not-so-basic-arithmetic-ope/product-karatsuba-two-digits-1}
+	\input{not-so-basic-arithmetic-ope/product-karatsuba-two-digits-2}
+	\input{not-so-basic-arithmetic-ope/product-karatsuba-two-digits-3}
 
 
 %	\subsection{Complexité algorithmique}

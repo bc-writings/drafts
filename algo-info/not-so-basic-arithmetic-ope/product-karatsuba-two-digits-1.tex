@@ -1,0 +1,59 @@
+\subsubsection{Avec Karatsuba et le produit des sommes}
+
+Avec $n = 2$, nous avons une façon originale de faire le produit de deux entiers à deux chiffres. Considérons par exemple le produit $56 \cdot 74$. Voici ce que donne la méthode de Karatsuba dans ce cas.
+	
+\begin{enumerate}
+	\item Ici $a = 5$ , $b = 6$ , $A = 7$ et $B = 4$ .
+
+	\item $c_2 = 5 \cdot 7 = 35$ .
+
+	\item $c_0 = 6 \cdot 4 = 24$ .
+
+	\item $c_1 = (5 + 6) \, (7 + 4) - 35 - 24 = 121 - 35 - 24 = 62$ .
+
+	\item $56 \cdot 78 = c_2 \cdot 10^2 + c_1 \cdot 10^1 + c_0 = 3500 + 620 + 24 = 4144$ .
+\end{enumerate}
+	
+\medskip
+	
+Visuellement nous avons fait les calculs suivants où $c_0$ et $c_2$ sont des multiplications \og verticales \fg{} et $c_1$ s'obtient en soustrayant ces deux multiplications au produit des \og additions horizontales \fg{}.
+Cette méthode est efficace avec un crayon et du papier.
+	
+\begin{center}
+	\medskip
+	
+	$\begin{NiceMatrix}[
+		last-col,
+		code-for-last-col = \RED{}
+	]
+		           & \phPLUS{} &            & \phPLUS{} & 5         & \PLUS{} & 6
+        \\
+                   &           &            &           &           &         &   
+                   &&
+                   \EXPL{121 = 11 \cdot 11}
+        \\
+		           &           &            &           & 7         & \PLUS{} & 4
+        \\
+        \cline{1-7}
+		\ORANGE{}3 &           & \ORANGE{}5 &           & \GREEN{}2 &         & \GREEN{}4   
+                   &&
+                   \EXPL{59 = 35 \mathbin{\smash{+}} 24}
+        \\
+                   &           & \RED{}6    &           & \RED{}2   &         & \phantom{8}
+                   &&
+                   \EXPL{62 = 121 \mathbin{\smash{-}} 59}
+        \\
+        \cline{1-7}
+        4          &           & 1          &           & 4         &         & 4
+        \\
+		\CodeAfter
+        \begin{tikzpicture}[shorten > = 1mm, shorten < = 1mm, line width=.75pt,>=stealth]
+            \draw [orange, <->]        (1-5.south) -- (3-5.north) ;
+            \draw [green!50!blue, <->] (1-7.south) -- (3-7.north) ;
+            \draw [red, ->]            (1-7.east)  -- (2-9.west) ;
+            \draw [red, ->]            (3-7.east)  -- (2-9.west) ;
+            \draw [red, ->]            (4-7.east)  -- (4-9.west) ;
+            \draw [red, <-]            (5-7.east)  -- (5-9.west) ;
+        \end{tikzpicture}
+    \end{NiceMatrix}$
+\end{center}

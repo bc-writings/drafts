@@ -106,3 +106,27 @@ en considérant le polynôme $P(X) = (a \cdot X + b) \, (A \cdot X + B)$ et poso
 	 c_2 \cdot 10^n + c_1 \cdot 10^{n/2} + c_0$ .
 	Joli ! Non ?
 \end{enumerate}
+
+
+\begin{remark}
+	On aurait aussi pu considérer $P(-1)$, ce qui donne :
+	
+	\smallskip
+	
+	\begin{explain}[style = sar, ope = \iff]
+		P(-1) = c_2 - c_1 + c_0
+			\explnext{}
+		c_1 = c_2 + c_0 - P(-1)
+			\explnext{}
+		c_1 = c_2 + c_0 - (a - b) \, (A - B)
+	\end{explain}
+	
+	\smallskip
+	
+	L'intérêt de la formule précédente est que le produit $(a - b) \, (A - B)$ est moins grand en valeur absolue que $(a + b) \, (A + B)$
+	\emph{(nous donnons une application de ceci dans la section suivante)}.
+	
+	\smallskip
+	
+	On pourrait vouloir passer via $P(k)$ où $k \in \ZZ$. Ceci semble a priori peu prometteur car on obtient alors $c_1 = c_2 \, k^2 + c_0 - (a + k \, b) \, (A + k \, B)$ et inutile pour nous car là nous devons faire plus de produits que les deux méthodes ci-dessus.
+\end{remark}

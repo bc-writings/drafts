@@ -1,0 +1,43 @@
+\subsubsection{Avec Karatsuba et le produit des différences}
+
+Reprenons le produit $56 \cdot 74$ mais avec la formule $c_1 = c_2 + c_0 - (a - b) \, (A - B)$.
+Visuellement nous obtenons les calculs suivants.
+Cette méthode est faisable sans crayon, ni papier.
+	\begin{center}
+	\medskip
+	
+	$\begin{NiceMatrix}[
+		last-col,
+		code-for-last-col = \RED{}
+	]
+		           & \phMINUS{} &            & \phMINUS{} & 5         & \MINUS{} & 6
+        \\
+                   &            &            &            &           &          &   
+                   &&
+                   \EXPL{-3 = (-1) \cdot 3}
+        \\
+		           &            &            &            & 7         & \MINUS{} & 4
+        \\
+        \cline{1-7}
+		\ORANGE{}3 &            & \ORANGE{}5 &            & \GREEN{}2 &          & \GREEN{}4   
+                   &&
+                   \EXPL{59 = 35 \mathbin{\smash{+}} 24}
+        \\
+                   &            & \RED{}6    &            & \RED{}2   &          & \phantom{8}
+                   &&
+                   \EXPL{62 = 59 \mathbin{\smash{-}} (\mathbin{\smash{-}} 3)}
+        \\
+        \cline{1-7}
+        4          &            & 1          &            & 4         &          & 4
+        \\
+		\CodeAfter
+        \begin{tikzpicture}[shorten > = 1mm, shorten < = 1mm, line width=.75pt,>=stealth]
+            \draw [orange, <->]        (1-5.south) -- (3-5.north) ;
+            \draw [green!50!blue, <->] (1-7.south) -- (3-7.north) ;
+            \draw [red, ->]            (1-7.east)  -- (2-9.west) ;
+            \draw [red, ->]            (3-7.east)  -- (2-9.west) ;
+            \draw [red, ->]            (4-7.east)  -- (4-9.west) ;
+            \draw [red, <-]            (5-7.east)  -- (5-9.west) ;
+        \end{tikzpicture}
+    \end{NiceMatrix}$
+\end{center}
