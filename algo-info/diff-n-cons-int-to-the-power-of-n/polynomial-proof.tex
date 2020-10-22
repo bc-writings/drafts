@@ -7,12 +7,12 @@ Notons au passage que nous passons d'un algorithme a priori indéterministe, car
 	\In{$n \in \NNs$}
 	\Out{?}
 	
-	\addalgoblank
+	\BlankLine
 	
 	\Actions{
 		$L \Store [ X^n , (X+1)^n , \dots , (X+n)^n ]$
 		\\
-		\addalgoblank
+		\BlankLine
 		\While{$taille(L) \neq 1$}{
 			$newL \Store \EmptyList$
 			\\
@@ -21,7 +21,7 @@ Notons au passage que nous passons d'un algorithme a priori indéterministe, car
 			}
 			$L \Store newL$
 		}
-		\addalgoblank
+		\BlankLine
 		\Return{$L[1]$}
 	}
 \end{algo}
@@ -47,12 +47,12 @@ Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $
 	\In{$P \in \setpoly{\RR_{n}}{X}$ de coefficient dominant $a_n$}
 	\Out{$n! \, a_n$}
 	
-	\addalgoblank
+	\BlankLine
 	
 	\Actions{
 		$L \Store \List{P(X) , P(X+1) , \dots , P(X+n)}$
 		\\
-		\addalgoblank
+		\BlankLine
 		\While{$taille(L) \neq 1$}{
 			$newL \Store \EmptyList$
 			\\
@@ -61,7 +61,7 @@ Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $
 			}
 			$L \Store newL$
 		}
-		\addalgoblank
+		\BlankLine
 		\Return{$L[1]$}
 	}
 \end{algo}

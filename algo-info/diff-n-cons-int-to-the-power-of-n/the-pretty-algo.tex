@@ -1,19 +1,22 @@
 Considérons l'algorithme suivant dont nous allons donner des cas d'application juste après.
 
-\begin{algo}
-	\caption{Version naturelle} \label{nat-algo}
+\begin{algo}[
+	frame,
+	title = Version naturelle
+]
+	\label{nat-algo}
 
 	\In{$n \in \NNs$}
 	\Out{?}
 	
-	\addalgoblank
+	\BlankLine
 	
 	\Actions{
 		Choisir $(n+1)$ naturels consécutifs : $k_1 < k_2 < \dots < k_{n+1}$.
 		\\
 		$L \Store [ k_1^n , k_2^n , \dots , k_{n+1}^n ]$
 		\\
-		\addalgoblank
+		\BlankLine
 		\While{$taille(L) \neq 1$}{
 			$newL \Store \EmptyList$
 			\\
@@ -22,7 +25,7 @@ Considérons l'algorithme suivant dont nous allons donner des cas d'application 
 			}
 			$L \Store newL$
 		}
-		\addalgoblank
+		\BlankLine
 		\Return{$L[1]$}
 	}
 \end{algo}

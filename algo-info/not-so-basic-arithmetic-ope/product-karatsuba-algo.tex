@@ -64,7 +64,8 @@ Pour cela nous allons prendre un peu de recul
 \footnote{
 	L'auteur de ces notes ne sait pas ce qui a réellement guidé Karatsuba dans sa découverte.
 }
-en considérant le polynôme $P(X) = (a \cdot X + b) \, (A \cdot X + B)$ et posons $P(X) = c_2 \cdot X^2 + c_1 \cdot X + c_0$ . Projetons-nous alors un peu plus loin pour avancer...
+en considérant le polynôme $P(X) = (a \cdot X + b) \, (A \cdot X + B)$.
+Posons alors $P(X) = c_2 \cdot X^2 + c_1 \cdot X + c_0$ et projetons-nous un peu plus loin pour avancer...
 
 \begin{enumerate}
 	\item $c_0 = P(0)$ c'est à dire $c_0 = b \cdot B$ .
@@ -105,6 +106,7 @@ en considérant le polynôme $P(X) = (a \cdot X + b) \, (A \cdot X + B)$ et poso
 	 = %
 	 c_2 \cdot 10^n + c_1 \cdot 10^{n/2} + c_0$ .
 	Joli ! Non ?
+	C'est cela la méthode proposée par Karatsuba, une méthode que nous venons de présenter via un simple problème d'interpolation polynomiale.
 \end{enumerate}
 
 
@@ -128,5 +130,5 @@ en considérant le polynôme $P(X) = (a \cdot X + b) \, (A \cdot X + B)$ et poso
 	
 	\smallskip
 	
-	On pourrait vouloir passer via $P(k)$ où $k \in \ZZ$. Ceci semble a priori peu prometteur car on obtient alors $c_1 = c_2 \, k^2 + c_0 - (a + k \, b) \, (A + k \, B)$ et inutile pour nous car là nous devons faire plus de produits que les deux méthodes ci-dessus.
+	On pourrait vouloir passer via $P(k)$ où $k \in \ZZ$. Ceci semble a priori peu prometteur car on obtient alors $c_1 = c_2 \, k^2 + c_0 - (a \, k + b) \, (A \, k + B)$ et inutile pour nous car là nous devons faire plus de produits que les deux méthodes ci-dessus.
 \end{remark}
