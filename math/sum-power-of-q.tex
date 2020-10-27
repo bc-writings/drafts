@@ -1,4 +1,4 @@
-\documentclass[12pt]{amsart}
+\documentclass[12pt]{amsbook}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -29,13 +29,18 @@
 
 \newcommand\squote[1]{\og #1 \fg{}}
 
+\newcommand\myabrev[1]{\textbf{\emph{#1}}}
+
 
 \begin{document}
 
-\title{BROUILLON - Courbes polynomiales similaires \\ MANQUE DES DESSINS !}
+\title{BROUILLON - Sommer des puissances de différentes façons \\ MANQUE DES DESSINS !}
 \author{Christophe BAL}
-\date{2 Octobre 2020}
+\date{27 Octobre 2020}
 \maketitle
+
+
+% ------------- %
 
 
 \begin{center}
@@ -51,36 +56,60 @@
 \end{center}
 
 
+\bigskip
 
-\setcounter{tocdepth}{2}
+
+\begin{tcolorbox}
+	\small\itshape
+	Ce document va s'intéresser à différents moyens de trouver les formules de sommation de puissances successives en commençant par le cas très particulier des puissances de $2$ pour passer ensuite au cas général.
+	Certaines méthodes générales ont été découvertes par l'auteur, mais pour ce qui est du cas particulier des puissances de $2$, ce sont soit des résultats classiques, soit des propositions trouvées sur le web.
+	
+	\medskip
+	
+	Chaque section a été rédigée pour être lue indépendamment des autres quitte à répéter certains calculs ou raisonnements que l'on trouve ailleurs dans le document.
+	
+	\medskip
+	
+	\begin{center}
+		\textbf{Abréviations utilisées pour les titres des sections} 
+	\end{center}
+	\begin{itemize}[label=\small\textbullet]
+		\item \myabrev{ALG :} méthode ALG-ébrique
+	\end{itemize}
+\end{tcolorbox}
+
+
+% ------------- %
+
+
+\setcounter{tocdepth}{1}
 \tableofcontents
 
 
 % ------------- %
 
 
-\newpage
-\section{Où allons-nous ?}
+\chapter{Sommer les puissances de $2$}
 
-\input{similar-poly-curve/question}
-
-
-% ------------- %
-
-
-\section{Cas des polynômes de degré 3} 
-
-\input{similar-poly-curve/poly-deg-3}
+\input{sum-power-of-q/power-2}
 
 
 % ------------- %
+%
+%
+%\chapter{Sommer les puissances de $q$}
+%
+%\input{sum-power-of-q/power-q}
 
 
-%\section{Cas des polynômes de degré au moins 4} 
 
-%\input{similar-poly-curve/poly-deg-more-than-3}
 
-\newpage
+
+
+
+
+
+\bigskip
 
 \hrule
 
