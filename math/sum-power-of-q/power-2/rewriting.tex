@@ -48,7 +48,7 @@ Montrons par exemple comment trouver une formule explicite de la somme
 \footnote{
 	La lettre $G$ faire référence à Gauss à qui l'on attribue une méthode très astucieuse pour calculer cette somme en la réordonnant.
 }
-suivante $G_n \eqdef \dsum_{k = 0}^{n} k$ où nous laissons de nouveau de côté le cas trivial où $n = 0$.
+$G_n \eqdef \dsum_{k = 0}^{n} k$ où nous laissons de nouveau de côté le cas trivial où $n = 0$.
 L'idée est de réécrire $C_n \eqdef \dsum_{k = 0}^{n} k^2$ et non $G_n$ car nous allons voir que la réécriture va éliminer les carrés
 \footnote{
 	Ce principe d'élimination se repère vite si l'on raisonne directement en réécrivant la somme cherchée $G_n$.
@@ -62,10 +62,6 @@ L'idée est de réécrire $C_n \eqdef \dsum_{k = 0}^{n} k^2$ et non $G_n$ car no
 	C_n = 0 + \dsum_{k = 1}^{n} k^2
 		\explnext{\footnotesize $k = i+1 \iff i = k-1$}
 	C_n = \dsum_{i = 0}^{n-1} (i + 1)^2
-\end{explain}
-
-\begin{explain}[style = sar, ope = \iff]
-	C_n \eqdef  \dsum_{k = 0}^{n} k^2
 		\explnext{}
 	C_n = \dsum_{i = 0}^{n-1} (i^2 + 2 i + 1)
 		\explnext{}
@@ -76,6 +72,11 @@ L'idée est de réécrire $C_n \eqdef \dsum_{k = 0}^{n} k^2$ et non $G_n$ car no
 	C_{n-1} + n^2 = C_{n-1} + 2 G_{n-1} + n
 		\explnext{}
 	n^2 = 2 G_{n-1} + n
+\end{explain}
+
+
+\begin{explain}[style = sar, ope = \iff]
+	C_n \eqdef  \dsum_{k = 0}^{n} k^2
 		\explnext{}
 	n^2 - n = 2 G_{n-1}
 		\explnext{}
@@ -95,7 +96,7 @@ On peut continuer de façon analogue pour obtenir une formule explicite de $C_n$
 	En fait il existe une formulation générale faisant intervenir les nombres de Bernoulli qui ont de jolies propriétés.
 }...
 Voici la partie importante pour découvrir que 
-$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^2 = \dfrac{n (n + 1) (2n + 1)}{6}$ .
+$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^2 = \dfrac{n (n + 1) (2n + 1)}{6} = \dfrac{n^3}{3} + \dfrac{n^2}{2} + \dfrac{n}{6}$ .
 
 \medskip
 
@@ -126,10 +127,7 @@ $\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^2 = \dfrac{n (n + 1) (2n + 1)}{6}$ .
 
 
 Finissons en montrant que
-$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^3 = \dfrac{n^2 (n + 1)^2}{4} = \left( \, \dsum_{k = 0}^{n} k \, \right)^2$ . Que c'est joli
-\footnote{
-	Il existe une jolie preuve visuelle de ce résultat mais nous n'en parlerons pas dans ce document.
-} !
+$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^3 = \dfrac{n^2 (n + 1)^2}{4} = \left( \, \dsum_{k = 0}^{n} k \, \right)^2$ . Que c'est joli !
 Notez que les calculs se compliquent vite et rendent la preuve très inélégante.
 
 \medskip
@@ -143,14 +141,16 @@ Notez que les calculs se compliquent vite et rendent la preuve très inélégant
 		\explnext{}
 	4 D_{n-1} = n^4 - n (n - 1) (2n - 1) - 2n(n - 1) - n
 		\explnext{}
-	4 D_{n-1} = n (\textcolor{blue}{n^3} - (n - 1) (2n - 1) - 2(n - 1) - \textcolor{blue}{1})
-		\explnext*{\footnotesize $n^3 - 1 = (n - 1)(n^2 + n + 1)$}{}
-	4 D_{n-1} = n (n - 1) (\textcolor{blue}{n^2 + n + 1} - (2n - 1) - 2)
-\end{explain}
-
-
-\begin{explain}[style = sar, ope = \iff]
-	E_n \eqdef  \dsum_{k = 0}^{n} k^4
+	4 D_{n-1} = n \cdot \big[ \, \textcolor{blue}{n^3} - (n - 1) (2n - 1) - 2(n - 1) - \textcolor{blue}{1} \, \big]
+		\explnext*{%
+			\tiny%
+			\begin{explain}[style = ar]
+				n^3 - 1
+					\explnext{}	
+				(n - 1)(n^2 + n + 1)
+			\end{explain}%
+		}{}
+	4 D_{n-1} = n (n - 1) \cdot \big[ \, \textcolor{blue}{n^2 + n + 1} - (2n - 1) - 2 \, \big]
 		\explnext{}
 	4 D_{n-1} = n (n - 1) (n^2 - n)
 		\explnext{}

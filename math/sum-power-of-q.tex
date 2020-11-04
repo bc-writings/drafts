@@ -31,16 +31,75 @@
 
 \newcommand\myabrev[1]{\textbf{\emph{#1}}}
 
+% Source: https://tex.stackexchange.com/a/568582/6880
+\let\olditem\item
+\newlist{methods}{itemize}{1}
+\setlist[methods]{%
+    align=right,
+    before=\changeitem,
+    font=\bfseries,
+    after=\let\item\olditem,
+    leftmargin=2.35cm
+}
+\newcommand*{\changeitem}{%
+    \renewcommand*{\item}[1][]{%
+        \olditem[##1 \emph{:}]
+    }%
+}
+
+\newcommand\methodo[2]{méthode de type \uppercase{#1}-#2}
+
 
 \begin{document}
 
-\title{BROUILLON - Sommer des puissances de différentes façons \\ MANQUE DES DESSINS !}
+\title{BROUILLON - Sommer des puissances de différentes façons \\{\small(27/10/2020 -- 29/10/2020)} \\ MANQUE DES DESSINS !}
+
 \author{Christophe BAL}
-\date{27 Octobre 2020}
+
 \maketitle
 
 
 % ------------- %
+
+\begin{tcolorbox}
+	\small\itshape
+	Ce document s'intéresse à différents moyens de trouver les formules de sommation de puissances successives d'un réel $q \neq 1$ .
+	Nous commencerons par étudier les cas très particuliers des puis\-sances de $q = 2$ et de celles de $q = \dfrac12$ pour passer ensuite au cas général.
+	
+	\medskip
+	
+	Chaque section a été rédigée pour être lue indépendamment des autres même si cela implique de répéter certains calculs ou raisonnements que l'on trouve ailleurs dans le document.
+	
+	\bigskip
+	
+	\begin{center}
+		\textbf{Abréviations utilisées pour les titres des sections} 
+	\end{center}
+	
+	\smallskip
+	
+	\begin{methods}
+		\item[ALG]
+		      \methodo{alg}{ébrique}
+
+		\item[ARI]
+		      \methodo{ari}{thmétique}
+
+		\item[EXP]
+		      \methodo{exp}{érimental}
+
+		\item[GÉO]
+		      \methodo{géo}{métrique}
+
+		\item[INFO]
+		      \methodo{info}{rmatique}
+	\end{methods}
+\end{tcolorbox}
+
+
+\bigskip
+\bigskip
+\bigskip
 
 
 \begin{center}
@@ -54,29 +113,6 @@
 	\doclicenseThis
 	\hrule
 \end{center}
-
-
-\bigskip
-
-
-\begin{tcolorbox}
-	\small\itshape
-	Ce document va s'intéresser à différents moyens de trouver les formules de sommation de puissances successives en commençant par le cas très particulier des puissances de $2$ pour passer ensuite au cas général.
-	Certaines méthodes générales ont été découvertes par l'auteur, mais pour ce qui est du cas particulier des puissances de $2$, ce sont soit des résultats classiques, soit des propositions trouvées sur le web.
-	
-	\medskip
-	
-	Chaque section a été rédigée pour être lue indépendamment des autres quitte à répéter certains calculs ou raisonnements que l'on trouve ailleurs dans le document.
-	
-	\medskip
-	
-	\begin{center}
-		\textbf{Abréviations utilisées pour les titres des sections} 
-	\end{center}
-	\begin{itemize}[label=\small\textbullet]
-		\item \myabrev{ALG :} méthode ALG-ébrique
-	\end{itemize}
-\end{tcolorbox}
 
 
 % ------------- %

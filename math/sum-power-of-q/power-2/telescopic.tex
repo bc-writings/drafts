@@ -10,18 +10,20 @@ Ceci nous conduit aux calculs suivants.
 
 \medskip
 
-\begin{explain}[style = sar, ope = \iff]
-	S_n \eqdef \dsum_{k = 0}^{n} 2^k
+\begin{explain}[style = sar]
+	S_n 
+		\explnext[\eqdef]{}
+	\dsum_{k = 0}^{n} 2^k
 		\explnext{}
-	S_n = \dsum_{k = 0}^{n} (2^{k+1} - 2^k)
+	\dsum_{k = 0}^{n} (2^{k+1} - 2^k)
 		\explnext{}
-	S_n = \dsum_{k = 0}^{n} 2^{k+1} - \dsum_{k = 0}^{n} 2^k
+	\dsum_{k = 0}^{n} 2^{k+1} - \dsum_{k = 0}^{n} 2^k
 		\explnext{\footnotesize $i = k+1 \iff k = i-1$}
-	S_n = \dsum_{i = 1}^{n+1} 2^{i} - \dsum_{k = 0}^{n} 2^k
+	\dsum_{i = 1}^{n+1} 2^{i} - \dsum_{k = 0}^{n} 2^k
 		\explnext*{\footnotesize On fait apparaître des sommes identiques.}{}
-	S_n = \dsum_{i = 1}^{n} 2^{i} + 2^{n+1} - 2^0 - \dsum_{k = 1}^{n} 2^k
+	\dsum_{i = 1}^{n} 2^{i} + 2^{n+1} - 2^0 - \dsum_{k = 1}^{n} 2^k
 		\explnext{}
-	S_n = 2^{n+1} - 1
+	2^{n+1} - 1
 \end{explain}
 
 
@@ -41,7 +43,7 @@ sont un grand classique : on parle de \og sommes télescopiques \fg{}
 	Cette technique permet par exemple de ramener l'étude d'une suite à celle d'une série.
 	Or il se trouve que l'on dispose d'outils très pratiques pour étudier les séries.
 }.
-Cette astuce se généralise sans souci aux puissances de $q$ comme nous le verrons dans la section \ref{power-q:telescopic} page \pageref{power-q:telescopic}.
+L'usage de cette astuce fonctionne sans souci avec les puissances de $q$ comme nous le verrons dans la section \ref{power-q:telescopic} page \pageref{power-q:telescopic}.
 Bien qu'élégants du point de vue algébrique, les calculs ci-dessus ne donnent aucune information sur la signification de la formule trouvée.
 
 
@@ -78,7 +80,7 @@ Montrons par exemple comment trouver une formule explicite de la somme
 \footnote{
 	La lettre $G$ faire référence à Gauss à qui l'on attribue une méthode très astucieuse pour calculer cette somme en la réordonnant.
 }
-suivante $G_n \eqdef \dsum_{k = 0}^{n} k$.
+$G_n \eqdef \dsum_{k = 0}^{n} k$.
 L'idée astucieuse consiste à noter que $(k+1)^2 - k^2 = 2 k + 1$ puis à procéder comme suit.
 
 \medskip
@@ -88,13 +90,13 @@ L'idée astucieuse consiste à noter que $(k+1)^2 - k^2 = 2 k + 1$ puis à proc�
 		\explnext{}
 	\dsum_{k = 0}^{n} 2 k
 		\explnext{}
-	\dsum_{k = 0}^{n} ((k+1)^2 - k^2 - 1)
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^2 - k^2 - 1 \, \big]
 		\explnext{}
-	\dsum_{k = 0}^{n} ((k+1)^2 - k^2) - \dsum_{k = 0}^{n} 1
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^2 - k^2 \, \big] - \dsum_{k = 0}^{n} 1
 		\explnext{\footnotesize Usage de sommes télescopiques.}
 	(n + 1)^2 - 0^2 - (n+1)
 		\explnext{}
-	(n + 1)((n + 1) - 1)
+	(n + 1) \cdot \big[ \, (n + 1) - 1 \, \big]
 		\explnext{}
 	n (n + 1)
 \end{explain}
@@ -103,9 +105,11 @@ L'idée astucieuse consiste à noter que $(k+1)^2 - k^2 = 2 k + 1$ puis à proc�
 
 Donc
 $\forall n \in \NN$ , $\dsum_{k = 0}^{n} k = \dfrac{n(n + 1)}{2}$ .
-La preuve précédente est relativement élégante : vous pourrez comparer avec celle proposée dans la section \ref{power-2:rewriting} page \pageref{power-2:rewriting}.
-Continuons pour obtenir une formule explicite de
-$C_n \eqdef \dsum_{k = 0}^{n} k^2$
+La preuve précédente, bien que calculatoire, est relativement élégante
+\footnote{
+	Vous pourrez comparer avec celle proposée dans la section \ref{power-2:rewriting} page \pageref{power-2:rewriting}.
+}.
+Continuons avec $C_n \eqdef \dsum_{k = 0}^{n} k^2$
 via $(k+1)^3 - k^3 = 3 k^2 + 3 k + 1$
 et la formule précédente.
 
@@ -116,17 +120,17 @@ et la formule précédente.
 		\explnext{}
 	\dsum_{k = 0}^{n} 3 k^2
 		\explnext{}
-	\dsum_{k = 0}^{n} ((k+1)^3 - k^3 - 3 k - 1)
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^3 - k^3 - 3 k - 1 \, \big]
 		\explnext{}
-	\dsum_{k = 0}^{n} ((k+1)^2 - k^2) - 3 \dsum_{k = 0}^{n} k - \dsum_{k = 0}^{n} 1
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^3 - k^3 \, \big] - 3 \dsum_{k = 0}^{n} k - \dsum_{k = 0}^{n} 1
 		\explnext{\footnotesize Usage de sommes télescopiques.}
 	(n + 1)^3 - 0^3 - 3 \cdot \dfrac{n(n + 1)}{2} - (n+1)
+%		\explnext{}
+%	\dfrac{1}{2} \big[ \, 2 (n + 1)^3 - 3n (n + 1) - 2(n+1) \, \big]
 		\explnext{}
-	\dfrac{1}{2} \left[ \, 2 (n + 1)^3 - 3n (n + 1) - 2(n+1) \, \right]
+	\dfrac{(n+1)}{2} \cdot \big[ \, 2 (n + 1)^2 - 3n - 2 \, \big]
 		\explnext{}
-	\dfrac{(n+1)}{2} \cdot (2 (n + 1)^2 - 3n - 2)
-		\explnext{}
-	\dfrac{(n+1)}{2} \cdot (2 (n^2 + 2 n + 1) - 3n - 2)
+	\dfrac{(n+1)}{2} \cdot \big[ \, 2 (n^2 + 2 n + 1) - 3n - 2 \, \big]
 		\explnext{}
 	\dfrac{(n+1)(2 n^2 + n)}{2}
 		\explnext{}
@@ -137,16 +141,13 @@ et la formule précédente.
 \medskip
 
 Donc
-$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^2 = \dfrac{n(n + 1)(2n + 1)}{6}$ .
+$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^2 = \dfrac{n(n + 1)(2n + 1)}{6} = \dfrac{n^3}{3} + \dfrac{n^2}{2} + \dfrac{n}{6}$ .
 
 
 \medskip
 
 Finissons en montrant que
-$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^3 = \dfrac{n^2 (n + 1)^2}{4} = \left( \, \dsum_{k = 0}^{n} k \, \right)^2$ . Un très joli résultat
-\footnote{
-	Une excellente preuve visuelle de ce résultat existe mais ceci est une autre histoire...
-} !
+$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^3 = \dfrac{n^2 (n + 1)^2}{4} = \left( \, \dsum_{k = 0}^{n} k \, \right)^2$ . Un très joli résultat !
 Nous allons utiliser de $(k+1)^4 - k^4 = 4 k^3 + 6 k^2 + 4 k + 1$.
 Notez que les calculs se compliquent vite et rendent la preuve de moins en moins élégante
 \footnote{
@@ -156,25 +157,21 @@ Notez que les calculs se compliquent vite et rendent la preuve de moins en moins
 \medskip
 
 \begin{explain}[style = sar]
-	4 \dsum_{k = 0}^{n} k^4
+	4 \dsum_{k = 0}^{n} k^3
 		\explnext{}
-	\dsum_{k = 0}^{n} ((k+1)^4 - k^4 - 6 k^2 - 4 k - 1)
-\end{explain}
-
-\begin{explain}[style = sar]
-	4 \dsum_{k = 0}^{n} k^4
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^4 - k^4 - 6 k^2 - 4 k - 1 \, \big]
 		\explnext{}
-	\dsum_{k = 0}^{n} ((k+1)^4 - k^4) - 6 \dsum_{k = 0}^{n} k^2 - 4 \dsum_{k = 0}^{n} k - \dsum_{k = 0}^{n} 1
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^4 - k^4 \, \big] - 6 \dsum_{k = 0}^{n} k^2 - 4 \dsum_{k = 0}^{n} k - \dsum_{k = 0}^{n} 1
 		\explnext{}
-	(n+1)^4 - 0^4 - 6 \cdot \dfrac{n(n + 1)(2n + 1)}{6} + 4 \cdot \dfrac{n(n + 1)}{2} - (n+1)
+	(n+1)^4 - 0^4 - 6 \cdot \dfrac{n(n + 1)(2n + 1)}{6} - 4 \cdot \dfrac{n(n + 1)}{2} - (n+1)
 		\explnext{}
-	(n+1) \, ((n+1)^3 - n(2n + 1) - 2n - 1)
+	(n+1) \cdot \big[ \, (n+1)^3 - n(2n + 1) - 2n - 1 \, \big]
 		\explnext{}
-	(n+1) \, ((n+1)^3 - 2n^2 - 3n - 1)
+	(n+1) \cdot \big[ \, (n+1)^3 - 2n^2 - 3n - 1 \, \big]
 		\explnext*{\footnotesize $(-1)$ est une racine évidente de $2 X^2 + 3X + 1$.}{}
-	(n+1) \, ((n+1)^3 - (n+1)(2n + 1))
+	(n+1) \cdot \big[ \, (n+1)^3 - (n+1)(2n + 1) \, \big]
 		\explnext{}
-	(n+1)^2 \, ((n+1)^2 - 2n - 1)
+	(n+1)^2 \cdot \big[ \, (n+1)^2 - 2n - 1 \, \big]
 		\explnext{}
 	n^2 (n+1)^2
 \end{explain}
