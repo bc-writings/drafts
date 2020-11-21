@@ -38,6 +38,7 @@
 \usepackage{chemist}
 
 
+
 \setlength\parindent{0pt}
 
 
@@ -65,12 +66,14 @@
 \newcommand\deltaval[3]{%
 	\Delta{#1}^{\,#2}_{\,#3}%
 }
-	 
+
+
+ 
 \begin{document}
 
 \title{BROUILLON - CANDIDAT - Nombre de sous-ensembles d'un ensemble fini\\Une preuve très élémentaire.}
 \author{Christophe BAL}
-\date{19 Octobre 2020 -- 27 Octobre 2020}
+\date{19 Octobre 2020 -- 19 Novembre 2020}
 
 
 \maketitle
@@ -120,28 +123,34 @@ qu'un ensemble $\setgeo{E}$ de $n$ éléments permet de fabriquer $2^n$ sous-ens
 
 
 	\medskip
-	\item Soit $\setgeo{E} = \setgene{\spadesuit_1 ; \spadesuit_2}$ un ensemble avec deux éléments.
+	\item Soit $\setgeo{E} = \setgene{\spadesuit ; \diamondsuit}$ un ensemble avec deux éléments.
 	      Cet ensemble contient les $4 = 2^2$ sous-ensembles
-	      $\emptyset$ , $\setgene{\spadesuit_1}$ ,
-	      $\setgene{\spadesuit_2}$ et $\setgene{\spadesuit_1 ; \spadesuit_2}$.
+	      $\emptyset$ , $\setgene{\spadesuit}$ ,
+	      $\setgene{\diamondsuit}$ et $\setgene{\spadesuit ; \diamondsuit}$.
 	
 	      \noindent
 	      Le point clé est de noter que
-	      $\setgene{\spadesuit_2} = \emptyset \cup \setgene{\spadesuit_2}$ et
-	      $\setgene{\spadesuit_1 ; \spadesuit_2} = \setgene{\spadesuit_1} \cup \setgene{\spadesuit_2}$.
+	      $\setgene{\spadesuit} = \emptyset \cup \setgene{\diamondsuit}$ et
+	      $\setgene{\spadesuit ; \diamondsuit} = \setgene{\spadesuit} \cup \setgene{\diamondsuit}$.
 
 	\medskip
-	\item Soit maintenant $\setgeo{E} = \setgene{\spadesuit_1 ; \dots ; \spadesuit_{n+1}}$ un ensemble avec $(n+1)$ éléments.
+	\item Soit maintenant $\setgeo{E} = \setgene{\spadesuit_1 ; \dots ; \spadesuit_n ; \diamondsuit}$ un ensemble avec $(n+1)$ éléments.
 		  Les sous-ensembles de $\setgeo{E}$ se classent en deux catégories.
 		  
 		  \begin{enumerate}
 		  		\smallskip
-				\item \textbf{Catégorie 1 :} les sous-ensembles ne contenant pas $\spadesuit_{n+1}$.
+				\item \textbf{Catégorie 1 :} les sous-ensembles ne contenant pas $\diamondsuit$.
+				      
+				      \smallskip
+				      
 				      Il y en a autant que de sous-ensembles de $\setgeo{F} = \setgene{\spadesuit_1 ; \dots ; \spadesuit_{n}}$.
 		  		
 				\smallskip
-				\item \textbf{Catégorie 2 :} les sous-ensembles contenant $\spadesuit_{n+1}$.
-				      De tels sous-ensembles s'obtiennent à partir de sous-ensembles de $\setgeo{F}$ en leur adjoignant $\spadesuit_{n+1}$.
+				\item \textbf{Catégorie 2 :} les sous-ensembles contenant $\diamondsuit$.
+				      
+				      \smallskip
+				      
+				      De tels sous-ensembles s'obtiennent à partir de sous-ensembles de $\setgeo{F}$ en leur adjoignant $\diamondsuit$.
 				      Ceci démontre qu'il y a autant de sous-ensembles de catégorie 2 que de sous-ensembles de $\setgeo{F}$.
 		  \end{enumerate}
 

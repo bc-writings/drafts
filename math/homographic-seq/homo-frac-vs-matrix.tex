@@ -1,0 +1,73 @@
+Soit
+$F(X) = \dfrac{a X + b}{c X + d}$
+et
+$G(X) = \dfrac{p X + q}{r X + s}$
+non constantes c'est à dire telles que
+$ad - bc \neq 0$
+et
+$ps - rq \neq 0$ .
+
+
+Il est immédiat qu'il existe des paramètres $\alpha$, $\beta$, $\gamma$ et $\delta$ tels que
+$F \compo G(X) = \dfrac{\alpha X + \beta}{\gamma X + \delta}$ .
+Existe-t-il un moyen simple de calculer les paramètres de $F \compo G$ en fonction de ceux de $F$ et $G$ ?
+
+
+\bigskip
+
+
+\begin{explain}[style = sar]
+	F \compo G(X) \,
+		\explnext{}
+	\dfrac{a(p X + q) + b(r X + s)}{c(p X + q) + d(r X + s)}
+		\explnext{}
+	\dfrac{(a p + b r) X + a q + bD}{(c p + d r) X + c q + d s}
+\end{explain}
+
+
+\medskip
+
+
+En associant
+$\begin{pmatrix}
+    a & b \\
+    c & d
+\end{pmatrix}$ à $F(X)$ ,
+$\begin{pmatrix}
+    p & q \\
+    r & s
+\end{pmatrix}$ à $G(X)$
+et
+$\begin{pmatrix}
+    \alpha & \beta  \\
+    \gamma & \delta
+\end{pmatrix}$ à $F \compo G(X)$ ,
+nous venons de démontrer que
+$\begin{pmatrix}
+    \alpha & \beta  \\
+    \gamma & \delta
+\end{pmatrix}
+=
+\begin{pmatrix}
+    a & b \\
+    c & d
+\end{pmatrix}
+\begin{pmatrix}
+    p & q \\
+    r & s
+\end{pmatrix}$ .
+
+
+\medskip
+
+
+Comme $\forall \lambda \in \CCs$ ,
+$\dfrac{a X + b}{c X + d} = \dfrac{\lambda a X + \lambda b}{\lambda c X + \lambda d}$ , on va considérer l'écriture de $F$ telle que $ad- bc = 1$ et lui associer la matrice
+$M_F \eqdef \begin{pmatrix}
+    a & b \\
+    c & d
+\end{pmatrix}$ .
+Par choix $\det M_F = 1$ , de sorte que l'on a un isomor\-phisme de groupes entre les fonctions homographiques
+$F(X) = \dfrac{a X + b}{c X + d}$ avec $ad- bc = 1$
+et le groupe $SL(2 , \CC)$ des matrices $2 \times 2$ de déterminant $1$ .
+

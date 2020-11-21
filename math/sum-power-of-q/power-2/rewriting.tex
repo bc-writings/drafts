@@ -2,8 +2,7 @@
 
 Les calculs suivants sont très simples à suivre mais malheureusement peu éclairants d'un point de vue conceptuel. Le cas où $n = 0$ étant évident, on suppose par la suite que $n \in \NNs$.
 
-\medskip
-
+\begin{focusproof}
 \begin{explain}[style = sar, ope = \iff]
 	S_n \eqdef \dsum_{k = 0}^{n} 2^k
 		\explnext{}
@@ -22,11 +21,12 @@ Les calculs suivants sont très simples à suivre mais malheureusement peu écla
 	S_{n-1} = 2^n - 1
 \end{explain}
 
-\bigskip
+\medskip
 
 Donc $S_0 = 1$ et $\forall n \in \NNs$ , $S_{n-1} = 2^n - 1$ .
-Ceci peut se réécrire :
+Ceci se réécrit :
 $\forall n \in \NN$ , $S_n = 2^{n+1} - 1$ .
+\end{focusproof}
 
 
 % ------------- %
