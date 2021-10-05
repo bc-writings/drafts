@@ -3,8 +3,8 @@
 Les calculs suivants sont très simples à suivre mais malheureusement peu éclairants d'un point de vue conceptuel. Le cas où $n = 0$ étant évident, on suppose par la suite que $n \in \NNs$.
 
 \begin{focusproof}
-\begin{explain}[style = sar, ope = \iff]
-	S_n \eqdef \dsum_{k = 0}^{n} 2^k
+\begin{stepcalc}[style = sar, ope = \iff]
+	S_n \eq[def] \dsum_{k = 0}^{n} 2^k
 		\explnext{}
 	S_n = 1 + \dsum_{k = 1}^{n} 2^k
 		\explnext{\footnotesize $k = i+1 \iff i = k-1$}
@@ -19,7 +19,7 @@ Les calculs suivants sont très simples à suivre mais malheureusement peu écla
 	2^n - 1 = S_{n-1}
 		\explnext{}
 	S_{n-1} = 2^n - 1
-\end{explain}
+\end{stepcalc}
 
 \medskip
 
@@ -48,16 +48,16 @@ Montrons par exemple comment trouver une formule explicite de la somme
 \footnote{
 	La lettre $G$ faire référence à Gauss à qui l'on attribue une méthode très astucieuse pour calculer cette somme en la réordonnant.
 }
-$G_n \eqdef \dsum_{k = 0}^{n} k$ où nous laissons de nouveau de côté le cas trivial où $n = 0$.
-L'idée est de réécrire $C_n \eqdef \dsum_{k = 0}^{n} k^2$ et non $G_n$ car nous allons voir que la réécriture va éliminer les carrés
+$G_n \eq[def] \dsum_{k = 0}^{n} k$ où nous laissons de nouveau de côté le cas trivial où $n = 0$.
+L'idée est de réécrire $C_n \eq[def] \dsum_{k = 0}^{n} k^2$ et non $G_n$ car nous allons voir que la réécriture va éliminer les carrés
 \footnote{
 	Ce principe d'élimination se repère vite si l'on raisonne directement en réécrivant la somme cherchée $G_n$.
 }.
 
 \medskip
 
-\begin{explain}[style = sar, ope = \iff]
-	C_n \eqdef  \dsum_{k = 0}^{n} k^2
+\begin{stepcalc}[style = sar, ope = \iff]
+	C_n \eq[def]  \dsum_{k = 0}^{n} k^2
 		\explnext{}
 	C_n = 0 + \dsum_{k = 1}^{n} k^2
 		\explnext{\footnotesize $k = i+1 \iff i = k-1$}
@@ -72,16 +72,16 @@ L'idée est de réécrire $C_n \eqdef \dsum_{k = 0}^{n} k^2$ et non $G_n$ car no
 	C_{n-1} + n^2 = C_{n-1} + 2 G_{n-1} + n
 		\explnext{}
 	n^2 = 2 G_{n-1} + n
-\end{explain}
+\end{stepcalc}
 
 
-\begin{explain}[style = sar, ope = \iff]
-	C_n \eqdef  \dsum_{k = 0}^{n} k^2
+\begin{stepcalc}[style = sar, ope = \iff]
+	C_n \eq[def]  \dsum_{k = 0}^{n} k^2
 		\explnext{}
 	n^2 - n = 2 G_{n-1}
 		\explnext{}
 	G_{n-1} = \dfrac{n(n - 1)}{2}
-\end{explain}
+\end{stepcalc}
 
 \bigskip
 
@@ -100,8 +100,8 @@ $\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^2 = \dfrac{n (n + 1) (2n + 1)}{6} = \
 
 \medskip
 
-\begin{explain}[style = sar, ope = \iff]
-	D_n \eqdef  \dsum_{k = 0}^{n} k^3
+\begin{stepcalc}[style = sar, ope = \iff]
+	D_n \eq[def]  \dsum_{k = 0}^{n} k^3
 		\explnext{}
 	D_n = \dsum_{i = 0}^{n-1} (i + 1)^3
 		\explnext{}
@@ -120,7 +120,7 @@ $\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^2 = \dfrac{n (n + 1) (2n + 1)}{6} = \
 	6 C_{n-1} = n (n - 1) (2n - 1)
 %		\explnext{}
 %	C_{n-1} = \dfrac{n (n - 1) (2n - 1)}{6}
-\end{explain}
+\end{stepcalc}
 
 
 \medskip
@@ -132,8 +132,8 @@ Notez que les calculs se compliquent vite et rendent la preuve très inélégant
 
 \medskip
 
-\begin{explain}[style = sar, ope = \iff]
-	E_n \eqdef  \dsum_{k = 0}^{n} k^4
+\begin{stepcalc}[style = sar, ope = \iff]
+	E_n \eq[def]  \dsum_{k = 0}^{n} k^4
 		\explnext{}
 	E_n = \dsum_{i = 0}^{n-1} (i^4 + 4 i^3 + 6 i^2 + 4 i + 1)
 		\explnext{}
@@ -144,17 +144,17 @@ Notez que les calculs se compliquent vite et rendent la preuve très inélégant
 	4 D_{n-1} = n \cdot \big[ \, \textcolor{blue}{n^3} - (n - 1) (2n - 1) - 2(n - 1) - \textcolor{blue}{1} \, \big]
 		\explnext*{%
 			\tiny%
-			\begin{explain}[style = ar]
+			\begin{stepcalc}[style = ar]
 				n^3 - 1
 					\explnext{}	
 				(n - 1)(n^2 + n + 1)
-			\end{explain}%
+			\end{stepcalc}%
 		}{}
 	4 D_{n-1} = n (n - 1) \cdot \big[ \, \textcolor{blue}{n^2 + n + 1} - (2n - 1) - 2 \, \big]
 		\explnext{}
 	4 D_{n-1} = n (n - 1) (n^2 - n)
 		\explnext{}
 	4 D_{n-1} = n^2 (n - 1)^2
-\end{explain}
+\end{stepcalc}
 
 

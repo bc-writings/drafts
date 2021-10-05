@@ -1,0 +1,247 @@
+Rien ne nous assure a priori de découvrir un moyen simple de développer $(a + b)^n$ mais soyons confiant et tentons l'aventure en nous appuyant sur notre notation simplifiée. Nous verrons alors si de nouveau les mathématiques nous révèleront une belle structure cachée.
+
+\medskip
+
+Considérons le cas de $(a + b)^3 = (\redit{a} + \blueit{b}) (a + b)^2 = \redit{a (a + b)^2} + \blueit{b (a + b)^2}$ . Avec notre notation, $(a + b)^2 = a^2 + 2 a b + b^2$ s'écrit :
+
+\medskip
+\begin{center}
+\begin{tabular}{|l*{3}{|c}|}
+	\hline
+	$2 \rightarrow$
+		& $1$    &  $2$    &  $1$
+	\\ \hline
+		& $a^2$  &  $a b$  &  $b^2$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Tableau pour $n = 2$
+\end{center}
+
+\medskip
+
+Nous voulons en déduire :
+
+\medskip
+\begin{center}
+\begin{tabular}{|l*{4}{|c}|}
+	\hline
+	$3 \rightarrow$
+		& ?      &  ?        &  ?        &  ?
+	\\ \hline
+		& $a^3$  &  $a^2 b$  &  $a b^2$  &  $b^3$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Tableau pour $n = 3$
+\end{center}
+
+
+\medskip
+
+Le tableau pour $n = 2$ donne par multiplication de chaque terme par $a$ :
+
+\medskip
+\begin{center}
+\begin{tabular}{*{3}{|c}|}
+	\hline
+		$1$    &  $2$      &  $1$
+	\\ \hline
+		$a^3$  &  $a^2 b$  &  $a b^2$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Distribution de $a$ sur $(a + b)^2$
+\end{center}
+
+
+\medskip
+
+La multiplication de chaque terme par $b$ donne de façon analogue :
+
+\medskip
+\begin{center}
+\begin{tabular}{*{3}{|c}|}
+	\hline
+		$1$      &  $2$      &  $1$
+	\\ \hline
+		$a^2 b$  &  $a b^2$  &  $b^3$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Distribution de $b$ sur $(a + b)^2$
+\end{center}
+
+
+\medskip
+
+Mis dans le tableau pour $n = 3$ , nous avons ce qui suit où les deux dernières lignes redonnent $(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3$ .
+
+\medskip
+\begin{center}
+\begin{tabular}{*{4}{|c}|}
+	\hline
+		$1$    &  $2$      &  $1$      &
+	\\ \hline
+		$a^3$  &  $a^2 b$  &  $a b^2$  &
+	\\ \hline\hline
+		       &  $1$      &  $2$      &  $1$
+	\\ \hline
+		       &  $a^2 b$  &  $a b^2$  &  $b^3$
+	\\ \hline\hline\hline\hline
+		$1$    &  $3$      &  $3$      &  $1$
+	\\ \hline
+		$a^3$  &  $a^2 b$  &  $a b^2$  &  $b^3$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Tableau pour $n = 3$
+\end{center}
+
+
+\medskip
+
+Faisons un autre pas vers une belle abstraction en notant trois choses.
+
+\begin{enumerate}
+	\item La multiplication par $a$ revient à garder la ligne résumé du développement de $(a + b)^2$ .
+
+	\item La multiplication par $b$ revient à décaler d'une case vers la droite la ligne résumé du développement de $(a + b)^2$ .
+
+	\item La ligne résumé du développement de $(a + b)^3$ est la somme des deux lignes précédentes, une case vide valant zéro.
+\end{enumerate}
+
+
+\medskip
+
+En appliquant les règles précédentes, dont il est clair qu'elles sont générales, nous retrouvons le développement $(a + b)^4 = a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4$ à partir du tableau précédent.
+
+\medskip
+\begin{center}
+\begin{tabular}{|l*{5}{|c}|}
+	\hline
+	$\redit{\times a} \rightarrow$	&
+		$1$    &  $3$      &  $3$        &  $1$      &
+	\\ \hline\hline
+	$\blueit{\times b} \rightarrow$	&
+		       &  $1$      &  $3$        &  $3$      &  $1$
+	\\ \hline\hline\hline\hline
+		&
+		$1$    &  $4$      &  $6$        &  $4$      &  $1$
+	\\ \hline
+	    &
+		$a^4$  &  $a^3 b$  &  $a^2 b^2$  &  $a b^2$  &  $b^4$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Développement de $(a + b)^4$
+\end{center}
+
+
+\medskip
+
+Poursuivons avec $(a + b)^5 = a^5 + 5 a^4 b + 10 a^3 b^2 + 10 a^2 b^3 + 5 a b^4 + b^5$ que nous avons admis précédemment.
+
+\medskip
+\begin{center}
+\begin{tabular}{|l*{6}{|c}|}
+	\hline
+	$\redit{\times a} \rightarrow$	&
+		$1$    &  $4$      &  $6$        &  $4$        &  $1$      &
+	\\ \hline\hline
+	$\blueit{\times b} \rightarrow$	&
+		       &  $1$      &  $4$        &  $6$        &  $4$      &  $1$
+	\\ \hline\hline\hline\hline
+		&
+		$1$    &  $5$      &  $10$       &  $10$       &  $5$      &  $1$
+	\\ \hline
+	    &
+		$a^5$  &  $a^4 b$  &  $a^3 b^2$  &  $a^2 b^3$  &  $a b^4$  &  $b^5$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Développement de $(a + b)^5$
+\end{center}
+
+
+\medskip
+
+Nous voilà prêts à découvrir les développements de $(a + b)^6$ et $(a + b)^7$ sans trop nous fatiguer.
+
+
+\medskip
+\begin{center}
+\begin{tabular}{|l*{7}{|c}|}
+	\hline
+	$\redit{\times a} \rightarrow$	&
+		$1$    &  $5$      &  $10$       &  $10$       &  $5$        &  $1$      &
+	\\ \hline\hline
+	$\blueit{\times b} \rightarrow$	&
+		       &  $1$      &  $5$        &  $10$       &  $10$       &  $5$      &  $1$
+	\\ \hline\hline\hline\hline
+		&
+		$1$    &  $6$      &  $15$       &  $20$       &  $15$       &  $6$      &  $1$
+	\\ \hline
+	    &
+		$a^6$  &  $a^5 b$  &  $a^4 b^2$  &  $a^3 b^3$  &  $a^2 b^4$  &  $a b^5$  &  $b^6$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Développement de $(a + b)^6$
+\end{center}
+
+
+\medskip
+\begin{center}
+\begin{tabular}{|l*{8}{|c}|}
+	\hline
+	$\redit{\times a} \rightarrow$	&
+		$1$    &  $6$      &  $15$       &  $20$       &  $15$       &  $6$      &  $1$      &
+	\\ \hline\hline
+	$\blueit{\times b} \rightarrow$	&
+		       &  $1$    &  $6$      &  $15$       &  $20$       &  $15$       &  $6$      &  $1$
+	\\ \hline\hline\hline\hline
+		&
+		$1$    &  $7$      &  $21$       &  $35$       &  $35$       &  $21$       &  $7$      &  $1$
+	\\ \hline
+	    &
+		$a^7$  &  $a^6 b$  &  $a^5 b^2$  &  $a^4 b^3$  &  $a^3 b^4$    &  $a^2 b^5$  &  $a b^6$  &  $b^7$
+	\\ \hline
+\end{tabular}
+
+\smallskip
+\itshape\small
+Développement de $(a + b)^7$
+\end{center}
+
+
+\medskip
+
+Nous avons démontré les deux nouvelles identités remarquables suivantes.
+
+\begin{itemize}[label = \small\textbullet]
+	\item $(a + b)^6 = a^6 + 6 a^5 b + 15 a^4 b^2 + 20 a^3 b^3 + 15 a^2 b^4 + 6 a b^5 + b^6$
+
+	\item $(a + b)^7 = a^7 + 7 a^6 b + 21 a^5 b^2 + 35 a^4 b^3 + 35 a^3 b^4 + 21 a^2 b^5 + 7 a b^6 + b^7$
+\end{itemize}
+
+\medskip
+
+Auriez-vous eu le courage de trouver le dernier développement directement en calculant avec des $a$ et des $b$ ? L'auteur de ces lignes ne l'aura jamais !
+

@@ -1,0 +1,195 @@
+Commençons par nous intéresser aux développements des expressions
+$(a + b)^2$ ,
+$(a + b)^3$ et
+$(a + b)^4$ .
+
+
+% -------------------- %
+
+
+\subsubsection{Développement de $(a + b)^2$}
+
+Rappelons que  $(a + b)^2 = a^2 + 2 a b + b^2$ .
+Ceci se démontre facilement comme suit.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	(a + b)^2
+		\explnext{}
+	(\redit{a} + \blueit{b}) (a + b)
+		\explnext{}
+	\redit{a^2 + a b} + \blueit{b a + b^2}
+		\explnext{}
+	a^2 + 2 a b + b^2
+\end{stepcalc}
+
+
+% -------------------- %
+
+
+\subsubsection{Développement de $(a + b)^3$}
+
+Pour développer $(a + b)^3$ , nous allons bien entendu nous appuyer sur celui de $(a + b)^2$ . Allons-y.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	(a + b)^3
+		\explnext{}
+	(\redit{a} + \blueit{b}) (a + b)^2
+		\explnext{}
+	(\redit{a} + \blueit{b}) (a^2 + 2 a b + b^2)
+		\explnext{}
+	\redit{a^3 +a \cdot 2 a b + a \cdot b^2}
+	+
+	\blueit{b \cdot a^2 + b \cdot 2 a b + b^3}
+		\explnext{}
+	\redit{a^3 + 2 a^2 b + a b^2}
+	+
+	\blueit{b a^2 + 2 a b^2 + b^3}
+		\explnext{}
+	a^3 + 3 a^2 b + 3 a b^2 + b^3
+\end{stepcalc}
+
+\medskip
+
+Sans trop de peine, nous avons obtenu :
+$(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3$ .
+
+
+% -------------------- %
+
+
+\subsubsection{Développement de $(a + b)^4$}
+
+Pour développer $(a + b)^4$ , passons via celui de $(a + b)^3$ . Une routine s'installe...
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	(a + b)^4
+		\explnext{}
+	(\redit{a} + \blueit{b}) (a + b)^3
+		\explnext{}
+	(\redit{a} + \blueit{b}) (a^3 + 3 a^2 b + 3 a b^2 + b^3)
+		\explnext{}
+	\redit{a^4 + a \cdot 3 a^2 b + a \cdot 3 a b^2 + a \cdot b^3}
+	+
+	\blueit{b \cdot a^3 + b \cdot 3 a^2 b + b \cdot 3 a b^2 + b^4}
+		\explnext{}
+	\redit{a^4 + 3 a^3 b + 3 a^2 b^2 + a b^3}
+	+
+	\blueit{b a^3 + 3 a^2 b^2 + 3 a b^3 + b^4}
+		\explnext{}
+	a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4
+\end{stepcalc}
+
+\medskip
+
+Sans trop de peine, nous avons obtenu :
+$(a + b)^4 = a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4$ .
+
+
+% -------------------- %
+
+
+\subsubsection{Aller plus loin}
+
+Au moins en théorie, pour $n \in \NNs$ nous avons exhibé un procédé de développement de $(a + b)^n$ via celui de $(a + b)^{n - 1}$ en utilisant $(a + b)^n = (a + b) (a + b)^{n - 1}$ .
+Ceci étant indiqué, même pour $n = 5$ , nous devinons qu'il va vite être pénible de rédiger à chaque fois les développements.
+Il devient alors naturel de se demander si par hasard il n'y aurait pas un moyen efficace de développer par exemple $(a + b)^7$ . Nous allons voir que c'est bien le cas.
+
+
+% -------------------- %
+
+
+\subsubsection{Une notation efficace}
+
+Retenir les trois identités remarquables suivantes n'est a priori pas simple.
+
+\begin{itemize}[label = \small\textbullet]
+	\item $(a + b)^2 = a^2 + 2 a b + b^2$
+
+	\item $(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3$
+
+	\item $(a + b)^4 = a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4$
+\end{itemize}
+
+Un moyen efficace de le faire est de noter que les écritures standardisées utilisées sont toutes avec des puissances décroissantes de $a$ et croissantes de $b$ .
+Ainsi dans $a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4$ où l'exposant maximal est $4$ nous avons en se souvenant que $x^0 \eq[conv] 1$ par convention :
+
+\medskip
+\begin{center}
+\begin{tabular}{c*{5}{|c}}
+	$a^r$
+		& $a^4$      &  $a^3$      &  $a^2$      &  $a^1 = a$  &  $a^0 = 1$
+	\\ \hline
+	$b^s$ 
+		& $b^0 = 1$  &  $b^1 = b$  &  $b^2$      &  $b^3$      &  $b^4$
+	\\ \hline
+	Produit 
+		& $a^4$      &  $a^3 b$    &  $a^2 b^2$  &  $a b^3$    &  $b^4$
+\end{tabular}
+\end{center}
+
+\medskip
+Avec cette écriture en tête, nous pouvons retenir plus simplement les développement de $(a + b)^n$ pour $n \in \ZintervalC{2}{5}$ comme suit où le cas admis pour $n = 5$ va nous permettre de vérifier la bonne compréhension de la convention utilisée.
+
+\medskip
+\begin{center}
+\begin{tabular}{|l*{6}{|c}|}
+	\hline
+	$n$
+		&      &       &        &        &       &
+	\\ \hline
+	$2 \rightarrow$ 
+		& $1$  &  $2$  &  $1$   &        &       &
+	\\ \hline
+	$3 \rightarrow$ 
+		& $1$  &  $3$  &  $3$   &  $1$   &       &
+	\\ \hline
+	$4 \rightarrow$ 
+		& $1$  &  $4$  &  $6$   &  $4$   &  $1$  &
+	\\ \hline
+	$5 \rightarrow$ 
+		& $1$  &  $5$  &  $10$  &  $10$  &  $5$  &  $1$
+	\\ \hline
+\end{tabular}
+\end{center}
+
+\medskip
+Pour $(a + b)^5$ , l'exposant maximal sera $5$ et donc nous devons penser à ce qui suit.
+
+\medskip
+\begin{center}
+\begin{tabular}{c*{6}{|c}}
+	$a^r$
+		& $a^5$  &  $a^4$    &  $a^3$      &  $a^2$      &  $a^1$    &  $a^0$
+	\\ \hline
+	$b^s$ 
+		& $b^0$  &  $b^1$    &  $b^2$      &  $b^3$      &  $b^4$    &  $b^5$
+	\\ \hline
+	Produit 
+		& $a^5$  &  $a^4 b$  &  $a^3 b^2$  &  $a^2 b^3$  &  $a b^4$  &  $b^5$
+\end{tabular}
+\end{center}
+
+\medskip
+Nous avons donc :
+
+\medskip
+\begin{center}
+\begin{tabular}{|l*{6}{|c}|}
+	\hline
+	$5 \rightarrow$
+		& $1$    &  $5$      &  $10$       &  $10$       &  $5$      &  $1$
+	\\ \hline
+		& $a^5$  &  $a^4 b$  &  $a^3 b^2$  &  $a^2 b^3$  &  $a b^4$  &  $b^5$
+	\\ \hline
+\end{tabular}
+\end{center}
+
+\medskip
+Finalement $(a + b)^5 = a^5 + 5 a^4 b + 10 a^3 b^2 + 10 a^2 b^3 + 5 a b^4 + b^5$ . Le lecteur motivé pourra le vérifier via $(a + b)^5 = (a + b) (a + b)^4$ et le développement de $(a + b)^4$ démontré plus haut.
+

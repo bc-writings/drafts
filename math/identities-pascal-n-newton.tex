@@ -1,0 +1,121 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+
+\usepackage{import}
+\usepackage{wrapfig} 
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{tnsmath}
+
+
+\newtheorem{fact}{Fait}
+\newtheorem*{fact*}{Fait}
+
+\newtheorem{definition}{Définition}
+\newtheorem*{definition*}{Définition}
+
+\newtheorem{example}{Exemple}
+
+\newtheorem{remark}{Remarque}
+\newtheorem*{remark*}{Remarque}
+
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+
+
+\newcommand\redit[1]{\textcolor{red}{#1}}
+\newcommand\blueit[1]{\textcolor{green!60!black}{#1}}
+
+
+\begin{document}
+
+
+% PB de la rugieur de ce que l'on manipule : surtout pour les focntins circulaires - Indiquer comment contourner ceci !!!!
+
+\title{BROUILLON - Identités remarquables facilement grâce à Pascal et Newton}
+\author{Christophe BAL}
+\date{5 Octobre 2021}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\bigskip
+
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
+
+\section{Le triangle de Pascal, c'est naturel}
+
+\subimport*{identities-pascal-n-newton/}{pascal}
+
+
+
+\section{Le point de vue de Newton}
+
+\subimport*{identities-pascal-n-newton/}{newton}
+
+\end{document}
