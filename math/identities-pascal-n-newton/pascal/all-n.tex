@@ -1,8 +1,43 @@
 Rien ne nous assure a priori de découvrir un moyen simple de développer $(a + b)^n$ mais soyons confiant et tentons l'aventure en nous appuyant sur notre notation simplifiée. Nous verrons alors si de nouveau les mathématiques nous révèleront une belle structure cachée.
 
+
 \medskip
 
-Considérons le cas de $(a + b)^3 = (\redit{a} + \blueit{b}) (a + b)^2 = \redit{a (a + b)^2} + \blueit{b (a + b)^2}$ . Avec notre notation, $(a + b)^2 = a^2 + 2 a b + b^2$ s'écrit :
+Considérons le cas de $(a + b)^3$ dont le moments importants du développement sont les suivants.
+
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	(a + b)^3
+	%
+		\explnext{}
+	%
+	\dots
+	%
+		\explnext{}
+	%
+	\redit{a (a^2 + 2 a b + b^2)}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + b (a^2 + 2 a b + b^2)}
+	%
+		\explnext{}
+	%
+	\redit{a^3 + 2 a^2 b + \phantom{2} a b^2}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + \phantom{2} a^2 b + 2 a b^2 + b^3}
+	%
+		\explnext{}
+	%
+	\dots\end{stepcalc}
+
+
+\medskip
+
+Avec notre notation, $(a + b)^2 = a^2 + 2 a b + b^2$ s'écrit :
+
 
 \medskip
 \begin{center}
@@ -20,30 +55,11 @@ Considérons le cas de $(a + b)^3 = (\redit{a} + \blueit{b}) (a + b)^2 = \redit{
 Tableau pour $n = 2$
 \end{center}
 
-\medskip
-
-Nous voulons en déduire :
-
-\medskip
-\begin{center}
-\begin{tabular}{|l*{4}{|c}|}
-	\hline
-	$3 \rightarrow$
-		& ?      &  ?        &  ?        &  ?
-	\\ \hline
-		& $a^3$  &  $a^2 b$  &  $a b^2$  &  $b^3$
-	\\ \hline
-\end{tabular}
-
-\smallskip
-\itshape\small
-Tableau pour $n = 3$
-\end{center}
-
 
 \medskip
 
 Le tableau pour $n = 2$ donne par multiplication de chaque terme par $a$ :
+
 
 \medskip
 \begin{center}
@@ -85,6 +101,7 @@ Distribution de $b$ sur $(a + b)^2$
 
 Mis dans le tableau pour $n = 3$ , nous avons ce qui suit où les deux dernières lignes redonnent $(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3$ .
 
+
 \medskip
 \begin{center}
 \begin{tabular}{*{4}{|c}|}
@@ -111,7 +128,34 @@ Tableau pour $n = 3$
 
 \medskip
 
-Faisons un autre pas vers une belle abstraction en notant trois choses.
+On retrouve ce qui suit, l'une des étapes clés du développement de $(a + b)^3$.
+
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	(a + b)^3
+	%
+		\explnext{}
+	%
+	\dots
+	%
+		\explnext{}
+	%
+	\redit{a^3 + 2 a^2 b + \phantom{2} a b^2}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + \phantom{2} a^2 b + 2 a b^2 + b^3}
+	%
+		\explnext{}
+	%
+	\dots
+\end{stepcalc}
+
+
+\bigskip
+
+Il est temps de faire un nouveau pas vers une belle abstraction en notant trois choses.
 
 \begin{enumerate}
 	\item La multiplication par $a$ revient à garder la ligne résumé du développement de $(a + b)^2$ .
@@ -125,6 +169,7 @@ Faisons un autre pas vers une belle abstraction en notant trois choses.
 \medskip
 
 En appliquant les règles précédentes, dont il est clair qu'elles sont générales, nous retrouvons le développement $(a + b)^4 = a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4$ à partir du tableau précédent.
+
 
 \medskip
 \begin{center}
@@ -152,9 +197,37 @@ Développement de $(a + b)^4$
 
 \medskip
 
-Poursuivons avec $(a + b)^5 = a^5 + 5 a^4 b + 10 a^3 b^2 + 10 a^2 b^3 + 5 a b^4 + b^5$ que nous avons admis précédemment.
+On reconnaît l'une des étapes importantes du développement de $(a + b)^4$.
+
 
 \medskip
+
+\begin{stepcalc}[style = sar]
+	(a + b)^4
+	%
+		\explnext{}
+	%
+	\dots
+	%
+		\explnext{}
+	%
+	\redit{a^4 + 3 a^3 b + 3 a^2 b^2 + \phantom{3} a b^3}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + \phantom{3} a^3 b + 3 a^2 b^2 + 3 a b^3 + b^4}
+	%
+		\explnext{}
+	%
+	\dots
+\end{stepcalc}
+
+\medskip
+
+Poursuivons avec $(a + b)^5 = a^5 + 5 a^4 b + 10 a^3 b^2 + 10 a^2 b^3 + 5 a b^4 + b^5$ que nous avons admis précédemment.
+
+
+\newpage
+%\medskip
 \begin{center}
 \begin{tabular}{|l*{6}{|c}|}
 	\hline

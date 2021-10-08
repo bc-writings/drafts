@@ -55,7 +55,40 @@ Pour développer $(a + b)^3$ , nous allons bien entendu nous appuyer sur celui d
 \medskip
 
 Sans trop de peine, nous avons obtenu :
-$(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3$ .
+$(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3$ . On peut simplifier la compréhension des calculs comme suit.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	(a + b)^3
+		\explnext{}
+	(\redit{a} + \blueit{b}) (a + b)^2
+	%
+		\explnext{}
+	%
+	\redit{a (a + b)^2}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + b (a + b)^2}
+	%
+		\explnext{}
+	%
+	\redit{a (a^2 + 2 a b + b^2)}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + b (a^2 + 2 a b + b^2)}
+	%
+		\explnext{}
+	%
+	\redit{a^3 + 2 a^2 b + \phantom{2} a b^2}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + \phantom{2} a^2 b + 2 a b^2 + b^3}
+	%
+		\explnext{}
+	%
+	a^3 + 3 a^2 b + 3 a b^2 + b^3
+\end{stepcalc}
 
 
 % -------------------- %
@@ -63,7 +96,7 @@ $(a + b)^3 = a^3 + 3 a^2 b + 3 a b^2 + b^3$ .
 
 \subsubsection{Développement de $(a + b)^4$}
 
-Pour développer $(a + b)^4$ , passons via celui de $(a + b)^3$ . Une routine s'installe...
+Pour développer $(a + b)^4$ , nous allons nous inspirer de la présentation ci-dessus qui simplifie la compréhension. Une routine s'installe...
 
 \medskip
 
@@ -71,17 +104,30 @@ Pour développer $(a + b)^4$ , passons via celui de $(a + b)^3$ . Une routine s'
 	(a + b)^4
 		\explnext{}
 	(\redit{a} + \blueit{b}) (a + b)^3
+	%
 		\explnext{}
-	(\redit{a} + \blueit{b}) (a^3 + 3 a^2 b + 3 a b^2 + b^3)
+	%
+	\redit{a (a + b)^3}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + b (a + b)^3}
+	%
 		\explnext{}
-	\redit{a^4 + a \cdot 3 a^2 b + a \cdot 3 a b^2 + a \cdot b^3}
-	+
-	\blueit{b \cdot a^3 + b \cdot 3 a^2 b + b \cdot 3 a b^2 + b^4}
+	%
+	\redit{a (a^3 + 3 a^2 b + 3 a b^2 + b^3)}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + b (a^3 + 3 a^2 b + 3 a b^2 + b^3)}
+	%
 		\explnext{}
-	\redit{a^4 + 3 a^3 b + 3 a^2 b^2 + a b^3}
-	+
-	\blueit{b a^3 + 3 a^2 b^2 + 3 a b^3 + b^4}
+	%
+	\redit{a^4 + 3 a^3 b + 3 a^2 b^2 + \phantom{3} a b^3}
+		\explnext[\hideit+]{}
+	\phantom{x}\kern4pt%
+	\blueit{{} + \phantom{3} a^3 b + 3 a^2 b^2 + 3 a b^3 + b^4}
+	%
 		\explnext{}
+	%
 	a^4 + 4 a^3 b + 6 a^2 b^2 + 4 a b^3 + b^4
 \end{stepcalc}
 
