@@ -27,7 +27,7 @@
 
 \newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
 
-\usepackage{lymath}
+\usepackage{tnsmath}
 
 
 \newtheorem{fact}{Fait}
@@ -102,7 +102,7 @@ Voici un classique de l'analyse.
 
 La preuve standard de ce résultat passe par le célèbre théorème de Rolle appliqué à la fonction $g(x) = f(x) - \frac{f(a) - f(b)}{a - b} \cdot (x - a) - f(a)$ qui peut sembler un peu magique
 \footnote{
-	Pour $x \in \intervalC{a}{b}$ , $g(x)$ mesure l'écart entre la courbe $\geoset*{C}{f}$ et la droite $(AB) : y = \frac{f(a) - f(b)}{a - b} \cdot (x - a) + f(a)$ où $A(a ; f(a)) \in \geoset*{C}{f}$ et $B(b ; f(b)) \in \geoset*{C}{f}$ .
+	Pour $x \in \intervalC{a}{b}$ , $g(x)$ mesure l'écart entre la courbe $\setgeo*{C}{f}$ et la droite $(AB) : y = \frac{f(a) - f(b)}{a - b} \cdot (x - a) + f(a)$ où $A(a ; f(a)) \in \setgeo*{C}{f}$ et $B(b ; f(b)) \in \setgeo*{C}{f}$ .
 	Or cet écart est nul en $a$ et $b$ donc la fonction $g$ n'est pas si magique que cela...
 }.
 

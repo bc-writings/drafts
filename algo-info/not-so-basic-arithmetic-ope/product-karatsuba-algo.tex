@@ -6,7 +6,7 @@ La 1\iere{} idée de la méthode de Karatsuba est de procéder comme suit.
 
 \begin{enumerate}
 	\item 
-	\begin{explain}[style = sar]
+	\begin{stepcalc}[style = sar]
 		p
 			\explnext{}
 		(1\,234 \cdot 10^4 + 5\,678) \, (8\,765 \cdot 10^4 + 4\,321)
@@ -14,12 +14,12 @@ La 1\iere{} idée de la méthode de Karatsuba est de procéder comme suit.
 		1\,234 \cdot 8\,765 \cdot 10^8
 		+ (1\,234 \cdot 4\,321 + 5\,678 \cdot 8\,765) \cdot 10^4
 		+ 5\,678 \cdot 4\,321)
-	\end{explain}
+	\end{stepcalc}
 	
 	\item On procède alors de façon analogue pour chaque nouveau produit \emph{(nous allons voir que Karatsuba a été très malin pour gérer cette étape)}. Concentrons-nous juste sur $q = 1\,234 \cdot 8\,765$ par exemple.
 	 
 	\leavevmode\kern-1.75em
-	\begin{explain}[style = sar]
+	\begin{stepcalc}[style = sar]
 		q
 			\explnext{}
 		(12 \cdot 10^2 + 34) \, (87 \cdot 10^2 + 65)
@@ -27,12 +27,12 @@ La 1\iere{} idée de la méthode de Karatsuba est de procéder comme suit.
 		12 \cdot 87 \cdot 10^4
 		+ (12 \cdot 65 + 34 \cdot 87) \cdot 10^2
 		+ 34 \cdot 65
-	\end{explain}
+	\end{stepcalc}
 	
 	\item Il reste alors des \og dernières \fg{} étapes du type suivant en considérant $r = 12 \cdot 65$.
 	 
 	\leavevmode\kern-1.75em
-	\begin{explain}[style = sar]
+	\begin{stepcalc}[style = sar]
 		r
 			\explnext{}
 		(1 \cdot 10 + 2) \, (6 \cdot 10 + 5)
@@ -40,7 +40,7 @@ La 1\iere{} idée de la méthode de Karatsuba est de procéder comme suit.
 		1 \cdot 2 \cdot 10^2
 		+ (1 \cdot 6 + 2 \cdot 6) \cdot 10
 		+ 2 \cdot 5
-	\end{explain}
+	\end{stepcalc}
 \end{enumerate}
 
 
@@ -81,13 +81,13 @@ Posons alors $P(X) = c_2 \cdot X^2 + c_1 \cdot X + c_0$ et projetons-nous un peu
 
 	
 	\item
-	\begin{explain}[style = sar, ope = \iff]
+	\begin{stepcalc}[style = sar, ope = \iff]
 		P(1) = c_2 + c_1 + c_0
 			\explnext{}
 		c_1 = P(1) - c_2 - c_0
 			\explnext{}
 		c_1 = (a + b) \, (A + B) - c_2 - c_0
-	\end{explain}
+	\end{stepcalc}
 	
 	
 	\item En résumé, 
@@ -115,13 +115,13 @@ Posons alors $P(X) = c_2 \cdot X^2 + c_1 \cdot X + c_0$ et projetons-nous un peu
 	
 	\smallskip
 	
-	\begin{explain}[style = sar, ope = \iff]
+	\begin{stepcalc}[style = sar, ope = \iff]
 		P(-1) = c_2 - c_1 + c_0
 			\explnext{}
 		c_1 = c_2 + c_0 - P(-1)
 			\explnext{}
 		c_1 = c_2 + c_0 - (a - b) \, (A - B)
-	\end{explain}
+	\end{stepcalc}
 	
 	\smallskip
 	

@@ -69,7 +69,7 @@ Ce passage automatique est bien licite car nous avons le fait \ref{poly-nullity-
 \medskip
 
 \begin{fact} \label{poly-nullity-pos}
-	Soit $P \in \polyset{\RR}{X_1 | ... | X_n}$ un polynôme réel à $n$ variables où $n \in \NNs$ .
+	Soit $P \in \setpoly{\RR}{X_1 | ... | X_n}$ un polynôme réel à $n$ variables où $n \in \NNs$ .
 	
 	\smallskip
 	
@@ -78,9 +78,9 @@ Ce passage automatique est bien licite car nous avons le fait \ref{poly-nullity-
 
 
 \begin{proof}
-	Faisons une preuve par récurrence sur $n \in \NNs$ pour démontrer la validité de la propriété $\probaset{P}(n)$ définie comme suit :
+	Faisons une preuve par récurrence sur $n \in \NNs$ pour démontrer la validité de la propriété $\setproba{P}(n)$ définie comme suit :
 	\emph{\og 
-		Pour tout polynôme réel $P \in \polyset{\RR}{X_1 | ... | X_n}$ à $n$ variables,
+		Pour tout polynôme réel $P \in \setpoly{\RR}{X_1 | ... | X_n}$ à $n$ variables,
 		si $P$ s'annule sur $\left( \RRsp \right)^n$ alors $P$ s'annule sur $\RR^n$ tout entier. 
 	\fg}.
 
@@ -88,35 +88,35 @@ Ce passage automatique est bien licite car nous avons le fait \ref{poly-nullity-
 		\item \emph{Cas de base.}
 	
 		\noindent
-		$\probaset{P}(1)$ signifie qu'un polynôme réel à une variable s'annulant sur $\RRsp$ est identiquement nul sur $\RR$ tout entier.
+		$\setproba{P}(1)$ signifie qu'un polynôme réel à une variable s'annulant sur $\RRsp$ est identiquement nul sur $\RR$ tout entier.
 		
 		\smallskip
 		\noindent
-		Comme un polynôme réel non nul n'a qu'un nombre fini de racines, nous avons la validité de $\probaset{P}(1)$ .
+		Comme un polynôme réel non nul n'a qu'un nombre fini de racines, nous avons la validité de $\setproba{P}(1)$ .
 
 
 		\medskip
 		\item \emph{Hérédité.}
 	
 		\noindent
-		Supposons $\probaset{P}(n)$ valide pour un naturel $n$ fixé, mais quelconque, puis considérons un polynôme $P$ de $(n + 1)$ variables qui vérifie les conditions de la propriété $\probaset{P}(n + 1)$ .
+		Supposons $\setproba{P}(n)$ valide pour un naturel $n$ fixé, mais quelconque, puis considérons un polynôme $P$ de $(n + 1)$ variables qui vérifie les conditions de la propriété $\setproba{P}(n + 1)$ .
 	
 		\smallskip
 		\noindent
 		Fixons $x \in \RRsp$ et considérons le polynôme $P_x(X_1 ; ... ; X_n) = P(X_1 ; ... ; X_n ; x)$ .
-		Comme $P_x$  vérifie les conditions de la propriété $\probaset{P}(n)$ ,
+		Comme $P_x$  vérifie les conditions de la propriété $\setproba{P}(n)$ ,
 		nous avons par hypothèse de récurrence 
 		$P_x(x_1 ; ... ; x_n) = 0$ soit $P(x_1 ; ... ; x_n ; x) = 0$ pour tous réels $x_1$ , ... , $x_n$ .
 	
 		\smallskip
 		\noindent
 		Fixons maintenant des réels $x_1$ , ... , $x_n$ de signes quelconques et considérons le polynôme $p(X) = P(x_1 ; ... ; x_n ; X)$ .
-		Comme $p$ vérifie $\probaset{P}(1)$ , nous avons $p(x) = 0$ soit $P(x_1 ; ... ; x_n ; x) = 0$ pour tout réel $x$ .
+		Comme $p$ vérifie $\setproba{P}(1)$ , nous avons $p(x) = 0$ soit $P(x_1 ; ... ; x_n ; x) = 0$ pour tout réel $x$ .
 	
 		\smallskip
 		\noindent
 		Finalement $P(x_1 ; ... ; x_n ; x) = 0$ pour tous réels $x_1$ , ... , $x_n$ , $x$ .
-		Nous avons bien déduit la validité de $\probaset{P}(n+1)$ à partir de celle de $\probaset{P}(n)$ .
+		Nous avons bien déduit la validité de $\setproba{P}(n+1)$ à partir de celle de $\setproba{P}(n)$ .
 
 
 	\medskip
@@ -124,7 +124,7 @@ Ce passage automatique est bien licite car nous avons le fait \ref{poly-nullity-
 	
 	\smallskip
 	\noindent
-	Par récurrence sur $n \in \NNs$ , la propriété $\probaset{P}(n)$ est vraie pour tout naturel non nul $n$ .
+	Par récurrence sur $n \in \NNs$ , la propriété $\setproba{P}(n)$ est vraie pour tout naturel non nul $n$ .
 	\end{itemize}
 \end{proof}
 
@@ -171,7 +171,7 @@ Considérons maintenant le dessin ci-contre avec $d = a - b$ et la contrainte $a
 
 \smallskip
 
-$\geoset*{A}{GHCK} = \geoset*{A}{ABCD} - \geoset*{A}{ABHF} - \geoset*{A}{AEKD} + \geoset*{A}{AEGF}$
+$\setgeo*{A}{GHCK} = \setgeo*{A}{ABCD} - \setgeo*{A}{ABHF} - \setgeo*{A}{AEKD} + \setgeo*{A}{AEGF}$
 	
 \smallskip
 	
@@ -187,12 +187,12 @@ Aucune crainte à avoir car nous disposons du fait \ref{poly-nullity-interval} m
 \medskip
 
 \begin{fact} \label{poly-nullity-interval}
-	Soit $P \in \polyset{\RR}{X_1 | ... | X_n}$ un polynôme réel à $n$ variables où $n \in \NNs$ .
+	Soit $P \in \setpoly{\RR}{X_1 | ... | X_n}$ un polynôme réel à $n$ variables où $n \in \NNs$ .
 	
 	\smallskip
 	
-	Si $\geoset{E} \subseteq \RR^n$ contient $\geoset*{E}{1} \times \cdots \times \geoset*{E}{n}$ où chaque $\geoset*{E}{k} \subseteq \RR$ est infini,
-	et si $P$ s'annule sur $\geoset{E}$ alors $P$ s'annule sur $\RR^n$ tout entier. 
+	Si $\setgeo{E} \subseteq \RR^n$ contient $\setgeo*{E}{1} \times \cdots \times \setgeo*{E}{n}$ où chaque $\setgeo*{E}{k} \subseteq \RR$ est infini,
+	et si $P$ s'annule sur $\setgeo{E}$ alors $P$ s'annule sur $\RR^n$ tout entier. 
 \end{fact}
 
 
@@ -224,11 +224,11 @@ Commençons par des calculs géométriques simples.
 
 \smallskip
 	
-$\geoset*{A}{ABCD} - \geoset*{A}{AEGF} = \geoset*{A}{GHCK} + \geoset*{A}{EBHG} + \geoset*{A}{FGKD}$
+$\setgeo*{A}{ABCD} - \setgeo*{A}{AEGF} = \setgeo*{A}{GHCK} + \setgeo*{A}{EBHG} + \setgeo*{A}{FGKD}$
 	
 \smallskip
 	
-$a^2 - b^2 = \geoset*{A}{GHCK} + \geoset*{A}{EBHG} + \geoset*{A}{FGKD}$
+$a^2 - b^2 = \setgeo*{A}{GHCK} + \setgeo*{A}{EBHG} + \setgeo*{A}{FGKD}$
 
 
 \medskip

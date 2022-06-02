@@ -1,11 +1,13 @@
 \begin{tikzpicture}
-    \matrix[matrix of nodes,nodes=gs,
+    \matrix[ampersand replacement=\&,
+        matrix of nodes,
+        nodes=gs,
         row sep    = 1em,
         column sep = 1.5em,
     ](mat){
-    & $a$ & $X$ \\
-$q$ & $b$ & $Y$  \\
-    & $r$ & $Z$  \\
+    \& $a$ \& $X$ \\
+$q$ \& $b$ \& $Y$  \\
+    \& $r$ \& $Z$  \\
     };
 
     \node[fit=(mat-1-2) (mat-2-3),inner xsep=1em,rc,red] (F1){};

@@ -55,37 +55,39 @@ Il nous reste à trouver les valeurs initiales. Ceci est immédiat puisque nous 
 Notons que nécessairement $n \geq 1$. Nous voilà prêts à proposer un algorithme classique et efficace pour déterminer des coefficients de \bb.
 
 
-\begin{algo}
+{\small
+\begin{algo}[frame]
 	\caption{Classique et efficace} \label{algo-efficient}
 	%%%
     \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $a \geq b$}
     \Result{$(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$}
-	\addalgoblank
+	\BlankLine
     \Actions{
 		$u^{\prime} \Store 1$
-		\SequSep
+		\\
 		$u^{\prime\prime} \Store 0$
 		\\
     	$v^{\prime} \Store 0$
-		\SequSep
+		\\
 		$v^{\prime\prime} \Store 1$
 		\\
-		\addalgoblank
+		\BlankLine
         \While{$b \neq 0$}{
 			$a = q b + r$ est la division euclidienne standard.
 			\\
 			$temp_u \Store u^{\prime} - q u^{\prime\prime}$
-			\SequSep
+			\\
 			$u^{\prime} \Store u^{\prime\prime}$
-			\SequSep
+			\\
 			$u^{\prime\prime} \Store temp_u$
 			\\
 			$temp_v \Store v^{\prime} - q v^{\prime\prime}$
-			\SequSep
+			\\
 			$v^{\prime} \Store v^{\prime\prime}$
-			\SequSep
+			\\
 			$v^{\prime\prime} \Store temp_v$
 		}
 		\Return{$(u^{\prime} ; v^{\prime})$}
 	}
 \end{algo}
+}

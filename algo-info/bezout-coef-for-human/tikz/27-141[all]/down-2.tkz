@@ -1,9 +1,10 @@
 \begin{tikzpicture}
-    \matrix[matrix of nodes,
+    \matrix[ampersand replacement=\&,
+        matrix of nodes,
         row sep    = 1em,
         column sep = 1.5em,
     ](mat){
-            & |[bf]|$141$ \\
-|[gs]|$\ph$ & |[bf]|$27$  \\
+            \& |[bf]|$141$ \\
+|[gs]|$\ph$ \& |[bf]|$27$  \\
     };
 \end{tikzpicture}

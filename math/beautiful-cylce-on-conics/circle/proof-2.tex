@@ -1,5 +1,5 @@
 Dans cette section, on définit un repère orthonormé $\paxes{O | I | J}$ tel que le cercle devienne trigonométrique.
-Pour tous points $M$  et $N$ sur ce cercle, on pose $\geoset*{C}{MN} \eqdef (MN)$ si $M \neq N$ , sinon $\geoset*{C}{MN}$ désigne la tangente en $M = N$ au cercle \emph{(on généralise la notion de corde au cas de deux points égaux)}.
+Pour tous points $M$  et $N$ sur ce cercle, on pose $\setgeo*{C}{MN} \eq[def] (MN)$ si $M \neq N$ , sinon $\setgeo*{C}{MN}$ désigne la tangente en $M = N$ au cercle \emph{(on généralise la notion de corde au cas de deux points égaux)}.
 
 
 \medskip
@@ -16,12 +16,12 @@ se construit comme suit
 \footnote{
 	Dans le document cité, trois preuves élémentaires et très différentes sont proposées. 
 },
-$\geoset{D}\,'$ désignant la parallèle à $\geoset*{C}{AB}$ passant par $I$ .
+$\setgeo{D}\,'$ désignant la parallèle à $\setgeo*{C}{AB}$ passant par $I$ .
 
 \begin{enumerate}
-	\item Si $\geoset{D}\,'$ est tangente au cercle alors $S = I$ .
+	\item Si $\setgeo{D}\,'$ est tangente au cercle alors $S = I$ .
 	
-	\item Sinon le point $S$ est le second point d'intersection de $\geoset{D}\,'$ avec le cercle.
+	\item Sinon le point $S$ est le second point d'intersection de $\setgeo{D}\,'$ avec le cercle.
 \end{enumerate}
 
 
@@ -34,27 +34,27 @@ $\geoset{D}\,'$ désignant la parallèle à $\geoset*{C}{AB}$ passant par $I$ .
 \vspace{1em}
 
 
-Nous avons alors que pour quatre points non nécessairement distincts $A$ , $B$ , $C$ et $D$ du cercle trigonométrique, si $\geoset*{C}{AB} \,/\!/\,\geoset*{C}{CD}$ alors
+Nous avons alors que pour quatre points non nécessairement distincts $A$ , $B$ , $C$ et $D$ du cercle trigonométrique, si $\setgeo*{C}{AB} \,/\!/\,\setgeo*{C}{CD}$ alors
 $\angleorient{\vect{OI}}{\vect{OA}} + \angleorient{\vect{OI}}{\vect{OB}} 
 =
  \angleorient{\vect{OI}}{\vect{OC}} + \angleorient{\vect{OI}}{\vect{OD}}$ 
-puisque les parallèles à $\geoset*{C}{AB}$ et $\geoset*{C}{CD}$ passant par $I$ sont confondues.
+puisque les parallèles à $\setgeo*{C}{AB}$ et $\setgeo*{C}{CD}$ passant par $I$ sont confondues.
 Avec ceci en tête, on peut alors analyser facilement la construction présentée au début du document.
 Nous la redonnons ci-dessous pour le confort du lecteur où par hypothèse $n \in \NN_{\geq 5}$ .
 
 \begin{enumerate}
-	\item $\geoset{D}\,'$ désigne la parallèle à $\geoset*{C}{A_{n-3} A_{n-4}}$ passant par $A_{n-1}$ .
+	\item $\setgeo{D}\,'$ désigne la parallèle à $\setgeo*{C}{A_{n-3} A_{n-4}}$ passant par $A_{n-1}$ .
 
-	\item Si $\geoset{D}\,'$ est tangente au cercle alors $A_n \eqdef A_{n-1}$ , sinon $A_n$ est le second point d'intersection de $\geoset{D}\,'$ avec le cercle.
+	\item Si $\setgeo{D}\,'$ est tangente au cercle alors $A_n \eq[def] A_{n-1}$ , sinon $A_n$ est le second point d'intersection de $\setgeo{D}\,'$ avec le cercle.
 \end{enumerate}
 
 
 \medskip
 
 La construction est donc telle que $\forall n \in \NN_{\geq 5}$ , 
-$\geoset*{C}{A_{n} A_{n-1}} \,/\!/\, \geoset*{C}{A_{n-3} A_{n-4}}$ 
+$\setgeo*{C}{A_{n} A_{n-1}} \,/\!/\, \setgeo*{C}{A_{n-3} A_{n-4}}$ 
 \footnote{
-	On peut définir $A_{n}$ comme étant l'unique point du cercle tel que $\geoset*{C}{A_{n} A_{n-1}} \,/\!/\, \geoset*{C}{A_{n-3} A_{n-4}}$  .
+	On peut définir $A_{n}$ comme étant l'unique point du cercle tel que $\setgeo*{C}{A_{n} A_{n-1}} \,/\!/\, \setgeo*{C}{A_{n-3} A_{n-4}}$  .
 }.
 Notant $\theta_i = \angleorient{\vect{OI}}{\vect{OA_i}}$ pour $i \in \NNs$ , nous avons alors
 $\theta_i + \theta_{i+1} = \theta_{i+3} + \theta_{i+4}$ . Ceci nous donne les égalités suivantes :

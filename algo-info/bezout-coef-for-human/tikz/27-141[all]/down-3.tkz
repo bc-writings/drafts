@@ -1,10 +1,11 @@
 \begin{tikzpicture}
-    \matrix[matrix of nodes,
+    \matrix[ampersand replacement=\&,
+        matrix of nodes,
         row sep    = 1em,
         column sep = 1.5em,
     ](mat){
-          & |[bf]|$141$ &                               \\
-|[ea]|$5$ & |[bf]|$27$  & |[le]|$141 = 5 \times 27 + 6$ \\
-          & |[ea]|$6$   &                               \\
+          \& |[bf]|$141$ \&                               \\
+|[ea]|$5$ \& |[bf]|$27$  \& |[le]|$141 = 5 \times 27 + 6$ \\
+          \& |[ea]|$6$   \&                               \\
     };
 \end{tikzpicture}

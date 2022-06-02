@@ -2,19 +2,19 @@
 
 
 \begin{proof}
-	Pour $k \geq 2$, notons $\probaset{P}(k)$ la propriété \emph{\og Si $a \in \NN$ vérifie $1 < a \leq k$ alors il existe au moins une suite finie de nombres premiers $(p_j)_{1 \leq j \leq n}$ telle que $\displaystyle a = \prod_{j=1}^{n} p_j$ \fg}. Nous allons faire une démonstration par récurrence sous la condition $k \geq 2$.
+	Pour $k \geq 2$, notons $\setproba{P}(k)$ la propriété \emph{\og Si $a \in \NN$ vérifie $1 < a \leq k$ alors il existe au moins une suite finie de nombres premiers $(p_j)_{1 \leq j \leq n}$ telle que $\displaystyle a = \prod_{j=1}^{n} p_j$ \fg}. Nous allons faire une démonstration par récurrence sous la condition $k \geq 2$.
 	
 	\begin{itemize}[label=\small\textbullet]
 		\medskip
-		\item \textbf{Initialisation :} démontrons que $\probaset{P}(2)$ est vraie. C'est immédiat car la validité de $\probaset{P}(2)$ vient de ce que si $a \in \NN$ vérifie $1 < a \leq 2$ alors $a = 2$ et aussi de $\displaystyle 2 = \prod_{j=1}^{1} p_j$ avec $p_1 = 2$ qui est un nombre premier. 
+		\item \textbf{Initialisation :} démontrons que $\setproba{P}(2)$ est vraie. C'est immédiat car la validité de $\setproba{P}(2)$ vient de ce que si $a \in \NN$ vérifie $1 < a \leq 2$ alors $a = 2$ et aussi de $\displaystyle 2 = \prod_{j=1}^{1} p_j$ avec $p_1 = 2$ qui est un nombre premier. 
 
 
 		\medskip
-		\item \textbf{Hérédité :} soit un naturel $k$ quelconque, mais fixé, et supposons $\probaset{P}(k)$ vraie. 
+		\item \textbf{Hérédité :} soit un naturel $k$ quelconque, mais fixé, et supposons $\setproba{P}(k)$ vraie. 
 
 
 		\medskip
-		\item \textbf{Conclusion :} par récurrence sur $k \geq 2$, nous avons prouvé que pour tout naturel $k \in \NN$ vérifiant $k \geq 2$, la propriété $\probaset{P}(k)$ est vraie.
+		\item \textbf{Conclusion :} par récurrence sur $k \geq 2$, nous avons prouvé que pour tout naturel $k \in \NN$ vérifiant $k \geq 2$, la propriété $\setproba{P}(k)$ est vraie.
 		De ceci découle que le fait \ref{exists-decompo} est valide.
 	\end{itemize}
 \end{proof}

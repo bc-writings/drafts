@@ -1,17 +1,17 @@
 \begin{fact} \label{recursivity}
-	La preuve par récurrence s'exprime comme suit où $\probaset{P}(k)$ désignera n'importe quelle proposition dépendant d'un paramètre naturel $k \in \NN$.
+	La preuve par récurrence s'exprime comme suit où $\setproba{P}(k)$ désignera n'importe quelle proposition dépendant d'un paramètre naturel $k \in \NN$.
 
 	\medskip
 
 	On suppose avoir démontré les deux faits suivants.
 	
 	\begin{itemize}[label=\small\textbullet]
-		\item $\probaset{P}(0)$ est vraie. On parle d'\textbf{initialisation}.
+		\item $\setproba{P}(0)$ est vraie. On parle d'\textbf{initialisation}.
 
-		\item Pour chaque naturel $k$ quelconque, mais fixé, si l'on suppose $\probaset{P}(k)$ vraie alors on peut en déduire que $\probaset{P}(k+1)$ sera aussi vraie. On parle d'\textbf{hérédité}. Notons qu'ici nous ne savons pas démontrer que $\probaset{P}(k)$ est vraie, nous ne faisons que le supposer.
+		\item Pour chaque naturel $k$ quelconque, mais fixé, si l'on suppose $\setproba{P}(k)$ vraie alors on peut en déduire que $\setproba{P}(k+1)$ sera aussi vraie. On parle d'\textbf{hérédité}. Notons qu'ici nous ne savons pas démontrer que $\setproba{P}(k)$ est vraie, nous ne faisons que le supposer.
 	\end{itemize}
 
-	Sous ces hypothèses, nous pouvons affirmer que $\forall k \in \NN$, $\probaset{P}(k)$ est vraie.
+	Sous ces hypothèses, nous pouvons affirmer que $\forall k \in \NN$, $\setproba{P}(k)$ est vraie.
 \end{fact}
 
 
@@ -22,21 +22,21 @@
 
 
 \begin{fact}
-	Soient $k_0 \in \NN$ et $\probaset{P}(k)$ une proposition dépendant d'un paramètre naturel $k \in \NN$ tel que $k \geq k_0$ .
+	Soient $k_0 \in \NN$ et $\setproba{P}(k)$ une proposition dépendant d'un paramètre naturel $k \in \NN$ tel que $k \geq k_0$ .
 	On suppose avoir démontré les deux faits suivants.
 	
 	\begin{itemize}[label=\small\textbullet]
-		\item $\probaset{P}(k_0)$ est vraie.
+		\item $\setproba{P}(k_0)$ est vraie.
 
-		\item Pour chaque naturel $k \geq k_0$ quelconque, mais fixé, si l'on suppose $\probaset{P}(k)$ vraie alors on peut en déduire que $\probaset{P}(k+1)$ sera aussi vraie.
+		\item Pour chaque naturel $k \geq k_0$ quelconque, mais fixé, si l'on suppose $\setproba{P}(k)$ vraie alors on peut en déduire que $\setproba{P}(k+1)$ sera aussi vraie.
 	\end{itemize}
 
-	Sous ces hypothèses, nous pouvons affirmer que $\forall k \in \NN$ tel que $k \geq k_0$, $\probaset{P}(k)$ est vraie.
+	Sous ces hypothèses, nous pouvons affirmer que $\forall k \in \NN$ tel que $k \geq k_0$, $\setproba{P}(k)$ est vraie.
 \end{fact}
 
 
 \begin{proof}
-	Il suffit d'appliquer le raisonnement par récurrence à la propriété $\probaset{Q}(k)$ définie par \emph{\og $\probaset{P}(k + k_0)$ est vraie \fg}.
+	Il suffit d'appliquer le raisonnement par récurrence à la propriété $\setproba{Q}(k)$ définie par \emph{\og $\setproba{P}(k + k_0)$ est vraie \fg}.
 \end{proof}
 
 

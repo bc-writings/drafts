@@ -1,13 +1,14 @@
 \begin{tikzpicture}
-    \matrix[matrix of nodes,
+    \matrix[ampersand replacement=\&,
+        matrix of nodes,
         row sep    = 1em,
         column sep = 1.5em,
     ](mat){
-          & |[gs]|$141$ &           \\
-|[gs]|$5$ & |[gs]|$27$  & |[bf]|$4$ \\
-|[bf]|$4$ & |[be]|$6$   & |[bf]|$1$ \\
-|[gs]|$2$ & |[gs]|$3$   & |[bf]|$0$ \\
-          & |[gs]|$0$   & |[gs]|$1$ \\
+          \& |[gs]|$141$ \&           \\
+|[gs]|$5$ \& |[gs]|$27$  \& |[bf]|$4$ \\
+|[bf]|$4$ \& |[be]|$6$   \& |[bf]|$1$ \\
+|[gs]|$2$ \& |[gs]|$3$   \& |[bf]|$0$ \\
+          \& |[gs]|$0$   \& |[gs]|$1$ \\
     };
 
     \draw[red] (mat-3-1) -- (mat-3-3)

@@ -1,5 +1,5 @@
-D'une façon analogue à ce qui a été fait pour la parabole, nous définissions la notion de corde généralisée pour l'hyperbole $\geoset{H} : y = \frac{1}{x}$ , une notion applicable à toute courbe d'équation $y = f(x)$ avec $f$ dérivable.
-On procède au même type de construction que précédemment à partir de quatre points $A_1$ , $A_2$ , $A_3$ et $A_4$ sur l'hyperbole $\geoset{H}$ . Voici un exemple de tracé où il semblerait encore que $A_7 = A_1$ . En testant d'autres situations
+D'une façon analogue à ce qui a été fait pour la parabole, nous définissions la notion de corde généralisée pour l'hyperbole $\setgeo{H} : y = \frac{1}{x}$ , une notion applicable à toute courbe d'équation $y = f(x)$ avec $f$ dérivable.
+On procède au même type de construction que précédemment à partir de quatre points $A_1$ , $A_2$ , $A_3$ et $A_4$ sur l'hyperbole $\setgeo{H}$ . Voici un exemple de tracé où il semblerait encore que $A_7 = A_1$ . En testant d'autres situations
 \footnote{
 	Le lieu de téléchargement de ce document contient un fichier GeoGebra \texttt{base-tool-hyperbola.ggb} manipulable dynamiquement pour tester la conjecture.
 },
@@ -19,17 +19,17 @@ La preuve est similaire à celle faite pour la parabole
 \footnote{
 	Le lecteur habitué notera qu'ici la preuve est de nouveau algébrique car on utilise juste du calcul différentiel sur des fractions polynomiales à une variable.
 }.
-Ici la pente d'une corde généralisée $\geoset*{C}{MN}$ est $\left( - \frac{1}{x_M y_N} \right)$ comme nous allons le vérifier.
+Ici la pente d'une corde généralisée $\setgeo*{C}{MN}$ est $\left( - \frac{1}{x_M y_N} \right)$ comme nous allons le vérifier.
 \begin{enumerate}
-	\item Si $M \neq N$ , $\geoset*{C}{MN} \eqdef (MN)$ a pour pente $\frac{y_M - y_N}{x_M - x_N} = \frac{1}{x_M - x_N} \left( \frac{1}{x_M} - \frac{1}{x_N} \right) = - \frac{1}{x_M y_N}$ .
+	\item Si $M \neq N$ , $\setgeo*{C}{MN} \eq[def] (MN)$ a pour pente $\frac{y_M - y_N}{x_M - x_N} = \frac{1}{x_M - x_N} \left( \frac{1}{x_M} - \frac{1}{x_N} \right) = - \frac{1}{x_M y_N}$ .
 
-	\item Si $M = N$ , $\geoset*{C}{MN}$ est la tangente en $M$ à la parabole $\geoset{P}$ . Cette tangente admet pour pente $- \frac{1}{x_M^2} = - \frac{1}{x_M y_N}$ .
+	\item Si $M = N$ , $\setgeo*{C}{MN}$ est la tangente en $M$ à la parabole $\setgeo{P}$ . Cette tangente admet pour pente $- \frac{1}{x_M^2} = - \frac{1}{x_M y_N}$ .
 \end{enumerate}
 
 
 \medskip
 
-Nous avons alors les égalités suivantes où de nouveau $x_i \eqdef x_{(A_i)}$ , les équivalences venant du fait qu'aucun des $x_i$ n'est nul :
+Nous avons alors les égalités suivantes où de nouveau $x_i \eq[def] x_{(A_i)}$ , les équivalences venant du fait qu'aucun des $x_i$ n'est nul :
 \begin{itemize}[label=\small\textbullet]
 	\item \textbf{[L1]} : 
 	      $- \frac{1}{x_1 y_2} = - \frac{1}{x_4 y_5}$
@@ -59,4 +59,4 @@ Nous avons alors les égalités suivantes où de nouveau $x_i \eqdef x_{(A_i)}$ 
 	Dès lors nul besoin d'expliquer de nouveau comment déduire  $x_1 = x_7$ du système.
 }
 nous donne $x_1 x_4 = x_7 x_4$ d'où $x_1 = x_7$ puis $A_7 = A_1$ .
-La section qui suit va permettre, via la notion de groupe, de comprendre pourquoi la construction magique fonctionne sur un cercle, la parabole $\geoset{P} : y = x^2$ et l'hyperbole $\geoset{H} : y = \frac{1}{x}$ .
+La section qui suit va permettre, via la notion de groupe, de comprendre pourquoi la construction magique fonctionne sur un cercle, la parabole $\setgeo{P} : y = x^2$ et l'hyperbole $\setgeo{H} : y = \frac{1}{x}$ .

@@ -19,7 +19,7 @@ Pour avancer, nous allons nous limiter au cas où $f$ est la restriction d'une f
 \medskip
 
 On sait alors qu'il existe $R > 0$ tel que $\abs{z} < R$ implique
-$\displaystyle \widetilde{f}(z) = \sum_{k = 0}^{+ \infty} c_k z^k$ , ce développement étant unique car $c_k = \frac{\derpow[k]{f}(0)}{k!}$ .
+$\displaystyle \widetilde{f}(z) = \sum_{k = 0}^{+ \infty} c_k z^k$ , ce développement étant unique car $c_k = \frac{\der[e]{f}{x}{k}(0)}{k!}$ .
 De plus, on a le résultat fort suivant : les éventuels zéros $\lambda$ de $\widetilde{f}$ sont isolés, c'est à dire qu'il existe un voisinage de $\lambda$ sur lequel $\widetilde{f}$ ne s'annule qu'en $\lambda$ . Nous admettrons ces deux faits de l'analyse complexe car les prouver nous amènerait trop loin.
 
 
@@ -55,7 +55,7 @@ Dès que $\abs{z} < 0,5 R$ , nous avons alors :
 		\,\,
 		\text{quelconques et}
 		\,\,
-		\forall k \in \NNs - \geneset{1 ; 2} \, , \, c_k = 0
+		\forall k \in \NNs - \setgene{1 ; 2} \, , \, c_k = 0
 		& \\
 		&\Longleftrightarrow
 		\widetilde{f}(z) = c_1 z + c_2 z^2

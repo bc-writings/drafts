@@ -3,129 +3,131 @@ Il n'est pas dur de coder directement la méthode humaine par descente puis remo
 	Sur le lieu de téléchargement du document que vous lisez, se trouvent les fichiers \texttt{down.py} et \texttt{up.py} dans le dossier \texttt{bezout-coef-for-human/euclid2tikz}.
 	Ces codes traduisent directement la méthode à la main par descente puis remontée.
 }.
-Voici un algorithme, peu efficace mais instructif, où $\star$ est un symbole à part, $R[-1]$ le dernier élément de la liste $R$ et $R[-2]$ l'avant-dernier, et enfin $[x, y] + [r, s, t] \eqdef [x, y, r, s, t]$ \emph{(additionner des listes c'est les concaténer et donc $R + [r]$ est un raccourci pour \emph{\og on ajoute l'élément $r$ à droite de la liste $R$ \fg})}.
+Voici un algorithme, peu efficace mais instructif, où $\star$ est un symbole à part, $R[-1]$ le dernier élément de la liste $R$ et $R[-2]$ l'avant-dernier, et enfin $[x, y] + [r, s, t] \eq[def] [x, y, r, s, t]$ \emph{(additionner des listes c'est les concaténer et donc $R + [r]$ est un raccourci pour \emph{\og on ajoute l'élément $r$ à droite de la liste $R$ \fg})}.
 
 
-\begin{algo}
+{\small
+\begin{algo}[frame]
 	\caption{Descente et remontée avec du papier et un crayon} \label{algo-human-paper}
 	%%%
     \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $a \geq b$}
     \Result{$(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$}
-	\addalgoblank
+	\BlankLine
     \Actions{
     	\Comment{Phase de descente}
         \Comment{$Q$ est une liste qui va stocker les quotients entiers $q_k$.}
         \Comment{$R$ est une liste qui va stocker les restes $r_k$ (rappelons que}
         \Comment{$r_0 = a$ et $r_1 = b$).}
-        \addalgoblank
+        \BlankLine
         $Q \Store [\star]$
-        \SequSep
+        \\
         $R \Store [a , b]$
         \\
-        \addalgoblank
+        \BlankLine
         \While{$R[-1] \neq 0$}{
         	$\alpha \Store R[-2]$
-			\SequSep
-			$\beta \Store R[-1]$
 			\\
-			\addalgoblank
+        	$\beta \Store R[-1]$
+			\\
+			\BlankLine
 			$\alpha = q \beta + r$ est la division euclidienne standard.
 			\\
-			\addalgoblank
+			\BlankLine
 			$Q \Store Q + [q]$
-			\SequSep
+			\\
 			$R \Store R + [r]$
 		}
-		\addalgoblank
+		\BlankLine
     	\Comment{Phase de remontée}
         \Comment{$Z$ est une liste qui va stocker les entiers tout à droite.}
-        \addalgoblank
+        \BlankLine
 		$\varepsilon \Store 1$
-		\SequSep
+		\\
 		$Z \Store [1 , 0]$
-		\SequSep
+		\\
 		$c \Store (-1)$
 		\\
-        \addalgoblank
+        \BlankLine
         \While{$Q[c] \neq \star$}{
         	$z \Store Q[c] \cdot Z[-2] + Z[-1]$
 			\\
 			$Z \Store Z + [z]$
 			\\
-			\addalgoblank
+			\BlankLine
         	$\varepsilon \Store (- \varepsilon)$
-			\SequSep
+			\\
 			$c \Store c - 1$
 		}
-		\addalgoblank
+		\BlankLine
     	\Comment{On gère le signe devant le $\pgcd$ grâce à $\varepsilon$.}
-        \addalgoblank
+        \BlankLine
 		$u \Store \varepsilon \cdot Z[-2]$
-		\SequSep
+		\\
 		$v \Store (- \varepsilon \cdot Z[-1])$
 		\\
-		\addalgoblank
+		\BlankLine
 		\Return{$(u ; v)$}
 	}
 \end{algo}
-
+}
 
 Nous avons traduit brutalement ce que l'on fait humainement mais à bien y regarder, la seule liste dont nous avons réellement besoin est $Q$. 
 On peut donc proposer la variante suivante programmable qui est à la fois proche de la version de descente et remontée tout en limitant l'impact sur la mémoire.
 
 
-\begin{algo}
+{\small
+\begin{algo}[frame]
 	\caption{Descente et remontée moins mémophage} \label{algo-human-paper-bis}
 	%%%
     \Data{$(a ; b) \in \NNs \!\times \NNs$ avec $a \geq b$}
     \Result{$(u ; v) \in \ZZ \!\times \ZZ$ tel que $au + bv = \pgcd(a ; b)$}
-	\addalgoblank
+	\BlankLine
     \Actions{
     	\Comment{Phase de descente}
-        \addalgoblank
+        \BlankLine
         $Q \Store [\star]$
         \\
-        \addalgoblank
+        \BlankLine
         \While{$b \neq 0$}{
 			$a = q b + r$ est la division euclidienne standard.
 			\\
 			$Q \Store Q + [q]$
 			\\
 			$a \Store b$
-			\SequSep
+			\\
 			$b \Store r$
 		}
-		\addalgoblank
+		\BlankLine
     	\Comment{Phase de remontée}
-        \addalgoblank
+        \BlankLine
         $u \Store 1$
-		\SequSep
+		\\
         $v \Store 0$
         \\
 		$\varepsilon \Store 1$
-		\SequSep
+		\\
 		$c \Store (-1)$
 		\\
-        \addalgoblank
+        \BlankLine
         \While{$Q[c] \neq \star$}{
         	$temp \Store Q[c] v + u$
-			\SequSep
+			\\
 			$u \Store v$
-			\SequSep
+			\\
 			$v \Store temp$
 			\\
-			\addalgoblank
+			\BlankLine
         	$\varepsilon \Store (- \varepsilon)$
-			\SequSep
+			\\
         	$c \Store c - 1$
 		}
-		\addalgoblank
+		\BlankLine
 		$u \Store \varepsilon \cdot u$
-		\SequSep
+		\\
 		$v \Store (- \varepsilon \cdot v)$
 		\\
-		\addalgoblank
+		\BlankLine
 		\Return{$(u ; v)$}
 	}
 \end{algo}
-
+}

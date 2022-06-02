@@ -53,17 +53,17 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 
 
 \begin{proof}
-	Pour $j \in \NN$, notons $\probaset*{P}{j}$ la propriété \emph{\og $\forall m \in \NN$, $\forall k \in \NN$ tel que $0 \leq k \leq j$ , soit (1) est vrai, soit (2) est vrai \fg}.
-	Prouvons $\probaset*{P}{j}$ par récurrence sur $j \in \NN$.
+	Pour $j \in \NN$, notons $\setproba*{P}{j}$ la propriété \emph{\og $\forall m \in \NN$, $\forall k \in \NN$ tel que $0 \leq k \leq j$ , soit (1) est vrai, soit (2) est vrai \fg}.
+	Prouvons $\setproba*{P}{j}$ par récurrence sur $j \in \NN$.
 	
 	\begin{itemize}[label=\small\textbullet]
-		\item \textbf{Cas de base :} pour la suite nous devons à la fois prouver $\probaset*{P}{0}$ et $\probaset*{P}{1}$ .
+		\item \textbf{Cas de base :} pour la suite nous devons à la fois prouver $\setproba*{P}{0}$ et $\setproba*{P}{1}$ .
 		
 		\noindent
-		$\probaset*{P}{0}$ est clairement vérifiée puisque $\probaset*{P}{0}$ est \emph{\og $\forall m \in \NN$, nous pouvons passer de \config{mNB.} à \config{(0+m)NB.} \fg} .
+		$\setproba*{P}{0}$ est clairement vérifiée puisque $\setproba*{P}{0}$ est \emph{\og $\forall m \in \NN$, nous pouvons passer de \config{mNB.} à \config{(0+m)NB.} \fg} .
 		
 		\noindent
-		Passons à $\probaset*{P}{1}$ . Nous devons valider la proposition \emph{\og $\forall m \in \NN$, nous pouvons passer de \config{1NmNB.1B} à \config{.(1+m)NB} \fg} .
+		Passons à $\setproba*{P}{1}$ . Nous devons valider la proposition \emph{\og $\forall m \in \NN$, nous pouvons passer de \config{1NmNB.1B} à \config{.(1+m)NB} \fg} .
 		Les cas $m = 0$ et $m = 1$ sont faciles à traiter, tandis que pour $m \geq 2$ , il suffit de faire les mouvements suivants.
 	\begin{mvts}
 		\medskip
@@ -74,7 +74,7 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 	\end{mvts}
 
 
-		\item \textbf{Hérédité :} supposons que $\probaset*{P}{j}$ avec en plus $j \geq 1$. On peut faire ceci car si $j = 0$ alors $j + 1 = 1$ donne un cas qui a déjà été traité. Nous devons alors déduire $\probaset*{P}{j+1}$ de $\probaset*{P}{j}$.
+		\item \textbf{Hérédité :} supposons que $\setproba*{P}{j}$ avec en plus $j \geq 1$. On peut faire ceci car si $j = 0$ alors $j + 1 = 1$ donne un cas qui a déjà été traité. Nous devons alors déduire $\setproba*{P}{j+1}$ de $\setproba*{P}{j}$.
 		
 		\medskip
 		
@@ -92,7 +92,7 @@ Les démonstrations ci-dessous sont sans astuce particulière et faites en raiso
 		\end{mvts}
 			
 		\noindent
-		Comme $j - 1 \geq 0$ et $j + 1 \geq 2$ sont de même parité, la validité de $\probaset*{P}{j}$ permet, si $j+1 = 2r+1$ est impair, d'arriver à \config{.(j-1+2)NB} c'est à dire à \config{.(j+1)NB} , et sinon d'arriver à \config{(j+1)NB.} .
+		Comme $j - 1 \geq 0$ et $j + 1 \geq 2$ sont de même parité, la validité de $\setproba*{P}{j}$ permet, si $j+1 = 2r+1$ est impair, d'arriver à \config{.(j-1+2)NB} c'est à dire à \config{.(j+1)NB} , et sinon d'arriver à \config{(j+1)NB.} .
 			
 		\medskip
 			

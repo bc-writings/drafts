@@ -3,12 +3,12 @@ Ce qui suit tente de donner une explication naturelle du lien entre la loi $\sta
 
 \bigskip
 
-Jusqu'à présent, nous n'avons à aucun moment représenter l'hyperbole $\geoset{H}$ \squote{à deux branches} d'équation implicite $X^2 - 8 Y^2 = 1$ \textit{(on utilise ici des majuscules pour le système de coordonnées)}. C'est un peu dommage !
+Jusqu'à présent, nous n'avons à aucun moment représenter l'hyperbole $\setgeo{H}$ \squote{à deux branches} d'équation implicite $X^2 - 8 Y^2 = 1$ \textit{(on utilise ici des majuscules pour le système de coordonnées)}. C'est un peu dommage !
 
 
 \medskip
 
-Ci-dessous se trouvent quatre représentations avec deux points $M$ et $N$ sur $\geoset{H}$ de coordonnées respectives 
+Ci-dessous se trouvent quatre représentations avec deux points $M$ et $N$ sur $\setgeo{H}$ de coordonnées respectives 
 $\begin{pmatrix}
   x \\ 
   y 
@@ -18,7 +18,7 @@ $\begin{pmatrix}
   x' \\ 
   y' 
 \end{pmatrix}$
-ainsi que les points $E$ , cf. le neutre de $\star$ , et $P$, eux aussi sur $\geoset{H}$ , de coordonnées respectives 
+ainsi que les points $E$ , cf. le neutre de $\star$ , et $P$, eux aussi sur $\setgeo{H}$ , de coordonnées respectives 
 $\begin{pmatrix}
   1 \\ 
   0 
@@ -77,13 +77,13 @@ Les graphiques précédents suggèrent
 un procédé géométrique simple pour construire $P$.
 
 \begin{enumerate}
-	\item Si $M \neq N$ et $x_M \neq x_N$ alors on construit la parallèle à $(MN)$ passant par $E$ . Le point $P$ est le second point d'intersection de cette parallèle avec $\geoset{H}$ \emph{(notons qu'une droite coupe $\geoset{H}$ en au plus deux points)}.
+	\item Si $M \neq N$ et $x_M \neq x_N$ alors on construit la parallèle à $(MN)$ passant par $E$ . Le point $P$ est le second point d'intersection de cette parallèle avec $\setgeo{H}$ \emph{(notons qu'une droite coupe $\setgeo{H}$ en au plus deux points)}.
 
 
 	\item Si $M \neq N$ et $x_M = x_N$ alors $P = E$ . Notons au passage que l'on peut voir ceci comme un cas limite du précédent avec un point d'intersection \squote{double}.
 
 
-	\item Si $M = N$ on procède comme ci-dessus mais avec la parallèle de la tangente à $\geoset{H}$ au point $M$ .
+	\item Si $M = N$ on procède comme ci-dessus mais avec la parallèle de la tangente à $\setgeo{H}$ au point $M$ .
 \end{enumerate}
 
 
@@ -129,7 +129,7 @@ Prouvons la validité de notre conjecture. Nous confondrons les points avec les 
 	\noindent
 	$\det\left ( \vect{EP} ; \vect{MN} \right)
 	=
-	\left|\begin{NiceArray}{CC} 
+	\left|\begin{NiceArray}{cc} 
 	  x'' - 1 & x' - x \\ 
 	  y''     & y' - y
 	\end{NiceArray}\right|$
@@ -218,17 +218,17 @@ Prouvons la validité de notre conjecture. Nous confondrons les points avec les 
 	\smallskip
 	
 	\noindent
-	Notant $F(X ; Y) = X^2 - 8 Y^2 - 1$ , la tangente à $\probaset{H} : F(X ; Y) = 0$ en $M$ admet pour vecteur directeur
+	Notant $F(X ; Y) = X^2 - 8 Y^2 - 1$ , la tangente à $\setproba{H} : F(X ; Y) = 0$ en $M$ admet pour vecteur directeur
 	$\vect{u} \begin{pmatrix} 
-	  - \partialfrac{F}{Y}(x ; y)    \\ 
-	  \partialfrac{F}{X}(x ; y) 
+	  - \pder{F}{Y}{1}(x ; y)    \\ 
+	  \pder{F}{X}{1}(x ; y) 
 	\end{pmatrix}$
 	c'est à dire
 	$\vect{u} \begin{pmatrix} 
 	  16y    \\ 
 	  2x 
 	\end{pmatrix}$
-	sous la condition $(x ; y) \neq (0 ; 0)$ qui est vérifiée par tout point de notre hyperbole $\geoset{H}$. 
+	sous la condition $(x ; y) \neq (0 ; 0)$ qui est vérifiée par tout point de notre hyperbole $\setgeo{H}$. 
 	
 	
 	\noindent

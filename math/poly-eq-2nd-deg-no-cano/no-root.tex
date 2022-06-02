@@ -6,7 +6,7 @@ Graphiquement on constate vite que $\setgeo*{C}{f}$ possède un axe de symétriq
 
 \medskip
 
-\begin{explain}[style = sar, ope = \iff] 
+\begin{stepcalc}[style = sar, ope = \iff] 
 	f(\alpha) = f(\beta)
 		\explnext{}
 	a \, \alpha^2 + b \, \alpha + c = a \, \beta^2 + b \, \beta + c
@@ -17,7 +17,7 @@ Graphiquement on constate vite que $\setgeo*{C}{f}$ possède un axe de symétriq
 									\quad\quad \fbox{\texttt{1}}
 		\explnext{}
 	\dfrac{\alpha + \beta}{2} = - \dfrac{b}{2a}
-\end{explain}
+\end{stepcalc}
 
 \medskip
 
@@ -31,24 +31,24 @@ Il est aussi aisé de conjecturer que $f(m)$ est un extremum de $f$ vue comme fo
 
 \medskip
 
-\begin{explain}[style = sar] 
+\begin{stepcalc}[style = sar] 
 	f(x) - f(m)
 		\explnext{}
 	(x - m) (a \, x + a \, m + b)
 		\explnext{%
 			\tiny%
-			\begin{explain}[style = sar, ope = \iff]
+			\begin{stepcalc}[style = sar, ope = \iff]
 				m = - \dfrac{b}{2a}
 					\explnext{}	
 				2am = - b
 					\explnext{}	
 				am + b = - am
-			\end{explain}%
+			\end{stepcalc}%
 		}
 	(x - m) (a \, x - a \, m)
 		\explnext{}
 	a(x - m)^2
-\end{explain}
+\end{stepcalc}
 
 \medskip
 
@@ -63,7 +63,7 @@ si $a < 0$ alors $f(m)$ est un maximum. On peut maintenant savoir quand $f$ n'ad
 		  
 		  $f$ n'a pas de zéro si et seulement si $f(m) > 0$. Voyons ce que cela implique.
 		  
-		  \begin{explain}[style = sar, ope = \iff]
+		  \begin{stepcalc}[style = sar, ope = \iff]
 		  		f(m) > 0
 					\explnext{}
 				a \, m^2 + b \, m + c > 0
@@ -73,7 +73,7 @@ si $a < 0$ alors $f(m)$ est un maximum. On peut maintenant savoir quand $f$ n'ad
 				- \dfrac{b^2}{4 a} + c > 0
 					\explnext{\tiny$4 a > 0$}
 				- b^2 + 4 a c > 0
-		  \end{explain}
+		  \end{stepcalc}
 
 
 
@@ -83,13 +83,13 @@ si $a < 0$ alors $f(m)$ est un maximum. On peut maintenant savoir quand $f$ n'ad
 		  
 		  $f$ n'a pas de zéro si et seulement si $f(m) < 0$. Cela implique ce qui suit.
 		  
-		  \begin{explain}[style = sar, ope = \iff]
+		  \begin{stepcalc}[style = sar, ope = \iff]
 		  		f(m) < 0
 					\explnext{}
 				- \dfrac{b^2}{4 a} + c < 0
 					\explnext{\tiny$4 a < 0$}
 				- b^2 + 4 a c > 0
-		  \end{explain}
+		  \end{stepcalc}
 \end{enumerate}
  
 
