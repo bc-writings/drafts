@@ -1,0 +1,217 @@
+Subject: =?UTF-8?Q?Re=3a_D=c3=a9nombrabilit=c3=a9_de_Q_et_algo?=
+From: =?UTF-8?Q?Christophe_BAL-_Maths_-_Lyc=c3=a9e_Monge_de_Chamb=c3=a9ry?=
+ <Christophe.Bal@ac-grenoble.fr>
+To: profs-maths-gt-monge-request@framalistes.org
+References: <6831d925-3e0d-2542-2c38-466748c0eafc@ac-grenoble.fr>
+ <7f7e8eed-638f-a57b-a32a-cb8820910663@ac-grenoble.fr>
+ <bc715b00-7d9e-2b07-af03-8098acf9523f@ac-grenoble.fr>
+Message-ID: <54b9134d-0d01-8447-527f-412445ff47fd@ac-grenoble.fr>
+Date: Wed, 22 Sep 2021 15:50:23 +0200
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0)
+ Gecko/20100101 Thunderbird/78.14.0
+MIME-Version: 1.0
+In-Reply-To: <bc715b00-7d9e-2b07-af03-8098acf9523f@ac-grenoble.fr>
+Content-Type: multipart/alternative;
+ boundary="------------85104DCB5FA0BF94F1DD54CD"
+Content-Language: fr
+
+This is a multi-part message in MIME format.
+--------------85104DCB5FA0BF94F1DD54CD
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Finalement, un truc accessible et tout bête pour un bon 1G.
+
+*numero = 1**
+**fractions_trouvees = [0]**
+**k = 0**
+**Tant que VRAI:**
+**    k += 1**
+**
+**    Pour p allant de 1 à k:**
+**        Pour q allant de 1 à k:**
+**            Si p/q non dans fractions_trouvees:**
+**                numero += 1**
+**                Ajouter p/q à fractions_trouvees*
+
+
+Le 22/09/2021 à 15:24, Christophe BAL- Maths - Lycée Monge de Chambéry a 
+écrit :
+>
+> Du coup il faudrait repasser via la démo classique en zig zag.
+>
+> Tant pis je garde juste pour Q inter ]0 ; 1]. C'est déjà pas mal.
+>
+>
+> Le 22/09/2021 à 15:07, Christophe BAL- Maths - Lycée Monge de Chambéry 
+> a écrit :
+>>
+>> Oups j'ai dit une grosse connerie car là c'est juste pour Q inter ]0 
+>> ; 1] (suffisant tout de même). Je vais voir si cela s'adapte à Q*+ 
+>> tout entier...
+>>
+>>
+>> Le 22/09/2021 à 15:03, Christophe BAL- Maths - Lycée Monge de 
+>> Chambéry a écrit :
+>>>
+>>> Rien de révolutionnaire mais je me disais que/"l'algo infini"/ 
+>>> suivant donnait la dénombrabilité de Q+.
+>>>
+>>>
+>>> *numero = 1*
+>>>
+>>> *fractions_trouvees = [1]**
+>>> *
+>>>
+>>> *p = 1*
+>>>
+>>> **
+>>>
+>>> *Tant que VRAI:*
+>>>
+>>> *    Pour q allant de 1 à p:*
+>>>
+>>> *        Si PGCD(p ; q) == 1 et p/q non dans fractions_trouvees:*
+>>>
+>>> *            numero += 1*
+>>>
+>>> *            Ajouter **p/q à fractions_trouvees*
+>>>
+>>>
+>>> Si vous vous en foutez, j'espère que c'est à maximum 60%...
+>>>
+>>>
+>>> PS: la meilleure preuve rigoureuse et très accessible est celle 
+>>> utilisant la décomposition d'un naturel. Par exemple, on passe de (2 
+>>> x 3^3) / (5 x 7^10) à 2^2 x 3^6 x 5 x 7^19 et vice versa comme 
+>>> disaient d'illustres inconnus.
+>>>
+>>> -- 
+>>> Christophe BAL
+>>> Lycée Monge de Chambéry (73000)
+>>>
+>>> Enseignant Agrégé de Mathématiques
+>> -- 
+>> Christophe BAL
+>> Lycée Monge de Chambéry (73000)
+>>
+>> Enseignant Agrégé de Mathématiques
+> -- 
+> Christophe BAL
+> Lycée Monge de Chambéry (73000)
+>
+> Enseignant Agrégé de Mathématiques
+
+-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques
+
+
+--------------85104DCB5FA0BF94F1DD54CD
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Finalement, un truc accessible et tout bête pour un bon 1G.</p>
+    <p><b>numero = 1</b><b><br>
+      </b><b>fractions_trouvees = [0]</b><b><br>
+      </b><b>k = 0</b><b><br>
+      </b><b>Tant que VRAI:</b><b><br>
+      </b><b>    k += 1</b><b><br>
+      </b><b><br>
+      </b><b>    Pour p allant de 1 à k:</b><b><br>
+      </b><b>        Pour q allant de 1 à k:</b><b><br>
+      </b><b>            Si p/q non dans fractions_trouvees:</b><b><br>
+      </b><b>                numero += 1</b><b><br>
+      </b><b>                Ajouter p/q à fractions_trouvees</b></p>
+    <p><br>
+    </p>
+    <div class="moz-cite-prefix">Le 22/09/2021 à 15:24, Christophe BAL-
+      Maths - Lycée Monge de Chambéry a écrit :<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:bc715b00-7d9e-2b07-af03-8098acf9523f@ac-grenoble.fr">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <p>Du coup il faudrait repasser via la démo classique en zig zag.</p>
+      <p>Tant pis je garde juste pour Q inter ]0 ; 1]. C'est déjà pas
+        mal.</p>
+      <p><br>
+      </p>
+      <div class="moz-cite-prefix">Le 22/09/2021 à 15:07, Christophe
+        BAL- Maths - Lycée Monge de Chambéry a écrit :<br>
+      </div>
+      <blockquote type="cite"
+        cite="mid:7f7e8eed-638f-a57b-a32a-cb8820910663@ac-grenoble.fr">
+        <meta http-equiv="Content-Type" content="text/html;
+          charset=UTF-8">
+        <p>Oups j'ai dit une grosse connerie car là c'est juste pour Q
+          inter ]0 ; 1] (suffisant tout de même). Je vais voir si cela
+          s'adapte à Q*+ tout entier...<br>
+        </p>
+        <p><br>
+        </p>
+        <div class="moz-cite-prefix">Le 22/09/2021 à 15:03, Christophe
+          BAL- Maths - Lycée Monge de Chambéry a écrit :<br>
+        </div>
+        <blockquote type="cite"
+          cite="mid:6831d925-3e0d-2542-2c38-466748c0eafc@ac-grenoble.fr">
+          <meta http-equiv="content-type" content="text/html;
+            charset=UTF-8">
+          <p>Rien de révolutionnaire mais je me disais que<i> "l'algo
+              infini"</i> suivant donnait la dénombrabilité de Q+.</p>
+          <p><br>
+          </p>
+          <p><b>numero = 1</b></p>
+          <p><b>fractions_trouvees = [1]</b><b><br>
+            </b> </p>
+          <p><b>p = 1</b></p>
+          <b> </b>
+          <p><b>Tant que VRAI:</b></p>
+          <p><b>    Pour q allant de 1 à p:</b></p>
+          <p><b>        Si PGCD(p ; q) == 1 et p/q non dans
+              fractions_trouvees:</b></p>
+          <p><b>            numero += 1</b></p>
+          <p><b>            Ajouter </b><b>p/q à fractions_trouvees</b></p>
+          <p><br>
+          </p>
+          <p>Si vous vous en foutez, j'espère que c'est à maximum 60%...</p>
+          <p><br>
+          </p>
+          <p>PS: la meilleure preuve rigoureuse et très accessible est
+            celle utilisant la décomposition d'un naturel. Par exemple,
+            on passe de (2 x 3^3) / (5 x 7^10) à 2^2 x 3^6 x 5 x 7^19 et
+            vice versa comme disaient d'illustres inconnus.<br>
+          </p>
+          <pre class="moz-signature" cols="72">-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques</pre>
+        </blockquote>
+        <pre class="moz-signature" cols="72">-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques</pre>
+      </blockquote>
+      <pre class="moz-signature" cols="72">-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques</pre>
+    </blockquote>
+    <pre class="moz-signature" cols="72">-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques</pre>
+  </body>
+</html>
+
+--------------85104DCB5FA0BF94F1DD54CD--

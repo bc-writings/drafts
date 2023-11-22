@@ -1,0 +1,637 @@
+header{
+    height:219px;
+    position: relative;
+    width:100%;
+    background-color: #F7FCFA;
+}
+header .connexion{
+    height:40px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #08783E;
+
+}
+header article{
+    height:138px;
+    margin: 0 auto;
+    width: 960px;
+    padding: 1px;
+    font-size: 50px;
+   
+}
+
+article .inscription{
+    height : 120px;
+    width : 300px;
+    margin: 10px 0px 0px 80px;
+    background-color: #F7FCFA;
+    float:left;
+
+}
+
+header .trait{
+    height:2px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #D9EBDC;
+}
+
+header .choix{
+    height:37px;
+    margin: 0 auto;
+    width: 960px;
+    background-color: #F7FCFA;
+}
+
+header .site{
+    padding-top: 3px;
+    height:37px;
+    margin: 0 auto;
+    width: 960px;
+    background-color: #08783E;
+} 
+
+article a img{
+   margin: 20px 50px 0px 200px; 
+   float: left; 
+   /*width:550px;*/ 
+}
+
+
+.folderHead {
+    border-bottom: 1px solid #c8c8c8;
+    padding-bottom: 1px;
+}
+.folderHead h1 {
+    color: #077373;
+    font-size: 23px;
+    text-transform: uppercase;
+    text-align:left;
+    width: 615px;
+    float: left;
+}
+
+#leftbar article, #leftbarHigh article {
+    margin-top: 15px;
+}
+
+#leftbar article {
+    font-family: 'Open Sans';
+    font-size: 15px !important;
+    font-weight: lighter;
+}
+
+
+.spacer {
+    clear: both;
+    float: none;
+    margin: 0 !important;
+}
+
+#ImgDos { 
+  height:auto;    
+  width: 550px; 
+	max-height: 313px;
+  margin: 20px 0px 35px 0px; 
+}
+
+#ImgArt { 
+  height:auto;    
+  width: 555px; 
+	max-height: 313px;
+  /*margin: 20px 0px 35px 0px; */     
+  margin: 20px 0px 35px 0px; 
+   float: left; 
+      
+}
+
+.upTitle{
+     text-align:left;
+     margin:0px 0 -50px 0;
+}
+
+
+#TouteLaPage {
+     background-color: #F7FCFA;
+}
+
+#CadreContenu{
+	width:960px;
+	margin:0 auto;
+	border: none;
+	background: white;
+	
+	display :block;
+}
+#embalage {
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    width: 100%;
+}
+#CadreHaut{
+    width:920px;
+margin:0 auto;
+
+
+padding:20px 20px 40px 20px;
+height:100px;
+}
+
+#CadreHaut p{
+    color:#B40404;
+    font-size: 50px;
+    text-align: center;
+}
+.rubrique{
+    color:#B40404;
+    font-size: 50px;
+    text-align: center;
+}
+.sou_rub{
+    color:#08783E;
+    font-size: 30px;
+    text-align: left;
+}
+
+
+em {
+    font-size: medium;
+}
+
+section{
+padding: 0px 0px 0px 5px;
+width:585px;
+float:left;
+
+}
+div.spacer{clear:both; height:1px; display:block;}
+
+aside {
+    padding: 20px 0px 0px 0px;
+    width:370px; 
+   float: left;
+
+   }
+
+aside .encart {
+    width: 280px; 
+    border: 2px solid #08783E;
+    padding: 0px 20px 0px 20px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+aside img{
+	width: 280px;
+    margin: 10px 0px 10px 0px;
+	
+}
+
+/*section img{
+    width:180px;
+}
+  */
+#CadreHaut img{
+    height:140px;
+}
+
+.Cadre {  /* Les cadres de positionnement à l'interieur de section */
+  
+    width: 570px;
+    float: left;
+    background-color: #FFFFFF;
+    height :180px; /* à virer */
+    
+}
+.ligne {  /* Les cadres de positionnement à l'interieur de section */
+  
+    width: 570px;
+    float: left;
+    background-color: #D9EBDC;
+    height :2px; /* à virer */
+    
+}
+.Cadre h1{
+    font-size: 40px;
+}
+.Cadre h2{
+    font-size: 26px;
+    text-align: center;
+}
+
+.Cadre img{
+    float:left;
+    width : 100px;
+    margin-top: 20px;
+}
+
+
+div.action h3{
+    text-align: center;
+}
+
+div.action h4{
+    color:red;
+    text-align: center;
+
+}
+
+h1
+{
+    text-align: center;
+}
+
+h2
+{
+    color: red;
+    font-size: 22px;
+}
+
+
+h3
+{color:blue;}
+
+.numero{
+    width:530px;
+    background-color: #D9EBDC;
+    padding: 20px;
+
+}
+.couv{
+
+  width:190px; 
+  float: left; 
+}
+.sommaire{
+    width:340px;
+    float: left;
+    background-color: #D9EBDC;
+}
+
+div.couv img{
+    float: left;
+    width: 170px;
+    height: 230px; 
+
+}
+
+
+
+.action{
+	width: 265px;
+	float:left;       
+}
+
+.imageprix{
+    margin-left: 20px;    
+    width:220px;
+}
+
+.imageflottante
+{
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    
+   
+}
+.livre
+{
+  float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 98px; 
+    height:135px; 
+}
+.Cadre3
+{
+  float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 170px;
+    height: 230px;  
+}
+.imageflottanted
+{
+    float: right;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 100px;
+ }  
+ .imageflottanteg
+{
+    float: left;
+    margin-right: 20px;
+    margin-left: 10px;
+    margin-top: 5px;
+    height: 200px;
+ }   
+
+.imageban
+{
+    float: left;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    width: 540px;
+ }   
+
+.bout /* aligne les boutons à droite */
+{
+text-align: right; cursor:pointer;
+}
+
+.boutc /* aligne les boutons au centre */
+{
+text-align: center;
+}
+
+.CadreLitteramath
+{
+    float: left;
+    width: 415px;
+ height: 400px;
+    border: 2px solid #e2001a;
+    padding: 0px 20px 0px 20px;
+    margin:10px;
+    text-align: center;
+   
+}
+.choix button{
+    color: #08783E; 
+    font-size : medium;
+    margin-right: 0px;
+background-color: white;
+border: 2px solid;
+border-radius: 3px;
+cursor:pointer;
+
+}
+
+.choix button a{
+    color: #08783E;
+    text-decoration: none; 
+}
+
+.site button{
+    color: #FFFFFF; 
+    font-size : medium;
+
+    margin-right: 0px;
+    background-color: #08783E;
+    border: 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.site button a{
+    color: #FFFFFF;
+    text-decoration: none; 
+}
+
+button
+{
+	color: orange; 
+	font-size : medium;
+	margin-right: 0px;
+  background-color: white;
+  border: 2px solid;
+  cursor:pointer;
+
+}
+
+button a /* Les balises a situées à l'intérieur des balises button */
+{
+	color: orange;
+	text-decoration: none; 
+}
+
+a{text-decoration:none;}
+
+body{margin: 0;}
+
+.encadre {
+    background-color: #EDCAFA;
+    padding: 10px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+}
+
+
+.encadre1{
+    background-color: #FAE3C4;
+    padding: 10px 20px 10px 20px;
+    margin: 20px 20px 20px 20px;
+}
+
+
+.encadre2{
+    background-color: #F5F6CE;
+    padding: 10px 20px 20px 20px;
+    margin: 20px 20px 20px 20px;
+    color:#610B0B;       
+}
+
+.chapeau{
+    font-size: larger;
+}
+.chapeau img{
+    width: 500px;
+    padding:30px 30px 20px 35px;
+}
+
+
+
+/***litteramath, roman à enigmes... ***/
+.bouton_lien_ressources_active a {
+    margin-left: 15px;
+    float: left;
+    text-decoration: none;
+    height: 30px;
+    width: 95px;
+    background-image: url(http://infinimath.com/images/fond_btn_carte_hover.png);
+    display: block;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+.bouton_lien_ressources a {
+    margin-left: 15px;
+    float: left;
+    text-decoration: none;
+    height: 30px;
+    width: 95px;
+    background-image: url(http://infinimath.com/images/fond_btn_carte.png);
+    display: block;
+    color: white;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+
+/**Nouvelles pages TE**/
+
+.GROSTITREL {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 35px;
+	color: #FF8737;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+.titre_trans{
+  clear:both;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	color: #FF8737;
+	text-align: left;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 20px;
+	}
+
+
+.lien_chapitre {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 20px;
+	padding-top: 0px;
+	text-align: left;
+	color: #36C;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.grostitre_chapitre {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 30px;
+	color: #FF8737;
+	text-align: left;
+
+}
+
+.titre_chapitre {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 24px;
+	padding-top: 0px;
+	text-align: left;
+	color: #36C;
+	
+}
+
+
+.soustitre_chapitre {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+  color:#C9001A;
+}
+
+.soustitre_chapitre {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 23px;
+  color:#C9001A;
+  
+}
+.soustitre_chapitre_exos {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 20px;
+  color:#C9001A;
+  cursor:pointer;
+}
+.contenu
+{
+ display:none;
+ visibility:hidden;
+}
+
+/*** Style récupéré de tangentemag 30/11/2017 ***/
+#lastArticles {
+	margin-top: 40px;
+	font-family: 'Open Sans';
+  font-size: 13px !important;
+  font-weight: lighter;
+}
+#lastArticles h2 {
+	color: #196ea0;
+  font-size: 14px;
+  margin: 5px 0 2px 0;
+/*font-size: 18px; IB*/
+/*margin-top:7px; IB*/
+/*line-height:21px;*/
+}
+#lastArticles h1, #lastFolder h1 {
+	font-size: 22px;
+	margin-bottom: -15px;
+}
+#lastArticles span{
+	color: #7d7d7d;
+  margin: 1px 0 10px 0;
+}
+
+#lastArticles a {
+	text-decoration: none;
+}
+
+#lastArticles a:hover{
+	text-decoration: underline;
+}
+
+.listArticles {
+	margin-top: 20px;
+	float: left;
+	width: 630px;
+}
+.listArticles img {
+	float: left;
+  width: auto;
+  height: auto;
+  max-height: 150px;
+  max-width: 195px;
+}
+.listArticles span {
+	color: #7d7d7d;
+	font-family: 'Open Sans', serif;
+	float: left;
+}
+.listArticles h2, .listArticles p {
+	float: right;
+	width: 420px;
+}
+.listArticles h2 {
+	color: #196ea0;
+/*	font-size: 14px; */
+font-size:14px;
+line-height:21px;
+}
+.listArticles p {
+	font-size: 14px;
+}
+.listArticles a {
+	color: inherit;
+	font-family: 'Open Sans';
+  font-size: 15px !important;
+  font-weight: lighter;
+}
+
+/*** Fin récupération Tangentemag ***/

@@ -1,0 +1,16 @@
+/* Pagination du header du site */
+.lelogo_1 {background-color :#D81671; width : 100% ; border-collapse:collapse;}
+
+.lelogo_im {margin-top:5px;margin-bottom:2px;margin-right:4px; height:35px;}
+
+.lelogo_1 a {text-decoration : none;}
+
+.lelogo_im2 {margin-top:10px; margin-bottom:10px;margin-left:10px;height:65px;}
+
+.lelogo_tr { vertical-align:middle;height:40px;}
+
+/* Pour le tableau encadrant tous les contenus */
+
+.thebig {
+	text-align:left;border-collapse: collapse; box-shadow: 0px 2px 4px grey;width:1000px;padding:0;background-color:white;
+}

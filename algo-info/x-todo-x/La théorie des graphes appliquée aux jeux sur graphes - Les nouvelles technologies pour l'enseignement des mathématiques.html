@@ -1,0 +1,820 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" data-lt-installed="true" lang="fr"><head>
+<title>La théorie des graphes appliquée aux jeux sur graphes - Les nouvelles technologies pour l'enseignement des mathématiques</title>
+<meta name="description" content="Les jeux créés par de jeunes enfants sont plus faciles à analyser par ordinateur, que les classiques Go et échecs. Un exemple est traité (en Python, (...)">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="generator" content="SPIP 3.2.7 [24473]">
+
+
+<link rel="shortcut icon" href="http://revue.sesamath.net/squelettes/favicon.ico">
+
+
+<link rel="alternate" type="application/rss+xml" title="Syndiquer tout le site" href="http://revue.sesamath.net/spip.php?page=backend">
+
+
+<link rel="stylesheet" href="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/4d9fda828539c7ae052a4ba70cc48d9d.css" type="text/css">
+
+
+
+
+
+
+<!-- <script type="text/javascript" src="/plugins-dist/jquery_ui/prive/javascript/ui/menu.js"></script> -->
+
+
+
+<script type="text/javascript">/* <![CDATA[ */
+var box_settings = {tt_img:true,sel_g:"#documents a[type='image/jpeg'],#documents_portfolio a[type='image/jpeg'],#documents_portfolio a[type='image/png'],#documents_portfolio a[type='image/gif']",sel_c:".mediabox",trans:"elastic",speed:"200",ssSpeed:"2500",maxW:"100%",maxH:"100%",minW:"400px",minH:"",opa:"0.9",str_ssStart:"Diaporama",str_ssStop:"Arrêter",str_cur:"{current}/{total}",str_prev:"Précédent",str_next:"Suivant",str_close:"Fermer",splash_url:""};
+var box_settings_splash_width = "600px";
+var box_settings_splash_height = "90%";
+var box_settings_iframe = true;
+/* ]]> */</script>
+<!-- insert_head_css -->
+
+
+
+
+<script type="text/javascript" src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/48ee7400ac28f1bd11b7052781d5601b.js"></script><style type="text/css">div.blocs_invisible{display:none;}</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- insert_head -->
+	
+	
+
+
+<!-- tep -->
+<script type="text/x-mathjax-config;executed=true">MathJax.Hub.Config({tex2jax: {inlineMath:[['$','$']],processEscapes: true},jax: ['input/TeX','output/SVG'],TeX: {extensions: ['color.js']},messageStyle:'none'});</script><script type="text/javascript" src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/MathJax.js"></script>
+<!-- Debut CS -->
+
+<!-- Fin CS -->
+
+
+<!-- Debut CS -->
+
+<!-- Fin CS -->
+
+<!-- CSS/JS JEUX (AUTO) -->
+<script type="text/javascript">
+      function chgpage(formulaire)  {
+          if (formulaire.id_article.selectedIndex != 0)
+          location.href = 
+formulaire.id_article.options[formulaire.id_article.selectedIndex].value;
+      }
+</script>
+
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_SVG_Display {text-align: center; margin: 1em 0em; position: relative; display: block; width: 100%}
+#MathJax_SVG_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax_SVG {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; border: 0; padding: 0; margin: 0}
+.MathJax_SVG * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.mjx-svg-href {fill: blue; stroke: blue}
+.MathJax_SVG_Processing {visibility: hidden; position: absolute; top: 0; left: 0; width: 0; height: 0; overflow: hidden; display: block}
+.MathJax_SVG_Processed {display: none!important}
+.MathJax_SVG_ExBox {display: block; overflow: hidden; width: 1px; height: 60ex}
+.MathJax_SVG .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+
+
+<body data-new-gr-c-s-check-loaded="8.899.0" data-gr-ext-installed=""><div id="MathJax_Message" style="display: none;"></div><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"></defs></svg></div>
+	<div id="container_page">
+		<!-- Entête de la page -->
+		<div id="bande">
+	<!-- Insertion du logo du site -->
+	
+	<a href="http://revue.sesamath.net/"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/bandeau_haut.gif" alt="Mathématice, intégration des Tice dans l'enseignement des mathématiques"></a>
+	
+	<!-- Menu de navigation général -->
+	&nbsp;<br>
+	<div id="menu_bandeau">
+		<a class="menu_bouton_bandeau" href="http://revue.sesamath.net/spip.php?rubrique1">
+			À propos de MathémaTICE
+		</a>
+		<a class="menu_bouton_bandeau" href="http://revue.sesamath.net/spip.php?article611">
+			Mentions légales
+		</a>
+		<a class="menu_bouton_bandeau" href="http://revue.sesamath.net/spip.php?article88">
+			Comment contribuer ?
+		</a>
+		
+		
+		<a class="menu_bouton_bandeau" href="http://revue.sesamath.net/spip.php?rubrique28">
+			Appels à contribution
+		</a>
+		
+		
+		<a class="menu_bouton_bandeau" href="http://revue.sesamath.net/spip.php?article296">
+			Fonctionnement du moteur de recherche
+		</a>
+
+	</div>
+
+</div>		<div id="bande">
+			<div id="bande_550">
+				<div id="corps_550">
+					<!-- Fil d'ariane -->
+					<div id="bande_ariane">
+						<a class="ariane" href="http://revue.sesamath.net/">Sommaire</a>
+						 
+							&gt; 
+							<a class="ariane" href="http://revue.sesamath.net/spip.php?rubrique188">N°73 - Janvier 2021</a>
+						 &gt; La théorie des graphes appliquée aux jeux sur&nbsp;(...)
+					</div>
+					<!--
+					<div style="text-align:center">
+     <a href="http://www.mathexe.com/" target="_blank">
+        <img src="http://www.mathenpoche.net/images/pubs/cahiers3e_pub.gif" alt="Les cahiers Mathenpoche 3e !" />
+    </a>
+</div> -->
+					<!-- Titre et résumé de l'article -->
+					
+					
+					
+					<div class="big_titre_article">
+						<span style="font-size:80%;"></span><br>
+						La théorie des graphes appliquée aux jeux sur graphes<br>
+						<span style="font-size:80%;">Un addendum au livre «&nbsp;Jeux et graphes&nbsp;»</span>
+					</div>
+					
+				</div>
+			</div>
+			<div id="bande_250">
+				<div id="corps_250">
+					<div class="titre_menu">
+						Moteur de recherche
+					</div>
+					
+
+<form action="spip.php?page=recherche" method="get"><div>
+	<input name="page" value="recherche" type="hidden">
+	
+	<label for="recherche">Rechercher&nbsp;:</label>
+	<input type="text" class="text" size="10" name="recherche" id="recherche" accesskey="4">
+	<!-- <input type="submit" class="submit" value="&gt;&gt;" title="Rechercher" /> -->
+
+	<input type="image" src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/racine-24.gif">
+	</div>
+</form>
+				</div>
+			</div>
+		</div>
+		<div id="bande">
+			<div id="bande_800">	
+				<div id="corps_800">	
+					
+					<div class="corps_descriptif">
+						<small>Mis en ligne le 12 décembre 2020, par <a href="http://revue.sesamath.net/spip.php?auteur154">Alain Busser</a></small>
+						<div class="resume_article">
+							<p>La théorie des graphes est au programme d’une spécialité (NSI)
+ et d’une option (maths expertes) de terminale. Dans cet article, on va 
+la mettre en œuvre pour chercher une stratégie gagnante d’un jeu 
+combinatoire ... qui se joue sur un graphe&nbsp;!</p>
+<p><span class="spip_document_28154 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/jeu3.png" alt="" width="640" height="480"></span></p>
+<p>L’activité décrite dans cet article peut servir de projet en NSI voire de question au Grand Oral. <strong>Certains dessins de graphes sont cliquables ce qui permet d’obtenir une version agrandie (au format pdf) de ces graphes</strong>. Le livre auquel il est régulièrement fait allusion dans l’article, est <a href="https://www.editions-ellipses.fr/accueil/10668-21100-jeux-et-graphes-la-theorie-des-graphes-de-5-a-95-ans-9782340041035.html#description-scroll-tricks" class="spip_out" rel="external">celui-ci</a>.</p>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/"><img alt="Licence Creative Commons" style="border-width:0" src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/88x31.png"></a><br>Ce(tte) œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/fr/">Licence Creative Commons Attribution -  Partage dans les Mêmes Conditions 3.0 France</a>.</p>
+							
+							<div class="bouton_reponse">
+								<a class="menu_bouton_2" href="http://revue.sesamath.net/spip.php?rubrique188">Retour au sommaire</a>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+			
+			
+		<div id="bande">
+			<div id="bande_800">
+				<div class="corps_article"><div align="right"></div>
+					<h3 class="spip">Le jeu de l’ourson</h3>
+<p>Le jeu se joue sur ce graphe&nbsp;:</p>
+<dl class="spip_document_28174 spip_documents spip_documents_center">
+<dt><a href="http://revue.sesamath.net/IMG/pdf/ourson0.pdf" title="PDF - 1.6 ko" type="application/pdf"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/ourson0logo-b731b.png" alt="" width="221" height="347"></a></dt>
+</dl>
+<p>L’un des joueurs appelé Ourson dispose d’un pion de couleur rouge 
+(par exemple) et l’autre dispose de deux pions bleus (les chiots) 
+indiscernables l’un de l’autre.  Au début du jeu, les pions sont 
+disposés ainsi&nbsp;:</p>
+<p><span class="spip_document_28178 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/ourson0-3106b.png" alt="" width="348" height="546"></span></p>
+<p>Quand c’est au tour des chiots de jouer, ils bougent un seul des 
+pions bleus selon une arête du graphe, vers un sommet libre (ne 
+comportant aucun pion). Quand c’est à l’ourson de jouer, il bouge son 
+unique pion selon une arête du graphe, vers un sommet libre ... s’il le 
+peut&nbsp;! En effet le but du jeu pour les chiots est de bloquer 
+l’ourson dans un coin, comme ici&nbsp;:</p>
+<p><span class="spip_document_28180 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/ourson1-d4a8b.png" alt="" width="342" height="550"></span></p>
+<p>Dès que l’ourson est bloqué, les chiots ont gagné. Si au bout de 16 
+mouvements l’ourson n’est toujours pas bloqué, il a gagné. C’est 
+l’ourson qui commence (joue en premier).</p>
+<div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">Origine du nom</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>Des jeux où un joueur («&nbsp;proie&nbsp;» ou «&nbsp;voleur&nbsp;») 
+n’a qu’un pion, et où l’autre joueur («&nbsp;chasseurs&nbsp;» ou  
+«&nbsp;chiens&nbsp;» ou «&nbsp;gendarmes&nbsp;») doit essayer de bloquer
+ l’unique pion de l’adversaire sur un graphe, existent depuis 
+l’antiquité sous le nom de <a href="https://en.wikipedia.org/wiki/Bear_games" class="spip_out" rel="external">jeux de l’ours</a>. Ce nom viendrait de ce que chez les vikings, la proie à bloquer par les chasseurs s’appellerait <i>l’ours</i>.
+ Le jeu était connu des latins et plusieurs graphes sont connus 
+aujourd’hui, sur lesquels on jouait en général à 3 chasseurs contre un 
+seul ours. Les graphes reproduits aux pages 75 et 76 du livre comportent
+ tous plus de 20 sommets (et parfois plus de 40).  Et le degré minimal 
+étant 3, il faut 3 pions pour les chasseurs.</p>
+<p>Le graphe ci-dessus ne comportant que 6 sommets, dont deux sont de 
+degré 2, il est envisageable de n’utiliser que deux chasseurs, et la 
+petitesse du graphe, ainsi que la jeunesse du créateur du jeu, incitent à
+ remplacer l’ours par un ourson.</p>
+</div></div><div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">De jeunes créateurs</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>Le graphe a été créé par une enfant de 7 ans (pour le simple plaisir de dessiner un graphe<span class="spip_note_ref">&nbsp;[<a href="#nb1" class="spip_note" rel="appendix" title="L’original était orienté, mais la version non orientée est plus intéressante&nbsp;(...)" id="nh1">1</a>]</span>) et le jeu a été créé sur ce graphe par son petit frère à l’âge de 4 ans.</p>
+<p>La position initiale et la règle des 16 coups sont de moi par contre.
+ J’ai d’ailleurs utilisé pour cela les résultats énoncés dans l’article 
+(profondeur du graphe du jeu par exemple).</p>
+</div></div>
+<p>Malgré sa simplicité, le jeu bénéficie d’un certain succès, et en y 
+jouant, on sent vite que les chiots ont un avantage certain sur 
+l’ourson. L’idée de projet en NSI, est de formaliser cela, en cherchant 
+une stratégie gagnante.  Pour cela, la théorie des graphes, déjà 
+présente de par le fait que le jeu se joue sur un graphe, va servir, 
+comme pour chaque jeu combinatoire connu. Avec, ici, un graphe du jeu 
+qui se montre de taille raisonnable.</p>
+<p><strong>Modélisation</strong></p>
+<p>Pour représenter les positions du jeu, on commence par numéroter les sommets du graphe, ainsi&nbsp;:</p>
+<dl class="spip_document_28156 spip_documents spip_documents_center">
+<dt><a href="http://revue.sesamath.net/IMG/pdf/tahin0.pdf" title="PDF - 10.7 ko" type="application/pdf"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/tahin0logo-4cb79.png" alt="" width="249" height="369"></a></dt>
+</dl>
+<p>Une position sera représentée par une liste de sommets. On convient 
+de mettre en premier le sommet où se trouve l’ourson, et ensuite, dans 
+l’ordre croissant, les sommets où se trouvent les deux chiots. Enfin, la
+ liste se termine par un 0 si c’est au joueur ourson de jouer, et par un
+ 1 si c’est au joueur chiots de jouer.</p>
+<p>Ainsi, la position initiale est représentée par la liste 0450 . Et la
+ position bloquante vue ci-dessus est notée 5030 (5031 n’est pas 
+bloquante puisque le 1 final signifie que l’un des chiots doit bouger et
+ ainsi libérer provisoirement l’ourson).</p>
+<div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">Nombre de positions</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>Le graphe comprend 6 sommets, il y a donc 6 manières de placer 
+l’ourson sur le graphe. Pour chacune de ces positions de l’ourson, il 
+reste 5 sommets où placer deux chiots (indiscernables l’un de l’autre) 
+et cela fait donc 5×4/2=10 manières de placer ces deux chiots sur les 5 
+sommets restants. Il y a donc en tout 60 positions possibles, et le 
+graphe à construire comportera donc 60 sommets.</p>
+<p><strong>Et bien non&nbsp;:</strong> Il y a en fait 2 fois plus de positions. Pourquoi&nbsp;?</p>
+<p>Comme on l’a vu ci-dessus, la position codée 5030 est perdante 
+(l’ourson en 5 est bloqué par les chiots en 0 et en 3) alors que la 
+position 5031 ne l’est pas puisque l’un des chiots doit bouger (le 1 
+final signifiant que c’est aux chiots de jouer).</p>
+</div></div><div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">Sommets du graphe</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>Il y a donc 60×2=120 sommets sur le graphe. On va les construire en 
+Python. Pour cela on utilise deux variables, une liste de sommets et un 
+dictionnaire associant à chaque sommet ceux vers lesquels on peut 
+aller&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style="">jeu <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: black;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">liste <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/d5b06d6a12e2cb93d0a48e2ffc35ab2e.txt">Télécharger</a></p></div>
+<p>On fait prendre aux variables <i>v</i> (position du "voleur" ou ourson), <i>g1</i> (gendarme numéro 1) et <i>g2</i>
+ (gendarme numéro 2) toutes les valeurs possibles allant de 0 à 5, et on
+ ne garde que les cas où les trois variables prennent des valeurs 
+différentes (un seul pion par sommet) et où les variables <i>g1</i> et <i>g2</i> sont classées dans l’ordre croissant&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> v <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">6</span><span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> g1 <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">6</span><span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> g2 <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">6</span><span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> g1<span style="color: #66cc66;">&lt;</span>g2 <span style="color: #ff7700;font-weight:bold;">and</span> g1<span style="color: #66cc66;">!=</span>v<span style="color: #66cc66;">!=</span>g2:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; liste.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: #008000;">str</span><span style="color: black;">(</span>v<span style="color: black;">)</span>+<span style="color: #008000;">str</span><span style="color: black;">(</span>g1<span style="color: black;">)</span>+<span style="color: #008000;">str</span><span style="color: black;">(</span>g2<span style="color: black;">)</span>+<span style="color: #483d8b;">'0'</span><span style="color: black;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jeu<span style="color: black;">[</span><span style="color: #008000;">str</span><span style="color: black;">(</span>v<span style="color: black;">)</span>+<span style="color: #008000;">str</span><span style="color: black;">(</span>g1<span style="color: black;">)</span>+<span style="color: #008000;">str</span><span style="color: black;">(</span>g2<span style="color: black;">)</span>+<span style="color: #483d8b;">'0'</span><span style="color: black;">]</span><span style="color: #66cc66;">=</span><span style="color: black;">[</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; liste.<span style="color: black;">append</span><span style="color: black;">(</span><span style="color: #008000;">str</span><span style="color: black;">(</span>v<span style="color: black;">)</span>+<span style="color: #008000;">str</span><span style="color: black;">(</span>g1<span style="color: black;">)</span>+<span style="color: #008000;">str</span><span style="color: black;">(</span>g2<span style="color: black;">)</span>+<span style="color: #483d8b;">'1'</span><span style="color: black;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jeu<span style="color: black;">[</span><span style="color: #008000;">str</span><span style="color: black;">(</span>v<span style="color: black;">)</span>+<span style="color: #008000;">str</span><span style="color: black;">(</span>g1<span style="color: black;">)</span>+<span style="color: #008000;">str</span><span style="color: black;">(</span>g2<span style="color: black;">)</span>+<span style="color: #483d8b;">'1'</span><span style="color: black;">]</span><span style="color: #66cc66;">=</span><span style="color: black;">[</span><span style="color: black;">]</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/74a1014ac693c39f679a68acb975ef13.txt">Télécharger</a></p></div>
+<p>Après cela on peut afficher <i>len(liste)</i> et <i>len(jeu)</i> pour vérifier qu’il y a bien 120 sommets dans ce graphe.</p>
+</div></div><div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">arêtes du graphe</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>On relie deux sommets s’il y a une règle du jeu qui permet d’aller du
+ premier vers le second. Pour calculer l’existence de ce mouvement, on 
+peut prendre une fonction Python, utilisant le graphe <i>G</i> du plateau de jeu&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code" data-clipboard-text="G = [[1,2,3,4,5],[0,2,3],[0,1,4],[0,1,5],[0,2],[0,3]]"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style="">G <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">3</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">4</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">5</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">2</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">3</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">4</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">5</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: #66cc66;">,</span><span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">3</span><span style="color: black;">]</span><span style="color: black;">]</span></div></li>
+</ol></div></div></div>
+<p>L’existence d’un mouvement est définie par cette fonction&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">def</span> mouvement<span style="color: black;">(</span>a<span style="color: #66cc66;">,</span>b<span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a<span style="color: black;">[</span>-<span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span>b<span style="color: black;">[</span>-<span style="color: #ff4500;">1</span><span style="color: black;">]</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">False</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a<span style="color: black;">[</span>-<span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span><span style="color: #483d8b;">'0'</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span>b<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span> <span style="color: #ff7700;font-weight:bold;">and</span> a<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span>b<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>b<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: black;">)</span> <span style="color: #ff7700;font-weight:bold;">in</span> G<span style="color: black;">[</span><span style="color: #008000;">int</span><span style="color: black;">(</span>a<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">False</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">else</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span>b<span style="color: black;">[</span><span style="color: #ff4500;">0</span><span style="color: black;">]</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span>b<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>b<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: black;">)</span> <span style="color: #ff7700;font-weight:bold;">in</span> G<span style="color: black;">[</span><span style="color: #008000;">int</span><span style="color: black;">(</span>a<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span>b<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>b<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span> <span style="color: #ff7700;font-weight:bold;">in</span> G<span style="color: black;">[</span><span style="color: #008000;">int</span><span style="color: black;">(</span>a<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span>b<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>b<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span> <span style="color: #ff7700;font-weight:bold;">in</span> G<span style="color: black;">[</span><span style="color: #008000;">int</span><span style="color: black;">(</span>a<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: #66cc66;">==</span>b<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> <span style="color: #008000;">int</span><span style="color: black;">(</span>b<span style="color: black;">[</span><span style="color: #ff4500;">2</span><span style="color: black;">]</span><span style="color: black;">)</span> <span style="color: #ff7700;font-weight:bold;">in</span> G<span style="color: black;">[</span><span style="color: #008000;">int</span><span style="color: black;">(</span>a<span style="color: black;">[</span><span style="color: #ff4500;">1</span><span style="color: black;">]</span><span style="color: black;">)</span><span style="color: black;">]</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/4fae7524b80e434d0f1ffa6de320a813.txt">Télécharger</a></p></div>
+<p>Le premier test porte sur l’identité du joueur, et rappelle qu’un 
+même joueur ne doit pas jouer deux fois de suite. Le second test sépare 
+le cas où</p>
+<ul class="spip"><li> c’est à l’ourson de jouer (<i>a[-1]==’0’</i>)&nbsp;:
+ dans ce cas aucun chiot ne doit avoir bougé, et il doit y avoir une 
+arête du graphe G allant de l’ancienne position de l’ourson, à la 
+nouvelle&nbsp;;</li><li> c’est aux chiots de jouer&nbsp;: dans ce cas il
+ ne faut pas que l’ourson ait bougé, et il faut qu’un seul chiot ait 
+bougé. On est obligé de considérer 4 cas parce que si <i>g2</i> (qui est à une position de numéro élevé) va vers un numéro inférieur à <i>g1</i>, la condition selon laquelle <i>v1</i> est inférieur à <i>v2</i> amène à intervertir leurs deux positions.</li></ul>
+<p>Pour finir de construire le graphe, on ajoute une arête entre deux 
+sommets chaque fois qu’il existe un mouvement possible du jeu, allant de
+ la première position vers la seconde&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> liste:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> b <span style="color: #ff7700;font-weight:bold;">in</span> liste:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> mouvement<span style="color: black;">(</span>a<span style="color: #66cc66;">,</span>b<span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jeu<span style="color: black;">[</span>a<span style="color: black;">]</span>.<span style="color: black;">append</span><span style="color: black;">(</span>b<span style="color: black;">)</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/f30c0769a56dee36ac8dafc57465ef44.txt">Télécharger</a></p></div>
+<p>C’est ici que la variable <i>liste</i> trouve son utilité&nbsp;: elle permet de parcourir tous les sommets.</p>
+</div></div>
+<p>Voici le graphe de toutes les positions du jeu&nbsp;:</p>
+<dl class="spip_document_28166 spip_documents spip_documents_center">
+<dt><a href="http://revue.sesamath.net/IMG/pdf/t1.pdf" title="PDF - 53.8 ko" type="application/pdf"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/t1logo-ae052.png" alt="" width="516" height="624"></a></dt>
+</dl>
+<p>Pas facile de s’y retrouver&nbsp;! Mais il y a une technique qui 
+permet de trouver une éventuelle stratégie gagnante, en coloriant le 
+graphe ci-dessus. La coloration est décrite dans <a href="http://images.math.cnrs.fr/Jeux-sur-graphes.html" class="spip_out" rel="external">cet article</a>
+ et se fait en partant de la fin (positions gagnantes) puis en remontant
+ récursivement. Voici un exemple, appliqué à un jeu de type Nim (ces 
+jeux sont décrits dans le chapitre 6 du livre)&nbsp;:</p>
+<p><span class="spip_document_28164 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/arton4570-4c3949-1f272.png" alt="" width="750" height="325"></span></p>
+<div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">Est-ce possible&nbsp;?</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>L’ennui avec le gros graphe ci-dessus, c’est qu’on a du mal à y voir 
+s’il y a des cycles. Si c’est le cas, l’existence même d’une stratégie 
+gagnante est compromise&nbsp;!</p>
+<p>Ou pas...</p>
+<p>Voici un exemple de graphe orienté (type Nim) comportant des cycles&nbsp;:</p>
+<dl class="spip_document_28196 spip_documents spip_documents_center">
+<dt><a href="https://irem.univ-reunion.fr/IMG/pdf/fraenkel2.pdf" title="PDF - 79.9 ko" type="application/pdf"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/pdf-39070.png" alt="" width="52" height="52"></a></dt>
+</dl>
+<p>Les cycles sont en bas à droite. Ce graphe a été colorié selon 
+l’algorithme évoqué ci-dessus (rouge si ça peut aller vers du vert, vert
+ si ça ne va que vers du rouge), par des collégiens, lors de la <a href="https://irem.univ-reunion.fr/spip.php?article1008" class="spip_out" rel="external">semaine des mathématiques 2019</a>.
+ Les collégiens ont vite vu que l’algorithme ne permet pas de colorier 
+les sommets inclus dans des cycles, ils s’arrêtent donc là&nbsp;:</p>
+<p><span class="spip_document_28198 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/craigcol-f017d.jpg" alt="" width="720" height="627"></span></p>
+<p>En supposant que le sommet rouge en haut à droite est le départ (on 
+ne peut y arriver que depuis un cycle), on peut se demander s’il existe 
+quand même une stratégie gagnante depuis ce sommet. La réponse est oui, 
+car le sommet tout en haut, qui peut être atteint depuis le départ, est 
+vert. On peut donc essayer d’enlever les cycles, puisqu’ils ne font 
+évidemment pas partie de la stratégie gagnante&nbsp;:</p>
+<p><span class="spip_document_28200 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/craigcol1-f4c23.jpg" alt="" width="720" height="627"></span></p>
+<p>Le problème qui se pose éventuellement est celui des arcs allant vers un des sommets qu’on veut enlever&nbsp;:</p>
+<p><span class="spip_document_28202 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/craigcol2-126e8.jpg" alt="" width="720" height="627"></span></p>
+<p>Mais comme cet arc ne fait pas partie de la stratégie gagnante (si on
+ peut aller vers du vert, on n’a pas intérêt à faire un autre choix), on
+ peut l’enlever sans problème. En fait on peut même enlever le sommet 
+dont cet arc est issu, puisque le joueur qui pourrait aller vers ce 
+sommet n’a pas intérêt à le faire&nbsp;:</p>
+<p><span class="spip_document_28204 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/craigcol3-653ee.jpg" alt="" width="720" height="627"></span></p>
+<p>Il y a deux sommets, en bas, qui ne peuvent pas être atteints, et de 
+ce fait ne font pas partie non plus de la stratégie gagnante. On peut 
+donc les enlever sans problème&nbsp;:</p>
+<p><span class="spip_document_28206 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/craigcol6-60458.jpg" alt="" width="432" height="627"></span></p>
+<p>La simplification de graphes est le sujet du chapitre 9 du livre. On y
+ voit d’autres applications de cette notion (ainsi que des jeux basés 
+sur cette notion). Dans le cas présent, on n’a pas fini&nbsp;: il y a un
+ arc vers le haut, que le joueur qui commence n’a pas intérêt à utiliser
+ (puisqu’il mène à un sommet rouge, alors qu’il existe un sommet vert 
+nettement préférable à celui-ci). On l’enlève donc aussi puisqu’il ne 
+fait pas partie de la stratégie gagnante&nbsp;:</p>
+<p><span class="spip_document_28208 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/craigcol7-d014e.jpg" alt="" width="432" height="627"></span></p>
+<p>Une situation similaire apparaît en bas, on peut donc allègrement aussi enlever cette arête superflue&nbsp;:</p>
+<p><span class="spip_document_28210 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/craigcol8-a7bd4.jpg" alt="" width="432" height="627"></span></p>
+<p>Cela aboutit à deux choses qui sont intéressantes pour le jeu de l’ourson&nbsp;:</p>
+<ul class="spip"><li> l’existence de cycles n’interdit pas 
+nécessairement celle d’une stratégie gagnante (il suffit de voir si on 
+peut «&nbsp;les enlever&nbsp;»)</li><li> s’il y a une stratégie gagnante, on peut la voir mieux en simplifiant le graphe.</li></ul></div></div><div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">coloriage virtuel</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>Il y a plusieurs manières de donner à un sommet du graphe, une 
+couleur. Par exemple on peut considérer le sommet comme un objet 
+possédant un attribut <i>couleur</i> et calculer cet attribut pour les sommets l’un après l’autre. Ici on propose de créer trois listes&nbsp;:</p>
+<ul class="spip"><li> <i>blancs</i> est la liste des sommets non encore coloriés. Elle est donc initialisée à la liste de tous les sommets du graphe.</li><li> <i>rouges</i>
+ est la liste des sommets coloriés en rouge. Elle est donc initialisée à
+ la liste vide, puisqu’au début on n’a encore rien colorié, <i>a fortiori</i> pas en rouge.</li><li> <i>verts</i>
+ est la liste des sommets coloriés en vert. Elle aussi est initialisée à
+ la liste vide, ou plutôt à la liste des sommets gagnants (4020 et 
+5030)&nbsp;:</li></ul><div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style="">blancs <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">rouges <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">verts <span style="color: #66cc66;">=</span> <span style="color: black;">[</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> jeu:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>jeu<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">==</span><span style="color: #ff4500;">0</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; verts.<span style="color: black;">append</span><span style="color: black;">(</span>a<span style="color: black;">)</span> </div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">else</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; blancs.<span style="color: black;">append</span><span style="color: black;">(</span>a<span style="color: black;">)</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/a02dd04c796f35522bc0c9bd759005b2.txt">Télécharger</a></p></div>
+<p>Pour colorier un sommet, on applique donc la règle suivante&nbsp;:</p>
+<ul class="spip"><li> si depuis le sommet a, il existe (<i>any</i>) un sommet b accessible et déjà colorié en vert, alors a est rouge,</li><li> si  tous les sommets accessibles depuis a sont rouges alors a est vert.</li></ul>
+<p>En Python l’algorithme s’écrit ainsi&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> blancs:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; t <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>b <span style="color: #ff7700;font-weight:bold;">in</span> verts <span style="color: #ff7700;font-weight:bold;">for</span> b <span style="color: #ff7700;font-weight:bold;">in</span> jeu<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #008000;">any</span><span style="color: black;">(</span>t<span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rouges.<span style="color: black;">append</span><span style="color: black;">(</span>a<span style="color: black;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; blancs.<span style="color: black;">remove</span><span style="color: black;">(</span>a<span style="color: black;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; u <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>b <span style="color: #ff7700;font-weight:bold;">in</span> rouges <span style="color: #ff7700;font-weight:bold;">for</span> b <span style="color: #ff7700;font-weight:bold;">in</span> jeu<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>u<span style="color: black;">)</span> <span style="color: #ff7700;font-weight:bold;">and</span> <span style="color: #008000;">all</span><span style="color: black;">(</span>u<span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; verts.<span style="color: black;">append</span><span style="color: black;">(</span>a<span style="color: black;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; blancs.<span style="color: black;">remove</span><span style="color: black;">(</span>a<span style="color: black;">)</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/a3e3e54612a1b9b26e70ccf6a076526b.txt">Télécharger</a></p></div>
+<p>Par contre le coloriage ci-dessus doit être effectué répétitivement, 
+jusqu’à ce que plus aucun sommet ne soit encore coloriable. Une fois que
+ c’est fait, la liste des sommets encore blancs révèle l’existence de 
+cycles et de parties nulles. Pour le jeu de l’ourson, tous les sommets 
+sont coloriés à la fin (60 sommets en rouge et 60, en vert). Il existe 
+donc une stratégie gagnante au jeu de l’ourson.</p>
+</div></div>
+<p>L’algorithme de coloriage, appliqué au gros graphe ci-dessus, donne ce nouveau graphe&nbsp;:</p>
+<dl class="spip_document_28212 spip_documents spip_documents_center">
+<dt><a href="http://revue.sesamath.net/IMG/pdf/tahincoul1.pdf" title="PDF - 53.4 ko" type="application/pdf"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/pdf-39070.png" alt="" width="52" height="52"></a></dt>
+</dl>
+<p>Pas facile de s’y retrouver, en effet il y a des arêtes 
+superflues&nbsp;: si un sommet est rouge, cela signifie qu’un de ses 
+successeurs est vert, les autres successeurs sont donc inutiles puisque 
+jouer au mieux, signifie ne pas y aller.</p>
+<p>Cependant on constate que le sommet 0450 a été colorié en vert, ce 
+qui signifie qu’il y a une stratégie gagnante pour les chiots. Le moins 
+qu’on puise dire est qu’elle n’est pas très visible sur le graphe 
+ci-dessus&nbsp;!</p>
+<div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">Simplification</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>Une simplification possible du graphe passe par ce filtre&nbsp;: 
+depuis un sommet rouge, n’aller que vers des sommets verts. Pour cela on
+ crée un nouveau graphe appelé <i>str1</i> (comme <i>stratégie numéro 1</i>) et on y copie le graphe <i>configs</i> mais en omettant les arêtes allant d’un sommet rouge à un autre sommet rouge&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style="">str1 <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: black;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> configs:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a <span style="color: #ff7700;font-weight:bold;">in</span> rouges:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; str1<span style="color: black;">[</span>a<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>b <span style="color: #ff7700;font-weight:bold;">for</span> b <span style="color: #ff7700;font-weight:bold;">in</span> configs<span style="color: black;">[</span>a<span style="color: black;">]</span> <span style="color: #ff7700;font-weight:bold;">if</span> b <span style="color: #ff7700;font-weight:bold;">in</span> verts<span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">else</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; str1<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: #66cc66;">=</span><span style="color: #008000;">list</span><span style="color: black;">(</span><span style="color: #008000;">set</span><span style="color: black;">(</span>configs<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: black;">)</span><span style="color: black;">)</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/44f85647e860487ec648e19c82e4fc48.txt">Télécharger</a></p></div>
+<p>On obtient alors ce graphe&nbsp;:</p>
+<dl class="spip_document_28214 spip_documents spip_documents_center">
+<dt><a href="http://revue.sesamath.net/IMG/pdf/tstrat3.pdf" title="PDF - 53.7 ko" type="application/pdf"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/pdf-39070.png" alt="" width="52" height="52"></a></dt>
+</dl></div></div><div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">Cycles</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>Pas encore une vraie stratégie gagnante&nbsp;: il y a des cycles comme ici</p>
+<p><span class="spip_document_28322 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/cycle4a-89c8f.png" alt="" width="537" height="373"></span></p>
+<p>Pas facile de le voir hein&nbsp;? Voici le même extrait du graphe, avec le cycle en exergue&nbsp;:</p>
+<p><span class="spip_document_28324 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/cycle4b-f305b.png" alt="" width="537" height="373"></span></p>
+<p>La position 1450 est marquée gagnante pour les chiots (coloriée en 
+vert) car quel que soit le mouvement effectué par l’ourson depuis cette 
+position, il perd (sommet colorié en rouge). C’est le cas notamment si 
+l’ourson décide d’aller en 3 pour aboutir à la position 3451 qui est 
+coloriée en rouge&nbsp;: les chiots peuvent depuis cette position, aller
+ vers une position gagnante pour eux, par exemple la 3250. Mais dans ce 
+cas l’ourson peut aller en 1251 qui permet aux chiots de revenir en 
+1450. Et ça boucle à nouveau. Voici le film de ce cycle sur le plateau 
+de jeu&nbsp;:</p>
+<p><span class="spip_document_28326 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/cycle4det-dc6e9.png" alt="" width="490" height="606"></span></p>
+<p>Depuis la position 3451, les chiots ne doivent donc pas aller en 3250
+ (3050 est mieux, ils ont gagné&nbsp;!). Ou alors, depuis la 1251, ils 
+doivent éviter d’aller à nouveau en 1450. Dans les deux cas (enlever les
+ arcs qui ferment un cycle d’ordre 4 ou ceux qui les ouvrent) il 
+subsiste des cycles comme 4120 →0121→0230→4231→4120.</p>
+<p>Et si on enlève tous les cycles d’ordre 4 le graphe obtenu n’est plus connexe et ne donne pas non plus une stratégie gagnante.</p>
+</div></div>
+<p>La présence de cycles dans le graphe des graphes, implique qu’il n’est pas possible d’y définir un ordre topologique<span class="spip_note_ref">&nbsp;[<a href="#nb2" class="spip_note" rel="appendix" title="Cette notion est évoquée dans la seconde partie du sujet de Capes&nbsp;(...)" id="nh2">2</a>]</span>,
+ lequel aurait été bien pratique pour trouver une stratégie 
+gagnante&nbsp;: il aurait suffi d’aller à chaque coup, le plus loin 
+possible dans le graphe, c’est-à-dire se rapprocher le plus vite 
+possible de l’arrivée. La même situation était apparue à propos de <a href="https://irem.univ-reunion.fr/spip.php?article983" class="spip_out" rel="external">ce jeu</a>, décrit dans le livre comme un jeu de blocage (qu’il n’est pas vraiment)<span class="spip_note_ref">&nbsp;[<a href="#nb3" class="spip_note" rel="appendix" title="Sauf que pour ce jeu, il y a 3508 sommets, rouges, 911 sommets verts et&nbsp;(...)" id="nh3">3</a>]</span>.</p>
+<div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">Approche métrique</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>Comment optimiser le choix à faire par les chiots, à chaque 
+étape&nbsp;? Autrement dit, comment faire pour sortir d’un cycle chaque 
+fois qu’on le peut&nbsp;? On va essayer ici une approche métrique, avec 
+la notion de <i>rang</i> d’un sommet, le rang étant la longueur minimale d’un trajet allant du sommet, à une arrivée. On définit la fonction <i>rang</i> de façon récursive&nbsp;:</p>
+<ul class="spip"><li> le rang d’une arrivée est 0</li><li> si un des 
+descendants d’un sommet est de rang k et aucun descendant n’est de rang 
+plus petit que k, alors ce sommet est de rang k+1.</li></ul>
+<p>Cette fonction récursive est modélisée par un dictionnaire Python&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style="">rang <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: black;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> configs:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>configs<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: black;">)</span><span style="color: #66cc66;">==</span><span style="color: #ff4500;">0</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rang<span style="color: black;">[</span>a<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> rg <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1</span><span style="color: #66cc66;">,</span><span style="color: #ff4500;">8</span><span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> configs:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a <span style="color: #ff7700;font-weight:bold;">not</span> <span style="color: #ff7700;font-weight:bold;">in</span> rang <span style="color: #ff7700;font-weight:bold;">and</span> <span style="color: #008000;">any</span><span style="color: black;">(</span><span style="color: black;">[</span>b <span style="color: #ff7700;font-weight:bold;">in</span> rang <span style="color: #ff7700;font-weight:bold;">and</span> rang<span style="color: black;">[</span>b<span style="color: black;">]</span><span style="color: #66cc66;">==</span>rg-<span style="color: #ff4500;">1</span> <span style="color: #ff7700;font-weight:bold;">for</span> b <span style="color: #ff7700;font-weight:bold;">in</span> configs<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: black;">]</span><span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; rang<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: #66cc66;">=</span>rg</div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/1a297757611fa9f6914d2ba46149c294.txt">Télécharger</a></p></div>
+<p>En évaluant</p>
+<p><span class="coloration_code code"><code class="spip_python code" data-clipboard-text="len(rang)"><span style="color: #008000;">len</span><span style="color: black;">(</span>rang<span style="color: black;">)</span></code></span></p>
+<p>on trouve alors 120, ce qui veut dire que tous les sommets possèdent un rang. En évaluant</p>
+<p><span class="coloration_code code"><code class="spip_python code" data-clipboard-text="set(rang.values())"><span style="color: #008000;">set</span><span style="color: black;">(</span>rang.<span style="color: black;">values</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span></code></span></p>
+<p>on a l’ensemble d’arrivée de la fonction <i>rang</i>&nbsp;:</p>
+<p><code class="spip_code" dir="ltr">{0, 1, 2, 3, 4, 5, 6}</code></p>
+<p>Le rang maximal est donc 6, et c’est notamment le rang de 0450, ce 
+qui montre que la position initiale a été bien choisie, du point de vue 
+de la complexité.</p>
+<p>Une stratégie pourrait donc consister, pour les chiots, à aller systématiquement vers un sommet vert de rang inférieur&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style="">str1 <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: black;">}</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp;</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> configs:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> a <span style="color: #ff7700;font-weight:bold;">in</span> rouges:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; str1<span style="color: black;">[</span>a<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: black;">[</span>b <span style="color: #ff7700;font-weight:bold;">for</span> b <span style="color: #ff7700;font-weight:bold;">in</span> configs<span style="color: black;">[</span>a<span style="color: black;">]</span> <span style="color: #ff7700;font-weight:bold;">if</span> rang<span style="color: black;">[</span>b<span style="color: black;">]</span><span style="color: #66cc66;">&lt;</span>rang<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">else</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; str1<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: #66cc66;">=</span>configs<span style="color: black;">[</span>a<span style="color: black;">]</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/0c698bd514224f106fe60f2f4226a31d.txt">Télécharger</a></p></div>
+<p>Cela produit ce graphe&nbsp;:</p>
+<dl class="spip_document_28158 spip_documents spip_documents_center">
+<dt><a href="http://revue.sesamath.net/IMG/pdf/arbret5a.pdf" title="PDF - 36.1 ko" type="application/pdf"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/stratgnl1-adadd.png" alt="" width="637" height="625"></a></dt>
+</dl>
+<p>Et, en ne gardant que les sommets atteignables depuis le départ 0450, on n’a plus que 58 sommets sur le graphe&nbsp;:</p>
+<dl class="spip_document_28168 spip_documents spip_documents_center">
+<dt><a href="http://revue.sesamath.net/IMG/pdf/arbret5e.pdf" title="PDF - 21.2 ko" type="application/pdf"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/arbret5el-b5b0d.png" alt="" width="480" height="768"></a></dt>
+</dl>
+<p>Mais hélas, il reste des cycles, comme celui-ci&nbsp;:</p>
+<p><span class="spip_document_28334 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/cyclebis1-46ef2.png" alt="" width="414" height="496"></span></p>
+<p>En affichant les rangs à côté des positions, on comprend mieux l’origine du problème&nbsp;:</p>
+<p><span class="spip_document_28336 spip_documents spip_documents_center">
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/cyclebis2-3273f.png" alt="" width="666" height="420"></span></p>
+<p>En allant du rang 3 au rang 2, puis du rang 5 au rang 4, les chiots 
+jouent dans leur intérêt qui est de faire baisser le rang. Mais 
+l’ourson, lui, n’a pas le même but&nbsp;: au contraire il cherche à 
+faire augmenter le rang. Ce qu’il fait en allant du rang 2 au rang 5 (de
+ la position 0120 à la position 5121).</p>
+<p>Depuis la 0141 qui est de rang 3, les chiots, en ayant choisi la 0120
+ qui est de rang 2, ont bien joué, mais n’ont pas joué au mieux. Ils 
+auraient pu jouer aussi la 0340 qui est aussi de rang 2, mais qui est 
+aussi dans un cycle.</p>
+<p>Depuis la position 5121, en jouant 5140, les chiots ont là encore 
+bien joué (en passant du rang 5 au rang 4) mais cela permet à l’ourson 
+de rester dans le cycle. À la place ils peuvent jouer</p>
+<ul class="spip"><li> 5230 qui est aussi de rang 4 mais qui permet à l’ourson de cycler sur 0231 (puis retour en 0120)</li><li> ou 5020 qui est aussi de rang 4, mais permet de gagner à coup sûr (5020→3021→3010→5011→5030 ourson bloqué)</li></ul>
+<p>Le rang n’est donc pas une bonne métrique pour calculer ne serait-ce 
+qu’une heuristique gagnante. Y en a-t-il une autre (métrique)&nbsp;?</p>
+</div></div><div class="cs_blocs"><h4 class="blocs_titre blocs_replie blocs_click cs_done"><a href="javascript:;" title="Déplier">intelligence artificielle</a></h4><div class="blocs_destination blocs_invisible blocs_slide">
+<p>L’idée exposée dans <a href="https://members.loria.fr/MDuflot/files/med/IAnim.html" class="spip_out" rel="external">cet article</a> et <a href="http://images.math.cnrs.fr/Une-machine-en-boites-d-allumettes-qui-apprend-a-jouer-au-Morpion.html" class="spip_out" rel="external">celui-là</a> revient, dans le cas présent, à pondérer le graphe des 120 sommets, puis à modifier la pondération au cours du jeu.</p>
+<p>Le graphe (construit à partir de la <i>liste</i> des sommets) devient alors</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> liste:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; configs<span style="color: black;">[</span>a<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: black;">{</span><span style="color: black;">}</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> a <span style="color: #ff7700;font-weight:bold;">in</span> liste:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> b <span style="color: #ff7700;font-weight:bold;">in</span> liste:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> mouvement<span style="color: black;">(</span>a<span style="color: #66cc66;">,</span>b<span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; configs<span style="color: black;">[</span>a<span style="color: black;">]</span><span style="color: black;">[</span>b<span style="color: black;">]</span> <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/4e8c4b15b238368f6682d7055c81e54d.txt">Télécharger</a></p></div>
+<p>À chaque sommet <i>a</i> n’est plus associé une liste (d’adjacence) des sommets <i>b</i> adjacents à <i>a</i>, mais un dictionnaire qui, à chaque sommet <i>b</i>, associe un poids initialisé à 1.</p>
+<p>Pour choisir un sommet au hasard selon son poids, on peut utiliser l’algorithme vu dans <a href="http://revue.sesamath.net/spip.php?article1226" class="spip_in">cet article</a> (variables aléatoires en terminale). Par exemple, en ayant importé le module <i>random</i>&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">def</span> choix<span style="color: black;">(</span>stats<span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; r <span style="color: #66cc66;">=</span> <span style="color: #dc143c;">random</span><span style="color: black;">(</span><span style="color: black;">)</span> * <span style="color: #008000;">sum</span><span style="color: black;">(</span>stats.<span style="color: black;">values</span><span style="color: black;">(</span><span style="color: black;">)</span><span style="color: black;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; s <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; n <span style="color: #66cc66;">=</span> <span style="color: #ff4500;">0</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">for</span> k <span style="color: #ff7700;font-weight:bold;">in</span> stats:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; s +<span style="color: #66cc66;">=</span> stats<span style="color: black;">[</span>k<span style="color: black;">]</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">if</span> s<span style="color: #66cc66;">&gt;=</span>r:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">return</span> k</div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/daf17ac233ef5c21d91415ad791f67a5.txt">Télécharger</a></p></div>
+<p>En simulant 1000 parties au hasard on peut voir quels sont les choix gagnants au dernier coup&nbsp;:</p>
+<div class="coloration_code code"><div class="spip_python code"><div class="python"><ol><li style="font-weight: normal; vertical-align:top;"><div style=""><span style="color: #ff7700;font-weight:bold;">for</span> exper <span style="color: #ff7700;font-weight:bold;">in</span> <span style="color: #008000;">range</span><span style="color: black;">(</span><span style="color: #ff4500;">1000</span><span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; S <span style="color: #66cc66;">=</span> <span style="color: #483d8b;">'0450'</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; <span style="color: #ff7700;font-weight:bold;">while</span> <span style="color: #008000;">len</span><span style="color: black;">(</span>configs<span style="color: black;">[</span>S<span style="color: black;">]</span><span style="color: black;">)</span>:</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; h <span style="color: #66cc66;">=</span> S</div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; S <span style="color: #66cc66;">=</span> choix<span style="color: black;">(</span>configs<span style="color: black;">[</span>S<span style="color: black;">]</span><span style="color: black;">)</span></div></li>
+<li style="font-weight: normal; vertical-align:top;"><div style="">&nbsp; &nbsp; &nbsp; &nbsp; configs<span style="color: black;">[</span>h<span style="color: black;">]</span><span style="color: black;">[</span>S<span style="color: black;">]</span> +<span style="color: #66cc66;">=</span> <span style="color: #ff4500;">1</span></div></li>
+</ol></div></div><p class="download code_download"><a href="http://revue.sesamath.net/local/cache-code/58f8340dd8e617320448392e11a3a01e.txt">Télécharger</a></p></div>
+<p>On a quelque chose comme ceci pour la fin du graphe&nbsp;:</p>
+<div style="text-align: left;" class="spip_code" dir="ltr"><code>4121 {'4230': 1, '4020': 57, '4010': 1}<br>
+4251 {'4150': 1, '4230': 1, '4050': 1, '4020': 97}<br>
+5231 {'5020': 1, '5120': 1, '5030': 137, '5130': 1, '5340': 1}<br>
+5341 {'5230': 1, '5030': 127, '5040': 1, '5140': 1}<br>
+4011 {'4150': 1, '4130': 1, '4030': 1, '4120': 1, '4020': 190}<br>
+5131 {'5010': 1, '5030': 67, '5230': 1}<br>
+4231 {'4250': 1, '4130': 1, '4030': 1, '4120': 1, '4020': 136}<br>
+5011 {'5020': 1, '5120': 1, '5030': 197, '5130': 1, '5140': 1}</code></div>
+<p>On voit par exemple qu’il est statistiquement intéressant, depuis la 
+position 5011, de jouer 5030, plutôt que n’importe lequel des 4 autres 
+choix.</p>
+<p>À ce stade, rien ne vaut l’expérimentation personnelle&nbsp;: peut-on
+ trouver à l’aide des statistiques sur le jeu, un graphe donnant toute 
+la stratégie gagnante, y compris l’évitement des cycles&nbsp;?</p>
+</div></div><h3 class="spip">Conclusion</h3>
+<p>L’activité montrée ici a été annoncée en début d’article, comme 
+propice à un projet en NSI. Après avoir lu (et expérimenté&nbsp;!) 
+l’article, on peut en juger. L’avantage de ce genre de jeux inventés par
+ de jeunes enfants est qu’outre leur relative simplicité qui permet une 
+analyse exhaustive (ou pas, s’il y a des cycles&nbsp;!) ces jeux sont 
+l’objet de problèmes ouverts. En voici quelques exemples pour lesquels 
+on ne connaît pas à l’heure actuelle de stratégie gagnante&nbsp;:</p>
+<ul class="spip"><li> <a href="https://alainbusser.frama.io/NSI-IREMI-974/autres_assis_balls.html" class="spip_out" rel="external">ce jeu</a> créé à l’âge de 5 ans (et décrit tout à la fin du livre)</li><li> <a href="https://alainbusser.frama.io/NSI-IREMI-974/roifous1.html" class="spip_out" rel="external">ce jeu</a> du même créateur mais plus récent (à l’âge de 8 ans)</li><li> <a href="https://alainbusser.github.io/primaire/html/alquerkonane4.html" class="spip_out" rel="external">ce jeu</a> qui ne se joue pas sur un graphe mais semble relativement simple à analyser, et surtout à modéliser<span class="spip_note_ref">&nbsp;[<a href="#nb4" class="spip_note" rel="appendix" title="Par exemple comme il y a 8 cases noires la position des pions blancs est&nbsp;(...)" id="nh4">4</a>]</span>.</li></ul>
+<p>Bons jeux<span class="spip_note_ref">&nbsp;[<a href="#nb5" class="spip_note" rel="appendix" title="Et bonne lecture !" id="nh5">5</a>]</span>&nbsp;!</p><br>
+					<div class="bouton_reponse">
+						<a href="http://revue.sesamath.net/spip.php?auteur154">Alain Busser</a>
+						<a class="menu_bouton_2" href="#" title="Retour haut de page">Haut de page</a>
+					</div>
+						
+				</div>
+			</div>
+		</div>
+		<div id="bande">
+			<!-- Post scriptum -->
+			
+			<!-- Notes de bas de page -->
+			<div id="bande_400">
+				<div id="corps_400">
+					<div class="little_titre_corps">
+						<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/triangle.gif" style="vertical-align:middle">
+						notes
+					</div>
+					<div class="corps_descriptif">					
+						<div class="resume_article">				
+							<div id="nb1">
+<p><span class="spip_note_ref">[<a href="#nh1" class="spip_note" title="Notes 1" rev="appendix">1</a>]&nbsp;</span>L’<a href="https://irem.univ-reunion.fr/IMG/png/grapheorig.png" class="spip_out" rel="external">original</a> était orienté, mais la version non orientée est plus intéressante pour jouer.</p>
+</div><div id="nb2">
+<p><span class="spip_note_ref">[<a href="#nh2" class="spip_note" title="Notes 2" rev="appendix">2</a>]&nbsp;</span>Cette notion est évoquée dans la seconde partie du <a href="https://irem.univ-reunion.fr/spip.php?article1004" class="spip_out" rel="external">sujet de Capes 2019</a>.</p>
+</div><div id="nb3">
+<p><span class="spip_note_ref">[<a href="#nh3" class="spip_note" title="Notes 3" rev="appendix">3</a>]&nbsp;</span>Sauf
+ que pour ce jeu, il y a 3508 sommets, rouges, 911 sommets verts et 
+29769 sommets blancs, et que la position de départ est blanche&nbsp;: 
+dans le jeu des deux parkings il n’y a pas de stratégie gagnante, comme 
+indiqué à la page 88 du livre. Par contre, pour la version où on n’a pas
+ le droit de reculer, bien qu’il subsiste 3082 sommets blancs, la 
+position de départ fait partie des 16355 sommets rouges, ce qui montre 
+l’existence d’une stratégie gagnante pour le joueur qui joue en premier.
+ Dans ce jeu des deux parkings sans recul, il y a 13915 sommets verts.</p>
+</div><div id="nb4">
+<p><span class="spip_note_ref">[<a href="#nh4" class="spip_note" title="Notes 4" rev="appendix">4</a>]&nbsp;</span>Par
+ exemple comme il y a 8 cases noires la position des pions blancs est 
+déterminée par un octet dont les "1" désignent le fait que la case est 
+occupée. Cette idée a été proposée par <a href="https://fr.wikipedia.org/wiki/Alan_Turing" class="spip_glossaire" rel="external">Alan Turing</a> dans un article sur l’heuristique aux échecs sur ordinateur.</p>
+</div><div id="nb5">
+<p><span class="spip_note_ref">[<a href="#nh5" class="spip_note" title="Notes 5" rev="appendix">5</a>]&nbsp;</span>Et <a href="https://www.editions-ellipses.fr/accueil/10668-21100-jeux-et-graphes-la-theorie-des-graphes-de-5-a-95-ans-9782340041035.html#/1-format_disponible-broche" class="spip_out" rel="external">bonne lecture</a>&nbsp;!</p>
+</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+
+
+			
+			
+
+		
+			<!-- Documents associés à l'article -->
+			
+			
+			<!-- Sites référencés au niveau de la rubrique, avec le mot clé "sites" affecté à l'article -->
+			
+			
+				
+			
+			
+			
+			
+			<!-- Contacter l'auteur -->
+			<div id="bande_800">
+				<div id="corps_800">
+					<div class="little_titre_corps">
+						<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/triangle.gif" style="vertical-align:middle">
+						Réagir à cet article
+					</div>
+				</div>
+			</div>
+			<div id="bande_400">
+				<div id="corps_400">
+					<div class="corps_descriptif">					
+						<div class="resume_article">
+							Vous souhaitez compléter cet article pour un numéro futur, réagir
+ à son contenu, demander des précisions à l'auteur ou au comité
+							de rédaction...<br>
+							
+							<div class="bouton_reponse">
+								<a class="menu_bouton_2" href="mailto:mathematice@sesamath.net?subject=[mathematice - R%C3%A9agir %C3%A0] La th%C3%A9orie des graphes appliqu%C3%A9e aux jeux sur graphes" title="Poster un message">Poster un message</a>
+							</div>
+						</div>						
+					</div>	
+				</div>
+			</div>
+		
+			<!-- Accès aux autres articles -->
+			<div id="bande_800">
+				<div id="corps_800">
+					<div class="little_titre_corps">
+						<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/triangle.gif" style="vertical-align:middle">
+						À lire aussi ici
+					</div>
+					<div class="corps_descriptif">
+						<center>
+						
+									
+						
+							<form name="articles_rub" action="spip.php">
+								<select name="id_article" size="1" class="texte_normal" width="150px" onchange="chgpage(this.form)">
+								<option selected="selected">Les articles du numéro</option>
+									
+									[<option value="spip.php?article1362">Comment faciliter la création d’exercices aléatoires dans LaboMep&nbsp;(...)</option>]
+									
+									[<option value="spip.php?article1364">Deux ressources numériques de l’IREM de Limoges</option>]
+									
+									[<option value="spip.php?article1366">La théorie des graphes appliquée aux jeux sur graphes</option>]
+									
+									[<option value="spip.php?article1370">Faciliter la circulation des documents dans une classe grâce à l’application&nbsp;(...)</option>]
+									
+									[<option value="spip.php?article1372">Histoires de femmes</option>]
+									
+									[<option value="spip.php?article1374">SacAdo : interface de gestion et de suivi des acquisitions des savoir-faire&nbsp;(...)</option>]
+									
+									[<option value="spip.php?article1376">Histoire des mathématiques et enseignement : entretien avec Bernard&nbsp;(...)</option>]
+									
+									[<option value="spip.php?article1378">Le projet "latence" de l’atelier scientifique du Lycée Parc de&nbsp;(...)</option>]
+									
+								</select>
+							</form>
+
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Pied de page -->
+		<div id="bande">
+	<center>
+		<div id="bande_400">
+	MathémaTICE est un projet<br>
+	<a href="http://www.sesamath.net/"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/logo_sesamath.gif"></a>
+</div>
+<div id="bande_400">
+	en collaboration avec <br>
+	<a href="http://publimath.irem.univ-mrs.fr/"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/logo_publimath.gif"></a>
+	<a href="http://www.apmep.asso.fr/"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/logo_apmep.gif"></a>
+	<a href="http://www.univ-irem.fr/index.php?module=Publirem&amp;func=view"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/logo_irem.gif"></a>
+	<a href="http://educmath.inrp.fr/"><img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/logo_educmath.gif"></a>
+</div>	</center>
+</div>
+<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/bandeau_bas.gif">
+<div class="corps_pied">
+	<img src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/feed.png" alt="Suivre la vie du site" class="format_png" width="10" height="10" align="middle">
+	<a class="a_pied" href="http://revue.sesamath.net/spip.php?page=backend" title="Suivre la vie du site">Flux RSS&nbsp;2.0</a>
+	&nbsp;|&nbsp;
+	<a class="a_pied" href="http://revue.sesamath.net/ecrire/">Espace de rédaction</a>
+	&nbsp;|&nbsp;
+	<a class="a_pied" href="mailto:mathematice@sesamath.net?subject=Article pour MathemaTICE">Nous contacter</a>
+	&nbsp;|&nbsp;
+	Site réalisé avec: <a href="http://www.spip.net/" title="Site réalisé avec Spip"><img style="vertical-align:middle" src="La%20the%CC%81orie%20des%20graphes%20applique%CC%81e%20aux%20jeux%20sur%20graphes%20-%20Les%20nouvelles%20technologies%20pour%20l'enseignement%20des%20mathe%CC%81matiques_fichiers/spip.png" alt="SPIP" class="format_png" width="36" height="12"></a>
+	&nbsp;|&nbsp;
+	N° ISSN 2109-9197
+	<br>
+	<!--<a class="a_pied" href="http://revue.sesamath.net">MathémaTICE</a> est un projet soutenu par <a href="http://www.sesamath.net"><img style="vertical-align:middle" src="dist/images/logo_sesamath_little.gif"></img></a>-->
+</div>	</div>
+
+
+
+
+<div id="cboxOverlay" style="display: none;"></div><div id="colorbox" class="box_mediabox box_modalbox" role="dialog" tabindex="-1" style="display: none;"><div id="cboxWrapper"><div><div id="cboxTopLeft" style="float: left;"></div><div id="cboxTopCenter" style="float: left;"></div><div id="cboxTopRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxMiddleLeft" style="float: left;"></div><div id="cboxContent" style="float: left;"><div id="cboxTitle" style="float: left;"></div><div id="cboxCurrent" style="float: left;"></div><button type="button" id="cboxPrevious"></button><button type="button" id="cboxNext"></button><button type="button" id="cboxSlideshow"></button><div id="cboxLoadingOverlay" style="float: left;"></div><div id="cboxLoadingGraphic" style="float: left;"></div></div><div id="cboxMiddleRight" style="float: left;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

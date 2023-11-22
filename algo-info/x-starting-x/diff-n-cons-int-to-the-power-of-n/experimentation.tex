@@ -1,0 +1,28 @@
+Le code suivant
+\footnote{
+	Ce fichier \texttt{diff-n-cons-int-to-the-power-of-n/exploring-int-version.py} est disponible dans le sous-dossier sur le lieu de téléchargement de ce document.
+}
+permet de tester notre conjecture audacieuse : aucun test raté n'est révélé.
+
+\medskip
+
+\inputcode{python}{diff-n-cons-int-to-the-power-of-n/exploring-int-version.py}
+
+
+% -------------------- %
+
+
+Comme les valeurs des naturels consécutifs ne semblent pas importantes, on peut pousser l'expérimentation en travaillant avec $k_1 \in \RR$ , $k_2 = k_1 + 1$ , $k_3 = k_1 + 2$ , \dots
+Ceci étant dit, il n'est pas toujours possible de travailler avec des réels en informatique : l'usage des flottants s'accompagne de son lot d'arrondis.
+Nous allons donc juste tester des valeurs rationnelles via le code suivant
+\footnote{
+	Ce fichier \texttt{diff-n-cons-int-to-the-power-of-n/exploring-frac-version.py} est disponible dans le sous-dossier sur le lieu de téléchargement de ce document.
+}
+qui ne révèle aucun test raté.
+
+\medskip
+
+\inputcode{python}{diff-n-cons-int-to-the-power-of-n/exploring-frac-version.py}
+
+
+Il devient donc normal de penser que le phénomène est purement polynomial. Nous allons explorer ceci dans la section suivante.

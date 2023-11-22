@@ -1,0 +1,1020 @@
+( function ( g ) {
+
+  var t = {
+      PLATFORM_WINDOWS: 'windows',
+      PLATFORM_IPHONE: 'iphone',
+      PLATFORM_IPOD: 'ipod',
+      PLATFORM_IPAD: 'ipad',
+      PLATFORM_BLACKBERRY: 'blackberry',
+      PLATFORM_BLACKBERRY_10: 'blackberry_10',
+      PLATFORM_SYMBIAN: 'symbian_series60',
+      PLATFORM_SYMBIAN_S40: 'symbian_series40',
+      PLATFORM_J2ME_MIDP: 'j2me_midp',
+      PLATFORM_ANDROID: 'android',
+      PLATFORM_ANDROID_TABLET: 'android_tablet',
+      PLATFORM_FIREFOX_OS: 'firefoxOS',
+      PLATFORM_MOBILE_GENERIC: 'mobile_generic',
+
+      userAgent : false, // Shortcut to the browser User Agent String.
+      matchedPlatformName : false, // Matched platform name. False otherwise.
+      matchedUserAgentName : false, // Matched UA String. False otherwise.
+
+      init: function() {
+        try {
+          t.userAgent = g.navigator.userAgent.toLowerCase();
+          t.getPlatformName();
+          t.getMobileUserAgentName();
+        }	catch ( e ) {
+          console.error( e );
+        }
+      },
+
+      initForTest: function( userAgent ) {
+        t.matchedPlatformName = false;
+        t.matchedUserAgentName = false;
+        try {
+          t.userAgent = userAgent.toLowerCase();
+          t.getPlatformName();
+          t.getMobileUserAgentName();
+        }	catch ( e ) {
+          console.error( e );
+        }
+      },
+
+      /**
+       * This method detects the mobile User Agent name.
+       */
+      getMobileUserAgentName: function() {
+        if ( t.matchedUserAgentName !== false )
+          return t.matchedUserAgentName;
+
+        if ( t.userAgent === false )
+          return false;
+
+        if ( t.isChromeForIOS() )
+          t.matchedUserAgentName = 'chrome-for-ios';
+        else if ( t.isTwitterForIpad() )
+          t.matchedUserAgentName =  'twitter-for-ipad';
+        else if ( t.isTwitterForIphone() )
+          t.matchedUserAgentName =  'twitter-for-iphone';
+        else if ( t.isIPhoneOrIPod() )
+          t.matchedUserAgentName = 'iphone';
+        else if ( t.isIPad() )
+          t.matchedUserAgentName = 'ipad';
+        else if ( t.isAndroidTablet() )
+          t.matchedUserAgentName = 'android_tablet';
+        else if ( t.isAndroid() )
+          t.matchedUserAgentName = 'android';
+        else if ( t.isBlackberry10() )
+          t.matchedUserAgentName = 'blackberry_10';
+        else if ( has( 'blackberry' ) )
+          t.matchedUserAgentName = 'blackberry';
+        else if ( t.isBlackberryTablet() )
+          t.matchedUserAgentName = 'blackberry_tablet';
+        else if ( t.isWindowsPhone7() )
+          t.matchedUserAgentName = 'win7';
+        else if ( t.isWindowsPhone8() )
+          t.matchedUserAgentName = 'winphone8';
+        else if ( t.isOperaMini() )
+          t.matchedUserAgentName = 'opera-mini';
+        else if ( t.isOperaMobile() )
+          t.matchedUserAgentName = 'opera-mobi';
+        else if ( t.isKindleFire() )
+          t.matchedUserAgentName = 'kindle-fire';
+        else if ( t.isSymbianPlatform() )
+          t.matchedUserAgentName = 'series60';
+        else if ( t.isFirefoxMobile() )
+          t.matchedUserAgentName = 'firefox_mobile';
+        else if ( t.isFirefoxOS() )
+          t.matchedUserAgentName = 'firefoxOS';
+        else if ( t.isFacebookForIphone() )
+          t.matchedUserAgentName = 'facebook-for-iphone';
+        else if ( t.isFacebookForIpad() )
+          t.matchedUserAgentName = 'facebook-for-ipad';
+        else if ( t.isWordPressForIos() )
+          t.matchedUserAgentName = 'ios-app';
+        else if ( has( 'iphone' ) )
+          t.matchedUserAgentName = 'iphone-unknown';
+        else if ( has( 'ipad' ) )
+          t.matchedUserAgentName = 'ipad-unknown';
+
+        return t.matchedUserAgentName;
+      },
+
+      /**
+       * This method detects the mobile platform name.
+       */
+      getPlatformName : function() {
+        if ( t.matchedPlatformName !== false )
+          return t.matchedPlatformName;
+
+        if ( t.userAgent === false )
+          return false;
+
+        if ( has( 'windows ce' ) || has( 'windows phone' ) ) {
+          t.matchedPlatformName = t.PLATFORM_WINDOWS;
+        } else if ( has( 'ipad' ) ) {
+          t.matchedPlatformName = t.PLATFORM_IPAD;
+        } else if ( has( 'ipod' ) ) {
+          t.matchedPlatformName = t.PLATFORM_IPOD;
+        } else if ( has( 'iphone' ) ) {
+          t.matchedPlatformName = t.PLATFORM_IPHONE;
+        } else if ( has( 'android' ) ) {
+          if ( t.isAndroidTablet() )
+            t.matchedPlatformName = t.PLATFORM_ANDROID_TABLET;
+          else
+            t.matchedPlatformName = t.PLATFORM_ANDROID;
+        } else if ( t.isKindleFire() ) {
+          t.matchedPlatformName = t.PLATFORM_ANDROID_TABLET;
+        } else if ( t.isBlackberry10() ) {
+          t.matchedPlatformName = t.PLATFORM_BLACKBERRY_10;
+        } else if ( has( 'blackberry' ) ) {
+          t.matchedPlatformName = t.PLATFORM_BLACKBERRY;
+        } else if ( t.isBlackberryTablet() ) {
+          t.matchedPlatformName = t.PLATFORM_BLACKBERRY;
+        } else if ( t.isSymbianPlatform() ) {
+          t.matchedPlatformName = t.PLATFORM_SYMBIAN;
+        } else if ( t.isSymbianS40Platform() ) {
+          t.matchedPlatformName = t.PLATFORM_SYMBIAN_S40;
+        } else if ( t.isJ2MEPlatform() ) {
+          t.matchedPlatformName = t.PLATFORM_J2ME_MIDP;
+        } else if ( t.isFirefoxOS() ) {
+          t.matchedPlatformName = t.PLATFORM_FIREFOX_OS;
+        } else if ( t.isFirefoxMobile() ) {
+          t.matchedPlatformName = t.PLATFORM_MOBILE_GENERIC;
+        }
+
+        return t.matchedPlatformName;
+      },
+
+
+      /**
+       * Detect the BlackBerry OS version.
+       *
+       * Note: This is for smartphones only. Does not work on BB tablets.
+       */
+      getBlackBerryOSVersion : check( function() {
+        if ( t.isBlackberry10() )
+          return '10';
+
+        if ( ! has( 'blackberry' ) )
+          return false;
+
+        var rv = -1; // Return value assumes failure.
+        var re;
+
+        if ( has( 'webkit' ) ) { // Detecting the BB OS version for devices running OS 6.0 or higher
+          re = /Version\/([\d\.]+)/i;
+        } else {
+          // BlackBerry devices <= 5.XX
+          re = /BlackBerry\w+\/([\d\.]+)/i;
+        }
+        if ( re.exec( t.userAgent ) != null )
+          rv =  RegExp.$1.toString();
+
+        return rv === -1 ? false : rv;
+      } ),
+
+      /**
+       * Detects if the current UA is iPhone Mobile Safari or another iPhone or iPod Touch Browser.
+       */
+      isIPhoneOrIPod : check( function() {
+        return has( 'safari' ) && ( has( 'iphone' ) || has( 'ipod' ) );
+      } ),
+
+      /**
+       * Detects if the current device is an iPad.
+       */
+      isIPad : check( function() {
+        return has( 'ipad' ) && has( 'safari' );
+      } ),
+
+
+      /**
+      *  Detects if the current UA is Chrome for iOS
+      */
+      isChromeForIOS : check( function() {
+        return t.isIPhoneOrIPod() && has( 'crios/' );
+      } ),
+
+      /**
+       * Detects if the current browser is the Native Android browser.
+       */
+      isAndroid : check( function() {
+        if ( has( 'android' ) ) {
+          return ! ( t.isOperaMini() || t.isOperaMobile() || t.isFirefoxMobile() );
+        }
+      } ),
+
+      /**
+       * Detects if the current browser is the Native Android Tablet browser.
+       */
+       isAndroidTablet : check( function() {
+        if ( has( 'android' ) && ! has( 'mobile' ) ) {
+          return ! ( t.isOperaMini() || t.isOperaMobile() || t.isFirefoxMobile() );
+        }
+      } ),
+
+
+      /**
+       * Detects if the current browser is Opera Mobile
+       */
+      isOperaMobile : check( function() {
+        return has( 'opera' ) && has( 'mobi' );
+      } ),
+
+      /**
+       * Detects if the current browser is Opera Mini
+       */
+      isOperaMini : check( function() {
+        return has( 'opera' ) && has( 'mini' );
+      } ),
+
+
+      /**
+       * isBlackberry10() can be used to check the User Agent for a BlackBerry 10 device.
+       */
+      isBlackberry10 : check( function() {
+        return has( 'bb10' ) && has( 'mobile' );
+      } ),
+
+      /**
+       * isBlackberryTablet() can be used to check the User Agent for a RIM blackberry tablet
+       */
+      isBlackberryTablet : check( function() {
+        return has( 'playbook' ) && has( 'rim tablet' );
+      } ),
+
+      /**
+       * Detects if the current browser is a Windows Phone 7 device.
+       */
+      isWindowsPhone7 : check( function () {
+        return has( 'windows phone os 7' );
+      } ),
+
+      /**
+       * Detects if the current browser is a Windows Phone 8 device.
+       */
+      isWindowsPhone8 : check( function () {
+        return has( 'windows phone 8' );
+      } ),
+
+      /**
+       * Detects if the device platform is J2ME.
+       */
+      isJ2MEPlatform : check( function () {
+        return has( 'j2me/midp' ) || ( has( 'midp' ) && has( 'cldc' ) );
+      } ),
+
+
+      /**
+       * Detects if the device platform is the Symbian Series 40.
+       */
+      isSymbianS40Platform : check( function() {
+        if ( has( 'series40' ) ) {
+          return has( 'nokia' ) || has( 'ovibrowser' ) || has( 'nokiabrowser' );
+        }
+      } ),
+
+
+      /**
+       * Detects if the device platform is the Symbian Series 60.
+       */
+      isSymbianPlatform : check( function() {
+        if ( has( 'webkit' ) ) {
+          // First, test for WebKit, then make sure it's either Symbian or S60.
+          return has( 'symbian' ) || has( 'series60' );
+        } else if ( has( 'symbianos' ) && has( 'series60' ) ) {
+          return true;
+        } else if ( has( 'nokia' ) && has( 'series60' ) ) {
+          return true;
+        } else if ( has( 'opera mini' ) ) {
+          return has( 'symbianos' ) || has( 'symbos' ) || has( 'series 60' );
+        }
+      } ),
+
+
+      /**
+       * Detects if the current browser is the Kindle Fire Native browser.
+       */
+      isKindleFire : check( function() {
+        return has( 'silk/' ) && has( 'silk-accelerated=' );
+      } ),
+
+      /**
+       * Detects if the current browser is Firefox Mobile (Fennec)
+       */
+      isFirefoxMobile : check( function() {
+        return has( 'fennec' );
+      } ),
+
+
+      /**
+       * Detects if the current browser is the native FirefoxOS browser
+       */
+      isFirefoxOS : check( function() {
+        return has( 'mozilla' ) && has( 'mobile' ) && has( 'gecko' ) && has( 'firefox' );
+      } ),
+
+
+      /**
+       * Detects if the current UA is Facebook for iPad
+       */
+      isFacebookForIpad : check( function() {
+        if ( ! has( 'ipad' ) )
+          return false;
+
+        return has( 'facebook' ) || has( 'fbforiphone' ) || has( 'fban/fbios;' );
+      } ),
+
+      /**
+       * Detects if the current UA is Facebook for iPhone
+       */
+      isFacebookForIphone : check( function() {
+        if ( ! has( 'iphone' ) )
+          return false;
+
+        return ( has( 'facebook' ) && ! has( 'ipad' ) ) ||
+          ( has( 'fbforiphone' ) && ! has( 'tablet' ) ) ||
+          ( has( 'fban/fbios;' ) && ! has( 'tablet' ) ); // FB app v5.0 or higher
+      } ),
+
+      /**
+       * Detects if the current UA is Twitter for iPhone
+       */
+      isTwitterForIphone : check( function() {
+        if ( has( 'ipad' ) )
+          return false;
+
+        return has( 'twitter for iphone' );
+      } ),
+
+      /**
+       * Detects if the current UA is Twitter for iPad
+       */
+      isTwitterForIpad : check( function() {
+        return has( 'twitter for ipad' ) || ( has( 'ipad' ) && has( 'twitter for iphone' ) );
+      } ),
+
+
+      /**
+       * Detects if the current UA is WordPress for iOS
+       */
+      isWordPressForIos : check( function() {
+        return has( 'wp-iphone' );
+      } )
+  };
+
+  function has( str ) {
+    return t.userAgent.indexOf( str ) != -1;
+  }
+
+  function check( fn ) {
+    return function() {
+      return t.userAgent === false ? false : fn() || false;
+    }
+  }
+
+  g.wpcom_mobile_user_agent_info = t;
+
+} )( typeof window !== 'undefined' ? window : this );
+;
+/* globals related_posts_js_options */
+
+/**
+ * Load related posts
+ */
+( function () {
+	'use strict';
+
+	var jprp = {
+		response: null,
+
+		/**
+		 * Utility get related posts JSON endpoint from URLs
+		 *
+		 * @param  {string} URL (optional)
+		 * @return {string} Endpoint URL
+		 */
+		getEndpointURL: function ( URL ) {
+			var locationObject,
+				is_customizer =
+					'undefined' !== typeof wp &&
+					wp.customize &&
+					wp.customize.settings &&
+					wp.customize.settings.url &&
+					wp.customize.settings.url.self;
+
+			// If we're in Customizer, write the correct URL.
+			if ( is_customizer ) {
+				locationObject = document.createElement( 'a' );
+				locationObject.href = wp.customize.settings.url.self;
+			} else {
+				locationObject = document.location;
+			}
+
+			if ( 'string' === typeof URL && URL.match( /^https?:\/\// ) ) {
+				locationObject = document.createElement( 'a' );
+				locationObject.href = URL;
+			}
+
+			var args = 'relatedposts=1';
+			var relatedPosts = document.querySelector( '#jp-relatedposts' );
+			if ( relatedPosts.hasAttribute( 'data-exclude' ) ) {
+				args += '&relatedposts_exclude=' + relatedPosts.getAttribute( 'data-exclude' );
+			}
+
+			if ( is_customizer ) {
+				args += '&jetpackrpcustomize=1';
+			}
+
+			var pathname = locationObject.pathname;
+			if ( '/' !== pathname[ 0 ] ) {
+				pathname = '/' + pathname;
+			}
+
+			if ( '' === locationObject.search ) {
+				return pathname + '?' + args;
+			} else {
+				return pathname + locationObject.search + '&' + args;
+			}
+		},
+
+		getAnchor: function ( post, classNames ) {
+			var anchorTitle = post.title;
+			var anchor = document.createElement( 'a' );
+			anchor.setAttribute( 'class', classNames );
+			anchor.setAttribute( 'href', post.url );
+			anchor.setAttribute( 'title', anchorTitle );
+			anchor.setAttribute( 'data-origin', post.url_meta.origin );
+			anchor.setAttribute( 'data-position', post.url_meta.position );
+
+			if ( '' !== post.rel ) {
+				anchor.setAttribute( 'rel', post.rel );
+			}
+
+			var div = document.createElement( 'div' );
+			div.appendChild( anchor );
+
+			var anchorHTML = div.innerHTML;
+			return [ anchorHTML.substring( 0, anchorHTML.length - 4 ), '</a>' ];
+		},
+
+		generateMinimalHtml: function ( posts, options ) {
+			var self = this;
+			var html = '';
+
+			posts.forEach( function ( post, index ) {
+				var anchor = self.getAnchor( post, 'jp-relatedposts-post-a' );
+				var classes = 'jp-relatedposts-post jp-relatedposts-post' + index;
+
+				if ( post.classes.length > 0 ) {
+					classes += ' ' + post.classes.join( ' ' );
+				}
+
+				html +=
+					'<p class="' +
+					classes +
+					'" data-post-id="' +
+					post.id +
+					'" data-post-format="' +
+					post.format +
+					'">';
+				html +=
+					'<span class="jp-relatedposts-post-title">' +
+					anchor[ 0 ] +
+					post.title +
+					anchor[ 1 ] +
+					'</span>';
+				if ( options.showDate ) {
+					html +=
+						'<time class="jp-relatedposts-post-date" datetime="' +
+						post.date +
+						'">' +
+						post.date +
+						'</time>';
+				}
+				if ( options.showContext ) {
+					html += '<span class="jp-relatedposts-post-context">' + post.context + '</span>';
+				}
+				html += '</p>';
+			} );
+			return (
+				'<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-' +
+				options.layout +
+				' ">' +
+				html +
+				'</div>'
+			);
+		},
+
+		generateVisualHtml: function ( posts, options ) {
+			var self = this;
+			var html = '';
+
+			posts.forEach( function ( post, index ) {
+				var anchor = self.getAnchor( post, 'jp-relatedposts-post-a' );
+				var classes = 'jp-relatedposts-post jp-relatedposts-post' + index;
+
+				if ( post.classes.length > 0 ) {
+					classes += ' ' + post.classes.join( ' ' );
+				}
+
+				if ( ! post.img.src ) {
+					classes += ' jp-relatedposts-post-nothumbs';
+				} else {
+					classes += ' jp-relatedposts-post-thumbs';
+				}
+
+				var dummyContainer = document.createElement( 'p' );
+				dummyContainer.innerHTML = post.excerpt;
+				var excerpt = dummyContainer.textContent;
+
+				html +=
+					'<div class="' +
+					classes +
+					'" data-post-id="' +
+					post.id +
+					'" data-post-format="' +
+					post.format +
+					'">';
+				if ( post.img.src ) {
+					html +=
+						anchor[ 0 ] +
+						'<img class="jp-relatedposts-post-img" loading="lazy" src="' +
+						post.img.src +
+						'" width="' +
+						post.img.width +
+						'" alt="' +
+						post.img.alt_text +
+						'" />' +
+						anchor[ 1 ];
+				} else {
+					var anchor_overlay = self.getAnchor(
+						post,
+						'jp-relatedposts-post-a jp-relatedposts-post-aoverlay'
+					);
+					html += anchor_overlay[ 0 ] + anchor_overlay[ 1 ];
+				}
+				html +=
+					'<' +
+					related_posts_js_options.post_heading +
+					' class="jp-relatedposts-post-title">' +
+					anchor[ 0 ] +
+					post.title +
+					anchor[ 1 ] +
+					'</' +
+					related_posts_js_options.post_heading +
+					'>';
+				html += '<p class="jp-relatedposts-post-excerpt">' + excerpt + '</p>';
+				if ( options.showDate ) {
+					html +=
+						'<time class="jp-relatedposts-post-date" datetime="' +
+						post.date +
+						'">' +
+						post.date +
+						'</time>';
+				}
+				if ( options.showContext ) {
+					html += '<p class="jp-relatedposts-post-context">' + post.context + '</p>';
+				}
+				html += '</div>';
+			} );
+			return (
+				'<div class="jp-relatedposts-items jp-relatedposts-items-visual jp-relatedposts-' +
+				options.layout +
+				' ">' +
+				html +
+				'</div>'
+			);
+		},
+
+		/**
+		 * We want to set a max height on the excerpt however we want to set
+		 * this according to the natual pacing of the page as we never want to
+		 * cut off a line of text in the middle so we need to do some detective
+		 * work.
+		 */
+		setVisualExcerptHeights: function () {
+			var elements = document.querySelectorAll(
+				'#jp-relatedposts .jp-relatedposts-post-nothumbs .jp-relatedposts-post-excerpt'
+			);
+
+			if ( ! elements.length ) {
+				return;
+			}
+
+			var firstElementStyles = getComputedStyle( elements[ 0 ] );
+
+			var fontSize = parseInt( firstElementStyles.fontSize, 10 );
+			var lineHeight = parseInt( firstElementStyles.lineHeight, 10 );
+
+			// Show 5 lines of text
+			for ( var i = 0; i < elements.length; i++ ) {
+				elements[ i ].style.maxHeight = ( 5 * lineHeight ) / fontSize + 'em';
+			}
+		},
+
+		getTrackedUrl: function ( anchor ) {
+			var args = 'relatedposts_hit=1';
+			args += '&relatedposts_origin=' + anchor.getAttribute( 'data-origin' );
+			args += '&relatedposts_position=' + anchor.getAttribute( 'data-position' );
+
+			var pathname = anchor.pathname;
+			if ( '/' !== pathname[ 0 ] ) {
+				pathname = '/' + pathname;
+			}
+
+			if ( '' === anchor.search ) {
+				return pathname + '?' + args;
+			} else {
+				return pathname + anchor.search + '&' + args;
+			}
+		},
+
+		cleanupTrackedUrl: function () {
+			if ( 'function' !== typeof history.replaceState ) {
+				return;
+			}
+
+			var cleaned_search = document.location.search.replace(
+				/\brelatedposts_[a-z]+=[0-9]*&?\b/gi,
+				''
+			);
+			if ( '?' === cleaned_search ) {
+				cleaned_search = '';
+			}
+			if ( document.location.search !== cleaned_search ) {
+				history.replaceState( {}, document.title, document.location.pathname + cleaned_search );
+			}
+		},
+	};
+
+	function afterPostsHaveLoaded() {
+		jprp.setVisualExcerptHeights();
+		var posts = document.querySelectorAll( '#jp-relatedposts a.jp-relatedposts-post-a' );
+
+		Array.prototype.forEach.call( posts, function ( post ) {
+			document.addEventListener( 'click', function () {
+				post.href = jprp.getTrackedUrl( post );
+			} );
+		} );
+	}
+
+	/**
+	 * Initialize Related Posts.
+	 */
+	function startRelatedPosts() {
+		jprp.cleanupTrackedUrl();
+
+		var endpointURL = jprp.getEndpointURL();
+		var relatedPosts = document.querySelector( '#jp-relatedposts' );
+
+		if ( document.querySelectorAll( '#jp-relatedposts .jp-relatedposts-post' ).length ) {
+			afterPostsHaveLoaded();
+			return;
+		}
+
+		var request = new XMLHttpRequest();
+		request.open( 'GET', endpointURL, true );
+		request.setRequestHeader( 'x-requested-with', 'XMLHttpRequest' );
+
+		request.onreadystatechange = function () {
+			if ( this.readyState === XMLHttpRequest.DONE && this.status === 200 ) {
+				try {
+					var response = JSON.parse( request.responseText );
+
+					if ( 0 === response.items.length || 0 === relatedPosts.length ) {
+						return;
+					}
+
+					jprp.response = response;
+
+					var html,
+						showThumbnails,
+						options = {};
+
+					if ( 'undefined' !== typeof wp && wp.customize ) {
+						showThumbnails = wp.customize.instance( 'jetpack_relatedposts[show_thumbnails]' ).get();
+						options.showDate = wp.customize.instance( 'jetpack_relatedposts[show_date]' ).get();
+						options.showContext = wp.customize
+							.instance( 'jetpack_relatedposts[show_context]' )
+							.get();
+						options.layout = wp.customize.instance( 'jetpack_relatedposts[layout]' ).get();
+					} else {
+						showThumbnails = response.show_thumbnails;
+						options.showDate = response.show_date;
+						options.showContext = response.show_context;
+						options.layout = response.layout;
+					}
+
+					html = ! showThumbnails
+						? jprp.generateMinimalHtml( response.items, options )
+						: jprp.generateVisualHtml( response.items, options );
+
+					var div = document.createElement( 'div' );
+					relatedPosts.appendChild( div );
+					div.outerHTML = html;
+
+					if ( options.showDate ) {
+						var dates = relatedPosts.querySelectorAll( '.jp-relatedposts-post-date' );
+
+						Array.prototype.forEach.call( dates, function ( date ) {
+							date.style.display = 'block';
+						} );
+					}
+
+					relatedPosts.style.display = 'block';
+					afterPostsHaveLoaded();
+				} catch ( error ) {
+					// Do nothing
+				}
+			}
+		};
+
+		request.send();
+	}
+
+	function init() {
+		if ( 'undefined' !== typeof wp && wp.customize ) {
+			if ( wp.customize.selectiveRefresh ) {
+				wp.customize.selectiveRefresh.bind( 'partial-content-rendered', function ( placement ) {
+					if ( 'jetpack_relatedposts' === placement.partial.id ) {
+						startRelatedPosts();
+					}
+				} );
+			}
+			wp.customize.bind( 'preview-ready', startRelatedPosts );
+		} else {
+			startRelatedPosts();
+		}
+	}
+
+	if ( document.readyState !== 'loading' ) {
+		init();
+	} else {
+		document.addEventListener( 'DOMContentLoaded', init );
+	}
+} )();
+;
+// listen for rlt authentication events and pass them to children of this document.
+( function() {
+	var currentToken;
+	var parentOrigin;
+	var iframeOrigins;
+	var initializationListeners = [];
+	var hasBeenInitialized = false;
+	var RLT_KEY = 'jetpack:wpcomRLT';
+
+	// IE11 compat version that doesn't require on `new URL( src )`
+	function getOriginFromUrl( url ) {
+		var parser = document.createElement('a');
+		parser.href = url;
+		return parser.origin;
+	}
+
+	// run on `load` for suitable iframes, this injects the current token if available
+	function rltIframeInjector( event ) {
+		if ( ! currentToken ) {
+			return;
+		}
+		rltInjectToken( currentToken, event.target.contentWindow, getOriginFromUrl( event.target.src ) );
+	}
+
+	// run on DOMContentLoaded or later
+	function rltMonitorIframes() {
+		// wait until suitable iframes are loaded before trying to inject the RLT
+		var iframes = document.querySelectorAll( "iframe" );
+		for( var i=0; i<iframes.length; i++ ) {
+			var iframe = iframes[i];
+			if ( rltShouldAuthorizeIframe( iframe ) ) {
+				iframe.addEventListener('load', rltIframeInjector);
+			}
+		}
+
+		// listen for newly-created iframes, since some are injected dynamically
+		var observer = new MutationObserver(function( mutationsList, observer ) {
+			for(var i=0; i<mutationsList.length; i++) {
+				var mutation = mutationsList[i];
+				if (mutation.type === 'childList') {
+					for(var j=0; j<mutation.addedNodes.length; j++) {
+						var node = mutation.addedNodes[j];
+						if (node instanceof HTMLElement && node.nodeName === 'IFRAME' && rltShouldAuthorizeIframe(node)) {
+							node.addEventListener('load', rltIframeInjector);
+						}
+					}
+				}
+			}
+		});
+
+		observer.observe(document.body, { subtree: true, childList: true });
+	}
+
+	// should we inject RLT into this iframe?
+	function rltShouldAuthorizeIframe( iframe ) {
+		if ( ! Array.isArray( iframeOrigins ) ) {
+			return;
+		}
+		return iframeOrigins.indexOf( getOriginFromUrl( iframe.src ) ) >= 0;
+	}
+
+	function rltInvalidateWindowToken( token, target, origin ) {
+		if ( target && typeof target.postMessage === 'function' ) {
+			try {
+				target.postMessage( JSON.stringify( {
+					type: 'rltMessage',
+					data: {
+						event: 'invalidate',
+						token: token,
+						sourceOrigin: window.location.origin,
+					},
+				} ), origin );
+			} catch ( err ) {
+				return;
+			}
+		}
+	}
+
+	/**
+	 * PUBLIC METHODS
+	 */
+	window.rltInvalidateToken = function( token, sourceOrigin ) {
+		// invalidate in current context
+		if ( token === currentToken ) {
+			currentToken = null;
+		}
+
+		// remove from localstorage, but only if in a top level window, not iframe
+		try {
+			if ( window.location === window.parent.location && window.localStorage ) {
+				if ( window.localStorage.getItem(RLT_KEY) === token ) {
+					window.localStorage.removeItem(RLT_KEY);
+				}
+			}
+		} catch( e ) {
+			console.info("localstorage access for invalidate denied - probably blocked third-party access", window.location.href);
+		}
+
+		// invalidate in iframes
+		var iframes = document.querySelectorAll("iframe");
+		for( var i=0; i<iframes.length; i++ ) {
+			var iframe = iframes[i];
+			var iframeOrigin = getOriginFromUrl( iframe.src );
+			if ( iframeOrigin !== sourceOrigin && rltShouldAuthorizeIframe( iframe ) ) {
+				rltInvalidateWindowToken( token, iframe.contentWindow, iframeOrigin );
+			}
+		}
+
+		// invalidate in parent
+		if ( parentOrigin && parentOrigin !== sourceOrigin && window.parent ) {
+			rltInvalidateWindowToken( token, window.parent, parentOrigin );
+		}
+	}
+
+	window.rltInjectToken = function( token, target, origin ) {
+		if ( target && typeof target.postMessage === 'function' ) {
+			try {
+				target.postMessage( JSON.stringify( {
+					type: 'loginMessage',
+					data: {
+						event: 'login',
+						success: true,
+						type: 'rlt',
+						token: token,
+						sourceOrigin: window.location.origin,
+					},
+				} ), origin );
+			} catch ( err ) {
+				return;
+			}
+		}
+	};
+
+	window.rltIsAuthenticated = function() {
+		return !! currentToken;
+	};
+
+	window.rltGetToken = function() {
+		return currentToken;
+	};
+
+	window.rltAddInitializationListener = function( listener ) {
+		// if RLT is already initialized, call the listener immediately
+		if ( hasBeenInitialized ) {
+			listener( currentToken );
+		} else {
+			initializationListeners.push( listener );
+		}
+	};
+
+	// store the token in localStorage
+	window.rltStoreToken = function( token ) {
+		currentToken = token;
+		try {
+			if ( window.location === window.parent.location && window.localStorage ) {
+				window.localStorage.setItem( RLT_KEY, token );
+			}
+		} catch( e ) {
+			console.info("localstorage access denied - probably blocked third-party access", window.location.href);
+		}
+	}
+
+	window.rltInitialize = function( config ) {
+		if ( ! config || typeof window.postMessage !== 'function' ) {
+			return;
+		}
+
+		currentToken  = config.token;
+		iframeOrigins = config.iframeOrigins;
+		parentOrigin  = config.parentOrigin; // needed?
+
+		// load token from localStorage if possible, but only in top level window
+		try {
+			if ( ! currentToken && window.location === window.parent.location && window.localStorage ) {
+				currentToken = window.localStorage.getItem(RLT_KEY);
+			}
+		} catch( e ) {
+			console.info("localstorage access denied - probably blocked third-party access", window.location.href);
+		}
+
+		// listen for RLT events from approved origins
+		window.addEventListener( 'message', function( e ) {
+			var message = e && e.data;
+			if ( typeof message === 'string' ) {
+				try {
+					message = JSON.parse( message );
+				} catch ( err ) {
+					return;
+				}
+			}
+
+			var type = message && message.type;
+			var data = message && message.data;
+
+			if ( type !== 'loginMessage' ) {
+				return;
+			}
+
+			if ( data && data.type === 'rlt' && data.token !== currentToken ) {
+
+				// put into localStorage if running in top-level window (not iframe)
+				rltStoreToken( data.token );
+
+				// send to allowlisted iframes
+				var iframes = document.querySelectorAll("iframe");
+				for( var i=0; i<iframes.length; i++ ) {
+					var iframe = iframes[i];
+					if ( rltShouldAuthorizeIframe( iframe ) ) {
+						rltInjectToken( currentToken, iframe.contentWindow, getOriginFromUrl( iframe.src ) );
+					}
+				}
+
+				// send to the parent, unless the event was sent _by_ the parent
+				if ( parentOrigin && parentOrigin !== data.sourceOrigin && window.parent ) {
+					rltInjectToken( currentToken, window.parent, parentOrigin );
+				}
+			}
+		} );
+
+		// listen for RLT events from approved origins
+		window.addEventListener( 'message', function( e ) {
+			var message = e && e.data;
+			if ( typeof message === 'string' ) {
+				try {
+					message = JSON.parse( message );
+				} catch ( err ) {
+					return;
+				}
+			}
+
+			var type = message && message.type;
+			var data = message && message.data;
+
+			if ( type !== 'rltMessage' ) {
+				return;
+			}
+
+			if ( data && data.event === 'invalidate' && data.token === currentToken ) {
+				rltInvalidateToken( data.token );
+			}
+		} );
+
+		if ( iframeOrigins ) {
+			if ( document.readyState !== 'loading' ) {
+				rltMonitorIframes();
+			} else {
+				window.addEventListener( 'DOMContentLoaded', rltMonitorIframes );
+			}
+		}
+
+		initializationListeners.forEach( function( listener ) {
+			listener( currentToken );
+		} );
+
+		initializationListeners = [];
+
+		hasBeenInitialized = true;
+	};
+} )();
+;
+!function(){let e=[];window.__tcfapi=function(){let t=[].slice.call(arguments),n=t[0];if("ping"===n)"function"==typeof t[2]&&t[2]({gdprApplies:!0,cmpLoaded:!1,cmpStatus:"stub",apiVersion:"2"});else{if("getQueue"===n)return e;e.push(t)}},window.addEventListener("message",(function(e){let t="string"==typeof e.data,n={};try{n=t?JSON.parse(e.data):e.data}catch(e){}let a=n.__tcfapiCall;a&&window.__tcfapi(a.command,a.version,(function(n,c){let s={__tcfapiReturn:{returnValue:n,success:c,callId:a.callId}};t&&(s=JSON.stringify(s)),e&&e.source&&e.source.postMessage&&e.source.postMessage(s,"*")}),a.parameter)}),!1),document.addEventListener("DOMContentLoaded",(function(){!function(){const e=document.createElement("iframe");e.style.cssText="display:none",e.name="__tcfapiLocator",document.body.appendChild(e)}()}))}();;

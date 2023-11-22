@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="df_data/storage.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+window.addEventListener("message",function(b){if("undefined"!=typeof b.data.mdb)switch(b.data.type){case "init":var a={session_id:store.get("session_id"),adserver_id:store.get("adserver_id"),campaign_id:store.get("campaign_id")};b.source.postMessage({mdb:1,message:"ready",session_vars:a,uid:store.get("ls_uid")},"*");store.remove("session_id");store.remove("adserver_id");store.remove("campaign_id");break;case "pixel":a=b.data.type+"_"+Math.random();b.data.retry=0;store.set(a,b.data);processItem(a);
+break;case "var":for(a in b.data.data){if("ls_uid"==a){var c=store.get(a);if(null!=c&&""!=c)continue}store.set(a,b.data.data[a])}}},!1);if(window.location.hash){var uid=window.location.hash.substring(1),current_uid=store.get("ls_uid");null!=current_uid&&""!=current_uid||store.set("ls_uid",uid)}
+var parseUrl=function(b){var a=["ls_uid","session_id","adserver_id","campaign_id"],c=b.match(new RegExp(/\[([^\]]+)]/,"ig")),d;for(d in c){var f=c[d].replace(/[\[\]]/ig,"");if(0>a.indexOf(f))var e="";else e=store.get(f),"undefined"==typeof e&&(e="");b=b.replace("["+f+"]",e)}return b},processItem=function(b){var a=store.get(b),c=(new Date).getTime();if("undefined"!==typeof a.max_age&&0<a.max_age&&c>a.max_age)store.remove(b);else{c=parseUrl(a.url);var d=new XMLHttpRequest;d.open("GET",c,!0);d.onload=
+function(){console.log("Tracker sent, removing key");store.remove(b)};d.ontimeout=function(c){a.retry++;store.set(b,a);"undefined"!==typeof a.max_retry&&0<a.max_retry&&a.retry>=a.max_retry&&(console.log("Removing key after too many timeouts"),store.remove(b))};d.onerror=function(){a.retry++;store.set(b,a);"undefined"!==typeof a.max_retry&&0<a.max_retry&&a.retry>=a.max_retry&&(console.log("Removing key after too many errors"),store.remove(b))};d.send(null)}};
+store.each(function(b,a){try{b=store.get(a)}catch(c){b=null}null!=b&&"undefined"!==typeof b.mdb&&processItem(a)});
+</script>
+
+
+</body></html>

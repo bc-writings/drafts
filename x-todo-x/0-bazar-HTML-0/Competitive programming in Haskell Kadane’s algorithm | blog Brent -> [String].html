@@ -1,0 +1,1499 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>
+Competitive programming in Haskell: Kadane’s algorithm | blog :: Brent -&gt; [String]</title>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/style.css">
+<link rel="pingback" href="https://byorgey.wordpress.com/xmlrpc.php">
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s.pubmine.com/">
+<link rel="dns-prefetch" href="https://x.bidswitch.net/">
+<link rel="dns-prefetch" href="https://static.criteo.net/">
+<link rel="dns-prefetch" href="https://ib.adnxs.com/">
+<link rel="dns-prefetch" href="https://aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="https://bidder.criteo.com/">
+<link rel="dns-prefetch" href="https://cas.criteo.com/">
+<link rel="dns-prefetch" href="https://gum.criteo.com/">
+<link rel="dns-prefetch" href="https://ads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://gads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://ad.doubleclick.net/">
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+<link rel="dns-prefetch" href="https://cdn.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.g.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.swid.switchadhub.com/">
+<link rel="dns-prefetch" href="https://a.teads.tv/">
+<link rel="dns-prefetch" href="https://prebid.media.net/">
+<link rel="dns-prefetch" href="https://adserver-us.adtech.advertising.com/">
+<link rel="dns-prefetch" href="https://fastlane.rubiconproject.com/">
+<link rel="dns-prefetch" href="https://prebid-server.rubiconproject.com/">
+<link rel="dns-prefetch" href="https://hb-api.omnitagjs.com/">
+<link rel="dns-prefetch" href="https://mtrx.go.sonobi.com/">
+<link rel="dns-prefetch" href="https://apex.go.sonobi.com/">
+<link rel="dns-prefetch" href="https://u.openx.net/">
+<link rel="alternate" type="application/rss+xml" title="blog :: Brent -&gt; [String] » Feed" href="https://byorgey.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="blog :: Brent -&gt; [String] » Comments Feed" href="https://byorgey.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="blog :: Brent -&gt; [String] » Competitive programming in Haskell: Kadane’s&nbsp;algorithm Comments Feed" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s0.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1625065786h&ver=5.8.1"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="all-css-0-1" href="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/a_002.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css">
+.has-text-align-justify {
+	text-align:justify;
+}
+</style>
+<style id="jetpack-global-styles-frontend-style-inline-css">
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<link rel="stylesheet" id="all-css-2-1" href="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/a.css" type="text/css" media="all">
+<script id="jetpack_related-posts-js-extra">
+var related_posts_js_options = {"post_heading":"h4"};
+</script>
+<script id="wpcom-actionbar-placeholder-js-extra">
+var actionbardata = {"siteID":"1152889","siteName":"blog :: Brent -> [String]","siteURL":"http:\/\/byorgey.wordpress.com","siteHost":"byorgey.wordpress.com","icon":"<img alt='' src='https:\/\/s0.wp.com\/i\/logo\/wpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/twentyten","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Fbyorgey.wordpress.com%2F2021%2F09%2F09%2Fcompetitive-programming-in-haskell-kadanes-algorithm%2F&signup_flow=account","themeURL":"","xhrURL":"https:\/\/byorgey.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"7a89a0b3ba","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"8428047446\" \/>","referer":"https:\/\/byorgey.wordpress.com\/2021\/09\/09\/competitive-programming-in-haskell-kadanes-algorithm\/","canFollow":"1","feedID":"92410","statusMessage":"","customizeLink":"https:\/\/byorgey.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Fbyorgey.wordpress.com%2F2021%2F09%2F09%2Fcompetitive-programming-in-haskell-kadanes-algorithm%2F","postID":"2386","shortlink":"https:\/\/wp.me\/p4PUZ-Cu","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/byorgey.wordpress.com\/2386","statsLink":"https:\/\/wordpress.com\/stats\/post\/2386\/byorgey.wordpress.com","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Twenty Ten","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 619 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Fbyorgey.wordpress.com%2F2021%2F09%2F09%2Fcompetitive-programming-in-haskell-kadanes-algorithm%2F&signup_flow=account\">Log in now.<\/a>","stats":"Stats","notifyNewPosts":"Notify me of new posts","notifyNewPostsDetails":"Receive web and mobile notifications for new posts from this site.","emailNewPosts":"Email me new posts","emailNewPostsDetails":"You can customize your notification settings further <a href=\"https:\/\/wordpress.com\/following\/manage?s=byorgey.wordpress.com\">here<\/a>.","emailNewComments":"Email me new comments"}};
+</script>
+<script crossorigin="anonymous" type="text/javascript" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/a_003"></script>
+<script type="text/javascript">
+	window.addEventListener( 'DOMContentLoaded', function() {
+		rltInitialize( {"token":null,"iframeOrigins":["https:\/\/widgets.wp.com"]} );
+	} );
+</script>
+<link rel="stylesheet" id="all-css-0-2" href="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/style_002.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s0.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://byorgey.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s0.wp.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/">
+<link rel="shortlink" href="https://wp.me/p4PUZ-Cu">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fbyorgey.wordpress.com%2F2021%2F09%2F09%2Fcompetitive-programming-in-haskell-kadanes-algorithm%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fbyorgey.wordpress.com%2F2021%2F09%2F09%2Fcompetitive-programming-in-haskell-kadanes-algorithm%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Competitive programming in Haskell: Kadane’s algorithm">
+<meta property="og:url" content="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/">
+<meta property="og:description" content="I will be giving a talk on competitive programming in Haskell tomorrow, September 10, at Haskell Love. You should attend! It’s free! In my last competitive programming post, I challenged you to sol…">
+<meta property="article:published_time" content="2021-09-09T11:26:41+00:00">
+<meta property="article:modified_time" content="2021-09-09T11:26:41+00:00">
+<meta property="og:site_name" content="blog :: Brent -&gt; [String]">
+<meta property="og:image" content="https://byorgey.files.wordpress.com/2021/09/881dcb8a62a2e18a.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:text:title" content="Competitive programming in Haskell: Kadane’s&nbsp;algorithm">
+<meta name="twitter:image" content="https://byorgey.files.wordpress.com/2021/09/881dcb8a62a2e18a.png?w=144">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="shortcut icon" type="image/x-icon" href="https://s0.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="https://s0.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon" href="https://s0.wp.com/i/webclip.png">
+<link rel="openid.server" href="https://byorgey.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://byorgey.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://byorgey.wordpress.com/osd.xml" title="blog :: Brent -&gt; [String]">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<meta name="application-name" content="blog :: Brent -&gt; [String]"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://byorgey.wordpress.com/feed/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="description" content="I will be giving a talk on competitive programming in Haskell tomorrow, September 10, at Haskell Love. You should attend! It’s free! In my last competitive programming post, I challenged you to solve Purple Rain. We are presented with a linear sequence of cells, each colored either red or blue, and we are supposed to…">
+		<script type="text/javascript">
+
+			window.doNotSellCallback = function() {
+
+				var linkElements = [
+					'a[href="https://wordpress.com/?ref=footer_blog"]',
+					'a[href="https://wordpress.com/?ref=footer_website"]',
+					'a[href="https://wordpress.com/?ref=vertical_footer"]',
+					'a[href^="https://wordpress.com/?ref=footer_segment_"]',
+				].join(',');
+
+				var dnsLink = document.createElement( 'a' );
+				dnsLink.href = 'https://wordpress.com/advertising-program-optout/';
+				dnsLink.classList.add( 'do-not-sell-link' );
+				dnsLink.rel = 'nofollow';
+				dnsLink.style.marginLeft = '0.5em';
+				dnsLink.textContent = 'Do Not Sell My Personal Information';
+
+				var creditLinks = document.querySelectorAll( linkElements );
+
+				if ( 0 === creditLinks.length ) {
+					return false;
+				}
+
+				Array.prototype.forEach.call( creditLinks, function( el ) {
+					el.insertAdjacentElement( 'afterend', dnsLink );
+				});
+
+				return true;
+			};
+
+		</script>
+		<script id="cmp-configuration" type="application/configuration">{"gvlVersion":"106","consentLanguage":"EN","locale":"en","vendorsAll":"BBdr_6__7a_s_3_fv_9ujzGr_v9f9_yGccL7tv3guxf635ei_-wnZou_VNXBVyPEl27YJCBto5k6iak2LVEqteZ9jUmxlfRpRPZck09jL2zrAw9p8_uqfzJTPf_f__7_e-f___v___v-_____________3_____v____________v____wAA","vendorsLegInterest":"BBcAkw1LyALsyxwZNo0qhRAjCsJDoBQAUUAwtE1gAwOCnZWAR6ghYAITUBGBECDEFGDAIABBIAkIiAkALBAIgCIBAACAFSAhAARMAgsALAwCAAUA0LECKAIQJCDI4KjlMCAqRaKCeysASi72NMIQy3wIoFH9FRgI1miBYGQkLBzHAEgJeAAA","ajaxNonce":"2b6d9d35a9","modulePath":"https:\/\/s0.wp.com\/wp-content\/blog-plugins\/wordads-classes\/js\/","gvlPath":"https:\/\/public-api.wordpress.com\/wpcom\/v2\/sites\/1152889\/cmp\/vendors\/en\/","_":{"title":"Privacy & Cookies","intro":"We, WordPress.com, and our advertising partners store and\/or access information on your device and also process personal data, like unique identifiers, browsing activity, and other standard information sent by your device including your IP address. This information is collected over time and used for personalised ads, ad measurement, audience insights, and product development specific to our ads program. If this sounds good to you, select \"I Agree!\" below.  Otherwise, you can get more information, customize your consent preferences, or decline consent by selecting \"Learn More\". Note that your preferences apply to all websites in the <a href=\"https:\/\/automattic.com\/cookies\/#user-ads-consent\" target=\"_blank\">WordPress.com network<\/a>, and if you change your mind in the future you can update your preferences anytime by visiting the Privacy link displayed under each ad. One last thing, our partners may process some of your data based on legitimate interests instead of consent but you can object to that by choosing \"Learn More\" and then disabling the Legitimate Interests toggle under any listed Purpose or Partner.","config":"Learn More","accept":"I Agree!","viewPartners":"View Partners","error":"We're sorry but an unexpected error occurred. Please try again later."}}</script>		<script type="text/javascript">
+		function __ATA_CC() {var v = document.cookie.match('(^|;) ?personalized-ads-consent=([^;]*)(;|$)');return v ? 1 : 0;}
+		var __ATA_PP = { 'pt': 1, 'ht': 0, 'tn': 'twentyten', 'amp': false, 'consent': __ATA_CC(), 'gdpr_applies': true, 'ad': { 'label': { 'text': 'Advertisements' }, 'reportAd': { 'text': 'Report this ad' }, 'privacySettings': { 'text': 'Privacy', 'onClick': function() { window.__tcfapi && window.__tcfapi( 'showUi' ) } } }, 'siteid': 8982, 'blogid': 1152889, 'js_hint': 'tcf2_test' };
+		var __ATA = __ATA || {};
+		__ATA.cmd = __ATA.cmd || [];
+		__ATA.criteo = __ATA.criteo || {};
+		__ATA.criteo.cmd = __ATA.criteo.cmd || [];
+		</script>
+		<script type="text/javascript">
+		(function(){var g=Date.now||function(){return+new Date};function h(a,b){a:{for(var c=a.length,d="string"==typeof a?a.split(""):a,e=0;e<c;e++)if(e in d&&b.call(void 0,d[e],e,a)){b=e;break a}b=-1}return 0>b?null:"string"==typeof a?a.charAt(b):a[b]};function k(a,b,c){c=null!=c?"="+encodeURIComponent(String(c)):"";if(b+=c){c=a.indexOf("#");0>c&&(c=a.length);var d=a.indexOf("?");if(0>d||d>c){d=c;var e=""}else e=a.substring(d+1,c);a=[a.substr(0,d),e,a.substr(c)];c=a[1];a[1]=b?c?c+"&"+b:b:c;a=a[0]+(a[1]?"?"+a[1]:"")+a[2]}return a};var l=0;function m(a,b){var c=document.createElement("script");c.src=a;c.onload=function(){b&&b(void 0)};c.onerror=function(){b&&b("error")};a=document.getElementsByTagName("head");var d;a&&0!==a.length?d=a[0]:d=document.documentElement;d.appendChild(c)}function n(a){var b=void 0===b?document.cookie:b;return(b=h(b.split("; "),function(c){return-1!=c.indexOf(a+"=")}))?b.split("=")[1]:""}function p(a){return"string"==typeof a&&0<a.length}
+		function r(a,b,c){b=void 0===b?"":b;c=void 0===c?".":c;var d=[];Object.keys(a).forEach(function(e){var f=a[e],q=typeof f;"object"==q&&null!=f||"function"==q?d.push(r(f,b+e+c)):null!==f&&void 0!==f&&(e=encodeURIComponent(b+e),d.push(e+"="+encodeURIComponent(f)))});return d.filter(p).join("&")}function t(a,b){a||((window.__ATA||{}).config=b.c,m(b.url))}var u=Math.floor(1E13*Math.random()),v=window.__ATA||{};window.__ATA=v;window.__ATA.cmd=v.cmd||[];v.rid=u;v.createdAt=g();var w=window.__ATA||{},x="s.pubmine.com";
+		w&&w.serverDomain&&(x=w.serverDomain);var y="//"+x+"/conf",z=window.top===window,A=window.__ATA_PP&&window.__ATA_PP.gdpr_applies,B="boolean"===typeof A?Number(A):null,C=window.__ATA_PP||null,D=z?document.referrer?document.referrer:null:null,E=z?window.location.href:document.referrer?document.referrer:null,F,G=n("__ATA_tuuid");F=G?G:null;var H=window.innerWidth+"x"+window.innerHeight,I=n("usprivacy"),J=r({gdpr:B,pp:C,rid:u,src:D,ref:E,tuuid:F,vp:H,us_privacy:I?I:null},"",".");
+		(function(a){var b=void 0===b?"cb":b;l++;var c="callback__"+g().toString(36)+"_"+l.toString(36);a=k(a,b,c);window[c]=function(d){t(void 0,d)};m(a,function(d){d&&t(d)})})(y+"?"+J);}).call(this);
+		</script><script src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/conf.js"></script><link rel="amphtml" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/amp/"><script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_gat._anonymizeIp']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/ga.js"></script>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/services.css"><script src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/ata.js"></script><link href="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/actionbar.css" type="text/css" rel="stylesheet"></head>
+
+<body class="post-template-default single single-post postid-2386 single-format-standard custom-background customizer-styles-applied single-author highlander-enabled highlander-light" data-new-gr-c-s-loaded="8.884.0">
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="https://byorgey.wordpress.com/" title="blog :: Brent -&gt; [String]" rel="home">blog :: Brent -&gt; [String]</a>
+					</span>
+				</div>
+				<div id="site-description"></div>
+
+									<a class="home-link" href="https://byorgey.wordpress.com/" title="blog :: Brent -&gt; [String]" rel="home">
+						<img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/brent-hiking-940x198.jpg" alt="" scale="0" width="940" height="198">
+					</a>
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+								<div class="skip-link screen-reader-text"><a href="#content" title="Skip to content">Skip to content</a></div>
+				<div class="menu"><ul>
+<li><a href="https://byorgey.wordpress.com/">Home</a></li><li class="page_item page-item-2"><a href="https://byorgey.wordpress.com/about/">About me</a></li>
+<li class="page_item page-item-802"><a href="https://byorgey.wordpress.com/blogliterately/">BlogLiterately</a></li>
+<li class="page_item page-item-1116"><a href="https://byorgey.wordpress.com/catsters-guide-2/">Catsters guide</a></li>
+<li class="page_item page-item-1747"><a href="https://byorgey.wordpress.com/how-to-print-things/">How to print&nbsp;things</a></li>
+</ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+			
+
+				<div id="nav-above" class="navigation">
+					<div class="nav-previous"><a href="https://byorgey.wordpress.com/2021/09/08/implementing-hindley-milner-with-the-unification-fd-library/" rel="prev"><span class="meta-nav">←</span> Implementing Hindley-Milner with the unification-fd&nbsp;library</a></div>
+					<div class="nav-next"></div>
+				</div><!-- #nav-above -->
+
+				<div id="post-2386" class="post-2386 post type-post status-publish format-standard hentry category-competitive-programming category-haskell tag-haskell tag-kattis tag-maximum tag-subsequence tag-sum">
+											<h2 class="entry-title"><a href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/" rel="bookmark">Competitive programming in Haskell: Kadane’s&nbsp;algorithm</a></h2>					
+					<div class="entry-meta">
+						<span class="meta-prep meta-prep-author">Posted on</span> <a href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/" title="7:26 am" rel="bookmark"><span class="entry-date">September 9, 2021</span></a> <span class="meta-sep">by</span> <span class="author vcard"><a class="url fn n" href="https://byorgey.wordpress.com/author/byorgey/" title="View all posts by Brent">Brent</a></span>					</div><!-- .entry-meta -->
+
+					<div class="entry-content">
+						<p data-adtags-visited="true"><em>I will be giving a talk on competitive programming in Haskell tomorrow, September 10, at <a href="https://haskell.love/">Haskell Love</a>. You should attend! It’s free!</em></p>
+<p data-adtags-visited="true">In <a href="https://byorgey.wordpress.com/2021/08/11/competitive-programming-in-haskell-monoidal-accumulation/">my last competitive programming post</a>, I challenged you to solve <a href="https://open.kattis.com/problems/purplerain">Purple Rain</a>.
+ We are presented with a linear sequence of cells, each colored either 
+red or blue, and we are supposed to find the (contiguous) segment of 
+cells with the maximal absolute difference between the number of red and
+ blue. For example, below is shown one of the sample inputs, with the 
+solution highlighted: the segment from cell 3 to cell 7 (the cells are 
+numbered from 1) has four red cells compared to only one blue, for an 
+absolute difference of three. You can verify that no other segment does 
+better.</p>
+<div style="text-align:center;">
+<p><img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/881dcb8a62a2e18a_002.webp" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/881dcb8a62a2e18a.webp 3x" src-orig="https://byorgey.files.wordpress.com/2021/09/881dcb8a62a2e18a.png?w=640" scale="3" width="400" height="48"></p>
+</div>
+<h2 id="transforming-the-problem">Transforming the problem</h2>
+<p data-adtags-visited="true">The obvious way to do this is to generate a
+ list of all segments, compute the absolute difference between the 
+number of red and blue cells for each, and take the maximum. However, 
+that approach is doomed to exceed the time limit in any programming 
+language: it would take <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_005.png" alt="O(n^3)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_019.png 3x" scale="3" width="40" height="18"> time (<img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_013.png" alt="O(n^2)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_023.png 3x" scale="3" width="40" height="18"> possible segments times <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_021.png" alt="O(n)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_014.png 3x" scale="3" width="34" height="17"> to sum each one), and the problem states that <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_018.png" alt="n" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_007.png 3x" scale="3" width="10" height="7"> can be up to <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_004.png" alt="10^5" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_017.png 3x" scale="3" width="21" height="15">. With <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_010.png" alt="10^8" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_002.png 3x" scale="3" width="21" height="15"> operations per second as a good rule of thumb, <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_005.png" alt="O(n^3)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_019.png 3x" scale="3" width="40" height="18"> with <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_024.png" alt="n = 10^5" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_003.png 3x" scale="3" width="54" height="15"> is clearly too slow. (In fact, any time you see an input size of <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_004.png" alt="10^5" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_017.png 3x" scale="3" width="21" height="15">, it is a dead giveaway that you are expected to find an <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_021.png" alt="O(n)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_014.png 3x" scale="3" width="34" height="17"> or <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_008.png" alt="O(n \lg n)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_009.png 3x" scale="3" width="62" height="17"> solution. <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_004.png" alt="10^5" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_017.png 3x" scale="3" width="21" height="15"> is big enough to make an <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_013.png" alt="O(n^2)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_023.png 3x" scale="3" width="40" height="18"> solution prohibitively slow, but not so big that I/O itself becomes the bottleneck.)</p>
+<p data-adtags-visited="true">The first insight is that we can transform this into the classic problem of finding the <em>maximum sum subarray</em> (also known as the <em>maximum segment sum</em>;
+ either way I will abbreviate it as MSS) in two steps: first, turn each 
+red cell into a 1, and each blue into -1. The sum of a segment then 
+tells us how many more red than blue cells there are. Now, we actually 
+want the biggest <em>absolute</em> difference between red and blue; but 
+if we have an algorithm to find the MSS we can just run it twice: once 
+to find the maximum excess of red over blue, and again with 1 and -1 
+flipped to find the maximum excess of blue over red.</p>
+<p data-adtags-visited="true">The MSS problem has a long history in the 
+functional programming community, being one of the flagship problems to 
+demonstrate the techniques of program derivation in the style of the <a href="https://en.wikipedia.org/wiki/Bird%E2%80%93Meertens_formalism">Bird-Meertens Formalism, aka Squiggol</a> and <a href="https://www.goodreads.com/book/show/2727190-algebra-of-programming">The Algebra of Programming</a>. It is possible to start out with a naive-but-obviously-correct <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_005.png" alt="O(n^3)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_019.png 3x" scale="3" width="40" height="18"> implementation, and do a series of equational transformations to turn it into an efficient <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_021.png" alt="O(n)" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_014.png 3x" scale="3" width="34" height="17">
+ algorithm! If you’ve never seen that kind of thing before, I highly 
+recommend checking it out; the Wikipedia page on the Bird-Meertens 
+Formalism, linked above, is a good place to start. Certainly getting 
+good at such derivations can be a handy skill when doing competitive 
+programming in Haskell. But in any case, today I want to approach the 
+problem from a different point of view, namely, coming up with a good 
+functional equivalent to an existing imperative algorithm.</p>
+<h2 id="kadanes-algorithm">Kadane’s algorithm</h2>
+<p data-adtags-visited="true"><a href="https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm">Kadane’s algorithm</a>, first proposed by <a href="http://www.stat.cmu.edu/~kadane/">Jay Kadane</a>
+ sometime in the late 1970s, is a linear-time algorithm for solving the 
+MSS problem. It is actually quite simple to implement (the tricky part 
+is understanding why it works!).</p>
+<p class="inline-ad-slot" id="inline-ad-0" style="display:block;height:auto;margin-left:auto;margin-right:auto;overflow:hidden;padding:0;width:300px;" data-adtags-width="640" data-adtags-visited="true"><div style="font:10px 'Open Sans', Arial, sans-serif;height:12px;margin:0;padding:0;text-align:left;">Advertisements</div><div style="height:250px;position:relative;visibility:inherit;width:300px;z-index:0;;margin:0;overflow:hidden;padding:0;position:relative;" class="ata-frame-wrapper" id="sf-inline-ad-0">
+            <div class="user-feedback" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;background:#f1f1f1;white-space:nowrap;font-family:Helvetica, Arial, sans-serif;font-size:12px;line-height:12px;box-shadow:0px 1px 2px 0px inset #999;margin:0;display:none;table-layout:fixed;letter-spacing:0.2px;z-index:5000;padding:0;">
+                <div style="color:#808080;font-size:10px;line-height:10px;text-align:center;margin:0;padding:0;position:absolute;top:4px;width:100%;">Powered by wordads.co</div>
+                <div style="box-sizing:border-box;padding:5px;text-align:center;display:table-cell;vertical-align:middle;margin:0;width:100%;">
+                    <div style="color:#404040;margin:8px 0 0 0;white-space:normal;display:none;text-align:center;padding:0;line-height:12px;" class="user-feedback__thank-message">
+                        <div style="font-weight:bold;text-align:center;line-height:12px;">We've received your report.</div>
+                        <br>
+                        Thanks for your feedback!
+                    </div>
+                    <a class="user-feedback__reason" data-reason-id="1" style="border-radius:2px;position:relative;overflow:hidden;display:block;padding:1px 5px;width:110px;height:40px;border:none;background-color:#FFFFFF;cursor:pointer;box-sizing:border-box;margin:8px auto 0;color:#404040;font-weight:normal;text-decoration:none;;">
+                <div style="width:100%;height:100%;display:table;text-align:center;margin:0;padding:0;">
+                    <span style="vertical-align:middle;display:table-cell;text-align:center;line-height:14px;white-space:normal;margin:0;padding:0;">Seen too often</span>
+                </div>
+            </a><a class="user-feedback__reason" data-reason-id="2" style="border-radius:2px;position:relative;overflow:hidden;display:block;padding:1px 5px;width:110px;height:40px;border:none;background-color:#FFFFFF;cursor:pointer;box-sizing:border-box;margin:8px auto 0;color:#404040;font-weight:normal;text-decoration:none;;">
+                <div style="width:100%;height:100%;display:table;text-align:center;margin:0;padding:0;">
+                    <span style="vertical-align:middle;display:table-cell;text-align:center;line-height:14px;white-space:normal;margin:0;padding:0;">Not relevant</span>
+                </div>
+            </a><a class="user-feedback__reason" data-reason-id="3" style="border-radius:2px;position:relative;overflow:hidden;display:block;padding:1px 5px;width:110px;height:40px;border:none;background-color:#FFFFFF;cursor:pointer;box-sizing:border-box;margin:8px auto 0;color:#404040;font-weight:normal;text-decoration:none;;">
+                <div style="width:100%;height:100%;display:table;text-align:center;margin:0;padding:0;">
+                    <span style="vertical-align:middle;display:table-cell;text-align:center;line-height:14px;white-space:normal;margin:0;padding:0;">Offensive</span>
+                </div>
+            </a><a class="user-feedback__reason" data-reason-id="4" style="border-radius:2px;position:relative;overflow:hidden;display:block;padding:1px 5px;width:110px;height:40px;border:none;background-color:#FFFFFF;cursor:pointer;box-sizing:border-box;margin:8px auto 0;color:#404040;font-weight:normal;text-decoration:none;;">
+                <div style="width:100%;height:100%;display:table;text-align:center;margin:0;padding:0;">
+                    <span style="vertical-align:middle;display:table-cell;text-align:center;line-height:14px;white-space:normal;margin:0;padding:0;">Broken</span>
+                </div>
+            </a>
+                </div>
+                
+            </div>
+        <iframe src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/safeframe_003.html" id="safeframe-sf-inline-ad-0" scrolling="no" allowtranparency="true" hidefocus="true" tabindex="-1" marginwidth="0" marginheight="0" style="border: medium none; display: block; height: 250px; left: 0px; margin: 0px; position: absolute; top: 0px; visibility: inherit; width: 300px; z-index: 0;" frameborder="no"></iframe></div><div id="inline-ad-0__controls" class="ata-controls" style="height:10px;line-height:10px;margin:0;padding:0;text-align:right;width:300px;"><span id="inline-ad-0__complain-btn" class="ata-controls__complain-btn" style="color:#c8c7cc;cursor:pointer;font-family:Verdana, sans-serif;font-size:6px;letter-spacing:0.3px;text-transform:uppercase;vertical-align:middle;float:right;">Report this ad</span><span id="inline-ad-0__privacy-btn" class="ata-controls__privacy-btn" style="color:#c8c7cc;cursor:pointer;font-family:Verdana, sans-serif;font-size:6px;letter-spacing:0.3px;text-transform:uppercase;vertical-align:middle;float:left;">Privacy</span></div></p><p data-adtags-visited="true">The idea is to loop through an array while keeping track of two things: a current value <code>cur</code>, and a <code>best</code> value. The <code>best</code> value is just the greatest value <code>cur</code> has ever taken on, so keeping it updated is easy: on every loop, we compare <code>cur</code> to <code>best</code>, and save the value of <code>cur</code> into <code>best</code> if it is higher. To keep <code>cur</code> updated, we simply add each new array value to it—but if it ever falls below zero, we just reset <code>cur</code> to zero. Here is some Java code:</p>
+<div class="sourceCode">
+<pre class="sourceCode java"><code class="sourceCode java"><span class="kw">public</span> <span class="dt">static</span> <span class="dt">int</span> <span class="fu">kadane</span>(<span class="dt">int</span>[] a) {
+    <span class="dt">int</span> best = <span class="dv">0</span>, cur = <span class="dv">0</span>;
+    <span class="kw">for</span> (<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; a.<span class="fu">length</span>; i++) {
+        cur += a[i];
+        <span class="kw">if</span> (cur &lt; <span class="dv">0</span>) cur = <span class="dv">0</span>;
+        <span class="kw">if</span> (cur &gt; best) best = cur;
+    }
+   <span class="kw">return</span> best;
+}</code></pre>
+</div>
+<p data-adtags-visited="true">Again, it is not at all obvious why this 
+works, though putting in the effort to understand a proof is well worth 
+the time. That is not the purpose of this blog post, however, so I’ll 
+leave you to read about it on your own!</p>
+<h2 id="translating-kadanes-algorithm-to-haskell">Translating Kadane’s algorithm to Haskell</h2>
+<p data-adtags-visited="true">In the imperative version, we iterate 
+through a list, keep track of a current value, and also keep track of 
+the best value we have seen so far. It is possible to translate this 
+directly to Haskell: create a record with two fields, one for the 
+current thing and one for the best thing, then iterate through the list 
+with <code>foldl'</code>, doing the appropriate update at each step:</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span style="color:blue;font-weight:bold;">data</span> <span>State</span> <span>s</span> <span style="color:red;">=</span> <span>State</span> <span style="color:red;">{</span> <span>curThing</span> <span style="color:red;">::</span> <span>s</span><span style="color:red;">,</span> <span>bestThing</span> <span style="color:red;">::</span> <span>s</span> <span style="color:red;">}</span>
+
+<span style="color:green;">-- Given a way to update the current s value with the next list</span>
+<span style="color:green;">-- element of type a, update a State s value which keeps track of the</span>
+<span style="color:green;">-- current s value as well as the best s value seen so far.</span>
+<span>step</span> <span style="color:red;">::</span> <span>Ord</span> <span>s</span> <span style="color:red;">=&gt;</span> <span style="color:red;">(</span><span>s</span> <span style="color:red;">-&gt;</span> <span>a</span> <span style="color:red;">-&gt;</span> <span>s</span><span style="color:red;">)</span> <span style="color:red;">-&gt;</span> <span style="color:red;">(</span><span>State</span> <span>s</span> <span style="color:red;">-&gt;</span> <span>a</span> <span style="color:red;">-&gt;</span> <span>State</span> <span>s</span><span style="color:red;">)</span>
+<span>step</span> <span>update</span> <span style="color:red;">(</span><span>State</span> <span>cur</span> <span>best</span><span style="color:red;">)</span> <span>a</span> <span style="color:red;">=</span> <span>State</span> <span>next</span> <span style="color:red;">(</span><span>max</span> <span>best</span> <span>next</span><span style="color:red;">)</span>
+  <span style="color:blue;font-weight:bold;">where</span>
+    <span>next</span> <span style="color:red;">=</span> <span>update</span> <span>cur</span> <span>a</span>
+
+<span>bestIntermediate</span> <span style="color:red;">::</span> <span>Ord</span> <span>s</span> <span style="color:red;">=&gt;</span> <span style="color:red;">(</span><span>s</span> <span style="color:red;">-&gt;</span> <span>a</span> <span style="color:red;">-&gt;</span> <span>s</span><span style="color:red;">)</span> <span style="color:red;">-&gt;</span> <span>s</span> <span style="color:red;">-&gt;</span> <span style="color:red;">[</span><span>a</span><span style="color:red;">]</span> <span style="color:red;">-&gt;</span> <span>s</span>
+<span>bestIntermediate</span> <span>update</span> <span>init</span> <span style="color:red;">=</span> <span>bestThing</span> <span>.</span> <span>foldl'</span> <span style="color:red;">(</span><span>step</span> <span>update</span><span style="color:red;">)</span> <span style="color:red;">(</span><span>State</span> <span>init</span> <span>init</span><span style="color:red;">)</span></code></pre>
+<p class="inline-ad-slot" id="inline-ad-1" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:640px;" data-adtags-width="640" data-adtags-visited="true"></p><p data-adtags-visited="true">But there’s a much better way! Note that the <code>update</code> function has the right type to be used with <code>foldl'</code>. But if we just computed <code>foldl' update init</code> directly, we would get only the single <code>s</code> value at the very end. But our goal is to get the best out of all the <em>intermediate</em>
+ values. No problem: a scan is just a fold that returns all the 
+intermediate values instead of only the final one! So instead of all 
+this complicated and quasi-imperative <code>State</code> stuff, we just do a <code>scanl'</code> followed by taking the <code>maximum</code>:</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span>bestIntermediate</span> <span style="color:red;">::</span> <span>Ord</span> <span>s</span> <span style="color:red;">=&gt;</span> <span style="color:red;">(</span><span>s</span> <span style="color:red;">-&gt;</span> <span>a</span> <span style="color:red;">-&gt;</span> <span>s</span><span style="color:red;">)</span> <span style="color:red;">-&gt;</span> <span>s</span> <span style="color:red;">-&gt;</span> <span style="color:red;">[</span><span>a</span><span style="color:red;">]</span> <span style="color:red;">-&gt;</span> <span>s</span>
+<span>bestIntermediate</span> <span>update</span> <span>init</span> <span style="color:red;">=</span> <span>maximum</span> <span>.</span> <span>scanl'</span> <span>update</span> <span>init</span></code></pre>
+<p data-adtags-visited="true">Ah, much better! Using <code>bestIntermediate</code>, we can now translate Kadane’s algorithm as follows:</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span>kadane1</span> <span style="color:red;">::</span> <span style="color:red;">[</span><span>Int</span><span style="color:red;">]</span> <span style="color:red;">-&gt;</span> <span>Int</span>
+<span>kadane1</span> <span style="color:red;">=</span> <span>bestIntermediate</span> <span>next</span> <span class="hs-num">0</span>
+  <span style="color:blue;font-weight:bold;">where</span>
+    <span>next</span> <span>s</span> <span>a</span> <span style="color:red;">=</span> <span>max</span> <span class="hs-num">0</span> <span style="color:red;">(</span><span>s</span> <span>+</span> <span>a</span><span style="color:red;">)</span></code></pre>
+<p data-adtags-visited="true">Whenever I write down an algorithm like this in Haskell—<em>especially</em>
+ if I have “translated” it from an existing, imperative algorithm—I like
+ to figure out how I can generalize it as much as possible. What 
+structure is assumed of the inputs that makes the algorithm work? Can we
+ replace some concrete monomorphic types with polymorphic ones? What 
+type class constraints are needed? Often these sorts of generalizations 
+make for supposedly tricky competitive programming problems. For 
+example, if you have only ever seen Dijkstra’s algorithm presented in 
+terms of finding shortest paths by summing edge weights, it takes quite a
+ bit of insight to realize that the algorithm really just finds the 
+“best” path with respect to operations that play nicely with each other 
+in certain ways. For example, if we use the operations <code>max</code> and <code>min</code> in place of <code>min</code> and <code>(+)</code>,
+ Dijkstra’s algorithm finds the path with the maximum bottleneck. (This 
+will probably end up being its own blog post at some point…)</p>
+<p data-adtags-visited="true">Anyway, how can we generalize <code>kadane1</code>? The obvious starting point is that if we just let GHC infer a type for <code>kadane1</code>, we would get something more general:</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span>kadane2</span> <span style="color:red;">::</span> <span style="color:red;">(</span><span>Num</span> <span>a</span><span style="color:red;">,</span> <span>Ord</span> <span>a</span><span style="color:red;">)</span> <span style="color:red;">=&gt;</span> <span style="color:red;">[</span><span>a</span><span style="color:red;">]</span> <span style="color:red;">-&gt;</span> <span>a</span>
+<span>kadane2</span> <span style="color:red;">=</span> <span>bestIntermediate</span> <span>next</span> <span class="hs-num">0</span>
+  <span style="color:blue;font-weight:bold;">where</span>
+    <span>next</span> <span>s</span> <span>a</span> <span style="color:red;">=</span> <span>max</span> <span class="hs-num">0</span> <span style="color:red;">(</span><span>s</span> <span>+</span> <span>a</span><span style="color:red;">)</span></code></pre>
+<p class="inline-ad-slot" id="inline-ad-2" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:640px;" data-adtags-width="640" data-adtags-visited="true"></p><p data-adtags-visited="true">The only thing we do with the input list elements is add them and compare them; we also need <code>0</code> to have the same type as the input list elements. So the algorithm works for anything that has <code>Ord</code> and <code>Num</code> instances.</p>
+<p data-adtags-visited="true">But wait—do we really need <code>Num</code> if all we are using is <code>0</code> and <code>+</code>? Really we are using the monoid of integers under addition. So we can generalize again, to any ordered monoid:</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span>kadane</span> <span style="color:red;">::</span> <span style="color:red;">(</span><span>Monoid</span> <span>a</span><span style="color:red;">,</span> <span>Ord</span> <span>a</span><span style="color:red;">)</span> <span style="color:red;">=&gt;</span> <span style="color:red;">[</span><span>a</span><span style="color:red;">]</span> <span style="color:red;">-&gt;</span> <span>a</span>
+<span>kadane</span> <span style="color:red;">=</span> <span>bestIntermediate</span> <span>next</span> <span>mempty</span>
+  <span style="color:blue;font-weight:bold;">where</span>
+    <span>next</span> <span>s</span> <span>a</span> <span style="color:red;">=</span> <span>max</span> <span>mempty</span> <span style="color:red;">(</span><span>s</span> <span>&lt;&gt;</span> <span>a</span><span style="color:red;">)</span></code></pre>
+<p data-adtags-visited="true">In fact, if you study the proof of 
+Kadane’s algorithm, you will see that this works just so long as the 
+monoid operation interacts nicely with the ordering, that is, if <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_016.png" alt="x &lt; y" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_020.png 3x" scale="3" width="39" height="12"> implies <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_006.png" alt="x \diamond z &lt; y \diamond z" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_022.png 3x" scale="3" width="87" height="12"> and <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_012.png" alt="z \diamond x &lt; z \diamond y" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_015.png 3x" scale="3" width="87" height="12"> for all <img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex.png" alt="z" class="latex" srcset="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/latex_011.png 3x" scale="3" width="8" height="8"> (this is what is usually meant by an “ordered monoid”).</p>
+<h2 id="finding-the-best-segment">Finding the best segment</h2>
+<p data-adtags-visited="true">So far, our code finds the best segment sum, but it doesn’t tell us <em>which</em>
+ segment it was that was best—and for this problem we are actually 
+supposed to output the starting and ending indices of the best segment, 
+not the maximum red-blue difference itself.</p>
+<p data-adtags-visited="true">If I were doing this in Java, I would 
+probably just add several more variables: one to record where the 
+segment currently being considered starts (which gets reset to <code>i+1</code> when <code>cur</code> is reset to <code>0</code>), and two to record the start and end indices of the <code>best</code>
+ segment so far. This gets kind of ugly. Conceptually, the values 
+actually belong in triples representing a segment: the start and end 
+index together with the sum. In Java, it would be too heavyweight to 
+construct a <code>class</code> to store these three values together, so 
+in practice I would just do it with a mess of individual variables as 
+described above. Fortunately, in Haskell, this is very lightweight, and 
+we should of course create a data type to represent a segment.</p>
+<p data-adtags-visited="true">It’s also worth noting that in Haskell, we were naturally led to make a polymorphic <code>bestIntermediate</code> function, which will work just as well with a segment type as it does <code>Int</code>. Only our <code>kadane</code> function itself will have to change. We will make a data type to represent segments, with an appropriate <code>Ord</code> instance to specify when one segment is better than another, and we will update the <code>next</code> helper function to update a segment instead of just updating a sum.</p>
+<h2 id="the-solution">The solution</h2>
+<p data-adtags-visited="true">So let’s get started! First, some <code>LANGUAGE</code> pragmas and imports we will need, and a basic solution framework.</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span style="color:green;">{-# LANGUAGE DerivingStrategies         #-}</span>
+<span style="color:green;">{-# LANGUAGE DerivingVia                #-}</span>
+<span style="color:green;">{-# LANGUAGE GeneralizedNewtypeDeriving #-}</span>
+<span style="color:green;">{-# LANGUAGE LambdaCase                 #-}</span>
+<span style="color:green;">{-# LANGUAGE ViewPatterns               #-}</span>
+
+<span style="color:blue;font-weight:bold;">import</span>           <span>Control.Arrow</span>         <span style="color:red;">(</span><span style="color:red;">(</span><span>&gt;&gt;&gt;</span><span style="color:red;">)</span><span style="color:red;">)</span>
+<span style="color:blue;font-weight:bold;">import</span>           <span>Data.ByteString.Char8</span> <span style="color:red;">(</span><span>ByteString</span><span style="color:red;">)</span>
+<span style="color:blue;font-weight:bold;">import</span> <span style="color:blue;font-weight:bold;">qualified</span> <span>Data.ByteString.Char8</span> <span style="color:blue;font-weight:bold;">as</span> <span>C</span>
+<span style="color:blue;font-weight:bold;">import</span>           <span>Data.List</span>             <span style="color:red;">(</span><span>scanl'</span><span style="color:red;">)</span>
+<span style="color:blue;font-weight:bold;">import</span>           <span>Data.Semigroup</span>
+
+<span>showB</span> <span style="color:red;">::</span> <span>Show</span> <span>a</span> <span style="color:red;">=&gt;</span> <span>a</span> <span style="color:red;">-&gt;</span> <span>C.ByteString</span>
+<span>showB</span> <span style="color:red;">=</span> <span>show</span> <span>&gt;&gt;&gt;</span> <span>C.pack</span>
+
+<span>main</span> <span style="color:red;">=</span> <span>C.interact</span> <span>$</span> <span>solve</span> <span>&gt;&gt;&gt;</span> <span>format</span></code></pre>
+<p class="inline-ad-slot" id="inline-ad-3" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:640px;" data-adtags-width="640" data-adtags-visited="true"></p><p data-adtags-visited="true">Next, a data type to represent a segment, along with an <code>Ord</code> instance, and a function to format the answer for this problem. Note that we make all the fields of <code>Segment</code>
+ strict (this makes a big difference in runtime—you should pretty much 
+always use strict fields unless there is a really good reason not to). 
+Notice also that the <code>Ord</code> instance is where we encode the problem’s specific instructions about how to break ties: “<em>If
+ there are multiple possible answers, print the one that has the 
+Westernmost (smallest-numbered) starting section. If there are multiple 
+answers with the same Westernmost starting section, print the one with 
+the Westernmost ending section.</em>” So we first compare <code>Segment</code>s by sum, then by left index, then by right index, being careful to reverse the order of comparison for the indices, since <em>better</em> for indices means <em>smaller</em>.</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span style="color:green;">-- The segment [l,r) (i.e. l inclusive, r exclusive), with its sum</span>
+<span style="color:blue;font-weight:bold;">data</span> <span>Segment</span> <span>a</span> <span style="color:red;">=</span> <span>I</span> <span style="color:red;">{</span> <span>l</span> <span style="color:red;">::</span> <span>!</span><span>Int</span><span style="color:red;">,</span> <span>r</span> <span style="color:red;">::</span> <span>!</span><span>Int</span><span style="color:red;">,</span> <span>s</span> <span style="color:red;">::</span> <span>!</span><span>a</span> <span style="color:red;">}</span> <span style="color:blue;font-weight:bold;">deriving</span> <span style="color:red;">(</span><span>Eq</span><span style="color:red;">,</span> <span>Show</span><span style="color:red;">)</span>
+
+<span style="color:blue;font-weight:bold;">instance</span> <span>Ord</span> <span>a</span> <span style="color:red;">=&gt;</span> <span>Ord</span> <span style="color:red;">(</span><span>Segment</span> <span>a</span><span style="color:red;">)</span> <span style="color:blue;font-weight:bold;">where</span>
+  <span>compare</span> <span style="color:red;">(</span><span>I</span> <span>l1</span> <span>r1</span> <span>s1</span><span style="color:red;">)</span> <span style="color:red;">(</span><span>I</span> <span>l2</span> <span>r2</span> <span>s2</span><span style="color:red;">)</span>
+    <span style="color:red;">=</span> <span>compare</span> <span>s1</span> <span>s2</span> <span>&lt;&gt;</span> <span>compare</span> <span>l2</span> <span>l1</span> <span>&lt;&gt;</span> <span>compare</span> <span>r2</span> <span>r1</span>
+
+<span>format</span> <span style="color:red;">::</span> <span>Segment</span> <span>a</span> <span style="color:red;">-&gt;</span> <span>ByteString</span>
+<span>format</span> <span style="color:red;">(</span><span>I</span> <span>l</span> <span>r</span> <span style="color:blue;font-weight:bold;">_</span><span style="color:red;">)</span> <span style="color:red;">=</span> <span>C.unwords</span> <span style="color:red;">[</span><span>showB</span> <span>l</span><span style="color:red;">,</span> <span>showB</span> <span style="color:red;">(</span><span>r</span><span style="color:green;">-</span><span class="hs-num">1</span><span style="color:red;">)</span><span style="color:red;">]</span>
+  <span style="color:green;">-- (r-1) since r is exclusive but we are supposed to show</span>
+  <span style="color:green;">-- the index of the last element</span></code></pre>
+<p data-adtags-visited="true">And now for Kadane’s algorithm itself. The <code>bestIntermediate</code> function is unchanged. <code>kadane</code> changes to start with an appropriate “empty” segment, and to use a <code>next</code> function that updates the current segment <code>[l,r)</code> based on the next list element <code>a</code> (the one at index <code>r+1</code>). The right index always gets incremented to <code>r+1</code>. If the current sum combined with <code>a</code> is “negative” (that is, less than <code>mempty</code>), we reset the left index to <code>r+1</code> as well (making the segment empty), and the running sum to <code>mempty</code>. Otherwise, we leave the left index unchanged and add <code>a</code>
+ to the running sum. I also added an argument to indicate the index of 
+the first list element, since in this problem the list is supposed to be
+ indexed from 1, but future problems might be indexed from 0, and I 
+would never remember which it is. (I suppose we could also take a list 
+of pairs <code>(i,a)</code> where <code>i</code> is the index of <code>a</code>. That would even work for non-consecutive indices.)</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span>bestIntermediate</span> <span style="color:red;">::</span> <span>Ord</span> <span>s</span> <span style="color:red;">=&gt;</span> <span style="color:red;">(</span><span>s</span> <span style="color:red;">-&gt;</span> <span>a</span> <span style="color:red;">-&gt;</span> <span>s</span><span style="color:red;">)</span> <span style="color:red;">-&gt;</span> <span>s</span> <span style="color:red;">-&gt;</span> <span style="color:red;">[</span><span>a</span><span style="color:red;">]</span> <span style="color:red;">-&gt;</span> <span>s</span>
+<span>bestIntermediate</span> <span>update</span> <span>init</span> <span style="color:red;">=</span> <span>maximum</span> <span>.</span> <span>scanl'</span> <span>update</span> <span>init</span>
+
+<span>kadane</span> <span style="color:red;">::</span> <span style="color:red;">(</span><span>Monoid</span> <span>a</span><span style="color:red;">,</span> <span>Ord</span> <span>a</span><span style="color:red;">)</span> <span style="color:red;">=&gt;</span> <span>Int</span> <span style="color:red;">-&gt;</span> <span style="color:red;">[</span><span>a</span><span style="color:red;">]</span> <span style="color:red;">-&gt;</span> <span>Segment</span> <span>a</span>
+<span>kadane</span> <span>ix</span> <span style="color:red;">=</span> <span>bestIntermediate</span> <span>next</span> <span style="color:red;">(</span><span>I</span> <span>ix</span> <span>ix</span> <span>mempty</span><span style="color:red;">)</span>
+  <span style="color:blue;font-weight:bold;">where</span>
+    <span>next</span> <span style="color:red;">(</span><span>I</span> <span>l</span> <span>r</span> <span>s</span><span style="color:red;">)</span> <span>a</span>
+      <span style="color:red;">|</span> <span>s</span><span>&lt;&gt;</span><span>a</span> <span>&lt;</span> <span>mempty</span> <span style="color:red;">=</span> <span>I</span> <span style="color:red;">(</span><span>r</span><span>+</span><span class="hs-num">1</span><span style="color:red;">)</span> <span style="color:red;">(</span><span>r</span><span>+</span><span class="hs-num">1</span><span style="color:red;">)</span> <span>mempty</span>
+      <span style="color:red;">|</span> <span>otherwise</span>     <span style="color:red;">=</span> <span>I</span> <span>l</span>     <span style="color:red;">(</span><span>r</span><span>+</span><span class="hs-num">1</span><span style="color:red;">)</span> <span style="color:red;">(</span><span>s</span><span>&lt;&gt;</span><span>a</span><span style="color:red;">)</span></code></pre>
+<p class="inline-ad-slot" id="inline-ad-4" style="float:left;height:0px;margin:0 auto;overflow:hidden;width:640px;" data-adtags-width="640" data-adtags-visited="true"></p><p data-adtags-visited="true">Finally, we can write the <code>solve</code> function itself. We map R’s and B’s in the input to 1 and -1, respectively, to generate a list of 1’s and -1’s called <code>mountain</code>. Then we call <code>kadane</code> on <code>mountain</code> and on <code>map negate mountain</code>, and pick whichever gives us a better answer. But wait, not quite! Remember that <code>kadane</code> needs a <code>Monoid</code> instance for the list elements, and <code>Int</code> has none. So we can whip up a quick newtype, <code>Step</code>, that has the right instances (note how deriving <code>Num</code> also allows us to use the literal values <code>1</code> and <code>-1</code> as <code>Step</code> values). <a href="https://ghc.gitlab.haskell.org/ghc/doc/users_guide/exts/deriving_via.html?highlight=derivingvia#deriving-via"><code>DerivingVia</code> is quite handy</a> in situations like this.</p>
+<pre class="sourceCode haskell"><code class="sourceCode haskell"><span>solve</span> <span style="color:red;">::</span> <span>ByteString</span> <span style="color:red;">-&gt;</span> <span>Segment</span> <span>Step</span>
+<span>solve</span> <span style="color:red;">(</span><span>C.init</span> <span style="color:red;">-&gt;</span> <span>b</span><span style="color:red;">)</span> <span style="color:red;">=</span> <span>max</span> <span style="color:red;">(</span><span>kadane</span> <span class="hs-num">1</span> <span>mountain</span><span style="color:red;">)</span> <span style="color:red;">(</span><span>kadane</span> <span class="hs-num">1</span> <span style="color:red;">(</span><span>map</span> <span>negate</span> <span>mountain</span><span style="color:red;">)</span><span style="color:red;">)</span>
+  <span style="color:blue;font-weight:bold;">where</span>
+    <span>mountain</span> <span style="color:red;">=</span> <span>map</span> <span style="color:red;">(</span><span style="color:red;">\</span><span style="color:blue;font-weight:bold;">case</span> <span style="color:red;">{</span> <span style="color:teal;">'R'</span> <span style="color:red;">-&gt;</span> <span class="hs-num">1</span><span style="color:red;">;</span> <span style="color:teal;">'B'</span> <span style="color:red;">-&gt;</span> <span style="color:green;">-</span><span class="hs-num">1</span> <span style="color:red;">}</span><span style="color:red;">)</span> <span style="color:red;">(</span><span>C.unpack</span> <span>b</span><span style="color:red;">)</span>
+
+<span style="color:blue;font-weight:bold;">newtype</span> <span>Step</span> <span style="color:red;">=</span> <span>Step</span> <span>Int</span>
+  <span style="color:blue;font-weight:bold;">deriving</span> <span style="color:red;">(</span><span>Semigroup</span><span style="color:red;">,</span> <span>Monoid</span><span style="color:red;">)</span> <span>via</span> <span>Sum</span> <span>Int</span>
+  <span style="color:blue;font-weight:bold;">deriving</span> <span style="color:red;">(</span><span>Eq</span><span style="color:red;">,</span> <span>Ord</span><span style="color:red;">,</span> <span>Num</span><span style="color:red;">)</span></code></pre>
+<h2 id="next-time-modulo-solitaire-and-fast-bfs">Next time: Modulo Solitaire and fast BFS</h2>
+<p data-adtags-visited="true">For next time, I invite you to solve <a href="https://open.kattis.com/problems/modulosolitaire">Modulo Solitaire</a>.
+ Warning: this is a straightforward BFS problem; the issue is getting a 
+Haskell solution to run fast enough! I struggled with this for quite 
+some time before coming up with something that worked. My ultimate goal 
+in this case is to develop a polished library with an elegant, 
+functional API for doing BFS, but that runs fast under the hood. I’m 
+very curious to see how others might approach the problem.</p>
+<div id="jp-post-flair" class="sharedaddy sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul data-sharing-events-added="true"><li class="share-email share-service-visible"><a rel="nofollow noopener noreferrer" data-shared="" class="share-email sd-button share-icon" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/?share=email&amp;nb=1" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-print"><a rel="nofollow noopener noreferrer" data-shared="" class="share-print sd-button share-icon" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-reddit"><a rel="nofollow noopener noreferrer" data-shared="" class="share-reddit sd-button share-icon" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/?share=reddit&amp;nb=1" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-2386" class="share-twitter sd-button share-icon" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-2386" class="share-facebook sd-button share-icon" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/?share=facebook&amp;nb=1" target="_blank" title="Click to share on Facebook"><span>Facebook</span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;width:150px;" data-sharing-more-button-id="0"><ul style="background-image:none;" data-sharing-events-added="true"><li class="share-tumblr"><a rel="nofollow noopener noreferrer" data-shared="" class="share-tumblr sd-button share-icon" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/?share=tumblr&amp;nb=1" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-end"></li></ul></div></div></div></div></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid "><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="2233" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://byorgey.wordpress.com/2019/04/24/competitive-programming-in-haskell-basic-setup/?relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=0&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=0&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=0&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=0" title="Competitive Programming in Haskell: Basic&nbsp;Setup" data-origin="2386" data-position="0">Competitive Programming in Haskell: Basic&nbsp;Setup</a></span><time class="jp-relatedposts-post-date" datetime="April 24, 2019" style="display: block;">April 24, 2019</time><span class="jp-relatedposts-post-context">In "haskell"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="2382" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://byorgey.wordpress.com/2021/08/11/competitive-programming-in-haskell-monoidal-accumulation/?relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=1&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=1&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=1&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=1" title="Competitive programming in Haskell: monoidal&nbsp;accumulation" data-origin="2386" data-position="1">Competitive programming in Haskell: monoidal&nbsp;accumulation</a></span><time class="jp-relatedposts-post-date" datetime="August 11, 2021" style="display: block;">August 11, 2021</time><span class="jp-relatedposts-post-context">In "competitive programming"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="2313" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://byorgey.wordpress.com/2020/05/16/competitive-programming-in-haskell-summer-series/?relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=2&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=2&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=2&amp;relatedposts_hit=1&amp;relatedposts_origin=2386&amp;relatedposts_position=2" title="Competitive programming in Haskell: summer&nbsp;series" data-origin="2386" data-position="2">Competitive programming in Haskell: summer&nbsp;series</a></span><time class="jp-relatedposts-post-date" datetime="May 16, 2020" style="display: block;">May 16, 2020</time><span class="jp-relatedposts-post-context">In "competitive programming"</span></p></div></div></div>											</div><!-- .entry-content -->
+
+							<div id="entry-author-info">
+						<div id="author-avatar">
+							<img alt="" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/cc113924265dbeb535c8b2fefe4e33ee.jpg" class="avatar avatar-60 grav-hashed grav-hijack" originals="60" src-orig="https://0.gravatar.com/avatar/cc113924265dbeb535c8b2fefe4e33ee?s=60&amp;d=identicon&amp;r=G" scale="3" id="grav-cc113924265dbeb535c8b2fefe4e33ee-0" width="60" height="60">						</div><!-- #author-avatar -->
+						<div id="author-description">
+							<h2>
+							About Brent							</h2>
+							Assistant Professor of Computer Science at Hendrix College.  
+Functional programmer, mathematician, teacher, pianist, follower of 
+Jesus.							<div id="author-link">
+								<a href="https://byorgey.wordpress.com/author/byorgey/" rel="author">
+									View all posts by Brent <span class="meta-nav">→</span>								</a>
+							</div><!-- #author-link	-->
+						</div><!-- #author-description -->
+					</div><!-- #entry-author-info -->
+
+						<div class="entry-utility">
+							This entry was posted in <a href="https://byorgey.wordpress.com/category/competitive-programming/" rel="category tag">competitive programming</a>, <a href="https://byorgey.wordpress.com/category/haskell/" rel="category tag">haskell</a> and tagged <a href="https://byorgey.wordpress.com/tag/haskell/" rel="tag">haskell</a>, <a href="https://byorgey.wordpress.com/tag/kattis/" rel="tag">Kattis</a>, <a href="https://byorgey.wordpress.com/tag/maximum/" rel="tag">maximum</a>, <a href="https://byorgey.wordpress.com/tag/subsequence/" rel="tag">subsequence</a>, <a href="https://byorgey.wordpress.com/tag/sum/" rel="tag">sum</a>. Bookmark the <a href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/" title="Permalink to Competitive programming in Haskell: Kadane’s&nbsp;algorithm" rel="bookmark">permalink</a>.													</div><!-- .entry-utility -->
+					</div><!-- #post-2386 -->
+
+				<div id="nav-below" class="navigation">
+					<div class="nav-previous"><a href="https://byorgey.wordpress.com/2021/09/08/implementing-hindley-milner-with-the-unification-fd-library/" rel="prev"><span class="meta-nav">←</span> Implementing Hindley-Milner with the unification-fd&nbsp;library</a></div>
+					<div class="nav-next"></div>
+				</div><!-- #nav-below -->
+
+				
+			<div id="comments">
+
+
+
+	<div id="respond" class="comment-respond js">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://byorgey.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="0061de1b49"><input type="hidden" name="_wp_http_referer" value="/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea aria-hidden="true" tabindex="-1" style="position: absolute; inset: -999px auto auto 0px; border: 0px none; padding: 0px; box-sizing: content-box; overflow-wrap: break-word; height: 0px !important; min-height: 0px !important; overflow: hidden; transition: none 0s ease 0s; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: rgba(0, 0, 0, 0.7); word-spacing: 0px; text-indent: 0px; line-height: 24px; width: 618.2px;" class="autosizejs ">Enter your comment here...</textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 44px; overflow: hidden; overflow-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" class="nascar-signin-link" title="Login via Guest">
+									</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" class="nascar-signin-link" title="Login via WordPress.com">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg>				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/a.html" scrolling="no" allowtransparency="true" seamless="seamless" width="24" height="24" frameborder="0"></iframe>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" class="nascar-signin-link" title="Login via Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg>				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" class="nascar-signin-link" title="Login via Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg>				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/ad516503a11cd5ca435acc9bb6523536_002.png" alt="Gravatar" class="no-grav grav-hashed grav-hijack" originals="25" src-orig="https://1.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=25&amp;d=identicon&amp;forcedefault=y&amp;r=G" scale="3" id="grav-ad516503a11cd5ca435acc9bb6523536-0" width="25">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email"></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name</label>
+					<div class="comment-form-input"><input id="author" name="author" type="text"></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url"></div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/ad516503a11cd5ca435acc9bb6523536.png" alt="WordPress.com Logo" class="no-grav grav-hashed grav-hijack" originals="25" scale="3" id="grav-ad516503a11cd5ca435acc9bb6523536-1" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+						<p class="comment-form-posting-as pa-wordpress">
+			<strong></strong>
+			You are commenting using your WordPress.com account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/ad516503a11cd5ca435acc9bb6523536.png" alt="Google photo" class="no-grav grav-hashed grav-hijack" originals="25" scale="3" id="grav-ad516503a11cd5ca435acc9bb6523536-2" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+						<p class="comment-form-posting-as pa-googleplus">
+			<strong></strong>
+			You are commenting using your Google account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" x="0px" y="0px" viewBox="0 0 60 60"><path fill="#519bf7" d="M56.3,30c0,-1.6 -0.2,-3.4 -0.6,-5h-3.1H42.2H30v10.6h14.8C44,39.3 42,42 39.1,43.9l8.8,6.8C53,46 56.3,39 56.3,30z"></path><path fill="#3db366" d="M30,57.5c6.7,0 13.1,-2.4 17.9,-6.8l-8.8,-6.8c-2.5,1.6 -5.6,2.4 -9.1,2.4c-7.2,0 -13.3,-4.7 -15.4,-11.2l-9.3,7.1C9.8,51.3 19.1,57.5 30,57.5z"></path><path fill="#fdc600" d="M5.3,42.2l9.3,-7.1c-0.5,-1.6 -0.8,-3.3 -0.8,-5.1s0.3,-3.5 0.8,-5.1l-9.3,-7.1C3.5,21.5 2.5,25.6 2.5,30S3.5,38.5 5.3,42.2z"></path><path fill="#f15b44" d="M40.1,17.4l8,-8C43.3,5.1 37,2.5 30,2.5C19.1,2.5 9.8,8.7 5.3,17.8l9.3,7.1c2.1,-6.5 8.2,-11.1 15.4,-11.1C33.9,13.7 37.4,15.1 40.1,17.4z"></path></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/ad516503a11cd5ca435acc9bb6523536.png" alt="Twitter picture" class="no-grav grav-hashed grav-hijack" originals="25" scale="3" id="grav-ad516503a11cd5ca435acc9bb6523536-3" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+						<p class="comment-form-posting-as pa-twitter">
+			<strong></strong>
+			You are commenting using your Twitter account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="" alt="Facebook photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+						<p class="comment-form-posting-as pa-facebook">
+			<strong></strong>
+			You are commenting using your Facebook account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function () {
+
+	function hide( sel ) {
+		var el = document.querySelector( sel );
+		if ( el ) {
+			el.style.setProperty( 'display', 'none' );
+		}
+	}
+
+	function show( sel ) {
+		var el = document.querySelector( sel );
+		if ( el ) {
+			el.style.removeProperty( 'display' );
+		}
+	}
+
+	var input = document.createElement( 'input' );
+	var comment = document.querySelector( '#comment' );
+
+	if ( input && comment && 'placeholder' in input ) {
+		var label = document.querySelector( '.comment-textarea label' );
+		if ( label ) {
+			var text = label.textContent;
+			label.parentNode.removeChild( label );
+			comment.setAttribute( 'placeholder', text );
+		}
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	hide( '#comment-form-identity' );
+	hide( '#comment-form-subscribe' );
+	hide( '#commentform .form-submit' );
+
+	if ( comment ) {
+		comment.style.height = '10px';
+
+		var handler = function () {
+			comment.style.height = HighlanderComments.initialHeight + 'px';
+			show( '#comment-form-identity' );
+			show( '#comment-form-subscribe' );
+			show( '#commentform .form-submit' );
+			HighlanderComments.resizeCallback();
+
+			comment.removeEventListener( 'focus', handler );
+		};
+
+		comment.addEventListener( 'focus', handler );
+	}
+}
+
+if ( document.readyState !== 'loading' ) {
+	highlander_expando_javascript();
+} else {
+	if ( typeof window.jQuery === 'function' ) {
+		// Use jQuery's `ready` if available.
+		// This solves some scheduling issues between this script and the main highlander script.
+		jQuery( document ).ready( highlander_expando_javascript );
+	} else {
+		// If not available, add a vanilla event listener.
+		document.addEventListener( 'DOMContentLoaded', highlander_expando_javascript );
+	}
+}
+
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog" style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+
+
+
+<p class="form-submit wp-block-button" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit wp-block-button__link" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="2386" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="24328320bc"></p>
+<input type="hidden" name="genseq" value="1631260933">
+<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea><input type="hidden" id="ak_js" name="ak_js" value="1631260934170"></form>	</div><!-- #respond -->
+	<div style="clear: both"></div><p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>
+</div><!-- #comments -->
+
+	
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+						<ul class="xoxo">
+
+<li id="pages-2" class="widget-container widget_pages"><h3 class="widget-title">Pages</h3>
+			<ul>
+				<li class="page_item page-item-2"><a href="https://byorgey.wordpress.com/about/">About me</a></li>
+<li class="page_item page-item-802"><a href="https://byorgey.wordpress.com/blogliterately/">BlogLiterately</a></li>
+<li class="page_item page-item-1116"><a href="https://byorgey.wordpress.com/catsters-guide-2/">Catsters guide</a></li>
+<li class="page_item page-item-1747"><a href="https://byorgey.wordpress.com/how-to-print-things/">How to print&nbsp;things</a></li>
+			</ul>
+
+			</li><li id="categories-1" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3><form action="https://byorgey.wordpress.com" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
+	<option value="-1" selected="selected">Select Category</option>
+	<option class="level-0" value="15333">category theory&nbsp;&nbsp;(5)</option>
+	<option class="level-0" value="312353">combinatorics&nbsp;&nbsp;(32)</option>
+	<option class="level-0" value="42308953">competitive programming&nbsp;&nbsp;(12)</option>
+	<option class="level-0" value="37687">data structures&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="164997">diagrams&nbsp;&nbsp;(11)</option>
+	<option class="level-0" value="16181">grad school&nbsp;&nbsp;(13)</option>
+	<option class="level-0" value="37144">haskell&nbsp;&nbsp;(160)</option>
+	<option class="level-0" value="376">humor&nbsp;&nbsp;(10)</option>
+	<option class="level-0" value="264">learning&nbsp;&nbsp;(12)</option>
+	<option class="level-0" value="2200">links&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="2813">math&nbsp;&nbsp;(56)</option>
+	<option class="level-0" value="171">meta&nbsp;&nbsp;(35)</option>
+	<option class="level-0" value="18">music&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="2008">projects&nbsp;&nbsp;(42)</option>
+	<option class="level-0" value="473">puzzle&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="1473">reading&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="39277">species&nbsp;&nbsp;(18)</option>
+	<option class="level-0" value="1591">teaching&nbsp;&nbsp;(23)</option>
+	<option class="level-0" value="349">writing&nbsp;&nbsp;(31)</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+			</li><li id="wp_tag_cloud-2" class="widget-container wp_widget_tag_cloud"><h3 class="widget-title"></h3><div style="overflow:hidden"><ul class="wp-tag-cloud" role="list">
+	<li><a href="https://byorgey.wordpress.com/tag/ac/" class="tag-cloud-link tag-link-55599 tag-link-position-1" style="font-size: 9.2962962962963pt;" aria-label="AC (4 items)">AC</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/algorithm/" class="tag-cloud-link tag-link-18127 tag-link-position-2" style="font-size: 10.333333333333pt;" aria-label="algorithm (5 items)">algorithm</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/announcement/" class="tag-cloud-link tag-link-290 tag-link-position-3" style="font-size: 10.333333333333pt;" aria-label="announcement (5 items)">announcement</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/applicative/" class="tag-cloud-link tag-link-807175 tag-link-position-4" style="font-size: 9.2962962962963pt;" aria-label="applicative (4 items)">applicative</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/art/" class="tag-cloud-link tag-link-177 tag-link-position-5" style="font-size: 9.2962962962963pt;" aria-label="art (4 items)">art</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/axiom-of-choice/" class="tag-cloud-link tag-link-229457 tag-link-position-6" style="font-size: 9.2962962962963pt;" aria-label="axiom of choice (4 items)">axiom of choice</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/balanced/" class="tag-cloud-link tag-link-150076 tag-link-position-7" style="font-size: 9.2962962962963pt;" aria-label="balanced (4 items)">balanced</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/beeminder/" class="tag-cloud-link tag-link-83182819 tag-link-position-8" style="font-size: 11.240740740741pt;" aria-label="Beeminder (6 items)">Beeminder</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/bijection/" class="tag-cloud-link tag-link-4170083 tag-link-position-9" style="font-size: 11.240740740741pt;" aria-label="bijection (6 items)">bijection</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/blogliterately/" class="tag-cloud-link tag-link-99104465 tag-link-position-10" style="font-size: 10.333333333333pt;" aria-label="BlogLiterately (5 items)">BlogLiterately</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/category/" class="tag-cloud-link tag-link-25514 tag-link-position-11" style="font-size: 11.240740740741pt;" aria-label="category (6 items)">category</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/challenge/" class="tag-cloud-link tag-link-19867 tag-link-position-12" style="font-size: 9.2962962962963pt;" aria-label="challenge (4 items)">challenge</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/collaborative-editing/" class="tag-cloud-link tag-link-404484 tag-link-position-13" style="font-size: 8pt;" aria-label="collaborative editing (3 items)">collaborative editing</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/combinatorial-species/" class="tag-cloud-link tag-link-18474345 tag-link-position-14" style="font-size: 11.240740740741pt;" aria-label="combinatorial species (6 items)">combinatorial species</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/combinatorics/" class="tag-cloud-link tag-link-312353 tag-link-position-15" style="font-size: 13.185185185185pt;" aria-label="combinatorics (9 items)">combinatorics</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/competitive/" class="tag-cloud-link tag-link-89438 tag-link-position-16" style="font-size: 12.537037037037pt;" aria-label="competitive (8 items)">competitive</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/constructive/" class="tag-cloud-link tag-link-66148 tag-link-position-17" style="font-size: 9.2962962962963pt;" aria-label="constructive (4 items)">constructive</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/contest/" class="tag-cloud-link tag-link-37116 tag-link-position-18" style="font-size: 8pt;" aria-label="contest (3 items)">contest</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/darcs/" class="tag-cloud-link tag-link-973830 tag-link-position-19" style="font-size: 8pt;" aria-label="darcs (3 items)">darcs</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/data/" class="tag-cloud-link tag-link-22379 tag-link-position-20" style="font-size: 13.185185185185pt;" aria-label="data (9 items)">data</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/design/" class="tag-cloud-link tag-link-148 tag-link-position-21" style="font-size: 9.2962962962963pt;" aria-label="design (4 items)">design</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/diagrams/" class="tag-cloud-link tag-link-164997 tag-link-position-22" style="font-size: 18.37037037037pt;" aria-label="diagrams (24 items)">diagrams</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/dissertation/" class="tag-cloud-link tag-link-16005 tag-link-position-23" style="font-size: 9.2962962962963pt;" aria-label="dissertation (4 items)">dissertation</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/drawing/" class="tag-cloud-link tag-link-7831 tag-link-position-24" style="font-size: 9.2962962962963pt;" aria-label="drawing (4 items)">drawing</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/dsl/" class="tag-cloud-link tag-link-58204 tag-link-position-25" style="font-size: 8pt;" aria-label="DSL (3 items)">DSL</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/edsl/" class="tag-cloud-link tag-link-6593472 tag-link-position-26" style="font-size: 12.537037037037pt;" aria-label="EDSL (8 items)">EDSL</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/enumeration/" class="tag-cloud-link tag-link-1971288 tag-link-position-27" style="font-size: 9.2962962962963pt;" aria-label="enumeration (4 items)">enumeration</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/feedback/" class="tag-cloud-link tag-link-87 tag-link-position-28" style="font-size: 8pt;" aria-label="feedback (3 items)">feedback</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/functional/" class="tag-cloud-link tag-link-188921 tag-link-position-29" style="font-size: 9.2962962962963pt;" aria-label="functional (4 items)">functional</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/functional-programming/" class="tag-cloud-link tag-link-116486 tag-link-position-30" style="font-size: 8pt;" aria-label="functional programming (3 items)">functional programming</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/functor/" class="tag-cloud-link tag-link-5656984 tag-link-position-31" style="font-size: 13.703703703704pt;" aria-label="functor (10 items)">functor</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/geometry/" class="tag-cloud-link tag-link-63411 tag-link-position-32" style="font-size: 10.333333333333pt;" aria-label="geometry (5 items)">geometry</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/ghc/" class="tag-cloud-link tag-link-933422 tag-link-position-33" style="font-size: 9.2962962962963pt;" aria-label="GHC (4 items)">GHC</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/ghci/" class="tag-cloud-link tag-link-3308949 tag-link-position-34" style="font-size: 8pt;" aria-label="ghci (3 items)">ghci</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/graphics/" class="tag-cloud-link tag-link-658 tag-link-position-35" style="font-size: 10.333333333333pt;" aria-label="graphics (5 items)">graphics</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/hackathon/" class="tag-cloud-link tag-link-99959 tag-link-position-36" style="font-size: 11.888888888889pt;" aria-label="hackathon (7 items)">hackathon</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/hac-%cf%86/" class="tag-cloud-link tag-link-20958510 tag-link-position-37" style="font-size: 11.888888888889pt;" aria-label="Hac φ (7 items)">Hac φ</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/haskell/" class="tag-cloud-link tag-link-37144 tag-link-position-38" style="font-size: 22pt;" aria-label="haskell (47 items)">haskell</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/icfp/" class="tag-cloud-link tag-link-1711081 tag-link-position-39" style="font-size: 14.611111111111pt;" aria-label="ICFP (12 items)">ICFP</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/isomorphism/" class="tag-cloud-link tag-link-1845257 tag-link-position-40" style="font-size: 9.2962962962963pt;" aria-label="isomorphism (4 items)">isomorphism</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/kattis/" class="tag-cloud-link tag-link-4490081 tag-link-position-41" style="font-size: 15.518518518519pt;" aria-label="Kattis (14 items)">Kattis</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/library/" class="tag-cloud-link tag-link-2624 tag-link-position-42" style="font-size: 9.2962962962963pt;" aria-label="library (4 items)">library</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/log/" class="tag-cloud-link tag-link-12657 tag-link-position-43" style="font-size: 10.333333333333pt;" aria-label="log (5 items)">log</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/monad/" class="tag-cloud-link tag-link-75140 tag-link-position-44" style="font-size: 11.888888888889pt;" aria-label="monad (7 items)">monad</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/monads/" class="tag-cloud-link tag-link-417148 tag-link-position-45" style="font-size: 9.2962962962963pt;" aria-label="monads (4 items)">monads</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/monoid/" class="tag-cloud-link tag-link-4779577 tag-link-position-46" style="font-size: 13.185185185185pt;" aria-label="monoid (9 items)">monoid</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/multiset/" class="tag-cloud-link tag-link-6705450 tag-link-position-47" style="font-size: 8pt;" aria-label="multiset (3 items)">multiset</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/music/" class="tag-cloud-link tag-link-18 tag-link-position-48" style="font-size: 9.2962962962963pt;" aria-label="music (4 items)">music</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/paper/" class="tag-cloud-link tag-link-19368 tag-link-position-49" style="font-size: 10.333333333333pt;" aria-label="paper (5 items)">paper</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/parsing/" class="tag-cloud-link tag-link-1029805 tag-link-position-50" style="font-size: 9.2962962962963pt;" aria-label="parsing (4 items)">parsing</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/partitions/" class="tag-cloud-link tag-link-173258 tag-link-position-51" style="font-size: 8pt;" aria-label="partitions (3 items)">partitions</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/patch-theory/" class="tag-cloud-link tag-link-4568298 tag-link-position-52" style="font-size: 8pt;" aria-label="patch theory (3 items)">patch theory</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/pedagogy/" class="tag-cloud-link tag-link-4791 tag-link-position-53" style="font-size: 11.240740740741pt;" aria-label="pedagogy (6 items)">pedagogy</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/philadelphia/" class="tag-cloud-link tag-link-22628 tag-link-position-54" style="font-size: 8pt;" aria-label="Philadelphia (3 items)">Philadelphia</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/pictures/" class="tag-cloud-link tag-link-835 tag-link-position-55" style="font-size: 8pt;" aria-label="pictures (3 items)">pictures</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/productivity/" class="tag-cloud-link tag-link-2704 tag-link-position-56" style="font-size: 10.333333333333pt;" aria-label="productivity (5 items)">productivity</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/programming/" class="tag-cloud-link tag-link-196 tag-link-position-57" style="font-size: 17.333333333333pt;" aria-label="programming (20 items)">programming</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/quickcheck/" class="tag-cloud-link tag-link-1279624 tag-link-position-58" style="font-size: 10.333333333333pt;" aria-label="QuickCheck (5 items)">QuickCheck</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/random/" class="tag-cloud-link tag-link-30 tag-link-position-59" style="font-size: 11.240740740741pt;" aria-label="random (6 items)">random</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/release/" class="tag-cloud-link tag-link-7781 tag-link-position-60" style="font-size: 14.222222222222pt;" aria-label="release (11 items)">release</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/sampling/" class="tag-cloud-link tag-link-59322 tag-link-position-61" style="font-size: 9.2962962962963pt;" aria-label="sampling (4 items)">sampling</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/sets/" class="tag-cloud-link tag-link-57696 tag-link-position-62" style="font-size: 10.333333333333pt;" aria-label="sets (5 items)">sets</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/species/" class="tag-cloud-link tag-link-39277 tag-link-position-63" style="font-size: 14.222222222222pt;" aria-label="species (11 items)">species</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/talk/" class="tag-cloud-link tag-link-739 tag-link-position-64" style="font-size: 10.333333333333pt;" aria-label="talk (5 items)">talk</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/teaching/" class="tag-cloud-link tag-link-1591 tag-link-position-65" style="font-size: 13.185185185185pt;" aria-label="teaching (9 items)">teaching</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/theory/" class="tag-cloud-link tag-link-3549 tag-link-position-66" style="font-size: 12.537037037037pt;" aria-label="theory (8 items)">theory</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/translation/" class="tag-cloud-link tag-link-8349 tag-link-position-67" style="font-size: 8pt;" aria-label="translation (3 items)">translation</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/tree/" class="tag-cloud-link tag-link-176028 tag-link-position-68" style="font-size: 11.888888888889pt;" aria-label="tree (7 items)">tree</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/tutorial/" class="tag-cloud-link tag-link-2932 tag-link-position-69" style="font-size: 9.2962962962963pt;" aria-label="tutorial (4 items)">tutorial</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/type/" class="tag-cloud-link tag-link-16792 tag-link-position-70" style="font-size: 8pt;" aria-label="type (3 items)">type</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/type-level/" class="tag-cloud-link tag-link-12440661 tag-link-position-71" style="font-size: 11.240740740741pt;" aria-label="type-level (6 items)">type-level</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/typeclassopedia/" class="tag-cloud-link tag-link-16948548 tag-link-position-72" style="font-size: 11.240740740741pt;" aria-label="Typeclassopedia (6 items)">Typeclassopedia</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/types/" class="tag-cloud-link tag-link-125161 tag-link-position-73" style="font-size: 14.222222222222pt;" aria-label="types (11 items)">types</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/virtual/" class="tag-cloud-link tag-link-79250 tag-link-position-74" style="font-size: 9.2962962962963pt;" aria-label="virtual (4 items)">virtual</a></li>
+	<li><a href="https://byorgey.wordpress.com/tag/workshop/" class="tag-cloud-link tag-link-19557 tag-link-position-75" style="font-size: 10.333333333333pt;" aria-label="workshop (5 items)">workshop</a></li>
+</ul>
+</div></li><li id="archives-2" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href="https://byorgey.wordpress.com/2021/09/">September 2021</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2021/08/">August 2021</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2021/06/">June 2021</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2021/02/">February 2021</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2020/07/">July 2020</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2020/06/">June 2020</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2020/05/">May 2020</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2020/04/">April 2020</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2020/03/">March 2020</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2020/02/">February 2020</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2019/12/">December 2019</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2019/11/">November 2019</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2019/10/">October 2019</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2019/07/">July 2019</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2019/05/">May 2019</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2019/04/">April 2019</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2019/03/">March 2019</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2019/02/">February 2019</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2018/11/">November 2018</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2018/10/">October 2018</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2018/06/">June 2018</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2018/05/">May 2018</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2018/04/">April 2018</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2018/03/">March 2018</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2018/02/">February 2018</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2018/01/">January 2018</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2017/11/">November 2017</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2017/09/">September 2017</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2017/06/">June 2017</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2017/05/">May 2017</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2017/04/">April 2017</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2017/03/">March 2017</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2017/02/">February 2017</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2017/01/">January 2017</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/11/">November 2016</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/10/">October 2016</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/09/">September 2016</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/08/">August 2016</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/07/">July 2016</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/06/">June 2016</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/05/">May 2016</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/04/">April 2016</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/03/">March 2016</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2016/02/">February 2016</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2015/11/">November 2015</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2015/10/">October 2015</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2015/08/">August 2015</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2015/07/">July 2015</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2015/06/">June 2015</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2015/05/">May 2015</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2015/04/">April 2015</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2015/03/">March 2015</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2014/08/">August 2014</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2014/06/">June 2014</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2014/05/">May 2014</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2014/01/">January 2014</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2013/10/">October 2013</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2013/08/">August 2013</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2013/07/">July 2013</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2013/05/">May 2013</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2013/04/">April 2013</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2013/03/">March 2013</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2013/01/">January 2013</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2012/12/">December 2012</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2012/11/">November 2012</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2012/10/">October 2012</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2012/08/">August 2012</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2012/07/">July 2012</a>&nbsp;(5)</li>
+	<li><a href="https://byorgey.wordpress.com/2012/06/">June 2012</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2012/03/">March 2012</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2012/01/">January 2012</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/11/">November 2011</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/10/">October 2011</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/09/">September 2011</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/08/">August 2011</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/07/">July 2011</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/06/">June 2011</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/05/">May 2011</a>&nbsp;(6)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/04/">April 2011</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/03/">March 2011</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/02/">February 2011</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2011/01/">January 2011</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/12/">December 2010</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/11/">November 2010</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/10/">October 2010</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/09/">September 2010</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/08/">August 2010</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/07/">July 2010</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/06/">June 2010</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/05/">May 2010</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/04/">April 2010</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/03/">March 2010</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/02/">February 2010</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2010/01/">January 2010</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/12/">December 2009</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/10/">October 2009</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/09/">September 2009</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/08/">August 2009</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/07/">July 2009</a>&nbsp;(7)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/06/">June 2009</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/05/">May 2009</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/04/">April 2009</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/03/">March 2009</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/02/">February 2009</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2009/01/">January 2009</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/12/">December 2008</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/09/">September 2008</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/08/">August 2008</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/07/">July 2008</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/06/">June 2008</a>&nbsp;(1)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/04/">April 2008</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/03/">March 2008</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/02/">February 2008</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2008/01/">January 2008</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2007/12/">December 2007</a>&nbsp;(4)</li>
+	<li><a href="https://byorgey.wordpress.com/2007/10/">October 2007</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2007/09/">September 2007</a>&nbsp;(2)</li>
+	<li><a href="https://byorgey.wordpress.com/2007/08/">August 2007</a>&nbsp;(3)</li>
+	<li><a href="https://byorgey.wordpress.com/2007/06/">June 2007</a>&nbsp;(2)</li>
+			</ul>
+
+			</li><li id="top-posts-2" class="widget-container widget_top-posts"><h3 class="widget-title">Top Posts</h3><ul>				<li>
+					<a href="https://byorgey.wordpress.com/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/" class="bump-view" data-bump-view="tp" aria-current="page">Competitive programming in Haskell: Kadane’s algorithm</a>					</li>
+								<li>
+					<a href="https://byorgey.wordpress.com/2021/09/08/implementing-hindley-milner-with-the-unification-fd-library/" class="bump-view" data-bump-view="tp">Implementing Hindley-Milner with the unification-fd library</a>					</li>
+								<li>
+					<a href="https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/" class="bump-view" data-bump-view="tp">Abstraction, intuition, and the "monad tutorial fallacy"</a>					</li>
+				</ul></li><li id="linkcat-1356" class="widget-container widget_links"><h3 class="widget-title">Blogroll</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://sigfpe.blogspot.com/">a neighborhood of infinity</a></li>
+<li><a href="http://scienceblogs.com/goodmath/" title="“Finding the fun in good math; squishing bad math and the fools who promote it”">Good Math, Bad Math</a></li>
+<li><a href="http://lambda-the-ultimate.org/" title="The Programming Languages Weblog">Lambda the Ultimate</a></li>
+<li><a href="http://planet.haskell.org/" title="Syndicated collection of blogs related to the Haskell programming language">Planet Haskell</a></li>
+<li><a href="http://themonadreader.wordpress.com/" title="An electronic magazine about functional programming.">The Monad.Reader</a></li>
+<li><a href="http://unapologetic.wordpress.com/" title="“Mathematics for the interested outsider. Rants from an outraged insider.”">The Unapologetic Mathematician</a></li>
+<li><a href="http://blog.plover.com/" title="Mark Dominus’s blog">The Universe of Discourse</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-272" class="widget-container widget_links"><h3 class="widget-title">Fun</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://www.daisyowl.com/">Daisy Owl</a></li>
+<li><a href="http://www.qwantz.com/">Dinosaur Comics</a></li>
+<li><a href="http://harkavagrant.com/" title="Kate Beaton is hilarious.">Hark, a vagrant!</a></li>
+<li><a href="http://indexed.blogspot.com/">indexed</a></li>
+<li><a href="http://www.giantitp.com/comics/oots.html">Order of the Stick</a></li>
+<li><a href="http://www.savagechickens.com/">Savage Chickens</a></li>
+<li><a href="http://www.xkcd.com/">xkcd</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-64" class="widget-container widget_links"><h3 class="widget-title">Personal</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://del.icio.us/byorgey" title="My del.icio.us links">del.icio.us</a></li>
+<li><a href="http://www.librarything.com/profile.php?view=byorgey">Library</a></li>
+<li><a href="http://yorgeys.smugmug.com/" rel="me" title="Our photo galleries on SmugMug">Photos</a></li>
+<li><a href="http://www.mathlesstraveled.com/" rel="me" title="My math blog for high school students">The Math Less Traveled</a></li>
+
+	</ul>
+</li>
+<li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>
+		<ul>
+			<li><a href="https://wordpress.com/start?ref=wplogin">Register</a></li>			<li><a href="https://byorgey.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="https://byorgey.wordpress.com/feed/">Entries feed</a></li>
+			<li><a href="https://byorgey.wordpress.com/comments/feed/">Comments feed</a></li>
+
+			<li><a href="https://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>
+		</ul>
+
+		</li>			<div id="atatags-286348-613b11059df77" data-adtags-width="200"></div>
+			
+			<script>
+				__ATA.cmd.push(function() {
+					__ATA.initDynamicSlot({
+						id: 'atatags-286348-613b11059df77',
+						location: 140,
+						formFactor: '003',
+						label: {
+							text: 'Advertisements',
+						},
+						creative: {
+							reportAd: {
+								text: 'Report this ad',
+							},
+							privacySettings: {
+								text: 'Privacy',
+								onClick: function() { window.__tcfapi && window.__tcfapi( 'showUi' ); },
+							}
+						}
+					});
+				});
+			</script>			</ul>
+		</div><!-- #primary .widget-area -->
+
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="https://byorgey.wordpress.com/" title="blog :: Brent -&gt; [String]" rel="home">
+					blog :: Brent -&gt; [String]				</a>
+							</div><!-- #site-info -->
+
+			<div id="site-generator">
+								<a href="https://wordpress.com/?ref=footer_website" rel="nofollow">Create a free website or blog at WordPress.com.</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+<!--  -->
+<script src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/gprofiles.js" id="grofiles-cards-js"></script>
+<script id="wpgroho-js-extra">
+var WPGroHo = {"my_hash":""};
+</script>
+<script crossorigin="anonymous" type="text/javascript" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/wpgroho.js"></script>
+
+	<script>
+		// Initialize and attach hovercards to all gravatars
+		( function() {
+			function init() {
+				if ( typeof Gravatar === 'undefined' ) {
+					return;
+				}
+
+				if ( typeof Gravatar.init !== 'function' ) {
+					return;
+				}
+
+				Gravatar.profile_cb = function ( hash, id ) {
+					WPGroHo.syncProfileData( hash, id );
+				};
+
+				Gravatar.my_hash = WPGroHo.my_hash;
+				Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+			}
+
+			if ( document.readyState !== 'loading' ) {
+				init();
+			} else {
+				document.addEventListener( 'DOMContentLoaded', init );
+			}
+		} )();
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-cc113924265dbeb535c8b2fefe4e33ee">
+	</div>
+	</div>
+<script id="highlander-comments-js-extra">
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/byorgey.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/byorgey.wordpress.com\/wp-login.php?action=logout&_wpnonce=1c279b14f5","homeURL":"https:\/\/byorgey.wordpress.com\/","postID":"2386","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+</script>
+<script crossorigin="anonymous" type="text/javascript" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/a"></script>
+		<!-- CCPA [start] -->
+		<script type="text/javascript">
+			( function () {
+
+				var setupPrivacy = function() {
+
+					// Minimal Mozilla Cookie library
+					// https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie/Simple_document.cookie_framework
+					var cookieLib = window.cookieLib = {getItem:function(e){return e&&decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,o,n,t,r,i){if(!e||/^(?:expires|max\-age|path|domain|secure)$/i.test(e))return!1;var c="";if(n)switch(n.constructor){case Number:c=n===1/0?"; expires=Fri, 31 Dec 9999 23:59:59 GMT":"; max-age="+n;break;case String:c="; expires="+n;break;case Date:c="; expires="+n.toUTCString()}return"rootDomain"!==r&&".rootDomain"!==r||(r=(".rootDomain"===r?".":"")+document.location.hostname.split(".").slice(-2).join(".")),document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(o)+c+(r?"; domain="+r:"")+(t?"; path="+t:"")+(i?"; secure":""),!0}};
+
+					// Implement IAB USP API.
+					window.__uspapi = function( command, version, callback ) {
+
+						if ( typeof callback !== 'function' ) {
+							return;
+						}
+
+						if ( command !== 'getUSPData' || version !== 1 ) {
+							callback( null, false );
+							return;
+						}
+
+						// Check for GPC.
+						if ( navigator.globalPrivacyControl ) {
+							callback( { version: 1, uspString: '1YYN' }, true );
+							return;
+						}
+
+						// Check for cookie.
+						var consent = cookieLib.getItem( 'usprivacy' );
+
+						if ( null === consent ) {
+							callback( null, false );
+							return;
+						}
+
+						callback( { version: 1, uspString: consent }, true );
+					};
+
+					// Initialization.
+					document.addEventListener( 'DOMContentLoaded', function() {
+
+						var setDefaultOptInCookie = function() {
+							var value = '1YNN';
+							var domain = '.wordpress.com' === location.hostname.slice( -14 ) ? '.rootDomain' : location.hostname;
+							cookieLib.setItem( 'usprivacy', value, 365 * 24 * 60 * 60, '/', domain );
+						};
+
+						var setCcpaAppliesCookie = function( value ) {
+							var domain = '.wordpress.com' === location.hostname.slice( -14 ) ? '.rootDomain' : location.hostname;
+							cookieLib.setItem( 'ccpa_applies', value, 24 * 60 * 60, '/', domain );
+						}
+
+						var maybeCallDoNotSellCallback = function() {
+							if ( 'function' === typeof window.doNotSellCallback ) {
+								return window.doNotSellCallback();
+							}
+
+							return false;
+						}
+
+						var usprivacyCookie = cookieLib.getItem( 'usprivacy' );
+
+						if ( null !== usprivacyCookie ) {
+							maybeCallDoNotSellCallback();
+							return;
+						}
+
+						var ccpaCookie = cookieLib.getItem( 'ccpa_applies' );
+
+						if ( null === ccpaCookie ) {
+
+							var request = new XMLHttpRequest();
+							request.open( 'GET', 'https://public-api.wordpress.com/geo/', true );
+
+							request.onreadystatechange = function () {
+								if ( 4 === this.readyState ) {
+									if ( 200 === this.status ) {
+
+										var data = JSON.parse( this.response );
+										var ccpa_applies = data['region'] && data['region'].toLowerCase() === 'california';
+
+										setCcpaAppliesCookie( ccpa_applies );
+
+										if ( ccpa_applies ) {
+											if ( maybeCallDoNotSellCallback() ) {
+												setDefaultOptInCookie();
+											}
+										}
+									} else {
+										setCcpaAppliesCookie( true );
+										if ( maybeCallDoNotSellCallback() ) {
+											setDefaultOptInCookie();
+										}
+									}
+								}
+							};
+
+							request.send();
+						} else {
+							if ( ccpaCookie === 'true' ) {
+								if ( maybeCallDoNotSellCallback() ) {
+									setDefaultOptInCookie();
+								}
+							}
+						}
+					} );
+				};
+
+				if ( window.defQueue && defQueue.isLOHP && defQueue.isLOHP === 2020 ) {
+					defQueue.items.push( setupPrivacy );
+				} else {
+					setupPrivacy();
+				}
+
+			} )();
+		</script>
+
+		<!-- CCPA [end] -->
+					<script type="text/javascript">
+			( function( $ ) {
+				$( document.body ).on( 'post-load', function () {
+					if ( typeof __ATA.insertInlineAds === 'function' ) {
+						__ATA.insertInlineAds();
+					}
+				} );
+			} )( jQuery );
+			</script>
+<script>
+window.addEventListener( "load", function( event ) {
+	var link = document.createElement( "link" );
+	link.href = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?v=20210907";
+	link.type = "text/css";
+	link.rel = "stylesheet";
+	document.head.appendChild( link );
+
+	var script = document.createElement( "script" );
+	script.src = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.js?v=20210907";
+	script.defer = true;
+	document.body.appendChild( script );
+} );
+</script>
+
+	
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/byorgey.wordpress.com\/2021\/09\/09\/competitive-programming-in-haskell-kadanes-algorithm\/":2386};
+	</script>
+					
+<script id="sharing-js-js-extra">
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+</script>
+<script async="true" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/a.js"></script><script crossorigin="anonymous" type="text/javascript" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/a_002"></script>
+<script type="text/javascript">
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-tumblr' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-tumblr' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+						return false;
+					}
+				} );
+			} )();
+</script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/w.js" defer="defer"></script> <script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'1152889','blog_tz':'-4','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'1152889','v':'wpcom','tz':'-4','user_id':'0','post':'2386','subd':'byorgey'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWtpP0NsWnVkPS9sL0ViLndld3AyMWJHeTE5ZSxINXRXfmU0L0Rfb2NhXXFZa0V+TjF8WzE3ZmxjbmNiSjVUTFIucFkyPzZ3c2UzfCZLaExvJSVFWWMxbXZxTTAxSkw9Y1twOHFWbHE9P05mWFBGZERUZDFNV3ZGLXg9OCYvRC9KVFZOZnJJcT1kX1A9YVJRLmJ8RS1bajQ3fnVPdEh4b2NkTm84ZV9oQ2MsVkdpJjZZTm9ibyZbYnpWXzIuay0vdS1dUjFUdHY9WlVaem0/eFEsQWVkdUlyVWQyZFtyMStsYy9wTnFuUVAsTWU5ek9wJnZqckkwNUJrMW8='}]);
+_stq.push([ 'clickTrackerInit', '1152889', '2386' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<style>img#wpstats {
+			position: absolute !important;
+			clip: rect(0, 0, 0, 0);
+			padding: 0 !important;
+			border: 0 !important;
+			height: 0 !important;
+			width: 0 !important;
+			overflow: hidden;
+		}</style><img src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/g.gif" alt=":)" id="wpstats"><iframe style="display: none;" name="__tcfapiLocator"></iframe><div id="sharing_email" style="display: none;">
+		<form action="/2021/09/09/competitive-programming-in-haskell-kadanes-algorithm/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email">
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" size="25" autocomplete="off" title="This field is for validation and should not be changed">
+			
+			<div class="g-recaptcha" data-sitekey="6LcmyE0UAAAAALID28yVNg7pFCodGaArJzHitez_" data-theme="light" data-type="image" data-tabindex="0" data-lazy="true" data-url="https://www.google.com/recaptcha/api.js?hl=en"></div>
+			
+			<img style="float: right; display: none" class="loading" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/loading.gif" alt="loading" scale="0" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a rel="nofollow" href="#cancel" class="sharing_cancel" role="button">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div><div id="sidebar-sticky-ad" style="right: 0px; display: none;"></div><style>.ata-controls__complain-btn:hover,
+.ata-controls__privacy-btn:hover {
+    color: #666666 !important;
+}
+.ata-controls__complain-btn:active,
+.ata-controls__privacy-btn:active {
+    color: #5ac8fa !important;
+}
+.ata-controls__complain-btn_clicked,
+.ata-controls__complain-btn_clicked:hover,
+.ata-controls__complain-btn_clicked:active {
+    color: #000 !important;
+    cursor: default !important;
+}
+.ata-frame-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+</style><iframe src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/a_003.html" style="display: none;"></iframe><script src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/actionbar.js" defer="defer"></script><div id="actionbar" class="actnbr-pub-twentyten actnbr-has-follow actnbr-hidden"><ul><li class="actnbr-btn actnbr-hidden"> 				<a class="actnbr-action actnbr-actn-follow" href=""><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a><a class="actnbr-action actnbr-actn-following no-display" href=""><svg class="gridicon gridicon__following" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 13.482L15.508 21 12 17.4l1.412-1.388 2.106 2.188 6.094-6.094L23 13.482zm-7.455 1.862L20 10.89V2H2v14c0 1.1.9 2 2 2h4.538l4.913-4.832 2.095 2.176zM8 13H4v-1h4v1zm3-2H4v-1h7v1zm0-2H4V8h7v1zm7-3H4V4h14v2z"></path></g></svg><span>Following</span></a> 				<div class="actnbr-popover tip tip-top-left actnbr-notice"> 					<div class="tip-arrow"></div> 					<div class="tip-inner actnbr-follow-bubble"> 				<ul> 					<li class="actnbr-sitename actnbr-hidden"><a href="http://byorgey.wordpress.com/"><img alt="" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/wpcom-gray-white.png" class="avatar avatar-50" scale="0" width="50" height="50"> blog :: Brent -&gt; [String]</a></li> 					<form> 					<li class="actnbr-login-nudge actnbr-hidden"><div>Already have a WordPress.com account? <a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fbyorgey.wordpress.com%2F2021%2F09%2F09%2Fcompetitive-programming-in-haskell-kadanes-algorithm%2F&amp;signup_flow=account">Log in now.</a></div></li> 				</form></ul> 			</div> 				</div> 					</li><li class="actnbr-ellipsis actnbr-hidden"> 				<svg class="gridicon gridicon__ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle></g></svg> 				<div class="actnbr-popover tip tip-top-left actnbr-more"> 				<div class="tip-arrow"></div> 				<div class="tip-inner"> 					<ul> 						<li class="actnbr-sitename actnbr-hidden"><a href="http://byorgey.wordpress.com/"><img alt="" src="Competitive%20programming%20in%20Haskell%20Kadane%E2%80%99s%20algorithm%20|%20blog%20Brent%20-%3E%20[String]_fichiers/wpcom-gray-white.png" class="avatar avatar-50" scale="0" width="50" height="50"> blog :: Brent -&gt; [String]</a></li> 					<li class="actnbr-folded-customize actnbr-hidden"><a href="https://byorgey.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Fbyorgey.wordpress.com%2F2021%2F09%2F09%2Fcompetitive-programming-in-haskell-kadanes-algorithm%2F"><svg class="gridicon gridicon__customize" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z" data-reactid=".2.1.1:0.1b.0"></path></g></svg><span>Customize<span></span></span></a></li> 						<li class="actnbr-folded-follow actnbr-hidden"><a class="actnbr-action actnbr-actn-follow" href=""><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a><a class="actnbr-action actnbr-actn-following no-display" href=""><svg class="gridicon gridicon__following" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 13.482L15.508 21 12 17.4l1.412-1.388 2.106 2.188 6.094-6.094L23 13.482zm-7.455 1.862L20 10.89V2H2v14c0 1.1.9 2 2 2h4.538l4.913-4.832 2.095 2.176zM8 13H4v-1h4v1zm3-2H4v-1h7v1zm0-2H4V8h7v1zm7-3H4V4h14v2z"></path></g></svg><span>Following</span></a></li> 					<li class="actnbr-signup actnbr-hidden"><a href="https://wordpress.com/start/">Sign up</a></li> 						<li class="actnbr-login actnbr-hidden"><a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fbyorgey.wordpress.com%2F2021%2F09%2F09%2Fcompetitive-programming-in-haskell-kadanes-algorithm%2F&amp;signup_flow=account">Log in</a></li> 						 						<li class="actnbr-shortlink actnbr-hidden"><a href="https://wp.me/p4PUZ-Cu">Copy shortlink</a></li> 						<li class="flb-report actnbr-hidden"><a href="http://en.wordpress.com/abuse/">Report this content</a></li> 						 						 						<li class="actnbr-subs actnbr-hidden"><a href="https://subscribe.wordpress.com/">Manage subscriptions</a></li> 						<li class="actnbr-fold actnbr-hidden"><a href="">Collapse this bar</a></li> 						</ul> 					</div> 					</div> 				</li> 				</ul></div><style>.user-feedback__reason:hover {
+    color: #000 !important;
+}
+.user-feedback__slider:hover {
+    background-color: rgba(0,0,0,0.6) !important;
+    border: none !important;
+}</style></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

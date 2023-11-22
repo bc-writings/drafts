@@ -1,0 +1,200 @@
+/*HEVEA R CABANE*/
+#heveax .li-itemize{margin:1ex 0ex;}
+#heveax .li-enumerate{margin:1ex 0ex;}
+#heveax .dd-description{margin:0ex 0ex 1ex 4ex;}
+/*#heveax .dt-description{margin:0ex;}
+#heveax .dd-thebibliography{margin:-1.4em 3ex 1ex 4ex;text-align:left;}
+#heveax .dt-thebibliography{margin:0ex 3ex 0ex 0ex;}*/
+#heveax .toc{list-style:none;}
+/*#heveax .footnotetext{margin:0ex; padding:0ex;}
+#heveax div.footnotetext P{margin:0px; text-indent:1em;}
+#heveax .thefootnotes{text-align:left;margin:0ex;}
+
+
+#heveax .dt-thefootnotes{margin:0em;}
+#heveax .dd-thefootnotes{margin:-1.5em 3ex 1ex 4ex;text-align:left;}
+*/
+
+#heveax .footnoterule{margin:1em auto 1em 0px;width:50%;}
+#heveax .caption{padding-left:2ex; padding-right:2ex; margitext-align:left;n-left:auto; margin-right:auto}
+#heveax .title{margin:2ex auto;text-align:center}
+#heveax .titlemain{margin:1ex 2ex 2ex 1ex;}
+#heveax .titlerest{margin:0ex 2ex;}
+#heveax .center{text-align:center;margin-left:auto;margin-right:auto;}
+#heveax .flushleft{text-align:left;margin-left:0ex;margin-right:auto;}
+#heveax .flushright{text-align:right;margin-left:auto;margin-right:0ex;}
+#heveax div table{margin-left:inherit;margin-right:inherit;margin-bottom:2px;margin-top:2px}
+#heveax td table{margin:auto;}
+#heveax table{border-collapse:collapse;}
+#heveax td{padding:0;}
+#heveax .cellpadding0 tr td{padding:0;}
+#heveax .cellpadding1 tr td{padding:1px;}
+#heveax pre{text-align:left;margin-left:0ex;margin-right:auto;}
+#heveax blockquote{margin-left:4ex;margin-right:4ex;}
+#heveax td p{margin:0px;}
+#heveax .boxed{border:1px solid black}
+#heveax .textboxed{border:1px solid black}
+#heveax .vbar{border:none;width:2px;background-color:black;}
+#heveax .hbar{border:none;height:2px;width:100%;background-color:black;}
+#heveax .hfill{border:none;height:1px;width:200%;background-color:black;}
+#heveax .vdisplay{border-collapse:separate;border-spacing:2px;width:auto; empty-cells:show; border:2px solid red;}
+#heveax .vdcell{white-space:nowrap;padding:0px; border:2px solid green;}
+#heveax .display{border-collapse:separate;border-spacing:2px;width:auto; border:none;}
+#heveax .dcell{white-space:nowrap;padding:0px; border:none;}
+#heveax .dcenter{margin:0ex auto;}
+#heveax .vdcenter{border:solid #FF8000 2px; margin:0ex auto;}
+#heveax .minipage{text-align:left; margin-left:0em; margin-right:auto;}
+#heveax .marginpar{border:solid thin black; width:20%; text-align:left;}
+#heveax .marginparleft{float:left; margin-left:0ex; margin-right:1ex;}
+#heveax .marginparright{float:right; margin-left:1ex; margin-right:0ex;}
+#heveax .theorem{text-align:left;margin:1ex auto 1ex 0ex;}
+#heveax .part{margin:2ex auto;text-align:center}
+#heveax .lettrinesuite{font-variant:small-caps;
+text-decoration:none;
+}
+#heveax .lettrine:first-letter{float: left; 
+font-weight: bold;
+font-size:3em;
+color: #900;
+padding: 2px 2px;
+margin: 2px 1px 0 0;
+}
+#heveax body{font-family:Palatino,Liberation Serif,Times New Roman,serif;}
+#heveax .section{}
+#heveax .center hr{display:none}
+#heveax .accordion{background-color: #e8e8e8;
+padding: 14px;
+color: #444;
+width: 99%;
+border: none;
+box-sizing: border-box;
+box-shadow: 10px 5px 5px #ddd;
+text-align: left;
+outline: none;
+transition: 0.1s;
+}
+@keyframes animxion{from {background-color: white;}
+to {background-color: #cdcdcd;}
+}
+#heveax .accordion{font-variant:small-caps;
+text-decoration:none;
+color:#ad1f18;
+}
+#heveax .active{background-color: #ccc;
+}
+#heveax .accordion:hover{background-color: #eeeeee;
+box-shadow: 10px 5px 5px #ddd;
+}
+#heveax .inner{background-color: #cdcdcd;
+padding:10px;margin:3px;
+padding: 14px;
+margin-left: auto;
+margin-right: auto;
+width: 90%;
+border: none;
+text-align: left;
+outline: none;
+box-shadow: 10px 5px 5px #ddd;
+animation-name: animxion;
+animation-duration: 3s;
+}
+#heveax .bouton{display: inline-block;
+background-color: transparent;
+border: none;
+color: black;
+text-align: left;
+font-size: 14px;
+transition: all 1s;
+cursor: pointer;
+}
+#heveax .bouton span{cursor: pointer;
+display: inline-block;
+position: relative;
+transition: 1s;
+}
+#heveax .bouton span:after{content: 'Fermer';
+position: absolute;
+opacity: 0;
+top: 0;
+left: 20px;
+color:#928f70 !important;
+transition: 1s;
+}
+#heveax .bouton:hover span:after{opacity: 1;
+right: 0;
+}
+#heveax .imageg{float:left;clear:right;margin-right:10px;margin-top:10px;margin-bottom:10px}
+#heveax .imaged{float:right;clear:left;margin-left:10px;margin-top:10px;margin-bottom:10px}
+#heveax .image{align:center;float:none;clear:both;}
+#heveax .clear{clear:both}
+/* FINE TUNING HEVEA*/
+
+#heveax	{
+					
+word-break: break-word;
+
+ -webkit-hyphens: auto;
+
+ -moz-hyphens: auto;
+
+ -ms-hyphens: auto;
+
+ -o-hyphens: auto;
+
+ hyphens: auto;	}
+
+/* LES NOTES ET REFERENCES */
+#heveax .footnotetext{margin:0ex; padding:0ex;}
+#heveax div.footnotetext P{margin:0px; text-indent:1em;}
+#heveax .thefootnotes{text-align:left;margin:0ex;}
+#heveax .dt-thefootnotes{margin:0em;float:left;}
+#heveax .dd-thefootnotes{margin:0em 0em 0em 2em;padding-bottom:1em;}
+
+#heveax .bibliographytext{margin:0ex; padding:0ex;}
+#heveax div.bibliographytext P{margin:0px; text-indent:1em;}
+#heveax .thebibliography{text-align:left;margin:0ex;}
+#heveax .dt-thebibliography{margin:0em;float:left;}
+#heveax .dd-thebibliography{margin:0em 0em 0em 2em;padding-bottom:1em;}
+
+/* LIGNE SEPARATION NOTES ET FOOTER */
+#heveax hr{width:100%}
+#heveax hr.footnoterule{ 
+    display: block;
+    margin-top: .8em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width : 40%;
+    float: left;
+}
+
+
+/* POLAROID */
+#bodypola {
+    margin: 30px;
+    background-color: #E9E9E9;
+}
+
+div.polaroid {
+    width: 284px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+div.rotate_right {
+    float: left;
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Safari */
+    transform: rotate(7deg);
+}
+
+div.rotate_left {
+    float: right;
+    -ms-transform: rotate(-8deg); /* IE 9 */
+    -webkit-transform: rotate(-8deg); /* Safari */
+    transform: rotate(-8deg);
+}

@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html class="client-js ve-available" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Maximum subarray problem - Wikipedia</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"e10a3a21-6a47-4dea-9057-4c4d22ed5b54","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Maximum_subarray_problem","wgTitle":"Maximum subarray problem","wgCurRevisionId":1038608401,"wgRevisionId":1038608401,"wgArticleId":10575678,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["All articles with unsourced statements","Articles with unsourced statements from October 2019","Articles needing expert attention from September 2019","All articles needing expert attention","Miscellaneous articles needing expert attention",
+"Articles with unsourced statements from March 2020","Articles with unsourced statements from October 2017","All articles with dead external links","Articles with dead external links from May 2021","Articles with example Python (programming language) code","Optimization algorithms and methods","Dynamic programming"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Maximum_subarray_problem","wgRelevantArticleId":10575678,"wgIsProbablyEditable":!0,"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{"status":{"levels":-1}}},"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgPopupsFlags":10,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!1},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"English","wgNoticeProject":
+"wikipedia","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0,"wgULSPosition":"interlanguage","wgULSisCompactLinksEnabled":!0,"wgGENewcomerTasksGuidanceEnabled":!0,"wgGEAskQuestionEnabled":!1,"wgGELinkRecommendationsFrontendEnabled":!1,"wgWikibaseItemId":"Q1334332"};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.math.styles":"ready","ext.cite.styles":"ready","ext.pygments":"ready","skins.vector.styles.legacy":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","wikibase.client.init":"ready"};RLPAGEMODULES=["ext.math.scripts","ext.cite.ux-enhancements","ext.scribunto.logs","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.gadget.ReferenceTooltips","ext.gadget.charinsert","ext.gadget.extra-toolbar-buttons",
+"ext.gadget.refToolbar","ext.gadget.switcher","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.cx.eventlogging.campaigns","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.growthExperiments.SuggestedEditSession"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/load_002.css">
+<script async="" src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/load.js"></script>
+<style>
+.mw-editfont-monospace{font-family:monospace,monospace}.mw-editfont-sans-serif{font-family:sans-serif}.mw-editfont-serif{font-family:serif} .mw-editfont-monospace,.mw-editfont-sans-serif,.mw-editfont-serif{  font-size:13px;  -moz-tab-size:4; tab-size:4; }.mw-editfont-monospace.oo-ui-textInputWidget,.mw-editfont-sans-serif.oo-ui-textInputWidget,.mw-editfont-serif.oo-ui-textInputWidget{font-size:inherit}.mw-editfont-monospace.oo-ui-textInputWidget > .oo-ui-inputWidget-input,.mw-editfont-sans-serif.oo-ui-textInputWidget > .oo-ui-inputWidget-input,.mw-editfont-serif.oo-ui-textInputWidget > .oo-ui-inputWidget-input{  font-size:13px}.mw-editfont-monospace.oo-ui-textInputWidget > input.oo-ui-inputWidget-input,.mw-editfont-sans-serif.oo-ui-textInputWidget > input.oo-ui-inputWidget-input,.mw-editfont-serif.oo-ui-textInputWidget > input.oo-ui-inputWidget-input{min-height:32px}
+.mw-ui-button{background-color:#f8f9fa;color:#202122;display:inline-block;-moz-box-sizing:border-box;box-sizing:border-box;min-height:32px;min-width:4em;max-width:28.75em;margin:0;padding:5px 12px;border:1px solid #a2a9b1;border-radius:2px;cursor:pointer;vertical-align:middle;font-family:inherit;font-size:1em;font-weight:bold;line-height:1.28571429em;text-align:center;-webkit-appearance:none}.mw-ui-button:not(:disabled){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button:not(:disabled):visited{color:#202122}.mw-ui-button:not(:disabled):hover{background-color:#ffffff;color:#404244;border-color:#a2a9b1}.mw-ui-button:not(:disabled):focus{background-color:#ffffff;color:#202122;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;outline-width:0}.mw-ui-button:not(:disabled):focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not(:disabled):active,.mw-ui-button:not(:disabled).is-on{background-color:#c8ccd1;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#ffffff;border-color:#c8ccd1;cursor:default}.mw-ui-button.mw-ui-quiet,.mw-ui-button.mw-ui-quiet.mw-ui-progressive,.mw-ui-button.mw-ui-quiet.mw-ui-destructive{background-color:transparent;color:#202122;min-height:32px;border-color:transparent;font-weight:bold}input[type='checkbox']:hover + .mw-ui-button.mw-ui-quiet,input[type='checkbox']:hover + .mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type='checkbox']:hover + .mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:hover{background-color:#f8f9fa;color:#404244;border-color:transparent;box-shadow:none}input[type='checkbox']:active + .mw-ui-button.mw-ui-quiet,input[type='checkbox']:active + .mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type='checkbox']:active + .mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:active{background-color:#eaecf0;color:#000000;border-color:#72777d}input[type='checkbox']:focus + .mw-ui-button.mw-ui-quiet,input[type='checkbox']:focus + .mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type='checkbox']:focus + .mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:focus,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:focus,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:focus{background-color:transparent;color:#202122;border-color:#3366cc;box-shadow:none}.mw-ui-button.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled,.mw-ui-button.mw-ui-quiet:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-quiet:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:active{background-color:transparent;color:#72777d;border-color:transparent}.mw-ui-button.mw-ui-progressive:not(:disabled){background-color:#3366cc;color:#fff;border-color:#3366cc}.mw-ui-button.mw-ui-progressive:not(:disabled):hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:not(:disabled):focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:not(:disabled):active,.mw-ui-button.mw-ui-progressive:not(:disabled).is-on{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive.mw-ui-quiet{color:#3366cc}input[type='checkbox']:hover + .mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}input[type='checkbox']:active + .mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active{color:#2a4b8d}input[type='checkbox']:focus + .mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-destructive:not(:disabled){background-color:#dd3333;color:#fff;border-color:#dd3333}.mw-ui-button.mw-ui-destructive:not(:disabled):hover{background-color:#ff4242;border-color:#ff4242}.mw-ui-button.mw-ui-destructive:not(:disabled):focus{box-shadow:inset 0 0 0 1px #dd3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:not(:disabled):active,.mw-ui-button.mw-ui-destructive:not(:disabled).is-on{background-color:#b32424;border-color:#b32424;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#dd3333}input[type='checkbox']:hover + .mw-ui-button.mw-ui-destructive.mw-ui-quiet,.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#ff4242}input[type='checkbox']:active + .mw-ui-button.mw-ui-destructive.mw-ui-quiet,.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active{color:#b32424}input[type='checkbox']:focus + .mw-ui-button.mw-ui-destructive.mw-ui-quiet,.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#dd3333}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}a.mw-ui-button{text-decoration:none}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not(:first-child){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{font-size:initial;position:relative;display:inline-block;box-sizing:content-box !important;width:1.25em;height:1.25em;min-width:1.25em;min-height:1.25em;flex-basis:1.25em;vertical-align:middle;line-height:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;-moz-appearance:none;-webkit-appearance:none;background-color:transparent;border:0;margin:0;padding:0}.mw-ui-icon:before{content:'';display:block;width:100%;height:100%;min-width:1.25em;min-height:1.25em;background-repeat:no-repeat;background-size:1.25em 1.25em;background-position:center} .mw-ui-icon-flush-top{margin-top:-0.75em}.mw-ui-icon-flush-left{margin-left:-0.75em}.mw-ui-icon-flush-right{margin-right:-0.75em}.mw-ui-icon-element{border-radius:2px;padding:0.75em;-webkit-transition:background-color 100ms;transition:background-color 100ms;color:transparent}.mw-ui-icon-element:focus,.mw-ui-icon-element:active,.mw-ui-icon-element:visited{color:transparent}.mw-ui-icon-element:active{background-color:rgba(0,0,0,0.03)}@media (hover:hover){.mw-ui-icon-element:not(.disabled):hover{background-color:rgba(0,0,0,0.03)}}.mw-ui-icon-small{width:1em;height:1em;min-width:1em;min-height:1em;flex-basis:1em;line-height:1em}.mw-ui-icon-small:before{content:'';display:block;width:100%;height:100%;min-width:1em;min-height:1em;background-repeat:no-repeat;background-size:1em 1em;background-position:center}.mw-ui-icon-small.mw-ui-icon-element{padding:0.5625em}.mw-ui-icon-small.mw-ui-icon-flush-left{margin-left:-0.5625em}.mw-ui-icon-small.mw-ui-icon-flush-right{margin-right:-0.5625em}.mw-ui-icon-small.mw-ui-icon-before:before{min-width:1em;min-height:1em;margin-right:0.5625em}.mw-ui-icon-before{width:auto;max-width:100%}.mw-ui-icon-before:before{display:inline-block;font-size:initial;width:auto;min-width:1.25em;min-height:1.25em;margin-right:8px;vertical-align:middle}.mw-ui-icon-before span{vertical-align:middle}@media all and (min-width:1000px){.mw-ui-icon-with-label-desktop{color:#54595d;width:auto;line-height:inherit;flex-basis:auto}.mw-ui-icon-with-label-desktop:hover,.mw-ui-icon-with-label-desktop:focus,.mw-ui-icon-with-label-desktop:active,.mw-ui-icon-with-label-desktop:visited{color:#54595d;text-decoration:none}.mw-ui-icon-with-label-desktop:before{width:auto;display:inline-block;margin-right:8px;vertical-align:text-bottom}}
+.cite-accessibility-label{ top:-99999px;clip:rect(1px,1px,1px,1px); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}:target .mw-cite-targeted-backlink{font-weight:bold}.mw-cite-up-arrow-backlink{display:none}:target .mw-cite-up-arrow-backlink{display:inline}:target .mw-cite-up-arrow{display:none}
+.ve-init-mw-progressBarWidget{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-progressBarWidget-bar{height:1em;width:0} .ve-init-mw-progressBarWidget{background-color:#fff;box-sizing:border-box;height:0.875em;border:1px solid #36c;border-radius:0.875em;box-shadow:0 1px 1px rgba(0,0,0,0.15)}.ve-init-mw-progressBarWidget-bar{background-color:#36c;height:0.875em}
+.scribunto-limitreport-logs{margin:0;white-space:pre-wrap}
+.rt-tooltip{position:absolute;z-index:100;max-width:350px;background:#fff;color:#222;font-size:13px;line-height:1.5em;border:1px solid #c8ccd1;border-radius:3px;box-shadow:0 15px 45px -10px rgba(0,0,0,0.3);overflow-wrap:break-word}.rt-tooltip.rt-tooltip-insideWindow{z-index:110}.rt-tooltipContent{padding:8px 11px}.rt-tooltip-above .rt-tooltipContent{margin-bottom:-8px;padding-bottom:16px}.rt-tooltip-below .rt-tooltipContent{margin-top:-10px;padding-top:18px}.rt-tooltipTail,.rt-tooltipTail:after{position:absolute;width:12px;height:12px}.rt-tooltipTail{background:#c8ccd1;background:-webkit-linear-gradient(bottom left,#c8ccd1 50%,rgba(0,0,0,0) 50%);background:linear-gradient(to top right,#c8ccd1 50%,rgba(0,0,0,0) 50%)}.rt-tooltipTail:after{content:"";background:#fff;bottom:1px;left:1px}.rt-tooltip-above .rt-tooltipTail{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:100% 100%;transform-origin:100% 100%;bottom:0;left:15px}.rt-tooltip-below .rt-tooltipTail{-webkit-transform:rotate(135deg);transform:rotate(135deg);-webkit-transform-origin:0 0;transform-origin:0 0;top:0;left:27px}.rt-settingsLink{background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%0D%0A%20%20%20%20%3Cpath%20fill%3D%22%23555%22%20d%3D%22M20%2014.5v-2.9l-1.8-.3c-.1-.4-.3-.8-.6-1.4l1.1-1.5-2.1-2.1-1.5%201.1c-.5-.3-1-.5-1.4-.6L13.5%205h-2.9l-.3%201.8c-.5.1-.9.3-1.4.6L7.4%206.3%205.3%208.4l1%201.5c-.3.5-.4.9-.6%201.4l-1.7.2v2.9l1.8.3c.1.5.3.9.6%201.4l-1%201.5%202.1%202.1%201.5-1c.4.2.9.4%201.4.6l.3%201.8h3l.3-1.8c.5-.1.9-.3%201.4-.6l1.5%201.1%202.1-2.1-1.1-1.5c.3-.5.5-1%20.6-1.4l1.5-.3zM12%2016c-1.7%200-3-1.3-3-3s1.3-3%203-3%203%201.3%203%203-1.3%203-3%203z%22%2F%3E%0D%0A%3C%2Fsvg%3E);float:right;cursor:pointer;margin:-4px -4px 0 8px;height:24px;width:24px;border-radius:2px;background-position:center center;background-repeat:no-repeat;background-size:24px 24px}.rt-settingsLink:hover{background-color:#eee}.rt-target{background-color:#def}.rt-enableSelect{font-weight:bold}.rt-settingsFormSeparator{margin:0.85714286em 0}.rt-numberInput.rt-numberInput{width:150px}.rt-tooltipsForCommentsField.rt-tooltipsForCommentsField.rt-tooltipsForCommentsField{margin-top:1.64285714em}.rt-disabledHelp{border-collapse:collapse}.rt-disabledHelp td{padding:0}.rt-disabledNote.rt-disabledNote{vertical-align:bottom;padding-left:0.36em;font-weight:bold}@-webkit-keyframes rt-fade-in-up{0%{opacity:0;-webkit-transform:translate(0,20px);-moz-transform:translate(0,20px);transform:translate(0,20px) }100%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }}@-moz-keyframes rt-fade-in-up{0%{opacity:0;-webkit-transform:translate(0,20px);-moz-transform:translate(0,20px);transform:translate(0,20px) }100%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }}@keyframes rt-fade-in-up{0%{opacity:0;-webkit-transform:translate(0,20px);-moz-transform:translate(0,20px);transform:translate(0,20px) }100%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }}@-webkit-keyframes rt-fade-in-down{0%{opacity:0;-webkit-transform:translate(0,-20px);-moz-transform:translate(0,-20px);transform:translate(0,-20px) }100%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }}@-moz-keyframes rt-fade-in-down{0%{opacity:0;-webkit-transform:translate(0,-20px);-moz-transform:translate(0,-20px);transform:translate(0,-20px) }100%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }}@keyframes rt-fade-in-down{0%{opacity:0;-webkit-transform:translate(0,-20px);-moz-transform:translate(0,-20px);transform:translate(0,-20px) }100%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }}@-webkit-keyframes rt-fade-out-down{0%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }100%{opacity:0;-webkit-transform:translate(0,20px);-moz-transform:translate(0,20px);transform:translate(0,20px) }}@-moz-keyframes rt-fade-out-down{0%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }100%{opacity:0;-webkit-transform:translate(0,20px);-moz-transform:translate(0,20px);transform:translate(0,20px) }}@keyframes rt-fade-out-down{0%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }100%{opacity:0;-webkit-transform:translate(0,20px);-moz-transform:translate(0,20px);transform:translate(0,20px) }}@-webkit-keyframes rt-fade-out-up{0%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }100%{opacity:0;-webkit-transform:translate(0,-20px);-moz-transform:translate(0,-20px);transform:translate(0,-20px) }}@-moz-keyframes rt-fade-out-up{0%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }100%{opacity:0;-webkit-transform:translate(0,-20px);-moz-transform:translate(0,-20px);transform:translate(0,-20px) }}@keyframes rt-fade-out-up{0%{opacity:1;-webkit-transform:translate(0,0);-moz-transform:translate(0,0);transform:translate(0,0) }100%{opacity:0;-webkit-transform:translate(0,-20px);-moz-transform:translate(0,-20px);transform:translate(0,-20px) }}.rt-fade-in-up{-webkit-animation:rt-fade-in-up 0.2s ease forwards;-moz-animation:rt-fade-in-up 0.2s ease forwards;animation:rt-fade-in-up 0.2s ease forwards }.rt-fade-in-down{-webkit-animation:rt-fade-in-down 0.2s ease forwards;-moz-animation:rt-fade-in-down 0.2s ease forwards;animation:rt-fade-in-down 0.2s ease forwards }.rt-fade-out-down{-webkit-animation:rt-fade-out-down 0.2s ease forwards;-moz-animation:rt-fade-out-down 0.2s ease forwards;animation:rt-fade-out-down 0.2s ease forwards }.rt-fade-out-up{-webkit-animation:rt-fade-out-up 0.2s ease forwards;-moz-animation:rt-fade-out-up 0.2s ease forwards;animation:rt-fade-out-up 0.2s ease forwards }
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+.uls-menu{border-radius:2px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:2px;border-top-left-radius:2px}.uls-language-list{border-bottom-right-radius:2px;border-bottom-left-radius:2px}.uls-menu.callout:before,.uls-menu.callout:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.uls-menu.callout.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.uls-menu.callout.selector-right:after{ border-left:10px solid #fff; right:-10px}.uls-menu.callout.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.uls-menu.callout.selector-left:after{ border-right:10px solid #fff; left:-10px}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?01868) no-repeat scroll center center;background-size:28px;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c8ccd1;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}.uls-menu .uls-no-results-view .uls-no-found-more{background-color:#fff}.uls-menu .uls-no-results-view h3{padding:0 28px;margin:0;color:#54595d;font-size:1em;font-weight:normal}   .skin-vector .uls-menu{border-color:#c8ccd1;box-shadow:0 2px 2px 0 rgba(0,0,0,0.25);font-size:0.875em}.skin-vector .uls-search{border-bottom-color:#c8ccd1}.skin-vector .uls-search-label{opacity:0.51;-webkit-transition:opacity 250ms;transition:opacity 250ms}.skin-vector .uls-search-wrapper:hover .uls-search-label{opacity:0.87}.skin-vector .uls-filtersuggestion{color:#72777d}.skin-vector .uls-lcd-region-title{color:#54595d}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUBAMAAAB/pwA+AAAAElBMVEUAAAAQEBDPz88AAABAQEDv7+9oe1vvAAAABnRSTlMA3rLe3rJS22KzAAAARElEQVQI12PAAUIUQCSTK5BwFgIxFU1AhKECUFAYKAAioXwwBeZChMGCEGGQIFQYJohgIhQgtCEMQ7ECYTHCOciOxA4AADgJTXIb9s8AAAAASUVORK5CYII=) no-repeat;width:20px;height:20px;text-indent:20px;white-space:nowrap;overflow:hidden}
+#uls-settings-block{background-color:#f8f9fa;border-top:1px solid #c8ccd1;padding-left:10px;line-height:1.2em;border-radius:0 0 2px 2px}#uls-settings-block > button{background:left top transparent no-repeat;background-size:20px auto;color:#54595d;display:inline-block;margin:8px 15px;border:0;padding:0 0 0 26px;font-size:medium;cursor:pointer}#uls-settings-block > button:hover{color:#202122}#uls-settings-block > button.display-settings-block{background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/display.svg?b78f7)}#uls-settings-block > button.input-settings-block{background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/input.svg?e7c85)}.uls-tipsy.uls-tipsy{z-index:1000}</style><style>
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded .mw-ui-icon:before{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 768%22%3E %3Cpath d=%22M851.2 71.6 690.7 232.1l-40.1-40.3-9.6 164.8 164.8-9.3-40.3-40.4L926 146.4l58.5 58.5L997.6 0 792.7 13.1%22/%3E %3Cpath d=%22M769.6 89.3H611.9l70.9 70.8 7.9 7.5m-47.1 234.6-51.2 3 3-51.2 9.4-164.4 5.8-100.3H26.4V768h883.1V387l-100.9 5.8-165 9.4zM813.9 678H113.6l207.2-270.2 31.5-12.9L548 599.8l105.9-63.2 159.8 140.8.2.6zm95.6-291.9V228l-79.1 78.9 7.8 7.9%22/%3E %3C/svg%3E")}.mw-mmv-filepage-buttons .mw-mmv-view-config .mw-ui-icon:before{background-image:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1024 768%22%3E %3Cpath d=%22M897 454.6V313.4L810.4 299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4 50.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427 85.6c-23.3 6.4-45.7 16-65.8 27.3l-71.4-50.5-100.3 99.5 50.5 71.4c-11.2 20.9-20.9 42.5-27.3 66.6L127 313.4v141.2l85.8 14.4c6.4 23.3 16 45.7 27.3 66.6L189.6 607l99.5 99.5 71.4-50.5c20.9 11.2 42.5 20.9 66.6 27.3l14.4 85.8h141.2l14.4-86.6c23.3-6.4 45.7-16 65.8-27.3l71.4 50.5 99.5-99.5-50.5-71.4c11.2-20.9 20.9-42.5 27.3-66.6l86.4-13.6zm-385 77c-81.8 0-147.6-66.6-147.6-147.6 0-81.8 66.6-147.6 147.6-147.6S659.6 302.2 659.6 384 593.8 531.6 512 531.6z%22/%3E %3C/svg%3E");margin-right:0;opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config .mw-ui-icon:before:hover{opacity:1}.mw-mmv-filepage-buttons .mw-mmv-view-config .mw-ui-icon span{display:none}.mw-mmv-button{background-color:transparent;min-width:0;border:0;padding:0;overflow-x:hidden;text-indent:-9999em}
+.ve-init-mw-tempWikitextEditorWidget{border:0;padding:0;color:inherit;line-height:1.5em;width:100%;-moz-tab-size:4;tab-size:4; }.ve-init-mw-tempWikitextEditorWidget:focus{outline:0;padding:0}.ve-init-mw-tempWikitextEditorWidget::selection{background:rgba(109,169,247,0.5); }
+#p-lang .body ul .uls-trigger,#p-lang .pBody ul .uls-trigger{background-image:none;padding:0}#p-lang .mw-interlanguage-selector,#p-lang .mw-interlanguage-selector:active{background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/language-base20.svg?b7954);background-position:left 4px center;background-repeat:no-repeat;background-size:16px;margin:4px 0 8px;padding:4px 8px 4px 26px;font-size:13px;font-weight:normal;text-align:left;cursor:pointer} .mw-interlanguage-selector.selector-open{background-color:#c8ccd1} .interlanguage-uls-menu:before,.interlanguage-uls-menu:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.interlanguage-uls-menu.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.interlanguage-uls-menu.selector-right:after{ border-left:10px solid #fff; right:-10px}.interlanguage-uls-menu.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.interlanguage-uls-menu.selector-left:after{ border-right:10px solid #fff; left:-10px}.mw-body-header .mw-interlanguage-selector,.mw-body-header .mw-interlanguage-selector:active{margin:0;font-weight:bold}</style><style>
+.client-js ol.mw-collapsible:before,.client-js ul.mw-collapsible:before,.client-js .mw-collapsible-toggle-li{ display:list-item;list-style:none;margin-bottom:0.1em}.client-js ol.mw-made-collapsible:before,.client-js ul.mw-made-collapsible:before{display:none}.client-js ol.mw-collapsible:not(.mw-made-collapsible):before,.client-js ul.mw-collapsible:not(.mw-made-collapsible):before,.client-js table.mw-collapsible:not(.mw-made-collapsible) :first-child tr:first-child th:last-child:before,.client-js table.mw-collapsible:not(.mw-made-collapsible) > caption:first-child:after,.client-js div.mw-collapsible:not(.mw-made-collapsible):before{content:'[hide]'}.client-js td.mw-collapsed:not(.mw-made-collapsible):before,.client-js table.mw-collapsed:not(.mw-made-collapsible) :first-child tr:first-child th:last-child:before,.client-js table.mw-collapsed:not(.mw-made-collapsible) > caption:first-child:after,.client-js div.mw-collapsed:not(.mw-made-collapsible):before{content:'[show]'}.client-js .mw-collapsible[id^='mw-customcollapsible'] th:before,.client-js .mw-collapsible[id^='mw-customcollapsible']:before{content:none !important}.client-js table.mw-collapsible:not(.mw-made-collapsible) > caption:first-child:after{float:none;display:block}.client-js .mw-collapsed:not(.mw-made-collapsible) > p,.client-js .mw-collapsed:not(.mw-made-collapsible) > table,.client-js .mw-collapsed:not(.mw-made-collapsible) > thead + tbody,.client-js .mw-collapsed:not(.mw-made-collapsible) tr:not(:first-child),.client-js .mw-collapsed:not(.mw-made-collapsible) .mw-collapsible-content{display:none} .mw-collapsible:not(.mw-made-collapsible) th:before,.mw-collapsible:not(.mw-made-collapsible):before,.mw-collapsible-toggle{float:right}  .mw-content-ltr .mw-collapsible:not(.mw-made-collapsible) th:before,.mw-content-rtl .mw-content-ltr .mw-collapsible:not(.mw-made-collapsible) th:before,.mw-content-ltr .mw-collapsible:not(.mw-made-collapsible):before,.mw-content-rtl .mw-content-ltr .mw-collapsible:not(.mw-made-collapsible):before,.mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible:not(.mw-made-collapsible) th:before,.mw-content-ltr .mw-content-rtl .mw-collapsible:not(.mw-made-collapsible) th:before,.mw-content-rtl .mw-collapsible:not(.mw-made-collapsible):before,.mw-content-ltr .mw-content-rtl .mw-collapsible:not(.mw-made-collapsible):before,.mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle{float:none}ol.mw-collapsible:not(.mw-made-collapsible):before,ul.mw-collapsible:not(.mw-made-collapsible):before{float:none !important}
+.mw-ui-checkbox{display:table;position:relative;line-height:1.5625em;vertical-align:middle}.mw-ui-checkbox *{font-size:inherit;vertical-align:middle}.mw-ui-checkbox [type='checkbox']{display:table-cell;position:relative;width:1.5625em;height:1.5625em;max-width:none;opacity:0;z-index:1}.mw-ui-checkbox [type='checkbox'] + label{display:table-cell;padding-left:0.4em}.mw-ui-checkbox [type='checkbox'] + label:before{content:'';background-color:#fff;background-origin:border-box;background-position:center center;background-repeat:no-repeat;background-size:0 0;-moz-box-sizing:border-box;box-sizing:border-box;position:absolute;top:50%;left:0;width:1.5625em;height:1.5625em;margin-top:-0.78125em;border:1px solid #72777d;border-radius:2px}.mw-ui-checkbox [type='checkbox']:checked + label:before{background-image:url(/w/resources/src/mediawiki.ui/components/images/checkbox-checked.svg?8153e);background-size:90% 90%}.mw-ui-checkbox [type='checkbox']:enabled{cursor:pointer}.mw-ui-checkbox [type='checkbox']:enabled + label{cursor:pointer}.mw-ui-checkbox [type='checkbox']:enabled + label:before{cursor:pointer;-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-checkbox [type='checkbox']:enabled:focus + label:before{border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc}.mw-ui-checkbox [type='checkbox']:enabled:hover + label:before{border-color:#447ff5}.mw-ui-checkbox [type='checkbox']:enabled:active + label:before{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:inset 0 0 0 1px #2a4b8d}.mw-ui-checkbox [type='checkbox']:enabled:checked + label:before{background-color:#3366cc;border-color:#3366cc}.mw-ui-checkbox [type='checkbox']:enabled:checked:focus + label:before{background-color:#3366cc;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-checkbox [type='checkbox']:enabled:checked:hover + label:before{background-color:#447ff5;border-color:#447ff5}.mw-ui-checkbox [type='checkbox']:enabled:checked:active + label:before{background-color:#2a4b8d;border-color:#2a4b8d}.mw-ui-checkbox [type='checkbox']:disabled + label:before{background-color:#c8ccd1;border-color:#c8ccd1}
+.oo-ui-icon-infoFilled,.mw-ui-icon-infoFilled:before{background-image:url(/w/load.php?modules=ext.popups.icons&image=infoFilled&format=rasterized&lang=en&skin=vector&version=gwvfb);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Einfo%3C/title%3E%3Cpath d=%22M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zM9 5h2v2H9zm0 4h2v6H9z%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-infoFilled,.mw-ui-icon-infoFilled-invert:before{background-image:url(/w/load.php?modules=ext.popups.icons&image=infoFilled&variant=invert&format=rasterized&lang=en&skin=vector&version=gwvfb);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Einfo%3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cpath d=%22M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zM9 5h2v2H9zm0 4h2v6H9z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-infoFilled,.mw-ui-icon-infoFilled-progressive:before{background-image:url(/w/load.php?modules=ext.popups.icons&image=infoFilled&variant=progressive&format=rasterized&lang=en&skin=vector&version=gwvfb);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Einfo%3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cpath d=%22M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zM9 5h2v2H9zm0 4h2v6H9z%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-icon-settings,.mw-ui-icon-settings:before{background-image:url(/w/load.php?modules=ext.popups.icons&image=settings&format=rasterized&skin=vector&version=gwvfb);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Esettings%3C/title%3E%3Cg transform=%22translate%2810 10%29%22%3E%3Cpath id=%22a%22 d=%22M1.5-10h-3l-1 6.5h5m0 7h-5l1 6.5h3%22/%3E%3Cuse transform=%22rotate%2845%29%22 xlink:href=%22%23a%22/%3E%3Cuse transform=%22rotate%2890%29%22 xlink:href=%22%23a%22/%3E%3Cuse transform=%22rotate%28135%29%22 xlink:href=%22%23a%22/%3E%3C/g%3E%3Cpath d=%22M10 2.5a7.5 7.5 0 000 15 7.5 7.5 0 000-15v4a3.5 3.5 0 010 7 3.5 3.5 0 010-7%22/%3E%3C/svg%3E")}.oo-ui-image-invert.oo-ui-icon-settings,.mw-ui-icon-settings-invert:before{background-image:url(/w/load.php?modules=ext.popups.icons&image=settings&variant=invert&format=rasterized&skin=vector&version=gwvfb);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Esettings%3C/title%3E%3Cg fill=%22%23fff%22%3E%3Cg xmlns:xlink=%22http://www.w3.org/1999/xlink%22 transform=%22translate%2810 10%29%22%3E%3Cpath id=%22a%22 d=%22M1.5-10h-3l-1 6.5h5m0 7h-5l1 6.5h3%22/%3E%3Cuse transform=%22rotate%2845%29%22 xlink:href=%22%23a%22/%3E%3Cuse transform=%22rotate%2890%29%22 xlink:href=%22%23a%22/%3E%3Cuse transform=%22rotate%28135%29%22 xlink:href=%22%23a%22/%3E%3C/g%3E%3Cpath d=%22M10 2.5a7.5 7.5 0 000 15 7.5 7.5 0 000-15v4a3.5 3.5 0 010 7 3.5 3.5 0 010-7%22/%3E%3C/g%3E%3C/svg%3E")}.oo-ui-image-progressive.oo-ui-icon-settings,.mw-ui-icon-settings-progressive:before{background-image:url(/w/load.php?modules=ext.popups.icons&image=settings&variant=progressive&format=rasterized&skin=vector&version=gwvfb);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Esettings%3C/title%3E%3Cg fill=%22%2336c%22%3E%3Cg xmlns:xlink=%22http://www.w3.org/1999/xlink%22 transform=%22translate%2810 10%29%22%3E%3Cpath id=%22a%22 d=%22M1.5-10h-3l-1 6.5h5m0 7h-5l1 6.5h3%22/%3E%3Cuse transform=%22rotate%2845%29%22 xlink:href=%22%23a%22/%3E%3Cuse transform=%22rotate%2890%29%22 xlink:href=%22%23a%22/%3E%3Cuse transform=%22rotate%28135%29%22 xlink:href=%22%23a%22/%3E%3C/g%3E%3Cpath d=%22M10 2.5a7.5 7.5 0 000 15 7.5 7.5 0 000-15v4a3.5 3.5 0 010 7 3.5 3.5 0 010-7%22/%3E%3C/g%3E%3C/svg%3E")}
+.mw-ui-icon-popups-close:before{background-image:url(/w/load.php?modules=ext.popups.images&image=popups-close&format=rasterized&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E close %3C/title%3E %3Cpath d=%22m4.34 2.93 12.73 12.73-1.41 1.41L2.93 4.35z%22/%3E %3Cpath d=%22M17.07 4.34 4.34 17.07l-1.41-1.41L15.66 2.93z%22/%3E %3C/svg%3E")}.mw-ui-icon-preview-generic:before{background-image:url(/w/load.php?modules=ext.popups.images&image=preview-generic&format=rasterized&lang=en&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E sad face %3C/title%3E %3Cpath d=%22M2 0a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm4 4c1.336 0 2.007 1.617 1.06 2.56-.943.947-2.56.276-2.56-1.06A1.5 1.5 0 0 1 6 4zm8 0c1.336 0 2.007 1.617 1.06 2.56-.943.947-2.56.276-2.56-1.06A1.5 1.5 0 0 1 14 4zm-4 5c2.61 0 4.83.67 5.65 3H4.35C5.17 9.67 7.39 9 10 9z%22/%3E %3C/svg%3E")}.mw-ui-icon-footer:before{background-image:url(/w/load.php?modules=ext.popups.images&image=footer&format=rasterized&lang=en&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 xmlns:xlink=%22http://www.w3.org/1999/xlink%22 width=%22230%22 height=%22179%22 viewBox=%220 0 230 179%22%3E %3Cdefs%3E %3Crect id=%22a%22 width=%22201%22 height=%2213%22 rx=%222%22/%3E %3Crect id=%22b%22 width=%22201%22 height=%22169%22 y=%2210%22 rx=%222%22/%3E %3Crect id=%22c%22 width=%2230%22 height=%222%22 x=%22135%22 y=%22158%22 rx=%221%22/%3E %3C/defs%3E %3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E %3Cg transform=%22matrix%281 0 0 -1 0 13%29%22%3E %3Cuse fill=%22%23f8f9fa%22 xlink:href=%22%23a%22/%3E %3Crect width=%22199%22 height=%2211%22 x=%221%22 y=%221%22 stroke=%22%23a2a9b1%22 stroke-width=%222%22 rx=%222%22/%3E %3C/g%3E %3Cuse fill=%22%23fff%22 xlink:href=%22%23b%22/%3E %3Crect width=%22199%22 height=%22167%22 x=%221%22 y=%2211%22 stroke=%22%23a2a9b1%22 stroke-width=%222%22 rx=%222%22/%3E %3Cg fill=%22%2372777d%22 opacity=%22.4%22 transform=%22translate%2867 35%29%22%3E %3Crect width=%2273%22 height=%222%22 y=%227%22 fill=%22%23c8ccd1%22 rx=%221%22/%3E %3Crect width=%2281%22 height=%222%22 y=%2231%22 rx=%221%22/%3E %3Crect width=%2232%22 height=%222%22 y=%2285%22 rx=%221%22/%3E %3Crect width=%2273%22 height=%222%22 x=%2235%22 y=%2285%22 rx=%221%22/%3E %3Crect width=%2217%22 height=%222%22 y=%2245%22 rx=%221%22/%3E %3Crect width=%2217%22 height=%222%22 x=%2291%22 y=%2245%22 rx=%221%22/%3E %3Crect width=%2268%22 height=%222%22 x=%2220%22 y=%2245%22 rx=%221%22/%3E %3Crect width=%2217%22 height=%222%22 y=%2278%22 rx=%221%22/%3E %3Crect width=%2237%22 height=%222%22 x=%2272%22 y=%2278%22 rx=%221%22/%3E %3Crect width=%2249%22 height=%222%22 x=%2220%22 y=%2278%22 rx=%221%22/%3E %3Crect width=%2224%22 height=%222%22 x=%2284%22 y=%2231%22 rx=%221%22 transform=%22matrix%28-1 0 0 1 192 0%29%22/%3E %3Crect width=%2281%22 height=%222%22 y=%2266%22 rx=%221%22/%3E %3Crect width=%2214%22 height=%222%22 x=%2254%22 y=%2224%22 rx=%221%22/%3E %3Crect width=%2237%22 height=%222%22 x=%2271%22 y=%2224%22 rx=%221%22/%3E %3Crect width=%2251%22 height=%222%22 y=%2224%22 rx=%221%22/%3E %3Crect width=%22108%22 height=%222%22 y=%2259%22 rx=%221%22/%3E %3Crect width=%22108%22 height=%222%22 y=%2252%22 rx=%221%22/%3E %3Crect width=%22108%22 height=%222%22 y=%2292%22 rx=%221%22/%3E %3Crect width=%22108%22 height=%222%22 y=%2238%22 rx=%221%22/%3E %3Crect width=%2251%22 height=%222%22 rx=%221%22/%3E %3C/g%3E %3Crect width=%2230%22 height=%222%22 x=%2267%22 y=%22158%22 fill=%22%2372777d%22 opacity=%22.4%22 rx=%221%22/%3E %3Crect width=%2230%22 height=%222%22 x=%2299%22 y=%22158%22 fill=%22%2372777d%22 opacity=%22.4%22 rx=%221%22/%3E %3Cuse fill=%22%2336c%22 xlink:href=%22%23c%22/%3E %3Crect width=%2233%22 height=%225%22 x=%22133.5%22 y=%22156.5%22 stroke=%22%23ffc057%22 stroke-opacity=%22.447%22 stroke-width=%223%22 rx=%222.5%22/%3E %3Ccircle cx=%2234%22 cy=%2249%22 r=%2219%22 fill=%22%23eaecf0%22/%3E %3Cg fill=%22%23a2a9b1%22 transform=%22translate%285 5%29%22%3E %3Ccircle cx=%221.5%22 cy=%221.5%22 r=%221.5%22/%3E %3Ccircle cx=%226%22 cy=%221.5%22 r=%221.5%22/%3E %3Ccircle cx=%2210.5%22 cy=%221.5%22 r=%221.5%22/%3E %3C/g%3E %3Cpath stroke=%22%23ff00af%22 stroke-linecap=%22square%22 d=%22M174.5 159.5h54.01%22/%3E %3C/g%3E %3C/svg%3E")}.mw-ui-icon-preview-disambiguation:before{background-image:url(/w/load.php?modules=ext.popups.images&image=preview-disambiguation&format=rasterized&lang=en&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E articles %3C/title%3E %3Cpath d=%22M5 0v2h11v14h2V2a2 2 0 0 0-2-2z%22/%3E %3Cpath d=%22M13 20a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2zM9 5h4v5H9zM4 5h4v1H4zm0 2h4v1H4zm0 2h4v1H4zm0 2h9v1H4zm0 2h9v1H4zm0 2h9v1H4z%22/%3E %3C/svg%3E")}.mw-ui-icon-reference-generic:before{background-image:url(/w/load.php?modules=ext.popups.images&image=reference-generic&format=rasterized&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E reference %3C/title%3E %3Cpath d=%22m15 10-2.78-2.78L9.44 10V1H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z%22/%3E %3C/svg%3E")}.mw-ui-icon-reference-book:before{background-image:url(/w/load.php?modules=ext.popups.images&image=reference-book&format=rasterized&lang=en&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E book %3C/title%3E %3Cpath d=%22M15 2a7.65 7.65 0 0 0-5 2 7.65 7.65 0 0 0-5-2H1v15h4a7.65 7.65 0 0 1 5 2 7.65 7.65 0 0 1 5-2h4V2zm2.5 13.5H14a4.38 4.38 0 0 0-3 1V5s1-1.5 4-1.5h2.5z%22/%3E %3Cpath d=%22M9 3.5h2v1H9z%22/%3E %3C/svg%3E")}.mw-ui-icon-reference-journal:before{background-image:url(/w/load.php?modules=ext.popups.images&image=reference-journal&format=rasterized&lang=en&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E journal %3C/title%3E %3Cpath d=%22M2 18.5A1.5 1.5 0 0 0 3.5 20H5V0H3.5A1.5 1.5 0 0 0 2 1.5zM6 0v20h10a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm7 8H8V7h5zm3-2H8V5h8z%22/%3E %3C/svg%3E")}.mw-ui-icon-reference-news:before{background-image:url(/w/load.php?modules=ext.popups.images&image=reference-news&format=rasterized&lang=en&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E newspaper %3C/title%3E %3Cpath d=%22M5 2a2 2 0 0 0-2 2v12a1 1 0 0 1-1-1V5h-.5A1.5 1.5 0 0 0 0 6.5v10A1.5 1.5 0 0 0 1.5 18H18a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm1 2h11v4H6zm0 6h6v1H6zm0 2h6v1H6zm0 2h6v1H6zm7-4h4v5h-4z%22/%3E %3C/svg%3E")}.mw-ui-icon-reference-web:before{background-image:url(/w/load.php?modules=ext.popups.images&image=reference-web&format=rasterized&lang=en&skin=vector&version=1o8j0);background-image:linear-gradient(transparent,transparent),url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E %3Ctitle%3E browser %3C/title%3E %3Cpath d=%22M2 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm2 1.5A1.5 1.5 0 1 1 2.5 5 1.5 1.5 0 0 1 4 3.5zM18 16H2V8h16z%22/%3E %3C/svg%3E")}
+.ve-activated .ve-init-mw-desktopArticleTarget-editableContent #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent,.ve-active .ve-init-mw-tempWikitextEditorWidget{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not(.ve-init-mw-desktopArticleTarget-loading-overlay), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0.5}.ve-activated #firstHeading{ -webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;pointer-events:auto;cursor:text}.ve-activated #firstHeading a{ pointer-events:none}.ve-activated #catlinks{cursor:pointer}.ve-activated #catlinks a{opacity:1}.ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;top:1.25em;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-toolbarPlaceholder{transition:height 250ms ease;height:0; } .oo-ui-element-hidden{display:none !important; } .mw-editsection{ unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection:before{content:'\200B'}.mw-editsection a{white-space:nowrap}.mw-editsection-divider{color:#54595d} .ve-init-mw-desktopArticleTarget-toolbarPlaceholder{border-bottom:1px solid #c8ccd1;box-shadow:0 1px 1px 0 rgba(0,0,0,0.1)}.ve-init-mw-desktopArticleTarget-toolbarPlaceholder-open{height:42px} .ve-init-mw-desktopArticleTarget-toolbar,.ve-init-mw-desktopArticleTarget-toolbarPlaceholder{font-size:0.875em;margin:-1.42857143em -0.57142857em 1.42857143em -0.57142857em}.skin-vector-legacy .ve-init-mw-desktopArticleTarget-toolbar,.skin-vector-legacy .ve-init-mw-desktopArticleTarget-toolbarPlaceholder{ margin:-1.14em -1.14em 1.14em -1.14em; }@media screen and (min-width:982px){.skin-vector-legacy .ve-init-mw-desktopArticleTarget-toolbar,.skin-vector-legacy .ve-init-mw-desktopArticleTarget-toolbarPlaceholder{ margin:-1.43em -1.71em 1.43em -1.71em}}</style><style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.mw-collapsible-toggle-default:before{content:'['}.mw-collapsible-toggle-default:after{content:']'}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none}
+@-webkit-keyframes mwe-popups-fade-in-up{0%{opacity:0;-webkit-transform:translate(0,20px);-ms-transform:translate(0,20px);transform:translate(0,20px)}100%{opacity:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}}@keyframes mwe-popups-fade-in-up{0%{opacity:0;-webkit-transform:translate(0,20px);-ms-transform:translate(0,20px);transform:translate(0,20px)}100%{opacity:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}}@-webkit-keyframes mwe-popups-fade-in-down{0%{opacity:0;-webkit-transform:translate(0,-20px);-ms-transform:translate(0,-20px);transform:translate(0,-20px)}100%{opacity:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}}@keyframes mwe-popups-fade-in-down{0%{opacity:0;-webkit-transform:translate(0,-20px);-ms-transform:translate(0,-20px);transform:translate(0,-20px)}100%{opacity:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}}@-webkit-keyframes mwe-popups-fade-out-down{0%{opacity:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}100%{opacity:0;-webkit-transform:translate(0,20px);-ms-transform:translate(0,20px);transform:translate(0,20px)}}@keyframes mwe-popups-fade-out-down{0%{opacity:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}100%{opacity:0;-webkit-transform:translate(0,20px);-ms-transform:translate(0,20px);transform:translate(0,20px)}}@-webkit-keyframes mwe-popups-fade-out-up{0%{opacity:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}100%{opacity:0;-webkit-transform:translate(0,-20px);-ms-transform:translate(0,-20px);transform:translate(0,-20px)}}@keyframes mwe-popups-fade-out-up{0%{opacity:1;-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}100%{opacity:0;-webkit-transform:translate(0,-20px);-ms-transform:translate(0,-20px);transform:translate(0,-20px)}}.mwe-popups-fade-in-up{-webkit-animation:mwe-popups-fade-in-up 0.2s ease forwards;animation:mwe-popups-fade-in-up 0.2s ease forwards}.mwe-popups-fade-in-down{-webkit-animation:mwe-popups-fade-in-down 0.2s ease forwards;animation:mwe-popups-fade-in-down 0.2s ease forwards}.mwe-popups-fade-out-down{-webkit-animation:mwe-popups-fade-out-down 0.2s ease forwards;animation:mwe-popups-fade-out-down 0.2s ease forwards}.mwe-popups-fade-out-up{-webkit-animation:mwe-popups-fade-out-up 0.2s ease forwards;animation:mwe-popups-fade-out-up 0.2s ease forwards}  #mwe-popups-settings{z-index:1000;background:#fff;width:420px;border:1px solid #a2a9b1;box-shadow:0 2px 2px 0 rgba(0,0,0,0.25);border-radius:2px;font-size:14px}#mwe-popups-settings header{-moz-box-sizing:border-box;box-sizing:border-box;border-bottom:1px solid #c8ccd1;position:relative;display:table;width:100%;padding:5px 7px 5px 0}#mwe-popups-settings header > div{display:table-cell;width:3.5em;vertical-align:middle;cursor:pointer}#mwe-popups-settings header h1{margin-bottom:0.6em;padding-top:0.5em;border:0;width:100%;font-family:sans-serif;font-size:18px;font-weight:bold;text-align:center}#mwe-popups-settings .mwe-ui-icon-popups-close{opacity:0.87;-webkit-transition:opacity 100ms;transition:opacity 100ms}#mwe-popups-settings .mwe-ui-icon-popups-close:hover{opacity:0.73}#mwe-popups-settings .mwe-ui-icon-popups-close:active{opacity:1}#mwe-popups-settings main#mwe-popups-settings-form{display:block;width:350px;padding:32px 0 24px;margin:0 auto}#mwe-popups-settings main#mwe-popups-settings-form p{color:#54595d;font-size:14px;margin:16px 0 0}#mwe-popups-settings main#mwe-popups-settings-form p:first-child{margin-top:0}#mwe-popups-settings main#mwe-popups-settings-form form img{margin-right:60px}#mwe-popups-settings main#mwe-popups-settings-form form input{margin-right:10px}#mwe-popups-settings main#mwe-popups-settings-form form label{font-size:13px;line-height:16px;width:300px}#mwe-popups-settings main#mwe-popups-settings-form form label > span{color:#000;font-size:14px;font-weight:bold;display:block;margin-bottom:5px}#mwe-popups-settings main#mwe-popups-settings-form form label:before{top:0.78125em !important}.mwe-popups-settings-help{font-size:13px;font-weight:800;margin:40px;position:relative}.mwe-popups-settings-help .mw-ui-icon:before,.mwe-popups-settings-help .mw-ui-icon{background-size:contain;height:140px;width:180px;max-width:none;margin:0;padding:0}.mwe-popups-settings-help p{left:180px;bottom:20px;position:absolute}.mwe-popups{background:#fff;position:absolute;z-index:110;box-shadow:0 30px 90px -20px rgba(0,0,0,0.3),0 0 1px 1px rgba(0,0,0,0.05);padding:0;display:none;font-size:14px;line-height:20px;min-width:300px;border-radius:2px; }.mwe-popups .mw-ui-icon-preview-disambiguation,.mwe-popups .mw-ui-icon-preview-generic{opacity:0.25}.mwe-popups .mwe-popups-container{color:#202122;margin-top:-8px;padding-top:9px;text-decoration:none}.mwe-popups .mwe-popups-container footer{padding:0 16px 16px;margin:0;font-size:10px;position:absolute;bottom:0;left:0}.mwe-popups .mwe-popups-settings-icon{display:block;float:right;border-radius:2px;opacity:0.67;-webkit-transition:background-color 100ms,opacity 100ms;transition:background-color 100ms,opacity 100ms}.mwe-popups .mwe-popups-settings-icon:hover{background-color:#eaecf0}.mwe-popups .mwe-popups-settings-icon:active{background-color:#c8ccd1;opacity:1}.mwe-popups .mwe-popups-extract{margin:16px;display:block;color:#202122;text-decoration:none;position:relative;   }.mwe-popups .mwe-popups-extract:hover{text-decoration:none}.mwe-popups .mwe-popups-extract:after,.mwe-popups .mwe-popups-extract blockquote:after{content:' ';position:absolute;bottom:0;width:25%;height:20px;background-color:transparent;pointer-events:none}.mwe-popups .mwe-popups-extract[dir='ltr']:after{ right:0; background-image:-webkit-linear-gradient(to right,rgba(255,255,255,0),#ffffff 50%); background-image:linear-gradient(to right,rgba(255,255,255,0),#ffffff 50%)}.mwe-popups .mwe-popups-extract[dir='rtl']:after{ left:0; background-image:-webkit-linear-gradient(to left,rgba(255,255,255,0),#ffffff 50%); background-image:linear-gradient(to left,rgba(255,255,255,0),#ffffff 50%)}.mwe-popups .mwe-popups-extract blockquote:after{width:100%;height:25px; bottom:0; background-image:-webkit-linear-gradient(to bottom,rgba(255,255,255,0),#ffffff 75%); background-image:linear-gradient(to bottom,rgba(255,255,255,0),#ffffff 75%)}.mwe-popups .mwe-popups-extract p{margin:0}.mwe-popups .mwe-popups-extract ul,.mwe-popups .mwe-popups-extract ol,.mwe-popups .mwe-popups-extract li,.mwe-popups .mwe-popups-extract dl,.mwe-popups .mwe-popups-extract dd,.mwe-popups .mwe-popups-extract dt{margin-top:0;margin-bottom:0}.mwe-popups svg{overflow:hidden}.mwe-popups.mwe-popups-is-tall{width:450px}.mwe-popups.mwe-popups-is-tall > div > a > svg{vertical-align:middle}.mwe-popups.mwe-popups-is-tall .mwe-popups-extract{width:215px;height:180px;overflow:hidden;float:left}.mwe-popups.mwe-popups-is-tall .mwe-popups-extract + footer{left:0;right:203px}.rtl .mwe-popups.mwe-popups-is-tall .mwe-popups-extract + footer{ right:-12px;width:215px}.mwe-popups.mwe-popups-is-not-tall{width:320px}.mwe-popups.mwe-popups-is-not-tall .mwe-popups-extract{min-height:42px;max-height:140px;overflow:hidden;margin-bottom:44px;padding-bottom:0}.mwe-popups.mwe-popups-is-not-tall footer{width:290px}.mwe-popups .mwe-popups-container.footer-empty .mwe-popups-extract{margin-bottom:16px}.mwe-popups .mwe-popups-container.footer-empty .mwe-popups-extract .mwe-popups-scroll{max-height:379px}.mwe-popups.flipped-y .mwe-popups-container.footer-empty .mwe-popups-extract,.mwe-popups.flipped-x-y .mwe-popups-container.footer-empty .mwe-popups-extract{margin-bottom:24px}.mwe-popups.mwe-popups-type-generic .mwe-popups-extract,.mwe-popups.mwe-popups-type-disambiguation .mwe-popups-extract{min-height:auto;padding-top:4px;margin-top:0;margin-bottom:var(--margin-bottom);--margin-bottom:60px}.mwe-popups.mwe-popups-type-generic .mwe-popups-read-link,.mwe-popups.mwe-popups-type-disambiguation .mwe-popups-read-link{font-weight:bold;font-size:12px}.mwe-popups.mwe-popups-type-generic .mwe-popups-extract:hover + footer .mwe-popups-read-link,.mwe-popups.mwe-popups-type-disambiguation .mwe-popups-extract:hover + footer .mwe-popups-read-link{text-decoration:underline}.mwe-popups.mwe-popups-no-image-pointer:before{content:'';position:absolute;border:8px solid transparent;border-top:0;border-bottom:8px solid rgba(0,0,0,0.07000000000000001);top:-8px;left:10px}.mwe-popups.mwe-popups-no-image-pointer:after{content:'';position:absolute;border:11px solid transparent;border-top:0;border-bottom:11px solid #ffffff;top:-7px;left:7px}.mwe-popups.flipped-x.mwe-popups-no-image-pointer:before{left:auto;right:10px}.mwe-popups.flipped-x.mwe-popups-no-image-pointer:after{left:auto;right:7px}.mwe-popups.mwe-popups-image-pointer:before{content:'';position:absolute;border:9px solid transparent;border-top:0;border-bottom:9px solid #a2a9b1;top:-9px;left:9px;z-index:111}.mwe-popups.mwe-popups-image-pointer:after{content:'';position:absolute;border:12px solid transparent;border-top:0;border-bottom:12px solid #ffffff;top:-8px;left:6px;z-index:112}.mwe-popups.mwe-popups-image-pointer.flipped-x:before{content:'';position:absolute;border:9px solid transparent;border-top:0;border-bottom:9px solid #a2a9b1;top:-9px;left:293px}.mwe-popups.mwe-popups-image-pointer.flipped-x:after{content:'';position:absolute;border:12px solid transparent;border-top:0;border-bottom:12px solid #ffffff;top:-8px;left:290px}.mwe-popups.mwe-popups-image-pointer .mwe-popups-extract{padding-top:16px;margin-top:200px}.mwe-popups.mwe-popups-image-pointer > div > a > svg{margin-top:-8px;position:absolute;z-index:113;left:0}.mwe-popups.flipped-x.mwe-popups-is-tall{min-height:242px}.mwe-popups.flipped-x.mwe-popups-is-tall:before{content:'';position:absolute;border:9px solid transparent;border-top:0;border-bottom:9px solid #a2a9b1;top:-9px;left:420px;z-index:111}.mwe-popups.flipped-x.mwe-popups-is-tall > div > a > svg{margin:0;margin-top:-8px;margin-bottom:-7px;position:absolute;z-index:113;right:0}.mwe-popups.flipped-x.mwe-popups-is-tall .mwe-popups-extract{margin-top:8px}.mwe-popups.flipped-x-y:before{content:'';position:absolute;border:9px solid transparent;border-bottom:0;border-top:9px solid #a2a9b1;bottom:-9px;left:293px;z-index:111}.mwe-popups.flipped-x-y:after{content:'';position:absolute;border:12px solid transparent;border-bottom:0;border-top:12px solid #ffffff;bottom:-8px;left:290px;z-index:112}.mwe-popups.flipped-x-y.mwe-popups-is-tall{min-height:242px}.mwe-popups.flipped-x-y.mwe-popups-is-tall:before{content:'';position:absolute;border:9px solid transparent;border-bottom:0;border-top:9px solid #a2a9b1;bottom:-9px;left:420px}.mwe-popups.flipped-x-y.mwe-popups-is-tall:after{content:'';position:absolute;border:12px solid transparent;border-bottom:0;border-top:12px solid #ffffff;bottom:-8px;left:417px}.mwe-popups.flipped-x-y.mwe-popups-is-tall > div > a > svg{margin:0;margin-bottom:-9px;position:absolute;z-index:113;right:0}.mwe-popups.flipped-y:before{content:'';position:absolute;border:8px solid transparent;border-bottom:0;border-top:8px solid #a2a9b1;bottom:-8px;left:10px}.mwe-popups.flipped-y:after{content:'';position:absolute;border:11px solid transparent;border-bottom:0;border-top:11px solid #ffffff;bottom:-7px;left:7px}.mwe-popups-is-tall polyline{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}.mwe-popups-is-tall.flipped-x-y polyline{-webkit-transform:translate(0,-8px);-ms-transform:translate(0,-8px);transform:translate(0,-8px)}.mwe-popups-is-tall.flipped-x polyline{-webkit-transform:translate(0,8px);-ms-transform:translate(0,8px);transform:translate(0,8px)}.rtl .mwe-popups-is-tall polyline{-webkit-transform:translate(-100%,0);-ms-transform:translate(-100%,0);transform:translate(-100%,0)}.rtl .mwe-popups-is-tall.flipped-x-y polyline{-webkit-transform:translate(-100%,-8px);-ms-transform:translate(-100%,-8px);transform:translate(-100%,-8px)}.rtl .mwe-popups-is-tall.flipped-x polyline{-webkit-transform:translate(-100%,8px);-ms-transform:translate(-100%,8px);transform:translate(-100%,8px)}@supports (clip-path:polygon(1px 1px)){.mwe-popups .mwe-popups-thumbnail{display:block;object-fit:cover;outline:1px solid rgba(0,0,0,0.1)}.mwe-popups .mwe-popups-extract[dir='rtl'] + footer{ left:unset; right:0}.mwe-popups .mwe-popups-extract[dir='rtl'] + footer .mwe-popups-settings-icon{ float:left}.mwe-popups.flipped-y .mwe-popups-discreet,.mwe-popups.flipped-x-y .mwe-popups-discreet{margin-bottom:0}.mwe-popups.flipped-y .mwe-popups-container,.mwe-popups.flipped-x-y .mwe-popups-container{--y1:100%;--y2:calc(100% - var(--pointer-height));--y3:calc(100% - var(--pointer-height) - var(--pseudo-radius));--y4:var(--pseudo-radius);--y5:0;margin-bottom:-9px;margin-top:0}.mwe-popups .mwe-popups-container{--x1:0;--x2:var(--pseudo-radius);--x3:calc(var(--pointer-offset) - (var(--pointer-width) / 2));--x4:var(--pointer-offset);--x5:calc(var(--pointer-offset) + (var(--pointer-width) / 2));--x6:calc(100% - var(--pseudo-radius));--x7:100%;--y1:0;--y2:var(--pointer-height);--y3:calc(var(--pointer-height) + var(--pseudo-radius));--y4:calc(100% - var(--pseudo-radius));--y5:100%;padding-top:0;display:flex;background:#fff;--pseudo-radius:2px;--pointer-height:8px;--pointer-width:16px;--pointer-offset:26px;clip-path:polygon(var(--x2) var(--y2),var(--x3) var(--y2),var(--x4) var(--y1),var(--x5) var(--y2),var(--x6) var(--y2),var(--x7) var(--y3),var(--x7) var(--y4),var(--x6) var(--y5),var(--x2) var(--y5),var(--x1) var(--y4),var(--x1) var(--y3))}.mwe-popups.mwe-popups-is-tall{flex-direction:row}.mwe-popups.mwe-popups-is-tall .mwe-popups-discreet{order:1}.mwe-popups.mwe-popups-is-tall .mwe-popups-discreet .mwe-popups-thumbnail{width:203px;box-sizing:border-box;height:250px}.mwe-popups.mwe-popups-is-not-tall .mwe-popups-thumbnail{width:320px;height:192px}.mwe-popups.mwe-popups-is-not-tall .mwe-popups-container{flex-direction:column}.mwe-popups:before{display:none}.mwe-popups:after{display:none}.mwe-popups.mwe-popups-image-pointer .mwe-popups-discreet{margin-bottom:0}.mwe-popups.mwe-popups-image-pointer .mwe-popups-extract{margin-top:0}.mwe-popups:not(.flipped-y):not(.flipped-x-y):not(.mwe-popups-image-pointer):not(.mwe-popups-type-disambiguation) .mwe-popups-extract{padding-top:var(--pointer-height)}.mwe-popups.mwe-popups-type-generic:not(.flipped-y):not(.flipped-x-y) .mwe-popups-container,.mwe-popups.mwe-popups-type-disambiguation:not(.flipped-y):not(.flipped-x-y) .mwe-popups-container{padding-top:var(--pointer-height)}.mwe-popups.mwe-popups-type-generic:not(.flipped-y):not(.flipped-x-y) .mwe-popups-container .mwe-popups-extract,.mwe-popups.mwe-popups-type-disambiguation:not(.flipped-y):not(.flipped-x-y) .mwe-popups-container .mwe-popups-extract{margin-bottom:calc(var(--margin-bottom) - var(--pointer-height))}body.ltr .mwe-popups.flipped-x .mwe-popups-container,body.ltr .mwe-popups.flipped-x-y .mwe-popups-container,body.rtl .mwe-popups:not(.flipped-x):not(.flipped-x-y) .mwe-popups-container{--x3:calc(100% - var(--pointer-offset) - (var(--pointer-width) / 2));--x4:calc(100% - var(--pointer-offset));--x5:calc(100% - var(--pointer-offset) + (var(--pointer-width) / 2))}}.mwe-popups .mwe-popups-title{display:block;font-weight:bold;margin:0 16px}#mw-content-text .reference a[href*='#'] *{pointer-events:none}.mwe-popups.mwe-popups-type-reference .mwe-popups-title{margin:0 0 12px 0}.mwe-popups.mwe-popups-type-reference .mwe-popups-title .mw-ui-icon{padding:0 8px 0 0}.mwe-popups.mwe-popups-type-reference .mwe-popups-title .mw-ui-icon:hover{ background-color:transparent !important}.mwe-popups.mwe-popups-type-reference .mwe-popups-title .mw-ui-icon-reference-note{display:none}.mwe-popups.mwe-popups-type-reference .mwe-popups-extract{margin-right:0;max-height:inherit}.mwe-popups.mwe-popups-type-reference .mwe-popups-extract .mwe-popups-scroll{max-height:348px;overflow:auto;padding-right:16px}.mwe-popups.mwe-popups-type-reference .mwe-popups-extract .mw-parser-output{overflow-wrap:break-word}.mwe-popups.mwe-popups-type-reference .mwe-popups-extract:after{display:none}.mwe-popups.mwe-popups-type-reference .mwe-popups-extract .mwe-popups-fade{position:absolute;width:100%;height:20px;background-color:transparent;background-image:-webkit-linear-gradient(top,rgba(255,255,255,0),#ffffff);background-image:linear-gradient(rgba(255,255,255,0),#ffffff);opacity:0;pointer-events:none;-webkit-transition:opacity 250ms ease;transition:opacity 250ms ease}.mwe-popups.mwe-popups-type-reference .mwe-popups-extract.mwe-popups-fade-out .mwe-popups-fade{opacity:1}.mwe-popups.mwe-popups-type-reference .mwe-collapsible-placeholder{font-weight:bold;margin:1em 0;position:relative}.mwe-popups.mwe-popups-type-reference .mwe-collapsible-placeholder .mw-ui-icon{margin-left:-0.78em;position:absolute}.mwe-popups.mwe-popups-type-reference .mwe-collapsible-placeholder .mwe-collapsible-placeholder-label{margin-left:2.5em}.mwe-popups-overlay{background-color:rgba(255,255,255,0.9);z-index:999;position:fixed;height:100%;width:100%;top:0;bottom:0;left:0;right:0;display:flex;justify-content:center;align-items:center}#mwe-popups-svg{position:absolute;top:-1000px}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/load.css">
+<meta name="generator" content="MediaWiki 1.37.0-wmf.21">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-crossorigin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Maximum_Subarray_Visualization.svg/1200px-Maximum_Subarray_Visualization.svg.png">
+<meta property="og:title" content="Maximum subarray problem - Wikipedia">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://upload.wikimedia.org/">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="https://en.m.wikipedia.org/wiki/Maximum_subarray_problem">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit">
+<link rel="edit" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit">
+<link rel="apple-touch-icon" href="https://en.wikipedia.org/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Maximum_subarray_problem rootpage-Maximum_subarray_problem skin-vector action-view skin-vector-legacy" data-new-gr-c-s-check-loaded="8.884.0" data-gr-ext-installed=""><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="centralNotice" class="cn-wlm2021">
+<style> 
+.skin-monobook #siteNotice p {
+   padding-left: 90px !important;
+   padding-right: 64px !important;
+   padding-top: 4px !important;
+}
+
+#mw-mf-page-center {
+    background-color: #fff;
+}
+
+/* Resets */
+.cbnnr * {
+    margin: 0;
+    padding: 0;
+}
+
+/* Box-sizing */
+.cbnnr,
+.cbnnr *,
+.cbnnr *:before,
+.cbnnr *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Font sizes and line heights */
+
+.cbnnr-message {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: medium;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #555A5F !important;
+    text-align: left;
+}
+
+.cbnnr-special .cbnnr-message {
+    color: #d9e0f5 !important;
+}
+
+.cbnnr-cta {
+    font-size: 15px;
+    font-weight: bold;
+    color: #222;
+}
+
+.cbnnr-special .cbnnr-cta {
+    color: white;
+}
+
+
+
+@media all and (min-width: 720px) {
+    .cbnnr-message { 
+        font-size: 18px; 
+        line-height: 1.5;
+     }
+    .cbnnr-cta { font-size: 20px; }
+}
+
+/* Styles */
+
+
+.cbnnr {
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+/* Hide banner when Wikipedia site search is enabled */
+.overlay-enabled .cbnnr {
+    display: none !important;
+}
+
+
+.cbnnr-main {
+    position: relative;
+    clear: both;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #8F0000;
+    min-height: 88px;
+}
+
+.cbnnr-special .cbnnr-main {
+    background-color: #c8ccd1;
+    border: none;
+}
+
+@media all and (min-width: 720px) {
+    .cbnnr-main {
+        padding: 15px;
+        min-height: 98px;
+    }
+}
+
+.skin-minerva .cbnnr-main {
+        border: none;
+        border-bottom: 1px solid #c8ccd1;
+    }
+
+@media all and (min-width: 1000px) {
+    .skin-minerva .cbnnr-main {
+        border: 1px solid #c8ccd1;
+        margin-top: 20px;
+    }
+}
+
+.cbnnr-message {
+    display: block;
+}
+
+.rtl .cbnnr-message {
+    text-align:right;
+}
+
+.cbnnr-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 2px;
+    overflow: hidden;
+    top: 50%;
+    position: absolute;
+    float: left;
+    transform: translateY(-50%);
+    left: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+.rtl .cbnnr-icon {
+    right: 15px;
+}
+@media all and (min-width: 720px) {
+    .cbnnr-icon {
+       left: 15px;
+    }
+    .rtl .cbnnr-icon {
+       right: 15px;
+    }
+}
+
+.cbnnr-icon-border {
+    border: 1px solid #c8ccd1;
+}
+
+.cbnnr-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cbnnr-icon-border img {
+    max-width: 80%;
+    max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.cbnnr-message p {
+    padding-left: 83px;
+    padding-right: 64px;
+    padding-top: 5px;
+    margin: auto;
+}
+
+.rtl .cbnnr-message p {
+    padding-right: 83px;
+    padding-left: 64px;
+    padding-top: 5px;
+    margin: auto;
+}
+
+.cbnnr-message-rimg p {
+    padding-left: 83px;
+    padding-right: 145px;
+    padding-top: 5px;
+    margin: auto;
+}
+
+.rtl .cbnnr-message-rimg p {
+    padding-right: 83px;
+    padding-left: 145px;
+    padding-top: 5px;
+    margin: auto;
+}
+
+@media all and (max-width: 720px) {
+    .cbnnr-message p  {
+       padding-left: 78px;
+       padding-right: 54px;
+       padding-top: 15px;
+    }
+    .rtl .cbnnr-message p  {
+       padding-right: 78px;
+       padding-left: 54px;
+       padding-top: 15px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .cbnnr-message p  {
+       padding-left: 5px;
+    }
+
+    .rtl .cbnnr-message p  {
+       padding-right: 75px;
+    }
+
+    .cbnnr-icon {
+       display:none;
+    }
+
+}
+
+@media all and (max-width: 500px) {
+    .skin-minerva .cbnnr-message p  {
+       padding-left: 78px;
+    }
+
+    .rtl .skin-minerva .cbnnr-message p  {
+       padding-left: 0;
+       padding-right: 78px;
+    }
+
+
+    .skin-minerva .cbnnr-icon {
+       display:block;
+    }
+
+}
+
+@media all and (max-width: 350px) {
+    .skin-minerva .cbnnr-message p  {
+       padding-left: 5px;
+    }
+
+
+    .skin-minerva .cbnnr-icon {
+       display:none;
+    }
+
+}
+.cbnnr-headline,
+.cbnnr-text {
+    display: block;
+}
+
+@media all and (min-width: 720px) {
+    .cbnnr-headline,
+    .cbnnr-text {
+        display: inline;
+    }
+    .cbnnr-headline:after {
+        content: ' | ';
+    }
+}
+
+.cbnnr-cta {
+    display: block;
+    margin-top: 4px;
+}
+
+@media all and (min-width: 720px) {
+    .cbnnr-cta {
+        margin-top: 2px;
+    }
+}
+
+.cbnnr-cta:hover {
+    text-decoration: underline;
+}
+
+.cbnnr-rightimg {
+    display:none;
+}
+
+.cbnnr-rightimgshow {
+    display:block;
+    top: 50%;
+    right: 75px;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.rtl .cbnnr-rightimgshow {
+    left: 75px;
+    right: unset;
+}
+
+@media all and (max-width: 720px) {
+    .cbnnr-rightimg {
+        display:none;
+    }
+}
+
+/* --- Close Options --- */
+
+.cbnnr-close {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 1;
+    opacity: .8;
+    background: #eaecf0;
+    border-radius: 50%;
+    padding: 12px;
+    width: 44px;
+    height: 44px;
+    transition: all .3s ease-in-out;  
+}
+
+.cbnnr-special .cbnnr-close {
+    background: rgba(255,255,255,.5);
+    opacity: 1;
+}
+
+body.rtl .cbnnr-close {
+    left: 10px;
+    right: unset;
+}
+
+@media all and (min-width: 720px) {
+    .cbnnr-close   {
+       right: 15px;
+    }
+    body.rtl .cbnnr-close {
+        left: 15px;
+        right: unset;
+    }
+}
+
+.cbnnr-close:hover { 
+    opacity: 1;
+}
+
+.cbnnr-special .cbnnr-close:hover  {
+    background: rgba(255,255,255,.7);
+}
+
+.cbnnr-close-icon {
+    background: 
+       linear-gradient(transparent,transparent),
+       url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Eclose%3C/title%3E%3Cpath d=%22M4.34 2.93l12.73 12.73-1.41 1.41L2.93 4.35z%22/%3E%3Cpath d=%22M17.07 4.34L4.34 17.07l-1.41-1.41L15.66 2.93z%22/%3E%3C/svg%3E");
+    height: 100%;
+    width: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.cbnnr-special .cbnnr-close-icon {
+    background: 
+       linear-gradient(transparent,transparent),
+       url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 fill=%22%23ffffff%22 viewBox=%220 0 20 20%22%3E%3Ctitle%3Eclose%3C/title%3E%3Cpath d=%22M4.34 2.93l12.73 12.73-1.41 1.41L2.93 4.35z%22/%3E%3Cpath d=%22M17.07 4.34L4.34 17.07l-1.41-1.41L15.66 2.93z%22/%3E%3C/svg%3E");
+}
+
+
+.cbnnr-special .cbnnr-close-icon  {
+    opacity: 1;
+}
+
+
+.cbnnr-special .cbnnr-close-icon {
+    /* need new svg */
+}
+
+.cbnnr-close-icon:hover { 
+    opacity: 1;
+}
+
+#cnotice-translation-link {
+    position: absolute;
+    right: 65px;
+    bottom: 0px;
+    font-size: 0.8em;
+    white-space: nowrap;
+}
+
+#cnotice-translation-link:hover {
+    text-decoration: underline;
+}
+
+.rtl #cnotice-translation-link {
+    text-align: left;
+    left: 65px;
+}
+
+</style>
+
+<div class="cbnnr" id="wlm_2021_fr" style="display: block;">
+
+    <div class="cbnnr-main">
+
+        <a href="https://commons.wikimedia.org/wiki/Commons:Wiki_Loves_Monuments_2021_in_France" class="cbnnr-message fade" id="banner1">
+
+            <figure class="cbnnr-icon ">
+                <img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/70px-Wiki_Loves_Monuments_Logo_notext.webp" alt="">
+            </figure>
+
+            <p>
+                <span class="cbnnr-text">Wiki Loves Monuments: Photograph a monument, help Wikipedia and win!</span>
+                <span class="cbnnr-cta">Learn more</span>
+            </p>
+
+            <figure class="cbnnr-rightimg">
+                <img src="" alt="">
+            </figure>
+
+        </a>
+
+        <div class="cbnnr-close">
+            <div class="cbnnr-close-icon" href="#" title="Hide" onclick="mw.centralNotice.hideBanner(); return false;"></div>
+        </div>
+
+    </div>
+
+</div>
+<script>
+var cbnnr = cbnnr || {};
+
+cbnnr.rewrite_url = function() {
+  url = '';
+  rimg = '';
+  switchlang ='';
+  switch(Geo.country) {
+
+   case 'XX':
+     url = 'https://www.wikilovesmonuments.org/?pk_campaign=Centralnotice';
+     break;
+
+  }
+ if(url!='') $("a.cbnnr-message").attr("href",url);
+ if(rimg!='') $(".cbnnr-rightimg img").css('display', 'block');
+ if(rimg!='') $(".cbnnr-rightimg img").attr('src', rimg);
+ if(rimg!='') $(".cbnnr-rightimg").addClass("cbnnr-rightimgshow");
+ if(rimg!='') $(".cbnnr-message").addClass("cbnnr-message-rimg");
+ if(switchlang!='') $(".cbnnr-text").html(switchlang);
+}
+
+cbnnr.show = function() {
+    $('.cbnnr').css('display', 'block');
+};
+
+$(function() {
+
+
+    if ( !mw.centralNotice.bannerData.hideResult ) {
+        cbnnr.rewrite_url();
+        cbnnr.show();
+    }
+
+});
+</script></div><!-- CentralNotice --></div>
+	<div class="mw-indicators">
+	</div>
+	<h1 id="firstHeading" class="firstHeading">Maximum subarray problem</h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From Wikipedia, the free encyclopedia</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" dir="ltr" lang="en"><div class="mw-parser-output"><div class="thumb tright"><div class="thumbinner" style="width:222px;"><a href="https://en.wikipedia.org/wiki/File:Maximum_Subarray_Visualization.svg" class="image"><img alt="" src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/220px-Maximum_Subarray_Visualization.png" decoding="async" class="thumbimage" srcset="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/330px-Maximum_Subarray_Visualization.png 1.5x, Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/440px-Maximum_Subarray_Visualization.png 2x" data-file-width="400" data-file-height="300" width="220" height="165"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://en.wikipedia.org/wiki/File:Maximum_Subarray_Visualization.svg" class="internal" title="Enlarge"></a></div>Visualization
+ of how sub-arrays change based on start and end positions of a sample. 
+ Each possible contiguous sub-array is represented by a point on a 
+colored line.  That point's y-coordinate represents the sum of the 
+sample.  Its x-coordinate represents the end of the sample, and the 
+leftmost point on that colored line represents the start of the sample. 
+In this case, the array from which samples are taken is [2, 3, -1, -20, 
+5, 10].</div></div></div>
+<p>In <a href="https://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>, the <b>maximum sum subarray problem</b> is the task of finding a contiguous subarray with the largest sum, within a given one-dimensional <a href="https://en.wikipedia.org/wiki/Array_data_structure" title="Array data structure">array</a> A[1...n] of numbers.  Formally, the task is to find indices <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle i}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>i</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle i}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/add78d8608ad86e54951b8c8bd6c8d8416533d20.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:0.802ex; height:2.176ex;" alt="i"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle j}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/2f461e54f5c093e92a55547b9764291390f0b5d0.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.027ex; width:0.985ex; height:2.509ex;" alt="j"></span> with <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle 1\leq i\leq j\leq n}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mn>1</mn>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>i</mi>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>j</mi>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>n</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle 1\leq i\leq j\leq n}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/95763b48b784f1cd453a4dc4a2c2f39e22997a43.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:13.613ex; height:2.509ex;" alt="{\displaystyle 1\leq i\leq j\leq n}"></span>, such that the sum
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \sum _{x=i}^{j}A[x]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>=</mo>
+            <mi>i</mi>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </munderover>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>x</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{x=i}^{j}A[x]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/3f4ae4590a685044ab6ba7cc8b23cc7c57f5689e.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:8.109ex; height:7.343ex;" alt="{\displaystyle \sum _{x=i}^{j}A[x]}"></span></dd></dl>
+<p>is as large as possible. (Some formulations of the problem also allow the empty subarray to be considered; by convention, <a href="https://en.wikipedia.org/wiki/Empty_sum" title="Empty sum">the sum of all values of the empty subarray</a> is zero.)  Each number in the input array A could be positive, negative, or zero.<sup id="cite_ref-FOOTNOTEBentley198969_1-0" class="reference"><a href="#cite_note-FOOTNOTEBentley198969-1">[1]</a></sup>
+</p><p>For example, for the array of values [−2, 1, −3, 4, −1, 2, 1, −5,
+ 4], the contiguous subarray with the largest sum is [4, −1, 2, 1], with
+ sum 6.
+</p><p>Some properties of this problem are: 
+</p>
+<ol><li>If the array contains all non-negative numbers, then the problem is trivial; a maximum subarray is the entire array.</li>
+<li>If the array contains all non-positive numbers, then a solution is 
+any subarray of size 1 containing the maximal value of the array (or the
+ empty subarray, if it is permitted).</li>
+<li>Several different sub-arrays may have the same maximum sum.</li></ol>
+<p>This problem can be solved using several different algorithmic techniques, including brute force,<sup id="cite_ref-FOOTNOTEBentley198970_2-0" class="reference"><a href="#cite_note-FOOTNOTEBentley198970-2">[2]</a></sup> divide and conquer,<sup id="cite_ref-FOOTNOTEBentley198973_3-0" class="reference"><a href="#cite_note-FOOTNOTEBentley198973-3">[3]</a></sup> dynamic programming,<sup id="cite_ref-FOOTNOTEBentley198974_4-0" class="reference"><a href="#cite_note-FOOTNOTEBentley198974-4">[4]</a></sup> and reduction to shortest paths.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="https://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (October 2019)">citation needed</span></a></i>]</sup>
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Applications"><span class="tocnumber">2</span> <span class="toctext">Applications</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Kadane's_algorithm"><span class="tocnumber">3</span> <span class="toctext">Kadane's algorithm</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Generalizations"><span class="tocnumber">4</span> <span class="toctext">Generalizations</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Notes"><span class="tocnumber">6</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#References"><span class="tocnumber">7</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#External_links"><span class="tocnumber">8</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit&amp;section=1" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The maximum subarray problem was proposed by <a href="https://en.wikipedia.org/wiki/Ulf_Grenander" title="Ulf Grenander">Ulf Grenander</a> in 1977 as a simplified model for <a href="https://en.wikipedia.org/wiki/Maximum_likelihood" class="mw-redirect" title="Maximum likelihood">maximum likelihood</a> estimation of patterns in digitized images.<sup id="cite_ref-FOOTNOTEBentley1984868-869_5-0" class="reference"><a href="#cite_note-FOOTNOTEBentley1984868-869-5">[5]</a></sup>
+</p><p>Grenander was looking to find a rectangular subarray with maximum
+ sum, in a two-dimensional array of real numbers.  A brute-force 
+algorithm for the two-dimensional problem runs in <i>O</i>(<i>n</i><sup>6</sup>)
+ time; because this was prohibitively slow, Grenander proposed the 
+one-dimensional problem to gain insight into its structure.  Grenander 
+derived an algorithm that solves the one-dimensional problem in <i>O</i>(<i>n</i><sup>2</sup>) time,<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[note 1]</a></sup>
+improving the brute force running time of <i>O</i>(<i>n</i><sup>3</sup>). When <a href="https://en.wikipedia.org/wiki/Michael_Shamos" class="mw-redirect" title="Michael Shamos">Michael Shamos</a> heard about the problem, he overnight devised an <i>O</i>(<i>n</i> log <i>n</i>) <a href="https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm" title="Divide-and-conquer algorithm">divide-and-conquer algorithm</a> for it.
+Soon after, Shamos described the one-dimensional problem and its history at a <a href="https://en.wikipedia.org/wiki/Carnegie_Mellon_University" title="Carnegie Mellon University">Carnegie Mellon University</a> seminar attended by <a href="https://en.wikipedia.org/wiki/Jay_Kadane" class="mw-redirect" title="Jay Kadane">Jay Kadane</a>, who designed within a minute an <i>O</i>(<i>n</i>)-time algorithm,<sup id="cite_ref-FOOTNOTEBentley1984868-869_5-1" class="reference"><a href="#cite_note-FOOTNOTEBentley1984868-869-5">[5]</a></sup><sup id="cite_ref-FOOTNOTEBentley198976-77_7-0" class="reference"><a href="#cite_note-FOOTNOTEBentley198976-77-7">[6]</a></sup><sup id="cite_ref-FOOTNOTEGries1982211_8-0" class="reference"><a href="#cite_note-FOOTNOTEGries1982211-8">[7]</a></sup> which is as fast as possible.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">[note 2]</a></sup> In 1982, <a href="https://en.wikipedia.org/wiki/David_Gries" title="David Gries">David Gries</a> obtained the same <i>O</i>(<i>n</i>)-time algorithm by applying <a href="https://en.wikipedia.org/wiki/Edsger_W._Dijkstra" title="Edsger W. Dijkstra">Dijkstra</a>'s "standard strategy";<sup id="cite_ref-FOOTNOTEGries1982209-211_10-0" class="reference"><a href="#cite_note-FOOTNOTEGries1982209-211-10">[8]</a></sup> in 1989, <a href="https://en.wikipedia.org/wiki/Richard_Bird_(computer_scientist)" title="Richard Bird (computer scientist)">Richard Bird</a> derived it by purely algebraic manipulation of the brute-force algorithm using the <a href="https://en.wikipedia.org/wiki/Bird%E2%80%93Meertens_formalism" title="Bird–Meertens formalism">Bird–Meertens formalism</a>.<sup id="cite_ref-FOOTNOTEBird1989Sect.8,_p.126_11-0" class="reference"><a href="#cite_note-FOOTNOTEBird1989Sect.8,_p.126-11">[9]</a></sup>
+</p><p>Grenander's two-dimensional generalization can be solved in O(<i>n</i><sup>3</sup>)
+ time either by using Kadane's algorithm as a subroutine, or through a 
+divide-and-conquer approach.  Slightly faster algorithms based on <a href="https://en.wikipedia.org/wiki/Min-plus_matrix_multiplication" title="Min-plus matrix multiplication">distance matrix multiplication</a> have been proposed by <a href="#CITEREFTamakiTokuyama1998">Tamaki &amp; Tokuyama (1998)</a> and by <a href="#CITEREFTakaoka2002">Takaoka (2002)</a>.
+ There is some evidence that no significantly faster algorithm exists; 
+an algorithm that solves the two-dimensional maximum subarray problem in
+ O(<i>n</i><sup>3−ε</sup>) time, for any ε&gt;0, would imply a similarly fast algorithm for the <a href="https://en.wikipedia.org/wiki/Shortest_path_problem#All-pairs_shortest_paths" title="Shortest path problem">all-pairs shortest paths</a> problem.<sup id="cite_ref-FOOTNOTEBackursDikkalaTzamos2016_12-0" class="reference"><a href="#cite_note-FOOTNOTEBackursDikkalaTzamos2016-12">[10]</a></sup>
+</p>
+<h2><span class="mw-headline" id="Applications">Applications</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit&amp;section=2" title="Edit section: Applications">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="box-Expert_needed plainlinks metadata ambox ambox-content" role="presentation"><tbody><tr><td class="mbox-image"><div style="width:52px"><img alt="" src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/40px-Ambox_important.webp" decoding="async" srcset="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/60px-Ambox_important.webp 1.5x, Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/80px-Ambox_important.webp 2x" data-file-width="40" data-file-height="40" width="40" height="40"></div></td><td class="mbox-text"><div class="mbox-text-span">This section <b>needs attention from an expert in Computational biology</b>. The specific problem is: <b>fix inline tags.</b><span class="hide-when-compact"> <a href="https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Computational_biology" class="mw-redirect" title="Wikipedia:WikiProject Computational biology">WikiProject Computational biology</a> may be able to help recruit an expert.</span>  <span class="date-container"><i>(<span class="date">September 2019</span>)</i></span></div></td></tr></tbody></table>
+<p>Maximum subarray problems arise in many fields, such as genomic <a href="https://en.wikipedia.org/wiki/Sequence_analysis" title="Sequence analysis">sequence analysis</a> and <a href="https://en.wikipedia.org/wiki/Computer_vision" title="Computer vision">computer vision</a>.
+</p><p>Genomic sequence analysis employs maximum subarray algorithms to identify important biological segments of protein sequences.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="https://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (March 2020)">citation needed</span></a></i>]</sup>
+ These problems include conserved segments, GC-rich regions, tandem 
+repeats, low-complexity filter, DNA binding domains, and regions of high
+ charge.<sup class="noprint Inline-Template Template-Fact" style="white-space:nowrap;">[<i><a href="https://en.wikipedia.org/wiki/Wikipedia:Citation_needed" title="Wikipedia:Citation needed"><span title="This claim needs references to reliable sources. (October 2017)">citation needed</span></a></i>]</sup>
+</p><p>In <a href="https://en.wikipedia.org/wiki/Computer_vision" title="Computer vision">computer vision</a>, maximum-subarray algorithms are used on bitmap images to detect the brightest area in an image.
+</p>
+<h2><span id="Kadane.27s_algorithm"></span><span class="mw-headline" id="Kadane's_algorithm">Kadane's algorithm</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit&amp;section=3" title="Edit section: Kadane's algorithm">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="wikitable collapsible collapsed mw-collapsible mw-collapsed mw-made-collapsible" align="right">
+<tbody><tr>
+<th><span class="mw-collapsible-toggle mw-collapsible-toggle-default mw-collapsible-toggle-collapsed" role="button" tabindex="0" aria-expanded="false"><a class="mw-collapsible-text">show</a></span>Example run
+</th></tr>
+<tr style="display: none;">
+<td><div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="https://en.wikipedia.org/wiki/File:Kadane_run_%E2%88%922,1,%E2%88%923,4,%E2%88%921,2,1,%E2%88%925,4.gif" class="image"><img alt="" src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/500px-Kadane_run_213412154.gif" decoding="async" class="thumbimage" srcset="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/750px-Kadane_run_213412154.gif 1.5x, Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/Kadane_run_213412154.gif 2x" data-file-width="849" data-file-height="926" width="500" height="545"></a>  <div class="thumbcaption"><div class="magnify"><a href="https://en.wikipedia.org/wiki/File:Kadane_run_%E2%88%922,1,%E2%88%923,4,%E2%88%921,2,1,%E2%88%925,4.gif" class="internal" title="Enlarge"></a></div>Execution of Kadane's algorithm on the <a href="#top">above</a> example array. <i><span style="color:#0000c0">Blue</span>:</i> subarray with largest sum ending at <i>i</i>; <i><span style="color:#00c000">green</span>:</i> subarray with largest sum encountered so far; a lower case letter indicates an empty array; variable <i>i</i> is left implicit in Python code.</div></div></div>
+</td></tr></tbody></table>
+<p><a href="https://en.wikipedia.org/wiki/Joseph_Born_Kadane" title="Joseph Born Kadane">Kadane's</a> original algorithm solves the problem version when empty subarrays are admitted. It scans the given array <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle A[1\ldots n]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mn>1</mn>
+        <mo>…<!-- … --></mo>
+        <mi>n</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A[1\ldots n]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/e3d1923568ccfdc916c6cd1c84cb282a32af9074.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:9.091ex; height:2.843ex;" alt="{\displaystyle A[1\ldots n]}"></span> from left to right. 
+In the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle j}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/2f461e54f5c093e92a55547b9764291390f0b5d0.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.027ex; width:0.985ex; height:2.509ex;" alt="j"></span>th step, it computes the subarray with the largest sum ending at <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle j}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/2f461e54f5c093e92a55547b9764291390f0b5d0.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.027ex; width:0.985ex; height:2.509ex;" alt="j"></span>; this sum is maintained in variable <code>current_sum</code>.<sup id="cite_ref-13" class="reference"><a href="#cite_note-13">[note 3]</a></sup>
+Moreover, it computes the subarray with the largest sum anywhere in <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle A[1\ldots j]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mn>1</mn>
+        <mo>…<!-- … --></mo>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A[1\ldots j]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/f81bf04402d996fbf9efe4c9e68c68d804022adf.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:8.655ex; height:2.843ex;" alt="{\displaystyle A[1\ldots j]}"></span>, maintained in variable <code>best_sum</code>,<sup id="cite_ref-14" class="reference"><a href="#cite_note-14">[note 4]</a></sup>
+and easily obtained as the maximum of all values of <code>current_sum</code> seen so far, cf. line 7 of the algorithm.
+</p><p>As a <a href="https://en.wikipedia.org/wiki/Loop_invariant" title="Loop invariant">loop invariant</a>, in the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle j}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/2f461e54f5c093e92a55547b9764291390f0b5d0.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.027ex; width:0.985ex; height:2.509ex;" alt="j"></span>th step, the old value of <code>current_sum</code> holds the maximum over all <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle i\in \{1,\ldots ,j\}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>i</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mi>j</mi>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle i\in \{1,\ldots ,j\}}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/f8304cdc726f60e272d99f7c4f36a6ab651370d9.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:13.267ex; height:2.843ex;" alt="{\displaystyle i\in \{1,\ldots ,j\}}"></span> of the sum <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle A[i]+\cdots +A[j-1]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>i</mi>
+        <mo stretchy="false">]</mo>
+        <mo>+</mo>
+        <mo>⋯<!-- ⋯ --></mo>
+        <mo>+</mo>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo>−<!-- − --></mo>
+        <mn>1</mn>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A[i]+\cdots +A[j-1]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/3d953b5c43fc85b567297a449586a6aa761a6c83.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:20.241ex; height:2.843ex;" alt="{\displaystyle A[i]+\cdots +A[j-1]}"></span>.<sup id="cite_ref-15" class="reference"><a href="#cite_note-15">[note 5]</a></sup>
+Therefore, <code>current_sum</code><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle +A[j]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mo>+</mo>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle +A[j]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/f276f74cd74ae67e23c51b1e9ef3764c5798adfd.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.803ex; height:2.843ex;" alt="{\displaystyle +A[j]}"></span><sup id="cite_ref-16" class="reference"><a href="#cite_note-16">[note 6]</a></sup>
+is the maximum over all <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle i\in \{1,\ldots ,j\}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>i</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mi>j</mi>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle i\in \{1,\ldots ,j\}}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/f8304cdc726f60e272d99f7c4f36a6ab651370d9.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:13.267ex; height:2.843ex;" alt="{\displaystyle i\in \{1,\ldots ,j\}}"></span> of the sum <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle A[i]+\cdots +A[j]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>i</mi>
+        <mo stretchy="false">]</mo>
+        <mo>+</mo>
+        <mo>⋯<!-- ⋯ --></mo>
+        <mo>+</mo>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A[i]+\cdots +A[j]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/ce9a7a1d7259eb0056fc37f9bed9219049cb8cde.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:16.238ex; height:2.843ex;" alt="{\displaystyle A[i]+\cdots +A[j]}"></span>. To extend the latter maximum to cover also the case <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle i=j+1}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>i</mi>
+        <mo>=</mo>
+        <mi>j</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle i=j+1}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/c929824b3149ba99292d6c5e04e9e22262c78295.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:8.862ex; height:2.509ex;" alt="{\displaystyle i=j+1}"></span>, it is sufficient to consider also the empty subarray <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle A[j+1\;\ldots \;j]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mspace width="thickmathspace"></mspace>
+        <mo>…<!-- … --></mo>
+        <mspace width="thickmathspace"></mspace>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A[j+1\;\ldots \;j]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/4e7cbec3c9700cbffc27f7452cc996629800229e.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:13.744ex; height:2.843ex;" alt="{\displaystyle A[j+1\;\ldots \;j]}"></span>. This is done in line 6 by assigning <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \max(0,}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mo movablelimits="true" form="prefix">max</mo>
+        <mo stretchy="false">(</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \max(0,}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/90441ccc647a71d730f3b2c3db44e04784fbe6e9.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:7.04ex; height:2.843ex;" alt="{\displaystyle \max(0,}"></span><code>current_sum</code><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle +A[j])}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mo>+</mo>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle +A[j])}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/188c430a18abd0a38d9b527d13d3abd631d0d51e.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:6.708ex; height:2.843ex;" alt="{\displaystyle +A[j])}"></span> as the new value of <code>current_sum</code>, which after that holds the maximum over all <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle i\in \{1,\ldots ,j+1\}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>i</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mi>j</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle i\in \{1,\ldots ,j+1\}}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/6d13ec7bc1287e6f265cff33a15a440c57c92bb5.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:17.27ex; height:2.843ex;" alt="{\displaystyle i\in \{1,\ldots ,j+1\}}"></span> of the sum <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle A[i]+\cdots +A[j]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>i</mi>
+        <mo stretchy="false">]</mo>
+        <mo>+</mo>
+        <mo>⋯<!-- ⋯ --></mo>
+        <mo>+</mo>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A[i]+\cdots +A[j]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/ce9a7a1d7259eb0056fc37f9bed9219049cb8cde.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:16.238ex; height:2.843ex;" alt="{\displaystyle A[i]+\cdots +A[j]}"></span>.
+</p><p>Thus, the problem can be solved with the following code,<sup id="cite_ref-FOOTNOTEBentley198974_4-1" class="reference"><a href="#cite_note-FOOTNOTEBentley198974-4">[4]</a></sup><sup id="cite_ref-FOOTNOTEGries1982211_8-1" class="reference"><a href="#cite_note-FOOTNOTEGries1982211-8">[7]</a></sup> expressed here in <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" title="Python (programming language)">Python</a>:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr mw-highlight-lines" dir="ltr"><pre><span></span><span class="linenos" data-line="1"></span><span class="k">def</span> <span class="nf">max_subarray</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+<span class="linenos" data-line="2"></span>    <span class="sd">"""Find the largest sum of any contiguous subarray."""</span>
+<span class="linenos" data-line="3"></span>    <span class="n">best_sum</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># or: float('-inf')</span>
+<span class="linenos" data-line="4"></span>    <span class="n">current_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos" data-line="5"></span>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+<span class="linenos" data-line="6"></span>        <span class="n">current_sum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">current_sum</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
+<span class="linenos" data-line="7"></span>        <span class="n">best_sum</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">best_sum</span><span class="p">,</span> <span class="n">current_sum</span><span class="p">)</span>
+<span class="linenos" data-line="8"></span>    <span class="k">return</span> <span class="n">best_sum</span>
+</pre></div>
+<p>This version of the algorithm will return 0 if the input contains no positive elements (including when the input is empty). 
+</p><p>For the variant of the problem which disallows empty subarrays, <code>best_sum</code> should be initialized to negative infinity instead<sup id="cite_ref-FOOTNOTEBentley198978,171_17-0" class="reference"><a href="#cite_note-FOOTNOTEBentley198978,171-17">[11]</a></sup> and also in the for loop <code>current_sum</code> should be updated as <code>max(x, current_sum + x)</code>.<sup id="cite_ref-18" class="reference"><a href="#cite_note-18">[note 7]</a></sup>
+In that case, if the input contains no positive element, the returned 
+value is that of the largest element (i.e., the value closest to 0), or 
+negative infinity if the input was empty.
+</p><p>The algorithm can be modified to keep track of the starting and ending indices of the maximum subarray as well:
+</p>
+<div class="mw-highlight mw-highlight-lang-python mw-content-ltr mw-highlight-lines" dir="ltr"><pre><span></span><span class="linenos" data-line="1"></span><span class="k">def</span> <span class="nf">max_subarray</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+<span class="linenos" data-line="2"></span>    <span class="sd">"""Find a contiguous subarray with the largest sum."""</span>
+<span class="linenos" data-line="3"></span>    <span class="n">best_sum</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># or: float('-inf')</span>
+<span class="linenos" data-line="4"></span>    <span class="n">best_start</span> <span class="o">=</span> <span class="n">best_end</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># or: None</span>
+<span class="linenos" data-line="5"></span>    <span class="n">current_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos" data-line="6"></span>    <span class="k">for</span> <span class="n">current_end</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+<span class="linenos" data-line="7"></span>        <span class="k">if</span> <span class="n">current_sum</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos" data-line="8"></span>            <span class="c1"># Start a new sequence at the current element</span>
+<span class="linenos" data-line="9"></span>            <span class="n">current_start</span> <span class="o">=</span> <span class="n">current_end</span>
+<span class="linenos" data-line="10"></span>            <span class="n">current_sum</span> <span class="o">=</span> <span class="n">x</span>
+<span class="linenos" data-line="11"></span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos" data-line="12"></span>            <span class="c1"># Extend the existing sequence with the current element</span>
+<span class="linenos" data-line="13"></span>            <span class="n">current_sum</span> <span class="o">+=</span> <span class="n">x</span>
+<span class="linenos" data-line="14"></span>
+<span class="linenos" data-line="15"></span>        <span class="k">if</span> <span class="n">current_sum</span> <span class="o">&gt;</span> <span class="n">best_sum</span><span class="p">:</span>
+<span class="linenos" data-line="16"></span>            <span class="n">best_sum</span> <span class="o">=</span> <span class="n">current_sum</span>
+<span class="linenos" data-line="17"></span>            <span class="n">best_start</span> <span class="o">=</span> <span class="n">current_start</span>
+<span class="linenos" data-line="18"></span>            <span class="n">best_end</span> <span class="o">=</span> <span class="n">current_end</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># the +1 is to make 'best_end' exclusive</span>
+<span class="linenos" data-line="19"></span>
+<span class="linenos" data-line="20"></span>    <span class="k">return</span> <span class="n">best_sum</span><span class="p">,</span> <span class="n">best_start</span><span class="p">,</span> <span class="n">best_end</span>
+</pre></div>
+<p>In Python, arrays are indexed starting from 0, and the end index is 
+typically excluded, so that the subarray [22, 33] in the array [-11, 22,
+ 33, -44] would start at index 1 and end at index 3.
+</p><p>Because of the way this algorithm uses optimal substructures (the
+ maximum subarray ending at each position is calculated in a simple way 
+from a related but smaller and overlapping subproblem: the maximum 
+subarray ending at the previous position) this algorithm can be viewed 
+as a simple/trivial example of <a href="https://en.wikipedia.org/wiki/Dynamic_programming" title="Dynamic programming">dynamic programming</a>.
+</p><p>The runtime complexity of Kadane's algorithm is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle O(n)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <mi>n</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle O(n)}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/34109fe397fdcff370079185bfdb65826cb5565a.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.977ex; height:2.843ex;" alt="O(n)"></span>.<sup id="cite_ref-FOOTNOTEBentley198974_4-2" class="reference"><a href="#cite_note-FOOTNOTEBentley198974-4">[4]</a></sup><sup id="cite_ref-FOOTNOTEGries1982211_8-2" class="reference"><a href="#cite_note-FOOTNOTEGries1982211-8">[7]</a></sup>
+</p>
+<h2><span class="mw-headline" id="Generalizations">Generalizations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit&amp;section=4" title="Edit section: Generalizations">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Similar problems may be posed for higher-dimensional arrays, but their solutions are more complicated; see, e.g., <a href="#CITEREFTakaoka2002">Takaoka (2002)</a>. <a href="#CITEREFBrodalJørgensen2007">Brodal &amp; Jørgensen (2007)</a> showed how to find the <i>k</i> largest subarray sums in a one-dimensional array, in the optimal time bound <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle O(n+k)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <mi>n</mi>
+        <mo>+</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle O(n+k)}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/cebd2e4442e56daa59f3fab79339f952122c29e8.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:9.029ex; height:2.843ex;" alt="O(n+k)"></span>.
+</p><p>The Maximum sum <i>k</i>-disjoint subarrays can also be computed in the optimal time bound <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle O(n+k)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <mi>n</mi>
+        <mo>+</mo>
+        <mi>k</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle O(n+k)}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/cebd2e4442e56daa59f3fab79339f952122c29e8.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:9.029ex; height:2.843ex;" alt="O(n+k)"></span> 
+.<sup id="cite_ref-FOOTNOTEBengtssonChen2007_19-0" class="reference"><a href="#cite_note-FOOTNOTEBengtssonChen2007-19">[12]</a></sup>
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit&amp;section=5" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><a href="https://en.wikipedia.org/wiki/Subset_sum_problem" title="Subset sum problem">Subset sum problem</a></li></ul>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit&amp;section=6" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<style data-mw-deduplicate="TemplateStyles:r1011085734">.mw-parser-output .reflist{font-size:90%;margin-bottom:0.5em;list-style-type:decimal}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist reflist-columns references-column-width" style="column-width: 30em;">
+<ol class="references">
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text">By using a precomputed table of cumulative sums <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle S[k]=\sum _{x=1}^{k}A[x]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>S</mi>
+        <mo stretchy="false">[</mo>
+        <mi>k</mi>
+        <mo stretchy="false">]</mo>
+        <mo>=</mo>
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>k</mi>
+          </mrow>
+        </munderover>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>x</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle S[k]=\sum _{x=1}^{k}A[x]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/9ec8da87a55750ee8f1489589facd90c9bb8bfee.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:15.211ex; height:7.343ex;" alt="{\displaystyle S[k]=\sum _{x=1}^{k}A[x]}"></span> to compute the subarray sum <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \sum _{x=i}^{j}A[x]=S[j]-S[i-1]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <munderover>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>=</mo>
+            <mi>i</mi>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </munderover>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>x</mi>
+        <mo stretchy="false">]</mo>
+        <mo>=</mo>
+        <mi>S</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+        <mo>−<!-- − --></mo>
+        <mi>S</mi>
+        <mo stretchy="false">[</mo>
+        <mi>i</mi>
+        <mo>−<!-- − --></mo>
+        <mn>1</mn>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{x=i}^{j}A[x]=S[j]-S[i-1]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/a5eaeb881301c21c223bcda980954ff927f9f6b9.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:25.397ex; height:7.343ex;" alt="{\displaystyle \sum _{x=i}^{j}A[x]=S[j]-S[i-1]}"></span> in constant time</span>
+</li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text">since every algorithm must at least scan the array once which already takes <i>O</i>(<i>n</i>) time</span>
+</li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text">named <code>MaxEndingHere</code> in <a href="#CITEREFBentley1989">Bentley (1989)</a>, and <code>c</code> in <a href="#CITEREFGries1982">Gries (1982)</a></span>
+</li>
+<li id="cite_note-14"><span class="mw-cite-backlink"><b><a href="#cite_ref-14" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text">named <code>MaxSoFar</code> in <a href="#CITEREFBentley1989">Bentley (1989)</a>, and <code>s</code> in <a href="#CITEREFGries1982">Gries (1982)</a></span>
+</li>
+<li id="cite_note-15"><span class="mw-cite-backlink"><b><a href="#cite_ref-15" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text">This sum is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle 0}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mn>0</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle 0}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/2aae8864a3c1fec9585261791a809ddec1489950.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.162ex; height:2.176ex;" alt="{\displaystyle 0}"></span> when <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle i=j}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>i</mi>
+        <mo>=</mo>
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle i=j}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/706e0928b2bf0f24076b0c90bb20616ff2068343.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:4.859ex; height:2.509ex;" alt="i=j"></span>, corresponding to the empty subarray <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle A[j\ldots j-1]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo>…<!-- … --></mo>
+        <mi>j</mi>
+        <mo>−<!-- − --></mo>
+        <mn>1</mn>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A[j\ldots j-1]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/aacd5b052234fec25693efb7c84dd6839025a9fc.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:12.453ex; height:2.843ex;" alt="{\displaystyle A[j\ldots j-1]}"></span>.</span>
+</li>
+<li id="cite_note-16"><span class="mw-cite-backlink"><b><a href="#cite_ref-16" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text">
+In the Python code below, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle A[j]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A[j]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/9c385fd9b0f771529e587f216f3f15d52bb85ef6.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:3.995ex; height:2.843ex;" alt="{\displaystyle A[j]}"></span> is expressed as <code>x</code>, with the index <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle j}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/2f461e54f5c093e92a55547b9764291390f0b5d0.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.027ex; width:0.985ex; height:2.509ex;" alt="j"></span> left implicit.</span>
+</li>
+<li id="cite_note-18"><span class="mw-cite-backlink"><b><a href="#cite_ref-18" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text">While the latter modification is not mentioned by <a href="#CITEREFBentley1989">Bentley (1989)</a>, it achieves maintaining the modified loop invariant <code>current_sum</code><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle =\max _{i\in \{1,...,j\}}A[i]+...+A[j]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mo>=</mo>
+        <munder>
+          <mo movablelimits="true" form="prefix">max</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mo fence="false" stretchy="false">{</mo>
+            <mn>1</mn>
+            <mo>,</mo>
+            <mo>.</mo>
+            <mo>.</mo>
+            <mo>.</mo>
+            <mo>,</mo>
+            <mi>j</mi>
+            <mo fence="false" stretchy="false">}</mo>
+          </mrow>
+        </munder>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>i</mi>
+        <mo stretchy="false">]</mo>
+        <mo>+</mo>
+        <mo>.</mo>
+        <mo>.</mo>
+        <mo>.</mo>
+        <mo>+</mo>
+        <mi>A</mi>
+        <mo stretchy="false">[</mo>
+        <mi>j</mi>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle =\max _{i\in \{1,...,j\}}A[i]+...+A[j]}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/5ecd64c15844772c73f9c1a76a75ceed97b6e58a.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:24.487ex; height:4.509ex;" alt="{\displaystyle =\max _{i\in \{1,...,j\}}A[i]+...+A[j]}"></span> at the beginning of the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle j}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle scriptlevel="0" displaystyle="true">
+        <mi>j</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle j}</annotation>
+  </semantics>
+</math></span><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/2f461e54f5c093e92a55547b9764291390f0b5d0.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; margin-left: -0.027ex; width:0.985ex; height:2.509ex;" alt="j"></span>th step.</span>
+</li>
+</ol></div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit&amp;section=7" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1011085734"><div class="reflist">
+<div class="mw-references-wrap mw-references-columns"><ol class="references">
+<li id="cite_note-FOOTNOTEBentley198969-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBentley198969_1-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFBentley1989">Bentley 1989</a>, p.&nbsp;69.</span>
+</li>
+<li id="cite_note-FOOTNOTEBentley198970-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBentley198970_2-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFBentley1989">Bentley 1989</a>, p.&nbsp;70.</span>
+</li>
+<li id="cite_note-FOOTNOTEBentley198973-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBentley198973_3-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFBentley1989">Bentley 1989</a>, p.&nbsp;73.</span>
+</li>
+<li id="cite_note-FOOTNOTEBentley198974-4"><span class="mw-cite-backlink">^ <a href="#cite_ref-FOOTNOTEBentley198974_4-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-FOOTNOTEBentley198974_4-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-FOOTNOTEBentley198974_4-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><a href="#CITEREFBentley1989">Bentley 1989</a>, p.&nbsp;74.</span>
+</li>
+<li id="cite_note-FOOTNOTEBentley1984868-869-5"><span class="mw-cite-backlink">^ <a href="#cite_ref-FOOTNOTEBentley1984868-869_5-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-FOOTNOTEBentley1984868-869_5-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><a href="#CITEREFBentley1984">Bentley 1984</a>, p.&nbsp;868-869.</span>
+</li>
+<li id="cite_note-FOOTNOTEBentley198976-77-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBentley198976-77_7-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFBentley1989">Bentley 1989</a>, p.&nbsp;76-77.</span>
+</li>
+<li id="cite_note-FOOTNOTEGries1982211-8"><span class="mw-cite-backlink">^ <a href="#cite_ref-FOOTNOTEGries1982211_8-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-FOOTNOTEGries1982211_8-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-FOOTNOTEGries1982211_8-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><a href="#CITEREFGries1982">Gries 1982</a>, p.&nbsp;211.</span>
+</li>
+<li id="cite_note-FOOTNOTEGries1982209-211-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEGries1982209-211_10-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFGries1982">Gries 1982</a>, p.&nbsp;209-211.</span>
+</li>
+<li id="cite_note-FOOTNOTEBird1989Sect.8,_p.126-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBird1989Sect.8,_p.126_11-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFBird1989">Bird 1989</a>, Sect.8, p.126.</span>
+</li>
+<li id="cite_note-FOOTNOTEBackursDikkalaTzamos2016-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBackursDikkalaTzamos2016_12-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFBackursDikkalaTzamos2016">Backurs, Dikkala &amp; Tzamos 2016</a>.</span>
+</li>
+<li id="cite_note-FOOTNOTEBentley198978,171-17"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBentley198978,171_17-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFBentley1989">Bentley 1989</a>, p.&nbsp;78,171.</span>
+</li>
+<li id="cite_note-FOOTNOTEBengtssonChen2007-19"><span class="mw-cite-backlink"><b><a href="#cite_ref-FOOTNOTEBengtssonChen2007_19-0" aria-label="Jump up" title="Jump up">^</a></b></span> <span class="reference-text"><a href="#CITEREFBengtssonChen2007">Bengtsson &amp; Chen 2007</a>.</span>
+</li>
+</ol></div></div>
+<ul><li><style data-mw-deduplicate="TemplateStyles:r999302996">.mw-parser-output cite.citation{font-style:inherit}.mw-parser-output .citation q{quotes:"\"""\"""'""'"}.mw-parser-output .id-lock-free a,.mw-parser-output .citation .cs1-lock-free a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/6/65/Lock-green.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-limited a,.mw-parser-output .id-lock-registration a,.mw-parser-output .citation .cs1-lock-limited a,.mw-parser-output .citation .cs1-lock-registration a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/d/d6/Lock-gray-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .id-lock-subscription a,.mw-parser-output .citation .cs1-lock-subscription a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/a/aa/Lock-red-alt-2.svg")right 0.1em center/9px no-repeat}.mw-parser-output .cs1-subscription,.mw-parser-output .cs1-registration{color:#555}.mw-parser-output .cs1-subscription span,.mw-parser-output .cs1-registration span{border-bottom:1px dotted;cursor:help}.mw-parser-output .cs1-ws-icon a{background:linear-gradient(transparent,transparent),url("//upload.wikimedia.org/wikipedia/commons/4/4c/Wikisource-logo.svg")right 0.1em center/12px no-repeat}.mw-parser-output code.cs1-code{color:inherit;background:inherit;border:none;padding:inherit}.mw-parser-output .cs1-hidden-error{display:none;font-size:100%}.mw-parser-output .cs1-visible-error{font-size:100%}.mw-parser-output .cs1-maint{display:none;color:#33aa33;margin-left:0.3em}.mw-parser-output .cs1-format{font-size:95%}.mw-parser-output .cs1-kern-left,.mw-parser-output .cs1-kern-wl-left{padding-left:0.2em}.mw-parser-output .cs1-kern-right,.mw-parser-output .cs1-kern-wl-right{padding-right:0.2em}.mw-parser-output .citation .mw-selflink{font-weight:inherit}</style><cite id="CITEREFBackursDikkalaTzamos2016" class="citation cs2">Backurs, Arturs; Dikkala, Nishanth; Tzamos, Christos (2016), "Tight Hardness Results for Maximum Weight Rectangles", <i>Proc. 43rd International Colloquium on Automata, Languages, and Programming</i>: 81:1–81:13, <a href="https://en.wikipedia.org/wiki/Doi_(identifier)" class="mw-redirect" title="Doi (identifier)">doi</a>:<a rel="nofollow" class="external text" href="https://doi.org/10.4230%2FLIPIcs.ICALP.2016.81">10.4230/LIPIcs.ICALP.2016.81</a>, <a href="https://en.wikipedia.org/wiki/S2CID_(identifier)" class="mw-redirect" title="S2CID (identifier)">S2CID</a>&nbsp;<a rel="nofollow" class="external text" href="https://api.semanticscholar.org/CorpusID:12720136">12720136</a></cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Proc.+43rd+International+Colloquium+on+Automata%2C+Languages%2C+and+Programming&amp;rft.atitle=Tight+Hardness+Results+for+Maximum+Weight+Rectangles&amp;rft.pages=81%3A1-81%3A13&amp;rft.date=2016&amp;rft_id=info%3Adoi%2F10.4230%2FLIPIcs.ICALP.2016.81&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A12720136%23id-name%3DS2CID&amp;rft.aulast=Backurs&amp;rft.aufirst=Arturs&amp;rft.au=Dikkala%2C+Nishanth&amp;rft.au=Tzamos%2C+Christos&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFBae2007" class="citation cs2">Bae, Sung Eun (2007), <a rel="nofollow" class="external text" href="https://web.archive.org/web/20171026110814/https://pdfs.semanticscholar.org/bea4/1795adaf240b9db4195b9dc511bd8d46bff1.pdf"><i>Sequential and Parallel Algorithms for the Generalized Maximum Subarray Problem</i></a> <span class="cs1-format">(PDF)</span> (Ph.D. thesis), University of Canterbury, <a href="https://en.wikipedia.org/wiki/S2CID_(identifier)" class="mw-redirect" title="S2CID (identifier)">S2CID</a>&nbsp;<a rel="nofollow" class="external text" href="https://api.semanticscholar.org/CorpusID:2681670">2681670</a>, archived from <a rel="nofollow" class="external text" href="https://pdfs.semanticscholar.org/bea4/1795adaf240b9db4195b9dc511bd8d46bff1.pdf">the original</a> <span class="cs1-format">(PDF)</span> on 2017-10-26</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Sequential+and+Parallel+Algorithms+for+the+Generalized+Maximum+Subarray+Problem&amp;rft.pub=University+of+Canterbury&amp;rft.date=2007&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A2681670%23id-name%3DS2CID&amp;rft.aulast=Bae&amp;rft.aufirst=Sung+Eun&amp;rft_id=https%3A%2F%2Fpdfs.semanticscholar.org%2Fbea4%2F1795adaf240b9db4195b9dc511bd8d46bff1.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span>.</li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFBengtssonChen2007" class="citation cs2">Bengtsson, Fredrik; Chen, Jingsen (2007), <a rel="nofollow" class="external text" href="http://ltu.diva-portal.org/smash/get/diva2:995901/FULLTEXT01.pdf"><i>Computing maximum-scoring segments optimally</i></a> <span class="cs1-format">(PDF)</span> (Research report), Luleå University of Technology</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Computing+maximum-scoring+segments+optimally&amp;rft.pub=Lule%C3%A5+University+of+Technology&amp;rft.date=2007&amp;rft.aulast=Bengtsson&amp;rft.aufirst=Fredrik&amp;rft.au=Chen%2C+Jingsen&amp;rft_id=http%3A%2F%2Fltu.diva-portal.org%2Fsmash%2Fget%2Fdiva2%3A995901%2FFULLTEXT01.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFBentley1984" class="citation cs2"><a href="https://en.wikipedia.org/wiki/Jon_Bentley_(computer_scientist)" title="Jon Bentley (computer scientist)">Bentley, Jon</a> (1984), "Programming Pearls: Algorithm Design Techniques", <i><a href="https://en.wikipedia.org/wiki/Communications_of_the_ACM" title="Communications of the ACM">Communications of the ACM</a></i>, <b>27</b> (9): 865–873, <a href="https://en.wikipedia.org/wiki/Doi_(identifier)" class="mw-redirect" title="Doi (identifier)">doi</a>:<a rel="nofollow" class="external text" href="https://doi.org/10.1145%2F358234.381162">10.1145/358234.381162</a>, <a href="https://en.wikipedia.org/wiki/S2CID_(identifier)" class="mw-redirect" title="S2CID (identifier)">S2CID</a>&nbsp;<a rel="nofollow" class="external text" href="https://api.semanticscholar.org/CorpusID:207565329">207565329</a></cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Communications+of+the+ACM&amp;rft.atitle=Programming+Pearls%3A+Algorithm+Design+Techniques&amp;rft.volume=27&amp;rft.issue=9&amp;rft.pages=865-873&amp;rft.date=1984&amp;rft_id=info%3Adoi%2F10.1145%2F358234.381162&amp;rft_id=https%3A%2F%2Fapi.semanticscholar.org%2FCorpusID%3A207565329%23id-name%3DS2CID&amp;rft.aulast=Bentley&amp;rft.aufirst=Jon&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFBentley1989" class="citation cs2">Bentley, Jon (May 1989), <span class="cs1-lock-registration" title="Free registration required"><a rel="nofollow" class="external text" href="https://archive.org/details/programmingpearl00bent"><i>Programming Pearls</i></a></span> (2nd?&nbsp;ed.), Reading, MA: Addison Wesley, <a href="https://en.wikipedia.org/wiki/ISBN_(identifier)" class="mw-redirect" title="ISBN (identifier)">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-201-10331-1" title="Special:BookSources/0-201-10331-1"><bdi>0-201-10331-1</bdi></a></cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Programming+Pearls&amp;rft.place=Reading%2C+MA&amp;rft.edition=2nd%3F&amp;rft.pub=Addison+Wesley&amp;rft.date=1989-05&amp;rft.isbn=0-201-10331-1&amp;rft.aulast=Bentley&amp;rft.aufirst=Jon&amp;rft_id=https%3A%2F%2Farchive.org%2Fdetails%2Fprogrammingpearl00bent&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFBird1989" class="citation cs2"><a href="https://en.wikipedia.org/wiki/Richard_S._Bird" class="mw-redirect" title="Richard S. Bird">Bird, Richard S.</a> (1989), <a rel="nofollow" class="external text" href="http://comjnl.oxfordjournals.org/content/32/2/122.full.pdf">"Algebraic Identities for Program Calculation"</a> <span class="cs1-format">(PDF)</span>, <i><a href="https://en.wikipedia.org/wiki/The_Computer_Journal" title="The Computer Journal">The Computer Journal</a></i>, <b>32</b> (2): 122–126, <a href="https://en.wikipedia.org/wiki/Doi_(identifier)" class="mw-redirect" title="Doi (identifier)">doi</a>:<a rel="nofollow" class="external text" href="https://doi.org/10.1093%2Fcomjnl%2F32.2.122">10.1093/comjnl/32.2.122</a></cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=The+Computer+Journal&amp;rft.atitle=Algebraic+Identities+for+Program+Calculation&amp;rft.volume=32&amp;rft.issue=2&amp;rft.pages=122-126&amp;rft.date=1989&amp;rft_id=info%3Adoi%2F10.1093%2Fcomjnl%2F32.2.122&amp;rft.aulast=Bird&amp;rft.aufirst=Richard+S.&amp;rft_id=http%3A%2F%2Fcomjnl.oxfordjournals.org%2Fcontent%2F32%2F2%2F122.full.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span><sup class="noprint Inline-Template"><span style="white-space: nowrap;">[<i><a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot" title="Wikipedia:Link rot"><span title="&nbsp;Dead link since May 2021">dead link</span></a></i>]</span></sup></li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFBrodalJørgensen2007" class="citation cs2">Brodal, Gerth Stølting; Jørgensen, Allan Grønlund (2007), "A linear time algorithm for the <i>k</i> maximal sums problem", <i>Mathematical Foundations of Computer Science</i>, Lecture Notes in Computer Science, <b>4708</b>, Springer-Verlag, pp.&nbsp;442–453, <a href="https://en.wikipedia.org/wiki/Doi_(identifier)" class="mw-redirect" title="Doi (identifier)">doi</a>:<a rel="nofollow" class="external text" href="https://doi.org/10.1007%2F978-3-540-74456-6_40">10.1007/978-3-540-74456-6_40</a></cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=bookitem&amp;rft.atitle=A+linear+time+algorithm+for+the+k+maximal+sums+problem&amp;rft.btitle=Mathematical+Foundations+of+Computer+Science&amp;rft.series=Lecture+Notes+in+Computer+Science&amp;rft.pages=442-453&amp;rft.pub=Springer-Verlag&amp;rft.date=2007&amp;rft_id=info%3Adoi%2F10.1007%2F978-3-540-74456-6_40&amp;rft.aulast=Brodal&amp;rft.aufirst=Gerth+St%C3%B8lting&amp;rft.au=J%C3%B8rgensen%2C+Allan+Gr%C3%B8nlund&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span>.</li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFGries1982" class="citation cs2">Gries, David (1982), <a rel="nofollow" class="external text" href="https://core.ac.uk/download/pdf/82596333.pdf">"A Note on the Standard Strategy for Developing Loop Invariants and Loops"</a> <span class="cs1-format">(PDF)</span>, <i>Science of Computer Programming</i>, <b>2</b> (3): 207–241, <a href="https://en.wikipedia.org/wiki/Doi_(identifier)" class="mw-redirect" title="Doi (identifier)">doi</a>:<a rel="nofollow" class="external text" href="https://doi.org/10.1016%2F0167-6423%2883%2990015-1">10.1016/0167-6423(83)90015-1</a>, <a href="https://en.wikipedia.org/wiki/Hdl_(identifier)" class="mw-redirect" title="Hdl (identifier)">hdl</a>:<a rel="nofollow" class="external text" href="https://hdl.handle.net/1813%2F6370">1813/6370</a></cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Science+of+Computer+Programming&amp;rft.atitle=A+Note+on+the+Standard+Strategy+for+Developing+Loop+Invariants+and+Loops&amp;rft.volume=2&amp;rft.issue=3&amp;rft.pages=207-241&amp;rft.date=1982&amp;rft_id=info%3Ahdl%2F1813%2F6370&amp;rft_id=info%3Adoi%2F10.1016%2F0167-6423%2883%2990015-1&amp;rft.aulast=Gries&amp;rft.aufirst=David&amp;rft_id=https%3A%2F%2Fcore.ac.uk%2Fdownload%2Fpdf%2F82596333.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFTakaoka2002" class="citation cs2">Takaoka, Tadao (2002), "Efficient algorithms for the maximum subarray problem by distance matrix multiplication", <i>Electronic Notes in Theoretical Computer Science</i>, <b>61</b>: 191–200, <a href="https://en.wikipedia.org/wiki/Doi_(identifier)" class="mw-redirect" title="Doi (identifier)">doi</a>:<span class="cs1-lock-free" title="Freely accessible"><a rel="nofollow" class="external text" href="https://doi.org/10.1016%2FS1571-0661%2804%2900313-5">10.1016/S1571-0661(04)00313-5</a></span></cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Electronic+Notes+in+Theoretical+Computer+Science&amp;rft.atitle=Efficient+algorithms+for+the+maximum+subarray+problem+by+distance+matrix+multiplication&amp;rft.volume=61&amp;rft.pages=191-200&amp;rft.date=2002&amp;rft_id=info%3Adoi%2F10.1016%2FS1571-0661%2804%2900313-5&amp;rft.aulast=Takaoka&amp;rft.aufirst=Tadao&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span>.</li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFTamakiTokuyama1998" class="citation cs2">Tamaki, Hisao; Tokuyama, Takeshi (1998), <a rel="nofollow" class="external text" href="http://dl.acm.org/citation.cfm?id=314613.314823">"Algorithms for the Maximum Subarray Problem Based on Matrix Multiplication"</a>, <i>Proceedings of the 9th Symposium on Discrete Algorithms (SODA)</i>: 446–452<span class="reference-accessdate">, retrieved <span class="nowrap">November 17,</span> 2018</span></cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.genre=article&amp;rft.jtitle=Proceedings+of+the+9th+Symposium+on+Discrete+Algorithms+%28SODA%29&amp;rft.atitle=Algorithms+for+the+Maximum+Subarray+Problem+Based+on+Matrix+Multiplication&amp;rft.pages=446-452&amp;rft.date=1998&amp;rft.aulast=Tamaki&amp;rft.aufirst=Hisao&amp;rft.au=Tokuyama%2C+Takeshi&amp;rft_id=http%3A%2F%2Fdl.acm.org%2Fcitation.cfm%3Fid%3D314613.314823&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li></ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit&amp;section=8" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul><li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFTAN" class="citation web cs1">TAN, Lirong. <a rel="nofollow" class="external text" href="https://web.archive.org/web/20151010072051/http://www.picb.ac.cn/~xiaohang/vimwiki/study/tanlirong/Algorithm/project/Report.pdf">"Maximum Contiguous Subarray Sum Problems"</a> <span class="cs1-format">(PDF)</span>. Archived from <a rel="nofollow" class="external text" href="http://www.picb.ac.cn/~xiaohang/vimwiki/study/tanlirong/Algorithm/project/Report.pdf">the original</a> <span class="cs1-format">(PDF)</span> on 2015-10-10<span class="reference-accessdate">. Retrieved <span class="nowrap">2017-10-26</span></span>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Maximum+Contiguous+Subarray+Sum+Problems&amp;rft.aulast=TAN&amp;rft.aufirst=Lirong&amp;rft_id=http%3A%2F%2Fwww.picb.ac.cn%2F~xiaohang%2Fvimwiki%2Fstudy%2Ftanlirong%2FAlgorithm%2Fproject%2FReport.pdf&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite id="CITEREFMu2010" class="citation web cs1">Mu, Shin-Cheng (2010). <a rel="nofollow" class="external text" href="https://www.iis.sinica.edu.tw/~scm/2010/maximum-segment-sum-origin-and-derivation">"The Maximum Segment Sum Problem: Its Origin, and a Derivation"</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=The+Maximum+Segment+Sum+Problem%3A+Its+Origin%2C+and+a+Derivation&amp;rft.date=2010&amp;rft.aulast=Mu&amp;rft.aufirst=Shin-Cheng&amp;rft_id=https%3A%2F%2Fwww.iis.sinica.edu.tw%2F~scm%2F2010%2Fmaximum-segment-sum-origin-and-derivation&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li>
+<li><link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r999302996"><cite class="citation web cs1"><a rel="nofollow" class="external text" href="http://cs.slu.edu/~goldwamh/courses/slu/csci314/2012_Fall/lectures/maxsubarray/">"Notes on Maximum Subarray Problem"</a>. 2012.</cite><span title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=unknown&amp;rft.btitle=Notes+on+Maximum+Subarray+Problem&amp;rft.date=2012&amp;rft_id=http%3A%2F%2Fcs.slu.edu%2F~goldwamh%2Fcourses%2Fslu%2Fcsci314%2F2012_Fall%2Flectures%2Fmaxsubarray%2F&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMaximum+subarray+problem" class="Z3988"></span></li>
+<li><a rel="nofollow" class="external text" href="http://www.algorithmist.com/index.php/Kadane's_Algorithm">www.algorithmist.com</a></li>
+<li><a rel="nofollow" class="external text" href="http://alexeigor.wikidot.com/kadane">alexeigor.wikidot.com</a></li>
+<li><a rel="nofollow" class="external text" href="http://rosettacode.org/wiki/Greatest_subsequential_sum">greatest subsequential sum problem on Rosetta Code</a></li>
+<li><a rel="nofollow" class="external text" href="https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/">geeksforgeeks page on Kadane's Algorithm</a></li></ul>
+<!-- 
+NewPP limit report
+Parsed by mw2391
+Cached time: 20210909144339
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: [vary‐revision‐sha1]
+CPU time usage: 0.536 seconds
+Real time usage: 1.004 seconds
+Preprocessor visited node count: 2929/1000000
+Post‐expand include size: 43268/2097152 bytes
+Template argument size: 5296/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 7/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 42578/5000000 bytes
+Lua time usage: 0.282/10.000 seconds
+Lua memory usage: 6258908/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  866.107      1 -total
+ 17.85%  154.605     10 Template:Citation
+ 16.75%  145.040     17 Template:Sfn
+  8.64%   74.815      4 Template:Fix
+  7.81%   67.609      1 Template:Cn
+  6.27%   54.348      9 Template:Category_handler
+  4.38%   37.923      2 Template:Reflist
+  3.82%   33.115      1 Template:NoteFoot
+  2.81%   24.311      1 Template:Expert_needed
+  2.54%   21.994      3 Template:Cite_web
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:10575678-0!canonical!math=5 and timestamp 20210909144338 and revision id 1038608401. Serialized with JSON.
+ -->
+</div><noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;oldid=1038608401">https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;oldid=1038608401</a>"</div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Optimization_algorithms_and_methods" title="Category:Optimization algorithms and methods">Optimization algorithms and methods</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Dynamic_programming" title="Category:Dynamic programming">Dynamic programming</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="https://en.wikipedia.org/wiki/Category:All_articles_with_unsourced_statements" title="Category:All articles with unsourced statements">All articles with unsourced statements</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_October_2019" title="Category:Articles with unsourced statements from October 2019">Articles with unsourced statements from October 2019</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_needing_expert_attention_from_September_2019" title="Category:Articles needing expert attention from September 2019">Articles needing expert attention from September 2019</a></li><li><a href="https://en.wikipedia.org/wiki/Category:All_articles_needing_expert_attention" title="Category:All articles needing expert attention">All articles needing expert attention</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Miscellaneous_articles_needing_expert_attention" title="Category:Miscellaneous articles needing expert attention">Miscellaneous articles needing expert attention</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_March_2020" title="Category:Articles with unsourced statements from March 2020">Articles with unsourced statements from March 2020</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_with_unsourced_statements_from_October_2017" title="Category:Articles with unsourced statements from October 2017">Articles with unsourced statements from October 2017</a></li><li><a href="https://en.wikipedia.org/wiki/Category:All_articles_with_dead_external_links" title="Category:All articles with dead external links">All articles with dead external links</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_with_dead_external_links_from_May_2021" title="Category:Articles with dead external links from May 2021">Articles with dead external links from May 2021</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Articles_with_example_Python_(programming_language)_code" title="Category:Articles with example Python (programming language) code">Articles with example Python (programming language) code</a></li></ul></div></div>
+	</div>
+</div>
+<div id="mw-data-after-content">
+	<div class="read-more-container"></div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation">
+	<h3 id="p-personal-label" class="vector-menu-heading"><span>Personal tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-anonuserpage" class="mw-list-item">Not logged in</li><li id="pt-anontalk" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [⌃⌥n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [⌃⌥y]" accesskey="y">Contributions</a></li><li id="pt-createaccount" class="mw-list-item"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=Maximum+subarray+problem" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login" class="mw-list-item"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Maximum+subarray+problem" title="You're encouraged to log in; however, it's not mandatory. [⌃⌥o]" accesskey="o">Log in</a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation">
+	<h3 id="p-namespaces-label" class="vector-menu-heading"><span>Namespaces</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="https://en.wikipedia.org/wiki/Maximum_subarray_problem" title="View the content page [⌃⌥c]" accesskey="c">Article</a></li><li id="ca-talk" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Talk:Maximum_subarray_problem" rel="discussion" title="Discuss improvements to the content page [⌃⌥t]" accesskey="t">Talk</a></li></ul>
+		
+	</div>
+</nav>
+
+			<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation">
+	<input type="checkbox" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-labelledby="p-variants-label">
+	<h3 id="p-variants-label" class="vector-menu-heading"><span>Variants</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation">
+	<h3 id="p-views-label" class="vector-menu-heading"><span>Views</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item collapsible"><a href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">Read</a></li><li id="ca-edit" class="mw-list-item collapsible"><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=edit" title="Edit this page [⌃⌥e]" accesskey="e">Edit</a></li><li id="ca-history" class="mw-list-item collapsible"><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=history" title="Past revisions of this page [⌃⌥h]" accesskey="h">View history</a></li></ul>
+		
+	</div>
+</nav>
+
+			<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation" title="More options">
+	<input type="checkbox" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label" class="vector-menu-heading"><span>More</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<div id="p-search" role="search" class="vector-search-box">
+	<div>
+		<h3>
+			<label for="searchInput">Search</label>
+		</h3>
+		<form action="/w/index.php" id="searchform">
+			<div id="simpleSearch" data-search-loc="header-navigation">
+				<input type="search" name="search" placeholder="Search Wikipedia" autocapitalize="sentences" title="Search Wikipedia [⌃⌥f]" accesskey="f" id="searchInput">
+				<input type="hidden" name="title" value="Special:Search">
+				<input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton">
+				<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton">
+			</div>
+		</form>
+	</div>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a>
+	</div>
+	<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu vector-menu-portal portal" aria-labelledby="p-navigation-label" role="navigation">
+	<h3 id="p-navigation-label" class="vector-menu-heading"><span>Navigation</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-mainpage-description" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [⌃⌥z]" accesskey="z">Main page</a></li><li id="n-contents" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-currentevents" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Portal:Current_events" title="Articles related to current events">Current events</a></li><li id="n-randompage" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Visit a randomly selected article [⌃⌥x]" accesskey="x">Random article</a></li><li id="n-aboutsite" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Learn about Wikipedia and how it works">About Wikipedia</a></li><li id="n-contactpage" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact us</a></li><li id="n-sitesupport" class="mw-list-item"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us by donating to the Wikimedia Foundation">Donate</a></li></ul>
+		
+	</div>
+</nav>
+
+	<nav id="p-interaction" class="mw-portlet mw-portlet-interaction vector-menu vector-menu-portal portal" aria-labelledby="p-interaction-label" role="navigation">
+	<h3 id="p-interaction-label" class="vector-menu-heading"><span>Contribute</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-help" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-introduction" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Help:Introduction" title="Learn how to edit Wikipedia">Learn to edit</a></li><li id="n-portal" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="The hub for editors">Community portal</a></li><li id="n-recentchanges" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes to Wikipedia [⌃⌥r]" accesskey="r">Recent changes</a></li><li id="n-upload" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Add images or other media for use on Wikipedia">Upload file</a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation">
+	<h3 id="p-tb-label" class="vector-menu-heading"><span>Tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Maximum_subarray_problem" title="List of all English Wikipedia pages containing links to this page [⌃⌥j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Maximum_subarray_problem" rel="nofollow" title="Recent changes in pages linked from this page [⌃⌥k]" accesskey="k">Related changes</a></li><li id="t-upload" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [⌃⌥u]" accesskey="u">Upload file</a></li><li id="t-specialpages" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [⌃⌥q]" accesskey="q">Special pages</a></li><li id="t-permalink" class="mw-list-item"><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;oldid=1038608401" title="Permanent link to this revision of this page">Permanent link</a></li><li id="t-info" class="mw-list-item"><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cite" class="mw-list-item"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Maximum_subarray_problem&amp;id=1038608401&amp;wpFormIdentifier=titleform" title="Information on how to cite this page">Cite this page</a></li><li id="t-wikibase" class="mw-list-item"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q1334332" title="Structured data on this page hosted by Wikidata [⌃⌥g]" accesskey="g">Wikidata item</a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-coll-print_export" class="mw-portlet mw-portlet-coll-print_export vector-menu vector-menu-portal portal" aria-labelledby="p-coll-print_export-label" role="navigation">
+	<h3 id="p-coll-print_export-label" class="vector-menu-heading"><span>Print/export</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="coll-download-as-rl" class="mw-list-item"><a href="https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&amp;page=Maximum_subarray_problem&amp;action=show-download-screen" title="Download this page as a PDF file">Download as PDF</a></li><li id="t-print" class="mw-list-item"><a href="https://en.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;printable=yes" title="Printable version of this page [⌃⌥p]" accesskey="p">Printable version</a></li></ul>
+		
+	</div>
+</nav>
+
+	<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation"><button class="uls-settings-trigger" title="Language settings"></button>
+	<h3 id="p-lang-label" class="vector-menu-heading"><span>Languages</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li class="interlanguage-link interwiki-el mw-list-item"><a href="https://el.wikipedia.org/wiki/%CE%A0%CF%81%CF%8C%CE%B2%CE%BB%CE%B7%CE%BC%CE%B1_%CE%BC%CE%AD%CE%B3%CE%B9%CF%83%CF%84%CE%BF%CF%85_%CE%B1%CE%B8%CF%81%CE%BF%CE%AF%CF%83%CE%BC%CE%B1%CF%84%CE%BF%CF%82_%CF%85%CF%80%CE%BF%CE%B1%CE%BA%CE%BF%CE%BB%CE%BF%CF%85%CE%B8%CE%AF%CE%B1%CF%82" title="Πρόβλημα μέγιστου αθροίσματος υποακολουθίας – Greek" hreflang="el" class="interlanguage-link-target" lang="el">Ελληνικά</a></li><li class="interlanguage-link interwiki-fa mw-list-item"><a href="https://fa.wikipedia.org/wiki/%D9%85%D8%B3%D8%A6%D9%84%D9%87_%D8%B2%DB%8C%D8%B1%D8%A2%D8%B1%D8%A7%DB%8C%D9%87_%D8%A8%DB%8C%D8%B4%DB%8C%D9%86%D9%87" title="مسئله زیرآرایه بیشینه – Persian" hreflang="fa" class="interlanguage-link-target" lang="fa">فارسی</a></li><li class="interlanguage-link interwiki-ka mw-list-item"><a href="https://ka.wikipedia.org/wiki/%E1%83%A3%E1%83%93%E1%83%98%E1%83%93%E1%83%94%E1%83%A1%E1%83%98_%E1%83%A5%E1%83%95%E1%83%94%E1%83%9B%E1%83%98%E1%83%9B%E1%83%93%E1%83%94%E1%83%95%E1%83%A0%E1%83%9D%E1%83%91%E1%83%98%E1%83%A1_%E1%83%90%E1%83%9B%E1%83%9D%E1%83%AA%E1%83%90%E1%83%9C%E1%83%90" title="უდიდესი ქვემიმდევრობის ამოცანა – Georgian" hreflang="ka" class="interlanguage-link-target" lang="ka">ქართული</a></li><li class="interlanguage-link interwiki-pt mw-list-item"><a href="https://pt.wikipedia.org/wiki/Sublista_cont%C3%ADgua_de_soma_m%C3%A1xima" title="Sublista contígua de soma máxima – Portuguese" hreflang="pt" class="interlanguage-link-target" lang="pt">Português</a></li><li class="interlanguage-link interwiki-sr mw-list-item"><a href="https://sr.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC_%D0%BC%D0%B0%D0%BA%D1%81%D0%B8%D0%BC%D0%B0%D0%BB%D0%BD%D0%BE%D0%B3_%D0%BF%D0%BE%D0%B4%D0%BD%D0%B8%D0%B7%D0%B0" title="Проблем максималног подниза – Serbian" hreflang="sr" class="interlanguage-link-target" lang="sr">Српски / srpski</a></li><li class="interlanguage-link interwiki-vi mw-list-item"><a href="https://vi.wikipedia.org/wiki/B%C3%A0i_to%C3%A1n_m%E1%BA%A3ng_con_l%E1%BB%9Bn_nh%E1%BA%A5t" title="Bài toán mảng con lớn nhất – Vietnamese" hreflang="vi" class="interlanguage-link-target" lang="vi">Tiếng Việt</a></li><li class="interlanguage-link interwiki-zh mw-list-item"><a href="https://zh.wikipedia.org/wiki/%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E5%88%97%E9%97%AE%E9%A2%98" title="最大子数列问题 – Chinese" hreflang="zh" class="interlanguage-link-target" lang="zh">中文</a></li></ul>
+		<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q1334332#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>
+	</div>
+</nav>
+
+</div>
+
+</div>
+<footer id="footer" class="mw-footer" role="contentinfo">
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 13 August 2021, at 15:35<span class="anonymous-show">&nbsp;(UTC)</span>.</li>
+	<li id="footer-info-copyright">Text is available under the <a rel="license" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="https://foundation.wikimedia.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://foundation.wikimedia.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+	<li id="footer-places-disclaimer"><a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+	<li id="footer-places-contact"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+	<li id="footer-places-mobileview"><a href="https://en.m.wikipedia.org/w/index.php?title=Maximum_subarray_problem&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+	<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/en.wikipedia.org">Statistics</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+<li style="display: none;"><a href="#">Edit preview settings</a></li></ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/wikimedia-button.png" srcset="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/wikimedia-button-1.png 1.5x, Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/wikimedia-button-2x.png 2x" alt="Wikimedia Foundation" loading="lazy" width="88" height="31"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/poweredby_mediawiki_132x47.png 1.5x, Maximum%20subarray%20problem%20-%20Wikipedia_fichiers/poweredby_mediawiki_176x62.png 2x" loading="lazy" width="88" height="31"></a></li>
+</ul>
+
+</footer>
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.536","walltime":"1.004","ppvisitednodes":{"value":2929,"limit":1000000},"postexpandincludesize":{"value":43268,"limit":2097152},"templateargumentsize":{"value":5296,"limit":2097152},"expansiondepth":{"value":15,"limit":40},"expensivefunctioncount":{"value":7,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":42578,"limit":5000000},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%  866.107      1 -total"," 17.85%  154.605     10 Template:Citation"," 16.75%  145.040     17 Template:Sfn","  8.64%   74.815      4 Template:Fix","  7.81%   67.609      1 Template:Cn","  6.27%   54.348      9 Template:Category_handler","  4.38%   37.923      2 Template:Reflist","  3.82%   33.115      1 Template:NoteFoot","  2.81%   24.311      1 Template:Expert_needed","  2.54%   21.994      3 Template:Cite_web"]},"scribunto":{"limitreport-timeusage":{"value":"0.282","limit":"10.000"},"limitreport-memusage":{"value":6258908,"limit":52428800},"limitreport-logs":"anchor_id_list = table#1 {\n  [\"CITEREFBackursDikkalaTzamos2016\"] = 1,\n  [\"CITEREFBae2007\"] = 1,\n  [\"CITEREFBengtssonChen2007\"] = 1,\n  [\"CITEREFBentley1984\"] = 1,\n  [\"CITEREFBentley1989\"] = 1,\n  [\"CITEREFBird1989\"] = 1,\n  [\"CITEREFBrodalJørgensen2007\"] = 1,\n  [\"CITEREFGries1982\"] = 1,\n  [\"CITEREFMu2010\"] = 1,\n  [\"CITEREFTAN\"] = 1,\n  [\"CITEREFTakaoka2002\"] = 1,\n  [\"CITEREFTamakiTokuyama1998\"] = 1,\n}\ntemplate_list = table#1 {\n  [\"Cbignore\"] = 1,\n  [\"Citation\"] = 10,\n  [\"Citation needed\"] = 2,\n  [\"Cite web\"] = 3,\n  [\"Cn\"] = 1,\n  [\"Color\"] = 2,\n  [\"Dead link\"] = 1,\n  [\"Expert needed\"] = 1,\n  [\"Harvtxt\"] = 9,\n  [\"NoteFoot\"] = 1,\n  [\"NoteTag\"] = 6,\n  [\"Reflist\"] = 1,\n  [\"Sfn\"] = 17,\n}\narticle_whitelist = table#1 {\n}\n"},"cachereport":{"origin":"mw2391","timestamp":"20210909144339","ttl":1814400,"transientcontent":false}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Maximum subarray problem","url":"https:\/\/en.wikipedia.org\/wiki\/Maximum_subarray_problem","sameAs":"http:\/\/www.wikidata.org\/entity\/Q1334332","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q1334332","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2007-04-10T15:47:58Z","dateModified":"2021-08-13T15:35:35Z","image":"https:\/\/upload.wikimedia.org\/wikipedia\/commons\/2\/25\/Maximum_Subarray_Visualization.svg"}</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":137,"wgHostname":"mw2335"});});</script>
+<a accesskey="v" href="https://en.wikipedia.org/wiki/Maximum_subarray_problem?action=edit#Kadane%27s_algorithm" class="oo-ui-element-hidden"></a></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>

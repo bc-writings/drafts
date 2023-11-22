@@ -1,0 +1,6 @@
+a:link {text-decoration: none;COLOR="#999999"}
+a:visited {text-decoration: none;COLOR="#999999"}
+a:active {text-decoration: none;COLOR="#000000"};
+a:hover {text-decoration: underline; COLOR="#000000"}
+BODY  {SCROLLBAR-FACE-COLOR: #FFEA95;   SCROLLBAR-ARROW-COLOR:#000000; SCROLLBAR-TRACK-COLOR: #FFEACD; 
+}

@@ -1,0 +1,98 @@
+De l'algorithme \ref{nat-algo}, nous allons juste garder les opérations sur les listes. Ceci nous donne l'algorithme suivant dont nous allons chercher à obtenir une formule explicite de la sortie $S_n$ en fonction de $a_0$, $a_1$, \dots{} , $a_n$.
+
+\begin{algo}[frame]
+	\algovoidcaption \label{list-to-binomial}
+
+	\In{$[ a_0 , a_1 , \dots , a_n ]$ une liste de naturels}
+	\Out{?}
+	
+	\BlankLine
+	
+	\Actions{
+		$L \Store [ a_0 , a_1 , \dots , a_n ]$
+		\\
+		\BlankLine
+		\While{$taille(L) \neq 1$}{
+			$newL \Store \EmptyList$
+			\\
+			\ForRange*{i}{1}{taille(L) - 1}{
+				\Append{$newL$}{$(L[i + 1] - L[i])$}
+			}
+			$L \Store newL$
+		}
+		\BlankLine
+		\Return{$L[1]$}
+	}
+\end{algo}
+
+
+Pour $n = 0$ et $n = 1$, nous avons directement que $S_0 = a_0$ et $S_1 = - a_0 + a_1$ respectivement.
+
+\medskip
+
+Pour $n = 2$, nous avons les deux étapes suivantes.
+
+\begin{enumerate}
+	\item $[a_1 - a_0 , a_2 - a_1]$
+
+	\item $[a_2 - a_1 - a_1 + a_0]$ d'où $S_2 = a_0 - 2 a_1 + a_2 $
+\end{enumerate}
+
+\medskip
+
+Pour $n = 3$, nous avons les étapes suivantes où le triangle de Pascal pointe son nez.
+
+\begin{enumerate}
+	\item $[a_1 - a_0 , a_2 - a_1 , a_3 - a_2]$
+
+	\item Le cas précédent donne alors $S_3 = (a_1 - a_0) - 2 (a_2 - a_1) + a_3 - a_2$ soit après simplification $S_3 = - a_0 + 3 a_1 - 3 a_2 + a_3$.
+\end{enumerate}
+
+\medskip
+
+Plus généralement, nous allons supposer que $S_n = \dsum_{i=0}^{n} c_{i,n} a_k$ où les coefficients $c_{i,n}$ sont des entiers relatifs indépendants des valeurs des $a_k$.
+En ajoutant un élément $a_{n+1}$ après la fin de la liste $[ a_0 , a_1 , \dots , a_n ]$, nous devons avoir :
+\begin{flalign*}
+	\dsum_{i=0}^{n+1} c_{i,n+1} a_k
+		& = S_{n+1} 
+		& \\[-1em]
+		& = \dsum_{i=0}^{n} c_{i,n} (a_{i+1} - a_k)
+		& \\
+		& = \dsum_{i=1}^{n+1} c_{i-1,n} a_k - \dsum_{i=0}^{n} c_{i,n} a_k
+		& \\
+		& = - c_{0,n} a_0
+		  + \dsum_{i=1}^{n} (c_{i-1,n} - c_{i,n}) a_k
+		  + c_{n,n} a_n
+\end{flalign*}
+
+La suite $\left(  c_{i,n} \right)_{n \in \NN , i \in \ZintervalC{0}{n}}$ doit donc vérifier les conditions suivantes.
+
+\begin{enumerate}
+	\item $c_{0,0} = 1$
+	
+	\item $c_{0,1} = -1$ et $c_{1, 1} = 1$
+
+	\item $c_{0,2} = 1$ , $c_{1, 2} = -2$ et $c_{2, 2} = 1$
+
+	\item $\forall n \in \NN$, $c_{0,n+1} = - c_{0,n}$ et $c_{n+1,n+1} = c_{n,n}$.
+
+	\item $\forall n \in \NN$, $\forall i \in \ZintervalC{1}{n}$, $c_{i,n+1} = c_{i-1,n} - c_{i,n}$.
+\end{enumerate}
+
+
+Il est aisé de voir que $c_{i,n} = (-1)^{i+n} \binom{n}{i}$ convient. Nous avons ainsi justifié que l'algorithme \ref{list-to-binomial} renvoie $\dsum_{i=0}^{n} (-1)^{i+n} \binom{n}{i} a_k$.
+Ce résultat appliqué à la liste $[ k^n , (k+1)^n , \dots , (k+n)^n ]$ et la preuve de la section précédente nous donnent la très jolie formule suivante.
+\[ \forall k \in \NN, \dsum_{i=0}^{n} (-1)^{i+n} \binom{n}{i} (k+i)^n = n! \]
+
+
+La section finale suivante propose une preuve purement combinatoire de cette identité.
+
+
+\begin{remark}
+	Il est maintenant facile de prouver les identités suivantes que nous nommerons \myquote{identités du kid}
+	\footnote{
+		Donner sans explication, cette formule, qui contient $k+id$, est terrassante comme l'était en son temps Billy the Kid.
+	}.
+	\[ \forall d \in \NNs, \forall k \in \NN, \dsum_{i=0}^{n} (-1)^{i+n} \binom{n}{i} (k+id)^n = d^n n! \]
+\end{remark}
+

@@ -1,0 +1,1 @@
+﻿(function(){'use strict';$(".btn-addtocart").click(function(){$('a[class=btn-viewcart]').addClass('active');});})();

@@ -1,0 +1,36 @@
+body	{ color: #000022; font-weight: normal; font-size: 12px; font-family: Verdana, Arial;  text-align: justify; margin: 2ex }
+
+h1	{ color: #CC0033; font-style: normal; font-weight: bold; font-size: 30px; line-height: 30px; font-family: Arial, Helvetica, sans-serif}
+
+h2	{ color: #000066; font-style: normal; font-weight: bold; font-size: 18px; line-height: 18px; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+
+h3	{ color: #BB0000; font-style: normal; font-weight: bold; font-size: 16px; line-height: 16px; font-family: Verdana, sans-serif}
+
+h4	{ color: #000066; font-style: normal; font-weight: demi-bold; font-size: 13px; line-height: 13px; font-family: Verdana, sans-serif }
+
+h5	{ color: #CC6600; font-style: normal; font-weight: demi-bold; font-size: 13px; line-height: 13px; font-family: Verdana, sans-serif }
+
+h6	{ color: #660066; font-style: normal; font-weight: bold; font-size: 12px; line-height: 12px; font-family: Verdana, sans-serif }
+
+a:link	{ color: navy; font-weight: normal; font-size: 12px; font-family:  Verdana, Arial, sans-serif }
+
+a:vlink	{ color: #000099; font-weight: normal; font-size: 11px; font-family: Verdana, Arial, sans-serif }
+
+a:hover { color: #229933; font-weight: normal; font-size: 12px; font-family: Verdana, Arial, sans-serif }
+
+td	{ color: #000000; font-weight: normal; font-size: 12px; font-family: Verdana, Arial, sans-serif }
+
+pre	{ color: #000022; font-weight: normal; font-size: 12px; font-family: Courier, Courier New, monospace }
+
+strong {color: #000022; font-weight: normal; font-size: 12px; background: #FFFF33}
+
+code {color: #000022; font-weight: normal; font-size: 12px; font-family: Verdana, sans-serif; background: #FFCC00}
+
+sup {font-size: 10 px} 
+
+sub {font-size: 10 px} 
+
+hr { color: #000022; height: 1pt}
+
+caption { color: #660066; font-style: normal; font-weight: bold; font-size: 12px; line-height: 14px; font-family: Verdana, sans-serif }
+

@@ -1,0 +1,264 @@
+\documentclass[12pt]{article}
+
+\usepackage{tnsmath}
+
+
+\begin{document}
+
+\section{Calcul de $\displaystyle\int \dfrac{1}{(1 - x) \sqrt{1 - x^2}} \dd{x}$}
+
+
+% ---------------- %
+
+
+\subsection{Méthode 1 (pb de signes)}
+
+\begin{explain}[style = ar]
+	\displaystyle
+	\int \dfrac{1}{(1 - x) \sqrt{1 - x^2}} \dd{x}
+		\explnext{}
+	\displaystyle
+	\int \dfrac{1 + x}{(1 - x^2)^{1.5}} \dd{x}
+		\explnext{}
+	\displaystyle
+	\int \dfrac{1}{(1 - x^2)^{1.5}} \dd{x}
+	+
+	\int \dfrac{x}{(1 - x^2)^{1.5}} \dd{x}
+		\explnext{$x = \sin \theta$}
+	\displaystyle
+	\int \dfrac{\cos \theta}{(1 - \sin^2 \theta)^{1.5}} \dd{\theta}
+	+
+	\dfrac{1}{(1 - x^2)^{0.5}}
+		\explnext{}
+	\displaystyle
+	\int \dfrac{1}{\cos^2 \theta} \dd{\theta}
+	+
+	\dfrac{1}{\sqrt{1 - x^2}}
+		\explnext{}
+	\displaystyle
+	\tan \theta
+	+
+	\dfrac{1}{\sqrt{1 - x^2}}
+		\explnext{$x = \sin \theta$}
+	\displaystyle
+	\tan(\asin x)
+	+
+	\dfrac{1}{\sqrt{1 - x^2}}
+\end{explain}
+
+
+% ---------------- %
+
+
+\subsection{Méthode 2 (pb de signes)}
+
+\begin{explain}[style = ar]
+	\displaystyle
+	\int \dfrac{1}{(1 - x) \sqrt{1 - x^2}} \dd{x}
+		\explnext{$x =  \cos \theta$}
+	\displaystyle
+	\int \dfrac{1}{\cos \theta - 1} \dd{\theta}
+		\explnext{$\cos \theta = \dfrac{1 - t^2}{1 + t^2}$ avec $t = \tan\left(\dfrac{\theta}{2}\right)$ et $\dd{t} = (1 + t^2) \cdot \dfrac{\dd{\theta}}{2}$}
+	\displaystyle
+	\int \dfrac{1 + t^2}{-2 t^2} \cdot \dfrac{2 \dd{t}}{1 + t^2}
+		\explnext{}
+	\displaystyle
+	\int \dfrac{- 1}{t^2} \dd{t}
+		\explnext{}
+	\dfrac{1}{t}
+		\explnext{$t = \tan\left(\dfrac{\theta}{2}\right)$ et $x =  \cos \theta$}
+	\dfrac{1}{\tan \left( \dfrac{\acos x}{2} \right)}
+\end{explain}
+
+
+% ---------------- %
+
+
+\subsection{Méthode 3}
+
+Changeons de point de vue et tentons notre chance avec
+$\sder[p]{\dfrac{u}{v}}{1} = \dfrac{\sder{u}{1} v - u \sder{v}{1}}{v^2}$.
+On choisit $u(x) = \sqrt{1 - x^2}$ de sorte que l'on a :
+
+
+\bigskip
+
+
+\begin{explain}[style = ar]
+	\der{u}{x}{1}(x) v(x) - u(x) \der{v}{x}{1}(x)
+		\explnext{}
+	\dfrac{-x}{\sqrt{1 - x^2}} v(x) - \sqrt{1 - x^2} \der{v}{x}{1}(x)
+		\explnext{}
+	\dfrac{-x v(x) - (1 - x^2) \der{v}{x}{1}(x)}{\sqrt{1 - x^2}}
+\end{explain}
+
+
+\bigskip
+
+
+Essayons $v(x) = 1 - x$. Ceci nous donne :
+
+
+\bigskip
+
+
+\begin{explain}[style = ar]
+	-x v(x) - (1 - x^2) \der{v}{x}{1}(x)
+		\explnext{}
+	-x (1 - x) + (1 - x^2)
+		\explnext{}
+	-x + 1
+\end{explain}
+
+
+\bigskip
+
+
+Nos choix aboutissent...
+
+
+\bigskip
+
+
+\begin{explain}[style = ar]
+	\sder[p]{\dfrac{u}{v}}{1}(x)
+		\explnext{}
+	\dfrac{-x + 1}{(1 - x)^2 \sqrt{1 - x^2}}
+		\explnext{}
+	\dfrac{1}{(1 - x) \sqrt{1 - x^2}}
+\end{explain}
+
+
+\bigskip
+
+
+Finalement l'audace a payé.
+
+
+\bigskip
+
+
+\begin{explain}[style = ar]
+	\displaystyle
+	\int \dfrac{1}{(1 - x) \sqrt{1 - x^2}} \dd{x}
+		\explnext{}
+	\dfrac{\sqrt{1 - x^2}}{1 - x}
+\end{explain}
+
+
+% ---------------- %
+
+
+\subsection{Méthode 4}
+
+\begin{explain}[style = ar]
+	\displaystyle
+	\int \dfrac{1}{(1 - x) \sqrt{1 - x^2}} \dd{x}
+		\explnext{}
+	\displaystyle
+	\int \dfrac{1 + x}{(1 - x^2)^{1.5}} \dd{x}
+		\explnext{$\binom{- 1.5}{k} = \frac{1}{k !} \cdot \dprod_{i = 0}^{k - 1} (-1.5 - i)$}
+	\displaystyle
+	\int (1 + x) \cdot \sum_{k \geq 0} \binom{- 1.5}{k}(- x^2)^k \dd{x} 
+		\explnext{$n/2$ : quotient de la division euclidienne de $n$ par $2$.}
+	\displaystyle
+	\int \sum_{n \geq 0} \binom{- 1.5}{n/2} \cdot (-1)^{n/2} x^n \dd{x}
+		\explnext{Choix de la constante pour la suite...}
+	\displaystyle
+	1 + \sum_{n \geq 0} \binom{- 1.5}{n/2} \cdot (-1)^{n/2} \frac{x^{n+1}}{n+1}
+\end{explain}
+
+
+\bigskip
+
+
+Distinguons deux cas pour étudier les coefficients devant les $x^{n+1}$.
+
+\begin{enumerate}
+	\item $n = 2 k$ i.e. $n + 1 = 2k + 1$
+	
+	\begin{explain}[style = ar]
+		\displaystyle
+		\binom{- 1.5}{n/2} \cdot \frac{(-1)^{n/2}}{n+1}
+			\explnext{}
+		\displaystyle
+		\binom{- 1.5}{k} \cdot \frac{(-1)^{k}}{2k+1}
+			\explnext{}
+		\displaystyle
+		\frac{1}{k !} \cdot \dprod_{i = 0}^{k - 1} (-1.5 - i) \cdot \frac{(-1)^{k}}{2k+1}
+			\explnext{$j = i + 1$}
+		\displaystyle
+		\frac{1}{k !} \cdot \dprod_{j = 1}^{k} (-0.5 - j) \cdot \frac{(-1)^{k}}{2k+1}
+			\explnext{$\dfrac{-0.5 - k}{2k + 1} = -0.5$}
+		\displaystyle
+		\frac{1}{k !} \cdot \dprod_{j = 0}^{k-1} (-0.5 - j) \cdot (-1)^{k}
+			\explnext{}
+		\displaystyle
+		\binom{-0.5}{k} \cdot (-1)^{k}
+	\end{explain}
+	
+	Nous avons un coefficient simple de $x^{2k+1} = x \cdot x^{2k}$.
+	
+	\newpage
+	
+	
+	\item $n = 2 k + 1$ i.e. $n + 1 = 2(k + 1)$. Cherchons un coefficient simple de $x^{n+1} = x^{2(k + 1)}$.
+	
+	\begin{explain}[style = ar]
+		\displaystyle
+		\binom{- 1.5}{n/2} \cdot \frac{(-1)^{n/2}}{n+1}
+			\explnext{}
+		\displaystyle
+		\binom{- 1.5}{k} \cdot \frac{(-1)^{k}}{2k+2}
+			\explnext{}
+		\displaystyle
+		\frac{1}{k !} \cdot \dprod_{i = 0}^{k - 1} (-1.5 - i) \cdot \frac{(-1)^{k}}{2k+2}
+			\explnext{$j = i + 1$}
+		\displaystyle
+		\frac{1}{k !} \cdot \dprod_{j = 1}^{k} (-0.5 - j) \cdot \frac{(-1)^{k}}{2(k+1)}
+			\explnext{}
+		\displaystyle
+		\frac{1}{(k+1)!} \cdot \dprod_{j = 0}^{k} (-0.5 - j) \cdot (-1)^{k+1}
+			\explnext{}
+		\displaystyle
+		\binom{-0.5}{k+1} \cdot (-1)^{k+1}
+	\end{explain}
+\end{enumerate}
+
+
+\bigskip
+
+
+Finalement nous obtenons :
+
+
+\bigskip
+
+\begin{explain}[style = ar]
+	\displaystyle
+	\int \dfrac{1}{(1 - x) \sqrt{1 - x^2}} \dd{x}
+		\explnext{}
+	\displaystyle
+	1 + \sum_{n \geq 0} \binom{- 1.5}{n/2} \cdot (-1)^{n/2} \frac{x^{n+1}}{n+1}
+		\explnext{}
+	\displaystyle
+	1
+	+ \sum_{k \geq 0} \binom{- 1.5}{k} \cdot (-1)^{k} \frac{x^{2k+2}}{2k+2}
+	+ \sum_{k \geq 0} \binom{- 1.5}{k} \cdot (-1)^{k} \frac{x^{2k+1}}{2k+1}
+		\explnext{}
+	\displaystyle
+	1
+	+ \sum_{k \geq 0} \binom{-0.5}{k+1} \cdot (-1)^{k+1} (x^2)^{k+1}
+	+ \sum_{k \geq 0} \binom{-0.5}{k} \cdot (-1)^{k} \cdot x \cdot (x^2)^{k}
+		\explnext{}
+	\displaystyle
+	\sum_{j \geq 0} \binom{-0.5}{j} \cdot (-x^2)^j
+	+ x \cdot \sum_{k \geq 0} \binom{-0.5}{k} \cdot (-x^2)^{k}
+		\explnext{}
+	\displaystyle
+	(1 + x) (1 - x^2)^{-0.5}
+		\explnext{}
+	\dfrac{1+x}{\sqrt{1 - x^2}}
+\end{explain}
+
+\end{document}

@@ -1,0 +1,741 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+   <title>Les tours de Hanoi</title>
+<meta name="description" content="Mathématiques ludiques Le jeu des tours de Hanoï"><meta name="author" content="Th Eveilleau Philippe"><meta name="keywords" content="Mathématiques ludiques, récurrence suite géométrique suite arithmétique stratégie strategy hanoi tour algorithme récurrence recurrency resolution problem problème game jeu "><script language="javascript1.2">var v4=new Image();v4.src="../../images/haut_v.gif";var v6=new Image();v6.src="../../images/bouton_accueil1.jpg";
+var v7=new Image();v7.src="../../images/bouton_truc_accueil21.jpg";</script><link href="Les%20tours%20de%20Hanoi_fichiers/liens.css" rel="stylesheet" type="text/css">
+<script><!--
+function pasderreur(){
+return true
+}window.onerror=pasderreur
+// --></script>
+<script type="text/javascript">
+//<![CDATA[
+var gs_d=new Date,DoW=gs_d.getDay();gs_d.setDate(gs_d.getDate()-(DoW+6)%7+3);
+var ms=gs_d.valueOf();gs_d.setMonth(0);gs_d.setDate(4);
+var gs_r=(Math.round((ms-gs_d.valueOf())/6048E5)+1)*gs_d.getFullYear();
+var gs_p = (("https:" == document.location.protocol) ? "https://" : "http://");
+document.write(unescape("%3Cscript src='" + gs_p + "s.gstat.orange.fr/lib/gs.js?"+gs_r+"' type='text/javascript'%3E%3C/script%3E"));
+//]]>
+</script><script src="Les%20tours%20de%20Hanoi_fichiers/gs.js" type="text/javascript"></script>
+</head>
+<body bgproperties="fixed" vlink="#999999" link="#999999" bgcolor="#FFEA95" background="Les%20tours%20de%20Hanoi_fichiers/degrade.jpg" alink="#000000">
+<div align="center">
+  <table width="900" cellspacing="0" cellpadding="5" border="0">
+    <tbody><tr> 
+      <td> 
+        <div align="center"><a name="haut"></a> <br>
+          <table cellspacing="0" cellpadding="5" border="0">
+            <tbody><tr rowspan="2"> 
+              <td bordercolor="#009966" valign="bottom" nowrap="nowrap"> 
+                <p align="center"><font size="2" face="Arial, Helvetica, sans-serif"><img src="Les%20tours%20de%20Hanoi_fichiers/hanoi_2.gif" width="224" height="253"></font><font size="5" face="Arial" color="#000000"><b>&nbsp;</b> 
+                  </font> 
+              </p></td>
+              <td valign="middle"> 
+                <p align="left"><font size="5" face="Comic Sans MS" color="#000000">Les 
+                  tours de Hanoï</font> 
+                </p><p align="left"><font size="-1" face="Comic Sans MS"> <img src="Les%20tours%20de%20Hanoi_fichiers/pt_jaune.gif" width="12" height="12" border="0" align="bottom"><a href="#zero">Le 
+                  jeu</a><br>
+                  <img src="Les%20tours%20de%20Hanoi_fichiers/pt_jaune.gif" width="12" height="12" border="0" align="bottom"><a href="#un">La 
+                  légende</a><br>
+                  </font><img src="Les%20tours%20de%20Hanoi_fichiers/pt_jaune.gif" width="12" height="12" border="0" align="bottom"><a href="#deux"><font size="-1" face="Comic Sans MS">Analyse 
+                  et solution</font></a><br>
+                  <img src="Les%20tours%20de%20Hanoi_fichiers/pt_jaune.gif" width="12" height="12" border="0" align="bottom"><a href="#trois"><font size="-1" face="Comic Sans MS">Observations</font></a><br>
+                  <img src="Les%20tours%20de%20Hanoi_fichiers/pt_jaune.gif" width="12" height="12" border="0" align="bottom"><a href="#quatre"><font size="-1" face="Comic Sans MS">Petits 
+                  problèmes</font></a></p>
+                <p><br>
+                  <font size="-1" face="Comic Sans MS"><img src="Les%20tours%20de%20Hanoi_fichiers/herbe.gif" width="200" height="5" align="middle"></font></p>
+              </td>
+            </tr>
+          </tbody></table>
+          <font size="-1" face="Comic Sans MS"><br>
+          </font><br>
+          <br>
+        </div>
+        <blockquote> <a name="zero"></a><font face="Comic Sans MS"><img src="Les%20tours%20de%20Hanoi_fichiers/pt_v.gif" name="point1" width="10" height="10" border="0" align="bottom">Le 
+          jeu</font> <font size="2" face="Arial, Helvetica, sans-serif"><b><img src="Les%20tours%20de%20Hanoi_fichiers/hanoi.gif" width="121" height="39" align="bottom"></b> 
+          <br>
+          <br>
+          </font> <font size="2" face="Arial, Helvetica, sans-serif"><b>V</b>éritable 
+          casse-tête annamite, ce jeu est composé de trois tours 
+          et d'anneaux enfilés sur ces tours.<br>
+          Ces anneaux doivent obligatoirement être posés les uns 
+          sur les autres par taille décroissante. <br>
+          Les pivots peuvent être disposés comme les sommets d'un 
+          triangle.<br>
+          Le jeu consiste donc à déplacer tous les anneaux placés 
+          sur une tour A vers une tour C par exemple, en un minimum de temps. 
+          <br>
+          On ne déplace qu'un anneau à la fois et on ne peut placer 
+          un anneau que sur un plus grand que lui.<b><br>
+          &nbsp; </b></font></blockquote>
+        <div align="center"><font size="-1" face="Comic Sans MS"><a href="http://therese.eveilleau.pagesperso-orange.fr/pages/jeux_mat/textes/jeu_hanoi.html" target="_blank"><img src="Les%20tours%20de%20Hanoi_fichiers/loupe.gif" border="0" align="top">PLEIN 
+          ECRAN</a></font> 
+          <table cellspacing="0" cellpadding="0" bordercolor="#000000" border="1">
+            <tbody><tr> 
+              <td> <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="500" height="300">
+                  <param name="movie" value="hanoi_jeu.swf">
+                  <param name="menu" value="true">
+                  <param name="quality" value="high">
+                  <param name="bgcolor" value="#FFF3CC">
+                  <embed src="Les%20tours%20de%20Hanoi_fichiers/hanoi_jeu.swf" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" menu="true" quality="high" bgcolor="#FFF3CC" loop="true" type="application/x-shockwave-flash" width="500" height="300" align="middle">
+                   
+                </object></td>
+            </tr>
+          </tbody></table>
+        </div>
+        <div align="right"> 
+          <div align="right"><a href="#haut" onmouseover='javascript: haut1.src="../../images/hautor.gif"' onmouseout='javascript: haut1.src="../../images/haut3.gif"'><font size="-1" face="Arial"><img src="Les%20tours%20de%20Hanoi_fichiers/haut3.gif" name="haut1" width="100" height="20" border="0" align="bottom"></font></a> 
+          </div>
+          <blockquote> 
+            <blockquote> 
+              <p align="left"><a name="un"></a><font face="Comic Sans MS"><img src="Les%20tours%20de%20Hanoi_fichiers/pt_v.gif" name="point1" width="10" height="10" border="0" align="bottom">La 
+                légende</font> <br>
+                <font size="2" face="Arial, Helvetica, sans-serif">D'après 
+                <font size="1">RECREATIONS MATHEMATIQUES</font> de E. Lucas,</font><font size="2" face="Arial, Helvetica, sans-serif"> 
+                "L'écrivain Asaphad rapporte que Sessa, fils de Daher, 
+                imagina le jeu des échecs, où le roi, quoique la 
+                pièce la plus importante, ne peut faire un pas sans le 
+                secours de ses sujets : les pions, dans le but de rappeler au 
+                monarque indien Scheran les principes de justice et d'équité 
+                avec lesquels il devait gouverner. Scheran, enchanté d'une 
+                leçon donnée d'une manière ingénieuse, 
+                promit à l'inventeur de lui donner tout ce qu'il voudrait 
+                pour sa récompense.<br>
+                Celui-ci répondit : 'Que votre Majesté daigne me 
+                donner un grain de blé pour la première case de 
+                l'échiquier, deux pour la seconde, quatre pour la troisième, 
+                et ainsi de suite en doublant jusqu'à la soixante-quatrième 
+                case.'<br>
+                Il aurait fallu huit fois la superficie de la Terre, supposée 
+                entièrement ensemencée, pour avoir en une année 
+                de quoi satisfaire au désir du modeste bramine. Le nombre 
+                des grains de blé est égal au nombre de déplacements 
+                de la tour de Hanoï à soixante-quatre étages."<br>
+                </font><font size="2" face="Arial, Helvetica, sans-serif">Jan 
+                Gullberg (1936, 1998) écrit :"Avec près de 
+                100 grains par centimètre cube, le volume total des grains 
+                aurait représenté deux cent kilomètres cubes, 
+                dont le chargement aurait nécessité deux mille millions 
+                de wagons, soit un train égal à mille fois la circonfétrence 
+                de la Terre".<br>
+                <br>
+                Nous allons voir et calculer approximativement, à raison 
+                d'une seconde pour le déplacement d'un anneau, qu'il faut 
+                environ cinq milliards de siècles pour déplacer 
+                les 64 anneaux. La durée de la vie de la terre n'y suffirait 
+                pas ! Il est alors facile de prévoir la fin du monde lorsque 
+                les 64 anneaux seront déplacés. Nous calculerons 
+                effectivement ce résultat ci-après. Nous allons 
+                dans le paragraphe suivant observer les résultats du jeu 
+                automatique avec un nombre d'anneaux inférieur ou égal 
+                à 12. <br>
+                </font></p>
+            </blockquote>
+          </blockquote>
+          <a href="#haut" onmouseover='javascript: haut3.src="../../images/hautor.gif"' onmouseout='javascript: haut3.src="../../images/haut3.gif"'><font size="-1" face="Arial"><img src="Les%20tours%20de%20Hanoi_fichiers/haut3.gif" name="haut3" width="100" height="20" border="0" align="bottom"></font></a> 
+        </div>
+        <blockquote> 
+          <blockquote> 
+            <p><a name="deux"></a><font face="Comic Sans MS"><img src="Les%20tours%20de%20Hanoi_fichiers/pt_v.gif" name="point1" width="10" height="10" border="0" align="bottom">Analyse 
+              et solution</font> <br>
+              <font size="2" face="Arial, Helvetica, sans-serif">Le jeu est toujours 
+              possible et demande deux fois plus de temps chaque fois que l'on 
+              ajoute un anneau à la tour initiale. En effet, si l'on sait 
+              résoudre le problème pour trois étages (en 
+              7 coups), en transportant les anneaux de la tour A vers la tour 
+              B , alors on sait résoudre le problème pour quatre 
+              annneaux. Ainsi, on transporte les 3 anneaux de la tour A vers la 
+              tour B (7 coups) , puis on déplace le quatrième anneau 
+              de la tour A vers la tour C (1 coup) et enfin on transporte les 
+              trois anneaux de la tour B vers la tour C (7 coups). Le nombre de 
+              coups devient le double, plus un ; ici il est devenu : 7+1+7=15 
+              soit 2x7+1.<br>
+              Le nombre de coups croît exponentiellement, c'est donc extrêmement 
+              rapide.<br>
+              Ci-dessous, entrer le nombre d'anneaux sur la première tour 
+              et régler la vitesse de déplacement des anneaux. </font></p>
+          </blockquote>
+          <div align="center"><br>
+            <font size="-1" face="Comic Sans MS"><a href="http://therese.eveilleau.pagesperso-orange.fr/pages/jeux_mat/textes/hanoi.html" target="_blank"><img src="Les%20tours%20de%20Hanoi_fichiers/loupe.gif" border="0" align="top">PLEIN 
+            ECRAN</a></font> 
+            <table cellspacing="0" cellpadding="0" bordercolor="#000000" border="1">
+              <tbody><tr> 
+                <td> <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="500" height="300">
+                    <param name="movie" value="hanoi.swf">
+                    <param name="menu" value="true">
+                    <param name="quality" value="high">
+                    <param name="bgcolor" value="#FFF3CC">
+                    <embed src="Les%20tours%20de%20Hanoi_fichiers/hanoi.swf" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" menu="true" quality="high" bgcolor="#FFF3CC" loop="true" type="application/x-shockwave-flash" width="500" height="300" align="middle">
+                     
+                  </object></td>
+              </tr>
+            </tbody></table>
+            <p>&nbsp;</p>
+          </div>
+          <blockquote> 
+            <p><font size="2" face="Arial, Helvetica, sans-serif">Tableau des 
+              résultats pour un nombre d'anneaux allant de 1 à 12.<br>
+              </font></p>
+            <table cellspacing="0" cellpadding="0" bordercolor="#000000" border="2">
+              <tbody><tr valign="middle"> 
+                <td width="90"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">Nombre 
+                    <br>
+                    d'anneaux</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">1</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">2</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">3</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">4</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">5</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">6</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">7</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">8</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">9</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">10</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">11</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">12</font></div>
+                </td>
+              </tr>
+              <tr valign="middle"> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">Nombre 
+                    <br>
+                    de coups</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">1 
+                    = <br>
+                    2<sup>1</sup> - 1</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">3 
+                    =<br>
+                    2<sup>2</sup> - 1</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">7 
+                    =<br>
+                    2<sup>3</sup> - 1</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">15 
+                    =<br>
+                    2<sup>4</sup> - 1</font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">31 
+                    =<br>
+                    2<sup>5</sup> - 1 </font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">63 
+                    =<br>
+                    2<sup>6</sup> - 1 </font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">127 
+                    =<br>
+                    2<sup>7</sup> - 1 </font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">255 
+                    =<br>
+                    2<sup>8</sup> - 1 </font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">511 
+                    =<br>
+                    2<sup>9</sup> - 1 </font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">1023=<br>
+                    2<sup>10</sup> - 1 </font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">2047=<br>
+                    2<sup>11</sup> - 1 </font></div>
+                </td>
+                <td width="45"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">4095=<br>
+                    2<sup>12</sup> - 1 </font></div>
+                </td>
+              </tr>
+            </tbody></table>
+            <p align="center"><font size="3" face="Arial, Helvetica, sans-serif">De 
+              façon générale, le nombre de déplacements 
+              pour n anneaux est<b> 2<sup>n</sup> - 1</b>.</font> 
+            </p><p><font size="2" face="Arial, Helvetica, sans-serif"><b><font color="#000000">La 
+              démonstration se fait très simplement par récurrence</font></b><font color="#000000">.<br>
+              </font></font><font size="2" face="Arial, Helvetica, sans-serif">D'ailleurs 
+              ce procédé correspond à la programmation des 
+              tours ci-dessus.<br>
+              -Le résultat est vrai pour n=1.<br>
+              -Supposons le résultat vrai pour n et montrons qu'il est 
+              vrai pour n+1 :<br>
+              Alors on a <b>2<sup>n</sup> - 1</b> coups pour n anneaux. <br>
+              Pour 1anneau de plus, donc pour n+1 anneaux , il faudra <b>2( 2<sup>n</sup> 
+              - 1)+1</b> coups soit <b>2<sup>n+1</sup> - 2+1</b> coups, </font><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">c'est-à-dire</font> 
+              <font size="2" face="Arial, Helvetica, sans-serif"> <b>2<sup>n+1</sup></b> 
+              <b> - 1</b> coups. <br>
+              C'est bien ce que l'on veut.<br>
+              <i>-Finalement le résultat est vrai pour 1 anneau ; quand 
+              il est vrai pour n anneaux, il est vrai pour n+1 anneaux.</i><br>
+              La récurrence est bien démontrée : <b>pour 
+              n anneaux, il faut 2<sup>n</sup> - 1 coups.<br>
+              </b></font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              <b>On peut aussi calculer autrement</b> :<br>
+              appelons C<font size="1">1</font>, C<font size="1">2</font>... C<font size="1">n 
+              </font>les nombres de coups pour1, 2,... n anneaux sur une tour.<br>
+              <br>
+              </font> 
+            <table cellspacing="0" cellpadding="10" bordercolor="#000000" border="1">
+              <tbody><tr> 
+                <td> 
+                  <p><font size="2" face="Arial, Helvetica, sans-serif"><br>
+                    C<font size="1">1 </font> = </font><font color="#CC0000"> 
+                    &nbsp; &nbsp;</font><font color="#CC0000"> &nbsp; &nbsp;</font><font color="#CC0000"> 
+                    &nbsp; &nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">1<br>
+                    C<font size="1">2</font> = 2 C<font size="1">1</font></font><font color="#CC0000">&nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    1 <br>
+                    C<font size="1">3</font> = 2 C<font size="1">2</font></font><font color="#CC0000">&nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    1 <br>
+                    C<font size="1">4</font> = 2 C<font size="1">3</font></font><font color="#CC0000">&nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    1 <br>
+                    .<br>
+                    .<br>
+                    C<font size="1">n-1</font> = 2 C<font size="1">n-2</font></font><font color="#CC0000">&nbsp; 
+                    &nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    1<br>
+                    Cn</font><font color="#CC0000"> &nbsp; </font><font size="2" face="Arial, Helvetica, sans-serif"> 
+                    = 2 C<font size="1">n-1</font></font><font color="#CC0000">&nbsp;<font size="2" face="Arial, Helvetica, sans-serif"> 
+                    </font></font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    1 </font> 
+                </p></td>
+                <td> 
+                  <p><font size="2" face="Arial, Helvetica, sans-serif">Multiplions 
+                    chaque ligne par 2<sup>n-1</sup> puis 2<sup>n-2</sup> puis... 
+                    2<sup>1</sup><br>
+                    2<sup>n-1</sup> C<font size="1">1 </font> = </font><font color="#CC0000"> 
+                    &nbsp; &nbsp;</font><font color="#CC0000"> &nbsp; &nbsp;&nbsp; 
+                    &nbsp;</font><font color="#CC0000"> &nbsp; &nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif"> 
+                    2<sup>n-1</sup><br>
+                    2<sup>n-2</sup> C<font size="1">2</font> = 2<sup>n-1</sup>C<font size="1">1</font></font><font color="#CC0000">&nbsp;&nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    2<sup>n--2</sup><br>
+                    2<sup>n-3</sup> C<font size="1">3</font> = 2<sup>n-2</sup> 
+                    C<font size="1">2</font></font><font color="#CC0000">&nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    2<sup>n--3</sup><br>
+                    2<sup>n-4</sup> C<font size="1">4</font> = 2<sup>n-3</sup> 
+                    C<font size="1">3</font></font><font color="#CC0000">&nbsp;&nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    2<sup>n--4</sup><br>
+                    .<br>
+                    .<br>
+                    2<sup>1</sup> C<font size="1">n-1</font> = 2<sup>2</sup> C<font size="1">n-2</font></font><font color="#CC0000">&nbsp; 
+                    &nbsp;</font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    2<sup>1</sup><br>
+                    Cn</font><font color="#CC0000"> &nbsp; </font><font size="2" face="Arial, Helvetica, sans-serif"> 
+                    = 2 C<font size="1">n-1</font></font><font color="#CC0000">&nbsp;<font size="2" face="Arial, Helvetica, sans-serif"> 
+                    </font></font><font size="2" face="Arial, Helvetica, sans-serif">+ 
+                    1 </font> 
+                </p></td>
+              </tr>
+            </tbody></table>
+            <br>
+            <font size="2" face="Arial, Helvetica, sans-serif">En ajoutant membre 
+            à membre, nous obtenons :<br>
+            Cn</font><font color="#CC0000"> &nbsp; </font><font size="2" face="Arial, Helvetica, sans-serif"> 
+            = 1 + 2<sup>1</sup> + 2<sup>2</sup> + 2<sup>3</sup> + 2<sup>1</sup> 
+            + 2<sup>4</sup> + 2<sup>5</sup> + ... + </font><font size="2" face="Arial, Helvetica, sans-serif"> 
+            2<sup>n-1</sup>.<br>
+            Nous avons une progression géométrique de n termes, 
+            de raison 2 et de premier terme 1. <br>
+            La somme donne <br>
+            Cn</font><font color="#CC0000"> &nbsp; </font><font size="2" face="Arial, Helvetica, sans-serif"> 
+            = 1 (</font><font size="2" face="Arial, Helvetica, sans-serif"> 2<sup>n 
+            </sup>- 1)/(2 - 1) <br>
+            d'où <br>
+            </font> 
+            <table cellspacing="0" cellpadding="5" bordercolor="#000000" border="1">
+              <tbody><tr> 
+                <td><font size="2" face="Arial, Helvetica, sans-serif"><b>Cn</b></font><b><font color="#CC0000"> 
+                  &nbsp; </font><font size="2" face="Arial, Helvetica, sans-serif"> 
+                  = 2<sup>n</sup> - 1 </font></b></td>
+              </tr>
+            </tbody></table>
+            <font face="Comic Sans MS"><br>
+            Le calcul du résultat de la légende</font><br>
+            <font size="2" face="Arial, Helvetica, sans-serif">Prenons le cas 
+            n = 64 évoqué dans la légende ci-dessus. <br>
+            La durée nécessaire à raison d'une seconde par 
+            coup est de <b>2<sup>64</sup> - 1 </b>secondes.<br>
+            Evaluons cette durée : nous avons <b>2<sup>10 = 1024 </sup>~ 
+            1000</b>, nous arrondirons à 10<sup>3</sup> pour simplifier 
+            les calculs. <br>
+            Ainsi <b>2<sup>64</sup> - 1</b> ~ <b>2<sup>64</sup> = (2<sup>10</sup>)<sup>6</sup> 
+            x 2<sup>4</sup> </b>~ 10<sup>18</sup>x16<br>
+            Or une journée de 24 heures a (<font size="1"> 24x3600 =</font> 
+            ) 86400 secondes.<br>
+            Une année de 365 jours a (<font size="1">365x86400 =</font> 
+            ) 31 536 000 secondes soit un peu plus de 3 x 10 000 000 secondes 
+            ou 3x10<sup>7</sup> secondes.<br>
+            Nous trouvons donc à peu près (10<sup>18</sup>x16)/( 
+            3x10<sup>7</sup>) années, </font><font size="2" face="Arial, Helvetica, sans-serif" color="#000000">c'est-à-dire</font><font size="2" face="Arial, Helvetica, sans-serif"> 
+            environ (16/3)x10<sup>11</sup> années ou un peu plus de 5x10<sup>11</sup> 
+            années.<br>
+            Finalement on obtient un peu plus de 5x10<sup>9</sup> siècles.<br>
+            Nous retrouvons bien les <b>5 milliards de siècles</b> de la 
+            légende.</font></p></blockquote>
+        </blockquote>
+        <div align="right"><a href="#haut" onmouseover='javascript: haut5.src="../../images/hautor.gif"' onmouseout='javascript: haut5.src="../../images/haut3.gif"'><font size="-1" face="Arial"><img src="Les%20tours%20de%20Hanoi_fichiers/haut3.gif" name="haut5" width="100" height="20" border="0" align="bottom"></font></a> 
+        </div>
+        <blockquote> 
+          <blockquote> 
+            <p><a name="trois"></a><font face="Comic Sans MS"><img src="Les%20tours%20de%20Hanoi_fichiers/pt_v.gif" name="point1" width="10" height="10" border="0" align="bottom">Observations</font><br>
+              <font size="2" face="Arial, Helvetica, sans-serif">Regardons très 
+              attentivement les déplacements de chaque anneau lorsqu'on 
+              joue dans un temps minimal.<br>
+              Disposons les tours selon un triangle ABC et alternons les couleurs 
+              des anneaux. <br>
+              Nous notons que :<br>
+              - Un coup sur deux déplace le plus petit anneau ; <br>
+              - L'anneau supérieur passe successivement sur chacune des 
+              tours en tournant toujours dans le même sens ;</font><br>
+              - <font size="2" face="Arial, Helvetica, sans-serif">Un anneau est 
+              toujours posé sur un anneau de couleur différente 
+              ;<br>
+              - La suite des déplacements est symétrique ;<br>
+              - Chaque suite reprend la totalité des mouvements de la suite 
+              antérieure selon la disposition S + 1 + S ;<br>
+              On peut spontanément écrire la suite des déplacements 
+              des anneaux dès lors que l'on connaît la suite des 
+              déplacements pour 2 ou 3 anneaux.<br>
+              <br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif"><b>Voici 
+              de gauche à droite les anneaux à déplacer quand 
+              on dispose de 1 à 4 anneaux.</b><br>
+              <img src="Les%20tours%20de%20Hanoi_fichiers/deplacements_hanoi.gif"> </font></p>
+            <font size="2" face="Arial, Helvetica, sans-serif"><b>Voici comment 
+            tournent 4 anneaux sur des tours disposées triangulairement.</b></font> 
+            <br>
+            <font size="2" face="Arial, Helvetica, sans-serif">Chaque anneau tourne 
+            toujours dans le même sens. Ici les verts tournent dans un sens 
+            et les rouges dans l'autre.<br>
+            </font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+            <img src="Les%20tours%20de%20Hanoi_fichiers/hanoi_sens.gif"><br>
+            Le plus petit anneau est déplacé 8 fois, le suivant 
+            4 fois, puis l'autre 2 fois et enfin le plus grand est déplacé 
+            1 seule fois.</font> <font size="2" face="Arial, Helvetica, sans-serif"><br>
+            Un anneau est déplacé deux fois moins souvent que celui 
+            qui est de taille immédiatement inférieure.<br>
+            </font><font size="2" face="Arial, Helvetica, sans-serif"> <br>
+            <b>Nous pouvons organiser les résultats dans un tableau </b><br>
+            <b>a<font size="1">1</font> </b>représente le plus petit anneau 
+            ; <b>a<font size="1">2</font></b> le suivant et ainsi de suite... 
+            nous irons ici jusqu'à 4 anneaux donc jusqu'à <b>a<font size="1">4</font></b>.<br>
+            Dans le tableau, nous notons d'abord la suite des anneaux déplacés 
+            et enfin à droite du tableau le nombre de déplacements 
+            de chacun d'entre eux.</font><br>
+            <table cellspacing="0" cellpadding="0" bordercolor="#000000" border="1" align="left">
+              <tbody><tr> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif"><b>Nombre 
+                    <br>
+                    d'anneaux </b></font></div>
+                </td>
+                <td colspan="18"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif"><b>Suite 
+                    des déplacements</b></font></div>
+                </td>
+                <td> 
+                  <div align="center"><b><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></b></div>
+                </td>
+                <td> 
+                  <div align="center"><b><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">2</font></font></b></div>
+                </td>
+                <td> 
+                  <div align="center"><b><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">3</font></font></b></div>
+                </td>
+                <td> 
+                  <div align="center"><b><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">4</font></font></b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">1</font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">1</font></div>
+                </td>
+                <td> </td>
+                <td width="22">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+              </tr>
+              <tr> 
+                <td width="71"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">2</font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">2</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">2</font></div>
+                </td>
+                <td width="18"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">1</font></div>
+                </td>
+                <td width="22">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+              </tr>
+              <tr> 
+                <td width="71"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">3</font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">2</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">3</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">2</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">4</font></div>
+                </td>
+                <td width="18"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">2</font></div>
+                </td>
+                <td width="22"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">1</font></div>
+                </td>
+                <td width="20">&nbsp; </td>
+              </tr>
+              <tr> 
+                <td width="71"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">4</font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">2</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">3</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">2</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">4</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">2</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">3</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">2</font></font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">a<font size="1">1</font></font></div>
+                </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20">&nbsp; </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">8</font></div>
+                </td>
+                <td width="18"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">4</font></div>
+                </td>
+                <td width="22"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">2</font></div>
+                </td>
+                <td width="20"> 
+                  <div align="center"><font size="2" face="Arial, Helvetica, sans-serif">1</font></div>
+                </td>
+              </tr>
+            </tbody></table>
+          </blockquote>
+        </blockquote>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p align="right"><a href="#haut" onmouseover='javascript: haut6.src="../../images/hautor.gif"' onmouseout='javascript: haut6.src="../../images/haut3.gif"'><img src="Les%20tours%20de%20Hanoi_fichiers/haut3.gif" name="haut6" width="100" height="20" border="0" align="bottom"></a></p>
+        <blockquote> 
+          <blockquote> 
+            <p><a name="quatre"></a><font face="Comic Sans MS"><img src="Les%20tours%20de%20Hanoi_fichiers/pt_v.gif" name="point1" width="10" height="10" border="0" align="bottom">Petits 
+              problèmes</font><br>
+              <font size="2" face="Arial, Helvetica, sans-serif">Les anneaux sont 
+              numérotés à partir du plus petit.<br>
+              1°) Sachant que l'anneau 10 d'une tour a été déplacé 
+              1 seule fois, quel est le nombre d'anneaux que comporte la tour 
+              de départ ?<br>
+              2°) Sachant que l'anneau numéro 3 a été 
+              déplacé 32 fois, peut-on préciser le nombre 
+              total d'anneaux ?<br>
+              <br>
+              3°) <b>Partage de segments</b> :<br>
+              On retrouve les particularités des suites obtenues si on 
+              plie en deux une bande de papier.<br>
+              Prenons une bande de 16 cm de longueur.<br>
+              On plie en deux et on note 4 sur le pli.<br>
+              On plie encore en deux et on note 3 sur chaque pli.<br>
+              On plie encore en deux et on note 2 sur chaque pli. <br>
+              On recommence encore une fois en notant 1 sur chaque pli.<br>
+              Nous retrouvons la même suite que celle des anneaux déplacés 
+              : <br>
+              1 2 1 3 1 2 1 4 1 2 1 3 1 2 1<br>
+              <br>
+              4°) <b>Généralisation du problème</b> <br>
+              Il est possible de généraliser le jeu des tours de 
+              Hanoï en augmentant le nombre de tours.<br>
+              Avec 4 tours :<br>
+              pour 3 anneaux , 5 coups : 1 2 3 2 1 <br>
+              pour 4 anneaux , 9 coups : 1 2 3 2 4 2 3 2 1<br>
+              pour 5 anneaux , 13 coups : 1 2 3 2 1 4 5 4 1 2 3 2 1<br>
+              pour 6 anneaux , 17 coups : 1 2 3 2 1 4 5 4 6 4 5 4 1 2 3 2 1<br>
+              ...<br>
+              </font><font face="Comic Sans MS">Réponses</font><font size="2" face="Arial, Helvetica, sans-serif"> 
+              </font> <br>
+              <font size="2" face="Arial, Helvetica, sans-serif">1°) 10 anneaux.<br>
+              2°) L'anneau numéro deux a donc été déplacé 
+              64 fois et le numéro un 128 fois. C'est 2<sup>8-1</sup>, 
+              il y avait 8 anneaux.</font></p>
+            <p align="center"><font size="2" face="Arial, Helvetica, sans-serif"><b><img src="Les%20tours%20de%20Hanoi_fichiers/hanoi1.gif" width="96" height="96" align="top"></b></font><font size="-1" face="Comic Sans MS"> 
+              </font><br>
+              <font size="1" face="Arial, Helvetica, sans-serif"><b>"Pour 
+              un homme, il existe un gigaplex de pensées possibles."</b> 
+              <br>
+              (Un gigaplex est le nombre 1 suivi d'un milliard de zéros.)<br>
+              <font color="#008080"><b>Rudy Rucker,<i> Infinity and the Mind</i></b></font></font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              <br>
+              </font><font size="2" face="Arial, Helvetica, sans-serif"><br>
+              </font></p>
+            <p align="center"><font face="Arial" color="#333333">&nbsp;&nbsp;&nbsp; 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</font> 
+            </p><hr width="250" size="1" align="center">
+            <div align="center"><font face="Arial" color="#333333">&nbsp;&nbsp;</font><font face="Arial"><a href="http://therese.eveilleau.pagesperso-orange.fr/pages/jeux_mat/indexF.htm" target="_top" onmouseover='javascript: magie.src="../../images/bouton_magie1.jpg"' onmouseout='javascript: magie.src="../../images/bouton_magie.jpg"'><img src="Les%20tours%20de%20Hanoi_fichiers/bouton_magie.jpg" alt="Menu jeux" name="magie" width="65" height="40" border="0" align="bottom"></a></font>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://therese.eveilleau.pagesperso-orange.fr/index.htm" target="_top" onmouseover='javascript: accueil.src="../../images/bouton_accueil1.jpg"' onmouseout='javascript: accueil.src="../../images/bouton_accueil.jpg"'><font size="+2" color="#000099"><b><img src="Les%20tours%20de%20Hanoi_fichiers/bouton_accueil.jpg" alt="Accueil" name="accueil" width="65" height="40" border="0" align="bottom"></b></font></a></div>
+          </blockquote>
+        </blockquote>
+        </td>
+    </tr>
+  </tbody></table>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof _gstat != "undefined") _gstat.audience('','pagesperso-orange.fr');
+//]]>
+</script>
+
+
+</body></html>

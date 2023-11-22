@@ -1,0 +1,65 @@
+
+/* BEGIN needed for Research Papers article */
+.paperblock{
+    clear:both;
+    border-bottom:1px dotted gray;
+    padding: 10px;
+}
+.paperlinks{
+    display: block;
+    float: right;
+    width: 100px;
+    text-align: center;
+    margin: 0px 0px 10px 15px;
+}
+.papertitle{
+    font-weight: bold;
+}
+.paperauthors{
+}
+.paperconference{
+}
+.abstract{
+    display:block;
+    padding: 10px;
+}
+/* Gets rid of the need for border="0" on hyperlinked images */
+img { border:0; }
+/* END needed for Research Papers article */
+
+/* BEGIN needed for resume/index.html */
+.subject {
+    font-size:16px;
+    color: brown;
+    margin-top:32px;
+    border-bottom:1px solid #cdaa7d;
+}
+.matter { margin-top: 7px; }
+/* END needed for resume/index.html */
+
+
+/* BEGIN Needed by Emacs Tricks and Tips article */
+.emacs-code {
+ color: navy;
+ background-color: lightcyan;
+}
+/* END Needed by Emacs Tricks and Tips article */
+
+/* BEGIN Needed by Latex tricks and tips article */
+.lisp {
+    width: 95%;
+    margin: 0 auto;
+}
+code {
+    background-color: lightcyan;
+}
+pre {
+    color: black;
+    margin: 10px;
+    padding: 10px;
+
+    border: solid 2px #a6caa9;
+    background-color: lightcyan;
+    overflow: scroll;
+}
+/* END Needed by Latex tricks and tips article */

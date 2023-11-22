@@ -1,0 +1,216 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{import} 
+\usepackage{wrapfig}
+
+
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+\usepackage{textcomp}
+\usepackage{tcolorbox}
+\usepackage{tnsmath}
+    
+\newtheorem{fact}{Fait}%[section]
+
+\newtheorem*{theorem}{Théorème}
+
+\newtheorem{example}{Exemple}[section]
+
+\newtheorem{remark}{Remarque}[section]
+
+\newtheorem*{proof*}{Preuve}
+
+\usepackage{chemist}
+
+
+\setlength\parindent{0pt}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloorx}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+
+
+\let\oldparagraph\paragraph
+\renewcommand\paragraph[1]{\bigskip\oldparagraph{{\bfseries #1}}}
+ 
+	 
+\let\oldsection\section
+\renewcommand\section[1]{\vfill\pagebreak\oldsection{#1}}
+ 
+
+\newcommand\deltaval[3]{%
+	\Delta{#1}^{\,#2}_{\,#3}%
+}
+	 
+\begin{document}
+
+\title{BROUILLON - Un modèle mathématique, c'est quoi.}
+\author{Christophe BAL}
+\date{11 Juillet 2019 - 2 Août 2019}
+
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
+% ----------- %
+
+
+\subimport*{showcase/}{intro}
+
+
+% ----------- % 
+
+
+
+\section{Modéliser ce n'est pas mathématiser !}
+
+\subimport*{showcase/}{math-is-not-a-model}
+
+
+% ----------- %
+
+
+\section{Le principe de \og multi-proportionnalité \fg}
+
+\subimport*{showcase/}{multi-prop}
+
+
+% ----------- % 
+
+
+\section{Coût marginal -- Polynômes de degré 2 ou 3}
+
+\subimport*{showcase/}{marginal-cost}
+
+
+% ----------- %
+
+
+\section{Désintégration radioactive -- Probabilités et lois continues, ou pas...}
+
+\subimport*{showcase/}{radioactivity}
+
+
+% ----------- %
+
+
+\section{Dynamique des populations avec Malthus -- Suites géométriques et la fonction exponentielle}
+
+\subimport*{showcase/}{malthus-pop}
+
+
+% ----------- %
+
+
+\section{Dynamique des populations avec Verhulst -- Une équation différentielle non linéaire}
+\label{verhulst-model}
+
+\subimport*{showcase/}{verhulst-pop}
+
+
+% ----------- %
+
+
+\section{Daniel BERNOULLI et la variole -- Un système d'équations différentielles}
+\label{bernoulli-model}
+
+\subimport*{showcase/}{bernoulli-smallpox}
+
+
+% ----------- %
+
+
+%\section{Réactions chimiques élémentaires\dots ou non}
+
+
+% ----------- %
+
+
+% génétique : arbre proba cf cor perso mononucleaose avec tous les implicites !
+
+
+% ----------- %
+
+
+%principe de conservation qui utilise opérateur diff
+
+
+% ----------- %
+
+
+% équation de la chameur via le modèle discret à trois cases en 1D : on fait appaparaître un Laplacien discret Voir ensuite la version à plusisuers variables
+
+
+% ----------- %
+
+
+%\section{Différents modèles sont possibles}
+%
+%\subimport*{showcase/}{classify}
+
+
+
+\bigskip
+
+\hrule
+
+\oldsection{AFFAIRE À SUIVRE...}
+
+\bigskip
+
+\hrule
+
+
+\end{document}

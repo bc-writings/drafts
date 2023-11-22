@@ -1,0 +1,476 @@
+Comme les machines de Turing utilisent des cases vides, nous allons coder la case vide de la devinette par une case contenant la croix $\times$.
+Reprenons la configuration donnée en exemple dans la section précédente. 
+
+\begin{center}
+	\boxedB\boxedB\boxedB%
+	\emptybox%
+	\boxedW\boxedW%
+\end{center}
+
+Pour la machine de Turing, nous utiliserons la représentation initiale suivante.
+
+\begin{center}
+\emptybox\emptybox%
+	\boxedB\boxedB\boxedB%
+	\boxit{$\times$}%
+	\boxedW\boxedW%
+\emptybox\emptybox
+\end{center}
+
+
+Afin de vous laisser chercher un peu, nous ne donnons que dans la page suivante une résolution possible de la devinette pour la configuration ci-dessus. Nous utilisons les conventions suivantes.
+
+\begin{enumerate}
+	\item Une case jaune indique un mouton qui va bouger.
+
+	\item Une case grise indique un mouton qui vient de se déplacer.
+
+	\item Une case rouge indique un mouton qui est arrivé à sa place finale.
+\end{enumerate}
+
+
+
+\newpage
+
+\begin{center}
+\emptybox\emptybox%
+	\boxedB%
+	\boxedB%
+	\boxedB%
+	\boxit{$\times$}%
+	\boxedW%
+	\boxedW%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\boxedB%
+	\boxedB%
+	\boxedB%
+	\boxit{$\times$}%
+	\fboxedW%
+	\boxedW%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\boxedB%
+	\boxedB%
+	\fboxedB%
+	\nboxedW%
+	\boxit{$\times$}%
+	\boxedW%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\boxedB%
+	\fboxedB%
+	\boxit{$\times$}%
+	\boxedW%
+	\nboxedB%
+	\boxedW%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\boxedB%
+	\boxit{$\times$}%
+	\nboxedB%
+	\fboxedW%
+	\boxedB%
+	\boxedW%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\boxedB%
+	\nboxedW%
+	\boxedB%
+	\boxit{$\times$}%
+	\boxedB%
+	\fboxedW%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\boxedB%
+	\boxedW%
+	\boxedB%
+	\nboxedW%
+	\fboxedB%
+	\boxit{$\times$}%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\boxedB%
+	\boxedW%
+	\fboxedB%
+	\boxedW%
+	\boxit{$\times$}%
+	\nboxedB%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\fboxedB%
+	\boxedW%
+	\boxit{$\times$}%
+	\boxedW%
+	\nboxedB%
+	\wboxedB%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\boxit{$\times$}%
+	\fboxedW%
+	\nboxedB%
+	\boxedW%
+	\wboxedB%
+	\wboxedB%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\nboxedW%
+	\boxit{$\times$}%
+	\boxedB%
+	\fboxedW%
+	\wboxedB%
+	\wboxedB%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\wboxedW%
+	\nboxedW%
+	\fboxedB%
+	\boxit{$\times$}%
+	\wboxedB%
+	\wboxedB%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\wboxedW%
+	\wboxedW%
+	\boxit{$\times$}%
+	\nboxedB%
+	\wboxedB%
+	\wboxedB%
+\emptybox\emptybox
+
+
+\vspace{.75em} %
+
+\emptybox\emptybox%
+	\wboxedW%
+	\wboxedW%
+	\boxit{$\times$}%
+	\wboxedB%
+	\wboxedB%
+	\wboxedB%
+\emptybox\emptybox
+
+\end{center}
+
+
+Les mouvements faits suivent la stratégie gloutonne consistant à bouger le plus de moutons d'une couleur donnée sans se mettre dans une position bloquante autre que la position gagnante, puis à changer de couleur si aucun mouvement n'est possible et si la partie n'est pas finie. Il ne reste plus qu'à traduire cela via une machine de Turing\dots
+Pas si vite ! En effet, il nous faut repérer les configurations permettant d'avancer, celles impliquant un changement de couleur, et enfin celle indiquant que la partie est finie.
+En marquant les moutons bien placés, la tache devient assez facile. Voici les points essentiels qui vont nous donner une machine de Turing résolvant la devinette \emph{(on garde la convention précédente pour le fond rouge)}.
+
+\begin{enumerate}
+	\item Supposons que ce soit la couleur noire qui joue.
+	\begin{enumerate}
+		\item \boxedB\boxit{$\times$}\emptybox{}
+		      devient
+		      \boxit{$\times$}\wboxedB\emptybox{}
+		      par simple déplacement.
+
+
+		\item \boxedB\boxit{$\times$}\wboxedB{}
+		      devient
+	    	  \boxit{$\times$}\wboxedB\wboxedB{}
+		      par simple déplacement.
+
+
+		\item \boxedB\boxit{$\times$}\boxedB{} indique un changement de couleur 
+		      \footnote{
+		      		En effet, le mouton à droite n'est pas encore bien placé.
+			  }.
+
+
+		\item \boxedB\boxit{$\times$}\boxedW{}
+		      devient
+		      \boxit{$\times$}\boxedB\boxedW{}
+		      par simple déplacement.
+
+
+		\item \boxedB\boxedW\boxit{$\times$}{}
+		      devient
+	    	  \boxit{$\times$}\boxedW\boxedB{}
+		      via un bond.
+	\end{enumerate}
+	
+	
+	\item Pour la couleur blanche, nous avons les mouvements similaires suivants.
+	\begin{enumerate}
+		\item \emptybox\boxit{$\times$}\boxedW{}
+		      devient
+		      \emptybox\wboxedW\boxit{$\times$} .
+
+
+		\item \wboxedW\boxit{$\times$}\boxedW{}
+		      devient
+	    	  \wboxedW\wboxedW\boxit{$\times$} .
+
+
+		\item \boxedW\boxit{$\times$}\boxedW{} indique un changement de couleur.
+
+
+		\item \boxedB\boxit{$\times$}\boxedW{}
+		      devient
+		      \boxedB\boxedW\boxit{$\times$} .
+
+
+		\item \boxit{$\times$}\boxedB\boxedW{}
+		      devient
+	    	  \boxedW\boxedB\boxit{$\times$} .
+	\end{enumerate}
+	
+	
+	\item \wboxedW\boxit{$\times$}\wboxedB{} indique que la partie est finie.
+\end{enumerate}
+
+
+Nous admettrons que les mouvements précédents résolvent à tous les coups la devinette
+\footnote{
+	Les preuves arriveront plus tard car l'auteur manque de temps libre.
+}.
+Ceci nous donne la table des transitions suivante où nous utilisons des lettres minuscules pour indiquer les moutons bien placés.
+De plus, nous supposons que ce sont les blancs qui commencent, la couleur jouant étant codée sur une 2\ieme{} bande.
+
+
+\begin{center}
+	\emph{\small Phase 1 : commencer par se positionner sur la croix.}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c|}
+		\hline
+		$\delta$
+			& $\twocoord{K}{B}$
+			& $\twocoord{W}{B}$
+			& $\twocoord{\times}{B}$ \\
+		\hline
+		\hline
+		$q_0$
+			& \transition{r_{cross}}{\twocoord{K}{W}}{\twocoord{D}{D}}
+			&
+			&                                                          \\
+		\hline
+		$r_{cross}$
+			& \transition{r_{cross}}{\twocoord{K}{B}     }{\twocoord{D}{I}}
+			& \transition{r_{cross}}{\twocoord{W}{B}     }{\twocoord{D}{I}}
+			& \transition{s_{ana}  }{\twocoord{\times}{B}}{\twocoord{G}{I}} \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}
+
+
+\begin{center}
+	\emph{\small Phase 2-a : analyser la configuration locale \emph{(partie 1)}.}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c|c|c|}
+		\hline
+		$\delta$
+			& $\twocoord{K}{B}$
+			& $\twocoord{W}{B}$
+			& $\twocoord{k}{B}$
+			& $\twocoord{w}{B}$
+			& $\twocoord{B}{B}$ \\
+		\hline
+		\hline
+		$s_{ana}$
+			& \transition{c_{K}}{\twocoord{K}{B}}{\twocoord{D}{I}}
+			& \transition{c_{W}}{\twocoord{W}{B}}{\twocoord{D}{I}}
+			& \transition{c_{k}}{\twocoord{k}{B}}{\twocoord{D}{I}}
+			& \transition{c_{w}}{\twocoord{w}{B}}{\twocoord{D}{I}}
+			& \transition{c_{B}}{\twocoord{w}{B}}{\twocoord{D}{I}} \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}
+
+
+\begin{center}
+	\emph{\small Phase 2-b : analyser la configuration locale \emph{(partie 2)}.}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|}
+		\hline
+		$\delta$
+			& $\twocoord{\times}{B}$ \\
+		\hline
+		\hline
+		$c_{K}$
+			& \transition{c_{K\times}}{\twocoord{\times}{B}}{\twocoord{D}{I}} \\
+		\hline
+		$c_{W}$
+			& \transition{c_{W\times}}{\twocoord{\times}{B}}{\twocoord{D}{I}} \\
+		\hline
+		$c_{k}$
+			& \transition{c_{k\times}}{\twocoord{\times}{B}}{\twocoord{D}{I}} \\
+		\hline
+		$c_{w}$
+			& \transition{c_{w\times}}{\twocoord{\times}{B}}{\twocoord{D}{I}} \\
+		\hline
+		$c_{B}$
+			& \transition{c_{B\times}}{\twocoord{\times}{B}}{\twocoord{D}{I}} \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}
+
+
+\newpage
+
+
+\begin{center}
+	\emph{\small Phase 2-c : analyser la configuration locale \emph{(partie 3)}.}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c|c|c|}
+		\hline
+		$\delta$
+			& $\twocoord{K}{B}$
+			& $\twocoord{W}{B}$
+			& $\twocoord{k}{B}$
+			& $\twocoord{w}{B}$
+			& $\twocoord{B}{B}$ \\
+		\hline
+		\hline
+		$c_{K\times}$
+			& \transition{c_{K\times K}}{\twocoord{K}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{K\times W}}{\twocoord{W}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{K\times k}}{\twocoord{k}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{K\times w}}{\twocoord{w}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{K\times B}}{\twocoord{\times}{B}}{\twocoord{G}{G}} \\
+		\hline
+		$c_{W\times}$
+			& \transition{c_{W\times K}}{\twocoord{K}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{W\times W}}{\twocoord{W}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{W\times k}}{\twocoord{k}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{W\times w}}{\twocoord{w}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{W\times B}}{\twocoord{\times}{B}}{\twocoord{G}{G}} \\
+		\hline
+		$c_{k\times}$
+			& \transition{c_{k\times K}}{\twocoord{K}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{k\times W}}{\twocoord{W}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{k\times k}}{\twocoord{k}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{k\times w}}{\twocoord{w}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{k\times B}}{\twocoord{\times}{B}}{\twocoord{G}{G}} \\
+		\hline
+		$c_{w\times}$
+			& \transition{c_{w\times K}}{\twocoord{K}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{w\times W}}{\twocoord{W}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{w\times k}}{\twocoord{k}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{w\times w}}{\twocoord{w}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{w\times B}}{\twocoord{\times}{B}}{\twocoord{G}{G}} \\
+		\hline
+		$c_{B\times}$
+			& \transition{c_{B\times K}}{\twocoord{K}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{B\times W}}{\twocoord{W}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{B\times k}}{\twocoord{k}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{B\times w}}{\twocoord{w}{B}     }{\twocoord{G}{G}}
+			& \transition{c_{B\times B}}{\twocoord{\times}{B}}{\twocoord{G}{G}} \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}
+
+
+\begin{center}
+	\emph{\small Phase 3 : c'est \myquote{blanc qui joue}.}
+	
+	\smallskip
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{|c||c|c|c|c|c|}
+		\hline
+		$\delta$
+			& $\twocoord{K}{B}$
+			& $\twocoord{W}{B}$
+			& $\twocoord{k}{B}$
+			& $\twocoord{w}{B}$
+			& $\twocoord{B}{B}$ \\
+		\hline
+		\hline
+		$c_{B\times W}$
+			&
+			&
+			&
+			&
+			& \\
+		\hline
+		$c_{w\times W}$
+			&
+			&
+			&
+			&
+			& \\
+		\hline
+		$c_{W\times W}$
+			&
+			&
+			&
+			&
+			& \\
+		\hline
+		$c_{K\times W}$
+			&
+			&
+			&
+			&
+			& \\
+		\hline
+		$c_{K\times W}$
+			&
+			&
+			&
+			&
+			& \\
+		\hline
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{center}

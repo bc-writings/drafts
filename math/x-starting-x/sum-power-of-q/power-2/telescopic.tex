@@ -1,0 +1,180 @@
+\subsection{La preuve}
+
+Pour trouver une formule explicite de $S_n \eq[def] \dsum_{k = 0}^{n} 2^k$, on peut noter que
+$2^k = 2 \cdot 2^{k-1} = 2^{k-1} + 2^{k-1}$
+donne
+$2^{k-1} = 2^k - 2^{k-1}$
+d'où l'on déduit que
+$\forall k \in \NN$, $2^k = 2^{k+1} - 2^k$.
+Ceci nous conduit aux calculs suivants.
+
+\begin{focusproof}
+\begin{stepcalc}[style = sar]
+	S_n 
+		\explnext[{\eq[def]}]{}
+	\dsum_{k = 0}^{n} 2^k
+		\explnext{}
+	\dsum_{k = 0}^{n} (2^{k+1} - 2^k)
+		\explnext{}
+	\dsum_{k = 0}^{n} 2^{k+1} - \dsum_{k = 0}^{n} 2^k
+		\explnext{\footnotesize $i = k+1 \iff k = i-1$}
+	\dsum_{i = 1}^{n+1} 2^{i} - \dsum_{k = 0}^{n} 2^k
+		\explnext*{\footnotesize On fait apparaître des sommes identiques.}{}
+	\dsum_{i = 1}^{n} 2^{i} + 2^{n+1} - 2^0 - \dsum_{k = 1}^{n} 2^k
+		\explnext{}
+	2^{n+1} - 1
+\end{stepcalc}
+\end{focusproof}
+
+
+% ------------- %
+
+
+\subsection{Commentaires}
+
+Les simplifications du type
+$\dsum_{k = 0}^{n} (2^{k+1} - 2^k) = 2^{n+1} - 2^0$ ,
+ou plus généralement du type
+$\dsum_{k = 0}^{n} (u_{k+1} - u_{k}) = u_{n+1} - u_0$
+ou
+$\dsum_{k = 0}^{n} (u_{k} - u_{k+1}) = u_0 - u_{n+1}$ ,
+sont un grand classique : on parle de \og sommes télescopiques \fg{}
+\footnote{
+	Cette technique permet par exemple de ramener l'étude d'une suite à celle d'une série.
+	Or il se trouve que l'on dispose d'outils très pratiques pour étudier les séries.
+}.
+L'usage de cette astuce fonctionne sans souci avec les puissances de $q$ comme nous le verrons dans la section \ref{power-q:telescopic} page \pageref{power-q:telescopic}.
+Bien qu'élégants du point de vue algébrique, les calculs ci-dessus ne donnent aucune information sur la signification de la formule trouvée.
+
+
+% ------------- %
+
+
+\subsection{D'autres applications}
+
+Une application rigolote est l'obtention d'une formule explicite de la somme $I_n \eq[def] \dsum_{k = 1}^{n} \dfrac{1}{k(k+1)}$. 
+Une fois noté que $\dfrac{1}{k(k+1)} = \dfrac{1}{k} -  \dfrac{1}{k+1}$
+le calcul est très aisé
+\footnote{
+	Cet exemple est conçu comme un cas typique d'usage de sommes télescopiques.
+}.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	I_n \explnext[{\eq[def]}]{}
+	\dsum_{k = 1}^{n} \dfrac{1}{k(k+1)}
+		\explnext{}
+	\dsum_{k = 1}^{n} \left( \dfrac{1}{k} - \dfrac{1}{k+1} \right)
+		\explnext{\footnotesize Usage de sommes télescopiques.}
+	\dfrac{1}{1} - \dfrac{1}{n+1}
+		\explnext{}
+	\dfrac{n}{n+1}
+\end{stepcalc}
+
+
+\bigskip
+
+On peut aussi utiliser des sommes télescopiques pour expliciter $\dsum_{k = 0}^{n} k^p$ .
+Montrons par exemple comment trouver une formule explicite de la somme
+\footnote{
+	La lettre $G$ faire référence à Gauss à qui l'on attribue une méthode très astucieuse pour calculer cette somme en la réordonnant.
+}
+$G_n \eq[def] \dsum_{k = 0}^{n} k$.
+L'idée astucieuse consiste à noter que $(k+1)^2 - k^2 = 2 k + 1$ puis à procéder comme suit.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	2 G_n
+		\explnext{}
+	\dsum_{k = 0}^{n} 2 k
+		\explnext{}
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^2 - k^2 - 1 \, \big]
+		\explnext{}
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^2 - k^2 \, \big] - \dsum_{k = 0}^{n} 1
+		\explnext{\footnotesize Usage de sommes télescopiques.}
+	(n + 1)^2 - 0^2 - (n+1)
+		\explnext{}
+	(n + 1) \cdot \big[ \, (n + 1) - 1 \, \big]
+		\explnext{}
+	n (n + 1)
+\end{stepcalc}
+
+\bigskip
+
+Donc
+$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k = \dfrac{n(n + 1)}{2}$ .
+La preuve précédente, bien que calculatoire, est relativement élégante
+\footnote{
+	Vous pourrez comparer avec celle proposée dans la section \ref{power-2:rewriting} page \pageref{power-2:rewriting}.
+}.
+Continuons avec $C_n \eq[def] \dsum_{k = 0}^{n} k^2$
+via $(k+1)^3 - k^3 = 3 k^2 + 3 k + 1$
+et la formule précédente.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	3 C_n
+		\explnext{}
+	\dsum_{k = 0}^{n} 3 k^2
+		\explnext{}
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^3 - k^3 - 3 k - 1 \, \big]
+		\explnext{}
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^3 - k^3 \, \big] - 3 \dsum_{k = 0}^{n} k - \dsum_{k = 0}^{n} 1
+		\explnext{\footnotesize Usage de sommes télescopiques.}
+	(n + 1)^3 - 0^3 - 3 \cdot \dfrac{n(n + 1)}{2} - (n+1)
+%		\explnext{}
+%	\dfrac{1}{2} \big[ \, 2 (n + 1)^3 - 3n (n + 1) - 2(n+1) \, \big]
+		\explnext{}
+	\dfrac{(n+1)}{2} \cdot \big[ \, 2 (n + 1)^2 - 3n - 2 \, \big]
+		\explnext{}
+	\dfrac{(n+1)}{2} \cdot \big[ \, 2 (n^2 + 2 n + 1) - 3n - 2 \, \big]
+		\explnext{}
+	\dfrac{(n+1)(2 n^2 + n)}{2}
+		\explnext{}
+	\dfrac{n(n+1)(2 n + 1)}{2}
+\end{stepcalc}
+
+
+\medskip
+
+Donc
+$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^2 = \dfrac{n(n + 1)(2n + 1)}{6} = \dfrac{n^3}{3} + \dfrac{n^2}{2} + \dfrac{n}{6}$ .
+
+
+\medskip
+
+Finissons en montrant que
+$\forall n \in \NN$ , $\dsum_{k = 0}^{n} k^3 = \dfrac{n^2 (n + 1)^2}{4} = \left( \, \dsum_{k = 0}^{n} k \, \right)^2$ . Un très joli résultat !
+Nous allons utiliser de $(k+1)^4 - k^4 = 4 k^3 + 6 k^2 + 4 k + 1$.
+Notez que les calculs se compliquent vite et rendent la preuve de moins en moins élégante
+\footnote{
+	Un bon cadre d'étude pour des puissances plus élevées est celui utilisant les nombres de Bernoulli qui ont de jolies propriétés.
+}.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	4 \dsum_{k = 0}^{n} k^3
+		\explnext{}
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^4 - k^4 - 6 k^2 - 4 k - 1 \, \big]
+		\explnext{}
+	\dsum_{k = 0}^{n} \big[ \, (k+1)^4 - k^4 \, \big] - 6 \dsum_{k = 0}^{n} k^2 - 4 \dsum_{k = 0}^{n} k - \dsum_{k = 0}^{n} 1
+		\explnext{}
+	(n+1)^4 - 0^4 - 6 \cdot \dfrac{n(n + 1)(2n + 1)}{6} - 4 \cdot \dfrac{n(n + 1)}{2} - (n+1)
+		\explnext{}
+	(n+1) \cdot \big[ \, (n+1)^3 - n(2n + 1) - 2n - 1 \, \big]
+		\explnext{}
+	(n+1) \cdot \big[ \, (n+1)^3 - 2n^2 - 3n - 1 \, \big]
+		\explnext*{\footnotesize $(-1)$ est une racine évidente de $2 X^2 + 3X + 1$.}{}
+	(n+1) \cdot \big[ \, (n+1)^3 - (n+1)(2n + 1) \, \big]
+		\explnext{}
+	(n+1)^2 \cdot \big[ \, (n+1)^2 - 2n - 1 \, \big]
+		\explnext{}
+	n^2 (n+1)^2
+\end{stepcalc}
+
+
+

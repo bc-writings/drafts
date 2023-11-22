@@ -1,0 +1,91 @@
+/* #PRODUIRE{fond=css/ie.css}
+   md5:0b9eb318e2a4576eec472d731700c69a */
+
+
+/* IE.CSS                                                               */
+/* Cette feuille contient:                                              */
+/* - tous les hacks necessaires a IE (version >= 6)                     */
+/* -------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- */
+/* raz.css                                                              */
+/* -------------------------------------------------------------------- */
+* html * {height:1; zoom:1}
+* html .ajaxbloc, * html input, * html img, * html textarea, * html blockquote {height:auto;}
+ 
+/* -------------------------------------------------------------------- */
+/* layoutxx.css                                                         */
+/* -------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------- */
+/* base.css                                                             */
+/* -------------------------------------------------------------------- */
+* html .spip_code, * html .spip_cadre {height:auto; width:90%;}
+* html blockquote.spip_poesie div {text-indent:0;}
+
+* html .formulaire_recherche input{border-width:0; display:inline; background-color:#E0E0E0}
+* html .formulaire_recherche input.text {height:23px; width:118px; border:1px solid #6262A4;}
+* html .formulaire_recherche input.submit {border: 0;}
+*+html .formulaire_recherche input.submit {float : right;}
+
+/* -------------------------------------------------------------------- */
+/* layout.css                                                           */
+/* -------------------------------------------------------------------- */
+ 
+	
+		
+		  
+	
+	 
+		* html div#content   {margin-right:5px ; }
+		* html div#navigation{margin-left:5px ;}
+		* html div#extra     {margin-left:5px ;}
+	  
+
+
+/* -------------------------------------------------------------------- */
+/* bandeau.css                                                          */
+/* -------------------------------------------------------------------- */
+* html .bandeau_haut {height: 100px;} /* IE6 ne comprend pas min-height */
+* html .nav_bandeau {width: 45%;} /* IE6 ne comprend pas max-width */
+* html .bandeau_bas {height: 23px;}
+* html .bandeau_chemin {height: 22px;}
+* html .bandeau_chemin .recherche_chemin {float: right ; width:330px;}
+*+html .bandeau_chemin .recherche_chemin {float: right ; width:330px;}
+
+* html .pied_bas {height: 30px;}
+
+/* -------------------------------------------------------------------- */
+/* noisettes.css                                                        */
+/* -------------------------------------------------------------------- */
+* html #noisette_herbier.noisette .contenu .texte ul.innerfade li {margin-left:-60px;}
+*+html #noisette_herbier.noisette .contenu .texte ul.innerfade li {margin-left:-60px;}
+
+* html #noisette_miniagenda.noisette {height:auto;}
+* html #noisette_miniagenda.noisette .contenu {width:178px;}
+* html #noisette_miniagenda.noisette .contenu br.nettoyeur {line-height : 0;} /* Sous IE6 ce nettoyeur a une hauteur non nulle */
+* html #noisette_miniagenda.noisette .contenu h2 {float:left;}
+* html #noisette_miniagenda.noisette .contenu h2.titre_bloc.centre {width: 90px;}
+* html #noisette_miniagenda.noisette .contenu h2 a.titre_bloc.bord {width: 44px;}
+* html #noisette_miniagenda.noisette .contenu h2 a.titre_bloc#auj {border:none; width: 100%;}
+
+* html .menu_rub1 ul.menulist ul {top: 0; left: 173px;}
+*+html .menu_rub1 ul.menulist ul {top: 0;} 
+
+/* -------------------------------------------------------------------- */
+/* elements.css                                                         */
+/* -------------------------------------------------------------------- */
+* html .planche .cartouche {width :140px; float:none;}
+* html .planche li {height: 0;}
+* html .galerie .planche li {  height: 18em;}
+* html #albums_recents.planche li {  height: 18em;}
+
+* html .carrousel .contenu ul.vignettes span.wrap2 {display: inline-block; text-align: left;}
+* html .carrousel .contenu ul.vignettes span.wrap2 a {overflow: visible;  top: 50%; text-align: center;}
+* html .carrousel .contenu ul.vignettes span.wrap2 span {overflow: visible;  top: 50%; text-align: center;}
+* html .carrousel .contenu ul.vignettes img {margin-top: 10px;  top: -30%; }
+*+html .carrousel .contenu ul.vignettes span.wrap2 {display: block; position: relative; text-align: left;}
+*+html .carrousel .contenu ul.vignettes span.wrap2 a {overflow: visible; position: absolute; top: 50%; text-align: center;}
+*+html .carrousel .contenu ul.vignettes span.wrap2 span {overflow: visible; position: absolute; top: 50%; text-align: center;}
+*+html .carrousel .contenu ul.vignettes img {position: relative; top: -50%;  margin-top: 2%;}

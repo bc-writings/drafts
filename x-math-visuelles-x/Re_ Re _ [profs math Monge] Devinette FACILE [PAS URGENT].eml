@@ -1,0 +1,161 @@
+Subject: Re: Re : [profs math Monge] Devinette FACILE [PAS URGENT]
+To: Lecoustey Jean-Baptiste <Jean-Baptiste.Lecoustey@ac-grenoble.fr>
+References: <b0d4dc3d-5d25-a8ac-efe4-45a670a32e33@ac-grenoble.fr>
+ <612e0aae-c7a7-e0e4-e9e7-c05a8ab8c979@ac-grenoble.fr>
+ <b825ac19ab691c.5fd549f8@ac-grenoble.fr>
+From: =?UTF-8?Q?Christophe_BAL-_Maths_-_Lyc=c3=a9e_Monge_de_Chamb=c3=a9ry?=
+ <Christophe.Bal@ac-grenoble.fr>
+Message-ID: <4e21f434-e566-1ba0-103e-1625a01f851a@ac-grenoble.fr>
+Date: Sun, 13 Dec 2020 10:55:24 +0100
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0)
+ Gecko/20100101 Thunderbird/78.5.1
+MIME-Version: 1.0
+In-Reply-To: <b825ac19ab691c.5fd549f8@ac-grenoble.fr>
+Content-Type: multipart/alternative;
+ boundary="------------8274B2843A112744D7DCA00E"
+Content-Language: fr
+
+This is a multi-part message in MIME format.
+--------------8274B2843A112744D7DCA00E
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Toy simplement oui.
+
+C'est faisable sans souci en TG. Le seul point à bien détailler est la 
+symétrie via cos x = sin(pi / 2 - x).
+
+Encore une jolie preuve visuelle.
+
+
+PS: en parlant fonction circulaire, il y a une méthode assez simple et 
+surtout naturelle pour obtenir la formule d'addition pour le sinus.
+
+
+Le 12/12/2020 à 22:53, Lecoustey Jean-Baptiste a écrit :
+> On intègre cos^2+sin^2 sur pi/2 et on trouve sin^2 par symétrie...
+> Tu le pensais autrement ?
+> Bises
+>
+> Le 12/12/20 22:45, *Vincent Deveaux * <Vincent.Deveaux@ac-grenoble.fr> 
+> a écrit :
+>>
+>> En utilisant wolfram, ça compte ?
+>>
+>> https://www.wolframalpha.com/input/?i=integrate+%28sin%28x%29%29%5E2+from+0+to+pi%2F2
+>>
+>> Le 12/12/2020 à 20:07, Christophe BAL- Maths - Lycée Monge de 
+>> Chambéry a écrit :
+>>> Salut.
+>>>
+>>> Quelqu'un sait-il donner la valeur exacte de l'intégrale de sin^2(x) 
+>>> entre 0 et pi / 2 sans utiliser de primitive ?
+>>>
+>>>
+>> -- 
+>> Vincent Deveaux
+>> DU-ISN 2018,
+>> Prof de Maths,
+>> Lycée Monge, Chambéry
+>>
+>
+-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques
+
+
+--------------8274B2843A112744D7DCA00E
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Toy simplement oui.</p>
+    <p>C'est faisable sans souci en TG. Le seul point à bien détailler
+      est la symétrie via cos x = sin(pi / 2 - x).</p>
+    <p>Encore une jolie preuve visuelle.</p>
+    <p><br>
+    </p>
+    <p>PS: en parlant fonction circulaire, il y a une méthode assez
+      simple et surtout naturelle pour obtenir la formule d'addition
+      pour le sinus.<br>
+    </p>
+    <p><br>
+    </p>
+    <div class="moz-cite-prefix">Le 12/12/2020 à 22:53, Lecoustey
+      Jean-Baptiste a écrit :<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:b825ac19ab691c.5fd549f8@ac-grenoble.fr">
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <div>On intègre cos^2+sin^2 sur pi/2 et on trouve sin^2 par
+        symétrie...</div>
+      <div>Tu le pensais autrement ?</div>
+      <div>Bises</div>
+      <br>
+      <span>Le 12/12/20 22:45, <b class="name">Vincent Deveaux </b>
+        <a class="moz-txt-link-rfc2396E" href="mailto:Vincent.Deveaux@ac-grenoble.fr">&lt;Vincent.Deveaux@ac-grenoble.fr&gt;</a> a écrit :</span>
+      <blockquote
+        cite="mid:612e0aae-c7a7-e0e4-e9e7-c05a8ab8c979@ac-grenoble.fr"
+        class="iwcQuote" style="border-left: 1px solid #00F;
+        padding-left: 13px; margin-left: 0;" type="cite">
+        <div class="mimetype-text-html"><span>
+            <p>
+              <meta content="text/html; charset=UTF-8"
+                http-equiv="Content-Type">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p> </p>
+                      <p>En utilisant wolfram, ça compte ?</p>
+                      <p><a class="moz-txt-link-freetext"
+href="https://www.wolframalpha.com/input/?i=integrate+%28sin%28x%29%29%5E2+from+0+to+pi%2F2"
+                          target="1" moz-do-not-send="true">https://www.wolframalpha.com/input/?i=integrate+%28sin%28x%29%29%5E2+from+0+to+pi%2F2</a><br>
+                      </p>
+                      <div class="moz-cite-prefix">Le 12/12/2020 à
+                        20:07, Christophe BAL- Maths - Lycée Monge de
+                        Chambéry a écrit :<br>
+                      </div>
+                      <blockquote
+                        cite="mid:b0d4dc3d-5d25-a8ac-efe4-45a670a32e33@ac-grenoble.fr"
+                        type="cite">Salut. <br>
+                        <br>
+                        Quelqu'un sait-il donner la valeur exacte de
+                        l'intégrale de sin^2(x) entre 0 et pi / 2 sans
+                        utiliser de primitive ? <br>
+                        <br>
+                        <br>
+                        <fieldset class="mimeAttachmentHeader"></fieldset>
+                      </blockquote>
+                      <pre class="moz-signature" cols="72">-- 
+Vincent Deveaux
+DU-ISN 2018,
+Prof de Maths,
+Lycée Monge, Chambéry</pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </p>
+          </span></div>
+      </blockquote>
+      <br>
+      <fieldset class="mimeAttachmentHeader"></fieldset>
+      <pre class="moz-quote-pre" wrap="">
+</pre>
+    </blockquote>
+    <pre class="moz-signature" cols="72">-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques</pre>
+  </body>
+</html>
+
+--------------8274B2843A112744D7DCA00E--

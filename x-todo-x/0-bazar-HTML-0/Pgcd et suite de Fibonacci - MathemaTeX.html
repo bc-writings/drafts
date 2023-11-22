@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pgcd et suite de Fibonacci - MathemaTeX</title>
+
+	<link rel="alternate" type="application/atom+xml" title="Flux - MathemaTeX" href="https://www.mathematex.fr/feed">		<link rel="alternate" type="application/atom+xml" title="Flux - Tous les forums" href="https://www.mathematex.fr/feed/forums">	<link rel="alternate" type="application/atom+xml" title="Flux - Nouveaux sujets" href="https://www.mathematex.fr/feed/topics">		<link rel="alternate" type="application/atom+xml" title="Flux - Forum - Tribune des mathématiques" href="https://www.mathematex.fr/feed/forum/5">	<link rel="alternate" type="application/atom+xml" title="Flux - Sujet - Pgcd et suite de Fibonacci" href="https://www.mathematex.fr/feed/topic/17669">	
+	<link rel="canonical" href="https://www.mathematex.fr/viewtopic.php?t=17669">
+
+<!--
+	phpBB style name: prosilver
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by:
+-->
+
+<!--
+	https://realfavicongenerator.net
+-->
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.mathematex.fr/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.mathematex.fr/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.mathematex.fr/favicon-16x16.png">
+<link rel="manifest" href="https://www.mathematex.fr/site.webmanifest">
+<link rel="mask-icon" href="https://www.mathematex.fr/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+<!--
+	prosilver assets (https://www.phpbb.com/styles/create/)
+-->
+
+<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/stylesheet.css" rel="stylesheet">
+<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/stylesheet.html" rel="stylesheet">
+
+<!--
+	Google Adsense
+-->
+
+<script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/osd.js"></script><script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/cookie.js"></script><script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/show_ads_impl_fy2019.js" id="google_shimpl"></script><script type="text/javascript" async="" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/analytics.js"></script><script type="text/javascript" async="" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/cse.js"></script><script type="text/javascript" async="" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/js_002"></script><script data-ad-client="ca-pub-9031508024694163" async="" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/adsbygoogle.js" data-checked-head="true"></script>
+
+
+<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/stylesheet_002.css" rel="stylesheet">
+<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/font-awesome.css" rel="stylesheet">
+<!--
+<link href="./styles/promatex/theme/fr/stylesheet.css?assets_version=69" rel="stylesheet">
+-->
+
+
+
+	<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/cookieconsent.css" rel="stylesheet">
+
+<!--[if lte IE 9]>
+	<link href="./styles/promatex/theme/tweaks.css?assets_version=69" rel="stylesheet">
+<![endif]-->
+
+<meta name="google-site-verification" content="">
+
+<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/googlesearch.css" rel="stylesheet" media="screen">
+<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/renderer.css" rel="stylesheet" media="screen">
+<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/pages_common.css" rel="stylesheet" media="screen">
+<link href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/phpbbads.css" rel="stylesheet" media="screen">
+
+
+
+					<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/js"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-165885542-1', {'user_id': '3746',});
+		</script>
+	
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mrow {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-inferredMrow {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-stretchy-h > * {
+  display: table-cell;
+  width: 0;
+}
+
+mjx-stretchy-h > * > mjx-c {
+  display: inline-block;
+  transform: scalex(1.0000001);
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+  display: inline-block;
+  padding: .001em 0;
+  width: initial;
+}
+
+mjx-stretchy-h > mjx-ext {
+  overflow: hidden;
+  width: 100%;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+  transform: scalex(500);
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c {
+  width: 0;
+}
+
+mjx-stretchy-h > mjx-beg > mjx-c {
+  margin-right: -.1em;
+}
+
+mjx-stretchy-h > mjx-end > mjx-c {
+  margin-left: -.1em;
+}
+
+mjx-stretchy-v {
+  display: inline-block;
+}
+
+mjx-stretchy-v > * {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-beg {
+  height: 0;
+}
+
+mjx-stretchy-v > mjx-end > mjx-c {
+  display: block;
+}
+
+mjx-stretchy-v > * > mjx-c {
+  transform: scaley(1.0000001);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c::before {
+  width: initial;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c {
+  transform: scaleY(500) translateY(.1em);
+  overflow: visible;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0px;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-ms {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mspace {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mpadded {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-rbox {
+  display: inline-block;
+  position: relative;
+}
+
+mjx-menclose {
+  display: inline-block;
+  text-align: left;
+  position: relative;
+}
+
+mjx-menclose > mjx-dstrike {
+  display: inline-block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  border-top: 0.067em solid;
+  transform-origin: top left;
+}
+
+mjx-menclose > mjx-ustrike {
+  display: inline-block;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  border-top: 0.067em solid;
+  transform-origin: bottom left;
+}
+
+mjx-menclose > mjx-hstrike {
+  border-top: 0.067em solid;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  transform: translateY(0.034em);
+}
+
+mjx-menclose > mjx-vstrike {
+  border-left: 0.067em solid;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(0.034em);
+}
+
+mjx-menclose > mjx-rbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border: 0.067em solid;
+  border-radius: 0.267em;
+}
+
+mjx-menclose > mjx-cbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border: 0.067em solid;
+  border-radius: 50%;
+}
+
+mjx-menclose > mjx-arrow {
+  position: absolute;
+  left: 0;
+  bottom: 50%;
+  height: 0;
+  width: 0;
+}
+
+mjx-menclose > mjx-arrow > * {
+  display: block;
+  position: absolute;
+  transform-origin: bottom;
+  border-left: 0.268em solid;
+  border-right: 0;
+  box-sizing: border-box;
+}
+
+mjx-menclose > mjx-arrow > mjx-aline {
+  left: 0;
+  top: -0.034em;
+  right: 0.201em;
+  height: 0;
+  border-top: 0.067em solid;
+  border-left: 0;
+}
+
+mjx-menclose > mjx-arrow[double] > mjx-aline {
+  left: 0.201em;
+  height: 0;
+}
+
+mjx-menclose > mjx-arrow > mjx-rthead {
+  transform: skewX(0.464rad);
+  right: 0;
+  bottom: -1px;
+  border-bottom: 1px solid transparent;
+  border-top: 0.134em solid transparent;
+}
+
+mjx-menclose > mjx-arrow > mjx-rbhead {
+  transform: skewX(-0.464rad);
+  transform-origin: top;
+  right: 0;
+  top: -1px;
+  border-top: 1px solid transparent;
+  border-bottom: 0.134em solid transparent;
+}
+
+mjx-menclose > mjx-arrow > mjx-lthead {
+  transform: skewX(-0.464rad);
+  left: 0;
+  bottom: -1px;
+  border-left: 0;
+  border-right: 0.268em solid;
+  border-bottom: 1px solid transparent;
+  border-top: 0.134em solid transparent;
+}
+
+mjx-menclose > mjx-arrow > mjx-lbhead {
+  transform: skewX(0.464rad);
+  transform-origin: top;
+  left: 0;
+  top: -1px;
+  border-left: 0;
+  border-right: 0.268em solid;
+  border-top: 1px solid transparent;
+  border-bottom: 0.134em solid transparent;
+}
+
+mjx-menclose > dbox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -0.3em;
+  width: 0.6em;
+  border: 0.067em solid;
+  border-radius: 50%;
+  clip-path: inset(0 0 0 0.3em);
+  box-sizing: border-box;
+}
+
+mjx-mfrac {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-frac {
+  display: inline-block;
+  vertical-align: 0.17em;
+  padding: 0 .22em;
+}
+
+mjx-frac[type="d"] {
+  vertical-align: .04em;
+}
+
+mjx-frac[delims] {
+  padding: 0 .1em;
+}
+
+mjx-frac[atop] {
+  padding: 0 .12em;
+}
+
+mjx-frac[atop][delims] {
+  padding: 0;
+}
+
+mjx-dtable {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-dtable > * {
+  font-size: 2000%;
+}
+
+mjx-dbox {
+  display: block;
+  font-size: 5%;
+}
+
+mjx-num {
+  display: block;
+  text-align: center;
+}
+
+mjx-den {
+  display: block;
+  text-align: center;
+}
+
+mjx-mfrac[bevelled] > mjx-num {
+  display: inline-block;
+}
+
+mjx-mfrac[bevelled] > mjx-den {
+  display: inline-block;
+}
+
+mjx-den[align="right"], mjx-num[align="right"] {
+  text-align: right;
+}
+
+mjx-den[align="left"], mjx-num[align="left"] {
+  text-align: left;
+}
+
+mjx-nstrut {
+  display: inline-block;
+  height: .054em;
+  width: 0;
+  vertical-align: -.054em;
+}
+
+mjx-nstrut[type="d"] {
+  height: .217em;
+  vertical-align: -.217em;
+}
+
+mjx-dstrut {
+  display: inline-block;
+  height: .505em;
+  width: 0;
+}
+
+mjx-dstrut[type="d"] {
+  height: .726em;
+}
+
+mjx-line {
+  display: block;
+  box-sizing: border-box;
+  min-height: 1px;
+  height: .06em;
+  border-top: .06em solid;
+  margin: .06em -.1em;
+  overflow: hidden;
+}
+
+mjx-line[type="d"] {
+  margin: .18em -.1em;
+}
+
+mjx-msqrt {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-root {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+mjx-surd {
+  display: inline-block;
+  vertical-align: top;
+}
+
+mjx-sqrt {
+  display: inline-block;
+  padding-top: .07em;
+}
+
+mjx-sqrt > mjx-box {
+  border-top: .07em solid;
+}
+
+mjx-sqrt.mjx-tall > mjx-box {
+  padding-left: .3em;
+  margin-left: -.3em;
+}
+
+mjx-mroot {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msub {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msubsup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-script {
+  display: inline-block;
+  padding-right: .05em;
+}
+
+mjx-script > * {
+  display: block;
+}
+
+mjx-munder {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-over {
+  text-align: left;
+}
+
+mjx-munder:not([limits="false"]) {
+  display: inline-table;
+}
+
+mjx-munder > mjx-row {
+  text-align: left;
+}
+
+mjx-under {
+  padding-bottom: .1em;
+}
+
+mjx-mover {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mover:not([limits="false"]) {
+  padding-top: .1em;
+}
+
+mjx-mover:not([limits="false"]) > * {
+  display: block;
+  text-align: left;
+}
+
+mjx-munderover {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-munderover:not([limits="false"]) {
+  padding-top: .1em;
+}
+
+mjx-munderover:not([limits="false"]) > * {
+  display: block;
+}
+
+mjx-mmultiscripts {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-prescripts {
+  display: inline-table;
+  padding-left: .05em;
+}
+
+mjx-scripts {
+  display: inline-table;
+  padding-right: .05em;
+}
+
+mjx-prescripts > mjx-row > mjx-cell {
+  text-align: right;
+}
+
+mjx-mfenced {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mtable {
+  display: inline-block;
+  text-align: center;
+  vertical-align: .25em;
+  position: relative;
+  box-sizing: border-box;
+}
+
+mjx-labels {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+mjx-table {
+  display: inline-block;
+  vertical-align: -.5ex;
+}
+
+mjx-table > mjx-itable {
+  vertical-align: middle;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+mjx-labels > mjx-itable {
+  position: absolute;
+  top: 0;
+}
+
+mjx-mtable[justify="left"] {
+  text-align: left;
+}
+
+mjx-mtable[justify="right"] {
+  text-align: right;
+}
+
+mjx-mtable[justify="left"][side="left"] {
+  padding-right: 0 ! important;
+}
+
+mjx-mtable[justify="left"][side="right"] {
+  padding-left: 0 ! important;
+}
+
+mjx-mtable[justify="right"][side="left"] {
+  padding-right: 0 ! important;
+}
+
+mjx-mtable[justify="right"][side="right"] {
+  padding-left: 0 ! important;
+}
+
+mjx-mtable[align] {
+  vertical-align: baseline;
+}
+
+mjx-mtable[align="top"] > mjx-table {
+  vertical-align: top;
+}
+
+mjx-mtable[align="bottom"] > mjx-table {
+  vertical-align: bottom;
+}
+
+mjx-mtable[side="right"] mjx-labels {
+  min-width: 100%;
+}
+
+mjx-mtr {
+  display: table-row;
+  text-align: left;
+}
+
+mjx-mtr[rowalign="top"] > mjx-mtd {
+  vertical-align: top;
+}
+
+mjx-mtr[rowalign="center"] > mjx-mtd {
+  vertical-align: middle;
+}
+
+mjx-mtr[rowalign="bottom"] > mjx-mtd {
+  vertical-align: bottom;
+}
+
+mjx-mtr[rowalign="baseline"] > mjx-mtd {
+  vertical-align: baseline;
+}
+
+mjx-mtr[rowalign="axis"] > mjx-mtd {
+  vertical-align: .25em;
+}
+
+mjx-mlabeledtr {
+  display: table-row;
+  text-align: left;
+}
+
+mjx-mlabeledtr[rowalign="top"] > mjx-mtd {
+  vertical-align: top;
+}
+
+mjx-mlabeledtr[rowalign="center"] > mjx-mtd {
+  vertical-align: middle;
+}
+
+mjx-mlabeledtr[rowalign="bottom"] > mjx-mtd {
+  vertical-align: bottom;
+}
+
+mjx-mlabeledtr[rowalign="baseline"] > mjx-mtd {
+  vertical-align: baseline;
+}
+
+mjx-mlabeledtr[rowalign="axis"] > mjx-mtd {
+  vertical-align: .25em;
+}
+
+mjx-mtd {
+  display: table-cell;
+  text-align: center;
+  padding: .215em .4em;
+}
+
+mjx-mtd:first-child {
+  padding-left: 0;
+}
+
+mjx-mtd:last-child {
+  padding-right: 0;
+}
+
+mjx-mtable > * > mjx-itable > *:first-child > mjx-mtd {
+  padding-top: 0;
+}
+
+mjx-mtable > * > mjx-itable > *:last-child > mjx-mtd {
+  padding-bottom: 0;
+}
+
+mjx-tstrut {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -.25em;
+}
+
+mjx-labels[align="left"] > mjx-mtr > mjx-mtd {
+  text-align: left;
+}
+
+mjx-labels[align="right"] > mjx-mtr > mjx-mtd {
+  text-align: right;
+}
+
+mjx-mtr mjx-mtd[rowalign="top"], mjx-mlabeledtr mjx-mtd[rowalign="top"] {
+  vertical-align: top;
+}
+
+mjx-mtr mjx-mtd[rowalign="center"], mjx-mlabeledtr mjx-mtd[rowalign="center"] {
+  vertical-align: middle;
+}
+
+mjx-mtr mjx-mtd[rowalign="bottom"], mjx-mlabeledtr mjx-mtd[rowalign="bottom"] {
+  vertical-align: bottom;
+}
+
+mjx-mtr mjx-mtd[rowalign="baseline"], mjx-mlabeledtr mjx-mtd[rowalign="baseline"] {
+  vertical-align: baseline;
+}
+
+mjx-mtr mjx-mtd[rowalign="axis"], mjx-mlabeledtr mjx-mtd[rowalign="axis"] {
+  vertical-align: .25em;
+}
+
+mjx-maction {
+  display: inline-block;
+  text-align: left;
+  position: relative;
+}
+
+mjx-maction > mjx-tool {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  z-index: 500;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+mjx-maction[toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+mjx-mglyph {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mglyph > img {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+}
+
+mjx-semantics {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-annotation {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-annotation-xml {
+  display: inline-block;
+  text-align: left;
+  font-family: initial;
+  line-height: normal;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c28::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: "(";
+}
+
+mjx-c.mjx-c29::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: ")";
+}
+
+mjx-c.mjx-c2B::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "+";
+}
+
+mjx-c.mjx-c2C::before {
+  padding: 0.121em 0.278em 0.194em 0;
+  content: ",";
+}
+
+mjx-c.mjx-c2F::before {
+  padding: 0.75em 0.5em 0.25em 0;
+  content: "/";
+}
+
+mjx-c.mjx-c30::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "0";
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c3B::before {
+  padding: 0.43em 0.278em 0.194em 0;
+  content: ";";
+}
+
+mjx-c.mjx-c3D::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "=";
+}
+
+mjx-c.mjx-c5B::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "[";
+}
+
+mjx-c.mjx-c5D::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "]";
+}
+
+mjx-c.mjx-c63::before {
+  padding: 0.448em 0.444em 0.011em 0;
+  content: "c";
+}
+
+mjx-c.mjx-c64::before {
+  padding: 0.694em 0.556em 0.011em 0;
+  content: "d";
+}
+
+mjx-c.mjx-c67::before {
+  padding: 0.453em 0.5em 0.206em 0;
+  content: "g";
+}
+
+mjx-c.mjx-c70::before {
+  padding: 0.442em 0.556em 0.194em 0;
+  content: "p";
+}
+
+mjx-c.mjx-c2061::before {
+  padding: 0 0 0 0;
+  content: "";
+}
+
+mjx-c.mjx-c2124.TEX-A::before {
+  padding: 0.683em 0.667em 0 0;
+  content: "Z";
+}
+
+mjx-c.mjx-c2208::before {
+  padding: 0.54em 0.667em 0.04em 0;
+  content: "\2208";
+}
+
+mjx-c.mjx-c2212::before {
+  padding: 0.583em 0.778em 0.082em 0;
+  content: "\2212";
+}
+
+mjx-c.mjx-c2A7E.TEX-A::before {
+  padding: 0.636em 0.778em 0.138em 0;
+  content: "\2A7E";
+}
+
+mjx-c.mjx-c1D434.TEX-I::before {
+  padding: 0.716em 0.75em 0 0;
+  content: "A";
+}
+
+mjx-c.mjx-c1D437.TEX-I::before {
+  padding: 0.683em 0.828em 0 0;
+  content: "D";
+}
+
+mjx-c.mjx-c1D439.TEX-I::before {
+  padding: 0.68em 0.749em 0 0;
+  content: "F";
+}
+
+[noIC] mjx-c.mjx-c1D439.TEX-I:last-child::before {
+  padding-right: 0.643em;
+}
+
+mjx-c.mjx-c1D440.TEX-I::before {
+  padding: 0.683em 1.051em 0 0;
+  content: "M";
+}
+
+[noIC] mjx-c.mjx-c1D440.TEX-I:last-child::before {
+  padding-right: 0.97em;
+}
+
+mjx-c.mjx-c1D44E.TEX-I::before {
+  padding: 0.441em 0.529em 0.01em 0;
+  content: "a";
+}
+
+mjx-c.mjx-c1D451.TEX-I::before {
+  padding: 0.694em 0.52em 0.01em 0;
+  content: "d";
+}
+
+mjx-c.mjx-c1D456.TEX-I::before {
+  padding: 0.661em 0.345em 0.011em 0;
+  content: "i";
+}
+
+mjx-c.mjx-c1D457.TEX-I::before {
+  padding: 0.661em 0.412em 0.204em 0;
+  content: "j";
+}
+
+mjx-c.mjx-c1D458.TEX-I::before {
+  padding: 0.694em 0.521em 0.011em 0;
+  content: "k";
+}
+
+mjx-c.mjx-c1D45A.TEX-I::before {
+  padding: 0.442em 0.878em 0.011em 0;
+  content: "m";
+}
+
+mjx-c.mjx-c1D45B.TEX-I::before {
+  padding: 0.442em 0.6em 0.011em 0;
+  content: "n";
+}
+
+mjx-c.mjx-c1D462.TEX-I::before {
+  padding: 0.442em 0.572em 0.011em 0;
+  content: "u";
+}
+
+mjx-c.mjx-c1D463.TEX-I::before {
+  padding: 0.443em 0.485em 0.011em 0;
+  content: "v";
+}
+
+mjx-c.mjx-c1D465.TEX-I::before {
+  padding: 0.442em 0.572em 0.011em 0;
+  content: "x";
+}
+
+mjx-c.mjx-c28.TEX-S3::before {
+  padding: 1.45em 0.736em 0.949em 0;
+  content: "(";
+}
+
+mjx-c.mjx-c29.TEX-S3::before {
+  padding: 1.45em 0.736em 0.949em 0;
+  content: ")";
+}
+</style><script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/cse_element__fr.js" type="text/javascript"></script><link type="text/css" rel="stylesheet" href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/defaultfr.css"><link type="text/css" rel="stylesheet" href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/shiny.css"><style type="text/css">.gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(238,238,238,1),rgba(238,238,238,0))}.gsc-control-cse{border-color:#F5F5F5;background-color:#F5F5F5}input.gsc-input,.gsc-input-box,.gsc-input-box-hover,.gsc-input-box-focus{border-color:#B6BEC5}.gsc-search-button-v2,.gsc-search-button-v2:hover,.gsc-search-button-v2:focus{border-color:#B6BEC5;background-color:#D0D1D4;background-image:none;filter:none}.gsc-search-button-v2 svg{fill:#FFFFFF}.gsc-tabHeader.gsc-tabhActive,.gsc-refinementHeader.gsc-refinementhActive{color:#000000;border-color:#000000;background-color:#999999}.gsc-tabHeader.gsc-tabhInactive,.gsc-refinementHeader.gsc-refinementhInactive{color:#000000;border-color:#000000;background-color:#EEEEEE}.gsc-webResult.gsc-result,.gsc-results .gsc-imageResult{border-color:#E7E7E7;background-color:#F5F5F5}.gsc-webResult.gsc-result:hover{border-color:#D2D6DC;background-color:#EDEDED}.gs-webResult.gs-result a.gs-title:link,.gs-webResult.gs-result a.gs-title:link b,.gs-imageResult a.gs-title:link,.gs-imageResult a.gs-title:link b{color:#0568CD}.gs-webResult.gs-result a.gs-title:visited,.gs-webResult.gs-result a.gs-title:visited b,.gs-imageResult a.gs-title:visited,.gs-imageResult a.gs-title:visited b{color:#0568CD}.gs-webResult.gs-result a.gs-title:hover,.gs-webResult.gs-result a.gs-title:hover b,.gs-imageResult a.gs-title:hover,.gs-imageResult a.gs-title:hover b{color:#0568CD}.gs-webResult.gs-result a.gs-title:active,.gs-webResult.gs-result a.gs-title:active b,.gs-imageResult a.gs-title:active,.gs-imageResult a.gs-title:active b{color:#0568CD}.gsc-cursor-page{color:#0568CD}a.gsc-trailing-more-results:link{color:#0568CD}.gs-webResult:not(.gs-no-results-result):not(.gs-error-result) .gs-snippet,.gs-fileFormatType{color:#5F6A73}.gs-webResult div.gs-visibleUrl{color:#5F6A73}.gs-webResult div.gs-visibleUrl-short{color:#5F6A73}.gsc-cursor-box{border-color:#E7E7E7}.gsc-results .gsc-cursor-box .gsc-cursor-page{border-color:#000000;background-color:#EEEEEE;color:#000000}.gsc-results .gsc-cursor-box .gsc-cursor-current-page{border-color:#000000;background-color:#999999;color:#000000}.gsc-webResult.gsc-result.gsc-promotion{border-color:#D2D6DC;background-color:#D0D1D4}.gsc-completion-title{color:#0568CD}.gsc-completion-snippet{color:#5F6A73}.gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link{color:#0066CC}.gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited{color:#0066CC}.gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover{color:#0066CC}.gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active{color:#0066CC}.gs-promotion .gs-snippet,.gs-promotion .gs-title .gs-promotion-title-right,.gs-promotion .gs-title .gs-promotion-title-right *{color:#333333}.gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short{color:#5F6A73}.gcsc-find-more-on-google{color:#0568CD}.gcsc-find-more-on-google-magnifier{fill:#0568CD}</style><link rel="preload" href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/integrator.js" as="script"><script type="text/javascript" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/integrator.js"></script><link rel="preload" href="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/integrator_002.js" as="script"><script type="text/javascript" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/integrator_002.js"></script><style></style></head>
+<body id="phpbb" class="notouch section-viewtopic ltr hasjs"><div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override--1687565279 cc-invisible" style="display: none;"><!--googleoff: all--><span id="cookieconsent:desc" class="cc-message">En
+ poursuivant votre navigation sur ce site, vous acceptez l’utilisation 
+de cookies vous permettant de bénéficier d’une expérience de navigation 
+optimale. <a aria-label="learn more about cookies" role="button" tabindex="0" class="cc-link" href="https://www.mathematex.fr/ucp.php?mode=privacy" rel="noopener noreferrer nofollow" target="_blank">En savoir plus…</a></span><div class="cc-compliance"><a aria-label="dismiss cookie message" role="button" tabindex="0" class="cc-btn cc-dismiss">J’accepte</a></div><!--googleon: all--></div>
+
+
+<div id="wrap" class="wrap">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+	<div id="page-header">
+		<div class="headerbar" role="banner">
+					<div class="inner">
+
+			<div id="site-description" class="site-description">
+		<a id="logo" class="logo" href="https://www.mathematex.fr/index.php" title="Accueil du forum">
+					<span class="site_logo"></span>
+				</a>
+				<h1>MathemaTeX</h1>
+				<p>Forum francophone relatif aux mathématiques avec support MathJax, LaTeX et Asymptote.</p>
+				<p class="skiplink"><a href="#start_here">Accéder au contenu</a></p>
+			</div>
+
+									<div id="search-box" class="search-box search-header" role="search">
+				<form action="./search.php" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="search" maxlength="128" title="Rechercher par mots-clés" class="inputbox search tiny" size="20" placeholder="Rechercher…">
+					<button class="button button-search" type="submit" title="Rechercher">
+						<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Rechercher</span>
+					</button>
+					<a href="https://www.mathematex.fr/search.php" class="button button-search-end" title="Recherche avancée">
+						<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Recherche avancée</span>
+					</a>
+					
+				</fieldset>
+				</form>
+			</div>
+						
+			</div>
+					</div>
+				<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-main" class="nav-main linklist" role="menubar">
+
+		<li id="quick-links" class="quick-links dropdown-container responsive-menu" data-skip-responsive="true">
+			<a href="#" class="dropdown-trigger dropdown-toggle">
+				<i class="icon fa-bars fa-fw" aria-hidden="true"></i><span>Raccourcis</span>
+			</a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents" role="menu">
+					
+											<li class="separator"></li>
+													<li>
+								<a href="https://www.mathematex.fr/search.php?search_id=egosearch" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Vos messages</span>
+								</a>
+							</li>
+																			<li>
+								<a href="https://www.mathematex.fr/search.php?search_id=newposts" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-red" aria-hidden="true"></i><span>Nouveaux messages</span>
+								</a>
+							</li>
+																			<li>
+								<a href="https://www.mathematex.fr/search.php?search_id=unreadposts" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-red" aria-hidden="true"></i><span>Messages non lus</span>
+								</a>
+							</li>
+													<li>
+								<a href="https://www.mathematex.fr/search.php?search_id=unanswered" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Sujets sans réponse</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.mathematex.fr/search.php?search_id=active_topics" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Sujets actifs</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+							<li>
+								<a href="https://www.mathematex.fr/search.php" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Rechercher</span>
+								</a>
+							</li>
+					
+											<li class="separator"></li>
+													<li>
+								<a href="https://www.mathematex.fr/memberlist.php" role="menuitem">
+									<i class="icon fa-group fa-fw" aria-hidden="true"></i><span>Membres</span>
+								</a>
+							</li>
+																			<li>
+								<a href="https://www.mathematex.fr/memberlist.php?mode=team" role="menuitem">
+									<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>L’équipe</span>
+								</a>
+							</li>
+																<li class="separator"></li>
+
+								<li>
+			<a href="https://www.mathematex.fr/guide-mathjax" role="menuitem">
+				<i class="icon fa-superscript fa-fw" aria-hidden="true"></i><span>Guide MathJax</span>
+			</a>
+		</li>
+					</ul>
+			</div>
+		</li>
+
+				<li data-last-responsive="true">
+			<a href="https://www.mathematex.fr/help/faq" rel="help" title="Foire aux questions" role="menuitem">
+				<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+			</a>
+		</li>
+						
+					<li id="username_logged_in" class="rightside " data-skip-responsive="true">
+						<div class="header-profile dropdown-container">
+				<a href="https://www.mathematex.fr/ucp.php" class="header-avatar dropdown-trigger dropdown-toggle"> <span class="username">projetmbc</span></a>
+				<div class="dropdown">
+					<div class="pointer"><div class="pointer-inner"></div></div>
+					<ul class="dropdown-contents" role="menu">
+						
+					
+						<li>
+							<a href="https://www.mathematex.fr/ucp.php" title="Panneau de contrôle de l’utilisateur" role="menuitem">
+								<i class="icon fa-sliders fa-fw" aria-hidden="true"></i><span>Panneau de contrôle de l’utilisateur</span>
+							</a>
+						</li>
+													<li>
+								<a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=3746" title="Profil" role="menuitem">
+									<i class="icon fa-user fa-fw" aria-hidden="true"></i><span>Profil</span>
+								</a>
+							</li>
+						
+						
+						<li class="separator"></li>
+						<li>
+							<a href="https://www.mathematex.fr/ucp.php?mode=logout&amp;sid=3f4519f5ecc720c393fad8093fbec8ea" title="Déconnexion" accesskey="x" role="menuitem">
+								<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>Déconnexion</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+					</li>
+					<li class="rightside" data-skip-responsive="true">
+				<a href="https://www.mathematex.fr/ucp.php?i=pm&amp;folder=inbox" role="menuitem">
+					<i class="icon fa-inbox fa-fw" aria-hidden="true"></i><span>Messages privés </span><strong class="badge hidden">0</strong>
+				</a>
+			</li>
+							<li class="dropdown-container dropdown-right rightside" data-skip-responsive="true">
+				<a href="https://www.mathematex.fr/ucp.php?i=ucp_notifications" id="notification_list_button" class="dropdown-trigger dropdown-toggle">
+					<i class="icon fa-bell fa-fw" aria-hidden="true"></i><span>Notifications </span><strong class="badge hidden">0</strong>
+				</a>
+				<div id="notification_list" class="dropdown dropdown-extended notification_list">
+	<div class="pointer"><div class="pointer-inner"></div></div>
+	<div class="dropdown-contents">
+		<div class="header">
+			Notifications
+			<span class="header_settings">
+				<a href="https://www.mathematex.fr/ucp.php?i=ucp_notifications&amp;mode=notification_options">Paramètres</a>
+							</span>
+		</div>
+
+		<ul>
+										<li class="">
+											<a class="notification-block" href="https://www.mathematex.fr/viewtopic.php?p=160714#p160714">
+											<img src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/no_avatar.gif" alt="">						<div class="notification_text">
+							<p class="notification-title"><strong>Publication d’un message</strong> par <span style="color: #AA0000;" class="username-coloured">MB</span> dans le sujet&nbsp;:</p>
+							<p class="notification-reference">«&nbsp;Par où commencer ?&nbsp;»</p>																					<p class="notification-time">mardi 17 novembre 2020, 18:54</p>
+						</div>
+					</a>									</li>
+							<li class="">
+											<a class="notification-block" href="https://www.mathematex.fr/viewtopic.php?p=160695#p160695">
+											<img src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/no_avatar.gif" alt="">						<div class="notification_text">
+							<p class="notification-title"><strong>Citation</strong> par <span class="username">un bon petit</span> dans&nbsp;:</p>
+							<p class="notification-reference">«&nbsp;[xlop] Affichage sous forme fractionnaire (\opdiv)&nbsp;»</p>																					<p class="notification-time">mercredi 11 novembre 2020, 17:38</p>
+						</div>
+					</a>									</li>
+					</ul>
+
+		<div class="footer">
+			<a href="https://www.mathematex.fr/ucp.php?i=ucp_notifications"><span>Tout consulter</span></a>
+		</div>
+	</div>
+</div>
+			</li>
+						</ul>
+
+	<ul id="nav-breadcrumbs" class="nav-breadcrumbs linklist navlinks" role="menubar">
+				
+		
+		<li class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList" style="max-width: 964px;">
+
+			
+							<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope=""><a itemprop="item" href="https://www.mathematex.fr/index.php" accesskey="h" data-navbar-reference="index" title="Accueil du forum"><i class="icon fa-home fa-fw"></i><span itemprop="name">Accueil du forum</span></a><meta itemprop="position" content="1"></span>
+
+											
+								<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="23"><a itemprop="item" href="https://www.mathematex.fr/viewforum.php?f=23" title="Forums des utilisateurs"><span itemprop="name">Forums des utilisateurs</span></a><meta itemprop="position" content="2"></span>
+															
+								<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="5"><a itemprop="item" href="https://www.mathematex.fr/viewforum.php?f=5" title="Tribune des mathématiques"><span itemprop="name">Tribune des mathématiques</span></a><meta itemprop="position" content="3"></span>
+							
+					</li>
+
+		
+					<li class="rightside responsive-search">
+				<a href="https://www.mathematex.fr/search.php" title="Accéder aux paramètres avancés de la recherche" role="menuitem">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Rechercher</span>
+				</a>
+			</li>
+			</ul>
+
+	</div>
+</div>
+	</div>
+
+	
+	<a id="start_here" class="anchor"></a>
+	<div id="page-body" class="page-body" role="main">
+		
+		
+<h2 class="topic-title"><a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17669">Pgcd et suite de Fibonacci</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+<div style="display: none !important;">Discussions générales concernant les mathématiques.<br>
+[forum modéré par les modérateurs globaux du site]<br></div>
+
+	<div class="rules">
+		<div class="inner">
+
+					<strong>Règles du forum</strong><br>
+			Merci de <strong class="text-strong">soigner la rédaction</strong> de vos messages et de consulter <a href="https://www.mathematex.fr/viewtopic.php?p=109966" class="postlink">ce</a> sujet avant de poster. Pensez également à utiliser la fonction <a href="https://www.mathematex.fr/search.php" class="postlink">recherche</a> du forum.
+		
+		</div>
+	</div>
+
+<div class="action-bar bar-top">
+	
+			<a href="https://www.mathematex.fr/posting.php?mode=reply&amp;f=5&amp;t=17669" class="button" title="Répondre">
+							<span>Répondre</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Outils du sujet" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+													<li>
+						<a href="https://www.mathematex.fr/viewtopic.php?uid=3746&amp;f=5&amp;t=17669&amp;watch=topic&amp;start=0&amp;hash=bcb13efc" class="watch-topic-link" title="S’abonner au sujet" data-ajax="toggle_link" data-toggle-class="icon fa-square-o fa-fw" data-toggle-text="Se désabonner du sujet" data-toggle-url="./viewtopic.php?uid=3746&amp;f=5&amp;t=17669&amp;unwatch=topic&amp;start=0&amp;hash=bcb13efc" data-update-all=".watch-topic-link">
+							<i class="icon fa-check-square-o fa-fw" aria-hidden="true"></i><span>S’abonner au sujet</span>
+						</a>
+					</li>
+													<li>
+						<a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17669&amp;bookmark=1&amp;hash=bcb13efc" class="bookmark-link" title="Ajouter ce sujet aux favoris" data-ajax="alt_text" data-alt-text="Supprimer ce sujet de vos favoris" data-update-all=".bookmark-link">
+							<i class="icon fa-bookmark-o fa-fw" aria-hidden="true"></i><span>Ajouter ce sujet aux favoris</span>
+						</a>
+					</li>
+																<li>
+					<a href="https://www.mathematex.fr/memberlist.php?mode=email&amp;t=17669" title="Envoyer le sujet par courriel">
+						<i class="icon fa-envelope-o fa-fw" aria-hidden="true"></i><span>Envoyer le sujet par courriel</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17669&amp;view=print" title="Aperçu avant impression" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Aperçu avant impression</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="./search.php">
+			<fieldset>
+				<input class="inputbox search tiny" type="search" name="keywords" id="search_keywords" size="20" placeholder="Rechercher…">
+				<button class="button button-search" type="submit" title="Rechercher">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Rechercher</span>
+				</button>
+				<a href="https://www.mathematex.fr/search.php" class="button button-search-end" title="Recherche avancée">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Recherche avancée</span>
+				</a>
+				<input type="hidden" name="t" value="17669">
+<input type="hidden" name="sf" value="msgonly">
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			<a href="#unread" class="mark">Premier message non lu</a> • 1 message
+							• Page <strong>1</strong> sur <strong>1</strong>
+					</div>
+		</div>
+
+
+
+
+				<a id="unread" class="anchor"></a>
+		<div id="p160749" class="post has-profile bg2 unreadpost online">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile160749">
+			<dt class="has-profile-rank no-avatar">
+				<div class="avatar-container">
+																			</div>
+								<a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=3" style="color: #AA0000;" class="username-coloured">MB</a>							</dt>
+
+						<dd class="profile-rank">Administrateur<br><img src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/ranks_n13.png" alt="Administrateur" title="Administrateur"></dd>			
+		<dd class="profile-posts"><strong>Messages&nbsp;:</strong> <a href="https://www.mathematex.fr/search.php?author_id=3&amp;sr=posts">7260</a></dd>		<dd class="profile-joined"><strong>Inscription&nbsp;:</strong> samedi 28 mai 2005, 13:23</dd>		
+		
+											<dd class="profile-custom-field profile-statut"><strong>Statut actuel&nbsp;:</strong> Enseignant</dd>
+												
+							<dd class="profile-contact">
+				<strong>Contact&nbsp;:</strong>
+				<div class="dropdown-container dropdown-left">
+					<a href="#" class="dropdown-trigger dropdown-toggle" title="Contacter MB">
+						<i class="icon fa-commenting-o fa-fw icon-lg" aria-hidden="true"></i><span class="sr-only">Contacter MB</span>
+					</a>
+					<div class="dropdown">
+						<div class="pointer"><div class="pointer-inner"></div></div>
+						<div class="dropdown-contents contact-icons">
+																																								<div>
+																	<a href="https://www.mathematex.fr/ucp.php?i=pm&amp;mode=compose&amp;action=quotepost&amp;p=160749" title="Envoyer un message privé">
+										<span class="contact-icon pm-icon">Envoyer un message privé</span>									</a>
+																																																<a href="https://www.mathematex.fr/" title="Site internet" class="last-cell">
+										<span class="contact-icon phpbb_website-icon">Site internet</span>									</a>
+																	</div>
+																					</div>
+					</div>
+				</div>
+			</dd>
+				
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content160749">
+
+					<h3 class="first">
+						<a class="first-unread" href="https://www.mathematex.fr/viewtopic.php?p=160749#p160749">Pgcd et suite de Fibonacci</a>
+		</h3>
+
+													<ul class="post-buttons">
+																										<li>
+							<a href="https://www.mathematex.fr/post/160749/report" title="Rapporter le message" class="button button-icon-only">
+								<i class="icon fa-exclamation fa-fw" aria-hidden="true"></i><span class="sr-only">Rapporter</span>
+							</a>
+						</li>
+																										<li>
+							<a href="https://www.mathematex.fr/posting.php?mode=quote&amp;f=5&amp;p=160749" title="Répondre en citant le message" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Citer</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author">
+									<a class="unread" href="https://www.mathematex.fr/viewtopic.php?p=160749#p160749" title="Message non lu">
+						<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">Message non lu</span>
+					</a>
+								<span class="responsive-hide">par <strong><a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=3" style="color: #AA0000;" class="username-coloured">MB</a></strong> » </span><time datetime="2020-11-23T11:18:22+00:00">lundi 23 novembre 2020, 12:18</time>
+			</p>
+			
+			
+			
+			<div class="content">En tombant sur <a href="https://twitter.com/AnecdotesMaths/status/1330554275928346624" class="postlink">cette</a>
+ anecdote mathématiques, indiquant que le pgcd de deux nombres de 
+Fibonacci est un nombre de Fibonacci, je me suis souvenu d'une 
+démonstration que j'avais trouvé assez jolie (et qui pourrait peut-être 
+servir aux agrégatifs, comme application du théorème de Bézout). Il me 
+semble que cette preuve est inspirée d'exercices du <em class="text-italics">Cours d'algèbre</em> de <em class="text-italics">Demazure</em>. On peut en trouver une autre dans <a href="https://blogdemaths.files.wordpress.com/2013/10/fermat-mersenne-et-fibonacci.pdf" class="postlink">ce</a> document.<br>
+
+<blockquote class="uncited"><div>On considère la suite de Fibonacci <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="0"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><msub><mi>F</mi><mi>n</mi></msub><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container> définie récursivement par les égalités suivantes. <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120%; position: relative;" display="true" role="presentation" tabindex="0" ctxtmenu_counter="1"><mjx-math display="true" style="margin-left: 0px; margin-right: 0px;" class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 1em;"></mjx-mspace></mjx-mstyle><mjx-mtext class="mjx-n"><mjx-c class="mjx-c3B"></mjx-c></mjx-mtext><mjx-mstyle><mjx-mspace style="width: 1em;"></mjx-mspace></mjx-mstyle><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mn class="mjx-n" size="s"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mstyle><mjx-mspace style="width: 1em;"></mjx-mspace></mjx-mstyle><mjx-mtext class="mjx-n"><mjx-c class="mjx-c3B"></mjx-c></mjx-mtext><mjx-mstyle><mjx-mspace style="width: 1em;"></mjx-mspace></mjx-mstyle><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-msub space="3"><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>F</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>;</mtext><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><msub><mi>F</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><mtext>;</mtext><mstyle scriptlevel="0"><mspace width="1em"></mspace></mstyle><msub><mi>F</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>F</mi><mi>n</mi></msub><mo>+</mo><msub><mi>F</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></math></mjx-assistive-mml></mjx-container> Si <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="2"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container> et <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="3"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></mjx-assistive-mml></mjx-container> sont deux entiers strictement positifs, alors on a <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="4"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-n"><mjx-c class="mjx-c70"></mjx-c><mjx-c class="mjx-c67"></mjx-c><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c64"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.177em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-n"><mjx-c class="mjx-c70"></mjx-c><mjx-c class="mjx-c67"></mjx-c><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c64"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>pgcd</mi><mo data-mjx-texclass="NONE">⁡</mo><mo stretchy="false">(</mo><msub><mi>F</mi><mi>n</mi></msub><mo>,</mo><msub><mi>F</mi><mi>m</mi></msub><mo stretchy="false">)</mo><mo>=</mo><msub><mi>F</mi><mrow><mi>pgcd</mi><mo data-mjx-texclass="NONE">⁡</mo><mo stretchy="false">(</mo><mi>n</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></msub></math></mjx-assistive-mml></mjx-container>.</div></blockquote>
+
+<span style="text-decoration:underline">Preuve.</span> On considère deux entiers <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="5"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container> et <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="6"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></mjx-assistive-mml></mjx-container> strictement positifs et on pose <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="7"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 2em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-mn class="mjx-n"><mjx-c class="mjx-c30"></mjx-c></mjx-mn><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container>, <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="8"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c70"></mjx-c><mjx-c class="mjx-c67"></mjx-c><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c64"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d</mi><mo>=</mo><mi>pgcd</mi><mo data-mjx-texclass="NONE">⁡</mo><mo stretchy="false">(</mo><mi>n</mi><mo>,</mo><mi>m</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container> et <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="9"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-n" space="4"><mjx-c class="mjx-c70"></mjx-c><mjx-c class="mjx-c67"></mjx-c><mjx-c class="mjx-c63"></mjx-c><mjx-c class="mjx-c64"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2061"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-msub space="2"><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi><mo>=</mo><mi>pgcd</mi><mo data-mjx-texclass="NONE">⁡</mo><mo stretchy="false">(</mo><msub><mi>F</mi><mi>n</mi></msub><mo>,</mo><msub><mi>F</mi><mi>m</mi></msub><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container>. L'objectif est donc de montrer que <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="10"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi><mo>=</mo><msub><mi>F</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container>.<br>
+
+<ul><li>Une récurrence simple sur <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="11"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2A7E TEX-A"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="4"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>⩾</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container> permet d'obtenir la relation suivante.<br>
+<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" display="true" role="presentation" tabindex="0" ctxtmenu_counter="12"><mjx-math display="true" style="margin-left: 0px; margin-right: 0px;" class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.413em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mrow space="4"><mjx-mo class="mjx-s3"><mjx-c class="mjx-c28 TEX-S3"></mjx-c></mjx-mo><mjx-mtable style="min-width: 5.042em;"><mjx-table><mjx-itable><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-bottom: 0.2em;"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-bottom: 0.2em;"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr><mjx-mtr><mjx-mtd style="padding-right: 0.5em; padding-top: 0.2em;"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd><mjx-mtd style="padding-left: 0.5em; padding-top: 0.2em;"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-tstrut></mjx-tstrut></mjx-mtd></mjx-mtr></mjx-itable></mjx-table></mjx-mtable><mjx-mo class="mjx-s3"><mjx-c class="mjx-c29 TEX-S3"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msup><mi>A</mi><mi>n</mi></msup><mo>=</mo><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mtable columnspacing="1em" rowspacing="4pt"><mtr><mtd><msub><mi>F</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mtd><mtd><msub><mi>F</mi><mi>n</mi></msub></mtd></mtr><mtr><mtd><msub><mi>F</mi><mi>n</mi></msub></mtd><mtd><msub><mi>F</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mtd></mtr></mtable><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container></li>
+<li>En passant aux déterminants, on obtient l'égalité suivante.<br>
+<mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" display="true" role="presentation" tabindex="0" ctxtmenu_counter="13"><mjx-math display="true" style="margin-left: 0px; margin-right: 0px;" class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-msubsup space="3"><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.247em;"><mjx-mn class="mjx-n" size="s" style="margin-left: 0.228em;"><mjx-c class="mjx-c32"></mjx-c></mjx-mn><mjx-spacer style="margin-top: 0.347em;"></mjx-spacer><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msubsup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.413em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="block"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>F</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><msub><mi>F</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>−</mo><msubsup><mi>F</mi><mi>n</mi><mn>2</mn></msubsup><mo>=</mo><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container></li>
+<li>D'après le théorème de Bézout, l'égalité précédente permet d'affirmer que <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="14"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></math></mjx-assistive-mml></mjx-container> et <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="15"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></math></mjx-assistive-mml></mjx-container> sont premiers avec <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="16"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>n</mi></msub></math></mjx-assistive-mml></mjx-container>.</li></ul>
+
+Dans la suite, on notera <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="17"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><mi>x</mi><msub><mo stretchy="false">]</mo><mi>k</mi></msub></math></mjx-assistive-mml></mjx-container> la classe de <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="18"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D465 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math></mjx-assistive-mml></mjx-container> dans l'anneau <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="19"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-texatom texclass="ORD"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-ds mjx-b" noic="true"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-texatom space="4" texclass="ORD"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c2F"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mrow><mrow><mi mathvariant="double-struck">Z</mi></mrow></mrow><mi>k</mi></msub><mo>=</mo><mrow><mrow><mi mathvariant="double-struck">Z</mi></mrow></mrow><mrow><mo>/</mo></mrow><mi>k</mi><mrow><mrow><mi mathvariant="double-struck">Z</mi></mrow></mrow></math></mjx-assistive-mml></mjx-container> et <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="20"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><mi>M</mi><msub><mo stretchy="false">]</mo><mi>k</mi></msub><mo>=</mo><mo stretchy="false">(</mo><mo stretchy="false">[</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><msub><mo stretchy="false">]</mo><mi>k</mi></msub><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container> avec <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="21"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D440 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-script></mjx-msub><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>M</mi><mo>=</mo><mo stretchy="false">(</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container>.<br>
+
+<ul><li>On posant <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="22"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>=</mo><mi>k</mi><mi>d</mi></math></mjx-assistive-mml></mjx-container>, on a <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="23"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D458 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>A</mi><mi>n</mi></msup><mo>=</mo><mo stretchy="false">(</mo><msup><mi>A</mi><mi>d</mi></msup><msup><mo stretchy="false">)</mo><mi>k</mi></msup></math></mjx-assistive-mml></mjx-container>. La matrice <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="24"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" style="font-size: 72.5%;"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><msup><mi>A</mi><mi>d</mi></msup><msub><mo stretchy="false">]</mo><mrow><msub><mi>F</mi><mi>d</mi></msub></mrow></msub></math></mjx-assistive-mml></mjx-container> étant diagonale, il en est de même pour <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="25"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" style="font-size: 72.5%;"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><msup><mi>A</mi><mi>n</mi></msup><msub><mo stretchy="false">]</mo><mrow><msub><mi>F</mi><mi>d</mi></msub></mrow></msub></math></mjx-assistive-mml></mjx-container>, ce qui implique que <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="26"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container> divise <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="27"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>n</mi></msub></math></mjx-assistive-mml></mjx-container>. De la même façon, on montre que <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="28"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container> divise <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="29"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>m</mi></msub></math></mjx-assistive-mml></mjx-container>, et donc que <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="30"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container> divise <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="31"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math></mjx-assistive-mml></mjx-container>.</li>
+<li>D'après le théorème de Bézout, il existe <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="32"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="2"><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c2208"></mjx-c></mjx-mo><mjx-texatom space="4" texclass="ORD"><mjx-texatom texclass="ORD"><mjx-mi class="mjx-ds mjx-b"><mjx-c class="mjx-c2124 TEX-A"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>u</mi><mo>,</mo><mi>v</mi><mo>∈</mo><mrow><mrow><mi mathvariant="double-struck">Z</mi></mrow></mrow></math></mjx-assistive-mml></mjx-container> tels que <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="33"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="4"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="3"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mi class="mjx-i" space="3"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d</mi><mo>=</mo><mi>n</mi><mi>u</mi><mo>+</mo><mi>m</mi><mi>v</mi></math></mjx-assistive-mml></mjx-container>. On a donc <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="34"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>A</mi><mi>d</mi></msup><mo>=</mo><mo stretchy="false">(</mo><msup><mi>A</mi><mi>n</mi></msup><msup><mo stretchy="false">)</mo><mi>u</mi></msup><mo stretchy="false">(</mo><msup><mi>A</mi><mi>m</mi></msup><msup><mo stretchy="false">)</mo><mi>v</mi></msup></math></mjx-assistive-mml></mjx-container>. Puisque <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="35"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math></mjx-assistive-mml></mjx-container> divise <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="36"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>n</mi></msub></math></mjx-assistive-mml></mjx-container> et <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="37"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>m</mi></msub></math></mjx-assistive-mml></mjx-container>, les matrices <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="38"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><msup><mi>A</mi><mi>n</mi></msup><msub><mo stretchy="false">]</mo><mi>D</mi></msub></math></mjx-assistive-mml></mjx-container> et <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="39"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><msup><mi>A</mi><mi>m</mi></msup><msub><mo stretchy="false">]</mo><mi>D</mi></msub></math></mjx-assistive-mml></mjx-container> sont diagonales. De plus, les termes diagonaux <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="40"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2B"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></math></mjx-assistive-mml></mjx-container> et <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="41"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-texatom size="s" texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c2212"></mjx-c></mjx-mo><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></math></mjx-assistive-mml></mjx-container> de <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="42"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mi>A</mi><mi>n</mi></msup></math></mjx-assistive-mml></mjx-container> sont premiers avec <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="43"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>n</mi></msub></math></mjx-assistive-mml></mjx-container> et donc avec <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="44"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math></mjx-assistive-mml></mjx-container>, ce qui implique que <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="45"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><msup><mi>A</mi><mi>n</mi></msup><msub><mo stretchy="false">]</mo><mi>D</mi></msub></math></mjx-assistive-mml></mjx-container> est inversible. Il en est de même pour <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="46"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><msup><mi>A</mi><mi>m</mi></msup><msub><mo stretchy="false">]</mo><mi>D</mi></msub></math></mjx-assistive-mml></mjx-container>. Ainsi, les matrices <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="47"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><mo stretchy="false">(</mo><msup><mi>A</mi><mi>n</mi></msup><msup><mo stretchy="false">)</mo><mi>u</mi></msup><msub><mo stretchy="false">]</mo><mi>D</mi></msub></math></mjx-assistive-mml></mjx-container>, <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="48"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D45A TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msup><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D463 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><mo stretchy="false">(</mo><msup><mi>A</mi><mi>m</mi></msup><msup><mo stretchy="false">)</mo><mi>v</mi></msup><msub><mo stretchy="false">]</mo><mi>D</mi></msub></math></mjx-assistive-mml></mjx-container> et donc <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="49"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-msup><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: 0.363em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msup><mjx-msub><mjx-mo class="mjx-n" noic="true"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">[</mo><msup><mi>A</mi><mi>d</mi></msup><msub><mo stretchy="false">]</mo><mi>D</mi></msub></math></mjx-assistive-mml></mjx-container> sont diagonales, ce qui implique que <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="50"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math></mjx-assistive-mml></mjx-container> divise <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="51"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msub><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>F</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container>.</li>
+<li>On a donc bien <mjx-container class="MathJax CtxtMenu_Attached_0" jax="CHTML" style="font-size: 120.1%; position: relative;" role="presentation" tabindex="0" ctxtmenu_counter="52"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n" space="4"><mjx-c class="mjx-c3D"></mjx-c></mjx-mo><mjx-msub space="4"><mjx-mi class="mjx-i" noic="true"><mjx-c class="mjx-c1D439 TEX-I"></mjx-c></mjx-mi><mjx-script style="vertical-align: -0.15em;"><mjx-mi class="mjx-i" size="s"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi></mjx-script></mjx-msub></mjx-math><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi><mo>=</mo><msub><mi>F</mi><mi>d</mi></msub></math></mjx-assistive-mml></mjx-container>.</li>
+</ul></div>
+
+			
+			
+									
+									<div id="sig160749" class="signature"><strong class="text-strong">MB</strong>. <em class="text-italics">(rejoignez <a href="https://partner.pcloud.com/r/3640" target="_blank" rel="noopener nofollow" class="postlink">pCloud</a> afin d'obtenir <span style="color:#FF8000">10Go de stockage en ligne gratuits</span>)</em><br>
+<em class="text-italics">Pas d'aide en message privé. Merci de consulter <a href="https://www.mathematex.fr/viewtopic.php?p=109966" class="postlink">ce</a> sujet avant de poster votre premier message.</em></div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="#top" class="top" title="Haut">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Haut</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	
+
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="https://www.mathematex.fr/posting.php?mode=reply&amp;f=5&amp;t=17669" class="button" title="Répondre">
+							<span>Répondre</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+		
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Outils du sujet" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+													<li>
+						<a href="https://www.mathematex.fr/viewtopic.php?uid=3746&amp;f=5&amp;t=17669&amp;watch=topic&amp;start=0&amp;hash=bcb13efc" class="watch-topic-link" title="S’abonner au sujet" data-ajax="toggle_link" data-toggle-class="icon fa-square-o fa-fw" data-toggle-text="Se désabonner du sujet" data-toggle-url="./viewtopic.php?uid=3746&amp;f=5&amp;t=17669&amp;unwatch=topic&amp;start=0&amp;hash=bcb13efc" data-update-all=".watch-topic-link">
+							<i class="icon fa-check-square-o fa-fw" aria-hidden="true"></i><span>S’abonner au sujet</span>
+						</a>
+					</li>
+													<li>
+						<a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17669&amp;bookmark=1&amp;hash=bcb13efc" class="bookmark-link" title="Ajouter ce sujet aux favoris" data-ajax="alt_text" data-alt-text="Supprimer ce sujet de vos favoris" data-update-all=".bookmark-link">
+							<i class="icon fa-bookmark-o fa-fw" aria-hidden="true"></i><span>Ajouter ce sujet aux favoris</span>
+						</a>
+					</li>
+																<li>
+					<a href="https://www.mathematex.fr/memberlist.php?mode=email&amp;t=17669" title="Envoyer le sujet par courriel">
+						<i class="icon fa-envelope-o fa-fw" aria-hidden="true"></i><span>Envoyer le sujet par courriel</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17669&amp;view=print" title="Aperçu avant impression" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Aperçu avant impression</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+
+	
+	
+	
+			<div class="pagination">
+			1 message
+							• Page <strong>1</strong> sur <strong>1</strong>
+					</div>
+	</div>
+
+<div class="forumbg">
+
+	<div class="inner">
+		<ul class="topiclist">
+			<li class="header">
+				<dl class="row-item">
+					<dt><div class="list-inner">Sujets similaires</div></dt>
+					<dd class="posts">Réponses</dd>
+					<dd class="views">Vues</dd>
+					<dd class="lastpost"><span>Dernier message</span></dd>
+				</dl>
+			</li>
+		</ul>
+		<ul class="topiclist topics">
+
+								<li class="row bg1">
+				<dl class="row-item topic_unread">
+					<dt title="Messages non lus">
+						<a href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17176&amp;view=unread#unread" class="row-item-link"></a>						<div class="list-inner">
+																						<a class="unread" href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17176&amp;view=unread#unread">
+									<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">Nouveau message</span>
+								</a>
+														<a href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17176" class="topictitle">Limite d'une suite</a>
+																					<br>
+							
+															<div class="responsive-show" style="display: none;">
+									Dernier message par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=192" style="color: #FF9900;" class="username-coloured">guiguiche</a> « <a href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17176&amp;p=158124#p158124" title="Aller au dernier message"><time datetime="2019-03-26T10:33:55+00:00">mardi 26 mars 2019, 11:33</time></a>
+									<br>Publié dans <a href="https://www.mathematex.fr/viewforum.php?f=18">Exercices et problèmes : Supérieur</a>
+								</div>
+								<span class="responsive-show left-box" style="display: none;">Réponses&nbsp;: <strong>3</strong></span>							
+							<div class="responsive-hide left-box">
+																																par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=5084" class="username">evariste_G</a> » <time datetime="2019-03-23T08:25:07+00:00">samedi 23 mars 2019, 09:25</time> » dans <a href="https://www.mathematex.fr/viewforum.php?f=18">Exercices et problèmes : Supérieur</a>
+															</div>
+
+							
+													</div>
+					</dt>
+					<dd class="posts">3 <dfn>Réponses</dfn></dd>
+					<dd class="views">1763 <dfn>Vues</dfn></dd>
+					<dd class="lastpost">
+						<span><dfn>Dernier message </dfn>par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=192" style="color: #FF9900;" class="username-coloured">guiguiche</a>															<a href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17176&amp;p=158124#p158124" title="Aller au dernier message">
+									<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+								</a>
+														<br><time datetime="2019-03-26T10:33:55+00:00">mardi 26 mars 2019, 11:33</time>
+						</span>
+					</dd>
+				</dl>
+			</li>
+											<li class="row bg2">
+				<dl class="row-item topic_unread">
+					<dt title="Messages non lus">
+						<a href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17149&amp;view=unread#unread" class="row-item-link"></a>						<div class="list-inner">
+																						<a class="unread" href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17149&amp;view=unread#unread">
+									<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">Nouveau message</span>
+								</a>
+														<a href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17149" class="topictitle">Probléme Suite numérique</a>
+																					<br>
+							
+															<div class="responsive-show" style="display: none;">
+									Dernier message par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=1248" style="color: #FF9900;" class="username-coloured">kojak</a> « <a href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17149&amp;p=157955#p157955" title="Aller au dernier message"><time datetime="2018-12-15T15:02:48+00:00">samedi 15 décembre 2018, 16:02</time></a>
+									<br>Publié dans <a href="https://www.mathematex.fr/viewforum.php?f=18">Exercices et problèmes : Supérieur</a>
+								</div>
+								<span class="responsive-show left-box" style="display: none;">Réponses&nbsp;: <strong>4</strong></span>							
+							<div class="responsive-hide left-box">
+																																par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=1949" class="username">celtic</a> » <time datetime="2018-12-13T19:48:30+00:00">jeudi 13 décembre 2018, 20:48</time> » dans <a href="https://www.mathematex.fr/viewforum.php?f=18">Exercices et problèmes : Supérieur</a>
+															</div>
+
+							
+													</div>
+					</dt>
+					<dd class="posts">4 <dfn>Réponses</dfn></dd>
+					<dd class="views">2306 <dfn>Vues</dfn></dd>
+					<dd class="lastpost">
+						<span><dfn>Dernier message </dfn>par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=1248" style="color: #FF9900;" class="username-coloured">kojak</a>															<a href="https://www.mathematex.fr/viewtopic.php?f=18&amp;t=17149&amp;p=157955#p157955" title="Aller au dernier message">
+									<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+								</a>
+														<br><time datetime="2018-12-15T15:02:48+00:00">samedi 15 décembre 2018, 16:02</time>
+						</span>
+					</dd>
+				</dl>
+			</li>
+											<li class="row bg1">
+				<dl class="row-item topic_unread">
+					<dt title="Messages non lus">
+						<a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17356&amp;view=unread#unread" class="row-item-link"></a>						<div class="list-inner">
+																						<a class="unread" href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17356&amp;view=unread#unread">
+									<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">Nouveau message</span>
+								</a>
+														<a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17356" class="topictitle">Suite qui ressemble à Syracuse</a>
+																					<br>
+							
+															<div class="responsive-show" style="display: none;">
+									Dernier message par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=3" style="color: #AA0000;" class="username-coloured">MB</a> « <a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17356&amp;p=159546#p159546" title="Aller au dernier message"><time datetime="2020-05-19T23:13:46+00:00">mercredi 20 mai 2020, 00:13</time></a>
+									<br>Publié dans <a href="https://www.mathematex.fr/viewforum.php?f=5">Tribune des mathématiques</a>
+								</div>
+								<span class="responsive-show left-box" style="display: none;">Réponses&nbsp;: <strong>23</strong></span>							
+							<div class="responsive-hide left-box">
+																<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>																par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=10539" class="username">elhi</a> » <time datetime="2020-05-12T09:59:15+00:00">mardi 12 mai 2020, 10:59</time> » dans <a href="https://www.mathematex.fr/viewforum.php?f=5">Tribune des mathématiques</a>
+															</div>
+
+														<div class="pagination">
+								<span><i class="icon fa-clone fa-fw" aria-hidden="true"></i></span>
+								<ul>
+																	<li><a class="button" href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17356">1</a></li>
+																										<li><a class="button" href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17356&amp;start=20">2</a></li>
+																																																			</ul>
+							</div>
+							
+													</div>
+					</dt>
+					<dd class="posts">23 <dfn>Réponses</dfn></dd>
+					<dd class="views">729 <dfn>Vues</dfn></dd>
+					<dd class="lastpost">
+						<span><dfn>Dernier message </dfn>par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=3" style="color: #AA0000;" class="username-coloured">MB</a>															<a href="https://www.mathematex.fr/viewtopic.php?f=5&amp;t=17356&amp;p=159546#p159546" title="Aller au dernier message">
+									<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+								</a>
+														<br><time datetime="2020-05-19T23:13:46+00:00">mercredi 20 mai 2020, 00:13</time>
+						</span>
+					</dd>
+				</dl>
+			</li>
+											<li class="row bg2">
+				<dl class="row-item topic_unread">
+					<dt style="background-image: url(./images/icons/misc/tick.gif); background-repeat: no-repeat;" title="Messages non lus">
+						<a href="https://www.mathematex.fr/viewtopic.php?f=6&amp;t=17268&amp;view=unread#unread" class="row-item-link"></a>						<div class="list-inner">
+																						<a class="unread" href="https://www.mathematex.fr/viewtopic.php?f=6&amp;t=17268&amp;view=unread#unread">
+									<i class="icon fa-file fa-fw icon-red icon-md" aria-hidden="true"></i><span class="sr-only">Nouveau message</span>
+								</a>
+														<a href="https://www.mathematex.fr/viewtopic.php?f=6&amp;t=17268" class="topictitle">Package array - Anomalie suite MàJ Miktex 2.9</a>
+																					<br>
+							
+															<div class="responsive-show" style="display: none;">
+									Dernier message par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=9877" class="username">pzorba75</a> « <a href="https://www.mathematex.fr/viewtopic.php?f=6&amp;t=17268&amp;p=158703#p158703" title="Aller au dernier message"><time datetime="2019-11-16T04:28:19+00:00">samedi 16 novembre 2019, 05:28</time></a>
+									<br>Publié dans <a href="https://www.mathematex.fr/viewforum.php?f=6">Langage LaTeX</a>
+								</div>
+								<span class="responsive-show left-box" style="display: none;">Réponses&nbsp;: <strong>2</strong></span>							
+							<div class="responsive-hide left-box">
+																<i class="icon fa-paperclip fa-fw" aria-hidden="true"></i>																par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=9877" class="username">pzorba75</a> » <time datetime="2019-11-15T14:49:39+00:00">vendredi 15 novembre 2019, 15:49</time> » dans <a href="https://www.mathematex.fr/viewforum.php?f=6">Langage LaTeX</a>
+															</div>
+
+							
+													</div>
+					</dt>
+					<dd class="posts">2 <dfn>Réponses</dfn></dd>
+					<dd class="views">1556 <dfn>Vues</dfn></dd>
+					<dd class="lastpost">
+						<span><dfn>Dernier message </dfn>par <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=9877" class="username">pzorba75</a>															<a href="https://www.mathematex.fr/viewtopic.php?f=6&amp;t=17268&amp;p=158703#p158703" title="Aller au dernier message">
+									<i class="icon fa-external-link-square fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only"></span>
+								</a>
+														<br><time datetime="2019-11-16T04:28:19+00:00">samedi 16 novembre 2019, 05:28</time>
+						</span>
+					</dd>
+				</dl>
+			</li>
+							</ul>
+
+	</div>
+</div>
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="https://www.mathematex.fr/viewforum.php?f=5" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Revenir à «&nbsp;Tribune des mathématiques&nbsp;»</span>
+		</a>
+	</p>
+	
+		<div class="jumpbox dropdown-container dropdown-container-right dropdown-up dropdown-left dropdown-button-control" id="jumpbox">
+			<span title="Aller" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+				<span>Aller</span>
+				<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+			</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																				<li><a href="https://www.mathematex.fr/viewforum.php?f=23" class="jumpbox-cat-link"> <span> Forums des utilisateurs</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=11" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; A propos de MathemaTeX</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=8" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Tribune des professeurs</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=5" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Tribune des mathématiques</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=4" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Tribune libre</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=24" class="jumpbox-cat-link"> <span> Forums d'aide scolaire mathématique</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=18" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Exercices et problèmes : Supérieur</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=19" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Exercices et problèmes : Primaire et secondaire</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=25" class="jumpbox-cat-link"> <span> Forums de l'informatique pour les mathématiques</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=7" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Logiciels mathématiques</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=34" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Langage Asymptote</span></a></li>
+																<li><a href="https://www.mathematex.fr/viewforum.php?f=6" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Langage LaTeX</span></a></li>
+											</ul>
+		</div>
+	</div>
+
+	</div>
+
+
+	<div class="stat-block online-list">
+		<h3><a href="https://www.mathematex.fr/viewonline.php">Qui est en ligne&nbsp;?</a></h3>
+		<p>Utilisateurs parcourant ce forum&nbsp;: <a href="https://www.mathematex.fr/memberlist.php?mode=viewprofile&amp;u=3746" class="username">projetmbc</a> et 1 invité</p>
+	</div>
+
+			</div>
+
+
+<div id="page-footer" class="page-footer" role="contentinfo">
+	<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="https://www.mathematex.fr/index.php" data-navbar-reference="index" title="Accueil du forum"><i class="icon fa-home fa-fw" aria-hidden="true"></i><span>Accueil du forum</span></a></span>					</li>
+		
+				<li class="responsive-menu hidden rightside dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li><li class="rightside">Fuseau horaire sur <span title="UTC+1">UTC+01:00</span></li>
+							<li class="rightside">
+				<a href="https://www.mathematex.fr/ucp.php?mode=delete_cookies" data-ajax="true" data-refresh="true" role="menuitem">
+					<i class="icon fa-trash fa-fw" aria-hidden="true"></i><span>Supprimer les cookies</span>
+				</a>
+			</li>
+							<li class="rightside" data-last-responsive="true">
+					<a href="https://www.mathematex.fr/memberlist.php" title="La liste complète des membres du forum" role="menuitem">
+						<i class="icon fa-group fa-fw" aria-hidden="true"></i><span>Membres</span>
+					</a>
+				</li>
+												<li class="rightside" data-last-responsive="true">
+				<a href="https://www.mathematex.fr/memberlist.php?mode=team" role="menuitem">
+					<i class="icon fa-shield fa-fw" aria-hidden="true"></i><span>L’équipe</span>
+				</a>
+			</li>
+							</ul>
+
+	</div>
+</div>
+
+	<div class="copyright">
+				<p class="footer-row">
+			<span class="footer-copyright">Développé par <a href="https://www.phpbb.com/">phpBB</a>® Forum Software © phpBB Limited</span>
+		</p>
+				<p class="footer-row">
+			<span class="footer-copyright"><a href="https://www.phpbb.com/customise/db/translation/french/">Traduction française officielle</a> © <a href="https://www.qiaeru.com/">Qiaeru</a></span>
+		</p>
+						<p class="footer-row" role="menu">
+			<a class="footer-link" href="https://www.mathematex.fr/ucp.php?mode=privacy" title="Confidentialité" role="menuitem">
+				<span class="footer-link-text">Confidentialité</span>
+			</a>
+			|
+			<a class="footer-link" href="https://www.mathematex.fr/ucp.php?mode=terms" title="Conditions" role="menuitem">
+				<span class="footer-link-text">Conditions</span>
+			</a>
+		</p>
+					</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="Erreur AJAX" data-ajax-error-text="Une erreur est survenue lors du traitement de votre requête." data-ajax-error-text-abort="La requête a été interrompue par l’utilisateur." data-ajax-error-text-timeout="Votre requête a expiré prématurément. Veuillez réessayer." data-ajax-error-text-parsererror="Une erreur est survenue lors du traitement de votre requête et le serveur a renvoyé une réponse invalide.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Erreur" data-l-timeout-processing-req="Le délai a été dépassé.">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+
+<script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/jquery-3.js"></script>
+<script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/core.js"></script>
+
+	<script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/cookieconsent.js"></script>
+	<script>
+		if (typeof window.cookieconsent === "object") {
+			window.addEventListener("load", function(){
+				window.cookieconsent.initialise({
+					"palette": {
+						"popup": {
+							"background": "#0F538A"
+						},
+						"button": {
+							"background": "#E5E5E5"
+						}
+					},
+					"theme": "classic",
+					"content": {
+						"message": "En\u0020poursuivant\u0020votre\u0020navigation\u0020sur\u0020ce\u0020site,\u0020vous\u0020acceptez\u0020l\u2019utilisation\u0020de\u0020cookies\u0020vous\u0020permettant\u0020de\u0020b\u00E9n\u00E9ficier\u0020d\u2019une\u0020exp\u00E9rience\u0020de\u0020navigation\u0020optimale.",
+						"dismiss": "J\u2019accepte",
+						"link": "En\u0020savoir\u0020plus\u2026",
+						"href": "./ucp.php?mode=privacy"
+					}
+				});
+			});
+		}
+	</script>
+
+<script>
+	(function() {
+		var cx = 'partner\u002Dpub\u002D9031508024694163\u003A1348051054';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		gcse.async = true;
+		gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+			'//cse.google.com/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(gcse, s);
+	})();
+</script>
+<script>
+MathJax = {
+    tex: { 
+        inlineMath: [["$","$"]], 
+        displayMath: [["$$","$$"],["\\[","\\]"]],
+        processEscapes: true,
+        processEnvironments: false,
+        processRefs: false,
+        macros: {
+            N: "{\\mathbb N}",
+            Z: "{\\mathbb Z}",
+            Q: "{\\mathbb Q}",
+            R: "{\\mathbb R}",
+            C: "{\\mathbb C}",
+            K: "{\\mathbb K}",
+            vect: "\\overrightarrow",
+            vv: "\\overrightarrow",
+            ds: "\\displaystyle",
+            mb: "\\mathbb",
+            mc: "\\mathcal",
+            pgcd: "\\mathop{\\rm pgcd}\\nolimits"
+        }
+    }
+};
+</script>
+<script async="" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/tex-mml-chtml.js" id="MathJax-script"></script>
+
+<script>
+(function($) {  // Avoid conflicts with other libraries
+
+'use strict';
+
+	phpbb.addAjaxCallback('reporttosfs', function(data) {
+		if (data.postid !== "undefined") {
+			$('#sfs' + data.postid).hide();
+			phpbb.closeDarkenWrapper(5000);
+		}
+	});
+
+})(jQuery);
+</script>
+<script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/forum_fn.js"></script>
+<script src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/ajax.js"></script>
+
+
+
+
+
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/ads.html" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!0" data-load-complete="true" frameborder="0"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_5927563853911" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="Pgcd%20et%20suite%20de%20Fibonacci%20-%20MathemaTeX_fichiers/zrt_lookup.html" style="display: none;" data-ad-client="ca-pub-9031508024694163"></iframe></html>

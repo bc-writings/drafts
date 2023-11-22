@@ -1,0 +1,102 @@
+BODY {
+	BACKGROUND-COLOR: #ffffff;  FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; MARGIN: 0px 5px
+}
+A {
+	COLOR: #000099; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.menu {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+.titrenews {
+	COLOR: #c0cdc0; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 13px
+}
+.txtnews {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.fctnews {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.topics {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.questionvotes {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.reponsesvotes {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.centre {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.grantablo {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.ptitablo {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.treptitablo {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.titreducommentaire {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.infoducommentaire {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.notecommentaire {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px; TEXT-ALIGN: center
+}
+.textducommentaire {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.textnoyau {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 13px
+}
+.datedesarchives {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.ajoutcommentaires {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-ALIGN: right
+}
+.titreedito {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 15px; FONT-WEIGHT: bold
+}
+.texteedito {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.categoriedocs {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.listedocs {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.rubriquedocs {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.titredocs {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 18px; FONT-WEIGHT: bold
+}
+.soustitredocs {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+.soustitredocsversionmono {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.fonctiondocs {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+.maptitremenu {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.mapdescriptioncourte {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+.mapdescriptionlongue {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.boite {
+	BACKGROUND-COLOR: #c7c7c7; BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}

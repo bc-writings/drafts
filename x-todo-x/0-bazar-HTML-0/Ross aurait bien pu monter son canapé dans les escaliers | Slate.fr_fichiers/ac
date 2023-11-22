@@ -1,0 +1,3 @@
+/*_hs_*/;var sas = sas || {};
+if(sas && sas.events && sas.events.fire && typeof sas.events.fire === "function" )
+        sas.events.fire("ad", { tagId: "sas_57902", formatId: 57902 }, "sas_57902");;/*_hs_*///

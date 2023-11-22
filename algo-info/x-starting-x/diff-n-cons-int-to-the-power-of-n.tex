@@ -1,0 +1,163 @@
+\documentclass[12pt]{amsart}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%
+%\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+% Source
+%	* https://tex.stackexchange.com/a/51515/6880
+\usepackage{minted}
+\usemintedstyle{bw}
+\renewcommand{\ttdefault}{pcr}
+
+\usepackage{pas-tableur}
+
+\usepackage{circledsteps}
+
+\usepackage{dashrule}
+
+\usepackage{marvosym}
+
+\usepackage{tnsalgo}
+\usepackage{tnsmath}
+
+%\usepackage{hyperref}
+%\usepackage{enumitem}
+%\usepackage{float}
+%\usepackage{cleveref}
+%\usepackage{multicol}
+%
+%\usepackage{amsmath}
+%\usepackage[french]{babel}
+%\usepackage[
+%    type={CC},
+%    modifier={by-nc-sa},
+%	version={4.0},
+%]{doclicense}
+%
+%\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+%
+%\newcommand\ourapplis{\setgeo*{A}{n \to k+n}}
+%
+%\newcommand\npermu{\setgeo*{P}{n}}
+%
+%\newcommand\badapplis[1]{\setgeo*{M}{#1}}
+%
+%\usepackage{tnsmath}
+%\usepackage{tnsalgo}
+%
+%
+%\newtheorem{fact}{Fait}[section]
+%\newtheorem{example}{Exemple}[section]
+%\newtheorem{remark}{Remarque}[section]
+%\newtheorem*{proof*}{Preuve}
+%
+%\setlength\parindent{0pt}
+%
+%\floatstyle{boxed} 
+%\restylefloat{figure}
+%
+%
+%\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+%
+%\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+%
+%\newcommand\myquote[1]{{\itshape \og #1 \fg}}
+
+
+\newcommand\inputcode[2]{
+	\bgroup
+	\centering
+%	\begin{tcolorbox}[
+%		width        = #1\linewidth,
+%		title        = #2,
+%		title        = Code Python,
+%		fonttitle    = \bfseries\itshape\small,
+%		coltitle     = black,
+%		colbacktitle = black!10!white,
+%		colback      = white,
+%		breakable,
+%		center title]
+		\small
+		\inputminted{#1}{#2}
+%	\end{tcolorbox}
+	\egroup
+}
+
+
+
+\begin{document}
+
+\inputminted{python}{diff-n-cons-int-to-the-power-of-n/exploring-frac-version.py}
+
+%\title{BROUILLON - Soustraire les puissances n\ieme{} de (n+1) naturels consécutifs}
+%\author{Christophe BAL}
+%\date{3 Octobre 2019 -- 22 Octobre 2020}
+%
+%\maketitle
+%
+%\begin{center}
+%	\itshape
+%	Document, avec son source \LaTeX, disponible sur la page
+%	
+%	\url{https://github.com/bc-writing/drafts}.
+%\end{center}
+%
+%
+%\bigskip
+%
+%
+%\begin{center}
+%	\hrule\vspace{.3em}
+%	{
+%		\fontsize{1.35em}{1em}\selectfont
+%		\textbf{Mentions \og légales \fg}
+%	}
+%			
+%	\vspace{0.45em}
+%	\doclicenseThis
+%	\hrule
+%\end{center}
+%
+%
+%\bigskip
+%\setcounter{tocdepth}{1}
+%\tableofcontents
+%
+%
+%
+%\newpage
+%\section{Faire la différence avec des puissances}
+%
+%\input{diff-n-cons-int-to-the-power-of-n/the-pretty-algo}
+%
+%
+%
+%
+%\newpage
+%\section{Expérimentations et conjecture}
+%
+%\input{diff-n-cons-int-to-the-power-of-n/experimentation}
+%
+%
+%
+%\newpage
+%\section{Une preuve polynomiale}
+%
+%\input{diff-n-cons-int-to-the-power-of-n/polynomial-proof}
+%
+%
+%
+%\newpage
+%\section{Une très jolie identité binomiale}
+%
+%\input{diff-n-cons-int-to-the-power-of-n/awesome-binomial-identity}
+%
+%
+%\newpage
+%\section{Une preuve combinatoire}
+%
+%\input{diff-n-cons-int-to-the-power-of-n/combinatorial-proof}
+%
+
+\end{document}

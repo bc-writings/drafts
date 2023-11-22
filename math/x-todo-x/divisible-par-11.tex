@@ -1,0 +1,56 @@
+Calculer ??? où $Qd(n)$ désignée le quotient euclidien de $n$ divisé par $10$ , et $Rd(n)$ désignée le reste euclidien de $n$ divisé par $10$ . Rappelons que $\abs{\,x\,}$ est la valeur absolue de $x$ .
+
+    \begin{center}
+    \begin{algochart}
+    % Placement des noeuds.
+    	\node[acio]
+    		(input) {$n \in \NN$};
+
+      	\node[acinstr, below of = input] at ($(input) + (0,0.75)$)
+      		(initvars) {$res \Store 0$ \\
+		                $s \Store 1$};
+
+    	\node[acif, below of = initvars] at ($(initvars) + (0,-0.25)$)
+      		(is-q-zero) {$n = 0$ ?};
+      	\node[acifinstr, right, text width = 9.5em] at ($(is-q-zero) + (3,0)$)
+      		(q-zero) {$res \Store res + s \cdot Rd(n)$ \\
+		               $n \Store Qd(n)$ \\
+		               $s \Store (- \, s)$};
+
+      	\node[acinstr, below of = is-q-zero] %at ($(initres) + (0,0.75)$)
+      		(abs-res) {$res \Store \abs{\,res\,}$};
+
+    	\node[acif, below of = abs-res] %at ($(abs-res) + (0,-1.5)$)
+      		(is-small-res) {$res < 10$ ?};
+      	\node[acinstr, left, text width = 8em] at ($(is-small-res) + (-3,0)$)
+      		(large-res) {$n \Store res$};
+
+    	\node[acif, below of = is-small-res] at ($(is-small-res) + (0,-1)$)
+      		(is-zero) {$res = 0$ ?};
+      	\node[acinstr, right, text width = 8em] at ($(is-zero) + (3,0)$)
+      		(not-zero) {$res \Store 1$};
+
+    	\node[acio, below of = is-zero, text width = 8em] at ($(is-zero) + (0,-0.5)$)
+      		(output) {$u(n)$ vaut $res$};
+
+
+	% Ajout des connexions.
+      	\path[aclink] (input) -- (initvars);
+      	\path[aclink] (initvars) -- (is-q-zero);
+
+		\path[aclink] (is-q-zero) -- (q-zero) \aclabelabove{non};
+		\path[aclink] ($(q-zero) + (0,0.9)$) |- ($(initvars) + (0,-.75)$);
+		\path[aclink] (is-q-zero) -- (abs-res) \aclabelright{oui};		
+
+      	\path[aclink] (abs-res) -- (is-small-res);
+
+      	\path[aclink] (is-small-res) -- (large-res) \aclabelabove{non};
+		\path[aclink] ($(large-res) + (0,0.4)$) |- ($(input) + (0,-.75)$);
+      	\path[aclink] (is-small-res) -- (is-zero) \aclabelleft{oui};
+
+     	\path[aclink] (is-zero) -- (output) \aclabelleft{oui};
+
+     	\path[aclink] (is-zero) -- (not-zero) \aclabelabove{non};
+      	\path[aclink] (not-zero) to[aczigzag={x=3mm}] (output);
+    \end{algochart}
+    \end{center}

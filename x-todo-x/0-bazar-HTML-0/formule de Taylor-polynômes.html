@@ -1,0 +1,1597 @@
+<!--?xml version="1.0" encoding="utf-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- START TEMPLATE header.tpl -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr_FR.ISO8859-1" lang="fr_FR.ISO8859-1"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>formule de Taylor-polynômes</title>
+
+
+
+
+
+
+<link href="formule%20de%20Taylor-polyno%CC%82mes_fichiers/css_003.css" rel="stylesheet" type="text/css">
+
+
+  <link rel="stylesheet" type="text/css" href="formule%20de%20Taylor-polyno%CC%82mes_fichiers/css.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="formule%20de%20Taylor-polyno%CC%82mes_fichiers/css_002.css" media="print">
+
+
+
+  <script type="text/javascript" async="" src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/ga.js"></script><script type="text/javascript" src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/javascript.js"></script>
+<script type="text/javascript" src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/MathJax.js"></script> 
+
+
+
+
+
+
+
+
+
+  <meta name="description" content=" Bonjour, voilà je prépare la leçon sur les polynômes et je bloque sur la preuve de la formule de Taylor pour les fonctions polynômes, qui dit que : Si $P$ est une fonction polynôme non nulle de degré $n$ et si $a \in K$ alors on a : $$\forall x \in K,\ P(x)=\sum_{k=0}^{n} \frac{P^{(k)}(a)}{k">
+
+
+
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0 !important; padding: 0 !important; margin: 0 !important; vertical-align: 0 !important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap ! important}
+.MathJax img {display: inline ! important; float: none ! important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block; overflow: hidden; width: 1px; height: 60ex}
+.MathJax .MathJax_EmBox {display: block; overflow: hidden; width: 1px; height: 60em}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Blank; src: url('about:blank')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head><body onload="" style="height: 100%;" data-new-gr-c-s-check-loaded="8.876.0" data-gr-ext-installed="" text="#000000" marginheight="-3" link="#000000" bgcolor="#FFFFFF" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/Schwarz.gif"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div><a href="http://www.les-mathematiques.net/phorum/read.php?2,346997" style="float:right;" title=""> <font color="DD0000">Pensez à lire la Charte avant de poster !</font></a><p style="display:none">  <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-1-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-1" style="width: 0.014em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0em; height: 0px; font-size: 126%;"><span style="position: absolute; clip: rect(3.88em, 1000em, 4.145em, -0.397em); top: -4.012em; left: 0em;"><span class="mrow" id="MathJax-Span-2"></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.111em; vertical-align: -0.056em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-1">\newcommand{\K}{\mathbf K}</script> </p><br>
+
+
+  <!--[if lte IE 6]>
+  <style type="text/css">
+  #phorum {
+  width:       expression(document.body.clientWidth > 70%
+               ? '70%px': 'auto' );
+  margin-left: expression(document.body.clientWidth > 70%
+               ? parseInt((document.body.clientWidth-70%)/2) : 0 );
+  }
+  </style>
+  <![endif]-->
+
+
+<!--
+Some Icons courtesy of:
+  FAMFAMFAM - http://www.famfamfam.com/lab/icons/silk/
+  Tango Project - http://tango-project.org/
+-->
+
+
+
+
+
+
+ 
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="fr">
+<meta name="google-site-verification" content="YG-WB393eApV3KXK8yUwVRkRzcOBwH0GJWJmentDBBU">
+
+<title>Les-Mathematiques.net - Cours de mathématiques supérieures</title>
+<meta name="Description" content="Des cours de MathÃ©matiques niveau universitaire.Ce site est un lieu de rencontre pour ceux qui Ã©tudient et qui aiment les Mathématiques. Le forum permet Ã&nbsp; chacun de soumettre ses questions.">
+<meta name="Keywords" content="mathematiques,mathématiques,math,topologie,agrégation,capes,espaces,numérique,métrique,intégration,analyse,algèbre,série,groupe,anneau,corps,différentiel,linéaire,équation,cours,leçon,vectoriel,arithmétique,matrice,morphisme,théorème,démonstration,définition,géométrie">
+<meta name="Author" content="E Vieillard Baron">
+<meta name="Reply-to" content="manu@les-mathematiques.net">
+<meta name="Identifier-URL" content="http://www.les-mathematiques.net">
+<meta name="Copyright" content="les-mathematiques">
+<meta name="Revisit-after" content="14 days">
+<meta name="Robots" content="all">
+ <link href="formule%20de%20Taylor-polyno%CC%82mes_fichiers/css_003.css" rel="stylesheet" type="text/css">
+<script language="JavaScript">function MM_openBrWindow(theURL,winName,features){window.open(theURL,winName,features);}</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34227547-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+ 
+
+
+
+
+
+<center>
+  <a href="http://www.les-mathematiques.net/"><img alt=" Les-Mathematiques.net - Cours de mathématiques universitaires - Forum - Cours à télécharger " src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/lesmath3.gif" width="468" height="60" border="0"></a>
+</center>
+
+
+
+
+
+<!--NOUVEAU-->
+<table cellspacing="0" cellpadding="3" border="0" align="center">
+  <tbody>
+  <tr>
+    <td class="menu" width="5">
+      <center>
+        [
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        <a href="http://www.les-mathematiques.net/phorum/">Le forum</a>
+      </center>
+    </td>
+ <td class="menu">
+      <center>
+        |
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        <a href="http://www.les-mathematiques.net/banque_exercice/">Le serveur d'exercices</a>
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        |
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        <a href="" title="">Apprendre Latex en ligne</a>
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        |
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        <a href="http://www.les-mathematiques.net/livredor/index.php">Le livre d'or</a>
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        |
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        <a href="http://www.les-mathematiques.net/pages/formulaire.php">Le formulaire</a>
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        |
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        <a href="http://www.les-mathematiques.net/pages/collaborateur.php">Collaborateurs</a>
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        |
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        <a href="http://www.les-mathematiques.net/pages/mathematicien.php">Mathématiciens</a>
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        |
+      </center>
+    </td>
+<!--    <TD class=menu>
+      <CENTER>
+        <a
+      href="/liens/">Liens</a>
+      </CENTER>
+    </TD>
+    <TD class=menu>
+      <CENTER>
+        |
+      </CENTER>
+    </TD>
+-->
+    <td class="menu">
+      <center>
+        <a href="http://www.les-mathematiques.net/scripts/piwik/">Visiteurs</a>
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        |
+      </center>
+    </td>
+    <td class="menu">
+      <center>
+        <a href="http://www.les-mathematiques.net/index.php">Sommaire</a>
+      </center>
+    </td>
+    <td class="menu" width="5">
+      <center>
+        ]
+      </center>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<br>
+
+
+<!--------------------debut-------------------------------------------------------->
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+       <tbody>
+  <!--<TR>-->
+    <tr><td rowspan="2" width="140" valign="top" align="left">
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/test.gif" width="140" height="30" border="0"></td>
+        </tr>
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_tablo_gauche_droite.gif">
+            <table width="125" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+              <tbody>
+              <tr>
+                <td class="ptitablo">A lire<br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"> <a href="http://www.les-mathematiques.net/pages/deug.php">Deug/Prépa</a><br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"> <a href="http://www.les-mathematiques.net/pages/licence.php">Licence</a><br>
+                  
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"> <a href="http://www.les-mathematiques.net/pages/lagreg.php">Agrégation</a><br>
+                  A télécharger<br>
+                     <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0">
+                    <a href="http://www.les-mathematiques.net/pages/cours_zip.php">Télécharger</a>
+
+                  <hr>
+		   200 personne(s) sur le site en ce moment<br>
+                    
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bas_tablo_gauche_droite.gif" border="0"></td>
+        </tr>
+        </tbody>
+      </table>
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/nmathe.gif" width="140" height="30" border="0"></td>
+        </tr>
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_tablo_gauche_droite.gif">
+            <table width="125" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+              <tbody>
+              <tr>
+                <td class="grantablo" colspan="2">
+                  <center>
+                    <a href="http://www.les-mathematiques.net/histoire/histoire.php"><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/Elie_Cartan.jpg" width="99" height="108" border="0"></a>
+                  </center>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <table width="95%" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+                    <tbody> 
+                    <tr>
+                      <td class="ptitablo"><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://www.les-mathematiques.net/histoire/histoire.php">E. Cartan</a> </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bas_tablo_gauche_droite.gif" border="0"></td>
+        </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/nthemes.gif" width="140" height="30" border="0"></td>
+        </tr>
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_tablo_gauche_droite.gif">
+            <table width="125" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+              <tbody>
+              <tr>
+                <td class="ptitablo"> A lire<br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"> <a href="http://www.les-mathematiques.net/pages/articles.php">Articles</a><br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"> <a href="http://www.les-mathematiques.net/pages/mathinfos.php">Math/Infos</a><br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"> <a href="http://www.les-mathematiques.net/pages/curiosite1.php">Récréation</a><br>
+                   
+
+                  A télécharger<br>
+                     <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0">
+                    <a href="http://www.les-mathematiques.net/pages/cours_zip.php">Télécharger</a>
+
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bas_tablo_gauche_droite.gif" border="0"></td>
+        </tr>
+        </tbody>
+      </table>
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/nhasard.gif" width="140" height="30" border="0"></td>
+        </tr>
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_tablo_gauche_droite.gif">
+            <table width="125" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+              <tbody>
+              <tr> <td class="topics">
+                 <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://les-mathematiques.net/spip/index.php?id_article=111">Théorème de Cantor-Bernstein
+                 </a><br>
+               <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://www.les-mathematiques.net/d/g/s/index.php">Théo.
+                  Sylow</a><br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://www.les-mathematiques.net/c/m/a/index.php">Théo.
+                  Ascoli </a><br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://www.les-mathematiques.net/a/m/o/index.php">Théo.
+                  Baire </a><br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://www.les-mathematiques.net/e/p/f/index.php">Loi forte
+                  grd nbre</a><br>
+                  <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://www.les-mathematiques.net/pages/nain_prob.php">Nains
+                  magiques </a><br>
+                 
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bas_tablo_gauche_droite.gif" border="0"></td>
+        </tr>
+        </tbody>
+      </table>
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- </TD> -->
+    </td>
+  </tr>
+  <!--**************************************************************************************************************-->
+  <!--*********************************************une news**********************************************************-->
+  <!--**************************************************************************************************************-->
+
+  <tr>
+    <td valign="top">
+      <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td width="15"><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/coin_h_g.gif" width="16" height="25"></td>
+          <td class="titrenews" width="100%" valign="center" nowrap="nowrap" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_haut_tablo_centre.gif">
+                   <center>
+              <b>&nbsp;</b>
+            </center>         </td>
+          <td width="17"><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/coin_h_d.gif" width="17" height="25"></td>
+        </tr>
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_gauche_tablo_centre.gif">&nbsp;</td>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_milieu_tablo_centre.gif">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody>
+              <tr>
+                <td class="txtnews">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div id="phorum">
+
+  
+
+    
+
+    
+
+    
+
+    <div id="user-info" class="logged-out">
+
+      
+
+      
+        <span class="welcome">Bienvenu(e)!</span>
+        <a class="icon icon-key-go" href="http://www.les-mathematiques.net/phorum/login.php?2">Identification</a>
+        <a class="icon icon-user-add" href="http://www.les-mathematiques.net/phorum/register.php?2">Créer un nouveau profil</a>
+      
+<a class="icon icon-list" href="http://www.les-mathematiques.net/phorum/addon.php?2,module=google_maps,addon=usermap">Localiser les utilisateurs</a>
+
+<a class="icon icon-list" href="http://www.les-mathematiques.net/phorum/addon.php?0,module=recent_messages">
+     Nouveaux messages non lus
+   </a>
+
+    </div> <!-- end of div id=user-info -->
+
+    
+
+    
+
+    
+
+
+    
+
+    
+
+    
+
+    
+
+    <div id="breadcrumb"><a id="mod_jumpmenu_root" class="mod_jumpmenu_root" rel="mod_jumpmenu_left">» Sauter vers le forum ...</a>
+      
+      
+        
+        
+          <a href="http://www.les-mathematiques.net/phorum/index.php">Forums</a>
+        
+        
+      
+         &gt;
+        
+          <a rel="breadcrumb-forum[2]" href="http://www.les-mathematiques.net/phorum/list.php?2">Les-mathématiques</a>
+        
+        
+      
+         &gt;
+        
+          Discussion
+        
+        
+      
+    </div> <!-- end of div id=breadcrumb -->
+
+    
+
+    <div id="search-area" class="icon-zoom">
+      <form id="header-search-form" action="http://www.les-mathematiques.net/phorum/search.php?2" method="get">
+        <input type="hidden" name="forum_id" value="2">
+<input type="hidden" name="posting_token:post" value="014814f316dbad4672a41ad3317467d0">
+
+        <input type="hidden" name="phorum_page" value="search">
+        <input type="hidden" name="match_forum" value="ALL">
+        <input type="hidden" name="match_dates" value="365">
+        <input type="hidden" name="match_threads" value="0">
+        <input type="hidden" name="match_type" value="ALL">
+        <input type="text" name="search" size="20" class="styled-text"><input type="submit" value="Chercher" class="styled-button"><br>
+        <a href="http://www.les-mathematiques.net/phorum/search.php?2">Recherche avancée</a>
+      </form>
+    </div> <!-- end of div id=search-area -->
+
+    
+
+    <div id="page-info">
+
+      
+        
+
+        <h1 class="heading">formule de Taylor-polynômes</h1>
+        <div class="description">Envoyé par <a href="http://www.les-mathematiques.net/phorum/profile.php?2,1203">novice</a>&nbsp;</div>
+      
+
+    </div> <!-- end of div id=page-info -->
+
+    
+
+    
+
+    
+
+    
+
+    
+
+   
+
+
+
+
+<!-- END TEMPLATE header.tpl -->
+
+        <script type="text/javascript" src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/ajax.js"></script>
+        <script type="text/javascript">
+        document.body.style.height = "100%";
+        var curmouseover;
+        var phorum_mod_post_previews_height = 300;
+        var phorum_mod_post_previews_width = 800;
+        var phorum_mod_post_previews_show_AJAX_error = false;
+        var phorum_mod_post_previews_enable_mark_read = false;
+//get the actual height of the window
+function phorum_mod_post_previews_f_clientHeight() {
+	return phorum_mod_post_previews_f_filterResults (
+		window.innerHeight ? window.innerHeight : 0,
+		document.documentElement ? document.documentElement.clientHeight : 0,
+		document.body ? document.body.clientHeight : 0
+	);
+}
+function phorum_mod_post_previews_f_filterResults(n_win, n_docel, n_body) {
+	var n_result = n_win ? n_win : 0;
+	if (n_docel && (!n_result || (n_result > n_docel)))
+		n_result = n_docel;
+	return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+}
+
+//get the position of the read url to set the position of the preview div
+function phorum_mod_post_previews_findPos(obj) {
+	var curleft = curtop = 0;
+	
+	//find the offset of the read url
+	if (obj.offsetParent) {
+		do {
+			curleft += obj.offsetLeft;
+			curtop += obj.offsetTop;
+		} while (obj = obj.offsetParent);
+	}
+	
+	// set the preview div below the read url by default
+	curtop += 24;
+	
+	// find the actual potential position of the preview div on the screen
+	if (document.body.scrollTop) {
+		actualheight = curtop - document.body.scrollTop;
+	} else if (document.documentElement.scrollTop) {
+		actualheight = curtop - document.documentElement.scrollTop
+	} else if (window.pageYOffset) {
+		actualheight = curtop - window.pageYOffset;
+	} else {
+		actualheight = curtop;
+	}
+
+	// find the maximum height to place the preview div at which it will be fully visible
+	windowheight = phorum_mod_post_previews_f_clientHeight();
+	maxtop = windowheight - phorum_mod_post_previews_height - 24;
+	
+	//if the preview div will vertically fall outside the screen, put it above the url
+	if (actualheight > maxtop) curtop = curtop - phorum_mod_post_previews_height - 37;
+	
+	//if the preview div will horizontally fall outside the screen, pull it back in
+	maxleft = document.body.clientWidth - phorum_mod_post_previews_width - 20;
+	if (curleft > maxleft) curleft = maxleft;
+	
+	return [curleft,curtop];
+	
+}
+
+function phorum_mod_post_previews_get_message_id(ahref) {
+    first_startpos = ahref.lastIndexOf("/");
+    startpos = ahref.indexOf("-",first_startpos);
+    
+    altstartpos = ahref.indexOf(",",first_startpos);
+    
+    stoppos = ahref.indexOf(",phorum_session",first_startpos);
+    
+    if (stoppos < 0) {
+        if (startpos < 0) {
+            altstartpos += 1;
+            message_id = ahref.substr(altstartpos);
+            altstartpos = message_id.indexOf(",");
+            if (altstartpos > 0) {
+                message_id = message_id.substr(altstartpos + 1);
+            }
+        } else {
+            startpos += 1;
+            message_id = ahref.substr(startpos);
+        }
+    } else {
+        if (startpos < 0) {
+            altstartpos += 1;
+            message_id = ahref.substr(altstartpos,stoppos - altstartpos);
+        } else {
+            startpos += 1;
+            message_id = ahref.substr(startpos);
+        }
+    }
+    
+    return message_id;
+}
+
+function phorum_mod_post_previews_getpreview() {
+	preview_node = this;
+	
+	//grab the message id from the url
+	ahref = preview_node.href;
+	
+  message_id = phorum_mod_post_previews_get_message_id(ahref);
+  
+	//make sure we have a valid message id
+	if (message_id != parseInt(message_id)) return;
+	
+	//make sure a roaming mouse doesn't pull in the wrong preview data
+	curmouseover = message_id;
+	
+	previewer = document.getElementById("phorum_mod_post_preview_preview_div");
+	
+	//get the position of the read url to set the position of the preview div
+	preview_pos = phorum_mod_post_previews_findPos(preview_node);
+	
+	//run the wonderful AJAX api to get our preview data
+	Phorum.Ajax.call({
+		"call"          : "phorum_mod_post_previews_getpreview",
+		"message_id"	: message_id,
+		"onSuccess"     : function (data) {
+					//make sure there is preview data to show
+					if (data != "phorum_mod_post_previews_getpreview_error_no_body") {
+						//make sure a roaming mouse doesn't pull in the wrong preview data
+						if (curmouseover == data[0]) {
+              // enable the mark read div if the admin has allowed it
+              if (data[2]) {
+                  preview_node.oncontextmenu = phorum_mod_post_previews_mark_read;
+                  previewhelp = document.getElementById("phorum_mod_post_previews_help_div");
+                  previewhelp.style.display = "block";
+                  previewhelp.style.left = (preview_pos[0] + phorum_mod_post_previews_width - previewhelp.clientWidth) + "px";
+                  previewhelp.style.top = (preview_pos[1] - previewhelp.clientHeight) + "px";
+              }      
+							previewer.innerHTML = data[1];
+							previewer.style.display = "block";
+							previewer.style.left=preview_pos[0]+"px";
+							previewer.style.top=preview_pos[1]+"px";
+						}
+					}
+				},
+		"onFailure"     : function (error) { if (phorum_mod_post_previews_show_AJAX_error) alert("Error: " + error); }
+		});
+}
+
+//hide the preview div when not over the url
+function phorum_mod_post_previews_hidepreview(preview_node) {
+	
+	//make sure a roaming mouse doesn't pull in the wrong preview data
+	curmouseover = null;
+	
+	previewer = document.getElementById("phorum_mod_post_preview_preview_div");
+	previewhelp = document.getElementById("phorum_mod_post_previews_help_div");
+  previewhelp.style.display = "none";
+	previewer.style.display = "none";
+	previewer.innerHTML = "&nbsp;";
+}
+        
+        </script>
+    <!-- BEGIN TEMPLATE read.tpl -->
+<div class="nav">
+    <a class="icon icon-folder" href="http://www.les-mathematiques.net/phorum/index.php">Forums</a>
+    <a class="icon icon-list" href="http://www.les-mathematiques.net/phorum/list.php?2">Messages</a>
+    <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/posting.php?2">New</a>
+</div>
+
+
+
+<div class="nav">
+    <!-- BEGIN TEMPLATE paging.tpl -->
+
+<!-- END TEMPLATE paging.tpl -->
+
+    <!-- CONTINUE TEMPLATE read.tpl -->
+    <a class="icon icon-prev" href="http://www.les-mathematiques.net/phorum/read.php?2,1180728507,newer" title="">Discussion suivante</a>
+    <a class="icon icon-next" href="http://www.les-mathematiques.net/phorum/read.php?2,1180728507,older" title="">Discussion précédente</a>
+</div>
+
+
+
+    
+
+    <div class="message">
+
+        <div class="generic">
+
+            <table cellspacing="0" border="0">
+                <tbody><tr>
+                    <td width="100%">
+                        <div class="message-author icon-user">
+                            <a href="http://www.les-mathematiques.net/phorum/profile.php?2,1203">novice</a>
+
+
+                            
+                        </div>
+                        <small>
+                        <strong><a href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376150#msg-376150" title="">formule de Taylor-polynômes</a> </strong><br>
+                        il y a quatorze années
+                        </small>
+                    </td>
+ <td style="padding-right:10px">
+         
+       </td>
+                    <td class="message-user-info" nowrap="nowrap">
+                        
+                        
+                        
+                            Membre depuis : il y a quatorze années<br>
+                            Messages: 372
+                        
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+        <div class="message-body">
+
+            
+
+             Bonjour, voilà je prépare la leçon sur les polynômes et je 
+bloque sur la preuve de la formule de Taylor pour les fonctions 
+polynômes, qui dit que : 
+<br>
+Si <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-2-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-3" style="width: 0.765em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.624em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.74em, 1000em, 2.706em, -0.468em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-4"><span class="mi" id="MathJax-Span-5" style="font-family: STIXGeneral; font-style: italic;">P</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.908em; vertical-align: -0.062em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-2">P</script> est une fonction polynôme non nulle de degré <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-3-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-6" style="width: 0.64em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.52em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.952em, 1000em, 2.715em, -0.454em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-7"><span class="mi" id="MathJax-Span-8" style="font-family: STIXGeneral; font-style: italic;">n</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.665em; vertical-align: -0.073em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-3">n</script> et si <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-4-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-9" style="width: 3.075em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.549em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.74em, 1000em, 2.733em, -0.451em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-10"><span class="mi" id="MathJax-Span-11" style="font-family: STIXGeneral; font-style: italic;">a</span><span class="mo" id="MathJax-Span-12" style="font-family: STIXGeneral; padding-left: 0.313em;">∈</span><span class="mi" id="MathJax-Span-13" style="font-family: STIXGeneral; font-style: italic; padding-left: 0.313em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.941em; vertical-align: -0.095em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-4">a \in K</script> alors on a : 
+<br>
+<span class="MathJax_Preview"></span><div class="MathJax_Display" role="textbox" aria-readonly="true" style="text-align: center;"><span class="MathJax" id="MathJax-Element-5-Frame" style=""><nobr><span class="math" id="MathJax-Span-14" style="width: 17.81em; display: inline-block;"><span style="display: inline-block; position: relative; width: 14.828em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.782em, 1000em, 3.965em, -0.466em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-15"><span class="mi" id="MathJax-Span-16" style="font-family: STIXGeneral;">∀</span><span class="mi" id="MathJax-Span-17" style="font-family: STIXGeneral; font-style: italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-18" style="font-family: STIXGeneral; padding-left: 0.313em;">∈</span><span class="mi" id="MathJax-Span-19" style="font-family: STIXGeneral; font-style: italic; padding-left: 0.313em;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span class="mo" id="MathJax-Span-20" style="font-family: STIXGeneral;">,</span><span class="mtext" id="MathJax-Span-21" style="font-family: STIXGeneral; padding-left: 0.188em;">&nbsp;</span><span class="mi" id="MathJax-Span-22" style="font-family: STIXGeneral; font-style: italic;">P</span><span class="mo" id="MathJax-Span-23" style="font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-24" style="font-family: STIXGeneral; font-style: italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-25" style="font-family: STIXGeneral;">)</span><span class="mo" id="MathJax-Span-26" style="font-family: STIXGeneral; padding-left: 0.313em;">=</span><span class="munderover" id="MathJax-Span-27" style="padding-left: 0.313em;"><span style="display: inline-block; position: relative; width: 1.301em; height: 0px;"><span style="position: absolute; clip: rect(1.835em, 1000em, 3.597em, -0.378em); top: -2.966em; left: 0em;"><span class="mo" id="MathJax-Span-28" style="font-family: STIXSizeOneSym; vertical-align: -0.524em;">∑</span><span style="display: inline-block; width: 0px; height: 2.966em;"></span></span><span style="position: absolute; clip: rect(1.442em, 1000em, 2.347em, -0.458em); top: -0.931em; left: 0.078em;"><span class="texatom" id="MathJax-Span-29"><span class="mrow" id="MathJax-Span-30"><span class="mi" id="MathJax-Span-31" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span class="mo" id="MathJax-Span-32" style="font-size: 70.7%; font-family: STIXGeneral;">=</span><span class="mn" id="MathJax-Span-33" style="font-size: 70.7%; font-family: STIXGeneral;">0</span></span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span><span style="position: absolute; clip: rect(1.513em, 1000em, 2.244em, -0.458em); top: -3.281em; left: 0.468em;"><span class="texatom" id="MathJax-Span-34"><span class="mrow" id="MathJax-Span-35"><span class="mi" id="MathJax-Span-36" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">n</span></span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span></span></span><span class="mfrac" id="MathJax-Span-37" style="padding-left: 0.307em; padding-right: 0.12em;"><span style="display: inline-block; position: relative; width: 2.773em; height: 0px;"><span style="position: absolute; clip: rect(1.53em, 1000em, 2.883em, -0.468em); top: -3.226em; left: 50%; margin-left: -1.327em;"><span class="mrow" id="MathJax-Span-38"><span class="msubsup" id="MathJax-Span-39"><span style="display: inline-block; position: relative; width: 1.48em; height: 0px;"><span style="position: absolute; clip: rect(1.74em, 1000em, 2.706em, -0.468em); top: -2.549em; left: 0em;"><span class="mi" id="MathJax-Span-40" style="font-family: STIXGeneral; font-style: italic;">P</span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; top: -2.461em; left: 0.624em;"><span class="texatom" id="MathJax-Span-41"><span class="mrow" id="MathJax-Span-42"><span class="mo" id="MathJax-Span-43" style="font-size: 70.7%; font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-44" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span class="mo" id="MathJax-Span-45" style="font-size: 70.7%; font-family: STIXGeneral;">)</span></span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span></span></span><span class="mo" id="MathJax-Span-46" style="font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-47" style="font-family: STIXGeneral; font-style: italic;">a</span><span class="mo" id="MathJax-Span-48" style="font-family: STIXGeneral;">)</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; clip: rect(1.71em, 1000em, 2.717em, -0.454em); top: -1.863em; left: 50%; margin-left: -0.39em;"><span class="mrow" id="MathJax-Span-49"><span class="mi" id="MathJax-Span-50" style="font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.017em;"></span></span><span class="mo" id="MathJax-Span-51" style="font-family: STIXGeneral;">!</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; clip: rect(0.819em, 1000em, 1.197em, -0.468em); top: -1.261em; left: 0em;"><span style="border-left: 2.773em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: 0em;"></span><span style="display: inline-block; width: 0px; height: 1.041em;"></span></span></span></span><span class="mspace" id="MathJax-Span-52" style="height: 0em; vertical-align: 0em; width: 0.188em; display: inline-block; overflow: hidden;"></span><span class="mo" id="MathJax-Span-53" style="font-family: STIXGeneral; padding-left: 0.188em;">(</span><span class="mi" id="MathJax-Span-54" style="font-family: STIXGeneral; font-style: italic;">x<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-55" style="font-family: STIXGeneral; padding-left: 0.25em;">−</span><span class="mi" id="MathJax-Span-56" style="font-family: STIXGeneral; font-style: italic; padding-left: 0.25em;">a</span><span class="msubsup" id="MathJax-Span-57"><span style="display: inline-block; position: relative; width: 0.699em; height: 0px;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.883em, -0.439em); top: -2.549em; left: 0em;"><span class="mo" id="MathJax-Span-58" style="font-family: STIXGeneral;">)</span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; top: -2.494em; left: 0.312em;"><span class="texatom" id="MathJax-Span-59"><span class="mrow" id="MathJax-Span-60"><span class="mi" id="MathJax-Span-61" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 3.571em; vertical-align: -1.574em;"></span></span></nobr></span></div><script type="math/tex; mode=display" id="MathJax-Element-5">\forall x \in K,\ P(x)=\sum_{k=0}^{n} \frac{P^{(k)}(a)}{k!}\,(x-a)^{k}</script>
+<br>
+Je procède alors par récurrence, je vérifie que ma proposition est vraie pour <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-6-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-62" style="width: 2.763em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.289em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.72em, -0.454em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-63"><span class="mi" id="MathJax-Span-64" style="font-family: STIXGeneral; font-style: italic;">n</span><span class="mo" id="MathJax-Span-65" style="font-family: STIXGeneral; padding-left: 0.313em;">=</span><span class="mn" id="MathJax-Span-66" style="font-family: STIXGeneral; padding-left: 0.313em;">0</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.953em; vertical-align: -0.079em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-6">n=0</script>, et je la suppose vraie pour <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-7-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-67" style="width: 0.64em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.52em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.952em, 1000em, 2.715em, -0.454em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-68"><span class="mi" id="MathJax-Span-69" style="font-family: STIXGeneral; font-style: italic;">n</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.665em; vertical-align: -0.073em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-7">n</script> fixé dans <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-8-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-70" style="width: 0.89em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.728em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.724em, -0.452em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-71"><span class="texatom" id="MathJax-Span-72"><span class="mrow" id="MathJax-Span-73"><span class="mi" id="MathJax-Span-74" style="font-family: STIXGeneral; font-weight: bold;">N</span></span></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.958em; vertical-align: -0.084em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-8">\N</script>, seulement que dois-je supposer alors que mon polynôme est de degré <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-9-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-75" style="width: 0.64em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.52em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.952em, 1000em, 2.715em, -0.454em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-76"><span class="mi" id="MathJax-Span-77" style="font-family: STIXGeneral; font-style: italic;">n</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.665em; vertical-align: -0.073em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-9">n</script> ou <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-10-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-78" style="width: 2.638em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.185em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.747em, -0.454em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-79"><span class="mi" id="MathJax-Span-80" style="font-family: STIXGeneral; font-style: italic;">n</span><span class="mo" id="MathJax-Span-81" style="font-family: STIXGeneral; padding-left: 0.25em;">+</span><span class="mn" id="MathJax-Span-82" style="font-family: STIXGeneral; padding-left: 0.25em;">1</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.985em; vertical-align: -0.112em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-10">n+1</script> ? 
+<br>
+Merci, c'est très bête, mais j'ai un doute...
+<br>
+
+<br>
+[Merci à Mk1844 Pour la correction du LaTeX. AD]
+            
+            <div class="message-options">
+                
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376150#REPLY" title="">Répondre</a>
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376150,quote=1#REPLY" title="">Citer</a>
+                
+            </div>
+
+            
+
+            
+
+        </div>
+    </div>
+
+
+    
+        <a name="msg-376154"></a>
+    
+
+    <div class="message">
+
+        <div class="generic">
+
+            <table cellspacing="0" border="0">
+                <tbody><tr>
+                    <td width="100%">
+                        <div class="message-author icon-user">
+                            <a href="http://www.les-mathematiques.net/phorum/profile.php?2,1552">Blueberry</a>
+
+
+                            
+                        </div>
+                        <small>
+                        <strong><a href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376154#msg-376154" title="">Re: formule de Tayloy-polynomes</a> </strong><br>
+                        il y a quatorze années
+                        </small>
+                    </td>
+ <td style="padding-right:10px">
+         
+       </td>
+                    <td class="message-user-info" nowrap="nowrap">
+                        
+                        
+                        
+                            Membre depuis : il y a quatorze années<br>
+                            Messages: 2 723
+                        
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+        <div class="message-body">
+
+            
+
+             Bonjour
+<br>
+
+<br>
+tu supposes P de degré n+1 et tu appliques ton hypthèse de récurrence à P' je pense.
+            
+            <div class="message-options">
+                
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376154#REPLY" title="">Répondre</a>
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376154,quote=1#REPLY" title="">Citer</a>
+                
+            </div>
+
+            
+
+            
+
+        </div>
+    </div>
+
+
+    
+        <a name="msg-376155"></a>
+    
+
+    <div class="message">
+
+        <div class="generic">
+
+            <table cellspacing="0" border="0">
+                <tbody><tr>
+                    <td width="100%">
+                        <div class="message-author icon-user">
+                            <a href="http://www.les-mathematiques.net/phorum/profile.php?2,242">Mk1844</a>
+
+
+                            
+                        </div>
+                        <small>
+                        <strong><a href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376155#msg-376155" title="">Re: formule de Tayloy-polynomes</a> </strong><br>
+                        il y a quatorze années
+                        </small>
+                    </td>
+ <td style="padding-right:10px">
+         
+           <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/file.jpg" alt="avatar">
+         
+       </td>
+                    <td class="message-user-info" nowrap="nowrap">
+                        
+                        
+                        
+                            Membre depuis : il y a quatorze années<br>
+                            Messages: 838
+                        
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+        <div class="message-body">
+
+            
+
+             Désolé je n'avais pas vu que c'était pour des polynômes, j'ai retiré le reste.
+<br>
+Sinon, une fois que tu as supposé la proposition vraie au rang <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-11-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-83" style="width: 0.64em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.52em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.952em, 1000em, 2.715em, -0.454em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-84"><span class="mi" id="MathJax-Span-85" style="font-family: STIXGeneral; font-style: italic;">n</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.665em; vertical-align: -0.073em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-11">n</script>,tu dois prendre un polynôme de dedgré <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-12-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-86" style="width: 2.638em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.185em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.747em, -0.454em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-87"><span class="mi" id="MathJax-Span-88" style="font-family: STIXGeneral; font-style: italic;">n</span><span class="mo" id="MathJax-Span-89" style="font-family: STIXGeneral; padding-left: 0.25em;">+</span><span class="mn" id="MathJax-Span-90" style="font-family: STIXGeneral; padding-left: 0.25em;">1</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.985em; vertical-align: -0.112em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-12">n+1</script> et vérifier la proposition pour ce polynôme en utilisant l'hypothèse de récurrence, je t'apprends rien.
+<br>
+
+<br>
+Bon courage
+            
+            <div class="message-options">
+                
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376155#REPLY" title="">Répondre</a>
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376155,quote=1#REPLY" title="">Citer</a>
+                
+            </div>
+
+            
+
+            
+
+        </div>
+    </div>
+
+
+    
+        <a name="msg-376156"></a>
+    
+
+    <div class="message">
+
+        <div class="generic">
+
+            <table cellspacing="0" border="0">
+                <tbody><tr>
+                    <td width="100%">
+                        <div class="message-author icon-user">
+                            <a href="http://www.les-mathematiques.net/phorum/profile.php?2,1203">novice</a>
+
+
+                            
+                        </div>
+                        <small>
+                        <strong><a href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376156#msg-376156" title="">Re: formule de Tayloy-polynomes</a> </strong><br>
+                        il y a quatorze années
+                        </small>
+                    </td>
+ <td style="padding-right:10px">
+         
+       </td>
+                    <td class="message-user-info" nowrap="nowrap">
+                        
+                        
+                        
+                            Membre depuis : il y a quatorze années<br>
+                            Messages: 372
+                        
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+        <div class="message-body">
+
+            
+
+             en fait ca m'aurait arrangé qu'il soit de degré n comme ca,
+ la dérivée (n+1) de P était nulle, mais si ce n'est pas le cas, je vois
+ pas comment retomber sur P(x) au rang n+1..................?<br>
+<br>
+<br>
+<br>
+Edité 1 fois. La dernière correction date de  il y a quatorze années et a été effectuée par novice.
+            
+            <div class="message-options">
+                
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376156#REPLY" title="">Répondre</a>
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376156,quote=1#REPLY" title="">Citer</a>
+                
+            </div>
+
+            
+
+            
+
+        </div>
+    </div>
+
+
+    
+        <a name="msg-376164"></a>
+    
+
+    <div class="message">
+
+        <div class="generic">
+
+            <table cellspacing="0" border="0">
+                <tbody><tr>
+                    <td width="100%">
+                        <div class="message-author icon-user">
+                            <a href="http://www.les-mathematiques.net/phorum/profile.php?2,1027">randi</a>
+
+
+                            
+                        </div>
+                        <small>
+                        <strong><a href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376164#msg-376164" title="">Re: formule de Tayloy-polynomes</a> </strong><br>
+                        il y a quatorze années
+                        </small>
+                    </td>
+ <td style="padding-right:10px">
+         
+       </td>
+                    <td class="message-user-info" nowrap="nowrap">
+                        
+                        
+                        
+                            Membre depuis : il y a quatorze années<br>
+                            Messages: 48
+                        
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+        <div class="message-body">
+
+            
+
+             La famille des <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-13-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-91" style="width: 7.196em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.983em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.507em, 1000em, 2.928em, -0.42em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-92"><span class="mo" id="MathJax-Span-93" style="font-family: STIXGeneral;">(</span><span class="msubsup" id="MathJax-Span-94"><span style="display: inline-block; position: relative; width: 3.405em; height: 0px;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.883em, -0.42em); top: -2.549em; left: 0em;"><span class="texatom" id="MathJax-Span-95"><span class="mrow" id="MathJax-Span-96"><span class="mo" id="MathJax-Span-97" style="font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-98" style="font-family: STIXGeneral; font-style: italic;">X<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.044em;"></span></span><span class="mo" id="MathJax-Span-99" style="font-family: STIXGeneral; padding-left: 0.25em;">−</span><span class="mi" id="MathJax-Span-100" style="font-family: STIXGeneral; font-style: italic; padding-left: 0.25em;">a</span><span class="mo" id="MathJax-Span-101" style="font-family: STIXGeneral;">)</span></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; top: -2.484em; left: 3.018em;"><span class="mi" id="MathJax-Span-102" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span></span></span><span class="msubsup" id="MathJax-Span-103"><span style="display: inline-block; position: relative; width: 2.26em; height: 0px;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.883em, -0.439em); top: -2.549em; left: 0em;"><span class="mo" id="MathJax-Span-104" style="font-family: STIXGeneral;">)</span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; top: -1.869em; left: 0.312em;"><span class="texatom" id="MathJax-Span-105"><span class="mrow" id="MathJax-Span-106"><span class="mi" id="MathJax-Span-107" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span class="mo" id="MathJax-Span-108" style="font-size: 70.7%; font-family: STIXGeneral;">=</span><span class="mn" id="MathJax-Span-109" style="font-size: 70.7%; font-family: STIXGeneral;">0..</span><span class="mi" id="MathJax-Span-110" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">n</span></span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.455em; vertical-align: -0.329em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-13">({(X-a)}^k)_{k=0..n}</script> est une base de l'espace <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-14-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-111" style="width: 2.95em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.445em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.731em, 1000em, 2.862em, -0.461em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-112"><span class="msubsup" id="MathJax-Span-113"><span style="display: inline-block; position: relative; width: 1.113em; height: 0px;"><span style="position: absolute; clip: rect(1.74em, 1000em, 2.706em, -0.461em); top: -2.549em; left: 0em;"><span class="mi" id="MathJax-Span-114" style="font-family: STIXGeneral; font-style: italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.055em;"></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; top: -1.931em; left: 0.673em;"><span class="mi" id="MathJax-Span-115" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">n</span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span></span></span><span class="mo" id="MathJax-Span-116" style="font-family: STIXGeneral;">[</span><span class="mi" id="MathJax-Span-117" style="font-family: STIXGeneral; font-style: italic;">X<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.044em;"></span></span><span class="mo" id="MathJax-Span-118" style="font-family: STIXGeneral;">]</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.107em; vertical-align: -0.25em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-14">K_n[X]</script>.
+ Ainsi, tout polynome se décompose suivant cette base: il s'agit donc de
+ déterminer les coefficients apparaissant dans cette décomposition.
+<br>
+
+<br>
+Celà revient a déterminer les formes coordonnées associées a cette base,
+ c'est a dire déterminer la base duale: elle est constituée des <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-15-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-119" style="width: 6.571em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.463em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.25em, 1000em, 3.104em, -0.615em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-120"><span class="msubsup" id="MathJax-Span-121"><span style="display: inline-block; position: relative; width: 0.657em; height: 0px;"><span style="position: absolute; clip: rect(1.715em, 1000em, 2.913em, -0.615em); top: -2.549em; left: 0em;"><span class="mi" id="MathJax-Span-122" style="font-family: STIXGeneral; font-style: italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.146em;"></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; top: -1.839em; left: 0.27em;"><span class="mi" id="MathJax-Span-123" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span></span></span><span class="mo" id="MathJax-Span-124" style="font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-125" style="font-family: STIXGeneral; font-style: italic;">P</span><span class="mo" id="MathJax-Span-126" style="font-family: STIXGeneral;">)</span><span class="mo" id="MathJax-Span-127" style="font-family: STIXGeneral; padding-left: 0.313em;">=</span><span class="mfrac" id="MathJax-Span-128" style="padding-left: 0.432em; padding-right: 0.12em;"><span style="display: inline-block; position: relative; width: 1.993em; height: 0px;"><span style="position: absolute; clip: rect(1.315em, 1000em, 2.362em, -0.468em); top: -2.614em; left: 50%; margin-left: -0.937em;"><span class="mrow" id="MathJax-Span-129"><span class="msubsup" id="MathJax-Span-130"><span style="display: inline-block; position: relative; width: 1.042em; height: 0px;"><span style="position: absolute; clip: rect(1.463em, 1000em, 2.237em, -0.468em); top: -2.081em; left: 0em;"><span class="mi" id="MathJax-Span-131" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">P</span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span><span style="position: absolute; top: -2.038em; left: 0.416em;"><span class="texatom" id="MathJax-Span-132"><span class="mrow" id="MathJax-Span-133"><span class="mo" id="MathJax-Span-134" style="font-size: 50%; font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-135" style="font-size: 50%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.009em;"></span></span><span class="mo" id="MathJax-Span-136" style="font-size: 50%; font-family: STIXGeneral;">)</span></span></span><span style="display: inline-block; width: 0px; height: 1.769em;"></span></span></span></span><span class="mo" id="MathJax-Span-137" style="font-size: 70.7%; font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-138" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">a</span><span class="mo" id="MathJax-Span-139" style="font-size: 70.7%; font-family: STIXGeneral;">)</span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span><span style="position: absolute; clip: rect(1.442em, 1000em, 2.245em, -0.458em); top: -1.691em; left: 50%; margin-left: -0.286em;"><span class="mrow" id="MathJax-Span-140"><span class="mi" id="MathJax-Span-141" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span class="mo" id="MathJax-Span-142" style="font-size: 70.7%; font-family: STIXGeneral;">!</span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span><span style="position: absolute; clip: rect(0.819em, 1000em, 1.197em, -0.468em); top: -1.261em; left: 0em;"><span style="border-left: 1.993em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: 0em;"></span><span style="display: inline-block; width: 0px; height: 1.041em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.974em; vertical-align: -0.54em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-15">f_k(P) = \frac{P^{(k)}(a)}{k!}</script> (il s'agit de vérifier les relations de Kronecker). 
+<br>
+
+<br>
+Si on ne veut pas parler de dualité, le calcul reste le même: le terme 
+constant s'obtient en évaluant le polynome en a, le coefficient de <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-16-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-143" style="width: 3.637em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.018em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.883em, -0.42em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-144"><span class="mo" id="MathJax-Span-145" style="font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-146" style="font-family: STIXGeneral; font-style: italic;">X<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.044em;"></span></span><span class="mo" id="MathJax-Span-147" style="font-family: STIXGeneral; padding-left: 0.25em;">−</span><span class="mi" id="MathJax-Span-148" style="font-family: STIXGeneral; font-style: italic; padding-left: 0.25em;">a</span><span class="mo" id="MathJax-Span-149" style="font-family: STIXGeneral;">)</span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.148em; vertical-align: -0.275em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-16">(X-a)</script> en évaluant sa dérivée en a, et ainsi de suite.
+            
+            <div class="message-options">
+                
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376164#REPLY" title="">Répondre</a>
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376164,quote=1#REPLY" title="">Citer</a>
+                
+            </div>
+
+            
+
+            
+
+        </div>
+    </div>
+
+
+    
+        <a name="msg-376195"></a>
+    
+
+    <div class="message">
+
+        <div class="generic">
+
+            <table cellspacing="0" border="0">
+                <tbody><tr>
+                    <td width="100%">
+                        <div class="message-author icon-user">
+                            <a href="http://www.les-mathematiques.net/phorum/profile.php?2,1074">skilveg</a>
+
+
+                            
+                        </div>
+                        <small>
+                        <strong><a href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376195#msg-376195" title="">Re: formule de Tayloy-polynomes</a> </strong><br>
+                        il y a quatorze années
+                        </small>
+                    </td>
+ <td style="padding-right:10px">
+         
+       </td>
+                    <td class="message-user-info" nowrap="nowrap">
+                        
+                        
+                        
+                            Membre depuis : il y a quatorze années<br>
+                            Messages: 1 008
+                        
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+        <div class="message-body">
+
+            
+
+             On peut aussi raisonner par linéarité en montrant la formule pour les <span class="MathJax_Preview"></span><span class="MathJax" id="MathJax-Element-17-Frame" role="textbox" aria-readonly="true" style=""><nobr><span class="math" id="MathJax-Span-150" style="width: 4.074em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.382em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.507em, 1000em, 2.883em, -0.42em); top: -2.549em; left: 0em;"><span class="mrow" id="MathJax-Span-151"><span class="mo" id="MathJax-Span-152" style="font-family: STIXGeneral;">(</span><span class="mi" id="MathJax-Span-153" style="font-family: STIXGeneral; font-style: italic;">X<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.044em;"></span></span><span class="mo" id="MathJax-Span-154" style="font-family: STIXGeneral; padding-left: 0.25em;">−</span><span class="mi" id="MathJax-Span-155" style="font-family: STIXGeneral; font-style: italic; padding-left: 0.25em;">a</span><span class="msubsup" id="MathJax-Span-156"><span style="display: inline-block; position: relative; width: 0.699em; height: 0px;"><span style="position: absolute; clip: rect(1.717em, 1000em, 2.883em, -0.439em); top: -2.549em; left: 0em;"><span class="mo" id="MathJax-Span-157" style="font-family: STIXGeneral;">)</span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span><span style="position: absolute; top: -2.484em; left: 0.312em;"><span class="mi" id="MathJax-Span-158" style="font-size: 70.7%; font-family: STIXGeneral; font-style: italic;">k<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.012em;"></span></span><span style="display: inline-block; width: 0px; height: 2.081em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.549em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.4em; vertical-align: -0.275em;"></span></span></nobr></span><script type="math/tex" id="MathJax-Element-17">(X-a)^k</script>.
+<br>
+
+<br>
+Amicalement
+            
+            <div class="message-options">
+                
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376195#REPLY" title="">Répondre</a>
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376195,quote=1#REPLY" title="">Citer</a>
+                
+            </div>
+
+            
+
+            
+
+        </div>
+    </div>
+
+
+    
+        <a name="msg-376217"></a>
+    
+
+    <div class="message">
+
+        <div class="generic">
+
+            <table cellspacing="0" border="0">
+                <tbody><tr>
+                    <td width="100%">
+                        <div class="message-author icon-user">
+                            <a href="http://www.les-mathematiques.net/phorum/profile.php?2,1203">novice</a>
+
+
+                            
+                        </div>
+                        <small>
+                        <strong><a href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376217#msg-376217" title="">Re: formule de Tayloy-polynomes</a> </strong><br>
+                        il y a quatorze années
+                        </small>
+                    </td>
+ <td style="padding-right:10px">
+         
+       </td>
+                    <td class="message-user-info" nowrap="nowrap">
+                        
+                        
+                        
+                            Membre depuis : il y a quatorze années<br>
+                            Messages: 372
+                        
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+
+        <div class="message-body">
+
+            
+
+             merci à tous, je vais étudier ca
+            
+            <div class="message-options">
+                
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376217#REPLY" title="">Répondre</a>
+                <a class="icon icon-comment-add" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,376217,quote=1#REPLY" title="">Citer</a>
+                
+            </div>
+
+            
+
+            
+
+        </div>
+    </div>
+
+
+<div class="nav">
+    <!-- BEGIN TEMPLATE paging.tpl -->
+
+<!-- END TEMPLATE paging.tpl -->
+
+    <!-- CONTINUE TEMPLATE read.tpl -->
+    <a class="icon icon-prev" href="http://www.les-mathematiques.net/phorum/read.php?2,1180728507,newer" title="">Discussion suivante</a>
+    <a class="icon icon-next" href="http://www.les-mathematiques.net/phorum/read.php?2,1180728507,older" title="">Discussion précédente</a>
+</div>
+
+<div id="thread-options" class="nav">
+    <a class="icon icon-printer" href="http://www.les-mathematiques.net/phorum/read.php?2,376150,printview,page=1" target="_blank" title="">Aperçu avant impression</a>
+    
+    
+    
+    
+</div>
+<!-- END TEMPLATE read.tpl -->
+
+<!-- BEGIN TEMPLATE message.tpl -->
+<div class="attention">Désolé, vous n'avez pas la permission d'envoyer ou de répondre dans ce forum.</div>
+
+<!-- END TEMPLATE message.tpl -->
+
+<div class="message" style="width:100%;
+            padding: 0px;
+            margin-top:10px;
+            margin-bottom:10px">
+ <div class="generic" style="padding: 0px"></div>
+ <div class="message-body">
+
+  <strong>Liste des forums - Statistiques du forum</strong>
+  
+  <p>
+  <small>
+  <strong>Total</strong><br>
+  Discussions: 149 768, Messages: 1 515 040, Utilisateurs: 27 823.
+  
+  <br>Notre dernier utilisateur inscrit  <a href="http://www.les-mathematiques.net/phorum/profile.php?2,51024">xaprezy</a>.
+  
+  </small>
+  </p>
+  
+  
+  <hr>
+  
+  
+  <p>
+  <small><strong>Ce forum</strong><br>
+  Discussions: 37 175, Messages: 277 914.</small>
+  </p>
+  
+ </div>
+</div>
+
+<div rel="mod_jumpmenu_menu" class="mod_jumpmenu_menu" id="mod_jumpmenu_menu_0">
+ <div class="mod_jumpmenu_menu_content" id="mod_jumpmenu_menu_content_0"><a href="http://www.les-mathematiques.net/phorum/list.php?3" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_3" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Algèbre</a><a href="http://www.les-mathematiques.net/phorum/list.php?4" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_4" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Analyse</a><a href="http://www.les-mathematiques.net/phorum/list.php?5" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_5" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Arithmétique</a><a href="http://www.les-mathematiques.net/phorum/list.php?34" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_34" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Combinatoire et Graphes</a><a href="http://www.les-mathematiques.net/phorum/list.php?6" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_6" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Concours et Examens</a><a href="http://www.les-mathematiques.net/phorum/list.php?68" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_68" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Enseignement à distance</a><a href="http://www.les-mathematiques.net/phorum/list.php?16" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_16" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Fondements et Logique</a><a href="http://www.les-mathematiques.net/phorum/list.php?8" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_8" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Géométrie</a><a href="http://www.les-mathematiques.net/phorum/list.php?17" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_17" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Histoire des Mathématiques</a><a href="http://www.les-mathematiques.net/phorum/list.php?10" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_10" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">LaTeX</a><a href="http://www.les-mathematiques.net/phorum/list.php?2" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_2" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Les-mathématiques</a><a href="http://www.les-mathematiques.net/phorum/list.php?11" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_11" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Livres, articles, revues, (...)</a><a href="http://www.les-mathematiques.net/phorum/list.php?15" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_15" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Mathématiques et Informatique</a><a href="http://www.les-mathematiques.net/phorum/list.php?44" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_44" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Mathématiques et Physique</a><a href="http://www.les-mathematiques.net/phorum/list.php?9" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_9" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Mathématiques et Société</a><a href="http://www.les-mathematiques.net/phorum/list.php?18" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_18" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Pédagogie, enseignement, orientation</a><a href="http://www.les-mathematiques.net/phorum/list.php?12" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_12" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Probabilités, théorie de la mesure</a><a href="http://www.les-mathematiques.net/phorum/list.php?43" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_43" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Shtam</a><a href="http://www.les-mathematiques.net/phorum/list.php?13" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_13" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Statistiques</a><a href="http://www.les-mathematiques.net/phorum/list.php?14" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_14" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Topologie</a><a href="http://www.les-mathematiques.net/phorum/list.php?32" rel="mod_jumpmenu_forum" id="mod_jumpmenu_item_32" class="mod_jumpmenu_menu_item mod_jumpmenu_forum">Vie du Forum et de ses membres</a></div></div>
+<script type="text/javascript">
+//<![CDATA[
+
+// See if we already have an element with id="mod_jumpmenu" in the page.
+var m = document.getElementById('mod_jumpmenu_root');
+
+// Try to detect emerald-like template if no element was found.
+// If we do detect this template, then create the mod_jumpmenu element
+// on the fly at a useful spot in the page.
+if (!m) {
+    var b = document.getElementById('breadcrumb');
+    if (!b) b = document.getElementById('phorum-breadcrumbs');
+    if (b)
+    {
+        m = document.createElement('a');
+        m.id        = 'mod_jumpmenu_root';
+        m.className = 'mod_jumpmenu_root';
+        m.rel       = 'mod_jumpmenu_left';
+        m.innerHTML = '&#187; Sauter vers le forum ...';
+
+        if (b.childNodes.length == 0) {
+            b.appendChild(m);
+        } else {
+            b.insertBefore(m, b.childNodes[0]);
+        }
+    }
+}
+
+//]]>
+</script>
+
+<script type="text/javascript">
+// Initialize the Phorum jumpmenu.
+PhorumJumpMenu.init();
+</script>
+<div id="phorum_mod_post_preview_preview_div" style="background-color: #edf2ed; padding: 3px; border: solid 1px; width: 800px; height: 300px; display: none; position: absolute; overflow: scroll; overflow-x: hidden;">&nbsp;</div>
+<div id="phorum_mod_post_previews_help_div" style="display: none;">&nbsp;</div><script type="text/javascript">
+var phorum_mod_post_previews_read_check = /http:\/\/www.les-mathematiques.net\/phorum\/read.php/;
+function assign_getpreview_functions() {
+	anchors = document.getElementsByTagName("a");
+	for (i in anchors) {
+		if (anchors[i].href) {
+			ahref = anchors[i].href;
+			if (ahref.match(phorum_mod_post_previews_read_check)) {
+			anchors[i].onmouseover= phorum_mod_post_previews_getpreview;
+			anchors[i].onmouseout= phorum_mod_post_previews_hidepreview;
+			anchors[i].title = "";
+			}
+		}
+	}
+}
+
+assign_getpreview_functions();
+
+</script><!-- BEGIN TEMPLATE footer.tpl -->
+    <div id="footer-plug">
+      This <a href="http://www.phorum.org/">forum</a>
+      is powered by <a href="http://www.phorum.org/">Phorum</a>.
+    </div>
+
+  </div> <!-- end of div id="phorum" -->
+
+
+
+
+
+</td>
+              </tr>
+              <tr><!--NOUVEAU-->
+                <td class="fctnews">
+                  <table width="97%" cellpadding="3" border="0" align="center">
+                    <tbody>
+                    <tr>
+                      <td class="fctnews">&nbsp; </td>
+                      <td class="fctnews">
+                        <div align="left">
+
+                        </div>
+                      </td>
+                      <td class="fctnews">
+
+
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <hr width="100%">
+                  <center>
+                  </center>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_droite_tablo_centre.gif">&nbsp;</td>
+        </tr>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/coin_b_g.gif" width="15" height="18"></td>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_bas_tablo_centre.gif"><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" height?1?="" width="1"></td>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/coin_b_d.gif" width="17" height="18"></td>
+        </tr>
+        </tbody>
+      </table>
+           <center>
+        <small><small>©<a href="mailto:evieillardbaron@les-mathematiques.net">Emmanuel
+        Vieillard Baron</a>  01-01-2001</small></small>
+</center>
+    </td><td rowspan="2" width="140" valign="top" align="left"><!--ici-->
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/nlettre.gif" width="140" height="30" border="0"></td>
+        </tr>
+
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_tablo_gauche_droite.gif">
+            <table width="125" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+              <!--<FORM action=http://www.dream-up.com/cgi-bin/mailing.pl
+              name="Mailing list">-->
+              <tbody>
+                <tr>
+                  <td class="grantablo">Adresse Mail:</td>
+                </tr>
+                <tr>
+                  <td>          
+        <script language="javascript">
+                function Submitform()
+                        {
+
+
+                        if  (document.sub.addr.value=='') alert("Adresse Email non valide");
+                        else
+                                {
+                                if ( ((document.sub.addr.value.indexOf('@',1))==-1)||(document.sub.addr.value.indexOf('.',1))==-1 )
+                                      alert("Adresse Email non valide");
+
+                                else         document.sub.submit();
+                                 }
+
+                         }
+                </script>
+
+<!--<p>&nbsp;-->
+            <form name="sub" method="post" action="/newsletter/ml.php">
+            <p> <input type="text" name="addr" maxlength="250" size="15">
+
+
+
+
+<!-- </p>-->
+           <!-- <p>--><input type="radio" name="type" value="inscription" checked="checked"><small><small> Inscription</small></small><br><input type="radio" name="type" value="desinscription"> <small> <small>Désinscription</small></small><!--</p>-->
+            </p><p>
+              </p><center>
+            <input src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bouton_ok.gif" type="image" value="ok!" onclick="Submitform()" border="0">
+            </center></form>
+
+                  </td>
+                </tr>
+                                <tr>
+                  <td class="treptitablo"><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://www.les-mathematiques.net/mynews/formgen.php">Actuellement 16057  abonnés</a></td>
+                </tr>
+                <tr>
+                  <td class="treptitablo"><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><a href="http://www.les-mathematiques.net/mynews/formgen.php">Qu'est-ce que c'est ?</a></td>
+                </tr>
+              
+
+            </tbody></table>
+          </td>
+        </tr>
+          <tr><td>     <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bas_tablo_gauche_droite.gif" border="0"></td>
+        </tr>
+        </tbody>
+      </table>
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/nchercher.gif" width="140" height="30" border="0"></td>
+        </tr>
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_tablo_gauche_droite.gif">
+            <table width="125" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+              <form action="/moteur/chercher.php" method="post"></form><tbody>
+                <tr>
+                  <td class="ptitablo">
+                    <input name="id_menu" type="hidden" value="9">
+                    <center>
+                      Taper le mot à rechercher
+                    </center>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+
+
+                    <p>
+                      <input name="variable" size="15" type="text">
+                    </p>
+
+                    <center>
+                      <input src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bouton_ok.gif" name="ok2" type="image" value="ok" border="0">
+                    </center>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td class="treptitablo" height="10"><span class="datedesarchives"><a href="http://www.les-mathematiques.net/pages/moteur.php?id_news=294"><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0">Mode d'emploi</a></span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bas_tablo_gauche_droite.gif" border="0"></td>
+        </tr>
+        </tbody>
+      </table>
+
+
+
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td><img alt="En vrac" src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/nvrac.gif" width="140" height="30" border="0"></td>
+        </tr>
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_tablo_gauche_droite.gif">
+            <table width="125" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+              <tbody>
+              <tr>
+                <td>
+                  <p><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.les-mathematiques.net/pages/invite.php">Faites connaître Les-Mathematiques.net
+                    à un ami</a></span><br>
+                    <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.les-mathematiques.net/pages/curiosite1.php">Curiosités</a></span><span class="datedesarchives"><a href=""></a></span><br>
+                    <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.les-mathematiques.net/pages/collaborateur.php">Participer</a></span><br>
+                    <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.les-mathematiques.net/pages/telecharger.php">Latex et autres....</a></span><br>
+                    <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.les-mathematiques.net/pages/collaborateur.php">Collaborateurs</a></span><br>
+                    <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.les-mathematiques.net/phorum/">Forum</a><br>
+                    </span></p>
+                  <p> <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/mail.gif" width="16" height="10" border="0"><span class="datedesarchives"><a href="http://www.les-mathematiques.net/pages/telecharger.php"> </a><a href="mailto:evieillardbaron@les-mathematiques.net">Nous
+                    contacter</a></span><br>
+                  </p>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bas_tablo_gauche_droite.gif" border="0"></td>
+        </tr>
+        </tbody>
+      </table>
+      <table width="140" cellspacing="0" cellpadding="0" border="0" align="center">
+        <tbody>
+        <tr>
+          <td><img alt="Le vote Linux" src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/nlien.gif" width="140" height="30" border="0"></td>
+        </tr>
+        <tr>
+          <td background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/fond_tablo_gauche_droite.gif">
+            <table width="125" cellspacing="0" cellpadding="0" border="0" background="formule%20de%20Taylor-polyno%CC%82mes_fichiers/pix.gif" align="center">
+              <form action="/Nouveau%20dossier/composant/vote.inc" method="get" name="vote"></form><tbody>
+                <tr>
+                  <td class="questionvotes">
+                    <p><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://wims.unice.fr/%7Ewims/wims.cgi?lang=fr"> WWW IMS</a></span><br>
+                      <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.cut-the-knot.com/">Cut the knot</a></span><br>
+                      <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www-groups.dcs.st-and.ac.uk/%7Ehistory/index.html">Mac Tutor History... </a></span><br>
+                      <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://numbers.computation.free.fr/Constants/constants.html">Number,
+                      constant,...</a></span><br>
+                      <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.lacim.uqam.ca/pi/records.html">Plouffe's inverter</a></span><br>
+                      <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><a href="http://www.utm.edu/research/primes/">The Prime page</a></span><br>
+                           <img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/petite_fleche.gif" border="0"><span class="datedesarchives"><!-- <a
+                  href="/liens/">Autres...</a> --></span><br>
+                    </p>
+                    </td>
+                </tr>
+                <tr>
+                  <td class="reponsesvotes">
+                    <center>
+                    </center>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="formule%20de%20Taylor-polyno%CC%82mes_fichiers/bas_tablo_gauche_droite.gif" border="0"></td>
+        </tr>
+        </tbody>
+      </table>
+      <!--et lï¿½-->
+  </td></tr>
+
+  <!-- --------------- ------------------------------------------ -->
+  <!-- ------------------------------------------------------------------------------------------------>
+  <!---------------------------------------------------------------------------------------------------------->
+  <!------------------------------------------------------------------------------------------------>
+  </tbody><tbody>
+
+  </tbody>
+</table>
+
+
+
+
+<!-- Piwik -->
+<!-- <a href="http://piwik.org" title="Web analytics" onclick="window.open(this.href);return(false);">
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://www.les-mathematiques.net/scripts/piwik/" : "http://www.les-mathematiques.net/scripts/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+piwik_action_name = '';
+piwik_idsite = 1;
+piwik_url = pkBaseURL + "piwik.php";
+piwik_log(piwik_action_name, piwik_idsite, piwik_url);
+</script>
+<object><noscript><p>Web analytics <img src="http://www.les-mathematiques.net/scripts/piwik/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript></object></a>
+-->
+<!-- End Piwik Tag -->
+
+
+
+
+
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-size-adjust: none; font-family: &quot;STIXSizeOneSym&quot;, sans-serif;">ˆ</div></body></html>
+<!-- END TEMPLATE footer.tpl -->

@@ -1,0 +1,191 @@
+From: "Christophe BAL (via GMAIL)" <projetmbc@gmail.com>
+Subject: =?UTF-8?Q?Re:_ISN_-_R=c3=a9cursivit=c3=a9?=
+To: durand-vox@club-internet.fr
+References: <794997251.9869.1528954553674.JavaMail.www@wsfrf1410>
+ <cdffebce-ffa9-8138-13b8-4b5f6eeabc5e@gmail.com>
+Message-ID: <c8e9dbcc-c389-6188-0af3-ae0436212aef@gmail.com>
+Date: Thu, 14 Jun 2018 20:51:47 +0200
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:52.0)
+ Gecko/20100101 Thunderbird/52.8.0
+MIME-Version: 1.0
+In-Reply-To: <cdffebce-ffa9-8138-13b8-4b5f6eeabc5e@gmail.com>
+Content-Type: multipart/alternative;
+ boundary="------------BF33D481AF7A346923D3F068"
+Content-Language: fr
+
+This is a multi-part message in MIME format.
+--------------BF33D481AF7A346923D3F068
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Excuses l'empilement. *Quelques remarques dites avec gentillesse.*
+
+  * Page 5 : c'est loin d'être bête car on peut voir cela un peu comme
+    le traitement d'un flux "linéaire" de données via une imprimante ou
+    encore une TV à tube cathodique.
+  * Page 7 : il serait intéressant de montrer comment dérécursifier
+    ceci. Ce n'est pas trop compliqué en bossant sur une liste empilant
+    les sommets des segments à tracer, et en utilisant un curseur pour
+    savoir les segments qui vont produire de nouvelles branches (on part
+    de la tige qui donne ensuite deux nouvelles branches qui ces deux
+    dernières en donneront ensuite 4 autres à traiter...).
+  * Pour la fin, j'avoue que sans le code complet c'est pénible de
+    suivre. Le mieux aurait été de présenter des algos comme on en voit
+    dans tous les bons bouquins d'algorithmique.
+
+Bonnes vacances.
+
+C.
+
+
+Le 14/06/2018 à 15:02, Christophe BAL (via GMAIL) a écrit :
+>
+> Merci mais avec les projets complets je pense que ce serait plus 
+> simple à analyser. Si tu veux je m'engage à les garder non publiques.
+>
+> En fait en ce moment, je réfléchis à rédiger un "vrai" truc sur la 
+> récursivité allant du basique au plus théorique.
+>
+> C.
+>
+> PS: j'enseigne l'ISN et les maths au lycée Monge de Chambéry et ne me 
+> fait plus trop d'illusion pour l'info après.
+>
+>
+>
+> Le 14/06/2018 à 07:35, durand-vox@club-internet.fr a écrit :
+>> Bonjour,
+>> voici dans un premier temps la présentation,
+>> a bientôt
+>> crt
+>> J.Durand
+>> ps : tu travailles où (en ISN je suppose) ?‌
+>> De : "Christophe BAL (via GMAIL)"
+>> A : durand-vox@club-internet.fr
+>> Envoyé: jeudi 14 juin 2018 00:34
+>> Objet : ISN - Récursivité
+>> Bonjour.
+>>
+>> Peux-tu m'envoyer la présentation sur la récursivité avec éventuellement
+>> des codes d'élèves ?
+>>
+>>
+>> Par avance merci et bonnes vacances.
+>>
+>>
+>> Christophe BAL
+>
+> -- 
+> Christophe BAL
+> Enseignant Agrégé de Mathématiques
+> Programmeur Python Amateur
+
+-- 
+Christophe BAL
+Enseignant Agrégé de Mathématiques
+Programmeur Python Amateur
+
+
+--------------BF33D481AF7A346923D3F068
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+  <body text="#000000" bgcolor="#FFFFFF">
+    <p>Excuses l'empilement. <b>Quelques remarques dites avec
+        gentillesse.</b></p>
+    <ul>
+      <li>Page 5 : c'est loin d'être bête car on peut voir cela un peu
+        comme le traitement d'un flux "linéaire" de données via une
+        imprimante ou encore une TV à tube cathodique.</li>
+      <li>Page 7 : il serait intéressant de montrer comment
+        dérécursifier ceci. Ce n'est pas trop compliqué en bossant sur
+        une liste empilant les sommets des segments à tracer, et en
+        utilisant un curseur pour savoir les segments qui vont produire
+        de nouvelles branches (on part de la tige qui donne ensuite deux
+        nouvelles branches qui ces deux dernières en donneront ensuite 4
+        autres à traiter...).</li>
+      <li>Pour la fin, j'avoue que sans le code complet c'est pénible de
+        suivre. Le mieux aurait été de présenter des algos comme on en
+        voit dans tous les bons bouquins d'algorithmique.<br>
+      </li>
+    </ul>
+    <p>Bonnes vacances.</p>
+    <p>C.<br>
+    </p>
+    <ul>
+    </ul>
+    <br>
+    <div class="moz-cite-prefix">Le 14/06/2018 à 15:02, Christophe BAL
+      (via GMAIL) a écrit :<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:cdffebce-ffa9-8138-13b8-4b5f6eeabc5e@gmail.com">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <p>Merci mais avec les projets complets je pense que ce serait
+        plus simple à analyser. Si tu veux je m'engage à les garder non
+        publiques.</p>
+      <p>En fait en ce moment, je réfléchis à rédiger un "vrai" truc sur
+        la récursivité allant du basique au plus théorique.<br>
+      </p>
+      <p>C.</p>
+      <p>PS: j'enseigne l'ISN et les maths au lycée Monge de Chambéry et
+        ne me fait plus trop d'illusion pour l'info après.<br>
+      </p>
+      <p> <br>
+      </p>
+      <br>
+      <div class="moz-cite-prefix">Le 14/06/2018 à 07:35, <a
+          class="moz-txt-link-abbreviated"
+          href="mailto:durand-vox@club-internet.fr"
+          moz-do-not-send="true">durand-vox@club-internet.fr</a> a
+        écrit :<br>
+      </div>
+      <blockquote type="cite"
+        cite="mid:794997251.9869.1528954553674.JavaMail.www@wsfrf1410"><span
+          style="font-family:arial,helvetica,sans-serif; font-size:12px">Bonjour,<br>
+          voici dans un premier temps la présentation,<br>
+          a bientôt<br>
+          crt<br>
+          J.Durand<br>
+          ps : tu travailles où (en ISN je suppose) ?‌</span>
+        <div class="gl_quote" style="margin-top: 20px; padding-top:
+          5px;">De : "Christophe BAL (via GMAIL)"<br>
+          A : <a class="moz-txt-link-abbreviated"
+            href="mailto:durand-vox@club-internet.fr"
+            moz-do-not-send="true">durand-vox@club-internet.fr</a><br>
+          Envoyé: jeudi 14 juin 2018 00:34<br>
+          Objet : ISN - Récursivité<br>
+           
+          <div class="gl_quoted">Bonjour.<br>
+            <br>
+            Peux-tu m'envoyer la présentation sur la récursivité avec
+            éventuellement<br>
+            des codes d'élèves ?<br>
+            <br>
+            <br>
+            Par avance merci et bonnes vacances.<br>
+            <br>
+            <br>
+            Christophe BAL</div>
+          <div class="gl_quoted"> </div>
+        </div>
+      </blockquote>
+      <br>
+      <pre class="moz-signature" cols="72">-- 
+Christophe BAL
+Enseignant Agrégé de Mathématiques
+Programmeur Python Amateur</pre>
+    </blockquote>
+    <br>
+    <pre class="moz-signature" cols="72">-- 
+Christophe BAL
+Enseignant Agrégé de Mathématiques
+Programmeur Python Amateur</pre>
+  </body>
+</html>
+
+--------------BF33D481AF7A346923D3F068--

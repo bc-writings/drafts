@@ -1,0 +1,116 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head>
+<body>
+  <script type="text/javascript">
+  function storageAvailable(type) {
+    try {
+        var storage = window[type],
+            x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    }
+    catch(e) {
+        return e instanceof DOMException && (
+            // everything except Firefox
+            e.code === 22 ||
+            // Firefox
+            e.code === 1014 ||
+            // test name field too, because code might not be present
+            // everything except Firefox
+            e.name === 'QuotaExceededError' ||
+            // Firefox
+            e.name === 'NS_ERROR_DOM_QUOTA_REACHED') &&
+            // acknowledge QuotaExceededError only if there's something already stored
+            storage.length !== 0;
+    }
+  }
+
+  function storeUid(key, value) {
+      if(storageAvailable("localStorage")) {
+        // Store value
+        window.localStorage.setItem(key, value);
+        // Update key list
+        var keyList = window.localStorage.getItem("k");
+        if(keyList == null)
+          keyList = [];
+        else {
+          keyList = JSON.parse(keyList);
+        }
+
+        if(keyList.indexOf(key) === -1)
+          keyList.push(key);
+
+        window.localStorage.setItem("k", JSON.stringify(keyList));
+      }
+  }
+
+  function getAllUids() {
+    var uids = "";
+    if(storageAvailable("localStorage")) {
+      // Get current storage infos
+      var keys = window.localStorage.getItem("k");
+      if(keys == null)
+        return uids;
+
+      keys = JSON.parse(keys);
+      if(typeof keys !== "object")
+        return uids;
+
+      var ids = {};
+      for(var i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        // Get key in localStorage
+        var tmp = window.localStorage.getItem(k);
+        if(tmp != null)
+          ids[k] = tmp;
+      }
+
+      uids = JSON.stringify(ids);
+    }
+
+    return uids;
+  }
+
+  var clientID = "";
+  if(storageAvailable("localStorage")) {
+    // Get current storage infos
+    var clientID = window.localStorage.getItem("mediabong");
+    if(!clientID || clientID == "[uuid]") {
+      // Store server values
+      window.localStorage.setItem("mediabong",'b00156a361b219b7');
+      storeUid('mediabong', 'b00156a361b219b7');
+      clientID = 'b00156a361b219b7';
+    } else {
+      storeUid('mediabong', clientID);
+    }
+      }
+
+  window.parent.postMessage(clientID,"*");
+
+  var mbObj = {
+    "content": "uid",
+    "data": clientID
+  };
+
+  window.parent.postMessage(JSON.stringify(mbObj), "*");
+
+  var uids = getAllUids();
+  if(uids.length)
+    window.parent.postMessage(uids, "*");
+
+
+  		(function(d) {
+			var sc = d.createElement("img");
+			sc.src = "https://loadus.exelator.com/load/?p=104&g=12&j=0";
+						d.body.appendChild(sc);
+		}(document));
+				(function(d) {
+			var sc = d.createElement("img");
+			sc.src = "https://x.bidswitch.net/sync?ssp=mediabong";
+						d.body.appendChild(sc);
+		}(document));
+		  </script><img src="csifr_data/a.gif"><img src="csifr_data/sync.gif">
+
+
+</body></html>

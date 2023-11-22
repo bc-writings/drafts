@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>728x90</title>
+    <link rel="stylesheet" href="index_data/style.css">
+    <script src="index_data/jquery.js"></script>
+    <script src="index_data/TweenMax.js"></script>
+    <meta name="ad.size" content="width=728, height=90">
+	<script type="text/javascript">
+		  var clickTag = "";
+	</script>
+<script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+	
+<body>
+
+<div id="banner" onclick="javascript:window.open(window.clickTag)">
+	<div id="fond"> <img src="index_data/fond.png"> </div>
+	<div id="ecran1" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, -100);">
+		<div id="affligem" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><img src="index_data/affligem.png"></div>
+		<div id="slide1">
+			<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="728" height="90">
+				<defs>
+					<mask id="end_mask2" width="728" height="90">
+						<image id="end_maskImg2" width="728" height="90" x="-150" xlink:href="mask1.png"></image> </mask>
+				</defs>
+				<image id="fd2" mask="url(#end_mask2)" width="728" height="90" xlink:href="gout.png"></image> </svg>
+		</div>
+	</div>
+	<div id="ecran3" style="visibility: hidden; opacity: 0;">
+		<div id="bulle1" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"> <img src="index_data/bulle1.png"> </div>
+		<div id="txtbulle1" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"> <img src="index_data/txtbulle1.png"> </div>
+	</div>
+	<div id="ecran4">
+		<div id="verrefond" style="visibility: inherit; opacity: 0.998064; transform: translate3d(0px, 0.1936px, 0px);"> <img src="index_data/verrefond.png"> </div>
+		<div id="bulle2" style="visibility: hidden; opacity: 0; transform: matrix(0.5, 0, 0, 0.5, 0, 0);"> <img src="index_data/bulle2.png"> </div>
+		<div id="bulle3" style="visibility: hidden; opacity: 0; transform: matrix(0.5, 0, 0, 0.5, 0, 0);"> <img src="index_data/bulle3.png"> </div>
+	</div>
+	<div id="ecran5">
+		<div id="end" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, 0);"> <img src="index_data/end.png"> </div>
+		<div id="end2" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, -40, 0);"><img src="index_data/end2.png"> </div>
+	</div>
+	<div id="ecran2" style="visibility: hidden; opacity: 0; transform: matrix(1, 0, 0, 1, 0, -100);">
+		<div id="nouveau" style="visibility: inherit; opacity: 1; transform: matrix(1, 0, 0, 1, -470, 0);"> <img src="index_data/nouveau.png"> </div>
+	</div>
+	<div id="fondMention" style="visibility: inherit; opacity: 1;"> <img src="index_data/fond_mention.png"> </div>
+	<div id="mention1" style="visibility: inherit; opacity: 1;"> <img src="index_data/mention1.png"> </div>
+	<div id="mention2" style="visibility: hidden; opacity: 0;"> <img src="index_data/mention2.png"> </div>
+</div>
+	
+<script>
+
+    $(document.getElementById('banner')).ready(function(load) {
+
+        var
+			mask = $('#end_maskImg2'),	
+			fond = $('#fond'),
+			blazon1 = $('#blazon1'),
+			affligem = $('#affligem'),
+			gout = $('#gout'),
+			blazon2 = $('#blazon2'),
+			nouveau = $('#nouveau'),
+			bulle1 = $('#bulle1'),
+			bulle2 = $('#bulle2'),
+			bulle3 = $('#bulle3'),
+			verre = $('#verre'),
+			effets = $('#effets'),
+			end = $('#end'),
+			end2 = $('#end2'),
+			end3 = $('#end3'),
+			mention1 = $('#mention1'),
+			mention2 = $('#mention2'),
+			fondMention = $('#fondMention');
+
+
+		var tl = new TimelineMax({repeat:1,repeatDelay:2});
+
+
+				tl.fromTo(nouveau, 1,{autoAlpha:0,scale:0.5},{autoAlpha:1,scale:1,ease:Back.easeOut.config(4)},0)
+				.fromTo(nouveau,1,{x:0},{x:-470,ease:Power1.easeIn},1)
+
+
+				.from(fondMention, 1, {autoAlpha:0}, 0.1)
+				.from(mention1, 1, {autoAlpha:0}, 0.1)
+
+
+				.fromTo(affligem, 1, {scale:0.5,autoAlpha:0,x:140},{scale:1,x:0,autoAlpha:1}, 1)
+
+				.fromTo(mask, 1.7, {attr:{x:-450}}, {attr:{x:-150}, ease:Power1.easeIn},1.5 )
+				.to(ecran1, 1, {autoAlpha:0,y:-100}, 3)
+
+
+				.to(ecran2, 0.5, {autoAlpha:0,y:-100}, 3.5)
+
+				.from(bulle1, 0.7, {scale:0.5,autoAlpha:0}, 4)
+				.from(txtbulle1, 0.7 ,{scale:0.5,autoAlpha:0}, 4.5)
+				.to(ecran3, 0.5, {autoAlpha:0}, 7.5)
+		
+				.from(verrefond, 1, {autoAlpha:0,y:100}, 8)
+				.from(bulle2, 0.5, {scale:0.5,autoAlpha:0}, 9)
+				.from(bulle3, 0.7, {scale:0.5,autoAlpha:0}, 10)
+				.to(ecran4, 0.5, {autoAlpha:0}, 12)
+				.to(mention1, 0.5, {autoAlpha:0}, 12)
+				.fromTo(end ,0.7,{autoAlpha:0,y:0},{autoAlpha:1,x:0},12)
+				.fromTo(end2 ,0.7,{autoAlpha:0,x:-40},{autoAlpha:1,x:0},13)
+				.from(mention2, 0.5, {autoAlpha:0}, 12)
+		});
+
+</script>
+
+
+</body></html>

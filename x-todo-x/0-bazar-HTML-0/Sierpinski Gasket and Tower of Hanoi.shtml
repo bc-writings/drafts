@@ -1,0 +1,516 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+   <title>Sierpinski Gasket and Tower of Hanoi</title>
+   
+   <link rel="meta" href="https://www.cut-the-knot.org/labels.rdf" type="application/rdf+xml" title="ICRA labels">
+   <meta http-equiv="pics-Label" content="(pics-1.1 &quot;https://www.icra.org/pics/vocabularyv03/&quot; l gen true 
+     for &quot;https://cut-the-knot.org&quot; r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 1) gen true 
+     for &quot;https://www.cut-the-knot.org&quot; r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 1))">
+   <meta http-equiv="revisit-after" content="15 days">
+   <link rel="shortcut icon" href="https://www.cut-the-knot.org/gifs/favicon.jpg">
+   <meta name="Author" content="Alexander Bogomolny">
+   <meta name="Copyright" content="1996-2018 Alexander Bogomolny">
+   <meta name="Title" content="Sierpinski Gasket and Tower of Hanoi">
+   <meta name="Description" content="Sierpinski Gasket and Tower of Hanoi, proof of Lucas' Theorem. In the discussion on Sam Loyd's Fifteen puzzle we introduced the notion of puzzle graph">
+   <meta name="KeyWords" content="mathematics,math help,Sierpinski triangle,Sierpinski Gasket,Tower of Hanoi,puzzle graph, Lucas Theorem, Lucas' Theorem">
+<script type="text/javascript">
+var MyPageLoc = document.location;
+var MyPageTitle = document.title;
+</script> 
+<style>
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body{font-family:lucida,courier new,trebuchet ms,Verdana,Arial,Helvetica,sans-serif;font-size:120%;color:#000000;position:relative;}
+h1{font-size:16pt;font-family:verdana,arial;margin-top:10px}
+h2{font-size:15pt;font-family:verdana,arial;margin-top:10px;line-height:140%}
+h3{font-size:12pt;font-family:verdana,arial}
+h4{font-size:11pt;font-family:verdana,arial}
+div.eqBox{width:100%;margin:0px;}
+div.boxed{width:100%; margin:1px; border:1px solid gray ;}
+div.boxed2{width:99%; margin:1px; border:9px solid white ;}
+a {text-decoration:none}
+.note{border:.1em solid purple;color:black;padding:1em;margin-left:60px;font-style:italic;width:570}
+.shift{margin-left:60px;}
+.theorem{width:96%;border:1px dotted purple;background:#FFe8cc;color:black;padding:1em;margin-left:40px;font-style:italic;}
+td {line-height:150%}
+td.menuLine{background:lightblue;z-index:5;cursor:pointer;min-width:4em;}
+table.menu{font-size:100%;position:fixed;visibility:hidden;border:1px solid black;min-width:5em;text-align:center;z-index:5;}
+span.menu{background:lightblue;cursor:pointer;border:0px;z-index:5;line-height:110%}
+span.handSelected{cursor:pointer;}
+#centerDiv{position:absolute;top:25px;left:30px;width:1180px;border:0px;padding:0px}
+#content{position:absolute;left:10px;width:770px;border:0px;padding-top:0px;top: 0 !important;}
+#menuContainer{left:160px;width:770px;height:40px;}
+#rightColumn{position:absolute;width:200px;left:782px;}
+#leftColumn{position:absolute;width:160px;left:2px}
+#leftColumnBottom{position:relative;float:left;width:160px;margin-left:5px}
+#logo{left:0px;width:120;float:left}
+#header{position:absolute;top:2;left:30px;width:1020px;vertical-align:top;display:inline;height:20px}
+#footer{height:0px}
+#donate{position:absolute;left:905px;width:150px;}
+#rightFloater {position:relative;padding:0px;}
+.mainFrame {margin:auto;width:740px;margin-top:50px;}
+.FirstLineIndent {text-indent:20px;}
+a:link {color:#0000ff;font-style:italic;}
+a:hover {font-size:105%;color:#aa0000;}
+p {padding-bottom:2px; padding-top:5px;line-height:150%}
+</style>
+<script src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/cookie-consent.js"></script>
+<script src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/walLoad.js"></script>
+
+<link href="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/bootstrap.css" rel="stylesheet">
+<link href="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/jquery.css" rel="stylesheet">
+
+
+ <script type="text/javascript">
+
+  
+
+ 
+ 
+
+ 
+
+
+</script> 
+ </head>
+
+
+<body data-new-gr-c-s-check-loaded="8.868.0" data-gr-ext-installed="" vlink="#8844aa" text="#000000" link="#4444aa" bgcolor="#ffffff" alink="#008080">
+
+<div id="centerDiv">
+
+<div id="content">
+
+<div id="menuContainer">
+<div class="navbar navbar-default" role="navigation">
+<div class="navbar-collapse collapse">
+
+<ul class="nav navbar-nav sm" data-smartmenus-id="16106596341385027">
+	<li><a href="#" class="has-submenu">Site<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="https://www.cut-the-knot.org/changes.shtml">What's new</a>
+			</li><li><a href="https://www.cut-the-knot.org/content.shtml">Content page</a>
+			</li><li><a href="https://www.cut-the-knot.org/front.shtml">Front page</a>
+			</li><li><a href="https://www.cut-the-knot.org/index.shtml">Index page</a>
+			<!-- <li><a href="https://www.cut-the-knot.org/wiki-math/index.php">CTK wiki-math</a> -->
+			</li><li><a href="https://www.cut-the-knot.org/wanted.shtml">About</a>
+			</li><li><a href="https://www.cut-the-knot.org/Privacy.shtml">Privacy policy</a>
+			</li><li><a href="https://www.cut-the-knot.org/MathHelp.shtml">Help with math</a>
+		</li></ul>
+	</li>
+	<li><a href="#" class="has-submenu">Subjects<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="https://www.cut-the-knot.org/arithmetic.shtml">Arithmetic</a>
+			</li><li><a href="https://www.cut-the-knot.org/algebra.shtml">Algebra</a>
+			</li><li><a href="https://www.cut-the-knot.org/geometry.shtml">Geometry</a>
+			</li><li><a href="https://www.cut-the-knot.org/probability.shtml">Probability</a>
+			</li><li><a href="https://www.cut-the-knot.org/WhatIs/WhatIsTrigonometry.shtml">Trigonometry</a>
+			</li><li><a href="https://www.cut-the-knot.org/VisualIllusions.shtml">Visual illusions</a>
+		</li></ul>
+	</li>
+	<li><a href="#" class="has-submenu">Articles<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="https://www.cut-the-knot.org/ctk/index.shtml">Cut the knot!</a>
+			</li><li><a href="https://www.cut-the-knot.org/WhatIs/index.shtml">What is what?</a>
+		<!--	<li><a href="/manifesto/index.shtml">Manifesto</a>  -->
+			</li><li><a href="https://www.cut-the-knot.org/Generalization/epairs.shtml">Inventor's paradox</a>
+			</li><li><a href="https://www.cut-the-knot.org/language/index.shtml">Math as language</a>
+			<!-- <li><a href="http://www.mathteacherctk.com/blog/">CTK Insights blog</a>  -->
+			</li><li><a href="https://www.cut-the-knot.org/m/ProblemSolving.shtml">Problem solving</a>
+		</li></ul>
+	</li>
+	<li><a href="#" class="has-submenu">Collections<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="https://www.cut-the-knot.org/Outline/index.shtml">Outline mathematics</a>
+			</li><li><a href="https://www.cut-the-knot.org/books/Reviews/index.shtml">Book reviews</a>
+			</li><li><a href="https://www.cut-the-knot.org/Curriculum/index.shtml">Interactive activities</a>
+			</li><li><a href="https://www.cut-the-knot.org/do_you_know/index.shtml">Did you know?</a>
+			</li><li><a href="https://www.cut-the-knot.org/pythagoras/tricky.shtml">Eye opener</a>
+			</li><li><a href="https://www.cut-the-knot.org/pythagoras/ellipse.shtml">Analogue gadgets</a>
+			<!-- <li><a href="https://www.cut-the-knot.org/wiki-math/index.php?n=MathematicalOlympiads.MathematicalOlympiads">Math Olympiads</a> -->
+      </li><li><a href="https://www.cut-the-knot.org/proofs/index.shtml">Proofs in mathematics</a>
+			</li><li><a href="https://www.cut-the-knot.org/impossible/index.shtml">Things impossible</a>
+			</li><li><a href="https://www.cut-the-knot.org/glossary/atop.shtml">Index/Glossary</a>
+		</li></ul>
+	</li>
+	<li><a href="#" class="has-submenu">Simple math<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="https://www.cut-the-knot.org/arithmetic/rapid/index.shtml">Fast Arithmetic Tips</a>
+			</li><li><a href="https://www.cut-the-knot.org/ForYoung/Introduction.shtml">Stories for young</a>
+			</li><li><a href="https://www.cut-the-knot.org/arithmetic/WProblem.shtml">Word problems</a>
+			</li><li><a href="https://www.cut-the-knot.org/games.shtml">Games and puzzles</a>
+			</li><li><a href="https://www.cut-the-knot.org/logo.shtml">Our logo</a>
+			</li><li><a href="https://www.cut-the-knot.org/Curriculum/Arithmetic/MakeIdentity/index.shtml">Make an identity</a>
+			</li><li><a href="https://www.cut-the-knot.org/Curriculum/index.shtml#ElementaryGeometry">Elementary geometry</a>
+		</li></ul>
+	</li>
+	<!-- <li><a href="#">Misc</a>
+		<ul class="dropdown-menu">
+		  <li><a href="https://www.facebook.com/CutTheKnotMath/">CutTheKnotMath facebook page</a>
+			<li><a href="https://twitter.com/CutTheKnotMath">CutTheKnotMath twitter account</a>
+      <li><a href="http://mathteacherctk.com/blog">CTK Insights blog</a>
+    	<li><a href="/PHP/SpeakLoud.php"  title="Tell a friend about it" target=_top>
+Tell a friend</a></li>
+    	<li><a href="#spotim"  title="Talk about it" target=_top>
+Talk about it</a></li> -->
+<!--
+      <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cut-the-knot.org%2F%23.VNvfpq1i_NQ.facebook&p[title]=CutTheKnotMath&display=popup"><img src="/gifs/facebook.png" alt="facebook.png"></a></li>
+-->
+    <!-- </ul>
+	</li> -->
+ </ul>
+ 
+ <ul class="nav navbar-nav navbar-right sm" data-smartmenus-id="16106596341442263">
+<!--
+    <li><nobr><a href="https://www.facebook.com/CutTheKnotMath"><img src="/gifs/facebook.png" alt="facebook.png"></a>
+	    <a href="https://twitter.com/CutTheKnotMath"><img src="/gifs/tweeter.png" alt="tweeter.png"></a>
+-->			
+	  	<a href="https://www.cut-the-knot.org/"><img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/ctklogo.png" alt="ctklogo.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</ul>
+</div><!--/.nav-collapse -->
+</div>
+
+
+
+
+</div>
+
+
+<div class="mainFrame">
+
+<h1>Sierpinski Gasket and Tower of Hanoi</h1>
+
+<p>In the discussion on <a href="https://www.cut-the-knot.org/pythagoras/fifteen.shtml">Sam Loyd's Fifteen puzzle</a> we introduced the notion of <a href="https://www.cut-the-knot.org/do_you_know/graphs2.shtml#puz(G)">puzzle graph</a>.
+ More generally the idea applies to every puzzle, game, or problem (not 
+necessarily mathematical) that may be described by a set of parameters. 
+With every move, parameter values change and the puzzle looks a little 
+different. We are looking into a vector (an ordered set) of parameters 
+whose values uniquely describe appearance (or <em>configuration</em>, or <em>state</em>)
+ of the puzzle. To represent a puzzle graphically, associate various 
+(legitimate) configurations of the puzzle with dots in some space 
+(practically, it's a piece of paper or a computer screen we'll be 
+working with). For every move from one configuration to another, connect
+ the corresponding dots with an edge. If the move is not reversible, the
+ edge must be <em>directed</em>. Otherwise, it's a plain curve 
+connecting the two dots. To solve the puzzle, find dots corresponding to
+ the initial and the target configuration and the path (of moves) from 
+one to the other. If no such path exists the problem is unsolvable.</p>
+<p>For a given puzzle G, <em>puz(G)</em> designates the associated puzzle graph. As was discovered by Ian Stewart, puz(<a href="https://www.cut-the-knot.org/recurrence/hanoi.shtml">Tower of Hanoi</a>) has a surprising relationship to the <a hre="../ctk/Sierpinski.shtml">Sierpinski gasket</a> (also known as the <em>Sierpinski triangle</em>) and, therefore, to Pascal's triangle.</p>
+
+<p>In the <a href="https://www.cut-the-knot.org/recurrence/hanoi.shtml">Tower of Hanoi</a>
+ puzzle, disks stacked on one peg are to be moved to another with, 
+perhaps an intermediate stop at a third, auxiliary peg. Disks are all of
+ different sizes and it's forbidden to place a bigger disk on top of a 
+smaller one. Number the pegs 1,2, and 3. Every disk may be said to be at
+ one of the pegs and, for a specific configuration, be associated with 
+one of the numbers: 1, 2, 3. A puzzle configuration is completely 
+defined by a list of such peg numbers associated with every disk. To 
+avoid ambiguity the disks are ordered according to their sizes, with the
+ smallest being the first.</p>
+
+<p class="shift">
+<img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/hanoi12.gif" width="268" height="116">
+</p>
+
+<p>For a puzzle with a single disk, only three configurations are 
+possible: (1), (2), (3), where, for example, (2) denotes the 
+configuration in which the lone disk is located at the peg #2. For a 
+puzzle with two disks, there are 9 possible configurations. <nobr>(2, 2)</nobr>
+ means that both disks are located at the second peg. We'll tacitly 
+focus on the legitimate disks positions. The only legitimate 
+interpretation for <nobr>(2, 2)</nobr> is that the small disk is being 
+on top, the bigger one at the bottom of the stack. Each of the 9 
+possible vectors corresponds to a single legitimate puzzle 
+configuration. However, from a given node, not all configurations are 
+reachable with a single move. From <nobr>(2, 2)</nobr> we may only get to <nobr>(1, 2)</nobr> and <nobr>(3, 2)</nobr> by moving the small disk from peg 2 to either peg 1 or peg 3. From <nobr>(1, 2)</nobr> we can get back to <nobr>(2, 2)</nobr> but also to <nobr>(3, 2)</nobr> and <nobr>(1, 3).</nobr> For instance, <nobr>(1, 1)</nobr>
+ is off-limits as this would imply placing a bigger disk on top of a 
+smaller one. The fun started when Stewart arranged the dots in a 
+triangular pattern as above.</p>
+<img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/hanoi3.gif" width="299" hspace="10" height="211" align="right">
+
+<p>As Stewart observed, such pretty configuration can't be coincidence. 
+Let puz(N) denote puz(Tower of Hanoi with N disks). Why puz(2) consists 
+of three copies of puz(1)? Why there is a single edge from one copy of 
+puz(1) to another? The explanation is not only easy, it's also generic: 
+puz(N) always consists of three copies of <nobr>puz(N - 1)</nobr> with a single edge between any two copies of <nobr>puz(N - 1).</nobr>. </p>
+
+<p>Indeed, place the largest disk on one of the three pegs and, for a 
+while, forget about it. The remaining disks form a smaller puzzle. To 
+three possible locations of the largest disk there correspond <em>three</em>
+ "subpuzzles". The largest disk can only be moved with all the smaller 
+ones stacked on a single peg (so that the third peg is free).</p> 
+<img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/pascal.gif" width="262" hspace="10" height="194" align="left">
+
+<a name="induction"></a>
+<p>Well, the structure suspiciously resembles two famous triangles: Pascal's and <a href="https://www.cut-the-knot.org/ctk/Sierpinski.shtml">Sierpinski's</a>. We've <a href="https://www.cut-the-knot.org/ctk/Sierpinski.shtml#induction">seen <em>by induction</em></a>
+ that the Sierpinski gasket is Pascal's triangle modulo 2. puz(N) seems 
+to look very much like the Sierpinski gasket with nearest dots connected
+ by edges. In terms of Pascal's triangle, puz(N) combines nodes 
+corresponding to <em>odd</em> entries of Pascal's triangle with the 
+nodes 1 unit (whatever this may mean) apart linked by an edge. Since 
+Pascal's triangle consists of <a href="https://www.cut-the-knot.org/pigeonhole/sperner.shtml#binom">binomial coefficients</a> this suggests a question answered more than 100 years ago by Edouard Lucas (1842-1891): what is the <em>parity</em> of <nobr>C(n, m)?</nobr> In other words, when <nobr>C(n, m)</nobr> is odd and when is it even?</p>
+
+<p>By now, we have established a solid base to be able to answer this 
+question with little additional effort. First, let's present Pascal's 
+triangle in its original, rectangular form. The apex goes to the upper 
+left corner and the entries grow right and downward. The rows and 
+columns are numbered starting with 0. We shall be detecting even entries
+ in a process modeled after the <a href="https://www.cut-the-knot.org/triangle/Tremas.shtml">trema removal algorithm</a>. </p>
+
+<p class="shift">
+<img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/lucas.gif" width="352" height="155">
+</p>
+
+<p>The key to understanding the diagram is the <a href="https://www.cut-the-knot.org/binary.shtml">binary representation</a> of the row and column indices. In the gray square (that looks like a rectangle), all indices (numbers, <nobr>4, 5, 6,</nobr> and 7) share a power of 2, viz., <nobr>2<sup>2</sup> = 4.</nobr>
+ This is the highest power of two that appears in this small table. In 
+the red squares, the row and column indices all share the previous power
+ of two, <nobr>2<sup>1</sup> = 2.</nobr> In the yellow squares, all indices include the next power of 2, 2<sup>0</sup>&nbsp;=&nbsp;1, the smallest in this table. Note, that <em>even</em> entries fall inside one of the colored squares whereas <em>odd</em> entries stay outside. Swivel the table 45° to the right. With all entries modulo 2, the result will be exactly that of the <a href="https://www.cut-the-knot.org/ctk/Sierpinski.shtml#applet">applet automation</a> that leads to the Sierpinski gasket. Denote an entry in the row n and column m as <nobr>D(n, m).</nobr> What the above argument demonstrates is that entries <nobr>D(n, m)</nobr> for which binary representations <nobr>(n)<sub>2</sub></nobr> and <nobr>(m)<sub>2</sub></nobr> have at least one 1 in the same position (counting right-to-left), are even. <nobr>D(n, m)</nobr> is odd iff <nobr>(n)<sub>2</sub></nobr> and <nobr>(m)<sub>2</sub></nobr> never have 1s in the same binary position.</p>
+
+<p>Now, this is immediate that <nobr>D(n, m) = C(n + m, m) = C(n + m, n).</nobr> Let's introduce another notation. For a given integer n, A<sub>n</sub> is the set of non-zero binary positions in (n)<sub>2</sub>. Positions are counted right-to-left starting with 0. For example, <nobr>11<sub>10</sub> = 1011<sub>2</sub>,</nobr> <nobr>17<sub>10</sub> = 10001<sub>2</sub>,</nobr> and <nobr>23<sub>10</sub> = 10111<sub>2</sub>.</nobr> Therefore, <nobr>A<sub>11</sub> = {0, 1, 3},</nobr> <nobr>A<sub>17</sub> = {0, 4},</nobr> and <nobr>A<sub>23</sub> = {0, 1, 2, 4}.</nobr> As we just saw, <nobr>D(n, m)</nobr> is odd iff <nobr>A<sub>n</sub>&#8745;A<sub>m</sub> = Ø</nobr> which is equivalent to <nobr>A<sub>m</sub>&#8834;A<sub>n+m</sub>.</nobr></p>
+
+<p>Now I state the <em>Lucas theorem</em>:</p>
+
+<a name="lucas"></a>
+
+<h3>Theorem (E. Lucas)</h3>
+<p class="note">
+C(n, m) is odd iff A<sub>m</sub> &#8834; A<sub>n</sub>.
+</p>
+
+<center><img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/tbow_sh.gif" width="240" height="17" border="0"><br></center>
+<p>For example, A<sub>17</sub> &#8834; A<sub>23</sub> and, therefore, <nobr>C(23, 17)</nobr> is odd. Indeed, <nobr>C(23, 17) = 100947.</nobr> On the other hand, it's not true that A<sub>11</sub>&#8834;A<sub>23</sub> and, therefore <nobr>C(23, 11)</nobr> is even. In fact, <nobr>C(23, 11) = 1352978.</nobr></p>
+<p>As another example, 2<sup>n</sup> is the first index to have 1 in the n-th binary position. All its other digits are 0. Therefore, <nobr>C(2<sup>n</sup>, m),</nobr> <nobr>n &gt; 0,</nobr> is always even, except the trivial case <nobr>m = 0.</nobr> This statement admits a <a href="https://www.cut-the-knot.org/arithmetic/combinatorics/LucasTheorem.shtml">generalization</a>, also known as <em>Lucas' theorem</em>: for p prime, <nobr>a &#8805; 1</nobr> and <nobr>0 &lt; k &lt; p<sup>a</sup>,</nobr> <nobr>C(p<sup>a</sup>, k) &#8801; 0 (mod p).</nobr></p>
+
+<p>The proof follows from the <a href="https://www.cut-the-knot.org/pigeonhole/sperner.shtml">algebraic definition</a> of the binomial coefficients:</p> 
+
+<p class="shift">
+<img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/binom.gif" width="167" height="53" border="0"><br>
+</p>
+
+<p>implying k·C(p<sup>a</sup>, k) = p<sup>a</sup>·C(p<sup>a-1</sup>, k-1) which shows that C(p<sup>a</sup>, k)</p> is divisible by p whenever <nobr>0 &lt; k &lt; p<sup>a</sup>.</nobr><p></p>
+
+<p>Denoting N = p<sup>a</sup>, for p prime the <a href="https://www.cut-the-knot.org/Generalization/homo.shtml#binomial">binomial theorem</a> modulo p becomes</p>
+
+<a name="(1)"></a>
+<table><tbody><tr><td width="80">(1)</td><td>
+(1 + x)<sup>N</sup> = 1 + x<sup>N</sup>&nbsp;&nbsp;&nbsp;(mod p).
+</td></tr></tbody></table>
+
+<p>The most general theorem due to Lucas deals with arbitrary n, m, and a
+ prime number p. The theorem deals with representations of n and m in <a href="https://www.cut-the-knot.org/blue/Modulo.shtml">base p</a>:</p>
+
+<a name="gen"></a>
+
+<h3>Theorem (E. Lucas)</h3>
+
+<div class="note">
+<p>Let n = (a<sub>x</sub>a<sub>x-1</sub>...a<sub>0</sub>)<sub>p</sub> and m = (b<sub>y</sub>b<sub>y-1</sub>...b<sub>0</sub>)<sub>p</sub>. Let <nobr>z = max(x, y)</nobr> and pad the numbers on the left with zeros where necessary. Then</p>
+
+<p class="shift">
+C(n, m) = C(a<sub>z</sub>, b<sub>z</sub>) · C(a<sub>z-1</sub>, b<sub>z-1</sub>) ·...· C(a<sub>0</sub>, b<sub>0</sub>)&nbsp;&nbsp;(mod p).
+</p>
+</div>
+
+<h3>Proof</h3>
+
+<p>The assertion follows from <a href="#(1)">(1)</a>.</p>
+
+<p>C(n, m) is the coefficient by x<sup>m</sup> in the expansion of (1 + x)<sup>n</sup>. But</p>
+
+<p class="shift">
+<table>
+<tbody><tr><td>(1 + x)<sup>n</sup></td><td>= (1 + x)<sup>a<sub>z</sub>p<sup>z</sup></sup>·(1 + x)<sup>a<sub>z-1</sub>p<sup>z-1</sup></sup>·...·(1 + x)<sup>a<sub>0</sub>p<sup>0</sup></sup></td><td>&nbsp;&nbsp;(mod p)</td></tr>
+<tr><td>&nbsp;</td><td>= [(1 + x)<sup>p<sup>z</sup></sup>]<sup>a<sub>z</sub></sup>·[(1 + x)<sup>p<sup>z-1</sup></sup>]<sup>a<sub>z-1</sub></sup>·...·[(1 + x)<sup>p<sup>0</sup></sup>]<sup>a<sub>0</sub></sup></td><td>&nbsp;&nbsp;(mod p)</td></tr>
+<tr><td>&nbsp;</td><td>= (1 + x<sup>p<sup>z</sup></sup>)<sup>a<sub>z</sub></sup>·(1 + x<sup>p<sup>z-1</sup></sup>)<sup>a<sub>z-1</sub></sup>·...·(1 + x<sup>p<sup>0</sup></sup>)<sup>a<sub>0</sub></sup></td><td>&nbsp;&nbsp;(mod p).</td></tr>
+</tbody></table>
+</p>
+
+<p>The power x<sup>m</sup>, with m = (b<sub>z</sub>b<sub>z-1</sub>...b<sub>0</sub>)<sub>p</sub>, comes up in this expansion only as a product of x<sup>b<sub>z</sub>p<sup>z</sup></sup> from the first term, x<sup>b<sub>z-1</sub>p<sup>z-1</sup></sup> from the second and so on, thus proving Lucas' theorem in its most general form.</p>
+
+<h3>Remark</h3>
+<p>While constructing puz(N) with N growing, we might want to keep the 
+total length of one side of the triangle constant. It can be shown that 
+thus defined sequence of point sets, puz(N), indeed converges to the 
+Sierpinski gasket. Convergence is established in the framework of metric
+ spaces with the <a href="https://www.cut-the-knot.org/do_you_know/Hausdorff.shtml">Hausdorff distance</a>.</p>
+<h3>References</h3>
+<ol>
+<li>I. Aharoni, <em>From Tower of Hanoi to Pascal's Triangle</em>, Alefefes, #4, 1996 (in Hebrew)
+</li><li>O. Ore, <a href="https://www.amazon.com/exec/obidos/ISBN=0883856352/ctksoftwareincA/"><em>Graphs and Their Uses</em></a>, MAA, 1990
+</li><li><a name="Moll"></a>V. H. Moll, <a href="https://www.amazon.com/exec/obidos/ISBN=0821887955/ctksoftwareincA/"><em>Numbers and Functions: From a Classical-Experimental Mathematician's Point of View</em></a>, AMS, 2012
+</li><li>I. Stewart, <a href="https://www.amazon.com/exec/obidos/ISBN=0716723417/ctksoftwareincA/"><em>Another Fine Math You've Got Me Into</em></a>, W.H.Freeman &amp; Co, 1992
+</li><li>I. Stewart, <a href="https://www.amazon.com/exec/obidos/ISBN=0140132376/ctksoftwareincA/"><em>Game, Set and Math</em></a>, Penguin Books, 1989
+</li><li>D. Wells, <a href="https://www.amazon.com/exec/obidos/ISBN=0471180777/ctksoftwareincA/"><em>You Are a Mathematician</em></a>, John Wiley &amp; Sons, 1995
+</li></ol>
+
+<center><img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/tbow_sh.gif" width="240" height="18" border="0"></center>
+
+<h3>About Fractals</h3>
+
+<ul>
+
+<li><a href="https://www.cut-the-knot.org/Curriculum/Algebra/DotPatterns.shtml">Dot Patterns, Pascal Triangle and Lucas Theorem</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Geometry/SierpinskiChaosGame.shtml">Sierpinski Gasket Via Chaos Game</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Geometry/SierpinskiGasketAddressing.shtml">The Chaos Game: Address Space vs IFS</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Geometry/SierpinskiTremas.shtml">Sierpinski Gasket By Common Trema Removal</a>
+
+</li><li><a href="https://www.cut-the-knot.org/triangle/Tremas.shtml">Sierpinski Gasket By Trema Removal</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Algebra/SierpinskiGasket.shtml">Sierpinski's Gasket and Dihedral Symmetry</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Geometry/ifs.shtml">Collage Theorem And Iterated Function Systems</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Geometry/StringFSM.shtml">Variations on the Theme of (Triangular) Tremas</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Geometry/SqStrFSM.shtml">Variations on the Theme of (Rectangular) Tremas</a>
+
+</li><li><font color="0xaa0000">Sierpinski Gasket and Tower of Hanoi</font>
+</li><li><a href="https://www.cut-the-knot.org/do_you_know/dimension.shtml">Fractal Curves and Dimension</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Magic/MandelCycle.shtml">Color Cycling on the Mandelbrot Set</a>
+
+</li><li><a href="https://www.cut-the-knot.org/blue/Mandel.shtml">Iterations and the Mandelbrot Set</a>
+
+</li><li><a href="https://www.cut-the-knot.org/blue/julia.shtml">Mandelbrot and Julia sets</a>
+
+</li><li><a href="https://www.cut-the-knot.org/blue/chaos.shtml">Emergence of Chaos</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Algebra/LogisticModel.shtml">Logistic Model</a>
+
+</li><li><a href="https://www.cut-the-knot.org/do_you_know/finite_area.shtml">Weird curves bound normal areas</a>
+
+</li><li><a href="https://www.cut-the-knot.org/m/Algebra/SquareSpiral.shtml">Exercise with Square Spiral</a>
+
+</li></ul>
+
+
+<center><img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/tbow_sh.gif" width="240" height="18" border="0"></center>
+
+<h3>Pascal's Triangle and the Binomial Coefficients</h3>
+
+<ul>
+
+<li><a href="https://www.cut-the-knot.org/arithmetic/combinatorics/BinomialTheorem.shtml">Binomial Theorem</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Geometry/ArithDisguise.shtml">Arithmetic in Disguise</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Combinatorics/PascalTriangle.shtml">Construction of Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Algebra/DotPatterns.shtml">Dot Patterns, Pascal Triangle and Lucas Theorem</a>
+
+</li><li><a href="https://www.cut-the-knot.org/SimpleGames/IntIter.shtml">Integer Iterations on a Circle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Combinatorics/LeibnitzTriangle.shtml">Leibniz and Pascal Triangles</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/combinatorics/LucasTheorem.shtml">Lucas' Theorem</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/LucasTheorem.shtml">Lucas'  Theorem II</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/combinatorics/PascalTriangleProperties.shtml">Patterns in Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Combinatorics/RandomWalk.shtml">Random Walks</a>
+
+<ul>
+
+  <li><a href="https://www.cut-the-knot.org/Curriculum/Combinatorics/BallotLemma.shtml">The Ballot Lemma</a>
+
+  </li><li><a href="https://www.cut-the-knot.org/Curriculum/Combinatorics/ReflectionPrinciple.shtml">The Reflection Lemma</a>
+
+</li></ul>
+
+</li><li><font color="0xaa0000">Sierpinski Gasket and Tower of Hanoi</font>
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/combinatorics/PascalTriangle.shtml">Treatise on Arithmetical Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/combinatorics/ProofsForBinomialIdentity.shtml">Ways To Count</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/combinatorics/AnotherBinomialIdentity.shtml">Another Binomial Identity with Proofs</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/VandermondeConvolution.shtml">Vandermonde's Convolution Formula</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/combinatorics/CountingFatSets.shtml">Counting Fat Sets</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/HarlanBrothers.shtml">e in the Pascal Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/CatalanInPascal.shtml">Catalan Numbers in Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/BinomialReciprocalsInPascal.shtml">Sums of Binomial Reciprocals in Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/SquaresInPascal.shtml">Squares in Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/CubesInPascal.shtml">Cubes in Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/PiInPascal.shtml">Pi in Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/TriPiInPascal.shtml">Pi  in Pascal's Triangle via Triangular Numbers</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/algebra/ExponentsInPascal.shtml">Ascending Bases and Exponents in Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/combinatorics/DeterminantsInPascalTriangle.shtml">Determinants in Pascal's Triangle</a>
+
+</li><li><a href="https://www.cut-the-knot.org/arithmetic/TonyFosterPowersInPascalTriangle.shtml">Tony Foster's Integer Powers in Pascal's Triangle</a>
+
+</li></ul>
+
+
+
+<center><img src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/tbow_sh.gif" width="240" height="17" border="0"><br></center>
+<p align="right">
+<a href="https://www.cut-the-knot.org/MailNotificationPage.shtml">|Contact|</a>
+<a href="https://www.cut-the-knot.org/front.shtml">|Front page|</a>
+<a href="https://www.cut-the-knot.org/content.shtml">|Contents|</a>
+<a href="https://www.cut-the-knot.org/algebra.shtml">|Algebra|</a>
+
+</p>
+
+<p align="left">
+<font size="-1">Copyright © 1996-2018 <a href="https://www.cut-the-knot.org/index.shtml">Alexander Bogomolny</a></font></p>
+</div>
+<p><span style="background-color:#00aaaa; display:inline-block; padding:0px 2px;">67784242</span></p>
+<div id="footer">
+<br>
+<!-- #include virtual="/cgi-bin/runHiddenCounter.sh"-->
+
+</div> <!-- footer -->
+</div> <!-- "content" -->
+
+
+<div id="rightColumn">
+
+</div>
+
+</div> <!-- centerDiv -->
+
+<div id="header">
+<nobr>
+
+<div id="logo" style="display:inline">
+<!--
+<a href="https://www.cut-the-knot.org/manifesto/index.shtml">&nbsp;&nbsp;<img src="/gifs/NewLogoOpal.gif" width=4 height=4 border=0 alt="Cut the knot: learn to enjoy mathematics"></a> -->
+</div>
+
+
+</nobr></div><nobr>
+
+
+
+<script type="text/javascript">
+var infolinks_pid = 1469555;
+var infolinks_wsid = 0;
+</script>
+<!-- <script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script> -->
+<script type="text/javascript" src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/jquery-2.js"></script>
+<script type="text/javascript" src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/bootstrap.js"></script>
+<script type="text/javascript" src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/jquery_002.js"></script>
+<script type="text/javascript" src="Sierpinski%20Gasket%20and%20Tower%20of%20Hanoi_fichiers/jquery.js"></script>
+
+
+</nobr><div id="__cookie-consent-wrapper"><div id="__cookie-consent-styles" style="display:none"><style>#__cookie-consent,#__cookie-consent *{color:#fff;font-family:Arial,sans-serif;font-weight:400;line-height:1.2;margin:0;padding:0;z-index:3000000000}@keyframes slideup{0%{bottom:-70px}100%{bottom:0}}#__cookie-consent{animation-name:slideup;animation-delay:1s;animation-duration:.5s;animation-fill-mode:forwards;animation-iteration-count:1;animation-timing-function:ease;background:rgba(101,101,101,.9);bottom:-70px;height:70px;left:0;min-width:320px;position:fixed;right:0;width:100%}#__cookie-consent-table{display:table;width:100%}#__cookie-consent-left,#__cookie-consent-right{display:table-cell;font-size:13px;height:70px;vertical-align:middle}#__cookie-consent-left{line-height:1.2;padding:0 15px;text-align:left}#__cookie-consent-right{padding:0 15px 0 0;text-align:right}#__cookie-consent-button{background:#51a9b1;border-radius:4px;border:1px solid #6c6c6c;cursor:pointer;padding:5px 15px;white-space:nowrap}#__cookie-consent-button:hover{background:#55b8c0}#__cookie-consent-link{color:#bdf4f8;text-decoration:none}#__cookie-consent-link:hover{border-bottom:1px dashed #bdf4f8;color:#bdf4f8}@media all and (max-width:600px){#__cookie-consent-left{font-size:10px}#__cookie-consent-button{font-size:12px}#__cookie-consent-button span:before{clear:both;content:'';display:table}}</style></div><div id="__cookie-consent"><div id="__cookie-consent-table"><div id="__cookie-consent-left">Ce
+ site internet utilise des cookies pour optimiser votre experience de 
+nos services sur le site selon les conditions prÃ©vues par notre <a href="http://www.wolfram.com/legal/privacy/wolfram-research.html" target="_blank" id="__cookie-consent-link">politique de confidentialitÃ©</a>.</div><div id="__cookie-consent-right"><button id="__cookie-consent-button" type="button">Accepter <span>et Fermer</span></button></div></div></div></div></body></html>

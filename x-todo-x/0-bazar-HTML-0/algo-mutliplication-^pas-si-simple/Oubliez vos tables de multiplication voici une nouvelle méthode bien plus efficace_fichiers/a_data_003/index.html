@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="index_data/TweenMax.js"></script>
+        <link href="index_data/css.css" rel="stylesheet">
+        <link rel="stylesheet" href="index_data/style.css">
+        <script src="index_data/DrawSVGPlugin.js"></script>
+        <meta name="ad.size" content="width=300,height=250">
+        <script type="text/javascript">var clickTag = "http://www.google.com"; </script>
+    <script type="text/javascript">
+    
+      (function() {
+        var relegateNavigation = '';
+        var handleClickTagMessage = function(e) {
+          try {
+            var eventData = JSON.parse(e.data);
+          } catch (err) {
+            return;
+          }
+          if (eventData.isInitClickTag) {
+            if (eventData.clickTags) {
+              for (var i = 0; i < eventData.clickTags.length; i++) {
+                var clkTag = eventData.clickTags[i];
+                window[clkTag.name] = clkTag.url;
+              }
+            } else if (eventData.clickTag) {
+              window.clickTag = eventData.clickTag;
+            }
+            relegateNavigation = eventData.relegateNavigation;
+          }
+        };
+
+        if (open.call) {
+          window.open = function(open) {
+            return function(url, name, features) {
+              if (relegateNavigation === 'parent') {
+                var message = {'clickTag': url, 'isPostClickTag': true};
+                parent.postMessage(JSON.stringify(message), '*');
+              } else {
+                var args = [url, name];
+                if (features) {
+                  args.push(features);
+                }
+                open.apply(window, args);
+              }
+            };
+          }(window.open);
+        }
+
+        if (window.addEventListener) {
+          window.addEventListener(
+              'message', handleClickTagMessage, false);
+        } else {
+          window.attachEvent('onmessage', handleClickTagMessage);
+        }
+      })();
+    
+  </script></head>
+    <body>
+        <div id="ad" onclick="javascript:window.open(window.clickTag)" style="visibility: visible;">
+
+            <div id="text-middle" class="absolute font-semibold color-blue-dark" style="opacity: 0; transform: matrix(1, 0, 0, 1, -150, 0);">
+                <!-- <div>Branchez.</div>
+                <div>Allumez.</div>
+                <div>Surfez.</div> -->
+                <span class="part1"><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; opacity: 1;">V</div><div style="position: relative; display: inline-block; opacity: 1;">o</div><div style="position: relative; display: inline-block; opacity: 1;">t</div><div style="position: relative; display: inline-block; opacity: 1;">r</div><div style="position: relative; display: inline-block; opacity: 1;">e</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; opacity: 1;">c</div><div style="position: relative; display: inline-block; opacity: 1;">o</div><div style="position: relative; display: inline-block; opacity: 1;">n</div><div style="position: relative; display: inline-block; opacity: 1;">n</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">x</div><div style="position: relative; display: inline-block; opacity: 1;">i</div><div style="position: relative; display: inline-block; opacity: 1;">o</div><div style="position: relative; display: inline-block; opacity: 1;">n</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; opacity: 1;">i</div><div style="position: relative; display: inline-block; opacity: 1;">n</div><div style="position: relative; display: inline-block; opacity: 1;">t</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">r</div><div style="position: relative; display: inline-block; opacity: 1;">n</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">t</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">s</div><div style="position: relative; display: inline-block; opacity: 1;">t</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; opacity: 1;">t</div><div style="position: relative; display: inline-block; opacity: 1;">r</div><div style="position: relative; display: inline-block; opacity: 1;">o</div><div style="position: relative; display: inline-block; opacity: 1;">p</div></div> </span>
+                <span class="part2"><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; opacity: 1;">l</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div></div><br><div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">e</div><div style="position: relative; display: inline-block; opacity: 1;">n</div><div style="position: relative; display: inline-block; opacity: 1;">t</div><div style="position: relative; display: inline-block; opacity: 1;">e</div></div> <div style="position:relative;display:inline-block;"><div style="position: relative; display: inline-block; opacity: 1;">?</div></div></span>
+            </div>
+
+            <!-- packshot -->
+            <img src="index_data/4g-box-blue.svg" alt="" id="packshot-logo" class="absolute" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+
+            <div id="text-packshot-1" class="centerX font-semibold color-blue-dark" style="left: 50%; position: absolute; transform: translate(-50%, 0%) matrix(1, 0, 0, 1, 0, 0);">
+                <div style="opacity: 0; transform: matrix(1, 0, 0, 1, -150, 0);">Changez pour</div>
+                <div style="opacity: 0; transform: matrix(1, 0, 0, 1, -150, 0);">la 4G box.</div>
+            </div>
+
+            <div id="text-packshot" class="centerX font-semibold color-blue-dark" style="left: 50%; position: absolute; transform: translate(-50%, 0%) matrix(1, 0, 0, 1, 0, 0);">
+                <div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Internet à</div>
+                <div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">pleine puissance,</div>
+                <div style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">enfin chez vous.</div>
+            </div>
+
+            <div id="cta" class="bg-pink font-bold centerX" style="left: 50%; position: absolute; transform: translate(-50%, 0%) matrix(1, 0, 0, 1, 0, 0); width: 120px; height: 33px;">Je teste</div>
+
+            <div class="ml color-grey absolute" style="opacity: 1;">*Voir conditions dans les «&nbsp;tarifs&nbsp;» et sur<br>bouyguestelecom.fr. Offre soumise à conditions.</div>
+
+            <!-- visuel -->
+            <div id="visuel-wrapper" class="absolute" style="width: 0px;">
+                <img src="index_data/visuel.jpg" alt="" id="visuel" class="centerY" style="top: 50%; position: absolute; transform: translate(0%, -50%) matrix(1, 0, 0, 1, -85, 0);">
+            </div>
+<!-- 
+            <div id="visuel-text" class="absolute font-bold"><img src="4g-box.svg" alt=""><br>Et si l'internet<br>de la maison<br>passait par la 4G ?</div> -->
+
+            <svg id="logo" class="absolute" viewBox="0 0 52 39" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+                <mask id="a" fill="#fff">
+                    <path d="m0 .197h5.998v10.514h-5.998z" fill="#fff" fill-rule="evenodd"></path>
+                </mask>
+                <g fill-rule="evenodd">
+                    <g fill="#00acd3" class="" data-svg-origin="-0.00010053254663944244 25.145809173583984" style="">
+                        <path d="m12.252 29.341c-.65135-.7332-1.592-.92411-2.362-.92486-.76921-.0003715-1.7098.19166-2.3616.92486-.64981.72949-.74341 1.6933-.74341 2.6327 0 .93786.0936 2.0325.74341 2.7634.65173.73171 1.5924.92449 2.3616.92411.76999-.0007429 1.7106-.1924 2.362-.92411.64981-.73097.74341-1.7673.74341-2.7634 0-.99691-.0936-1.9032-.74341-2.6327m-.84047 4.651c-.36862.44943-.92791.62511-1.5215.62511-.5928 0-1.1529-.17569-1.5207-.62511-.3717-.45314-.41523-1.2086-.41523-2.0183 0-.81083.043526-1.4352.41523-1.888.36785-.45054.92791-.62474 1.5207-.62474.59357 0 1.1529.1742 1.5215.62474.37055.45277.41484 1.0786.41484 1.888 0 .80823-.044296 1.5652-.41484 2.0183m8.0078-4.8654c0-.3016-.25345-.54637-.56661-.54637s-.56738.24477-.56738.54637l-.0007703 5.1376c0 .092486-.070104.17791-.14329.20763-.07357.028971-.3875.14671-1.4575.14671-.53695 0-1.1066-.20689-1.4548-.65037-.35129-.44869-.39289-1.2276-.39289-2.0265l-.0003852-2.8151c0-.3016-.25422-.54637-.56699-.54637-.31354 0-.56661.24477-.56661.54637l-.0007704 2.8132c0 .98391.064326 2.0391.72646 2.8125.57893.67563 1.5477.91297 2.256.91297.44874 0 1.431.029714 2.3165-.2886.24344-.078371.41754-.38406.41754-.6448zm19.668 0c0-.3016-.25384-.54637-.56661-.54637-.31393 0-.56738.24477-.56738.54637l-.0011556 5.1376c0 .092486-.070489.17791-.1429.20763-.07357.028971-.38827.14671-1.4583.14671-.53656 0-1.1055-.20689-1.4537-.65037-.35167-.44869-.39366-1.2276-.39366-2.0265l-.0007704-2.8151c0-.3016-.25345-.54637-.56661-.54637s-.56699.24477-.56699.54637l-.0007704 2.8132c0 .98391.065096 2.0391.72723 2.8125.57816.67563 1.5477.91297 2.2553.91297.44913 0 1.4313.029714 2.3169-.2886.24382-.078371.41793-.38406.41793-.6448zm-6.598.28552c0-.23883-.14714-.4446-.35784-.53783-.95834-.39743-2.0446-.45537-2.5364-.45537-.74803 0-1.7102.1872-2.3604.91-.65096.7202-.74456 1.8215-.74456 2.8054 0 .98317.0936 1.8891.74456 2.61.65019.72243 1.5893.91743 2.3604.91743.71105 0 1.4945-.3068 1.7426-.56717v.93971c0 .50477-.12441.90146-.37671 1.1811-.24806.2782-.60089.41786-1.0485.41786-.29582 0-.60127-.037143-.90865-.10957-.30584-.073172-.82391-.31163-1.0076-.39669-.1845-.085428-.52462-.020057-.67947.21989-.15369.23994-.05123.598.19144.72726.24382.12926.55274.30569 1.2006.46651.4133.10177.81852.15043 1.2037.15043.42255 0 .80041-.065 1.1209-.2028.32317-.13669.59511-.32574.80773-.56123.21262-.23511.37556-.52.48495-.84797.10785-.325.16332-.67786.16332-1.0448zm-1.1663 3.9795c0 .39409-.17256.65929-.36554.8346-.23804.21469-.76883.39186-1.3624.39186-.5928 0-1.1521-.16454-1.5203-.60803-.3717-.44831-.41561-1.0775-.41561-1.8757 0-.79783.043911-1.6235.41561-2.0711.36824-.44497.93947-.6032 1.5203-.6032.45067 0 1.0647.094714 1.5762.26743.087437.030457.15176.11143.15176.20577zm19.424-3.5135c.039674.0092857.082044.014486.12557.014486.28119 0 .5096-.221.5096-.49251.0007703-.0063142 0-.012628 0-.017828 0-.15934-.10361-.39334-.3043-.51331-.49381-.32946-1.2465-.45277-1.9017-.45277-.65713 0-1.3512.16009-1.7826.47543-.43603.31943-.65751.77034-.65751 1.3379 0 1.0433.80003 1.8014 2.3777 2.1149.69603.14189 1.4552.48657 1.4552 1.0853 0 .30271-.14907.63031-.40252.80711-.40676.28451-.99416.34171-1.2823.34357-.38095.0037143-.97876-.076514-1.4818-.34877-.02157-.014486-.045837-.026-.070104-.039743-.077807-.040114-.16679-.063886-.26193-.063886-.30044 0-.54619.23623-.54619.52854 0 .12443.044296.23809.11825.32871.045452.058686.10169.1118.16871.15266.68139.45389 1.6513.52334 2.0919.52334.41677 0 .82044-.082829 1.2669-.21654.3197-.095829.59781-.23586.82622-.41749.22726-.17977.4083-.40077.5381-.65631.12865-.25629.22071-.63626.22071-.9412 0-1.3988-1.2877-1.9519-2.4113-2.1628-.95526-.19054-1.4391-.58611-1.4391-1.0374 0-.12963.033511-.24291.099378-.338.068563-.095828.15639-.17309.26193-.22917.10747-.0572.23458-.099171.37479-.12554.14483-.026743.30545-.041229.53541-.040857.32279.0022286 1.0107.14189 1.3077.28377.083585.039743.17256.076514.26308.098429"></path>
+                        <path d="m5.2546 4.3798c-.65135-.72206-1.5897-.91186-2.3616-.91186-.71067 0-1.4937.30086-1.7414.56086v-3.2767c0-.30717-.2573-.55529-.57508-.55529s-.57508.24811-.57508.55529l-.0015407 8.9481c0 .26409.17102.48991.41138.58054.94447.37589 1.9995.43049 2.4817.43049.74841 0 1.7102-.1846 2.3616-.90666.65019-.7202.74379-1.7294.74379-2.7133 0-.98243-.0936-1.9905-.74379-2.7114m-.84047 4.69c-.36901.44386-.93985.60097-1.5211.60097-.45336 0-1.072-.093229-1.5866-.26891h.00077037c-.082044-.026-.14059-.099171-.14059-.18683v-3.4825c0-.39409.17179-.6604.36439-.83423.23881-.21543.76844-.38443 1.362-.38443.59396 0 1.1521.15711 1.5211.60097.37093.4472.41523 1.1789.41523 1.9764 0 .79894-.044296 1.531-.41523 1.9786" mask="url(#a)" transform="translate(0 24.949)"></path>
+                        <path d="m23.441 33.783c-.03197.064629-.099378.10586-.17256.10586-.088592-.0007428-.1533-.090628-.1768-.12294-.18027-.24923-1.5889-4.0151-1.8947-4.833-.10631-.27634-.43064-.42083-.7176-.31906-.28658.10251-.43603.4134-.33126.68974l1.8319 4.6837c.21416.55454.52385.86803.97799 1.0251l-1.1128 2.8433c-.11055.28006.035052.59317.32664.70051.29043.10549.61514-.034914.72569-.31571l3.5067-8.9325c.10747-.27597-.039674-.5876-.32279-.69234-.28619-.10549-.6136.034914-.72261.31386zm22.005-4.4542c-.81544-.92151-2.1262-.9126-2.3943-.91186-.24844.0011143-1.5442.0078-2.3292.91186-.35514.41006-.49573.85874-.5928 1.2554-.12287.49809-.13905.95754-.13905 1.4508 0 .92634.082815 1.9938.73262 2.7144.65173.72243 1.592.91074 2.362.91074.8501 0 1.7753-.067229 2.4559-.51963.13173-.079486.22302-.20837.26847-.33243.023111-.055714.034667-.117.034667-.18089 0-.28191-.23689-.50997-.52886-.50997-.067793 0-.13135.014486-.19182.035286-.034667.011514-.078193.036772-.17333.0858-.50267.27114-.98261.39594-1.8651.37663-.59396 0-1.1525-.15711-1.5211-.60023-.34436-.41489-.39559-1.0738-.40367-1.8037h4.4312c.33241 0 .60127-.25889.60127-.57831 0-1.5589-.74687-2.304-.74687-2.304zm-4.2563 1.888c-.001926-.117-.017333-.93154.67407-1.43.42255-.30383.88361-.325 1.166-.325.28157 0 .81467-.0096571 1.2831.33243.69102.50663.69757 1.3089.69526 1.4226z"></path>
+                    </g>
+                    <path fill="#f16522" class="" d="m28.747 25.477c2.3011 1.5318 6.8548-.97203 10.17-5.6011 3.3149-4.6291 4.1361-9.62 1.8354-11.152-2.3015-1.5329-6.7404.84351-10.056 5.473-3.3149 4.6295-4.2509 9.7474-1.9498 11.28" data-svg-origin="27.478248596191406 8.259763717651367" style=""></path>
+                    <path fill="#0060ae" class="" d="m23.007 25.477c-2.3015 1.5318-6.8551-.97203-10.17-5.6011-3.3157-4.6291-4.1365-9.62-1.8354-11.152 2.3015-1.5329 6.7404.84351 10.055 5.473 3.3153 4.6295 4.2517 9.7474 1.9502 11.28" data-svg-origin="9.69625473022461 8.259763717651367" style=""></path>
+                    <path fill="#00acd3" class="" d="m36.45 4.8762c0-2.6936-4.7347-4.8761-10.574-4.8761s-10.574 2.1825-10.574 4.8761c0 2.6932 4.7347 4.8761 10.574 4.8761s10.574-2.1829 10.574-4.8761m-2.3273 33.714h-.1352c-.049689 0-.088593-.034172-.088593-.076514v-1.3189h-.44104c-.049689 0-.089748-.033057-.089748-.075771v-.12331c0-.041971.040059-.076514.089748-.076514h1.1964c.049689 0 .090133.034543.090133.076514v.12331c0 .042714-.040444.075771-.090133.075771h-.44219v1.3189c0 .042343-.039674.076514-.089363.076514m5.998 0h-1.0793c-.049304 0-.088978-.034172-.088978-.076514v-1.518c0-.041971.039674-.076514.088978-.076514h.13559c.049689 0 .089363.034543.089363.076514v1.3182h.85434c.049304 0 .090133.034543.090133.076514v.12331c0 .042343-.04083.076514-.090133.076514m2.5694 0h-1.0781c-.050074 0-.090133-.034172-.090133-.076514v-1.518c0-.041971.040059-.076514.090133-.076514h1.0781c.049689 0 .090133.034543.090133.076514v.12331c0 .042714-.040444.075771-.090133.075771h-.85434v.41823h.71452c.049689 0 .089363.0338.089363.075029v.11774c0 .0416-.039674.076143-.089363.076143h-.71452v.43197h.85434c.049689 0 .090133.034543.090133.076514v.12331c0 .042343-.040444.076514-.090133.076514m-5.3732 0h-1.0789c-.048918 0-.089363-.034172-.089363-.076514v-1.518c0-.041971.040444-.076514.089363-.076514h1.0789c.049689 0 .090133.034543.090133.076514v.12331c0 .042714-.040444.075771-.090133.075771h-.85434v.41823h.7149c.048918 0 .089363.0338.089363.075029v.11774c0 .0416-.040444.076143-.089363.076143h-.7149v.43197h.85434c.049689 0 .090133.034543.090133.076514v.12331c0 .042343-.040444.076514-.090133.076514m13.977 0h-.1352c-.048918 0-.090518-.034172-.090518-.076514v-.82049l-.36631.84909c-.014637.027114-.047763.044571-.0832.044571h-.13443c-.035437 0-.067022-.017457-.081659-.044571l-.37825-.8554v.8268c0 .042343-.04083.076514-.088978.076514h-.1352c-.049304 0-.088593-.034172-.088593-.076514v-1.518c0-.041971.039289-.076514.088593-.076514h.1352c.033511 0 .066637.017457.080889.044943l.53695 1.2253.52385-1.2242c.013867-.028229.046222-.046057.081659-.046057h.1352c.049304 0 .088978.034543.088978.076514v1.518c0 .042343-.039674.076514-.088978.076514m-3.0962-1.5219c-.13674-.11626-.32779-.17457-.51846-.17569-.18913.0011143-.38018.059428-.51692.17569-.19529.16714-.22495.34023-.22495.68343 0 .34506.029659.5174.22495.68306.1379.11849.32086.182.51692.182.1976 0 .38018-.063514.51846-.182.19529-.16566.22456-.338.22456-.68306 0-.3432-.029274-.51629-.22456-.68343m-.23959 1.1927c-.071644.061286-.17526.0936-.27887.0936-.10207 0-.20492-.032314-.2781-.0936-.10207-.087657-.14367-.18089-.14367-.50923 0-.32797.0416-.4212.14367-.507.073185-.0624.17218-.097314.2781-.097314.10785 0 .20607.034914.27887.097314.10284.0858.14406.17903.14406.507 0 .32834-.041215.42157-.14406.50923m-2.4197-.17691-.13982-.021171c-.040444-.0059429-.08243.013743-.096682.047914-.023496.069086-.058933.11329-.10747.15377-.072415.061286-.17218.097314-.27964.097314-.10631 0-.2053-.036029-.27849-.097314-.10246-.0858-.1429-.17977-.1429-.50811 0-.32797.040444-.42454.1429-.51034.073185-.062771.17218-.098057.27849-.098057.10747 0 .20723.035286.27964.098057.048533.040486.08397.084686.10747.15303.014252.0338.056237.053114.096682.048657l.13982-.0208c.026963-.0044572.049689-.018572.063556-.038629.015407-.020057.017333-.045686.0092444-.067971-.033511-.095829-.087052-.17346-.17834-.25071-.13713-.11589-.32702-.17569-.51807-.17569-.18951 0-.37979.0598-.51769.17569-.19529.16714-.22418.34023-.22418.68343 0 .34506.028889.52074.22418.6864.1379.11737.32818.17606.51769.17606.19105 0 .38095-.058686.51807-.17606.091289-.076886.14483-.15489.17834-.25034.0080889-.021914.006163-.047171-.0092444-.066486-.013867-.0208-.036593-.034543-.063556-.038629" data-svg-origin="15.30199909210205 0.00010013580322265625" style=""></path>
+                </g>
+            </svg>
+
+        </div>
+
+
+        <script src="index_data/SplitText.js"></script>
+        <script src="index_data/script.js"></script>
+    
+</body></html>

@@ -1,0 +1,8 @@
+a, a:hover {
+    color: #5cb85c ;
+}
+
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background: #5cb85c;
+}

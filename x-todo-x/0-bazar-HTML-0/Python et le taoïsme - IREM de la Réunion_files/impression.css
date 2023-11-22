@@ -1,0 +1,36 @@
+[(#REM)<style>]
+/* IMPRESSION.CSS                                                       */
+/* Cette feuille contient:                                              */
+/* - les styles specifiques a l'impression (media=print)                */
+/* -------------------------------------------------------------------- */
+
+/*  Correction des styles HTML par defaut
+---------------------------------------------- */
+body { background: #FFF; margin: 15pt; text-align: left; font: 8pt Helvetica, Verdana, Arial, sans-serif; color: #000; }
+
+img, table { margin: 0; padding: 0; border: 0; }
+ul, ol, li { margin: 0; padding: 0; list-style: none; }
+
+/*  Ne pas imprimer : on elimine les elements de navigation (display: none; )
+---------------------------------------------- */
+div#header, div#footer {margin :0; padding:0; display: none; }
+div#navigation, div#extra {display: none; }
+div#content,div#wrapper {margin:0; padding:0; width:100%;}
+
+#une.article, #edito.article{background:#FFF;border:none;}
+
+.repondre, .repondre, .formulaire_spip { display: none; }
+.spip-admin, .spip-admin-float, .invisible { display: none; }
+
+/*  Disposition a l'ecran
+---------------------------------------------- */
+.nettoyeur { clear: both; }
+
+/*  Pour les liens, on les souligne et
+/*  on affiche l'URL cible a la suite des liens sortants (!)
+---------------------------------------------- */
+a { color: #520; text-decoration: underline; }
+a.spip_out:after,a.spip_in:after, a.spip_glossaire:after, a.spip_mail:after { display: inline; content: " [" attr(href) "]"; }
+
+a.fonction{display:none;}
+

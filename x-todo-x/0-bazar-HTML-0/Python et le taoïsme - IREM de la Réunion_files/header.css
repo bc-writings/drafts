@@ -1,0 +1,142 @@
+div.pagination {
+	display:block;
+	text-align:center;
+}
+
+div.pagination img {
+	border:0pt none;
+	margin:0pt;
+	padding:0pt;
+}
+
+div.pagination a.decoupe_img {
+	border:0pt none;
+}
+
+span.cs_pagination_off {
+	color:lightgrey;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+div.onglets_print {
+	margin:1em;
+	padding:0.6em;
+	border:1px dashed ;
+}
+
+div.onglets_print h4 {
+	margin-top:0px;
+	margin-bottom:0.6em;
+}
+
+div.onglets_bloc {
+	position:relative;
+	width:100%;
+	clear:both;
+}
+
+div.onglets_bloc h2.onglets_titre a {
+	text-decoration:none;
+	height:22px;
+	color:black;
+}
+
+div.onglets_bloc h2.onglets_titre {
+	height:20px;
+-moz-border-radius-topleft:3px;
+-moz-border-radius-topright:6px;
+	background-color:#f2f2f2;
+	color:black;
+	position:relative;
+	top:-1px;
+	display:inline;
+	float:left;
+	overflow:hidden;
+	cursor:pointer;
+	margin:1px -1px 1px 0px;
+	padding:0px 0.6em;
+	border:1px solid rgb( 145, 155, 156 );
+	
+	z-index:11;
+	white-space:nowrap;
+	text-align:center;
+	font-weight:normal;
+	font-size:88%;
+}
+
+div.onglets_bloc h2.onglets_titre.selected {
+	height:22px;
+	background-color:white;
+	border-top:3px solid #8B6F92;
+	z-index:11;
+	top:-3px;
+	margin:1px -1px -2px 0px;
+	border-bottom-width:0px;
+	cursor:default;
+}
+
+div.onglets_bloc h2.onglets_titre.selected a {
+	color:black;
+	cursor:default;
+}
+
+div.onglets_bloc h2.hover a {
+	color:blue;
+}
+
+div.onglets_bloc .onglets_liste {
+	white-space:nowrap;
+}
+
+div.onglets_bloc .onglets_contenu {
+	display:none;
+	clear:both;
+	border:1px solid rgb( 145, 155, 156 );
+	background:rgb( 252, 252, 254 );
+	z-index:10;
+	position:relative;
+	top:-3px;
+	padding:0.6em;
+}
+
+div.onglets_bloc .onglets_contenu.selected {
+	display:block;
+	overflow:hidden;
+}
+
+/* Specifie des paires de guillemets sur plusieurs niveaux pour chaque langue */
+/* Cf.: http://www.yoyodesign.org/doc/w3c/css2/generate.html#quotes-specify */
+q { quotes: '"' '"' "'" "'" }
+/* Guillemets selon la langue du texte */
+:lang(fr) q { quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D" "\2018" "\2019"; }
+:lang(en) q { quotes: "\201C" "\201D" "\2018" "\2019" }
+:lang(es) q { quotes: "\00AB" "\00BB" "\201C" "\201D"; }
+:lang(it) q { quotes: "\00AB\A0" "\A0\00BB" "\201C" "\201D"; }
+:lang(de) q { quotes: "\00BB" "\00AB" ">" "<" }
+:lang(no) q { quotes: "\00AB\A0" "\A0\00BB" "<" ">" }
+/* Insere des guillemets avant et apres le contenu d'un element Q */
+q:before { content: open-quote; } 
+q:after { content: close-quote; }
+/* IE */
+* html q { font-style: italic; }
+*+html q { font-style: italic; }
+sup, sup.typo_exposants { font-size:78%; font-variant:inherit; line-height:inherit; vertical-align:23%; }
+.blocs_titre {
+	background:transparent url(http://irem.univ-reunion.fr/prive/images/triangle-bas.gif) no-repeat scroll left center;
+	font-weight:normal;
+	line-height:1.2em;
+	margin-top:4px;
+	padding:0pt 0pt 0pt 20px;
+	margin-bottom:0.1em;
+	clear:left;
+	cursor:pointer;
+}
+
+.blocs_replie {
+	background:transparent url(http://irem.univ-reunion.fr/prive/images/triangle.gif) no-repeat scroll left center;
+}
+
+.blocs_title{
+	display:none;
+}

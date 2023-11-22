@@ -1,0 +1,82 @@
+\documentclass{amsbook}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[fontsize=13]{fontsize}
+ 
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{cleveref}
+\usepackage{multicol}
+
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+
+
+\usepackage{tnsmath}
+\usepackage{tnsalgo}
+
+\newcommand\java{\texttt{JAVA}}
+     
+\begin{document}
+
+\title{BROUILLON - Algorithmiques concurrentes}
+\author{Christophe BAL}
+\date{XXX Juin 2022}
+
+\maketitle
+
+\begin{center}
+    \itshape
+    Document, avec son source \LaTeX, disponible sur la page
+    
+    \url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+    \hrule\vspace{.3em}
+    {
+        \fontsize{1.35em}{1em}\selectfont
+        \textbf{Mentions \og légales \fg}
+    }
+            
+    \vspace{0.45em}
+    \doclicenseThis
+    \hrule
+\end{center}
+
+
+\vspace{4em}
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% --------------- %
+
+
+\newpage
+\chapter{Où allons-nous ?}
+
+\input{algo-concu-distrib/intro}
+
+
+% --------------- %
+
+
+
+\end{document}

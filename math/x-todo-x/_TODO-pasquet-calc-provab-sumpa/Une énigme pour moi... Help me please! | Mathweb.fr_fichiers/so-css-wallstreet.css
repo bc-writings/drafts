@@ -1,0 +1,324 @@
+/* Général */
+
+div {
+  color: #ffffff;
+}
+
+label {
+  color: #ffffff;
+}
+
+input {
+  color: #000000;
+}
+
+a,
+a:hover,
+a:link,
+a:visited,
+a:focus,
+a:active {
+  color: #52df30;
+  text-decoration: none;
+}
+
+cite {
+  font-size: 10px;
+}
+
+figcaption {
+  text-align: center;
+  color: #99e6f2;
+  font-style: italic;
+}
+
+/* propre au thème */
+
+.static-banner {
+  visibility: hidden;
+}
+
+@media (min-width:500px) {
+  .homepage_mycarousel {
+    height: 60px;
+    background-color: #0e3e59;
+  }
+}
+
+@media (max-width:500px) {
+  .homepage_mycarousel {
+    height: 0px;
+    background-color: #0e3e59;
+  }
+}
+
+/* Couleurs de fond */
+
+#content,
+body,
+html,
+.header-top-area,
+.footer_section,
+.navbar.navbar-wrapper.navbar-inverse.navbar-static-top,
+.service-section,
+.container.home-blog-section {
+  background-color: #0e3e59;
+}
+
+.home-blog-info,
+.blog-post-title,
+.blog-author,
+.sidebar-section,
+.comment-form-section {
+  background-color: #1e6f9e;
+}
+
+/* titres */
+
+.blog-post-title > .blog-post-title-wrapper > h2 {
+  color: #66cc6e;
+  font-size: 22pt;
+  font-weight: 400;
+}
+
+.blog-post-title > .blog-post-title-wrapper > h3 {
+  color: #cfcf1d;
+  font-size: 24px;
+}
+
+.sidebar-widget-title h2 {
+  color: #fff700;
+}
+
+.page-title-col h1 {
+  /* Titre des pages */
+  color: #ffffff;
+  text-transform: none;
+  font-style: italic;
+}
+
+/* Ultimate Member */
+
+.um-field-label,
+.um-form,
+.blog-post-title,
+.col-md-8 {
+  color: #ffffff;
+}
+
+.um-postmessage {
+  color: #ffffff;
+}
+
+.reinit-password {
+  padding: 20px;
+}
+
+.um-account-heading.uimob340-hide.uimob500-hide {
+  color: #ffffff;
+}
+
+.um-faicon-asterisk {
+  color: #ffffff;
+}
+
+.um-faicon-lock {
+  color: #ffffff;
+}
+
+.um-faicon-trash-o {
+  color: #ffffff;
+}
+
+/* Flux RSS dans la colonne de droite */
+
+.sidebar-widget > ul > li {
+  color: #fcfc00;
+  margin: 0px;
+  border-width: 0px;
+}
+
+/* Table sur la page des packages personnels */
+
+.tableSTY tr td {
+  border-collapse: separate;
+  border-spacing: 5px 8px;
+  padding: 5px;
+  border-color: transparent;
+}
+
+/* Tags des articles */
+
+.blog-tags a,
+.blog-tags a:visited,
+.blog-tags a:link,
+.blog-tags a:hover {
+  text-decoration: none;
+  color: yellow;
+}
+
+#blog-author {
+  text-decoration: none;
+  color: #52df30;
+}
+
+/* Liste des articles */
+
+.blog-post-title .blog-post-title-wrapper > ul.display-posts-listing > li.listing-item {
+  list-style-type: decimal-leading-zero;
+  color: yellow;
+}
+
+.blog-post-title .blog-post-title-wrapper ul.display-posts-listing a.title,
+.blog-post-title .blog-post-title-wrapper ul.display-posts-listing a.title:hover,
+.blog-post-title .blog-post-title-wrapper ul.display-posts-listing a.title:visited,
+.blog-post-title .blog-post-title-wrapper ul.display-posts-listing a.title:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* 
+Champs de recherche
+*/
+
+#s.search_widget_input {
+  color: #000000;
+}
+
+/* lien Articles en relation avec... */
+
+.yarpp-thumbnails-horizontal .yarpp-thumbnail-title {
+  color: #ddff00;
+}
+
+/* Téléchargements */
+
+.w3eden .table {
+  border: hidden;
+}
+
+.w3eden .table > tbody > tr > td {
+  color: #e6a10e;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+.w3eden .table > tbody > tr > th {
+  background-color: #ffffff;
+}
+
+.w3eden .list-group li {
+  background-color: #1e6f9e;
+}
+
+.card.mb-3.p-3 {
+  background-color: #1e6f9e;
+}
+
+.w3eden h1 {
+  color: #97ff47;
+}
+
+/* Menu */
+
+.navbar-nav .open .dropdown-menu > li > a {
+  background-color: #06314a;
+  width: 270px;
+}
+
+.navbar .navbar-nav > li > a {
+  padding: 10px 19px;
+}
+
+/* Pied de page */
+
+.footer-copyright {
+  border: 0px;
+}
+
+/* bloc de téléchargement wordpress */
+
+.wp-block-file.aligncenter {
+  margin-bottom: 40px;
+}
+
+div.wp-block-file > a {
+  color: yellow;
+  text-decoration: none;
+}
+
+.wp-block-file a.wp-block-file__button {
+  text-decoration: none;
+}
+
+/* bouton "lire la suite" */
+
+.home-blog-btn a {
+  color: yellow;
+}
+
+/* Fiches de cours */
+
+.post-it {
+  display: inline-grid;
+  width: 45%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffa5;
+  box-shadow: 2px 4px 6px #444;
+  -moz-box-shadow: 2px 4px 6px #444;
+  -webkit-box-shadow: 2px 4px 6px #444;
+  text-align: center;
+}
+
+.post-it a {
+  color: black;
+}
+
+/* Menu videos */
+
+div.videos {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #84b1ca;
+  color: #000000;
+}
+
+ul.videos {
+  list-style: square;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+ul.videos li a {
+  text-decoration: none;
+  color: black;
+}
+
+ul.sub-menu {
+  list-style: circle;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+ul.sub-menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.woocommerce-checkout #payment ul.payment_methods {
+  background-color: #0371a8;
+}
+
+.woocommerce-checkout #payment div.payment_box {
+  background-color: #045c6e;
+}
+
+.woocommerce-checkout #payment div.payment_box .woocommerce-SavedPaymentMethods .woocommerce-SavedPaymentMethods-new label {
+  color: #ffffff;
+}
+
+.woocommerce-checkout #payment div.form-row {
+  background-color: #2b5e8f;
+}

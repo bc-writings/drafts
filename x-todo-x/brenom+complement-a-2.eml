@@ -1,0 +1,612 @@
+Return-path: <numerique-sciences-informatiques-owner@groupes.renater.fr>
+Received: from mta2.ac-grenoble.fr ([195.221.235.166])
+ by vstore-profs5.in.ac-grenoble.fr
+ (Oracle Communications Messaging Server 8.0.1.1.0 64bit (built Jun 15 2016))
+ with ESMTP id <0Q4K00M2Z2396B80@vstore-profs5.in.ac-grenoble.fr> for
+ christophe.bal@ac-grenoble.fr; Thu, 23 Jan 2020 11:21:09 +0100 (CET)
+Original-recipient: rfc822;christophe.bal@ac-grenoble.fr
+Received: from imsva4.ac-grenoble.fr (imsva4.ac-grenoble.fr [195.221.235.180])
+	by mta2.ac-grenoble.fr (Postfix) with ESMTP id 628772050B	for
+ <christophe.bal@ac-grenoble.fr>; Thu, 23 Jan 2020 11:21:09 +0100 (CET)
+Received: from imsva4.ac-grenoble.fr (unknown [127.0.0.1])	by IMSVA (Postfix)
+ with ESMTP id 526362004F	for <christophe.bal@ac-grenoble.fr>; Thu,
+ 23 Jan 2020 11:21:09 +0100 (CET)
+Received: from imsva4.ac-grenoble.fr (unknown [127.0.0.1])	by IMSVA (Postfix)
+ with ESMTP id 2E84D20040	for <christophe.bal@ac-grenoble.fr>; Thu,
+ 23 Jan 2020 11:21:09 +0100 (CET)
+Received: from mxb1-1.relay.renater.fr (unknown [194.214.201.8])
+	by imsva4.ac-grenoble.fr (Postfix)
+ with ESMTPS	for <christophe.bal@ac-grenoble.fr>; Thu,
+ 23 Jan 2020 11:21:09 +0100 (CET)
+Received: from smtp1.cru.fr (smtp1.cru.fr [195.220.94.131])
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
+	(No client certificate requested)	by mxb1-1.relay.renater.fr (asm)
+ with ESMTPS id 560152059D	for <christophe.bal@ac-grenoble.fr>; Thu,
+ 23 Jan 2020 11:21:06 +0100 (CET)
+Received: from ix1-pv-u16-Universalistessympa-01
+ (ix1-pv-u16-universalistessympa-01.renater.fr [194.57.4.99])
+	by smtp1.cru.fr (8.13.8/8.13.8) with ESMTP id 00NAL4mO020517	for
+ <christophe.bal@ac-grenoble.fr>; Thu, 23 Jan 2020 11:21:06 +0100
+Received: by ix1-pv-u16-Universalistessympa-01 (Postfix, from userid 50002)
+	id 2072D1F6F5; Thu, 23 Jan 2020 11:21:06 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=groupes.renater.fr; h=to
+	:references:from:message-id:date:mime-version:in-reply-to
+	:subject:reply-to:sender:list-id:list-help:list-subscribe
+	:list-unsubscribe:list-post:list-owner:list-archive	:content-type; s=lists; i=
+	numerique-sciences-informatiques-request@groupes.renater.fr; bh=
+	xZkhSzvl6qRJoXOVRV4VQfhFXfc=; b=hkzAcquH/F3ucGmvw/2aiFCT0g4CX/jo
+	k9I3CAZS57dwIfuGGCm7Bxs76heHkFgwqKANJCjQJUycMxgDQOQgn8x+LNvE6P0/
+	DsLMzGqpHtl19/ZTZCHkNAlXvJcHkd86gYhbaW3E1Ne1SIxYBlIfaqtJgKD6w3Kn	xwUSozWBiO8=
+Received: from mx.cru.fr (mx.cru.fr [195.220.94.133])
+	by ix1-pv-u16-Universalistessympa-01 (Postfix) with ESMTPS id 8341F1F658	for
+ <numerique-sciences-informatiques@groupes.renater.fr>; Thu,
+ 23 Jan 2020 11:20:49 +0100 (CET)
+Received: from mxb2-1.relay.renater.fr
+ (mxb2-1.relay.renater.fr [194.214.200.8])	by mx.cru.fr (8.13.8/8.13.8/8.12-CW)
+ with ESMTP id 00NAKnta015199	for
+ <numerique-sciences-informatiques@groupes.renater.fr>; Thu,
+ 23 Jan 2020 11:20:49 +0100
+Received: from renout1.ac-montpellier.fr
+ (renout5.ac-montpellier.fr [195.83.226.44])	by mxb2-1.relay.renater.fr (asm)
+ with ESMTP id 236F0606FB	for
+ <numerique-sciences-informatiques@groupes.renater.fr>; Thu,
+ 23 Jan 2020 11:20:49 +0100 (CET)
+Received: from smtp1-racine.ac-montpellier.fr
+ (vml170mta-02.in.ac-montpellier.fr [172.29.170.105])
+	by renout1.ac-montpellier.fr (Postfix) with ESMTP id 03CD96062C	for
+ <numerique-sciences-informatiques@groupes.renater.fr>; Thu,
+ 23 Jan 2020 11:20:48 +0100 (CET)
+Received: from smtp.ac-montpellier.fr
+ (vml2101mx-01.ac-montpellier.fr [172.16.22.12])
+	by smtp1-racine.ac-montpellier.fr (Postfix) with ESMTP id 8634024B93	for
+ <numerique-sciences-informatiques@groupes.renater.fr>; Thu,
+ 23 Jan 2020 11:20:42 +0100 (CET)
+Received: from [192.168.1.63]
+ (lfbn-mon-1-1468-113.w92-167.abo.wanadoo.fr [92.167.37.113])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)	by smtp.ac-montpellier.fr (Postfix)
+ with ESMTPSA id 434B724E69	for
+ <numerique-sciences-informatiques@groupes.renater.fr>; Thu,
+ 23 Jan 2020 11:20:42 +0100 (CET)
+To: numerique-sciences-informatiques@groupes.renater.fr
+References: <54a5b0bd17529fcb.5e287ec8@ac-rennes.fr>
+ <702dc547ec3ff1a.5e288cfd@ac-rennes.fr>
+ <CANmVgc1=1mX5H=-Wcc6qjxmKC1vHgtwYgs6EJ980Mq2xmnpR=Q@mail.gmail.com>
+ <28ec77a56c3bc07c.5e28c9dd@ac-reunion.fr>
+ <44463c87-fa4b-a81d-142c-37ab7e78b793@ac-grenoble.fr>
+From: =?UTF-8?B?RnLDqWTDqXJpYyBQcm8=?= <frederic.mandon@ac-montpellier.fr>
+Message-id: <30361f80-48b2-72e6-bac0-702167dcbfd9@ac-montpellier.fr>
+Date: Thu, 23 Jan 2020 11:20:47 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
+MIME-version: 1.0
+In-reply-to: <44463c87-fa4b-a81d-142c-37ab7e78b793@ac-grenoble.fr>
+X-Spam-Status: No
+X-Scanned-By: MIMEDefang 2.79 on 127.0.0.1
+X-Original-Source-IP: 195.83.226.44
+X-Renater-SpamState: 0
+X-Renater-SpamScore: 0
+X-Renater-SpamCause:
+ gggruggvucftvghtrhhoucdtuddrgedugedrvddvgdduhecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucftgffptefvgfftpdggtfgfnhhsuhgsshgtrhhisggvnecuuegrihhlohhuthemuceftddtnecunecujfgurhepuffvfhfhkffffgggjggtsegrtderredtfeejnecuhfhrohhmpefhrhorugorrhhitgcurfhrohcuoehfrhgvuggvrhhitgdrmhgrnhguohhnsegrtgdqmhhonhhtphgvlhhlihgvrhdrfhhrqeenucfkphepudelhedrkeefrddvvdeirdeggedpledvrdduieejrdefjedruddufeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhhouggvpehsmhhtphdphhgvlhhopehrvghnohhuthdurdgrtgdqmhhonhhtphgvlhhlihgvrhdrfhhrpdhinhgvthepudelhedrkeefrddvvdeirdeggedpmhgrihhlfhhrohhmpehfrhgvuggvrhhitgdrmhgrnhguohhnsegrtgdqmhhonhhtphgvlhhlihgvrhdrfhhrpdhrtghpthhtohepnhhumhgvrhhiqhhuvgdqshgtihgvnhgtvghsqdhinhhfohhrmhgrthhiqhhuvghssehgrhhouhhpvghsrdhrvghnrghtvghrrdhfrh
+X-Renater-ServerName: mxb2-1.relay.renater.fr
+X-Bizanga: IMP - mxb2-1.relay.renater.fr
+Subject: Re: [NSI] =?UTF-8?Q?Compl=C3=A9ment_=C3=A0?= 2 d'un nombre relatif
+Reply-to: numerique-sciences-informatiques@groupes.renater.fr
+X-Loop: numerique-sciences-informatiques@groupes.renater.fr
+X-Sequence: 3668
+Errors-to: numerique-sciences-informatiques-owner@groupes.renater.fr
+Precedence: list
+Precedence: bulk
+Sender: numerique-sciences-informatiques-request@groupes.renater.fr
+X-No-Archive: yes
+List-Id: <numerique-sciences-informatiques.groupes.renater.fr>
+List-Help: <mailto:sympa@groupes.renater.fr?subject=help>
+List-Subscribe:
+ <mailto:sympa@groupes.renater.fr?subject=subscribe%20numerique-sciences-informatiques>
+List-Unsubscribe:
+ <mailto:sympa@groupes.renater.fr?subject=unsubscribe%20numerique-sciences-informatiques>
+List-Post: <mailto:numerique-sciences-informatiques@groupes.renater.fr>
+List-Owner: <mailto:numerique-sciences-informatiques-request@groupes.renater.fr>
+List-Archive:
+ <https://groupes.renater.fr/sympa/arc/numerique-sciences-informatiques>
+Archived-at:
+ <https://groupes.renater.fr/sympa/arcsearch_id/numerique-sciences-informatiques/2020-01/30361f80-48b2-72e6-bac0-702167dcbfd9%40ac-montpellier.fr>
+Content-type: multipart/mixed; boundary="----------=_1579774861-12657-1747"
+X-Original-Source-IP: 195.220.94.131
+X-Renater-SpamState: 0
+X-Renater-SpamScore: 0
+X-Renater-SpamCause:
+X-Renater-ServerName: mxb1-1.relay.renater.fr
+X-Bizanga: IMP - mxb1-1.relay.renater.fr
+X-TM-AS-GCONF: 00
+
+This is a multi-part message in MIME format...
+
+------------=_1579774861-12657-1747
+Content-Type: multipart/alternative;
+ boundary="------------66F0317A9F36A0069882A458"
+Content-Language: fr
+
+This is a multi-part message in MIME format.
+--------------66F0317A9F36A0069882A458
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Bonjour.
+
+J'utilise la méthode "conversion vers décimal - 2^(nombre de bits)", 
+mais pour la présentation je commence par le complément à 10. Ce qui 
+permet aussi de faire un lien avec l'histoire des machines, puisque les 
+premières "calculatrices" comme la pascaline faisaient les soustractions 
+de cette manière (de ce que j'ai lu, je n'ai pas eu l'heur de les tester XD)
+
+Pour la présentation, on commence par chercher un nombre _positif_ qui 
+est l'opposé de 1 (ou de n'importe quel autre nombre) ...ça perturbe un 
+peu les élèves !
+
+On écrit
+
+              1
+
++...........
+
+=...0000
+
+Les élèves trouvent très vite (il faut écrire les retenues pour que ça 
+soit bien clair pour eux):
+
+              1
+
++...9999
+
+=...0000
+
+D'une part, ça leur plait de voir un nouveau type de nombre étonnant 
+(infini vers la gauche), de pouvoir écrire une égalité mathématiquement 
+juste ...999 = -1, et ce y compris pour ceux qui ne font pas spé maths 
+(j'en ai une dizaine). Pour ceux qui font spé maths, ça leur montre 
+qu'il existe d'autres types de nombres que les nombres réels (encore 
+plus bizarres que les complexes dont certains ont déjà entendu parler 
+par leurs ainés de terminale).
+
+D'autre part le passage au complément est 2 se fait tout seul ensuite, 
+avec un exemple du même type. Il faut avoir fait du binaire avant bien 
+sûr. D'ailleurs certains élèves utilisent cette méthode pour trouver la 
+valeur d'un entier signé, avant de se rendre compte que "conversion vers 
+décimal - 2^(nombre de bits)", étant mécanique, est plus simple. Je 
+passe peu de temps sur le lien entre cette présentation,  "conversion 
+vers décimal - 2^(nombre de bits)", et "inverser les bits - 1", pas de 
+démonstration notamment (pour les perdre ça serait idéal).
+
+Frédéric
+
+Le 22/01/2020 à 19:25, Romain Janvier a écrit :
+
+> Bonsoir,
+>
+> S'il est positif, ok, c'est facile. Sinon je cherche son complément à 
+> 2. J'inverse tous les bits puis j'ajoute 1. Je convertis alors en base 
+> 10 et je mets le signe "-". En fait j'utilise juste que si on prend le 
+> complément à 2 du complément à 2, on retrouve le nombre de départ. 
+> Comme ça, il n'y a qu'une méthode à connaître pour aller dans un sens 
+> ou dans l'autre.
+>
+> Je me rends compte que je ne l'ai pas trop expliqué dans ma feuille de 
+> cours.
+>
+> Sinon pour enlever 1 à un nombre, on peut aller de droite à gauche. 
+> Tant qu'on a des 0, on met 1 et dès qu'on a un 1, on met 0 et on arrête.
+>
+> Romain
+>
+> Le 22/01/2020 à 19:17, Busser Alain a écrit :
+>> Bonsoir,
+>>
+>> je pars de l'hypothèse que le nombre à convertir est codé sur un octet, par exemple 11010010. Comme son premier bit est 1, il s'agit d'un nombre négatif et l'expression int("11010010",2)-256 donne le résultat souhaité.
+>>
+>> Alain
+>>
+>> ----- Original Message -----
+>> From: JB Mouzet<numerique-sciences-informatiques@groupes.renater.fr>  (via numerique-sciences-informatiques Mailing List)
+>> Date: Wednesday, January 22, 2020 9:51 pm
+>> Subject: Re: [NSI] Complément à 2 d'un nombre relatif
+>> To:numerique-sciences-informatiques@groupes.renater.fr
+>>
+>>
+>>> Bonsoir Christophe,
+>>>
+>>> Pour ma part voici ce que j'ai fait avec mes élèves du Lycée Camille Sée
+>>> (Paris 15ème).
+>>> Ce n'est certainement pas parfait mais c'est ma vision des choses,
+>>> pour la
+>>> rendre accessible aux élèves.
+>>>
+>>> J'espère que cela pourra t'aider.
+>>>
+>>> Tout est dans le fichier joint
+>>>
+>>> Bonne soirée
+>>>
+>>> J.Baptiste MOUZET
+>>>
+>>> Le mer. 22 janv. 2020 à 17:57, Beasse Christophe <
+>>> Christophe.Beasse@ac-rennes.fr> a écrit :
+>>>
+>>>> Bonsoir à tous,
+>>>>
+>>>> J'aurais  souhaité savoir comment vous expliquiez aux élèves la conversion
+>>>> d'un nombre binaire en complément à 2 en nombre entier relatif (base
+>>> 10).
+>>>> Comment faîtes vous pour l'étape de soustraction de 1 au nombre binaire
+>>>> pour obtenir le complément à 1 ? (la soustraction n'est pas si évidente)
+>>>> Perso je passe par la conversion en décimale puis -1 puis retour au
+>>>> binaire puis complément à 1.
+>>>> Vous connaissez une autre méthode ?
+>>>>
+>>>> Christophe Béasse
+>>>> ------
+>>>> Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences
+>>>> Informatiques (NSI) sur RENATER
+>>>>
+>>>> Informations Générales sur la Liste de Discussion NATIONALE NSI sur
+>>>> RENATER:
+>>>> https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques
+>>>>
+>>>> S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+>>>> https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques
+>>>>
+>>>> se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+>>>> https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques
+>>>>
+>>>> S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE & SCIENCES
+>>>> INFORMATIQUES : Espace de partage de Documents (cloud), Forums, Actualités,
+>>>> Agendas, Marque-pages, etc...
+>>>>
+>>>> https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi
+>>>>
+>>>> ------
+>>>> Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES listes
+>>>> à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+>>>> Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et
+>>> TOUS
+>>>> les AUTRES Espaces de Partage Tribu NATIONAUX :
+>>>> http://bit.ly/listes-renater-espaces-tribu
+>>> ------
+>>> Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences
+>>> Informatiques (NSI) sur RENATER
+>>>
+>>> Informations Générales sur la Liste de Discussion NATIONALE NSI sur RENATER:
+>>> https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques
+>>>
+>>> S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+>>> https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques
+>>>
+>>> se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+>>> https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques
+>>>
+>>> S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE & SCIENCES
+>>> INFORMATIQUES : Espace de partage de Documents (cloud), Forums,
+>>> Actualités, Agendas, Marque-pages, etc...
+>>> https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi
+>>>
+>>> ------
+>>> Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES
+>>> listes à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+>>> Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et
+>>> TOUS les AUTRES Espaces de Partage Tribu NATIONAUX :
+>>> http://bit.ly/listes-renater-espaces-tribu
+>>>
+>>> ------
+>>> Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences Informatiques (NSI) sur RENATER
+>>>
+>>> Informations Générales sur la Liste de Discussion NATIONALE NSI sur RENATER:
+>>> https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques
+>>>
+>>> S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+>>> https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques
+>>>
+>>> se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+>>> https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques
+>>>
+>>> S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE & SCIENCES INFORMATIQUES : Espace de partage de Documents (cloud), Forums, Actualités, Agendas, Marque-pages, etc...
+>>> https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi
+>>>
+>>> ------
+>>> Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES listes à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+>>> Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et TOUS les AUTRES Espaces de Partage Tribu NATIONAUX :
+>>> http://bit.ly/listes-renater-espaces-tribu
+>
+>
+>
+> ------
+> Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences Informatiques (NSI) sur RENATER
+>
+> Informations Générales sur la Liste de Discussion NATIONALE NSI sur RENATER:
+> https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques
+>
+> S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+> https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques
+>
+> se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+> https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques
+>
+> S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE & SCIENCES INFORMATIQUES : Espace de partage de Documents (cloud), Forums, Actualités, Agendas, Marque-pages, etc...
+> https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi
+>
+> ------
+> Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES listes à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+> Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et TOUS les AUTRES Espaces de Partage Tribu NATIONAUX :
+> http://bit.ly/listes-renater-espaces-tribu
+
+--------------66F0317A9F36A0069882A458
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body text="#000000" bgcolor="#FFFFFF">
+    <p>Bonjour.</p>
+    <p>J'utilise la méthode "conversion vers décimal - 2^(nombre de
+      bits)", mais pour la présentation je commence par le complément à
+      10. Ce qui permet aussi de faire un lien avec l'histoire des
+      machines, puisque les premières "calculatrices" comme la pascaline
+      faisaient les soustractions de cette manière (de ce que j'ai lu,
+      je n'ai pas eu l'heur de les tester XD)</p>
+    <p>Pour la présentation, on commence par chercher un nombre <u>positif</u>
+      qui est l'opposé de 1 (ou de n'importe quel autre nombre) ...ça
+      perturbe un peu les élèves !</p>
+    <p>On écrit</p>
+    <p>             1</p>
+    <p>+...........</p>
+    <p>=...0000</p>
+    <p>Les élèves trouvent très vite (il faut écrire les retenues pour
+      que ça soit bien clair pour eux):</p>
+    <p>             1</p>
+    <p>+...9999</p>
+    <p>=...0000</p>
+    <p>D'une part, ça leur plait de voir un nouveau type de nombre
+      étonnant (infini vers la gauche), de pouvoir écrire une égalité
+      mathématiquement juste ...999 = -1, et ce y compris pour ceux qui
+      ne font pas spé maths (j'en ai une dizaine). Pour ceux qui font
+      spé maths, ça leur montre qu'il existe d'autres types de nombres
+      que les nombres réels (encore plus bizarres que les complexes dont
+      certains ont déjà entendu parler par leurs ainés de terminale).<br>
+    </p>
+    <p>D'autre part le passage au complément est 2 se fait tout seul
+      ensuite, avec un exemple du même type. Il faut avoir fait du
+      binaire avant bien sûr. D'ailleurs certains élèves utilisent cette
+      méthode pour trouver la valeur d'un entier signé, avant de se
+      rendre compte que "conversion vers décimal - 2^(nombre de bits)",
+      étant mécanique, est plus simple. Je passe peu de temps sur le
+      lien entre cette présentation,  "conversion vers décimal -
+      2^(nombre de bits)", et "inverser les bits - 1", pas de
+      démonstration notamment (pour les perdre ça serait idéal). </p>
+    <p>Frédéric<br>
+    </p>
+    <p>Le 22/01/2020 à 19:25, Romain Janvier a écrit :<br>
+    </p>
+    <blockquote type="cite"
+      cite="mid:44463c87-fa4b-a81d-142c-37ab7e78b793@ac-grenoble.fr">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <div class="moz-cite-prefix">Bonsoir,</div>
+      <div class="moz-cite-prefix"><br>
+      </div>
+      <div class="moz-cite-prefix">S'il est positif, ok, c'est facile.
+        Sinon je cherche son complément à 2. J'inverse tous les bits
+        puis j'ajoute 1. Je convertis alors en base 10 et je mets le
+        signe "-". En fait j'utilise juste que si on prend le complément
+        à 2 du complément à 2, on retrouve le nombre de départ. Comme
+        ça, il n'y a qu'une méthode à connaître pour aller dans un sens
+        ou dans l'autre.</div>
+      <div class="moz-cite-prefix"><br>
+      </div>
+      <div class="moz-cite-prefix">Je me rends compte que je ne l'ai pas
+        trop expliqué dans ma feuille de cours.<br>
+      </div>
+      <div class="moz-cite-prefix"><br>
+      </div>
+      <div class="moz-cite-prefix">Sinon pour enlever 1 à un nombre, on
+        peut aller de droite à gauche. Tant qu'on a des 0, on met 1 et
+        dès qu'on a un 1, on met 0 et on arrête.</div>
+      <div class="moz-cite-prefix"><br>
+      </div>
+      <div class="moz-cite-prefix">Romain<br>
+      </div>
+      <div class="moz-cite-prefix"><br>
+      </div>
+      <div class="moz-cite-prefix">Le 22/01/2020 à 19:17, Busser Alain a
+        écrit :<br>
+      </div>
+      <blockquote type="cite"
+        cite="mid:28ec77a56c3bc07c.5e28c9dd@ac-reunion.fr">
+        <pre class="moz-quote-pre" wrap="">Bonsoir,
+
+je pars de l'hypothèse que le nombre à convertir est codé sur un octet, par exemple 11010010. Comme son premier bit est 1, il s'agit d'un nombre négatif et l'expression int("11010010",2)-256 donne le résultat souhaité.
+
+Alain
+
+----- Original Message -----
+From: JB Mouzet <a class="moz-txt-link-rfc2396E" href="mailto:numerique-sciences-informatiques@groupes.renater.fr" moz-do-not-send="true">&lt;numerique-sciences-informatiques@groupes.renater.fr&gt;</a> (via numerique-sciences-informatiques Mailing List)
+Date: Wednesday, January 22, 2020 9:51 pm
+Subject: Re: [NSI] Complément à 2 d'un nombre relatif
+To: <a class="moz-txt-link-abbreviated" href="mailto:numerique-sciences-informatiques@groupes.renater.fr" moz-do-not-send="true">numerique-sciences-informatiques@groupes.renater.fr</a>
+
+
+</pre>
+        <blockquote type="cite">
+          <pre class="moz-quote-pre" wrap="">Bonsoir Christophe,
+
+Pour ma part voici ce que j'ai fait avec mes élèves du Lycée Camille Sée
+(Paris 15ème).
+Ce n'est certainement pas parfait mais c'est ma vision des choses, 
+pour la
+rendre accessible aux élèves.
+
+J'espère que cela pourra t'aider.
+
+Tout est dans le fichier joint
+
+Bonne soirée
+
+J.Baptiste MOUZET
+
+Le mer. 22 janv. 2020 à 17:57, Beasse Christophe &lt;
+<a class="moz-txt-link-abbreviated" href="mailto:Christophe.Beasse@ac-rennes.fr" moz-do-not-send="true">Christophe.Beasse@ac-rennes.fr</a>&gt; a écrit :
+
+</pre>
+          <blockquote type="cite">
+            <pre class="moz-quote-pre" wrap="">Bonsoir à tous,
+
+J'aurais  souhaité savoir comment vous expliquiez aux élèves la conversion
+d'un nombre binaire en complément à 2 en nombre entier relatif (base 
+</pre>
+          </blockquote>
+          <pre class="moz-quote-pre" wrap="">10).
+</pre>
+          <blockquote type="cite">
+            <pre class="moz-quote-pre" wrap="">Comment faîtes vous pour l'étape de soustraction de 1 au nombre binaire
+pour obtenir le complément à 1 ? (la soustraction n'est pas si évidente)
+Perso je passe par la conversion en décimale puis -1 puis retour au
+binaire puis complément à 1.
+Vous connaissez une autre méthode ?
+
+Christophe Béasse
+------
+Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences
+Informatiques (NSI) sur RENATER
+
+Informations Générales sur la Liste de Discussion NATIONALE NSI sur
+RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques</a>
+
+S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques</a>
+
+se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques</a>
+
+S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE &amp; SCIENCES
+INFORMATIQUES : Espace de partage de Documents (cloud), Forums, Actualités,
+Agendas, Marque-pages, etc...
+
+<a class="moz-txt-link-freetext" href="https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi" moz-do-not-send="true">https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi</a>
+
+------
+Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES listes
+à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et 
+</pre>
+          </blockquote>
+          <pre class="moz-quote-pre" wrap="">TOUS
+</pre>
+          <blockquote type="cite">
+            <pre class="moz-quote-pre" wrap="">les AUTRES Espaces de Partage Tribu NATIONAUX :
+<a class="moz-txt-link-freetext" href="http://bit.ly/listes-renater-espaces-tribu" moz-do-not-send="true">http://bit.ly/listes-renater-espaces-tribu</a>
+</pre>
+          </blockquote>
+          <pre class="moz-quote-pre" wrap="">------
+Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences 
+Informatiques (NSI) sur RENATER
+
+Informations Générales sur la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques</a>
+
+S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques</a>
+
+se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques</a>
+
+S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE &amp; SCIENCES 
+INFORMATIQUES : Espace de partage de Documents (cloud), Forums, 
+Actualités, Agendas, Marque-pages, etc...
+<a class="moz-txt-link-freetext" href="https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi" moz-do-not-send="true">https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi</a>
+
+------
+Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES 
+listes à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et 
+TOUS les AUTRES Espaces de Partage Tribu NATIONAUX :
+<a class="moz-txt-link-freetext" href="http://bit.ly/listes-renater-espaces-tribu" moz-do-not-send="true">http://bit.ly/listes-renater-espaces-tribu</a>
+</pre>
+          <br>
+          <fieldset class="mimeAttachmentHeader"></fieldset>
+          <pre class="moz-quote-pre" wrap="">------
+Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences Informatiques (NSI) sur RENATER
+
+Informations Générales sur la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques</a>
+
+S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques</a>
+
+se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques" moz-do-not-send="true">https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques</a>
+
+S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE &amp; SCIENCES INFORMATIQUES : Espace de partage de Documents (cloud), Forums, Actualités, Agendas, Marque-pages, etc...
+<a class="moz-txt-link-freetext" href="https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi" moz-do-not-send="true">https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi</a>
+
+------
+Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES listes à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et TOUS les AUTRES Espaces de Partage Tribu NATIONAUX :
+<a class="moz-txt-link-freetext" href="http://bit.ly/listes-renater-espaces-tribu" moz-do-not-send="true">http://bit.ly/listes-renater-espaces-tribu</a></pre>
+        </blockquote>
+      </blockquote>
+      <p><br>
+      </p>
+      <br>
+      <fieldset class="mimeAttachmentHeader"></fieldset>
+      <pre class="moz-quote-pre" wrap="">------
+Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences Informatiques (NSI) sur RENATER
+
+Informations Générales sur la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques">https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques</a>
+
+S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques">https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques</a>
+
+se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+<a class="moz-txt-link-freetext" href="https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques">https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques</a>
+
+S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE &amp; SCIENCES INFORMATIQUES : Espace de partage de Documents (cloud), Forums, Actualités, Agendas, Marque-pages, etc...
+<a class="moz-txt-link-freetext" href="https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi">https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi</a>
+
+------
+Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES listes à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et TOUS les AUTRES Espaces de Partage Tribu NATIONAUX :
+<a class="moz-txt-link-freetext" href="http://bit.ly/listes-renater-espaces-tribu">http://bit.ly/listes-renater-espaces-tribu</a>
+</pre>
+    </blockquote>
+  </body>
+</html>
+
+--------------66F0317A9F36A0069882A458--
+
+------------=_1579774861-12657-1747
+Content-Type: text/plain; charset="UTF-8"
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+
+------
+Liste de Discussion NATIONALE sur l'Enseignement Numérique et Sciences Informatiques (NSI) sur RENATER
+
+Informations Générales sur la Liste de Discussion NATIONALE NSI sur RENATER:
+https://groupes.renater.fr/sympa/info/numerique-sciences-informatiques
+
+S'abonner à la Liste de Discussion NATIONALE NSI sur RENATER:
+https://groupes.renater.fr/sympa/subscribe/numerique-sciences-informatiques
+
+se Désabonner de la Liste de Discussion NATIONALE NSI sur RENATER:
+https://groupes.renater.fr/sympa/signoff/numerique-sciences-informatiques
+
+S'incrire à l'Espace Tribu NATIONAL NSI - NUMÉRIQUE & SCIENCES INFORMATIQUES : Espace de partage de Documents (cloud), Forums, Actualités, Agendas, Marque-pages, etc...
+https://tribu.phm.education.gouv.fr/portal/auth/pagemarker/434/cms/default-domain/workspaces/enseignants-nsi
+
+------
+Soyons Partageurs ! Aidez-nous à faire connaître TOUTES les AUTRES listes à TOUS vos AUTRES Collègues, et à TOUTES les AUTRES Disciplines!
+Résumé des Liens d'abonnement à TOUTES les AUTRES Listes RENATER et TOUS les AUTRES Espaces de Partage Tribu NATIONAUX :
+http://bit.ly/listes-renater-espaces-tribu
+------------=_1579774861-12657-1747--
+

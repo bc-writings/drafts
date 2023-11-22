@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html class="js" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+
+	<script async="" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/analytics.js"></script><script>(function(H){H.className = H.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>Sur une propriété de l’exponentielle – The Dude Minds…</title>
+
+<script>
+MathJax = {tex: {inlineMath: [['$','$'],['\\(','\\)']], processEscapes: true}};
+
+</script>
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="The Dude Minds... » Feed" href="https://www.thedudeminds.net/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="The Dude Minds... » Comments Feed" href="https://www.thedudeminds.net/?feed=comments-rss2">
+<link rel="alternate" type="application/rss+xml" title="The Dude Minds... » Sur une propriété de l’exponentielle Comments Feed" href="https://www.thedudeminds.net/?feed=rss2&amp;p=4035">
+<!-- This site uses the Google Analytics by MonsterInsights plugin v7.10.4 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+<script type="text/javascript" data-cfasync="false">
+	var mi_version         = '7.10.4';
+	var mi_track_user      = true;
+	var mi_no_track_reason = '';
+	
+	var disableStr = 'ga-disable-UA-18468912-2';
+
+	/* Function to detect opted out users */
+	function __gaTrackerIsOptedOut() {
+		return document.cookie.indexOf(disableStr + '=true') > -1;
+	}
+
+	/* Disable tracking if the opt-out cookie exists. */
+	if ( __gaTrackerIsOptedOut() ) {
+		window[disableStr] = true;
+	}
+
+	/* Opt-out function */
+	function __gaTrackerOptout() {
+	  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+	  window[disableStr] = true;
+	}
+	
+	if ( mi_track_user ) {
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','__gaTracker');
+
+		__gaTracker('create', 'UA-18468912-2', 'auto');
+		__gaTracker('set', 'forceSSL', true);
+		__gaTracker('send','pageview');
+	} else {
+		console.log( "" );
+		(function() {
+			/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+			var noopfn = function() {
+				return null;
+			};
+			var noopnullfn = function() {
+				return null;
+			};
+			var Tracker = function() {
+				return null;
+			};
+			var p = Tracker.prototype;
+			p.get = noopfn;
+			p.set = noopfn;
+			p.send = noopfn;
+			var __gaTracker = function() {
+				var len = arguments.length;
+				if ( len === 0 ) {
+					return;
+				}
+				var f = arguments[len-1];
+				if ( typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function' ) {
+					console.log( 'Not running function __gaTracker(' + arguments[0] + " ....) because you are not being tracked. " + mi_no_track_reason );
+					return;
+				}
+				try {
+					f.hitCallback();
+				} catch (ex) {
+
+				}
+			};
+			__gaTracker.create = function() {
+				return new Tracker();
+			};
+			__gaTracker.getByName = noopnullfn;
+			__gaTracker.getAll = function() {
+				return [];
+			};
+			__gaTracker.remove = noopfn;
+			window['__gaTracker'] = __gaTracker;
+					})();
+		}
+</script>
+<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.thedudeminds.net\/math\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.1"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="hctpc_stylesheet-css" href="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/front_end_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/dashicons.css" type="text/css" media="all">
+<link rel="stylesheet" id="hctpc_desktop_style-css" href="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/desktop_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="miniva-style-css" href="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/style.css" type="text/css" media="all">
+<style id="miniva-style-inline-css" type="text/css">
+.page-numbers.current, a.page-numbers:hover, .search-form .search-submit, .tagcloud a:hover, .calendar_wrap #today, .bypostauthor > article .fn, #submit, input[type="submit"], button[type="submit"], #infinite-handle span, .fp-post .fp-readmore-link:hover { background-color: hsl(0, 59%, 53%); }@media (min-width: 768px) { ul.primary-menu > li:hover > a { background-color: hsl(0, 59%, 53%); } }a, .post-navigation a:hover, .jetpack-social-navigation a:hover, .widget a:hover, .calendar_wrap a, .jetpack_widget_social_icons a:hover, .entry-title a:hover { color: hsl(0, 59%, 53%); }#submit:hover, input[type="submit"]:hover, button[type="submit"]:hover, #infinite-handle:hover span { background-color: hsl(0, 59%, 40%); }
+</style>
+<link rel="stylesheet" id="tablepress-default-css" href="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/default.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"pdf,doc,ppt,xls,zip,docx,pptx,xlsx","inbound_paths":"[]","home_url":"https:\/\/www.thedudeminds.net","hash_tracking":"false"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/frontend.js"></script>
+<link rel="https://api.w.org/" href="https://www.thedudeminds.net/index.php?rest_route=/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.thedudeminds.net/math/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.thedudeminds.net/math/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="La distance d’un point à une droite dans le plan (bis)" href="https://www.thedudeminds.net/?p=3980">
+<link rel="next" title="Mise en abîme" href="https://www.thedudeminds.net/?p=4074">
+<meta name="generator" content="WordPress 5.4.1">
+<link rel="canonical" href="https://www.thedudeminds.net/?p=4035">
+<link rel="shortlink" href="https://www.thedudeminds.net/?p=4035">
+<link rel="alternate" type="application/json+oembed" href="https://www.thedudeminds.net/index.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=https%3A%2F%2Fwww.thedudeminds.net%2F%3Fp%3D4035">
+<link rel="alternate" type="text/xml+oembed" href="https://www.thedudeminds.net/index.php?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=https%3A%2F%2Fwww.thedudeminds.net%2F%3Fp%3D4035&amp;format=xml">
+		<style type="text/css">
+					.site-title a,
+			.site-description,
+			.primary-menu > li > a {
+				color: #2c2c2c;
+			}
+			.header-cart .icon,
+			.header-search .search-form label .icon {
+				fill: #2c2c2c;
+			}
+
+		
+					</style>
+		<link rel="icon" href="https://www.thedudeminds.net/math/wp-content/uploads/2020/01/cropped-avatar4-1-32x32.png" sizes="32x32">
+<link rel="icon" href="https://www.thedudeminds.net/math/wp-content/uploads/2020/01/cropped-avatar4-1-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://www.thedudeminds.net/math/wp-content/uploads/2020/01/cropped-avatar4-1-180x180.png">
+<meta name="msapplication-TileImage" content="https://www.thedudeminds.net/math/wp-content/uploads/2020/01/cropped-avatar4-1-270x270.png">
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+</style></head>
+
+<body data-rsssl="1" class="post-template-default single single-post postid-4035 single-format-standard wp-custom-logo wp-embed-responsive boxed sidebar-right logo-top menu-centered logo-centered">
+
+
+<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+	<symbol viewBox="0 0 16 16" id="search"><title>search</title> <path d="M14.7,13.3L11,9.6c0.6-0.9,1-2,1-3.1C12,3.5,9.5,1,6.5,1S1,3.5,1,6.5S3.5,12,6.5,12c1.2,0,2.2-0.4,3.1-1l3.7,3.7L14.7,13.3z
+	 M2.5,6.5c0-2.2,1.8-4,4-4s4,1.8,4,4s-1.8,4-4,4S2.5,8.7,2.5,6.5z"></path> </symbol>
+	<symbol viewBox="0 0 16 16" id="expand"><title>expand</title> <polygon points="8,12.7 1.3,6 2.7,4.6 8,9.9 13.3,4.6 14.7,6 "></polygon> </symbol>
+</svg>
+
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	
+	<header id="masthead" class="site-header" role="banner">
+
+		<div class="container">
+		<div class="site-branding">
+
+			<a href="https://www.thedudeminds.net/" class="custom-logo-link" rel="home"><img src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/cropped-avatar4-2.png" class="custom-logo" alt="The Dude Minds…" width="140" height="140"></a>
+			<div class="site-branding-text">
+									<p class="site-title"><a href="https://www.thedudeminds.net/" rel="home">The Dude Minds…</a></p>
+								</div>
+		</div><!-- .site-branding -->
+
+		
+		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+			<ul id="primary-menu" class="primary-menu nav-menu" aria-expanded="false"><li class="page_item page-item-1846"><a href="https://www.thedudeminds.net/?page_id=1846">Les archives</a></li>
+</ul>
+		</nav><!-- #site-navigation -->
+
+		</div>
+	</header><!-- #masthead -->
+
+	
+	<div id="content" class="site-content container">
+
+		
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+
+<article id="post-4035" class="post-4035 post type-post status-publish format-standard hentry category-mathematiques post-single">
+
+	
+	<header class="entry-header">
+		<h1 class="entry-title">Sur une propriété de l’exponentielle</h1>			<div class="entry-meta">
+				<span class="posted-on">Posted on <a href="https://www.thedudeminds.net/?p=4035" rel="bookmark"><time class="entry-date published" datetime="TueAMGMT-0500E_203C">15/05/2012</time><time class="updated" datetime="TueAMGMT-0500E_293C">17/07/2012</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n" href="https://www.thedudeminds.net/?author=1">The Dude</a></span></span>			</div><!-- .entry-meta -->
+			</header><!-- .entry-header -->
+
+	
+	<div class="entry-content">
+		<p>On considère une fonction exponentielle d’équation</p>
+<p><img class="aligncenter size-full wp-image-4036" title="2012_05_15_01" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_01.gif" alt="" width="82" height="21"></p>
+<p>et on s’intéresse à la tangente à cette fonction passant par 
+l’origine du plan cartésien. &nbsp;Supposons que le point de tangence 
+soit</p>
+<p><img class="aligncenter size-full wp-image-4038" title="2012_05_15_03" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_03.gif" alt="" width="108" height="21"></p>
+<p>&nbsp;</p>
+<p><img class="aligncenter size-full wp-image-4051" title="2012_05_15_99" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_99.gif" alt="" srcset="https://www.thedudeminds.net/math/wp-content/uploads/2012/05/2012_05_15_99.gif 703w, https://www.thedudeminds.net/math/wp-content/uploads/2012/05/2012_05_15_99-300x166.gif 300w" sizes="(max-width: 703px) 100vw, 703px" width="703" height="390"></p>
+<p>Certainement, la pente de la tangente sera donnée d’une part par (c’est une fonction linéaire)</p>
+<p><img class="aligncenter size-full wp-image-4061" title="2012_05_15_93" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_93.gif" alt="" width="164" height="46"></p>
+<p>et d’autre part par (c’est la valeur de la dérivée en <em>x</em><sub>0</sub>)</p>
+<p><img class="aligncenter size-full wp-image-4048" title="2012_05_15_92" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_92.gif" alt="" width="51" height="23"></p>
+<p>On trouve en égalant les deux expressions de la pente</p>
+<p><img class="aligncenter size-full wp-image-4039" title="2012_05_15_04" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_04.gif" alt="" width="130" height="46"></p>
+<p>et puisque</p>
+<p><img class="aligncenter size-full wp-image-4037" title="2012_05_15_02" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_02.gif" alt="" width="144" height="23"></p>
+<p>on obtient</p>
+<p><img class="aligncenter size-full wp-image-4040" title="2012_05_15_05" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_05.gif" alt="" width="132" height="45"></p>
+<p>On trouve comme solution</p>
+<p><img class="aligncenter size-full wp-image-4041" title="2012_05_15_06" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_06.gif" alt="" width="113" height="44"></p>
+<p><img class="aligncenter size-full wp-image-4042" title="2012_05_15_07" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_07.gif" alt="" width="91" height="46"></p>
+<p>À l’aide d’un changement de base, on réécrit</p>
+<p><img class="aligncenter size-full wp-image-4043" title="2012_05_15_08" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_08.gif" alt="" srcset="https://www.thedudeminds.net/math/wp-content/uploads/2012/05/2012_05_15_08.gif 329w, https://www.thedudeminds.net/math/wp-content/uploads/2012/05/2012_05_15_08-300x49.gif 300w" sizes="(max-width: 329px) 100vw, 329px" width="329" height="54"></p>
+<p>C’est l’abscisse du point de tangence. &nbsp;L’ordonnée est</p>
+<p><img class="aligncenter size-full wp-image-4044" title="2012_05_15_09" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_09.gif" alt="" width="160" height="25"></p>
+<p>&nbsp;</p>
+<p>Il est tout à fait remarquable (et&nbsp;apparemment&nbsp;peu connu) que la valeur de l’ordonnée, <em>e</em>,&nbsp;le nombre d’Euler, ne dépend pas du choix de la base de l’exponentielle. &nbsp;Les coordonnées de P sont toujours</p>
+<p><img class="aligncenter size-full wp-image-4045" title="2012_05_15_10" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_10.gif" alt="" width="99" height="21"></p>
+<p>qu’importe la valeur choisie pour&nbsp;<em>c</em>.</p>
+<p><a href="https://www.thedudeminds.net/math/wp-content/uploads/2012/05/2012_05_15_90.gif"><img class="aligncenter size-full wp-image-4050" title="2012_05_15_90" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/2012_05_15_90.gif" alt="" srcset="https://www.thedudeminds.net/math/wp-content/uploads/2012/05/2012_05_15_90.gif 836w, https://www.thedudeminds.net/math/wp-content/uploads/2012/05/2012_05_15_90-300x140.gif 300w" sizes="(max-width: 836px) 100vw, 836px" width="836" height="392"></a></p>
+<p style="text-align: right;">Référence :&nbsp;Branko&nbsp;Ćurgus (2006), &nbsp;<em>The College Mathematics Journal Vol 37, pp. 344-354</em></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="cat-links">Posted in <a href="https://www.thedudeminds.net/?cat=4" rel="category">Mathématiques</a></span>	</footer><!-- .entry-footer -->
+
+	
+</article><!-- #post-4035 -->
+
+
+	<nav class="navigation post-navigation" role="navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://www.thedudeminds.net/?p=3980" rel="prev"><span>Previous Post</span>La distance d’un point à une droite dans le plan (bis)</a></div><div class="nav-next"><a href="https://www.thedudeminds.net/?p=4074" rel="next"><span>Next Post</span>Mise en abîme</a></div></div>
+	</nav>
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			2 thoughts on “<span>Sur une propriété de l’exponentielle</span>”		</h2><!-- .comments-title -->
+
+		
+		<ol class="comment-list">
+					<li id="comment-455" class="comment even thread-even depth-1">
+			<article id="div-comment-455" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/5c09e884be3373f9d7f6640c46056d94.jpg" srcset="https://secure.gravatar.com/avatar/5c09e884be3373f9d7f6640c46056d94?s=64&amp;d=mm&amp;r=x 2x" class="avatar avatar-32 photo" width="32" height="32">						<b class="fn">wafi</b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.thedudeminds.net/?p=4035#comment-455">
+							<time datetime="2012-05-15T21:19:54-05:00">
+								15/05/2012 at 21:19							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Bonjour, l’argumentation de la premiere expression donnant la 
+pente de la tangente n’est pas claire. Je pense qu’au lieu de parler de 
+fonction lineaire (alors qu’on parle de droite) il faut considerer la 
+pente de la droite (son coefficient directeur) ( qui dans ce cas passe 
+par l’origine) , lequel peut etre caslculé comme vous l’avez fait. Ceci 
+d’une part, d’autre part,qui nous dit qu’il existe une telle tangente?( 
+une demonstration est necessaire)<br>
+Merci pour l’idée.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		<li id="comment-456" class="comment byuser comment-author-acetyl bypostauthor odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-456" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/a9b8672de662c1aabd99be9f9f96152c.jpg" srcset="https://secure.gravatar.com/avatar/a9b8672de662c1aabd99be9f9f96152c?s=64&amp;d=mm&amp;r=x 2x" class="avatar avatar-32 photo" width="32" height="32">						<b class="fn"><a href="https://www.thedudeminds.net/" rel="external nofollow ugc" class="url">The Dude</a></b> <span class="says">says:</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="https://www.thedudeminds.net/?p=4035#comment-456">
+							<time datetime="2012-05-15T22:11:16-05:00">
+								15/05/2012 at 22:11							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Bonjour Wafi,</p>
+<p>j’ai noté les commentaires et j’ai essayé d’être plus clair (je ne 
+parle plus de fonction linéaire et j’ai mis le calcul des accroissements
+ des abscisses et ordonnées pour être plus transparent).</p>
+<p>Pour la démonstration, une fonction exponentielle f(x) = c^x est 
+dérivable et  la tangente au point P(x0, y0) passe par l’origine 
+seulement si<br>
+f'(x0) = f(x0)/x0. Dans notre cas, je crois qu’il suffit de choisir correctement x0 comme 1/ln(c) et le reste devrait suivre.</p>
+<p>Pour un traitement plus approfondi sur des familles larges de fonctions possédant cette propriété, je vous renvoie à </p>
+<p>Dietel &amp; Gordon, Off on a Tangent.  The College Mathematics Journal, Vol.34 2003</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+		</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.thedudeminds.net/?p=4035#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://www.thedudeminds.net/math/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="url" size="30" maxlength="200"></p>
+<p class="hctpc_block"><span class="hctpc_title">Résolvez l'équation ci-dessous...<span class="required"> *</span></span><script class="hctpc_to_remove">
+				(function( timeout ) {
+					setTimeout(
+						function() {
+							var notice = document.getElementById("hctpc_time_limit_notice_12");
+							if ( notice )
+								notice.style.display = "block";
+						},
+						timeout
+					);
+				})(120000);
+			</script>
+			<span id="hctpc_time_limit_notice_12" class="hctpc_time_limit_notice hctpc_to_remove">Time limit is exhausted. Please reload the CAPTCHA.</span><span class="hctpc_wrap hctpc_math_actions">
+				<label class="hctpc_label" for="hctpc_input_12"><span class="hctpc_span">five</span>
+					<span class="hctpc_span">&nbsp;+&nbsp;</span>
+					<span class="hctpc_span"><input id="hctpc_input_12" class="hctpc_input hctpc_wp_comments" type="text" autocomplete="off" name="hctpc_number" maxlength="2" size="2" aria-required="true" required="required" style="margin-bottom:0;display:inline;font-size: 12px;width: 40px;"></span>
+					<span class="hctpc_span">&nbsp;=&nbsp;</span>
+					<span class="hctpc_span">8</span>
+					<input type="hidden" name="hctpc_result" value="NLM="><input type="hidden" name="hctpc_time" value="1591051633">
+					<input type="hidden" name="hctpc_form" value="wp_comments">
+				</label><span class="hctpc_reload_button_wrap hide-if-no-js">
+					<noscript>
+						<style type="text/css">
+							.hide-if-no-js {
+								display: none !important;
+							}
+						</style>
+					</noscript>
+					<span class="hctpc_reload_button dashicons dashicons-update"></span>
+				</span></span></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="4035" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="b8dbdf7cea"></p><p style="display: none;"></p><input type="hidden" id="ak_js" name="ak_js" value="1591051632621"></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+<aside id="secondary" class="widget-area" role="complementary">
+	<section id="search-5" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://www.thedudeminds.net/">
+		<label>
+			<svg aria-hidden="true" width="16" height="16" class="icon"><use xlink:href="#search"></use></svg>
+			<span class="screen-reader-text">Search for:</span>
+			<input type="search" class="search-field" placeholder="Search …" name="s">
+		</label>
+		<button type="submit" class="search-submit">
+			<svg aria-hidden="true" width="16" height="16" class="icon"><use xlink:href="#search"></use></svg>
+			<span class="screen-reader-text">Search</span>
+		</button>
+	</form></section><section id="text-3" class="widget widget_text"><h2 class="widget-title">The Dude…</h2>			<div class="textwidget"><p>vous
+ souhaite la bienvenue sur son blogue de mathématiques élémentaires et 
+espère que vous y trouverez quelques résultats surprenants.</p>
+<p>The Dude est un enseignant de mathématiques dans une école secondaire
+ de la Commission scolaire de Montréal.  Il travaille aussi pour un 
+organisme à but non-lucratif d'aide aux devoirs.</p>
+</div>
+		</section><section id="linkcat-5" class="widget widget_links"><h2 class="widget-title">The Dude vous recommande...</h2>
+	<ul class="xoxo blogroll">
+<li><a href="https://www.3blue1brown.com/" title="Animated math" target="_blank">3blue1brown</a></li>
+<li><a href="http://www.windytan.com/" title="random hacks &amp; assorted infodumps. by windytan [oona räisänen]" target="_top">absorbtions</a></li>
+<li><a href="http://accromath.uqam.ca/" title="Revue semi-annuelle québécoise de mathématiques" target="_blank">Accromath</a></li>
+<li><a href="http://acko.net/" title="Hackery, Math &amp; Design" target="_top">acko.net</a></li>
+<li><a href="http://algorythmes.blogspot.com/" title="Bog de maths" target="_blank">AlgoRythmes</a></li>
+<li><a href="https://docs.google.com/spreadsheet/ccc?key=0AkLk45wwjYBudG9LeXRad0lHM0E0VFRyOEtRckVvM1E#gid=0" target="_blank">Andrew Stadel 3-Act Math Tasks</a></li>
+<li><a href="http://intothecontinuum.tumblr.com/" title="A perspective on mathematics, the pattern, and the abstract" target="_blank">Archery</a></li>
+<li><a href="http://mathforum.org/dr/math/" title="Question and answer service for math students and teachers" target="_blank">Ask Dr Math</a></li>
+<li><a href="http://blogdemaths.wordpress.com/" title="Un blog autour des mathématiques" target="_blank">Blogdemaths</a></li>
+<li><a href="http://bidouillesetmathscollege.blogspot.fr/" title="Des bricolages pour visualiser ou trouver les théorèmes de mathématiques de collège et de lycée, pour sentir et toucher les maths . ( entre autres)" target="_blank">BricoMaths</a></li>
+<li><a href="http://brouillondepoulet.blogspot.com/" title="Ce blogue s’intéresse principalement aux mathématiques et à l’éducation." target="_blank">Brouillon de poulet pour l'âne</a></li>
+<li><a href="https://www.c82.net/euclid/" title="A reproduction of Oliver Byrne’s celebrated work from 1847 plus interactive diagrams, cross references, and posters designed by Nicholas Rougeux" target="_blank">Byrne's Euclid</a></li>
+<li><a href="http://www.chaos-math.org/fr" title="CHAOS est un film mathématique constitué de neuf chapitres de treize minutes chacun. Il s’agit d’un film tout public autour des systèmes dynamiques, de l’effet papillon et de la théorie du chaos." target="_blank">CHAOS une aventure mathématique</a></li>
+<li><a href="http://eljjdx.canalblog.com/" target="_blank">Choux romanesco, vache qui rit et intégrales curvilignes</a></li>
+<li><a href="http://samjshah.com/" title="Math’s loudest and most passionate cheerleader" target="_blank">Continuous Everywhere but Differentiable Nowhere</a></li>
+<li><a href="http://www.cut-the-knot.org/" title="Interactive Mathematics Miscellany  and Puzzles" target="_top">Cut the knot</a></li>
+<li><a href="http://www.cutoutfoldup.com/" title="Interesting things to make out of paper—from mathematical models to toys." target="_blank">Cutoutfoldup</a></li>
+<li><a href="http://threeacts.mrmeyer.com/" target="_blank">Dan Meyer's Three-Act Math Tasks</a></li>
+<li><a href="http://www.datagenetics.com/blog.html" title="Data Decoded, Value Unlocked." target="_blank">Data Genetics</a></li>
+<li><a href="http://www.datapointed.net/" title="home of artist and scientist Stephen Von Worley’s data visualization research;" target="_blank">Data Pointed</a></li>
+<li><a href="https://www.desmos.com/" title="Graph functions, plot data, evaluate equations, explore transformations, and much more – for free!" target="_top">Desmos</a></li>
+<li><a href="http://www.dimensions-math.org/Dim_fr.htm" title="Un film. Neuf chapitres, deux heures de maths, pour découvrir progressivement la quatrième dimension." target="_blank">Dimension Mathématiques</a></li>
+<li><a href="http://divisbyzero.com/" title="A blog about math, puzzles, teaching, and academic technology" target="_blank">Division by zero</a></li>
+<li><a href="http://blog.mrmeyer.com/" title="Dan “less helpful” Meyer’s Blog" target="_blank">dy/dan</a></li>
+<li><a href="http://fxnoftime.com/" title="Function of time : Messing Stuff Up. Writing It Down." target="_blank">f(t)</a></li>
+<li><a href="http://www.geogebra.org/" title="Logiciel libre pour enseigner et apprendre les mathématiques" target="_blank">Géogébra</a></li>
+<li><a href="http://geometrydaily.tumblr.com/" title="A new minimal geometric composition each day" target="_top">Geometry Daily</a></li>
+<li><a href="http://www.inclassablesmathematiques.fr/" title="Blog dédié ( entre autres ) aux mathématiques et à leurs liens avec d’autres domaines" target="_blank">Inclassables Mathématiques</a></li>
+<li><a href="http://www.jamestanton.com/" title="High school mathematics and beyond !" target="_blank">James Tanton</a></li>
+<li><a href="http://www.khanacademy.org/" title="Non-for-profit organization’s video library" target="_blank">Khan Academy</a></li>
+<li><a href="http://mathforum.org/wagon/" title="Problem of the week by Stan Wagon" target="_blank">Macalester College Problem of the Week</a></li>
+<li><a href="http://mathmunch.wordpress.com/" title="A Weekly Digest of the Mathematical Internet" target="_top">Math Munch</a></li>
+<li><a href="http://www.mathcurve.com/" title="Encyclopédie des courbes et autres polyèdres, surfaces et fractals" target="_blank">Mathcurve</a></li>
+<li><a href="https://www.youtube.com/channel/UC1_uAIS3r8Vu6JjXWvastJg" title="Enter the world of the Mathologer in which beautiful math(s) rules." target="_blank">Mathologer</a></li>
+<li><a href="http://www.numberphile.com/" title="Videos about numbers – it’s that simple. Videos by Brady Haran" target="_blank">Numberphile</a></li>
+<li><a href="https://oeis.org/" title="Freely-available online database of integer sequences, created and maintained by N. J. A. Sloane">OEIS</a></li>
+<li><a href="http://www.pims.math.ca/resources/publications/pi-sky" title="Pacific Institute for Mathematical Science free online magazine" target="_blank">Pi In The Sky</a></li>
+<li><a href="http://coxmath.blogspot.com/" title="Trying to make it matter." target="_blank">Questions?</a></li>
+<li><a href="https://www.reddit.com/" title="The frontpage of the internet" target="_top">Reddit</a></li>
+<li><a href="http://singingbanana.tumblr.com/" title=" Mathematician, juggler and comedy nerd – but not necessarily in that order." target="_blank">singingbanana's lazy microblog</a></li>
+<li><a href="http://www.smbc-comics.com/" title="Humour" target="_blank">SMBC</a></li>
+<li><a href="http://blog.tanyakhovanova.com/" title="Mathematics, applications of mathematics to life in general, and my life as a mathematician" target="_blank">Tanya Khovanova’s Math Blog</a></li>
+<li><a href="http://www.ted.com/" title="Ideas worth spreading" target="_blank">TED</a></li>
+<li><a href="http://aperiodical.com/" title="The Aperiodical is a meeting-place for people who already know they like maths and would like to know more." target="_top">The Aperiodical</a></li>
+<li><a href="http://theoatmeal.com/" title="Comics, Quizzes, and Stories…" target="_blank">The Oatmeal</a></li>
+<li><a href="http://theproofistrivial.com/" target="_blank">The Proof Is Trivial</a></li>
+<li><a href="http://www.thisiscolossal.com/" title="Art &amp; Visual Ingenuity" target="_blank">This is Colossal</a></li>
+<li><a href="http://www.veritasium.com/" title="An element of truth" target="_blank">Veritasium</a></li>
+<li><a href="http://vihart.com/" title="Recreational mathemusician" target="_blank">Vi Hart</a></li>
+<li><a href="http://www.wolframalpha.com/" title="A Computational knowledge engine" target="_blank">Wolfram Alpha</a></li>
+<li><a href="http://mathworld.wolfram.com/" title="The web’s most extensive mathematics resource" target="_blank">Wolfram Mathworld</a></li>
+<li><a href="http://www.woollythoughts.com/" title="In Pursuit of Crafty Mathematics" target="_blank">Wooly Thoughts</a></li>
+<li><a href="http://xkcd.com/" title="A webcomic of romance, sarcasm, math and language" target="_blank">XKDC</a></li>
+
+	</ul>
+</section>
+<section id="linkcat-24" class="widget widget_links"><h2 class="widget-title">RSS</h2>
+	<ul class="xoxo blogroll">
+<li><a href="https://www.thedudeminds.net/?feed=comments-rss2" target="_blank">All comments</a></li>
+<li><a href="https://www.thedudeminds.net/?feed=rss2" target="_blank">All posts</a></li>
+
+	</ul>
+</section>
+<section id="linkcat-25" class="widget widget_links"><h2 class="widget-title">Meta</h2>
+	<ul class="xoxo blogroll">
+<li><a href="https://www.thedudeminds.net/math/wp-admin" target="_blank">Log in</a></li>
+
+	</ul>
+</section>
+<section id="text-5" class="widget widget_text"><h2 class="widget-title">Licence</h2>			<div class="textwidget"><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.fr"><img alt="Licence Creative Commons" style="border-width:0" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/88x31.png"></a></div>
+		</section><section id="text-2" class="widget widget_text">			<div class="textwidget"><p>Mathematics,
+ rightly viewed,&nbsp;possesses not only truth, but supreme beauty – a 
+beauty cold and austere, like that of sculpture, without appeal to any 
+part of our weaker nature, without the gorgeous trappings of painting or
+ music, yet sublimely pure, and capable of a stern perfection such as 
+only the greatest art can show.</p>
+<p>Bertrand Russell (1872 –&nbsp; 1970)</p>
+</div>
+		</section></aside><!-- #secondary -->
+
+		
+	</div><!-- #content -->
+
+	
+	<footer id="colophon" class="site-footer" role="contentinfo">
+
+		<div class="container"><div class="footer-widgets footer-widgets-3"><div class="footer-widget-1"></div><div class="footer-widget-2"></div><div class="footer-widget-3"></div></div>
+		<div class="site-info">
+			Powered by	<a href="https://tajam.id/miniva/">
+		Miniva WordPress Theme	</a>
+			</div><!-- .site-info -->
+
+		</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="text/javascript" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/tex-chtml.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var miniva = {"fluidvids":"1","expand_text":"expand sub menu","collapse_text":"collapse sub menu"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/functions.js"></script>
+<script type="text/javascript" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/wp-embed.js"></script>
+<script async="async" type="text/javascript" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/form.js"></script>
+<script type="text/javascript" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/jquery.js"></script>
+<script type="text/javascript" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/jquery-migrate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var hctpc_vars = {"nonce":"73934caf41","ajaxurl":"https:\/\/www.thedudeminds.net\/math\/wp-admin\/admin-ajax.php","enlarge":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Sur%20une%20proprie%CC%81te%CC%81%20de%20l%E2%80%99exponentielle%20%E2%80%93%20The%20Dude%20Minds%E2%80%A6_fichiers/front_end_script.js"></script>
+
+
+
+</body></html>

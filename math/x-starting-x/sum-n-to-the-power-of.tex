@@ -1,0 +1,114 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\usepackage{tnsmath}
+
+\DeclareMathOperator{\taille}{\tau}
+
+\newtheorem{fact}{Fait}
+\newtheorem*{proof*}{Preuve}
+
+\newtheorem{remark}{Remarque}[section]
+
+\setlength\parindent{0pt}
+
+
+\newcommand\squote[1]{\og #1 \fg{}}
+
+\newcommand\myabrev[1]{\textbf{\emph{#1}}}
+
+% Source: https://tex.stackexchange.com/a/568582/6880
+\let\olditem\item
+\newlist{methods}{itemize}{1}
+\setlist[methods]{%
+    align=right,
+    before=\changeitem,
+    font=\bfseries,
+    after=\let\item\olditem,
+    leftmargin=2.35cm
+}
+\newcommand*{\changeitem}{%
+    \renewcommand*{\item}[1][]{%
+        \olditem[##1 \emph{:}]
+    }%
+}
+
+\newenvironment{focusproof}{
+	\begin{tcolorbox}
+}{
+	\end{tcolorbox}
+}
+
+\newcommand\methodo[2]{méthode de type \uppercase{#1}-#2}
+
+
+\begin{document}
+
+\title{BROUILLON - Sommer des n à la puissance de \dots \\{\small(08/12/2021)}}
+
+\author{Christophe BAL}
+
+\maketitle
+
+
+% ------------- %
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+% ------------- %
+
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
+% ------------- %
+
+
+\newpage
+\section{Que voulons-nous ?}
+
+\input{sum-n-to-the-power-of/intro}
+
+
+% ------------- %
+
+
+\bigskip
+
+\hrule
+
+\bigskip
+{\Huge AFFAIRE À SUIVRE...}
+\bigskip
+
+\bigskip
+
+\hrule
+
+\end{document}

@@ -1,0 +1,45 @@
+a.lastsubject {
+	font-weight: lighter;
+}
+
+.site_logo {
+	background-image: url("./images/site_logo.svg");
+}
+
+code.inline {
+	background: #FFF;
+	border: 1px solid #C9D2D8;
+	color: #2E8B57;
+	display: inline;
+	font-family: Monaco, "Andale Mono", "Courier New", Courier, monospace;
+	font-size: 0.9em;
+	font-style: normal;
+	line-height: 1.3em;
+	white-space: pre;
+	padding: 0 1px;
+}
+
+.headerbar, .forumbg {
+	background-image: none !important;
+	background-color: #0076B1E0;
+}
+
+.forabg {
+	background-image: none !important;
+}
+
+.postlink {
+	text-decoration: underline;
+	border: none;
+}
+
+/*
+.postbody h3 {
+	display: none;
+}
+
+p.author {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+*/

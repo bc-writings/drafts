@@ -1,0 +1,10 @@
+Bien que très joli, idéal pour un exercice sur le calcul algébrique et l'algirithmique en fin de 2nde, ce critère n'est pas des plus efficaces.
+
+Reprenons par exemple 1673.
+
+1673 = 1400 + 273
+273 = 210 + 63
+
+1400, 210 et 63 sont des multiples de 7 et leur découverte est immédiate.
+
+Par contre, avoir trouvé ceci seul est une belle découverte.

@@ -1,0 +1,76 @@
+@import 'https://fonts.googleapis.com/css?family=Reenie+Beanie';
+
+.post-it {
+  font-family: 'Reenie Beanie';
+  position: relative;
+  font-size: 30pt;
+  display: inline-grid;
+  width: 40%;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  background-color: #e5dd7c;
+  text-align: center;
+}
+
+.post-it:before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  border-color: #FFF #FFF #E5CF33 #E5CF33;
+  border-style: solid;
+  border-width: 0px 20px 20px 0px;
+  height: 0px;
+  width: 0px;
+  display: block;
+  -moz-box-shadow: 0pt 2px 1px rgba(0, 0, 0, 0.2), -2px 1px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0pt 2px 1px rgba(0, 0, 0, 0.2), -2px 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0pt 2px 1px rgba(0, 0, 0, 0.2), -2px 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-border-radius: 0pt 0pt 0pt 5px;
+  -webkit-border-radius: 0pt 0pt 0pt 5px;
+  border-radius: 0pt 0pt 0pt 5px;
+  border-color: #FFFFFF #FFFFFF #E5CF33 #E5CF33;
+  border-width: 10px;
+}
+
+ul li a {
+  text-decoration: none !important;
+}
+
+ul li {
+  list-style: square;
+}
+
+.um_article {
+  width: 50%;
+  background-color: #72bac6;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px black;
+}
+
+.elementor a {
+  font-size: 18px;
+  font-family: Architects Daughter;
+}
+
+.tableSTY thead {
+  background-color: #57a6b4;
+  font-weight: bold;
+  color: #084e5a;
+  font-family: 'Reenie Beanie';
+  font-size: 18pt;
+}
+
+#main.site-main.clr {
+  background-color: #ffffff;
+}
+
+h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

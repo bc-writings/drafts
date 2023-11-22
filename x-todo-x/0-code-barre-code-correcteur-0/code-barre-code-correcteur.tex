@@ -1,0 +1,45 @@
+ % !TEX encoding = UTF-8 Unicode
+\documentclass[a4paper, 12pt]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[top=2.15cm, bottom=2.15cm, left=1.95cm, right=1.95cm]{geometry}
+
+\usepackage[french]{babel}
+\usepackage{bera}
+
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\usepackage{lastpage}
+\usepackage{graphicx}
+
+\usepackage{minted}
+
+\usepackage{tnsmath}
+
+
+\begin{document}
+
+\section*{Contexte}
+
+Code-barres : $a_1$ , $a_2$ , ... , $a_13$
+
+Id. du produit : $a_1$ , $a_2$ , ... , $a_12$
+ 
+Clé de contrôle : $a_13$
+ 
+Avec le bon id., 
+$3 \cdot a_{pair} + a_{impair < 13} + a_{13} \equiv 0$ modulo $10$
+
+
+\section*{Erreeur de lecture sur un seul rang pair}
+
+On peut supposer que c'est la lecture de $a_2$ qui est erroné sans perte de généralité.
+
+Cela revient à considérer $a_2 + \delta$ avec $\delta \nequiv 0$ modulo $10$ .
+
+Modulo $10$ , au lieu de $3 \cdot a_{pair} + a_{impair < 13} + a_{13}$ , on a donc $3 \delta$ qui est dans $\setgene{3 ; 6 ; 9 ; 2 ; 5 ; 8 ; }$ modulo $10$ .
+
+\end{document}

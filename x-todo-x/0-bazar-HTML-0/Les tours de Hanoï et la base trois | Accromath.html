@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="fr-FR"><head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+    <title>Les tours de Hanoï et la base trois | Accromath</title>
+    <!--[if lt IE 9]><script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->  
+    <!--[if lt IE 9]> <link rel='stylesheet' id=''  href='http://accromath.uqam.ca/accro/wp-content/themes/magazon-wp/ie8.css' type='text/css' media='all' /><![endif]--> 
+            
+    
+<div class="fit-vids-style">­<style>               .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       </style></div><script src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/cbgapi.js" async=""></script><script src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/cbgapi_002.js" async=""></script><script type="text/javascript" async="" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/plusone.js" gapi_processed="true"></script><script id="twitter-wjs" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/widgets.js"></script><script async="" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/analytics.js"></script><script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});
+</script>
+<link rel="alternate" type="application/rss+xml" title="Accromath » Flux" href="http://accromath.uqam.ca/feed/">
+<link rel="alternate" type="application/rss+xml" title="Accromath » Flux des commentaires" href="http://accromath.uqam.ca/comments/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/accromath.uqam.ca\/accro\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.5.17"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="contact-form-7-css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="newsletter-css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="st_style-css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/style.css" type="text/css" media="screen">
+<link rel="stylesheet" id="font-awesome-css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="ddsmoothmenu-css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/ddsmoothmenu.css" type="text/css" media="all">
+<link rel="stylesheet" id="flexslider-css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/flexslider.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="custom_css-css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/custom.css" type="text/css" media="all">
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/jquery_002.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/jquery-migrate.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/fdfootnotes.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/jquery_005.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/jquery_004.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/jquery_003.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/custom.js"></script>
+<link rel="https://api.w.org/" href="http://accromath.uqam.ca/wp-json/">
+<link rel="prev" title="Glanures mathématico-littéraires (I)" href="http://accromath.uqam.ca/2016/02/glanures-mathematico-litteraires-i/">
+<link rel="next" title="Modèles globaux ou régionaux: comment zoomer le climat?" href="http://accromath.uqam.ca/2016/02/modeles-globaux-ou-regionaux-comment-zoomer-le-climat/">
+<link rel="canonical" href="http://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/">
+<link rel="shortlink" href="http://accromath.uqam.ca/?p=15333">
+<link rel="alternate" type="application/json+oembed" href="http://accromath.uqam.ca/wp-json/oembed/1.0/embed?url=http%3A%2F%2Faccromath.uqam.ca%2F2016%2F02%2Fles-tours-de-hanoi-et-la-base-trois%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://accromath.uqam.ca/wp-json/oembed/1.0/embed?url=http%3A%2F%2Faccromath.uqam.ca%2F2016%2F02%2Fles-tours-de-hanoi-et-la-base-trois%2F&amp;format=xml">
+		<style type="text/css">
+			.comments-link {
+				display: none;
+			}
+					</style>
+		<!-- Hide Comments plugin -->
+		<style type="text/css">
+body{  font-family: 'Helvetica'; font-style: normal;   font-style: normal;  font-weight: normal;  }
+</style>
+<style type="text/css">
+.post-title,.widget-post-title{  font-family: 'Helvetica'; font-style: normal;   font-style: normal;  font-weight: bold;  }
+</style>
+<style type="text/css">
+.st-category-heading,.category .page-title,.search .page-title,.archive .page-title{  font-family: 'Helvetica'; font-style: normal;   font-style: normal;  font-weight: bold;  }
+</style>
+    
+    <style type="text/css">
+      /************** Predefined Colors ********************/
+        .primary-nav ul li a:hover,.primary-nav ul li.current-menu-item > a,.primary-nav ul li a:hover,.primary-nav ul li.current-menu-item > a,.carousel-post-meta,.read-more-button,.list-tabbed li.list-tabbed-active a,table#wp-calendar thead > tr > th,table#wp-calendar td#today,.carousel-wrapper .flex-direction-nav .flex-prev:hover,.carousel-wrapper .flex-direction-nav .flex-next:hover,.subs_submit:hover,.tagcloud a:hover,.author-text b,#submit,.page-tags a:hover,.categories a,.thumb-slider-wrapper .flex-direction-nav .flex-next:hover,.thumb-slider-wrapper .flex-direction-nav .flex-prev:hover,.review-score-over, .review-total-score-wrapper .right,.inside-post-slider .flex-direction-nav .flex-next:hover,.inside-post-slider .flex-direction-nav .flex-prev:hover,.inside-post-slider .flex-control-nav li a.flex-active,.inside-post-slider .flex-control-nav li a:hover,.btn.color,.btn:hover,.tab-title li.current,.acc-title-active,.acc-title:hover,.toggle-title:hover,.toggle_current,.st-pagination .page-current,.st-pagination li a:hover,.carousel-next:hover,.carousel-prev:hover,.content input[type=submit]{background-color: #d1561b;-webkit-transition: all .2s linear;-moz-transition: all .2s linear;-o-transition: all .2s linear;transition: all .2s linear;}.footer-wrapper li.widget-post-wrapper:hover .widget-post-thumb img,.flickr_badge_image a img:hover{border: 1px solid #d1561b;-webkit-transition: all .2s linear;-moz-transition: all .2s linear;-o-transition: all .2s linear;transition: all .2s linear;
+    }
+    </style>
+    <style type="text/css">body {background:  #CCCCCC url(CCCCCC) ; }</style>	
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-43318136-1', 'accromath.ca');
+  ga('send', 'pageview');
+
+</script>    <script src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/accromath.js"></script>
+    <link rel="stylesheet" type="text/css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/accromath.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/accromath-print-2.css" media="print">
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script charset="utf-8" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/button.js"></script><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.mjx-chtml {display: inline-block; line-height: 0; text-indent: 0; text-align: left; text-transform: none; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; letter-spacing: normal; word-wrap: normal; word-spacing: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; margin: 0; padding: 1px 0}
+.MJXc-display {display: block; text-align: center; margin: 1em 0; padding: 0}
+.mjx-chtml[tabindex]:focus, body :focus .mjx-chtml[tabindex] {display: inline-table}
+.mjx-full-width {text-align: center; display: table-cell!important; width: 10000em}
+.mjx-math {display: inline-block; border-collapse: separate; border-spacing: 0}
+.mjx-math * {display: inline-block; -webkit-box-sizing: content-box!important; -moz-box-sizing: content-box!important; box-sizing: content-box!important; text-align: left}
+.mjx-numerator {display: block; text-align: center}
+.mjx-denominator {display: block; text-align: center}
+.MJXc-stacked {height: 0; position: relative}
+.MJXc-stacked > * {position: absolute}
+.MJXc-bevelled > * {display: inline-block}
+.mjx-stack {display: inline-block}
+.mjx-op {display: block}
+.mjx-under {display: table-cell}
+.mjx-over {display: block}
+.mjx-over > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-under > * {padding-left: 0px!important; padding-right: 0px!important}
+.mjx-stack > .mjx-sup {display: block}
+.mjx-stack > .mjx-sub {display: block}
+.mjx-prestack > .mjx-presup {display: block}
+.mjx-prestack > .mjx-presub {display: block}
+.mjx-delim-h > .mjx-char {display: inline-block}
+.mjx-surd {vertical-align: top}
+.mjx-mphantom * {visibility: hidden}
+.mjx-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 2px 3px; font-style: normal; font-size: 90%}
+.mjx-annotation-xml {line-height: normal}
+.mjx-menclose > svg {fill: none; stroke: currentColor}
+.mjx-mtr {display: table-row}
+.mjx-mlabeledtr {display: table-row}
+.mjx-mtd {display: table-cell; text-align: center}
+.mjx-label {display: table-row}
+.mjx-box {display: inline-block}
+.mjx-block {display: block}
+.mjx-span {display: inline}
+.mjx-char {display: block; white-space: pre}
+.mjx-itable {display: inline-table; width: auto}
+.mjx-row {display: table-row}
+.mjx-cell {display: table-cell}
+.mjx-table {display: table; width: 100%}
+.mjx-line {display: block; height: 0}
+.mjx-strut {width: 0; padding-top: 1em}
+.mjx-vsize {width: 0}
+.MJXc-space1 {margin-left: .167em}
+.MJXc-space2 {margin-left: .222em}
+.MJXc-space3 {margin-left: .278em}
+.mjx-chartest {display: block; visibility: hidden; position: absolute; top: 0; line-height: normal; font-size: 500%}
+.mjx-chartest .mjx-char {display: inline}
+.mjx-chartest .mjx-box {padding-top: 1000px}
+.MJXc-processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MJXc-processed {display: none}
+.mjx-test {display: block; font-style: normal; font-weight: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow: hidden; height: 1px}
+.mjx-ex-box-test {position: absolute; overflow: hidden; width: 1px; height: 60ex}
+.mjx-line-box-test {display: table!important}
+.mjx-line-box-test span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+#MathJax_CHTML_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.mjx-chtml .mjx-noError {line-height: 1.2; vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+.MJXc-TeX-unknown-R {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: normal}
+.MJXc-TeX-unknown-I {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: normal}
+.MJXc-TeX-unknown-B {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: normal; font-weight: bold}
+.MJXc-TeX-unknown-BI {font-family: STIXGeneral,'Cambria Math','Arial Unicode MS',serif; font-style: italic; font-weight: bold}
+.MJXc-TeX-ams-R {font-family: MJXc-TeX-ams-R,MJXc-TeX-ams-Rw}
+.MJXc-TeX-cal-B {font-family: MJXc-TeX-cal-B,MJXc-TeX-cal-Bx,MJXc-TeX-cal-Bw}
+.MJXc-TeX-frak-R {font-family: MJXc-TeX-frak-R,MJXc-TeX-frak-Rw}
+.MJXc-TeX-frak-B {font-family: MJXc-TeX-frak-B,MJXc-TeX-frak-Bx,MJXc-TeX-frak-Bw}
+.MJXc-TeX-math-BI {font-family: MJXc-TeX-math-BI,MJXc-TeX-math-BIx,MJXc-TeX-math-BIw}
+.MJXc-TeX-sans-R {font-family: MJXc-TeX-sans-R,MJXc-TeX-sans-Rw}
+.MJXc-TeX-sans-B {font-family: MJXc-TeX-sans-B,MJXc-TeX-sans-Bx,MJXc-TeX-sans-Bw}
+.MJXc-TeX-sans-I {font-family: MJXc-TeX-sans-I,MJXc-TeX-sans-Ix,MJXc-TeX-sans-Iw}
+.MJXc-TeX-script-R {font-family: MJXc-TeX-script-R,MJXc-TeX-script-Rw}
+.MJXc-TeX-type-R {font-family: MJXc-TeX-type-R,MJXc-TeX-type-Rw}
+.MJXc-TeX-cal-R {font-family: MJXc-TeX-cal-R,MJXc-TeX-cal-Rw}
+.MJXc-TeX-main-B {font-family: MJXc-TeX-main-B,MJXc-TeX-main-Bx,MJXc-TeX-main-Bw}
+.MJXc-TeX-main-I {font-family: MJXc-TeX-main-I,MJXc-TeX-main-Ix,MJXc-TeX-main-Iw}
+.MJXc-TeX-main-R {font-family: MJXc-TeX-main-R,MJXc-TeX-main-Rw}
+.MJXc-TeX-math-I {font-family: MJXc-TeX-math-I,MJXc-TeX-math-Ix,MJXc-TeX-math-Iw}
+.MJXc-TeX-size1-R {font-family: MJXc-TeX-size1-R,MJXc-TeX-size1-Rw}
+.MJXc-TeX-size2-R {font-family: MJXc-TeX-size2-R,MJXc-TeX-size2-Rw}
+.MJXc-TeX-size3-R {font-family: MJXc-TeX-size3-R,MJXc-TeX-size3-Rw}
+.MJXc-TeX-size4-R {font-family: MJXc-TeX-size4-R,MJXc-TeX-size4-Rw}
+.MJXc-TeX-vec-R {font-family: MJXc-TeX-vec-R,MJXc-TeX-vec-Rw}
+.MJXc-TeX-vec-B {font-family: MJXc-TeX-vec-B,MJXc-TeX-vec-Bx,MJXc-TeX-vec-Bw}
+@font-face {font-family: MJXc-TeX-ams-R; src: local('MathJax_AMS'), local('MathJax_AMS-Regular')}
+@font-face {font-family: MJXc-TeX-ams-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_AMS-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-B; src: local('MathJax_Caligraphic Bold'), local('MathJax_Caligraphic-Bold')}
+@font-face {font-family: MJXc-TeX-cal-Bx; src: local('MathJax_Caligraphic'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-cal-Bw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Bold.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Bold.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-R; src: local('MathJax_Fraktur'), local('MathJax_Fraktur-Regular')}
+@font-face {font-family: MJXc-TeX-frak-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-frak-B; src: local('MathJax_Fraktur Bold'), local('MathJax_Fraktur-Bold')}
+@font-face {font-family: MJXc-TeX-frak-Bx; src: local('MathJax_Fraktur'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-frak-Bw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Fraktur-Bold.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Fraktur-Bold.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Fraktur-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-BI; src: local('MathJax_Math BoldItalic'), local('MathJax_Math-BoldItalic')}
+@font-face {font-family: MJXc-TeX-math-BIx; src: local('MathJax_Math'); font-weight: bold; font-style: italic}
+@font-face {font-family: MJXc-TeX-math-BIw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Math-BoldItalic.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Math-BoldItalic.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Math-BoldItalic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-R; src: local('MathJax_SansSerif'), local('MathJax_SansSerif-Regular')}
+@font-face {font-family: MJXc-TeX-sans-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-B; src: local('MathJax_SansSerif Bold'), local('MathJax_SansSerif-Bold')}
+@font-face {font-family: MJXc-TeX-sans-Bx; src: local('MathJax_SansSerif'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-sans-Bw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Bold.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Bold.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-sans-I; src: local('MathJax_SansSerif Italic'), local('MathJax_SansSerif-Italic')}
+@font-face {font-family: MJXc-TeX-sans-Ix; src: local('MathJax_SansSerif'); font-style: italic}
+@font-face {font-family: MJXc-TeX-sans-Iw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_SansSerif-Italic.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_SansSerif-Italic.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_SansSerif-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-script-R; src: local('MathJax_Script'), local('MathJax_Script-Regular')}
+@font-face {font-family: MJXc-TeX-script-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Script-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Script-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Script-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-type-R; src: local('MathJax_Typewriter'), local('MathJax_Typewriter-Regular')}
+@font-face {font-family: MJXc-TeX-type-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Typewriter-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Typewriter-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-cal-R; src: local('MathJax_Caligraphic'), local('MathJax_Caligraphic-Regular')}
+@font-face {font-family: MJXc-TeX-cal-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Caligraphic-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-B; src: local('MathJax_Main Bold'), local('MathJax_Main-Bold')}
+@font-face {font-family: MJXc-TeX-main-Bx; src: local('MathJax_Main'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-main-Bw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Main-Bold.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-I; src: local('MathJax_Main Italic'), local('MathJax_Main-Italic')}
+@font-face {font-family: MJXc-TeX-main-Ix; src: local('MathJax_Main'); font-style: italic}
+@font-face {font-family: MJXc-TeX-main-Iw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Main-Italic.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-main-R; src: local('MathJax_Main'), local('MathJax_Main-Regular')}
+@font-face {font-family: MJXc-TeX-main-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Main-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-math-I; src: local('MathJax_Math Italic'), local('MathJax_Math-Italic')}
+@font-face {font-family: MJXc-TeX-math-Ix; src: local('MathJax_Math'); font-style: italic}
+@font-face {font-family: MJXc-TeX-math-Iw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Math-Italic.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size1-R; src: local('MathJax_Size1'), local('MathJax_Size1-Regular')}
+@font-face {font-family: MJXc-TeX-size1-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Size1-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size2-R; src: local('MathJax_Size2'), local('MathJax_Size2-Regular')}
+@font-face {font-family: MJXc-TeX-size2-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Size2-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size3-R; src: local('MathJax_Size3'), local('MathJax_Size3-Regular')}
+@font-face {font-family: MJXc-TeX-size3-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Size3-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-size4-R; src: local('MathJax_Size4'), local('MathJax_Size4-Regular')}
+@font-face {font-family: MJXc-TeX-size4-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Size4-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-vec-R; src: local('MathJax_Vector'), local('MathJax_Vector-Regular')}
+@font-face {font-family: MJXc-TeX-vec-Rw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Vector-Regular.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Vector-Regular.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Vector-Regular.otf') format('opentype')}
+@font-face {font-family: MJXc-TeX-vec-B; src: local('MathJax_Vector Bold'), local('MathJax_Vector-Bold')}
+@font-face {font-family: MJXc-TeX-vec-Bx; src: local('MathJax_Vector'); font-weight: bold}
+@font-face {font-family: MJXc-TeX-vec-Bw; src /*1*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/eot/MathJax_Vector-Bold.eot'); src /*2*/: url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/woff/MathJax_Vector-Bold.woff') format('woff'), url('http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/fonts/HTML-CSS/TeX/otf/MathJax_Vector-Bold.otf') format('opentype')}
+</style></head>
+<body class="single single-post postid-15333 single-format-standard locale-fr-fr"><div id="MathJax_Message" style="display: none;"></div>
+    <div class="body-outer-wrapper">
+        <div class="body-wrapper full-width-mode">
+            <div class="header-outer-wrapper b30">
+                <div class="top-nav-outer-wrapper">
+                    <div class="top-nav-wrapper container">
+                        <div class="row">
+                            <div class="top-nav-left">
+                                <nav id="top-nav-id" class="top-nav slideMenu">
+                                    <div class="menu"><ul><li><a href="http://accromath.uqam.ca/">Accueil</a></li><li class="page_item page-item-365"><a href="http://accromath.uqam.ca/a-propos/">À propos</a></li><li class="page_item page-item-14542"><a href="http://accromath.uqam.ca/archives/">Accrom<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-1-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;&amp;#x03B1;&lt;/mi&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-1" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-2" class="mjx-mrow"><span id="MJXc-Node-3" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.212em; padding-bottom: 0.281em;">α</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>α</mi></math></span></span><script type="math/tex" id="MathJax-Element-1">\alpha</script>th en PDF</a></li><li class="page_item page-item-156"><a href="http://accromath.uqam.ca/commanditaires/">Commanditaires</a></li><li class="page_item page-item-807"><a href="http://accromath.uqam.ca/contact/">Contact</a></li><li class="page_item page-item-9898"><a href="http://accromath.uqam.ca/contributions-des-lecteurs/">Contributions des lecteurs</a></li><li class="page_item page-item-177"><a href="http://accromath.uqam.ca/sites-amis/">Sites amis</a></li></ul></div>
+                                </nav>
+                            </div>                            
+                            <div class="top-nav-right text-right right">
+                               
+
+                                <div class="search-block right">
+                                    <form action="http://accromath.uqam.ca" method="get" id="searchform">
+                                        <input id="s" onblur="if (this.value == '') {this.value = 'Cherchez...';}" onfocus="if (this.value == 'Cherchez...') {this.value = '';}" value="Cherchez..." name="s" type="text">
+                                        <input class="search-submit" value="Cherchez" type="submit">
+                                    </form>
+                                </div>
+                                 <div class="social-block right" style="display:none">
+                                    <ul>
+                                                                                <li><a class="icon-facebook" href="#" title="Facebook"></a></li>
+                                                                                                                        <li><a class="icon-google-plus" href="#" title="Google Plus"></a></li>
+                                                                                                                          <li><a class="icon-twitter" href="#" title="Twitter"></a></li>
+                                                                                                                         <li><a class="icon-linkedin" href="#" title="Linkedin"></a></li>
+                                                                                                                            <li><a class="icon-pinterest" href="#" title="Pinterest"></a></li>
+                                                                            </ul>
+                                </div>
+                                <div class="clear"></div>
+                            
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div> <!-- END .top-nav-outer-wrapper -->
+
+                <div class="logo-outer-wrapper">
+                    <div class="logo-wrapper container">
+                        <div class="row">
+                            <div class="twelve columns">
+                                <div class="logo-left">
+                                    <h1>
+                                      <a href="http://accromath.uqam.ca/">
+                                                                            <img src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/accromath-logo.png" alt="Logo"></a>
+                                                                            
+                                    </h1>
+                                </div>
+                                <div class="logo-right-widget right">
+                                    <div class="logo-right-ads">
+                                                                            </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div> <!-- END .logo-outer-wrapper -->
+            </div> <!-- END .header-outer-wrapper-->
+<div class="main-outer-wrapper mt30">
+    <div class="main-wrapper container">
+        <div class="row row-wrapper">
+            <div class="page-wrapper twelve columns b0">
+                <div class="row">
+                    
+<div class="page-wrapper twelve columns right-sidebar b0">
+    
+    <div class="row">
+        <div class="content-wrapper eight columns b0">
+                 <h1 class="page-title">Les tours de Hanoï et la base trois</h1>    
+     <div class="page-meta-wrapper">
+        <span>Par        <span class="author">
+         
+         <a href="http://accromath.uqam.ca/author/rittaud/" title="Articles par Benoît Rittaud" class="author url fn" rel="author">Benoît Rittaud</a>                 </span>
+                   
+                 </span>
+        
+        <div class="categories">
+        <a href="http://accromath.uqam.ca/volume/volume-11-1-hiver-printemps-2016/" rel="category tag">Volume 11.1 - hiver-printemps 2016</a>        </div>
+    </div>
+
+        
+    <div class="page-content">
+     <div class="page-featured-image">
+     <img src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/Hanoi-11.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="Hanoi-11.1" srcset="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/Hanoi-11.1.jpg 642w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/Hanoi-11.1-150x93.jpg 150w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/Hanoi-11.1-300x186.jpg 300w" sizes="(max-width: 642px) 100vw, 642px" width="642" height="400">        </div>
+                                              
+        <blockquote><p><big><span class="bluetext">Au XIX<sup>e</sup> 
+siècle, Édouard Lucas a inventé le jeu des «&nbsp;tours de 
+Hanoï&nbsp;», une simple récréation mathématique qui s’est 
+révélée au fil des années une mine de réflexions. Nous nous 
+intéressons ici à l’une d’elles: les liens avec les bases de 
+numération.</span></big></p></blockquote>
+<p>Le jeu des tours de Hanoï est constitué de trois piquets A, B et C,
+ placés verticalement, et de n disques de taille décroissante. Chacun 
+des disques est percé en son centre pour être mis autour de l’un ou 
+l’autre des trois piquets. Les <em>n</em> disques sont initialement 
+placés par taille décroissante autour du piquet A (celui de gauche), 
+formant ainsi une tour. Le but du jeu consiste à déplacer les disques 
+jusqu’à parvenir à la situation finale dans laquelle tous les disques 
+se retrouvent autour du piquet C par ordre de taille décroissante. Les 
+disques peuvent aller et venir librement sur les piquets, en suivant 
+deux règles:</p>
+<ul>
+<li>on ne déplace qu’un seul disque à la fois;</li>
+<li>un disque ne peut jamais être posé sur un disque plus petit.</li>
+</ul>
+<p>Ci-dessous figure une solution dans le cas de trois disques.</p>
+<p><img class="aligncenter wp-image-10637" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/hanoi-2.png" alt="hanoi-2" srcset="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-2.png 795w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-2-150x36.png 150w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-2-300x72.png 300w" sizes="(max-width: 465px) 100vw, 465px" width="465" height="113"></p>
+<p>Le problème n’est pas très difficile à résoudre dans le cas 
+général (voir plus loin). Le contexte des tours de Hanoï n’en est pas
+ moins d’une grande richesse. La preuve : mettez un combinatoriste 
+devant et il trouvera aussitôt une question originale à se poser 
+dessus. Tel a été le cas d’un collègue, Hacène Belbachir professeur 
+à l’université d’Alger, qui m’a posé le problème suivant: 
+«&nbsp;comment pourrait-on faire des tours de Hanoï en base 
+trois?&nbsp;»</p>
+<h3><span class="orangetext">Une drôle de question</span></h3>
+<p>Vue de loin, la question est pour le moins bizarre. Quel est donc le 
+rapport entre nos disques et une base de numération, quelle qu’elle 
+soit? Il faut connaître un petit peu le problème pour comprendre 
+combien cette question est intéressante. Elle illustre comment une 
+simple récréation mathématique peut donner l’occasion de réfléchir 
+dans des domaines tout à fait inattendus.</p>
+<p>En l’occurrence, les tours de Hanoï entretiennent un lien très fort
+ avec la numération à base deux. Pour le comprendre, voyons tout 
+d’abord un algorithme particulièrement bref pour résoudre le jeu. Cet 
+algorithme est un cas d’école d’algorithme dit <em>récursif</em>, c’est-à-dire qui s’appelle lui-même au fil du parcours:</p>
+<blockquote><p><big><span class="orangetext">Algorithme de résolution pour déplacer <em>n </em>disques d’un piquet d’origine à un piquet de destination</span></big></p></blockquote>
+<ul>
+<li>si <em>n</em> = 1: déplacer l’unique disque (situé sur le piquet d’origine) sur le piquet de destination, et c’est fini.</li>
+<li>si <em>n</em> &gt; 1:<br>
+– appliquer l’algorithme de résolution pour déplacer les (<em>n</em>-1)
+ disques du piquet d’origine au piquet intermédiaire (qui n’est ni le 
+piquet d’origine ni celui de destination finale, mais qui devient le 
+nouveau piquet de destination dans cette étape).<br>
+– déplacer le <em>n</em>-ième disque sur le piquet de destination;<br>
+– appliquer à nouveau l’algorithme de résolution pour déplacer les (<em>n</em>-1)
+ disques du piquet intermédiaire au piquet destination. Le piquet 
+intermédiaire devient le nouveau piquet origine pour cette étape.</li>
+</ul>
+<p><img class="aligncenter wp-image-10638" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/hanoi-3.png" alt="hanoi-3" srcset="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-3.png 392w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-3-150x73.png 150w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-3-300x146.png 300w" sizes="(max-width: 329px) 100vw, 329px" width="329" height="161"></p>
+<p>L’essentiel ici est que cet algorithme est optimal (c’est-à-dire le 
+plus rapide possible pour résoudre le jeu), en raison de l’impératif 
+suivant: il faut à un moment ou à un autre faire la place pour pouvoir
+ déplacer le gros disque du dessous, ce qui impose d’avoir déplacé 
+préalablement les <em>n</em> – 1 plus petits sur un seul et même 
+piquet — c’est-à-dire, donc, d’avoir résolu préalablement le 
+problème des tours de Hanoï pour ces <em>n</em> – 1 disques. Cette remarque permet facilement de se persuader que l’algorithme précédent est bien optimal.</p>
+<div class="subsection green">
+<h2 style="text-align: center;"><span class="bluetext">Numéroter dans d’autres bases</span></h2>
+<p><img class="alignright  wp-image-10639" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/hanoi-4.png" alt="hanoi-4" srcset="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-4.png 193w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-4-52x150.png 52w" sizes="(max-width: 139px) 100vw, 139px" width="139" height="398">Notre
+ façon usuelle d’écrire les nombres est dite «&nbsp;à base 
+dix&nbsp;», car nous utilisons dix chiffres (de 0 à 9) pour écrire 
+tous les nombres. En base dix, une expression telle que 548 correspond 
+à la valeur «&nbsp;huit unités plus quatre dizaines plus cinq dizaines
+ de dizaines&nbsp;». Les premiers entiers en base dix sont inscrits dans
+ la première colonne du tableau.</p>
+<p>Le choix d’utiliser dix chiffres plutôt que sept, treize ou soixante
+ est issu d’habitudes anciennes (qui découlent sans doute du fait que 
+nous avons dix doigts) et non d’un impératif mathématique. Or 
+certaines situations rendent plus utiles le recours à d’autres bases. 
+L’informatique, par exemple, est une grosse consommatrice de la base 
+deux, dans laquelle seuls deux chiffres sont utilisés: 0 et 1. La 
+deuxième colonne du tableau donne l’écriture en<br>
+base deux des premiers nombres naturels. Ainsi pour une même ligne, les
+ valeurs dans les différentes colonnes renvoient aux écritures dans 
+différentes bases d’un même nombre.</p>
+<p>Le principe qui permet de passer d’un entier au suivant en base deux 
+est le même qu’en base dix, la seule différence étant le moment des 
+retenues: en base dix, il y a une retenue dès qu’on dépasse neuf, en 
+base deux il y en a une dès qu’on dépasse un.</p>
+<p>La valeur correspondant à une expression en base deux s’obtient 
+selon le même principe qu’en base dix, les paires remplaçant les 
+dizaines, les «&nbsp;quatraines&nbsp;» (i.e. les paires de paires) 
+remplaçant les centaines (i.e. les dizaines de dizaines), et ainsi de 
+suite. Par exemple, l’expression 1001011 en base deux correspond à la 
+valeur que nous calculerions en base dix en écrivant</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="mjx-chtml MJXc-display" style="text-align: center;"><span id="MathJax-Element-2-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;5&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;mn&gt;23&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-4" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-5" class="mjx-mrow"><span id="MJXc-Node-6" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-7" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-8" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-9" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-10" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">6</span></span></span></span><span id="MJXc-Node-11" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-12" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">0</span></span><span id="MJXc-Node-13" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-14" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-15" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-16" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">5</span></span></span></span><span id="MJXc-Node-17" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-18" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">0</span></span><span id="MJXc-Node-19" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-20" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-21" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-22" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">4</span></span></span></span><span id="MJXc-Node-23" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-24" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-25" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-26" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">23</span></span><span id="MJXc-Node-27" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-28" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">0</span></span><span id="MJXc-Node-29" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-30" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-31" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-32" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span></span><span id="MJXc-Node-33" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-34" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-35" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-36" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-37" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-38" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span><span id="MJXc-Node-39" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-40" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-41" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-42" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-43" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-44" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">0</span></span></span></span></span></span><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mn>1</mn><mo>×</mo><msup><mn>2</mn><mn>6</mn></msup><mo>+</mo><mn>0</mn><mo>×</mo><msup><mn>2</mn><mn>5</mn></msup><mo>+</mo><mn>0</mn><mo>×</mo><msup><mn>2</mn><mn>4</mn></msup><mo>+</mo><mn>1</mn><mo>×</mo><mn>23</mn><mo>+</mo><mn>0</mn><mo>×</mo><msup><mn>2</mn><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>×</mo><msup><mn>2</mn><mn>1</mn></msup><mo>+</mo><mn>1</mn><mo>×</mo><msup><mn>2</mn><mn>0</mn></msup></math></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-2">1\times 2^6 +0\times 2^5 +0\times 2^4 +1\times23 +0\times 2^2 +1\times 2^1 +1\times 2^0</script></p>
+<p>(qui vaut soixante-quinze et s’écrit, donc, 75 en base dix).</p>
+<p>En base trois, le principe est le même. Les nombres s’écrivent 
+cette fois avec les chiffres 0, 1 et 2. La liste des premiers entiers en
+ base trois est donnée dans la troisième colonne du tableau ci-haut à
+ droite.<br>
+Une expression en base trois telle que 10 212 correspond à ce que nous écririons, dans la bonne vieille base dix,</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="mjx-chtml MJXc-display" style="text-align: center;"><span id="MathJax-Element-3-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-45" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-46" class="mjx-mrow"><span id="MJXc-Node-47" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-48" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-49" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-50" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-51" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">4</span></span></span></span><span id="MJXc-Node-52" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-53" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">0</span></span><span id="MJXc-Node-54" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-55" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-56" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-57" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span></span><span id="MJXc-Node-58" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-59" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span><span id="MJXc-Node-60" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-61" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-62" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-63" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span></span><span id="MJXc-Node-64" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-65" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-66" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-67" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-68" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-69" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span><span id="MJXc-Node-70" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-71" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span><span id="MJXc-Node-72" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.196em; padding-bottom: 0.324em;">×</span></span><span id="MJXc-Node-73" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-74" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-75" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">0</span></span></span></span></span></span><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mn>1</mn><mo>×</mo><msup><mn>3</mn><mn>4</mn></msup><mo>+</mo><mn>0</mn><mo>×</mo><msup><mn>3</mn><mn>3</mn></msup><mo>+</mo><mn>2</mn><mo>×</mo><msup><mn>3</mn><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>×</mo><msup><mn>3</mn><mn>1</mn></msup><mo>+</mo><mn>2</mn><mo>×</mo><msup><mn>3</mn><mn>0</mn></msup></math></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-3">1\times 3^4 + 0\times 3^3 + 2\times 3^2 + 1\times 3^1 + 2\times 3^0</script></p>
+<p>(qui vaut cent quatre et s’écrit donc 104 en base dix, si vous voulez le savoir…).</p>
+<p>Plus généralement, à tout entier <em>b</em> &gt; 1 fixé correspond un système de numération à base <em>b</em>.</p>
+</div>
+<h3><span class="orangetext">Combien d’étapes?</span></h3>
+<p>En prime, notre algorithme nous fournit un moyen explicite pour 
+compter le nombre total de mouvements. Si un désigne ce nombre pour le 
+problème à n disques, alors les trois étapes de l’algorithme 
+(résolution pour <em>n</em> – 1 disques, puis déplacement du gros disque, puis à nouveau résolution pour <em>n</em> – 1 disques) conduisent à la formule de récurrence:</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="mjx-chtml MJXc-display" style="text-align: center;"><span id="MathJax-Element-4-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-76" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-77" class="mjx-mrow"><span id="MJXc-Node-78" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-79" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">u</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-80" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-81" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.067em; padding-bottom: 0.324em;">=</span></span><span id="MJXc-Node-82" class="mjx-msubsup MJXc-space3"><span class="mjx-base"><span id="MJXc-Node-83" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">u</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-84" class="mjx-texatom" style=""><span id="MJXc-Node-85" class="mjx-mrow"><span id="MJXc-Node-86" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span><span id="MJXc-Node-87" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">−</span></span><span id="MJXc-Node-88" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span></span></span><span id="MJXc-Node-89" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-90" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-91" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-92" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-93" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">u</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-94" class="mjx-texatom" style=""><span id="MJXc-Node-95" class="mjx-mrow"><span id="MJXc-Node-96" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span><span id="MJXc-Node-97" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">−</span></span><span id="MJXc-Node-98" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span></span></span><span id="MJXc-Node-99" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span></span></span><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>u</mi><mi>n</mi></msub><mo>=</mo><msub><mi>u</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>1</mn><mo>+</mo><msub><mi>u</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>,</mo></math></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-4">u_n = u_{n-1}+1+u_{n-1},</script></p>
+<p>c’est-à-dire <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-5-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1.&lt;/mn&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-100" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-101" class="mjx-mrow"><span id="MJXc-Node-102" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-103" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">u</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-104" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-105" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.067em; padding-bottom: 0.324em;">=</span></span><span id="MJXc-Node-106" class="mjx-mn MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span><span id="MJXc-Node-107" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-108" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">u</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-109" class="mjx-texatom" style=""><span id="MJXc-Node-110" class="mjx-mrow"><span id="MJXc-Node-111" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span><span id="MJXc-Node-112" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">−</span></span><span id="MJXc-Node-113" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span></span></span><span id="MJXc-Node-114" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-115" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1.</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>u</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><msub><mi>u</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>1.</mn></math></span></span><script type="math/tex" id="MathJax-Element-5">u_n = 2u_{n-1}+1.</script> L’initialisation de l’algorithme donnant par ailleurs que <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-6-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-116" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-117" class="mjx-mrow"><span id="MJXc-Node-118" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-119" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">u</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-120" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span><span id="MJXc-Node-121" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.067em; padding-bottom: 0.324em;">=</span></span><span id="MJXc-Node-122" class="mjx-mn MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-123" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>u</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mo>,</mo></math></span></span><script type="math/tex" id="MathJax-Element-6">u_1 = 1,</script> les premiers termes de la suite sont donc:</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="mjx-chtml MJXc-display" style="text-align: center;"><span id="MathJax-Element-7-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;31&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;63&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mn&gt;127&lt;/mn&gt;&lt;mo&gt;&amp;#x2026;&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-124" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-125" class="mjx-mrow"><span id="MJXc-Node-126" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-127" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span><span id="MJXc-Node-128" class="mjx-mn MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span><span id="MJXc-Node-129" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span><span id="MJXc-Node-130" class="mjx-mn MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">7</span></span><span id="MJXc-Node-131" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span><span id="MJXc-Node-132" class="mjx-mn MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">15</span></span><span id="MJXc-Node-133" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span><span id="MJXc-Node-134" class="mjx-mn MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">31</span></span><span id="MJXc-Node-135" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span><span id="MJXc-Node-136" class="mjx-mn MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">63</span></span><span id="MJXc-Node-137" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span><span id="MJXc-Node-138" class="mjx-mn MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">127</span></span><span id="MJXc-Node-139" class="mjx-mo MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.324em;">…</span></span></span></span><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mn>1</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>15</mn><mo>,</mo><mn>31</mn><mo>,</mo><mn>63</mn><mo>,</mo><mn>127</mn><mo>…</mo></math></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-7">1, 3, 7, 15, 31, 63, 127 \ldots</script></p>
+<p>On reconnaît ici, à une unité près, la suite des puissances de deux, ce qui se démontre sans difficulté par récurrence.</p>
+<div class="subsection green">
+<h2 style="text-align: center;"><span class="bluetext">La récursivité</span></h2>
+<p>Un algorithme est une méthode systématique de résolution d’un 
+problème donné. Il peut être itératif ou récursif. Les algorithmes 
+itératifs sont ceux auxquels on est le plus souvent habitués, ils 
+consistent en une suite d’instructions faisant appel à des objets 
+définis par ailleurs. Une recette de cuisine est un exemple 
+d’algorithme itératif.<br>
+Un algorithme récursif, quant à lui, a la propriété de s’appeler 
+lui-même au fil de son déroulement. Un grand intérêt des algorithmes
+ récursifs est qu’ils sont en général plus courts et synthétiques 
+que les algorithmes itératifs. Leur inconvénient est l’encombrement de
+ mémoire qu’ils peuvent engendrer.<br>
+Un cas d’école pour comparer les deux types d’algorithmes est le calcul
+ de la factorielle d’un entier. Rappelons que, pour tout entier positif <em>n</em>, l’expression <em>n</em>! («&nbsp;factorielle <em>n</em>&nbsp;») désigne le produit des entiers de 1 à <em>n</em>. On a ainsi, par exemple 5! = 120 (= 1×2×3×4×5), ou 7! = 5040 (= 1×2×3×4×5×6×7), etc. Par convention, on pose aussi que 0! = 1.</p>
+<p>Un algorithme itératif de calcul de <em>n</em>! est le suivant:</p>
+<h3><span class="orangetext">FactorielleIteratif (<em>n</em>)</span></h3>
+<p style="text-align: center;"><em>p</em>:= 1<br>
+pour <em>i</em> de 1 à <em>n</em>:<br>
+<em>p</em> := <em>p</em>×<em>i</em><br>
+retourner(<em>p</em>)</p>
+<p>Et voici un algorithme récursif, qui utilise le fait que, pour calculer <em>n</em>!, il suffit de multiplier par <em>n</em> la valeur (<em>n</em>–1)!:</p>
+<h3><span class="orangetext">FactorielleRecursif (<em>n</em>)</span></h3>
+<p style="text-align: center;">si <em>n</em> = 0 :<br>
+retourner(1) sinon:<br>
+retourner(<em>n</em>×FactorielleRecursif(<em>n</em>–1))</p>
+<p>Lorsque le problème est suffisamment simple, il est facile d’en 
+programmer la résolution aussi bien de manière itérative que 
+récursive. Parfois en revanche, le point de vue récursif est beaucoup 
+plus simple. Le cas des tours de Hanoï illustre bien les avantages et 
+inconvénients de la récursivité: d’un côté l’algorithme récursif 
+de résolution est extrêmement bref et clair, d’un autre côté il 
+n’est pas très maniable pour un humain qui est, lui, plus volontiers 
+preneur d’un algorithme itératif pour ne pas se perdre dans la gestion 
+de la pile des tâches qu’il lance.</p>
+</div>
+<p>Le nombre d’<em>étapes</em> étant donc de <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-8-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-140" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-141" class="mjx-mrow"><span id="MJXc-Node-142" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-143" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">u</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-144" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-145" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.067em; padding-bottom: 0.324em;">=</span></span><span id="MJXc-Node-146" class="mjx-msubsup MJXc-space3"><span class="mjx-base"><span id="MJXc-Node-147" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-148" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-149" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">−</span></span><span id="MJXc-Node-150" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-151" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>u</mi><mi>n</mi></msub><mo>=</mo><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo>,</mo></math></span></span><script type="math/tex" id="MathJax-Element-8">u_n = 2^n-1,</script> le nombre d’<em>états</em> (entre l’état initial et l’état final) est lui de <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-9-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-152" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-153" class="mjx-mrow"><span id="MJXc-Node-154" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-155" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-156" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-157" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.131em; padding-bottom: 0.324em;">:</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>2</mn><mi>n</mi></msup><mo>:</mo></math></span></span><script type="math/tex" id="MathJax-Element-9">2^n:</script>
+ voilà poindre, enfin, notre lien avec la base deux. En effet, 
+numérotons les états en base deux (l’état initial portant le numéro 
+zéro). Ce faisant, on réalise une correspondance entre les états 
+successifs et l’ensemble des entiers qui peuvent s’écrire avec 
+exactement <em>n</em> chiffres en base deux. Rien de si extraordinaire 
+jusque là, sauf que… voici ce que cela donne par exemple pour trois 
+disques. Une belle surprise nous attend.</p>
+<p><img class="aligncenter  wp-image-10640" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/hanoi-5.png" alt="hanoi-5" srcset="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-5.png 389w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-5-123x150.png 123w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-5-247x300.png 247w" sizes="(max-width: 258px) 100vw, 258px" width="258" height="313"></p>
+<p>La surprise, c’est que le numéro de chaque état porte une information capitale: à l’état<em> i</em>, la position du chiffre le plus à gauche qui a changé en passant de <em>i</em>–1
+ à i donne le numéro du disque qui vient d’être déplacé. Par 
+exemple, l’état 110 fait suite à l’état 101: l’addition d’une unité 
+dans le passage de 101 à 110 a, par le mécanisme des retenues, 
+modifié jusqu’au deuxième chiffre (le 0 de 101 est devenu un 1 dans 
+110). Et c’est en effet le deuxième disque qui a été déplacé lors 
+du passage de l’état 101 à l’état 110. Ce phénomène spectaculaire 
+fonctionne quel que soit le nombre de disques. (Exercice: le 
+démontrer!)</p>
+<h3><span class="orangetext">De deux à trois</span></h3>
+<p>Le lien entre les tours de Hanoï et la base deux est donc tout sauf 
+superficiel. Entre autres choses, il permet de produire un algorithme 
+itératif de résolution, alternatif à l’algorithme récursif 
+présenté plus haut. (Exercice: l’écrire.) Il permet aussi de montrer 
+diverses propriétés que vous pourrez facilement vérifier, comme par 
+exemple le fait que le <em>i</em>-ième disque est, en tout, déplacé exactement <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-10-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-158" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-159" class="mjx-mrow"><span id="MJXc-Node-160" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-161" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-162" class="mjx-texatom" style=""><span id="MJXc-Node-163" class="mjx-mrow"><span id="MJXc-Node-164" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span><span id="MJXc-Node-165" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">−</span></span><span id="MJXc-Node-166" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.452em; padding-bottom: 0.26em;">i</span></span></span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>2</mn><mrow class="MJX-TeXAtom-ORD"><mi>n</mi><mo>−</mo><mi>i</mi></mrow></msup></math></span></span><script type="math/tex" id="MathJax-Element-10">2^{n-i}</script> fois au fil du jeu.</p>
+<p>À présent, donc, nous voilà prêts à com- prendre la question à 
+l’origine de cet article: comment modifier les règles du jeu pour que 
+sa résolution fasse « naturellement » apparaître la base trois plutôt
+ que la base deux.</p>
+<p>Pour ce qui est de modifier les règles, on n’a que l’embarras du 
+choix: augmenter le nombre de piquets, poser des règles exotiques 
+d’empilement des disques, interdire certains mouvements… Dans le 
+domaine, beaucoup de questions sont d’ailleurs encore ouvertes.</p>
+<p>Une façon qui me semble très satisfaisante pour faire apparaître la base trois est celle-ci:</p>
+<blockquote><p><big><span class="orangetext">On interdit aux disques d’aller directement de A à C ou de C à A.</span></big></p></blockquote>
+<p>(On suppose que tous les disques sont au départ sur A et que 
+l’objectif est de les déplacer sur C.) En d’autres termes, à chaque 
+fois qu’on voudrait faire passer un disque de A à C, on s’oblige à le 
+faire passer d’abord par B.</p>
+<p>Voici la résolution de cette variante dans le cas de trois disques:</p>
+<p><img class="aligncenter  wp-image-10641" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/hanoi-6.png" alt="hanoi-6" srcset="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-6.png 592w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-6-101x150.png 101w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-6-202x300.png 202w" sizes="(max-width: 404px) 100vw, 404px" width="404" height="598"></p>
+<p>Il faut 26 étapes, c’est-à-dire 33–1. Si vous avez bien suivi les 
+explications du cas classique, alors vous vous doutez probablement de ce
+ qui va suivre. Commençons par l’algorithme récursif (optimal) de 
+résolution de ces «&nbsp;tours de Hanoï à <em>n</em> disques en base trois&nbsp;»:</p>
+<blockquote><p><big><span class="orangetext">Algorithme de résolution pour déplacer <em>n</em> disques d’un piquet origine à un piquet sans sauter par-dessus un autre piquet.</span></big></p></blockquote>
+<ul>
+<li>Si <em>n</em> = 1: SI les piquets origine et destination sont voisins: déplacer ce disque unique de l’origine à la destination;<br>
+SINON (i.e. s’il y a un piquet entre les deux) déplacer ce disque unique de l’origine au piquet intermédiaire;<br>
+Appliquer l’algorithme pour déplacer ce disque unique du piquet intermédiaire vers le piquet destination</li>
+<li>Si <em>n</em> &gt; 1:<br>
+– Appliquer l’algorithme pour déplacer les (n-1) disques du dessus, du 
+piquet-origine au piquet-destination sans sauter par-dessus un piquet<br>
+–déplacer le <em>n</em>-ième disque au piquet intermédiaire;<br>
+– Appliquer l’algorithme pour déplacer les (<em>n </em>– 1) disques du dessus, du piquet- destination au piquet-origine sans sauter de piquet;<br>
+– déplacer le <em>n</em>-ième disque au piquet destination;<br>
+– Appliquer l’algorithme pour déplacer les (<em>n</em> – 1) disques du dessus, du piquet-origine au piquet-destination sans sauter par-dessus un piquet.</li>
+</ul>
+<p>Le nombre <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-11-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-167" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-168" class="mjx-mrow"><span id="MJXc-Node-169" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-170" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-171" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>v</mi><mi>n</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-11">v_n</script> d’étapes nécessaires satisfait cette fois la formule de récurrence:</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="mjx-chtml MJXc-display" style="text-align: center;"><span id="MathJax-Element-12-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; text-align: center; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot; display=&quot;block&quot;&gt;&lt;msub&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-172" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-173" class="mjx-mrow"><span id="MJXc-Node-174" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-175" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-176" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-177" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.067em; padding-bottom: 0.324em;">=</span></span><span id="MJXc-Node-178" class="mjx-msubsup MJXc-space3"><span class="mjx-base"><span id="MJXc-Node-179" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-180" class="mjx-texatom" style=""><span id="MJXc-Node-181" class="mjx-mrow"><span id="MJXc-Node-182" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span><span id="MJXc-Node-183" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">−</span></span><span id="MJXc-Node-184" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span></span></span><span id="MJXc-Node-185" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-186" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-187" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-188" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-189" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-190" class="mjx-texatom" style=""><span id="MJXc-Node-191" class="mjx-mrow"><span id="MJXc-Node-192" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-193" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span><span class="mjx-sub" style="font-size: 72.5%; vertical-align: -0.207em; padding-right: 0.069em;"><span id="MJXc-Node-194" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span></span></span></span></span><span id="MJXc-Node-195" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-196" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span><span id="MJXc-Node-197" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-198" class="mjx-msubsup MJXc-space2"><span class="mjx-base"><span id="MJXc-Node-199" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-200" class="mjx-texatom" style=""><span id="MJXc-Node-201" class="mjx-mrow"><span id="MJXc-Node-202" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-203" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span><span class="mjx-sub" style="font-size: 72.5%; vertical-align: -0.207em; padding-right: 0.069em;"><span id="MJXc-Node-204" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span></span></span></span></span><span id="MJXc-Node-205" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span></span></span><span class="MJX_Assistive_MathML MJX_Assistive_MathML_Block" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>v</mi><mi>n</mi></msub><mo>=</mo><msub><mi>v</mi><mrow class="MJX-TeXAtom-ORD"><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>+</mo><mn>1</mn><mo>+</mo><msub><mi>v</mi><mrow class="MJX-TeXAtom-ORD"><msub><mi>n</mi><mn>1</mn></msub></mrow></msub><mo>+</mo><mn>1</mn><mo>+</mo><msub><mi>v</mi><mrow class="MJX-TeXAtom-ORD"><msub><mi>n</mi><mn>1</mn></msub></mrow></msub><mo>,</mo></math></span></span></span><script type="math/tex; mode=display" id="MathJax-Element-12">v_n = v_{n-1}+1+v_{n_1}+1+v_{n_1},</script></p>
+<p>soit <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-13-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;msub&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;msub&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;2.&lt;/mn&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-206" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-207" class="mjx-mrow"><span id="MJXc-Node-208" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span><span id="MJXc-Node-209" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span><span id="MJXc-Node-210" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.067em; padding-bottom: 0.324em;">=</span></span><span id="MJXc-Node-211" class="mjx-mn MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span><span id="MJXc-Node-212" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-213" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-214" class="mjx-texatom" style=""><span id="MJXc-Node-215" class="mjx-mrow"><span id="MJXc-Node-216" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-217" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span><span class="mjx-sub" style="font-size: 72.5%; vertical-align: -0.207em; padding-right: 0.069em;"><span id="MJXc-Node-218" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span></span></span></span></span><span id="MJXc-Node-219" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">+</span></span><span id="MJXc-Node-220" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2.</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>v</mi><mi>n</mi><mo>=</mo><mn>3</mn><msub><mi>v</mi><mrow class="MJX-TeXAtom-ORD"><msub><mi>n</mi><mn>1</mn></msub></mrow></msub><mo>+</mo><mn>2.</mn></math></span></span><script type="math/tex" id="MathJax-Element-13">vn = 3v_{n_1}+2.</script> L’initialisation de l’algorithme donnant <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-14-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-221" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-222" class="mjx-mrow"><span id="MJXc-Node-223" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-224" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-225" class="mjx-mn" style=""><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span><span id="MJXc-Node-226" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.067em; padding-bottom: 0.324em;">=</span></span><span id="MJXc-Node-227" class="mjx-mn MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span><span id="MJXc-Node-228" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.516em;">,</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>v</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn><mo>,</mo></math></span></span><script type="math/tex" id="MathJax-Element-14">v_1 = 2,</script> on vérifie par une simple récurrence que <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-15-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msub&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2013;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-229" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-230" class="mjx-mrow"><span id="MJXc-Node-231" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-232" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">v</span></span></span><span class="mjx-sub" style="font-size: 70.7%; vertical-align: -0.212em; padding-right: 0.071em;"><span id="MJXc-Node-233" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-234" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.067em; padding-bottom: 0.324em;">=</span></span><span id="MJXc-Node-235" class="mjx-msubsup MJXc-space3"><span class="mjx-base"><span id="MJXc-Node-236" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-237" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-238" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: 0.003em; padding-bottom: 0.324em;">–</span></span><span id="MJXc-Node-239" class="mjx-mn MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>v</mi><mi>n</mi></msub><mo>=</mo><msup><mn>3</mn><mi>n</mi></msup><mo>–</mo><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-15">v_n = 3^n – 1</script> pour tout <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-16-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;.&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-240" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-241" class="mjx-mrow"><span id="MJXc-Node-242" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span><span id="MJXc-Node-243" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.324em;">.</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>.</mo></math></span></span><script type="math/tex" id="MathJax-Element-16">n.</script></p>
+<p>La suite est alors toute tracée: <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-17-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2013;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-244" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-245" class="mjx-mrow"><span id="MJXc-Node-246" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-247" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-248" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-249" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: 0.003em; padding-bottom: 0.324em;">–</span></span><span id="MJXc-Node-250" class="mjx-mn MJXc-space1"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>3</mn><mi>n</mi></msup><mo>–</mo><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-17">3^n – 1</script> <em>étapes</em> font <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-18-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-251" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-252" class="mjx-mrow"><span id="MJXc-Node-253" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-254" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-255" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>3</mn><mi>n</mi></msup></math></span></span><script type="math/tex" id="MathJax-Element-18">3^n</script> <em>états</em>. La numérotation des étapes en base trois dans le cas de trois disques est donnée dans la figure ci-dessous.</p>
+<p><img class="aligncenter  wp-image-10645" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/hanoi-7.png" alt="hanoi-7" srcset="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-7.png 596w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-7-98x150.png 98w, http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/hanoi-7-196x300.png 196w" sizes="(max-width: 411px) 100vw, 411px" width="411" height="628"></p>
+<p>Le «&nbsp;miracle&nbsp;» qui s’était produit dans le cas classique 
+avec la base deux opère aussi pour notre variante, mais cette fois avec
+ la base trois: on lit sur le numéro de l’état <em>i</em> le disque 
+qui a été déplacé (c’est celui qui correspond à la place du chiffre
+ le plus à gauche qui a été modifié lors du passage de l’état <em>i</em> – 1 à l’état <em>i</em>).</p>
+<p>Un peu de travail supplémentaire vous indiquera aussi, tout comme 
+dans le cas classique, les piquets concernés par le déplacement, ce 
+qui permet là aussi de produire un algorithme itératif.</p>
+<p>Cette variante des tours de Hanoï présente un intérêt 
+particulier: elle permet de parcourir la totalité des états 
+admissibles, c’est-à-dire qui satisfont à la règle qu’un disque plus 
+léger ne porte jamais un disque plus lourd. En effet, le nombre de ces 
+états admissibles est égal au nombre de façons de constituer un mot 
+de n lettres de l’alphabet {A, B, C} (la <em>i</em>-ième lettre du mot indiquant le piquet sur lequel se trouve le disque <em>i</em>), qui vaut<sup class="footnote"><a href="#fn-15333-1" id="fnref-15333-1" onclick="return fdfootnote_show(15333)" target="_self">1</a></sup> précisément <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-19-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;.&lt;/mo&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-256" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-257" class="mjx-mrow"><span id="MJXc-Node-258" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-259" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.388em;">3</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.59em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-260" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-261" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="margin-top: -0.189em; padding-bottom: 0.324em;">.</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>3</mn><mi>n</mi></msup><mo>.</mo></math></span></span><script type="math/tex" id="MathJax-Element-19">3^n.</script></p>
+<h3><span class="orangetext">Autres questions</span></h3>
+<p>Puisque la variante à base trois « consomme » tous les états 
+possibles, s’interroger sur des tours de Hanoï à base quatre (ou plus)
+ obligerait à innover encore dans les règles. J’avoue ne pas savoir 
+comment. D’autres questions sont également possibles, plus ou moins 
+difficiles, et sur lesquelles le lecteur pourra méditer:</p>
+<ul>
+<li>En combien de coups peut-on changer une tour de <em>n</em> disques 
+initialement en A en deux tours, l’une en B contenant tous les disques 
+pairs et l’autre en C contenant tous les disques impairs?</li>
+<li>À partir de l’écriture en base deux (à <em>n</em> chiffres) d’un 
+nombre a, comment reconstituer la position des disques à l’état du jeu
+ correspondant? (Même question, bien sûr, pour la variante à base 
+trois…)</li>
+<li>À partir de l’écriture en base trois d’un nombre <em>a</em>, 
+est-il possible de savoir si la configuration correspondante des disques
+ apparaît ou non dans la résolution du jeu classique?</li>
+<li>Étudier d’autres variantes, telles que la suivante: le déplacement
+ direct de A à C est interdit, mais tous les autres autorisés — y 
+compris, donc, celui de C à A. (Attention, il y a là du calcul 
+matriciel en dimension 6…)</li>
+</ul>
+<p><a class="pdf-link" href="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/Hanoi.pdf" target="_blank">PDF</a></p>
+<div class="footnotes" id="footnotes-15333">
+<div class="footnotedivider"></div>
+<ol>
+<li id="fn-15333-1"> Dans ce raisonnement, les piquets A, B et C sont 
+supposés non équivalents, alors que dans les présentations du cas 
+courant, les piquets B et C sont parfois considérés comme 
+interchangeables. Dans cette dernière hypothèse, le nombre de 
+configurations non- équivalentes est divisé par deux (chaque 
+configuration allant de paire avec celle dans laquelle les disques des 
+piquets B et C sont échangés), ce qui fait que, même avec ces 
+équivalences, la résolution du jeu classique en <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span id="MathJax-Element-20-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 120%; position: relative;" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation"><span id="MJXc-Node-262" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-263" class="mjx-mrow"><span id="MJXc-Node-264" class="mjx-msubsup"><span class="mjx-base"><span id="MJXc-Node-265" class="mjx-mn"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">2</span></span></span><span class="mjx-sup" style="font-size: 70.7%; vertical-align: 0.591em; padding-left: 0px; padding-right: 0.071em;"><span id="MJXc-Node-266" class="mjx-mi" style=""><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.196em; padding-bottom: 0.26em;">n</span></span></span></span><span id="MJXc-Node-267" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.324em; padding-bottom: 0.452em;">−</span></span><span id="MJXc-Node-268" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.388em; padding-bottom: 0.324em;">1</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-20">2^n-1</script> étapes ne fait pas décrire tous les états possibles. <span class="footnotereverse"><a href="#fnref-15333-1" target="_self">↩</a></span></li>
+</ol>
+</div>
+        <div class="clear"></div>
+    </div><!-- END page-content-->
+    
+    <div class="page-single-element">
+        
+
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <script type="text/javascript">
+        (function() {
+          var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+          po.src = 'https://apis.google.com/js/plusone.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+        })();
+        </script>
+        
+        <div>
+        <!-- Boutons d'impression et de PDF -->
+        <ul>
+        <li>
+			<a class="footer-button to-pdf" title="Accéder à la version PDF" target="_blank " href="http://accromath.uqam.ca/accro/wp-content/uploads/2016/02/Hanoi.pdf">● Version PDF</a>
+		</li>
+        <li>
+            	<input type="button" class="footer-button" title="L'impression est optimisée pour Google Chrome" value="● Imprimer l'article" onclick="window.print()">
+        </li>
+        <ul>
+        </ul></ul></div>
+        
+        <div class="clear"></div>
+
+        <div class="share_entry">
+          <span class="share_entry_text">Partagez</span>
+          <ul>
+            <li>
+              <iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" allowfullscreen="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 61px; height: 20px;" title="Twitter Tweet Button" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/tweet_button.html" data-url="http://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/" frameborder="0"></iframe>
+            </li>
+            <li><iframe src="//www.facebook.com/plugins/like.php?href=http://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/%2F&amp;send=false&amp;layout=button_count&amp;width=107&amp;show_faces=false&amp;font=arial&amp;colorscheme=light&amp;action=like&amp;height=21" scrolling="no" style="border:none; overflow:hidden; width:107px; height:21px;" allowtransparency="true" frameborder="0"></iframe></li>
+            <li><div style="position: absolute; width: 450px; left: -10000px;" id="___plusone_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" id="I0_1588422104933" name="I0_1588422104933" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/fastbutton.html" data-gapiattached="true" width="100%" frameborder="0"></iframe></div><div class="g-plusone" data-size="medium" data-gapiscan="true" data-onload="true" data-gapistub="true"></div></li>
+                      </ul>
+          <div class="clear"></div>
+        </div>
+        
+
+        <p class="page-tags">
+            <b>Tags:</b> <a href="http://accromath.uqam.ca/sujet/dossier-logique-mathematique/" rel="tag">Logique mathématique</a>        </p>
+        
+        <div class="clear"></div>
+        
+                
+                <div class="row">
+            <div class="related-recent-post-wrapper">
+                
+                <div class="single-recent-wrapper six columns b40">
+                    <div id="%1$s" class="single-recent-content %2$s"><h3 class="single-recent-heading">Articles récents</h3>            <ul class="po_re_container">
+                                        
+                        <li class="widget-post-wrapper">
+                        		<div class="widget-post-thumb">
+                              <span class="had-thumb">
+						<a href="http://accromath.uqam.ca/2020/02/quel-calcul-les-compagnies-aeriennes-font-elles-pour-controler-le-surbooking/" title="Quel calcul les compagnies aériennes font-elles pour contrôler le «&nbsp;surbooking&nbsp;» ?" rel="bookmark"><img alt="" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/Unknown-5.jpeg"></a>                           		
+                        </span>                              </div>
+                        	<div class="widget-post-content">
+                        		<h3 class="widget-post-title"><a articles="" récents="" href="http://accromath.uqam.ca/2020/02/quel-calcul-les-compagnies-aeriennes-font-elles-pour-controler-le-surbooking/" title="Quel calcul les compagnies aériennes font-elles pour contrôler le «&nbsp;surbooking&nbsp;» ?">Quel calcul les compagnies aériennes font-elles pour contrôler le «&nbsp;surbooking&nbsp;» ?</a></h3>
+                        		                        		<span class="widget-post-meta"><a href="http://accromath.uqam.ca/author/belisle/" title="Articles par Claude Bélisle" class="author url fn" rel="author">Claude Bélisle</a> et <a href="http://accromath.uqam.ca/author/dekoninck/" title="Articles par Jean-Marie De Koninck" class="author url fn" rel="author">Jean-Marie De Koninck</a></span>
+                        	</div>
+                        </li>
+                                        
+                        <li class="widget-post-wrapper">
+                        		<div class="widget-post-thumb">
+                              <span class="had-thumb">
+						<a href="http://accromath.uqam.ca/2020/02/la-methode-de-warner/" title="La méthode de Warner" rel="bookmark"><img alt="" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/Unknown-6.jpeg"></a>                           		
+                        </span>                              </div>
+                        	<div class="widget-post-content">
+                        		<h3 class="widget-post-title"><a articles="" récents="" href="http://accromath.uqam.ca/2020/02/la-methode-de-warner/" title="La méthode de Warner">La méthode de Warner</a></h3>
+                        		                        		<span class="widget-post-meta"><a href="http://accromath.uqam.ca/author/genest/" title="Articles par Christian Genest" class="author url fn" rel="author">Christian Genest</a></span>
+                        	</div>
+                        </li>
+                                        
+                        <li class="widget-post-wrapper">
+                        		<div class="widget-post-thumb">
+                              <span class="had-thumb">
+						<a href="http://accromath.uqam.ca/2020/02/dites-moi-quel-parti-vous-voulez-voir-gagner-aux-elections/" title="Dites-moi quel parti vous voulez voir gagner aux élections" rel="bookmark"><img alt="" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/Unknown-3.jpeg"></a>                           		
+                        </span>                              </div>
+                        	<div class="widget-post-content">
+                        		<h3 class="widget-post-title"><a articles="" récents="" href="http://accromath.uqam.ca/2020/02/dites-moi-quel-parti-vous-voulez-voir-gagner-aux-elections/" title="Dites-moi quel parti vous voulez voir gagner aux élections">Dites-moi quel parti vous voulez voir gagner aux élections</a></h3>
+                        		                        		<span class="widget-post-meta"><a href="http://accromath.uqam.ca/author/christiane/" title="Articles par Christiane Rousseau" class="author url fn" rel="author">Christiane Rousseau</a></span>
+                        	</div>
+                        </li>
+                             </ul>
+            </div>                    
+                </div>
+                
+                <div class="single-related-wrapper six columns b40">
+                    
+                    <div id="%1$s" class="widget-container  %2$s"><h3 class="single-related-heading">Sur le même sujet</h3>            
+            
+            <ul class="related-posts">
+                                        
+                        <li class="widget-post-wrapper">
+                            <div class="widget-post-thumb">
+                              <span class="had-thumb">
+						<a href="http://accromath.uqam.ca/2016/02/dessine-moi-un-graphe/" title="Dessine-moi un graphe" rel="bookmark"><img alt="" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/graphe-11.jpg"></a>                           		
+                        </span>                              </div>
+                            <div class="widget-post-content">
+                                <h3 class="widget-post-title"><a sur="" le="" même="" sujet="" href="http://accromath.uqam.ca/2016/02/dessine-moi-un-graphe/" title="Dessine-moi un graphe">Dessine-moi un graphe</a></h3>
+                                                        		<span class="widget-post-meta"><a href="http://accromath.uqam.ca/author/alain-hertz/" title="Articles par Alain Hertz" class="author url fn" rel="author">Alain Hertz</a></span>
+                            </div>
+                        </li>
+                                        
+                        <li class="widget-post-wrapper">
+                            <div class="widget-post-thumb">
+                              <span class="had-thumb">
+						<a href="http://accromath.uqam.ca/2013/09/des-fonctions-deroutantes/" title="Des fonctions… déroutantes" rel="bookmark"><img alt="" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/fonctions_titre-50x50.png"></a>                           		
+                        </span>                              </div>
+                            <div class="widget-post-content">
+                                <h3 class="widget-post-title"><a sur="" le="" même="" sujet="" href="http://accromath.uqam.ca/2013/09/des-fonctions-deroutantes/" title="Des fonctions… déroutantes">Des fonctions… déroutantes</a></h3>
+                                                        		<span class="widget-post-meta"><a href="http://accromath.uqam.ca/author/pelletier/" title="Articles par Laurent Pelletier" class="author url fn" rel="author">Laurent Pelletier</a></span>
+                            </div>
+                        </li>
+                                        
+                        <li class="widget-post-wrapper">
+                            <div class="widget-post-thumb">
+                              <span class="had-thumb">
+						<a href="http://accromath.uqam.ca/2012/01/geometrie-des-nombres/" title="Géométrie des nombres" rel="bookmark"><img alt="" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/geo-nombre-50x50.jpg"></a>                           		
+                        </span>                              </div>
+                            <div class="widget-post-content">
+                                <h3 class="widget-post-title"><a sur="" le="" même="" sujet="" href="http://accromath.uqam.ca/2012/01/geometrie-des-nombres/" title="Géométrie des nombres">Géométrie des nombres</a></h3>
+                                                        		<span class="widget-post-meta"><a href="http://accromath.uqam.ca/author/laforest/" title="Articles par Marc Laforest" class="author url fn" rel="author">Marc Laforest</a> et <a href="http://accromath.uqam.ca/author/ross/" title="Articles par André Ross" class="author url fn" rel="author">André Ross</a></span>
+                            </div>
+                        </li>
+                             </ul>
+            </div>                </div>
+                
+                <div class="clear"></div>
+            </div>
+        </div>
+        
+                
+                
+        <div class="clear"></div>
+                <!-- Comments hidden by Hide Comments Plugin -->        
+      	
+      
+    </div><!-- Single Page Element -->
+        </div>
+        
+        
+         
+        <div class="right-sidebar-wrapper four columns b0">
+            <div class="right-sidebar sidebar">
+                <div id="categories-5" class="widget-container widget_categories"><h3 class="widgettitle">Volumes</h3>		<ul>
+	<li class="cat-item cat-item-203"><a href="http://accromath.uqam.ca/volume/theme-special-les-mathematiques-sont-partout/">Thème spécial: Les mathématiques sont partout</a>
+</li>
+	<li class="cat-item cat-item-200"><a href="http://accromath.uqam.ca/volume/volume-15-1/">Volume 15.1 – hiver-printemps 2020</a>
+</li>
+	<li class="cat-item cat-item-187"><a href="http://accromath.uqam.ca/volume/volume-14-2-ete-automne-2019/">Volume 14.2 – été-automne 2019</a>
+</li>
+	<li class="cat-item cat-item-183"><a href="http://accromath.uqam.ca/volume/volume-14-1-hiver-printemps-2019/">Volume 14.1 – hiver-printemps 2019</a>
+</li>
+	<li class="cat-item cat-item-178"><a href="http://accromath.uqam.ca/volume/volume-13-2-ete-automne-2018/">Volume 13.2 – été-automne 2018</a>
+</li>
+	<li class="cat-item cat-item-175"><a href="http://accromath.uqam.ca/volume/volume-13-1-hiver-printemps/">Volume 13.1 – hiver-printemps 2018</a>
+</li>
+	<li class="cat-item cat-item-169"><a href="http://accromath.uqam.ca/volume/volume-12-2-ete-automne-2017/">Volume 12.2 – été-automne 2017</a>
+</li>
+	<li class="cat-item cat-item-166"><a href="http://accromath.uqam.ca/volume/volume-12-1-hiver-printemps-2017/">Volume 12.1 – hiver-printemps 2017</a>
+</li>
+	<li class="cat-item cat-item-162"><a href="http://accromath.uqam.ca/volume/volume-11-2-ete-automne-2016/">Volume 11.2 – été-automne 2016</a>
+</li>
+	<li class="cat-item cat-item-154"><a href="http://accromath.uqam.ca/volume/volume-11-1-hiver-printemps-2016/">Volume 11.1 – hiver-printemps 2016</a>
+</li>
+	<li class="cat-item cat-item-151"><a href="http://accromath.uqam.ca/volume/volume-10-2-ete-automne-2015/">Volume 10.2 – été-automne 2015</a>
+</li>
+	<li class="cat-item cat-item-147"><a href="http://accromath.uqam.ca/volume/volume-10-1-hiver-printemps-2015/">Volume 10.1 – hiver-printemps 2015</a>
+</li>
+	<li class="cat-item cat-item-141"><a href="http://accromath.uqam.ca/volume/volume-9-2-ete-automne-2014/">Volume 9.2 – été-automne 2014</a>
+</li>
+	<li class="cat-item cat-item-136"><a href="http://accromath.uqam.ca/volume/volume-9-1-hiver-printemps-2014/">Volume 9.1 – hiver-printemps 2014</a>
+</li>
+	<li class="cat-item cat-item-124"><a href="http://accromath.uqam.ca/volume/volume-8-2-ete-automne-2013/">Volume 8.2 – été-automne 2013</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://accromath.uqam.ca/volume/volume-8-1-2013/">Volume 8.1 – hiver-printemps 2013</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://accromath.uqam.ca/volume/volume-7-2-2012/">Volume 7.2 – été-automne 2012</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://accromath.uqam.ca/volume/volume-7-1-2012/">Volume 7.1 – hiver-printemps 2012</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://accromath.uqam.ca/volume/volume-6-2-2011/">Volume 6.2 – été-automne 2011</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://accromath.uqam.ca/volume/volume-6-1-2011/">Volume 6.1 – hiver-printemps 2011</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://accromath.uqam.ca/volume/volume-5-2-2010/">Volume 5.2 – été-automne 2010</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://accromath.uqam.ca/volume/volume-5-1-2010/">Volume 5.1 – hiver-printemps 2010</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://accromath.uqam.ca/volume/volume-4-2-2009/">Volume 4.2 – été-automne 2009</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://accromath.uqam.ca/volume/volume-4-1-2009/">Volume 4.1 – hiver-printemps 2009</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://accromath.uqam.ca/volume/volume-3-2-2008/">Volume 3.2 – été-automne 2008</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://accromath.uqam.ca/volume/volume-3-1-2008/">Volume 3.1 – hiver-printemps 2008</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://accromath.uqam.ca/volume/volume-2-2-2007/">Volume 2.2 – été-automne 2007</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="http://accromath.uqam.ca/volume/volume-2-1-2007/">Volume 2.1 – hiver-printemps 2007</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://accromath.uqam.ca/volume/volume-1-2006/">Volume 1 – été-automne 2006</a>
+</li>
+	<li class="cat-item cat-item-45" style="display: none;"><a href="http://accromath.uqam.ca/volume/article-vedette/">Article vedette</a>
+</li>
+		</ul>
+</div>                
+<!-- Liste des auteurs DÉBUT -->
+                <ul>
+                	<h3 class="widgettitle widgethover" id="showlist" style="display: block;">Auteurs</h3>
+                						
+					<ul id="complete-list" style="display: none;">
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/ades">Michel Adès</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/allard">Antoine Allard</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Aubin">Jean Aubin</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/beaulieu">Marie Beaulieu</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Belanger-Rioux">Rosalie Bélanger-Rioux</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/belisle">Claude Bélisle</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/bergeron">Marc Bergeron</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Bernier">Pierre Bernier</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/boileau">André Boileau</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Boutet">Véronique Boutet</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/buono">Pietro-Luciano Buono</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/caccia">Massimo Caccia</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Camire">Jérôme Camiré-Bernier</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/France">France Caron</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/carphin">Philippe Carphin</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/cazelles">Kévin Cazelles</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/charlin">Laurent Charlin</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/chastenay">Pierre Chastenay</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Dagenais">Jocelyn Dagenais</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Dallaire">Marie-France Dallaire</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/caroufel">Jean-Lou de Carufel</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/DeKoninck">Jean-Marie De Koninck</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Delahaye">Jean-Paul Delahaye</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Diacu">Florin Diacu</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/dillies">Jimmy Dillies</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Doyon">Nicolas Doyon</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/drobin">Philippe Drobinski</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Drouin-Vaillancourt">Hugo Drouin-Vaillancourt</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/dube">Louis J. Dubé</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Duchesne">Thierry Duchesne</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/durand">Stéphane Durand</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/erneux">Thomas Erneux</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Philippe">Philippe Etchécopar</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Fleurent">Charles Fleurent</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/fortier">Jérôme Fortier</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/frigon">Marlène Frigon</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Garon">André Garon</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/genest">Christian Genest</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Gilbert">Denis Gilbert</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Godin">Jonathan Godin</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Gourdeau">Frédéric Gourdeau</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/goyette">Samuel Goyette</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/guerin">Jean Guérin</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/guillard">Hervé Guillard</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/abba">Abba B. Gumel</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/hanley">James A. Hanley</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/hertz">Alain Hertz</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Bernard">Bernard R. Hodgson</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Jalliffier-verne">Isabelle Jalliffier-Verne</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Jouvet">Guillaume Jouvet</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/kaczynski">Tomasz Kaczynski</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Labelle">Patrick Labelle</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Laforest">Marc Laforest</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Lajoie">Josiane Lajoie</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/langlois-remillard">Alexis Langlois-Rémillard</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/laprise">René Laprise</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Lauritzen">Steffen Lauritzen</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/lavigne">Denis Lavigne</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Lessard_a">Adrien Lessard</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/meunier">Jean Meunier</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/mousseau">Normand Mousseau</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/noel">Pierre-André Noël</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/novikov">Dmitry Novikov</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/ostap">Ostap Okhrin</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Pelletier">Laurent Pelletier</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Plante">Jean-François Plante</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/PrudHomme">Annie Claude Prud'Homme</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/rittaud">Benoît Rittaud</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Rivest">Louis-Paul Rivest</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Serge">Serge Robert</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Ross">André Ross</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/christiane">Christiane Rousseau</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/royfortin">Guillaume Roy-Fortin</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Saint-Aubin">Yvan Saint-Aubin</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Salvetti">Maria Vittoria Salvetti</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Vasilisa">Vasilisa Shramchenko</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Robert">Robert Smith?</a></li>
+							</div>
+												
+							<div class="clearfix profile-item">
+								<li><a href="http://accromath.uqam.ca/author/Zazoun">Redouane Zazoun</a></li>
+							</div>
+						
+					</ul>
+<!-- Liste des auteurs FIN -->
+
+				</ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+   
+</div>
+
+
+                                          
+                 </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div> <!-- END .main-outer-wrapper -->
+<div class="footer-outer-wrapper">
+    <div class="footer-wrapper container">
+        <div class="row">
+        	<div class="three columns">
+            	<div id="tag_cloud-4" class="widget-container widget_tag_cloud"><h3 class="widgettitle footer_widgettitle">Sujets</h3><div class="tagcloud"><a href="http://accromath.uqam.ca/sujet/algebre/" class="tag-link-128 tag-link-position-1" title="2 sujets" style="font-size: 9.7746478873239pt;">Algèbre</a>
+<a href="http://accromath.uqam.ca/sujet/analyse/" class="tag-link-115 tag-link-position-2" title="1 sujet" style="font-size: 8pt;">Analyse</a>
+<a href="http://accromath.uqam.ca/sujet/applications/" class="tag-link-195 tag-link-position-3" title="3 sujets" style="font-size: 10.957746478873pt;">Applications</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-applications-des-mathematiques/" class="tag-link-21 tag-link-position-4" title="36 sujets" style="font-size: 20.521126760563pt;">Applications des mathématiques</a>
+<a href="http://accromath.uqam.ca/sujet/chaos/" class="tag-link-68 tag-link-position-5" title="1 sujet" style="font-size: 8pt;">Chaos</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-codes-numeriques/" class="tag-link-100 tag-link-position-6" title="1 sujet" style="font-size: 8pt;">Codes numériques</a>
+<a href="http://accromath.uqam.ca/sujet/combinatoire/" class="tag-link-155 tag-link-position-7" title="1 sujet" style="font-size: 8pt;">Combinatoire</a>
+<a href="http://accromath.uqam.ca/sujet/construction-des-mathematiques/" class="tag-link-167 tag-link-position-8" title="4 sujets" style="font-size: 11.943661971831pt;">Construction des mathématiques</a>
+<a href="http://accromath.uqam.ca/sujet/cristallographie/" class="tag-link-145 tag-link-position-9" title="2 sujets" style="font-size: 9.7746478873239pt;">Cristallographie</a>
+<a href="http://accromath.uqam.ca/sujet/cryptographie/" class="tag-link-190 tag-link-position-10" title="2 sujets" style="font-size: 9.7746478873239pt;">cryptographie</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-dimension-4/" class="tag-link-39 tag-link-position-11" title="2 sujets" style="font-size: 9.7746478873239pt;">Dimension 4</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-fractales/" class="tag-link-75 tag-link-position-12" title="3 sujets" style="font-size: 10.957746478873pt;">Fractales</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-gps/" class="tag-link-37 tag-link-position-13" title="2 sujets" style="font-size: 9.7746478873239pt;">GPS</a>
+<a href="http://accromath.uqam.ca/sujet/gravite/" class="tag-link-191 tag-link-position-14" title="2 sujets" style="font-size: 9.7746478873239pt;">Gravité</a>
+<a href="http://accromath.uqam.ca/sujet/geometrie/" class="tag-link-66 tag-link-position-15" title="5 sujets" style="font-size: 12.732394366197pt;">Géométrie</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-histoire/" class="tag-link-19 tag-link-position-16" title="17 sujets" style="font-size: 17.464788732394pt;">Histoire des mathématiques</a>
+<a href="http://accromath.uqam.ca/sujet/imagerie/" class="tag-link-143 tag-link-position-17" title="2 sujets" style="font-size: 9.7746478873239pt;">Imagerie</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-linfini/" class="tag-link-36 tag-link-position-18" title="1 sujet" style="font-size: 8pt;">Infini</a>
+<a href="http://accromath.uqam.ca/sujet/informatique/" class="tag-link-196 tag-link-position-19" title="2 sujets" style="font-size: 9.7746478873239pt;">Informatique</a>
+<a href="http://accromath.uqam.ca/sujet/informatique-theorique/" class="tag-link-102 tag-link-position-20" title="3 sujets" style="font-size: 10.957746478873pt;">Informatique théorique</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-jeux-mathematiques/" class="tag-link-31 tag-link-position-21" title="2 sujets" style="font-size: 9.7746478873239pt;">Jeux mathématiques</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-logique-mathematique/" class="tag-link-23 tag-link-position-22" title="9 sujets" style="font-size: 14.901408450704pt;">Logique mathématique</a>
+<a href="http://accromath.uqam.ca/sujet/lumiere/" class="tag-link-146 tag-link-position-23" title="5 sujets" style="font-size: 12.732394366197pt;">Lumière</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-planete-terre/" class="tag-link-3 tag-link-position-24" title="15 sujets" style="font-size: 16.87323943662pt;">Mathématiques de la planète Terre</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-mathematiques-et-architecture/" class="tag-link-28 tag-link-position-25" title="1 sujet" style="font-size: 8pt;">Mathématiques et architecture</a>
+<a href="http://accromath.uqam.ca/sujet/mathematiques-et-arts/" class="tag-link-73 tag-link-position-26" title="7 sujets" style="font-size: 13.915492957746pt;">Mathématiques et arts</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-mathematiques-et-astronomie/" class="tag-link-29 tag-link-position-27" title="6 sujets" style="font-size: 13.422535211268pt;">Mathématiques et astronomie</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-mathematiques-et-biologie/" class="tag-link-33 tag-link-position-28" title="3 sujets" style="font-size: 10.957746478873pt;">Mathématiques et biologie</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-mathematiques-et-developpement-durable/" class="tag-link-24 tag-link-position-29" title="7 sujets" style="font-size: 13.915492957746pt;">Mathématiques et développement durable</a>
+<a href="http://accromath.uqam.ca/sujet/mathematiques-et-litterature/" class="tag-link-160 tag-link-position-30" title="5 sujets" style="font-size: 12.732394366197pt;">Mathématiques et littérature</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-mathematiques-et-musique/" class="tag-link-122 tag-link-position-31" title="1 sujet" style="font-size: 8pt;">Mathématiques et musique</a>
+<a href="http://accromath.uqam.ca/sujet/mathematiques-et-medecine/" class="tag-link-48 tag-link-position-32" title="2 sujets" style="font-size: 9.7746478873239pt;">Mathématiques et médecine</a>
+<a href="http://accromath.uqam.ca/sujet/physique-2/" class="tag-link-127 tag-link-position-33" title="2 sujets" style="font-size: 9.7746478873239pt;">Mathématiques et physique</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-mathematiques-et-transport/" class="tag-link-30 tag-link-position-34" title="5 sujets" style="font-size: 12.732394366197pt;">Mathématiques et transport</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-miroirs/" class="tag-link-76 tag-link-position-35" title="1 sujet" style="font-size: 8pt;">Miroirs</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-nombres/" class="tag-link-34 tag-link-position-36" title="3 sujets" style="font-size: 10.957746478873pt;">Nombres</a>
+<a href="http://accromath.uqam.ca/sujet/pavages/" class="tag-link-79 tag-link-position-37" title="1 sujet" style="font-size: 8pt;">Pavages</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-portrait-dun-mathematicien/" class="tag-link-18 tag-link-position-38" title="16 sujets" style="font-size: 17.169014084507pt;">Portrait d'un mathématicien</a>
+<a href="http://accromath.uqam.ca/sujet/portrait-dun-physicien/" class="tag-link-65 tag-link-position-39" title="3 sujets" style="font-size: 10.957746478873pt;">Portrait d'un physicien</a>
+<a href="http://accromath.uqam.ca/sujet/probabilites/" class="tag-link-137 tag-link-position-40" title="8 sujets" style="font-size: 14.408450704225pt;">Probabilités</a>
+<a href="http://accromath.uqam.ca/sujet/dossier-probabilites-et-statistique/" class="tag-link-32 tag-link-position-41" title="5 sujets" style="font-size: 12.732394366197pt;">Probabilités et statistique</a>
+<a href="http://accromath.uqam.ca/sujet/rubrique-des-paradoxes/" class="tag-link-20 tag-link-position-42" title="51 sujets" style="font-size: 22pt;">Rubrique des Paradoxes</a>
+<a href="http://accromath.uqam.ca/sujet/section-problemes/" class="tag-link-25 tag-link-position-43" title="30 sujets" style="font-size: 19.732394366197pt;">Section problèmes</a>
+<a href="http://accromath.uqam.ca/sujet/theorie-des-noeuds/" class="tag-link-72 tag-link-position-44" title="1 sujet" style="font-size: 8pt;">Théorie des noeuds</a>
+<a href="http://accromath.uqam.ca/sujet/editorial/" class="tag-link-35 tag-link-position-45" title="28 sujets" style="font-size: 19.43661971831pt;">Éditorial</a></div>
+</div>            </div>
+            <div class="three columns">
+              	            </div>
+            <div class="three columns">
+                            </div>
+            <div class="three columns">
+                         </div>
+            <div class="clear"></div>    
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    
+    <div class="copyright-outer-wrapper">
+        <div class="copyright-wrapper container"> 
+            <p>
+                © 2020 Accromath            </p>
+        </div>
+    </div>
+</div>
+
+        </div> <!-- END .body-wrapper -->
+    </div> <!-- END .body-outer-wrapper -->
+    <script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/jquery.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/accromath.uqam.ca\/accro\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptcha":{"messages":{"empty":"Merci de confirmer que vous n\u2019\u00eates pas un robot."}},"sending":"Envoi en cours...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/scripts.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/MathJax.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var newsletter = {"messages":{"email_error":"The email is not correct","name_error":"The name is not correct","surname_error":"The last name is not correct","privacy_error":"You must accept the privacy statement"},"profile_max":"20"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/validate.js"></script>
+<script type="text/javascript" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/wp-embed.js"></script>
+
+<iframe name="oauth2relay697456042" id="oauth2relay697456042" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/postmessageRelay.html" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe><iframe scrolling="no" allowtransparency="true" src="Les%20tours%20de%20Hanoi%CC%88%20et%20la%20base%20trois%20|%20Accromath_fichiers/widget_iframe.html" title="Twitter settings iframe" style="display: none;" frameborder="0"></iframe></body></html>

@@ -1,0 +1,3 @@
+﻿(function(){'use strict';var twitterStatus=$(".twitter-status");if(twitterStatus.length>0){var interval=twitterStatus.data("tweet-interval");window.setInterval(function(){if(twitterStatus.length>0){var currentTweet=parseInt(twitterStatus.data("tweet-current"));var lastTweet=parseInt(twitterStatus.data("tweet-last"));if(currentTweet==lastTweet)
+currentTweet=0;else
+currentTweet++;var currentTweetText=twitterStatus.data("tweet-text"+currentTweet);var currentTweetUrl=twitterStatus.data("tweet-url"+currentTweet);twitterStatus.fadeOut(500,function(){twitterStatus.text(currentTweetText);twitterStatus.attr("href",currentTweetUrl);twitterStatus.data("tweet-current",currentTweet);twitterStatus.fadeIn(500);});}},interval);}})();

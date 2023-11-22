@@ -1,0 +1,116 @@
+
+* {
+    -webkit-touch-callout: none;
+    /* -webkit-user-select: none;  *//* Disable selection/Copy of UIWebView */
+}
+
+.ui-page { background: rgb(255,255,255); }
+.ui-btn { border: none !important; color : #64acff;}
+.ui-slider {color : #64acff; };
+
+* {
+    font: HelveticaNeue-Light,Sans-Serif !important;
+    
+}
+
+.ui-input-text {font-family: serif; font-style: italic;}
+
+.ui-btn-new {width:100px; height: 20px; font-size: 8px;  line-height:20% }
+
+.ui-field-contain label.ui-slider {width:30px; font-size:20px}
+
+.ParameterSeparator
+{
+	height: 30px;
+}
+
+#textwebsite {
+	top:0px;
+	right:0px;
+	left:auto;
+	position: absolute;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: normal;
+	color: rgba(0,0,0,0.4);
+}
+
+
+#textcopyright {
+	bottom:0px;
+	right:5px;
+	left:auto;
+	position: absolute;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: normal;
+	color: rgba(0,0,0,0.4);
+}
+
+#TitreSimulation {
+    font-family: HelveticaNeue-UltraLight, Helvetica Neue Ultra Light;
+    text-align: center;
+    font-size: 2em;
+}
+
+#ScrollReadingText
+{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    
+    width: 288px;
+    height: auto;
+    
+    font-family: 'Avenir', 'Open Sans',  sans-serif;
+    font-size: 10px;
+    text-align: center;
+    color:#FF6633;
+}
+
+.equation
+{
+	font-family: serif;
+	font-style: italic;
+}
+
+.avalaibletools
+{
+	background-color : #FFF;
+	position : absolute;
+    z-index: 9999;
+	top : 0px;
+    right : 0px;
+}
+
+.loadercontent
+{
+    position : fixed;
+    z-index: 9999;
+    background-color : #FFF;
+    top : 0px;
+    left : 0px;
+    height : 100%;
+    width : 100%;
+    cursor : wait;
+}
+
+.loader
+{
+    background : url('images/loader.gif') 50% 50% no-repeat;
+    background-size: 120px 120px;
+    top : 0px;
+    left : 0px;
+    height : 100%;
+    width : 100%;
+}
+
+math
+{
+	font-family: "Latin Modern Math";
+}
+
+.span,
+{
+    border-left-color: #FFF;
+}

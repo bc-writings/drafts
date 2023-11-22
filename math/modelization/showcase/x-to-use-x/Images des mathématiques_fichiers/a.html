@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html class="ui-mobile"><head>
+    <title>Variables sans dimension - Climat</title>
+    
+    <!-- base href="https://experiences.math.cnrs.fr/simulations/ModeleCimat-IDM-1/Simulation/" -->
+    <script id="DC_baseScript">if(navigator.userAgent.indexOf('AppleWebKit/') == -1) document.write('<base href="' + location.protocol + '//' + location.host + location.pathname.replace(/\/[^\/]*$/, '/Simulation/') + '"/>')</script><!-- base href="https://experiences.math.cnrs.fr/simulations/ModeleCimat-IDM-1/Simulation/" -->
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+     <script type="text/javascript" src="a_data_002/processing-1.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="a_data_002/jquery-1.js"></script>
+    <script type="text/javascript" src="a_data_002/jquery.js"></script>
+    <link rel="stylesheet" href="a_data_002/jquery.css">
+
+	<script type="text/javascript" src="a_data_002/NLKit-0.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="a_data_002/NLKit-0.css">
+    
+    
+    <link rel="stylesheet" href="a_data/main.css">
+
+    <script type="text/javascript" src="a_data/Fonction.js"></script>
+    <script type="text/javascript" src="a_data/NLDynamicalSystem.js" charset="utf-8"></script>
+    
+
+    <script>
+    	window.simulation = new NLDynamicalSystem();
+    </script>
+
+<style type="text/css">@font-face {
+  font-family: "PjsEmptyFont";
+  src: url('data:application/x-font-ttf;base64,AAEAAAAKAIAAAwAgT1MvMgAAAAAAAAEoAAAAVmNtYXAAAAAAAAABiAAAACxnbHlmAAAAAAAAAbwAAAAkaGVhZAAAAAAAAACsAAAAOGhoZWEAAAAAAAAA5AAAACRobXR4AAAAAAAAAYAAAAAGbG9jYQAAAAAAAAG0AAAABm1heHAAAAAAAAABCAAAACBuYW1lAAAAAAAAAeAAAAAgcG9zdAAAAAAAAAIAAAAAEAABAAAAAQAAAkgTY18PPPUACwAgAAAAALSRooAAAAAAyld0xgAAAAAAAQABAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAAACAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACMAIwAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAMAAQAAAAwABAAgAAAABAAEAAEAAABB//8AAABB////wAABAAAAAAAAAAgAEgAAAAEAAAAAAAAAAAAAAAAxAAABAAAAAAABAAEAAQAAMTcBAQAAAAAAAgAeAAMAAQQJAAEAAAAAAAMAAQQJAAIAAgAAAAAAAQAAAAAAAAAAAAAAAAAA')
+       format('truetype');
+}</style><style type="text/css">@font-face{
+  font-family: '../../NLLib.wdgt/Baskerville.ttf';
+  src:  url('../../NLLib.wdgt/Baskerville.ttf');
+}
+</style><style type="text/css">@font-face{
+  font-family: '../../NLLib.wdgt/helveticaneue-light.ttf';
+  src:  url('../../NLLib.wdgt/helveticaneue-light.ttf');
+}
+</style></head>
+
+<body class="ui-mobile-viewport ui-overlay-c"><div data-role="page" data-url="/simulations/ModeleCimat-IDM-1/" tabindex="0" class="ui-page ui-body-c ui-page-active" style="min-height: 500px;">
+    
+    <div id="SimulationBox">
+
+        <canvas id="simulationCanvas" width="382" height="382" data-processing-sources="xdim.js" tabindex="0" style="image-rendering: crisp-edges !important;"></canvas>
+
+
+        <div id="ParametersBox">
+        	<!--<div id="TitreSimulation">Title</div>-->
+        	        	
+		            <div data-role="button" data-mini="true" id="start-button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Stop</span></span></div>
+					<div data-role="button" data-mini="true" id="clear-button" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="ui-btn ui-shadow ui-btn-corner-all ui-mini ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Clear</span></span></div>
+
+				<div style="height:1em"></div>
+
+
+	                <label for="NLSlider-0" id="labelSlider0" class="ui-input-text ui-slider" style="width: 55px; font-size: 12px;">ε</label>
+	                <div class="ui-slider"><input type="number" data-type="range" name="NLSlider-0" id="NLSlider-0" min="0.00007" max="0.01" step="0.00001" value="0.00613" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset ui-slider-input" style="width: 55px; font-size: 12px;"><div role="application" class="ui-slider-track ui-btn-down-c ui-btn-corner-all" style="width: 150px;"><a href="#" class="ui-slider-handle ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" role="slider" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0.00613" aria-valuetext="0.00613" title="0.00613" aria-labelledby="labelSlider0" style="left: 61%;"><span class="ui-btn-inner"><span class="ui-btn-text"></span></span></a></div></div>
+					
+	                <label for="NLSlider-1" id="labelSlider1" class="ui-input-text ui-slider" style="width: 55px; font-size: 12px;">p</label>
+	                <div class="ui-slider"><input type="number" data-type="range" name="NLSlider-1" id="NLSlider-1" min="0" max="2" step="0.01" value="0.42" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset ui-slider-input" style="width: 55px; font-size: 12px;"><div role="application" class="ui-slider-track ui-btn-down-c ui-btn-corner-all" style="width: 150px;"><a href="#" class="ui-slider-handle ui-btn ui-shadow ui-btn-corner-all ui-btn-up-c" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" role="slider" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0.42" aria-valuetext="0.42" title="0.42" aria-labelledby="labelSlider1" style="left: 21%;"><span class="ui-btn-inner"><span class="ui-btn-text"></span></span></a></div></div>
+    
+                    <label for="NLSlider-2" id="labelSlider2" class="ui-input-text ui-slider" style="width: 55px; font-size: 12px;">a</label>
+                    <div class="ui-slider"><input type="number" data-type="range" name="NLSlider-2" id="NLSlider-2" min="0" max="10" step="0.01" value="7.5" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset ui-slider-input" style="width: 55px; font-size: 12px;"><div role="application" class="ui-slider-track ui-btn-down-c ui-btn-corner-all" style="width: 150px;"><a href="#" class="ui-slider-handle ui-btn ui-btn-up-c ui-shadow ui-btn-corner-all" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" role="slider" aria-valuemin="0" aria-valuemax="2" aria-valuenow="7.5" aria-valuetext="7.5" title="7.5" aria-labelledby="labelSlider2" style="left: 75%;"><span class="ui-btn-inner"><span class="ui-btn-text"></span></span></a></div></div>
+
+				<div style="height:1em"></div>
+
+				</div>
+				
+				
+        </div>
+    
+
+
+</div><div class="ui-loader ui-corner-all ui-body-a ui-loader-default"><span class="ui-icon ui-icon-loading"></span><h1>loading</h1></div><span style="position: absolute; top: 0px; left: 0px; opacity: 0; font-family: &quot;PjsEmptyFont&quot;, fantasy;">AAAAAAAA</span></body></html>

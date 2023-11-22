@@ -1,0 +1,500 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * This file is part of DotClear.
+ * Copyright (c) 2004 Samuel Latchman and contributors. All rights
+ * reserved.
+ *
+ * DotClear is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * DotClear is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with DotClear; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * ***** END LICENSE BLOCK *****
+ *
+ * Author: Coyote
+ * Thème : 3cols-fixes
+ *
+ */
+
+
+/* ---------------------------------------------------- */
+/* General						*/
+/* ---------------------------------------------------- */
+
+body {
+	margin : auto;
+	padding : 0;
+	background : #00CCFF;
+	color : #333;
+	font : 12px "Trebuchet MS","Lucida grande",Verdana,Lucida,Helvetica,sans-serif;
+}
+
+table { font-size : 1em; }
+p { margin : 1em 0; }
+q { font-style : italic; }
+ul { list-style-type : square; list-style-position : outside; }
+
+pre { 
+	width : 100%;
+	padding-bottom : 1.5em;
+	white-space : normal;
+	/* caché pour IE 5 Mac qui sait pas faire - Ne pas supprimer cette ligne  \*/
+	overflow : auto;
+	white-space : pre;
+	/* Fin hack Ne pas supprimer cette ligne */
+}
+code { width : 100%;}
+img  { border : none; }
+form { display : block; margin : 0; padding : 0; }
+
+h1 { font-size : 3em;  margin : 0.67em 0; 	  font-style : normal; ; font-family: Arial, Helvetica, sans-serif; color: #FF0000; padding: 0.67em}
+h2 { font-size : 0.90em;   margin : 0.83em 0 0 0;  font-family : "Arial",sans-serif; color : #4364a1;  font-weight: bold; }
+h3 { font-size : 0.9em;   margin : 1em 0; 	  font-family : "Trebuchet MS", Arial, Helvetica, sans-serif;}
+h4 { font-size : 1em; 	  margin : 1.33em 0; }
+h5 { font-size : 0.83em;  margin : 1.67em 0; }
+h6 { font-size : 0.67em;  margin : 2.33em 0; }
+
+a:link 	  { color : #036; text-decoration : underline; }
+a:visited { color : #036; text-decoration : underline; }
+a:hover   { color : #630; text-decoration : underline;  }
+a:active  { text-decoration : underline; }
+a:focus   { text-decoration : none;}
+
+a[hreflang]:after {
+	content: "\0000a0(" attr(hreflang) ")";
+	color : #666;
+}
+
+.clear {
+	clear : both;
+	display : block;
+	height : 1px;
+	margin : 0;
+	padding : 0;
+}
+
+/* ---------------------------------------------------- */
+/* Layout		#EE8811				*/
+/* ---------------------------------------------------- */
+#page {
+	width : 950px;
+	margin : 10px auto;
+	padding : 5px;
+	border : 1px #000 solid;
+	background : white;
+	text-align : left;
+}
+#main {
+	width : 950px;
+	padding : 0 0;
+	margin : auto auto;
+	text-align : left;
+; clip:   rect(   )
+}
+#wrapper {
+	float : right;
+	width : 780px;
+	margin : 0;
+	padding : 0;
+	text-align : left;
+}
+#content {
+	float : left;
+	width : 600px;
+	margin : 0;
+	padding : 0;
+	text-align : left;
+}
+#sidebar {
+	float : right;
+	width : 160px;
+	padding : 5px;
+	margin : 0;
+	border: 1px solid;
+	border-color: #b5c5d4;
+	background-color:#f6f6f6;
+	text-align : left;
+}
+#extrabox {
+	float : left;
+	width : 150px;
+	padding : 5px;
+	margin : 0;
+	background-color:#FFFFFF;
+	text-align : left;
+}
+/* ---------------------------------------------------- */
+/* Block "Top"						*/
+/* ---------------------------------------------------- */
+#top {
+	margin : 0;
+	padding : 5px 10px 10px 10px;
+   height: 92px;
+   background-image: url(img/header.jpg);
+   background-repeat: no-repeat;
+  
+   
+	
+}
+
+#top a:link {
+	color : #000033;
+	text-decoration : underline;
+}
+
+#top h1 {
+	float : left;
+	margin : 0;
+	padding : 0;
+; color: #000033
+	
+}
+#navbar-top {
+	float : right;
+	margin : 0;
+	padding : 0;
+}
+
+.navbar {
+	text-align : right;
+}
+
+/* ---------------------------------------------------- */
+/* Block "Footer"					*/
+/* ---------------------------------------------------- */
+#footer {
+	clear : both;
+	margin : auto;
+	padding : 0px 0px 0px 0px;
+	background-color:#EE8811
+	
+}
+#dotclear {
+	width : 30%;
+	float : left;
+	margin : 0;
+	padding : 0;
+}
+#navbar-bottom {
+	width : 65%;
+	float : right;
+	margin : 0;
+	padding : 0;
+}
+.clear {
+	clear : both;
+	margin : 0;
+	padding : 0;
+	height:1px;
+}
+
+/* ---------------------------------------------------- */
+/* Block "Sidebar"					*/
+/* ---------------------------------------------------- */
+#sidebar h2 {
+	padding : 0;
+}
+#sidebar ul {
+	list-style-type : none;
+; margin-left: 0px; padding-left: 1.5em
+}
+#sidebar li {
+	list-style : square;
+	color : #999;
+; margin-left: 0.1em
+}
+#sidebar li:hover {
+	color : #333;
+}
+
+/* Calendar box -------------------------------------- */
+#calendar {
+	margin : 0;
+	padding : 0;
+}
+#calendar h2 {
+	display : none;
+}
+#calendar table {
+	border-collapse : collapse;
+	font-size : 0.85em;
+	margin : 0 auto;
+}
+#calendar caption {
+	padding : 0 0 0.3em 0;
+	font-size : 1.2em;
+	margin : 0 auto;
+}
+#calendar abbr {
+	border : none;
+	font-style : normal;
+}
+#calendar th, #calendar td {
+	font-weight : normal;
+	border : none;
+	padding : 1px;
+}
+#calendar td {	
+	text-align : center;
+}
+#calendar td.active {
+	border : 1px solid #000;
+	
+}
+#calendar td a{
+	display: block;
+	font-weight: bold;
+	background: #E0E0E0;
+	
+}
+#calendar td.active a {
+	font-weight : normal;
+	color : #000;
+	
+}
+#calendar a {
+	color : #4364a1;
+	font-weight: bold;
+	font-size : 0.88em;
+	
+}
+
+
+/* Search form box ----------------------------------- */
+#search {
+	margin : 0;
+	padding : 0;
+}
+#search h2 {
+}
+
+/* Categories box ------------------------------------ */
+#categories {
+	margin : 0;
+	padding : 0;
+}
+#categories h2 {
+}
+
+/* Archives box -------------------------------------- */
+#archives {
+	margin : 0;
+	padding : 0;
+}
+#archives h2 {
+}
+
+/* Links box ----------------------------------------- */
+#links {
+	margin : 0;
+	padding : 0;
+}
+#links h2 {
+}
+
+/* Syndication box ----------------------------------- */
+#syndicate {
+	margin : 0;
+	padding : 0;
+}
+#syndicate h2 {
+}
+
+/* Themes box ----------------------------------------- */
+	
+#themes {
+	margin : 0;
+	padding : 0;
+}
+#themes h2 {
+}
+
+/* ---------------------------------------------------- */
+/* Post							*/
+/* ---------------------------------------------------- */
+.day-date {
+	font-size : 1em;
+	font-weight : bold;
+	margin : 0;
+	text-align : right;
+	color : #036;
+	background-color:#b5c5d4;
+	
+}
+.post {
+	padding : 5px;
+	margin-bottom : 2em; 
+	background-color:#f6f6f6;
+	border: 1px solid;
+	border-color: #b5c5d4;
+}
+.post-title {
+	color : #036;
+	margin : 0;
+	padding : 0;
+	background-color:#b5c5d4;
+; font-size: 14px
+	
+}
+.post-info {
+	color : #666;
+	margin : 0;
+	padding : 0;
+}
+.post-info a {  }
+
+.post-chapo {
+	margin : 0;
+	padding : 0;
+}
+.post-content {
+	margin : 0;
+	padding : 0;
+	text-align : justify;
+}
+.post-info-co {
+	padding : 0;
+	text-align : right;
+}
+.post-info-co a {  }
+
+/* ---------------------------------------------------- */
+/* Comments & Trackbacks				*/
+/* ---------------------------------------------------- */
+#trackbacks, #comments {
+}
+#comments-list, #trackback-list {
+	margin : 0;
+	padding : 0;
+}
+#comment-preview {
+}
+#trackbacks blockquote, #comments blockquote, #comment-preview blockquote {
+	display : block;
+	margin : 0;
+	padding : 0;
+}
+.comment-info {
+	margin : 0;
+	padding : 0;
+}
+#trackbacks .comment-info {
+}
+#comments .comment-info {
+}
+.comment-number {
+	font-weight : bold;
+}
+.comment-number a {
+	text-decoration : none;
+}
+.linktop {
+	margin : 0;
+	padding : 0;
+}
+
+/* ---------------------------------------------------- */
+/* Form							*/
+/* ---------------------------------------------------- */
+#add-comment, #change-comment {
+	margin : 0;
+	padding : 0;
+}
+#comment-form {
+	margin : 0;
+	padding : 0;
+}
+#dcwikibar {
+	margin : 0;
+	padding : 0;
+	padding : 2px;
+}
+fieldset {
+	display : block;
+	border : none;
+	margin : 0;
+	padding : 0;
+}
+input, textarea {
+}
+input[type], textarea[name] {
+}
+input[type=submit], input[type=reset] {
+}
+input[type=submit]:hover {
+}
+textarea {
+	margin : 0;
+	padding : 0;
+}
+p.field {
+	margin : 0;
+}
+p.field label {
+	display : block;
+}
+.form-help {
+}
+input.preview {
+}
+input.submit {
+}
+#c_nom {
+}
+#c_mail {
+}
+#c_site {
+}
+#c_content {
+}
+#c_remember {
+}
+
+/* ---------------------------------------------------- */
+/* Error messages					*/
+/* ---------------------------------------------------- */
+.error {
+	border : 1px solid #c00;
+	background : #fee;
+	padding : 0.5em;
+}
+.error ul {
+	padding-left : 20px;
+}
+.error li {
+	list-style : square;
+}
+
+/* ---------------------------------------------------- */
+/* Extra blocks						*/
+/* ---------------------------------------------------- */
+#block1 {
+}
+#block2 {
+}
+#block3 {
+}
+#block4 {
+}
+#block5 {
+}
+#block6 {
+}
+
+span.highlight0 {background-color: #FF9900;}
+span.highlight1 {background-color: #FF99FF;}
+span.highlight2 {background-color: #FFFF99;}
+span.highlight3 {background-color: #99FF99;}
+span.highlight4 {background-color: #9999FF;}
+
+#comments blockquote.comback_content {
+	background: #DEE;
+}

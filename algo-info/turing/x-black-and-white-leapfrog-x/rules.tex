@@ -1,0 +1,32 @@
+Voici une petite devinette bien sympathique.
+
+\begin{enumerate}
+	\item Dans des cases sont disposés à gauche uniquement des moutons noirs \textbf{K}
+	      \footnote{
+	      	   Penser à la fin de \myquote{black}.
+	      }
+	      et à droite que des blancs \textbf{W}
+	      \footnote{
+	      	   Penser au début de \myquote{white}.
+	      }
+	      avec une case vide entre chaque groupe. Voici un exemple.
+		  \begin{center}
+			\boxedB\boxedB\boxedB%
+			\emptybox%
+			\boxedW\boxedW%
+		  \end{center}
+
+
+	\item Les moutons noirs ne se déplacent que vers la droite, et les blancs uniquement vers la gauche. Aucun retour en arrière n'est possible !
+
+
+	\item Pour avancer, un mouton ne peut faire que deux choses dans sa direction de déplacement.
+	\begin{enumerate}
+		\item Si la case vide est devant lui, un mouton peut avancer dans cette case.
+
+		\item Un mouton peut sauter au-dessus d'un seul mouton d'une autre couleur pour arriver dans la case vide.
+	\end{enumerate}
+\end{enumerate}
+
+
+La question est de savoir s'il est possible de faire toujours passer tous les moutons blancs à gauche les uns à côté des autres, et tous les noirs à droite avec une case vide entre ces deux groupes de moutons. Nous allons répondre par l'affirmative en fournissant une machine de Turing résolvant le problème.

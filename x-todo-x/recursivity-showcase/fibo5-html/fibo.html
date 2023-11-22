@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title> Fibonacci </title>
+        <style>
+            html {
+                font-size: 18px;
+            }
+            body {
+                margin : 2rem auto;
+                width  : 80%;
+                display: flex;
+            }
+            div {
+                margin : 3px;
+                padding: 3px;
+            }
+            span.barre {
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+
+            <div style='color : #66FF00;
+                        border: 2px solid #66FF00;'>
+                <span class='barre'
+                      style='min-width    : 10px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #66FF00;'>
+                </span>
+                fibo(5) [[1 - 1]]
+                <br>
+            
+            <div style='color : #3D2B1F;
+                        border: 2px solid #3D2B1F;'>
+                <span class='barre'
+                      style='min-width    : 20px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #3D2B1F;'>
+                </span>
+                fibo(4) [[2 - 2]]
+                <br>
+            
+            <div style='color : #EFDECD;
+                        border: 2px solid #EFDECD;'>
+                <span class='barre'
+                      style='min-width    : 30px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #EFDECD;'>
+                </span>
+                fibo(3) [[3 - 3]]
+                <br>
+            
+            <div style='color : #B2BEB5;
+                        border: 2px solid #B2BEB5;'>
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #B2BEB5;'>
+                </span>
+                fibo(2) [[4 - 4]]
+                <br>
+            
+            <div style='color : #FF9966;
+                        border: 2px solid #FF9966;'>
+                <span class='barre'
+                      style='min-width    : 50px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #FF9966;'>
+                </span>
+                fibo(1) [[5 - 5]]
+                <br>
+            
+                <span class='barre'
+                      style='min-width    : 50px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #FF9966;'>
+                </span>
+                fibo(1) = 1
+            </div>
+            
+            <div style='color : #FFBF00;
+                        border: 2px solid #FFBF00;'>
+                <span class='barre'
+                      style='min-width    : 50px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #FFBF00;'>
+                </span>
+                fibo(0) [[6 - 5]]
+                <br>
+            
+                <span class='barre'
+                      style='min-width    : 50px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #FFBF00;'>
+                </span>
+                fibo(0) = 0
+            </div>
+            
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #B2BEB5;'>
+                </span>
+                fibo(2) = 1
+            </div>
+            
+            <div style='color : #007FFF;
+                        border: 2px solid #007FFF;'>
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #007FFF;'>
+                </span>
+                fibo(1) [[7 - 4]]
+                <br>
+            
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #007FFF;'>
+                </span>
+                fibo(1) = 1
+            </div>
+            
+                <span class='barre'
+                      style='min-width    : 30px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #EFDECD;'>
+                </span>
+                fibo(3) = 2
+            </div>
+            
+            <div style='color : #FDEE00;
+                        border: 2px solid #FDEE00;'>
+                <span class='barre'
+                      style='min-width    : 30px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #FDEE00;'>
+                </span>
+                fibo(2) [[8 - 3]]
+                <br>
+            
+            <div style='color : #98777B;
+                        border: 2px solid #98777B;'>
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #98777B;'>
+                </span>
+                fibo(1) [[9 - 4]]
+                <br>
+            
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #98777B;'>
+                </span>
+                fibo(1) = 1
+            </div>
+            
+            <div style='color : #9966CC;
+                        border: 2px solid #9966CC;'>
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #9966CC;'>
+                </span>
+                fibo(0) [[10 - 4]]
+                <br>
+            
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #9966CC;'>
+                </span>
+                fibo(0) = 0
+            </div>
+            
+                <span class='barre'
+                      style='min-width    : 30px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #FDEE00;'>
+                </span>
+                fibo(2) = 1
+            </div>
+            
+                <span class='barre'
+                      style='min-width    : 20px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #3D2B1F;'>
+                </span>
+                fibo(4) = 3
+            </div>
+            
+            <div style='color : #9966CC;
+                        border: 2px solid #9966CC;'>
+                <span class='barre'
+                      style='min-width    : 20px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #9966CC;'>
+                </span>
+                fibo(3) [[11 - 2]]
+                <br>
+            
+            <div style='color : #007FFF;
+                        border: 2px solid #007FFF;'>
+                <span class='barre'
+                      style='min-width    : 30px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #007FFF;'>
+                </span>
+                fibo(2) [[12 - 3]]
+                <br>
+            
+            <div style='color : #5D8AA8;
+                        border: 2px solid #5D8AA8;'>
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #5D8AA8;'>
+                </span>
+                fibo(1) [[13 - 4]]
+                <br>
+            
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #5D8AA8;'>
+                </span>
+                fibo(1) = 1
+            </div>
+            
+            <div style='color : #915C83;
+                        border: 2px solid #915C83;'>
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #915C83;'>
+                </span>
+                fibo(0) [[14 - 4]]
+                <br>
+            
+                <span class='barre'
+                      style='min-width    : 40px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #915C83;'>
+                </span>
+                fibo(0) = 0
+            </div>
+            
+                <span class='barre'
+                      style='min-width    : 30px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #007FFF;'>
+                </span>
+                fibo(2) = 1
+            </div>
+            
+            <div style='color : #EFDECD;
+                        border: 2px solid #EFDECD;'>
+                <span class='barre'
+                      style='min-width    : 30px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-left  : 10px solid #EFDECD;'>
+                </span>
+                fibo(1) [[15 - 3]]
+                <br>
+            
+                <span class='barre'
+                      style='min-width    : 30px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #EFDECD;'>
+                </span>
+                fibo(1) = 1
+            </div>
+            
+                <span class='barre'
+                      style='min-width    : 20px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #9966CC;'>
+                </span>
+                fibo(3) = 2
+            </div>
+            
+                <span class='barre'
+                      style='min-width    : 10px;
+                             border-top   : 10px solid transparent;
+                             border-bottom: 10px solid transparent;
+                             border-right : 10px solid #66FF00;'>
+                </span>
+                fibo(5) = 5
+            </div>
+            
+    </body>
+</html>

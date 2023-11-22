@@ -1,0 +1,315 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Code de Popham</title>
+<link rel="stylesheet" href="Code%20de%20Popham_fichiers/style.css">
+<script language="JavaScript">
+
+function choisir(adresse)
+{ 
+  document.location=adresse
+}
+
+</script>
+</head>
+<body background="Code%20de%20Popham_fichiers/fondcrypto.gif">
+<img src="Code%20de%20Popham_fichiers/popham.jpg" width="130" vspace="5" hspace="5" height="177" align="Right">
+<h2><a href="https://www.apprendre-en-ligne.net/crypto/index.html"><img src="Code%20de%20Popham_fichiers/logocrypt.gif" width="92" height="34" border="0" align="Absmiddle"></a> Code de Popham</h2>
+<table>
+<tbody><tr valign="TOP">
+<td><code>Chapitre:</code></td>
+<td>IV. Codes</td>
+<td width="20"></td>
+<td><code>Prérequis:</code></td>
+<td>-</td>
+<td width="20"></td>
+<td><form name="choix">
+<select name="page" size="1" onchange="choisir(this.options[selectedIndex].value)">
+<option value="#" selected="selected">Aller vers :
+</option><option value="../morse/index.html">&gt; Alphabet Morse
+</option><option value="index.html">Systèmes à répertoires &lt;
+</option><option value="../index.html">Page d'accueil
+</option><option value="../activites/index.html">Table des matières
+</option><option value="../lexique.html">Lexique
+</option></select>
+</form>
+</td>
+</tr></tbody></table>
+<p align="JUSTIFY">
+Même si l'on observe quelques tentatives primitives de communiquer entre
+ bateaux par des drapeaux depuis l'Antiquité, c'est seulement en 1738 
+que le capitaine français <b>Mahe de la Bourdonnais</b> conçoit le 
+premier code de pavillons numériques. Dix fanions de couleurs 
+différentes y correspondent chacun à un chiffre de 0 à 9. Trois séries 
+de dix, soit trente fanions, représentant les unités, les dizaines et 
+les centaines, permettent ainsi de représenter les nombres de 0 à 999.<br>
+En 1790, Lord <b>Richard Howe</b>, de la British Royal Navy, propose <em>The Howe Code</em>,
+ composé de dix pavillons colorés, six drapeaux spéciaux pour les 
+caractères de contrôle et un dictionnaire de 260 entrées numériques, 
+étendu à 340 en 1799.<br>
+<a name="Popham"></a>En 1803, l'amiral sir <b>Home Popham</b>  (voir portrait ci-contre) publie son <i>Telegraphic Signals or Marine Vocabulary</i>. Ce <a href="https://www.apprendre-en-ligne.net/crypto/codes/index.html" target="_top">répertoire</a>
+ comprend quelques 3000 signaux numériques correspondant à des mots, des
+ expressions et jusqu'à des phrases entières. De 1803 à 1812, Popham va 
+également enrichir le système à pavillons d'une nouvelle gamme de 
+fanions numériques correspondants à une liste alphabétique de différents
+ termes. Via la combinaison des trois, voire quatre fanions, on dispose 
+désormais d'un vocabulaire de 30'000 mots.
+</p><p>
+</p><center>
+<table cellspacing="2" cellpadding="2" border="1">
+<caption align="TOP"><b>Extrait du répertoire de Popham</b></caption>
+<tbody><tr>
+<th><b>#</b>
+</th>
+<th><b>Mot</b>
+</th>
+<th><b>#</b>
+</th>
+<th><b>Mot</b>
+</th>
+<th><b>#</b>
+</th>
+<th><b>Phrase</b>
+</th></tr>
+<tr>
+<td bgcolor="#FFFF99">26</td>
+<td bgcolor="#08FF7C">Able</td>
+<td bgcolor="#FFFF99">1026</td>
+<td bgcolor="#08FF7C">Aback</td>
+<td bgcolor="#FFFF99">2026</td>
+<td bgcolor="#08FF7C">Shall I leave off action?</td></tr>
+<tr>
+<td bgcolor="#FFFF99">27</td>
+<td bgcolor="#08FF7C">Above</td>
+<td bgcolor="#FFFF99">1027</td>
+<td bgcolor="#08FF7C">Abate-d-ing-ment</td>
+<td bgcolor="#FFFF99">2027</td>
+<td bgcolor="#08FF7C">I have been in action</td></tr>
+<tr>
+<td bgcolor="#FFFF99">28</td>
+<td bgcolor="#08FF7C">About</td>
+<td bgcolor="#FFFF99">1028</td>
+<td bgcolor="#08FF7C">Abrupt-ly</td>
+<td bgcolor="#FFFF99">2028</td>
+<td bgcolor="#08FF7C">I have not seen any action</td></tr>
+<tr>
+<td bgcolor="#FFFF99">29</td>
+<td bgcolor="#08FF7C">Abreast</td>
+<td bgcolor="#FFFF99">1029</td>
+<td bgcolor="#08FF7C">Abundance-t-ly</td>
+<td bgcolor="#FFFF99">2029</td>
+<td bgcolor="#08FF7C">I have heard of an action</td></tr>
+<tr>
+<td bgcolor="#FFFF99">30</td>
+<td bgcolor="#08FF7C">Absence-t-ed-ing-tee</td>
+<td bgcolor="#FFFF99">1030</td>
+<td bgcolor="#08FF7C">Accomodate-d-ing</td>
+<td bgcolor="#FFFF99">2030</td>
+<td></td></tr>
+<tr>
+<td bgcolor="#FFFF99">31</td>
+<td bgcolor="#08FF7C">Absolutely</td>
+<td bgcolor="#FFFF99">1031</td>
+<td bgcolor="#08FF7C">Accomplish-ed-ing-ment</td>
+<td bgcolor="#FFFF99">2031</td>
+<td bgcolor="#08FF7C">I am clear for action</td></tr>
+<tr>
+<td bgcolor="#FFFF99">32</td>
+<td bgcolor="#08FF7C">Accept-ed-ing-ance</td>
+<td bgcolor="#FFFF99">1032</td>
+<td bgcolor="#08FF7C">Account-ed-ing</td>
+<td bgcolor="#FFFF99">2032</td>
+<td bgcolor="#08FF7C">Shall I commence action?</td></tr>
+<tr>
+<td bgcolor="#FFFF99">33</td>
+<td bgcolor="#08FF7C">Accidently</td>
+<td bgcolor="#FFFF99">1033</td>
+<td bgcolor="#08FF7C">Accurate-ly</td>
+<td bgcolor="#FFFF99">2033</td>
+<td></td></tr>
+<tr>
+<td bgcolor="#FFFF99">34</td>
+<td bgcolor="#08FF7C">Accompany-i-ed</td>
+<td bgcolor="#FFFF99">1034</td>
+<td bgcolor="#08FF7C">Accuse-d</td>
+<td bgcolor="#FFFF99">2034</td>
+<td bgcolor="#08FF7C">In coming into action, do you lead?</td></tr>
+<tr>
+<td bgcolor="#FFFF99">35</td>
+<td bgcolor="#08FF7C">According-ly</td>
+<td bgcolor="#FFFF99">1035</td>
+<td bgcolor="#08FF7C">Acknowledge-d-ing-ment</td>
+<td bgcolor="#FFFF99">2035</td>
+<td bgcolor="#08FF7C">Go to the Admiral's office</td></tr>
+</tbody></table>
+<table cellspacing="2" cellpadding="0" border="0">
+<tbody><tr>
+<td></td></tr>
+</tbody></table>
+</center>
+<p align="JUSTIFY">
+1805: À la <a href="http://www.nelsonsnavy.co.uk/battle-of-trafalgar.html" target="_top">bataille de Trafalgar</a>,
+ l'amiral Horatio Nelson transmet le message "England expects that every
+ man will do his duty". Les huit premiers mots sont dans le répertoire 
+de Popham, mais "duty" a dû être épelé car ce mot n'y figurait pas.
+</p><p>
+</p><center>
+<table cellspacing="2" cellpadding="2" border="0">
+<tbody><tr>
+	<td><img src="Code%20de%20Popham_fichiers/duty.gif" width="363" height="213">
+</td>
+	<td width="30"></td>
+	<td>
+<table cellspacing="2" cellpadding="1" border="">
+<tbody><tr>
+	<td align="CENTER"><b>#</b></td>
+	<td align="CENTER"><b>Mot</b></td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99">253</td>
+	<td bgcolor="#08FF7C">England</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99">269</td>
+	<td bgcolor="#08FF7C">expect</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99">863</td>
+	<td bgcolor="#08FF7C">that</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99">261</td>
+	<td bgcolor="#08FF7C">every</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99">471</td>
+	<td bgcolor="#08FF7C">man</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99">958</td>
+	<td bgcolor="#08FF7C">will</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99">220</td>
+	<td bgcolor="#08FF7C">do</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99">370</td>
+	<td bgcolor="#08FF7C">his</td>
+</tr>
+</tbody></table>
+</td>
+	<td width="10"></td>
+	<td>
+<table cellspacing="2" cellpadding="2" border="">
+<tbody><tr>
+	<td align="CENTER"><b>#</b></td>
+	<td align="CENTER"><b>Lettre</b></td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99" align="CENTER">4</td>
+	<td bgcolor="#08FF7C" align="CENTER">D</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99" align="CENTER">21</td>
+	<td bgcolor="#08FF7C" align="CENTER">U</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99" align="CENTER">19</td>
+	<td bgcolor="#08FF7C" align="CENTER">T</td>
+</tr>
+<tr>
+	<td bgcolor="#FFFF99" align="CENTER">24</td>
+	<td bgcolor="#08FF7C" align="CENTER">Y</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</center>
+<p align="JUSTIFY">L'image ci-dessous montre les drapeaux du système 
+développé par Lord Richard Howe, et ceux de Sir Home Popham (notez que 
+l'inversion du drapeau 4 n'est pas une erreur). Les drapeaux numériques 
+de Popham correspondent aussi aux lettres A à K (I et J sont 
+identiques), les lettres suivantes étant représentées par deux drapeaux.
+ L'image montre aussi les drapeaux du code de Marryat, qui va précéder 
+le système international actuel.
+</p><p>
+</p><center><img src="Code%20de%20Popham_fichiers/signal5.gif" width="471" height="339"></center>
+<p align="JUSTIFY">C'est en effet le capitaine <b>Frederick Marryat</b> qui rédige en 1817 le premier répertoire de code international. Dans son <em>Code of Signals for the Merchant Service</em>,
+ les pavillons de couleur correspondent à 9000 numéros distincts 
+renvoyant à des mots précis. Une terminologie standardisée qu'exploitent
+ tous les marins du monde. Ce code restera en service jusqu'à la fin des
+ années 1870.
+</p><h3><a name="drapeaux">Les signaux maritimes internationaux actuels</a></h3>
+<p align="JUSTIFY">
+En 1870, c'est la publication de l'<em>International Code of Signals</em>,
+ aujourd'hui encore référencé sous le même titre. Après encore bien des 
+changements, il faudra attendre le 1er janvier 1934 pour que soit adopté
+ le nouveau Code International.
+</p><p>
+</p><center>
+<table cellspacing="2" cellpadding="1" border="0">
+<tbody><tr>
+	<td><img src="Code%20de%20Popham_fichiers/signal4.gif" width="360" height="544"></td>
+	<td><p align="JUSTIFY">Certaines combinaisons de deux ou trois drapeaux
+ correspondent aussi à des messages. Par exemple, le pavillon jaune (Q) 
+et le triangle jaune et bleu (1R) signale une maladie contagieuse à 
+bord.
+</p><p>
+</p><center><img src="Code%20de%20Popham_fichiers/soleil1.jpg" width="369" height="175"><br>
+Le Temple du Soleil, p. 3</center>
+<p align="JUSTIFY">
+Le drapeau jaune (Q) combiné avec le drapeau à damier jaune et noir (L) signifie «Navire en quarantaine».
+</p><p>
+</p><center><img src="Code%20de%20Popham_fichiers/soleil2.jpg" width="387" height="174"><br>
+Le Temple du Soleil, p. 5</center></td>
+</tr>
+</tbody></table>
+</center>
+<p>
+</p><h4>Sémaphore à deux bras</h4>
+Ce système fut utilisé dans la marine américaine une grande partie du 
+20e siècle. Totalement inefficace sur de longues distances ou par 
+brouillard, il vient cependant souvent en renfort des pavillons de 
+signalisation (voir ci-dessus). De nos jours, l'utilisation du sémaphore
+ se limite à certaines communications de type administratif ou technique
+ entre bâtiments au large ou à quai.
+<p>
+</p><center>
+<img src="Code%20de%20Popham_fichiers/donald.gif" width="621" height="500">
+</center>
+<p>
+</p><hr>
+<h3>Références</h3>
+<ul>
+  <li>Wrixon Fred B. , <b>Langages secrets. Codes, chiffres et autres cryptosystèmes</b>, 
+    Könemann, 2000, pp. 400-409 &amp; pp. 461-464 
+  </li><li><b>Le manuel des Castors Juniors</b>, Hachette, 1970, pp. 39-41 
+  </li><li><a href="http://www.aboutnelson.co.uk/england%20expcts.htm" target="_top">"England 
+    Expects"</a> 
+  </li><li><a href="https://semaphore-10kapart2016.azurewebsites.net/">Semaphore : 
+    A Flagging Mode of Communication </a>
+  </li><li><a href="http://kryptografie.de/kryptografie/chiffre/winker-alphabet.htm">Winker-Alphabet 
+    Code</a>
+</li></ul>
+<p>
+</p><hr>
+<table width="100%" cellspacing="2" cellpadding="1" border="0">
+<tbody><tr>
+<td><form name="choix">
+<select name="page" size="1" onchange="choisir(this.options[selectedIndex].value)">
+<option value="#" selected="selected">Aller vers :
+</option><option value="../morse/index.html">&gt; Alphabet Morse
+</option><option value="index.html">Systèmes à répertoires &lt;
+</option><option value="../index.html">Page d'accueil
+</option><option value="../activites/index.html">Table des matières
+</option><option value="../lexique.html">Lexique
+</option></select>
+</form></td>
+	<td align="CENTER"><img src="Code%20de%20Popham_fichiers/wilec.gif" border="0" align="Middle"><font size="1">Didier Müller, 2.4.02</font></td>
+	<td align="RIGHT"><a href="https://www.apprendre-en-ligne.net/crypto/codes/index.html"><img src="Code%20de%20Popham_fichiers/reward2.gif" border="0"></a><a href="https://www.apprendre-en-ligne.net/crypto/morse/index.html"><img src="Code%20de%20Popham_fichiers/forward2.gif" border="0"></a></td>
+</tr>
+</tbody></table>
+
+
+</body></html>

@@ -1,0 +1,365 @@
+ 
+/* JUSTIFIER */
+ p {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align: justify;
+  }
+ .box-content ol li, .article-body ol li, .endnote-text
+  {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  text-align: justify;
+  word-break:normal;
+  }
+
+/* TITRES distinguer white-text ici (quand image de fond + attention Zen)  et plus bas black (par ex brèves) */
+
+
+.article-header.white-text .text-container .category {
+    font-size: 16px;
+  /*  border:2px;*/
+  border: 2px solid white;
+
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+
+}
+.paragraph-slider .swiper-slide .category {
+    font-size: 16px;
+  /*  border:2px;*/
+  border: 2px solid white;
+
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+
+}
+.paragraph-slider .swiper-slide .chapo p {
+    font-size: 17px;
+    font-weight: 400;
+}
+.paragraph-slider .swiper-slide .bottom p {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.article-header .text-container .category {
+    font-size: 16px;
+  /*  border:2px;*/
+  border: 2px solid black;
+
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+
+}
+
+
+.article-header.white-text .text-container .info {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+  font-weight:400;
+ font-size: 16px;
+}
+.article-header .text-container .info {
+  text-shadow: none;
+  font-weight:400;
+ font-size: 16px;
+}
+.node.node--type-article .article-header.white-text .text-container .info .date{
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+ font-weight:400;
+ font-size: 16px;
+ min-width: 150px;
+
+}
+
+
+.node.node--type-article .article-header.white-text .text-container .info .author{
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+ font-weight:400;
+ font-size: 16px;
+
+}
+.node .article-header.white-text .text-container .subtitle .date-display-range{
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+  font-size: 25px;
+ 
+}
+
+.node.node--type-article .text-container .white-text .subtitle  {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+  font-size: 25px;
+font-weight: 400;
+
+}
+
+/* TANT QUE SOUSTITRE = WHITE!!! */
+.node.node--type-article .text-container .subtitle  {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+  font-size: 25px;
+font-weight: 400;
+}
+
+.node.node--type-article .breadcrumbs ul li a,
+.node.node--type-article .breadcrumbs ul li span {
+ font-size:17px;
+ font-weight: 400;
+}
+
+.article-header.white-text .category  {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+}
+.node.node--type-article  .article-header.white-text h1 {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+}
+.article-header.white-text h1 {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+}
+.node.node--type-article .article-header.white-text .text-container h1 {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.75);
+}
+
+/* Cas général des breadcrumbs, modifié ailleurs pour brèves = brief */
+
+.breadcrumbs ul li a, .breadcrumbs ul li span {
+ font-size: 17px !important;
+ color: #777777;
+}
+
+/* AJUSTEMENTS TEXTE */
+
+.main-article-body .main-column figure figcaption {
+  padding-bottom: 0px
+  }
+
+.main-article-body .main-column .text-box{
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+
+.main-article-body .main-column .article-body .text-align-center {
+  text-align: center !important;
+}
+.main-article-body .main-column .article-body table p, .main-article-body .main-column .article-body table li {
+    text-align: unset;
+}
+
+/* En attendant les indentations */ 
+
+.minipage{
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+
+.page-simple-justif p{
+    margin-right: 30%;
+   margin-left : 30%;
+}
+
+.page-simple-justif ul{
+    margin-right: 15%;
+   margin-left : 15%;
+}
+
+/* BRIEF = BREVES Attention, pas d'image de fond, texte noir de base et pas d'ombre */
+
+
+.node.node--type-brief .text-container .category {
+    font-size: 16px;
+    border: 2px solid black;
+
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+
+}
+.node.node--type-brief .text-container .category.icon-eye-full {
+        border: none;
+}
+
+.node.node--type-brief .breadcrumbs ul li::before {
+  color:#777777;
+
+}
+
+.node.node--type-brief .breadcrumbs ul li a, .node.node--type-brief .breadcrumbs ul li span {
+ font-size:17px;
+ font-weight: 400;
+ color:#777777
+}
+
+.node.node--type-brief .text-container .subtitle {
+  text-shadow: none;
+  font-weight:400;
+ font-size: 25px;
+}
+
+.node.node--type-brief .text-container  .info .date {
+  text-shadow: none;
+  font-weight:400;
+ font-size: 16px;
+  color:#777777;
+  min-width: 150px;
+}
+
+.node.node--type-brief .text-container .info .author {
+  text-shadow: none;
+  font-weight:400;
+ font-size: 16px;
+  color:#777777;
+}
+
+.node.node--type-brief .article-header .text-container .info .author:after {
+  background-color:#777777;
+}
+
+.node.node--type-brief .article-header .text-container .info .author a {
+  color:#777777;
+}
+
+
+/* UL + ESPACES INTERLIGNES */
+
+.article-body ul {
+  margin-bottom : 0px;
+  margin-top: 0px;
+}
+
+.main-article-body .main-column h3 {
+        margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+
+
+/* CITATIONS*/
+
+blockquote.inverted {
+        padding-top: 16px;
+        padding-bottom: 16px;
+}
+
+/* ZEN */
+
+.zen-mode-activated .main-article-body {
+    
+    max-width: 60vw;
+    
+}
+.zen-mode-activated .article-header .text-container {
+    max-width: 60vw;
+    
+}
+.zen-mode-activated .quit-zen-mode {
+    
+    font-size: 17px;
+    transform:rotate(-90deg);
+    top:130px;
+  right:130px;
+}
+
+.zen-mode-activated footer {
+  display:block;
+}
+
+.zen-mode-activated .main-article-body .main-column blockquote {
+    border: none;
+    font-style: normal;
+    margin: 30px -5% 30px 0px;
+   
+}
+
+.zen-mode-activated .article-header.white-text .category {
+    text-shadow: none;
+}
+.zen-mode-activated .article-header.white-text h1, 
+.zen-mode-activated .article-header.white-text .breadcrumbs ul li a, 
+.zen-mode-activated .article-header.white-text .breadcrumbs ul li span, 
+.zen-mode-activated .article-header.white-text .info .author a, 
+.zen-mode-activated .article-header.white-text .category, 
+.zen-mode-activated .article-header.white-text .info *, 
+.zen-mode-activated .article-header.white-text .subtitle,
+.zen-mode-activated .node.node--type-article .article-header.white-text .text-container h1,
+.zen-mode-activated .article-header.white-text .text-container .info,
+.zen-mode-activated .node.node--type-article .article-header.white-text .text-container .info .date,
+.zen-mode-activated .node.node--type-article .article-header.white-text .text-container .info .author
+
+{
+  text-shadow: none;
+}
+
+.zen-mode-activated .article-header.white-text .text-container .category {
+  border: 2px solid black;
+}
+
+
+
+
+
+
+
+/* FRISE */
+.tl-slidenav-previous {
+ text-align:left;
+ margin-left:60px
+}
+.tl-slidenav-previous .tl-slidenav-content-container .tl-slidenav-icon{
+    color: #c52540;
+   
+}
+ .tl-slidenav-previous .tl-slidenav-icon {
+    
+    font-size: 52px;
+ }
+.tl-slidenav-next {
+    margin-right: 50px;
+}
+.tl-slidenav-next .tl-slidenav-content-container .tl-slidenav-icon{
+    color: #c52540;
+   
+}
+ .tl-slidenav-next .tl-slidenav-icon {
+    
+    font-size: 52px;
+ }
+ /*SOUS LES COUV des PARUTIONS*/
+ .main-article-body .sidebar-column .cover-block {
+    width: 100%;
+    background: white;
+ }
+ /* Legendes sous les tableaux */
+ .responsive-table table caption {
+ caption-side: bottom;
+ text-align: justify !important;
+ margin-top: 10px;
+}
+
+/*Boites colorées */
+.main-article-body .xcolor {
+  background-color: #c62641;
+  color: #FFFFFF;
+
+padding: 30px;
+border-radius: 40px 40px 40px 40px;
+-moz-border-radius: 40px 40px 40px 40px;
+-webkit-border-radius: 40px 40px 40px 40px;
+border: 0px none #000000;
+}
+.main-article-body .main-column .article-body .xcolor a {
+ color:white;
+}

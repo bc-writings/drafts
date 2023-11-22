@@ -1,0 +1,38 @@
+/****************************
+  Accromath Modifications
+****************************/
+@import url("accromath.css");
+
+#wpadminbar,
+.header-outer-wrapper,
+.top-nav-outer-wrapper,
+.primary-nav-outer-wrapper,
+.right-sidebar-wrapper,
+.share_entry,
+.related-recent-post-wrapper,
+#comments,
+a.link-comments,
+span.meta-sep,
+.footer-outer-wrapper {
+    display: none;
+}
+
+.row .eight 	{ width: 100%;}
+
+img {
+    max-width: 50%;
+	page-break-inside: avoid;
+}
+
+div.green, div.blue, div.yellow, div.hypgreen, div.orange, div.papergray {
+	page-break-inside: avoid;
+}
+
+.footer-button {
+    display: none;
+}
+
+
+.impression {
+    display: none;
+}

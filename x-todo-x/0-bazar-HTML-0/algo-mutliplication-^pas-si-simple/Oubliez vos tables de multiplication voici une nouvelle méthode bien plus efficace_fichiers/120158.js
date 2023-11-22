@@ -1,0 +1,9 @@
+    Mb.retargetingTrackers = null;
+        window.Mb.player.stayInInreadPosition = false;
+        window.Mb.enableIntelligentSyncroll = false;;
+        window.Mb.stopSyncIfQuickPlay = false;;
+        window.Mb._stopSyncIfQuickPlayDuration = 5000;
+        window.Mb.enableEnhancedBehavior = false;;
+        window.Mb.campaign_id = 1718;
+        window.Mb_startVolume = 0;
+window.Mb_jsTrackers = [];

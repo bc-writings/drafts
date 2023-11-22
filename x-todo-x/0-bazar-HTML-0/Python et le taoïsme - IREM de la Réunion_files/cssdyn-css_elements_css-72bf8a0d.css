@@ -1,0 +1,410 @@
+/* #PRODUIRE{fond=css/elements.css}
+   md5:829e3e8c5b0ce09a038396983ffc6c5d */
+
+/* ELEMENTS.CSS                                                         */
+/* Cette feuille contient:                                              */
+/* - les styles de la partie centrale du site                           */
+/* -------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------- */
+/* 	Styles des titres de page                                           */
+/* -------------------------------------------------------------------- */
+/* Titre generique */
+.titre h1 {font-weight: bold; margin: 0 0 5px; padding-bottom: 5px;
+	color: #008080;
+	border-bottom: 2px solid #008080;}
+	
+/* Boutons de fonction positionnes a droite du titre */
+a.fonction {display: block; float: right; width: 24px; height: 24px; margin-left: 10px;}
+a.fonction.repondre_commentaire {width: 16px; height: 16px; margin-right: 0; background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/commentaire_repondre.gif"); background-repeat: no-repeat;}
+#commenter {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/article_commenter.gif"); background-repeat: no-repeat;}
+#verrouiller {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/forum_sujet_verrouiller.gif"); background-repeat: no-repeat;}
+#deverrouiller {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/forum_sujet_deverrouiller.gif"); background-repeat: no-repeat;}
+#deresoudre {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/forum_sujet_non_resolu.gif"); background-repeat: no-repeat;}
+#resoudre {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/forum_sujet_resolu.gif"); background-repeat: no-repeat;}
+#signer {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/article_commenter.gif"); background-repeat: no-repeat;}
+#creer_pdf {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/article_pdf.gif"); background-repeat: no-repeat;}
+#voir_commentaires {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/article_commentaires.gif"); background-repeat: no-repeat;}
+#voir_signatures {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/article_signatures.gif"); background-repeat: no-repeat;}
+#recommander {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/article_recommander.gif"); background-repeat: no-repeat;}
+a.fonction.revenir_haut_page {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/arrow_to_top.gif"); background-repeat: no-repeat;}
+
+/* -------------------------------------------------------------------- */
+/* 	Styles du cartouche (auteurs, date, popularite, notation)           */
+/* -------------------------------------------------------------------- */
+.cartouche { font-weight: normal; font-size: 1.1em; line-height: 1.1em; text-align: right; margin: 0 0 30px 10px; padding: 0; float: right;
+	color: #008080;}
+.complements {font-weight: normal; margin: 10px 0 5px; font-size: 1.1em;}
+
+/* -------------------------------------------------------------------- */
+/* 	Styles de la description (champs editoriaux)                        */
+/* -------------------------------------------------------------------- */
+/* Styles generiques */
+.description {margin: 10px 0 30px; font-size: 1.2em; line-height: 1em;}
+.description li {margin-left: 10px;	line-height: 1.4em;}
+.description p {font-size: 1em;}
+.description .soustitre {float: none; line-height: 1em; font-size: 1.4em; font-weight: bold; font-style: italic; margin: 0; padding: 0;
+	 color: #008080;}
+.description .chapo {margin: 0 0 30px; font-style: italic; color: #008080;}
+.description .texte {}
+.description .lien_site {margin: 10px 0 20px; padding-top: 10px; font-size: 1em; 
+	border-top: 1px dotted #008080;}
+.description .ps {margin: 10px 0 20px; padding-top: 10px; font-size: 1em; 
+	border-top: 1px dotted #008080;}
+.description .notes {margin: 10px 0 20px; padding-top: 10px; font-size: 1em; 
+	border-top: 1px dotted #008080;}
+.description .filles {margin: 10px 0 20px; padding-top: 10px; font-size: 1em; 
+	border-top: 1px dotted #008080;}
+.description .filles a {padding: 0 0 0 15px; background: transparent url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/puce0.jpg") left center no-repeat; text-decoration: none;}
+.description .filles a:hover {background: transparent url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/puce1.jpg") left center no-repeat; ;text-decoration: none;}
+ 
+/* -------------------------------------------------------------------- */
+/* 	Styles des messages d'avertissement                                 */
+/* -------------------------------------------------------------------- */
+.avertissement {margin-top: 20px; padding: 10px; background: #f0d0d0; border: 1px solid red; font-size: 1.2em;}
+.forum .avertissement {font-size: 1em;}
+.formulaire_spip .avertissement {margin: 0 0 20px 0; padding: 10px; background: #f0d0d0; border: 1px solid red; font-size: 1em;}
+
+/* -------------------------------------------------------------------- */
+/* 	Styles des blocs type portfolio (images, documents joints, breves)  */
+/* -------------------------------------------------------------------- */
+/* Styles generiques */
+.portfolio {clear: both; margin-bottom: 30px; padding-top: 2px;width:100%;}
+.portfolio h2 {font-size: 1.9em; line-height: 1em; font-weight: bold; margin: 0 0 10px; padding: 0 0 5px 20px;
+	color: #008080;
+	border-bottom: 2px solid #008080;}
+	
+/* Portfolio des images jointes */
+.portfolio a img {margin: 10px 10px; border: 4px solid #eeeeee;}
+.portfolio a:hover img {border-color: #174f73;}
+
+/* Portfolio des documents jointes */
+.portfolio dl {width: 115px; height: 11em; text-align: center; margin: 10px; float: left;}
+.portfolio dt {width: 115px; font-weight: bold;}
+.portfolio dt a img {border: 0;}
+.portfolio dt a:hover img {border: 0;}
+.portfolio dd {width: 115px; margin: 0; padding: 0;}
+
+/* -------------------------------------------------------------------- */
+/* 	Styles des blocs de type commentaires                               */
+/* -------------------------------------------------------------------- */
+.commentaires {padding: 0 0 10px 0; margin: 0 0 30px 0; clear: both;}
+.commentaires h2 {font-size: 1.9em; line-height: 1.2em; font-weight: bold; padding: 0 0 5px 20px; margin: 0;
+	background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/commentaires.gif") top left no-repeat;
+	color: #174f73;
+	border-bottom: 2px solid #174f73;}
+.commentaires h2.date {margin-top:30px; padding: 0 0 5px 20px;background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_syndics.gif") top left no-repeat;}
+.commentaires .message {margin: 0; padding: 10px 0 10px;
+	background: #eeeeee;
+	border-top: 1px dotted #174f73;}
+.commentaires .message:hover {background: #f0f0fa;}
+.commentaires #co_n1.message,.commentaires .co_n1 {border-top: 0; padding: 20px 0 10px;}
+.commentaires .message .titre {font-size: 1.2em; font-weight:bold; margin:0 0 10px 50px;}
+.commentaires .message .gravatar {float:left}
+.commentaires .message .cartouche_simple {margin-left: 50px; font-size: 1.1em;
+	color: #174f73;}
+.commentaires .message .texte{margin-left : 50px; padding-top: 5px;font-size:1.2em;line-height:1.1em;}
+.commentaires .message .texte ul li{border-top:none;}
+.commentaires ul { line-height: 1.1em;}
+.commentaires ul#exif {width:50%;margin : 0 auto;text-align:center;border:1px dotted;}
+.commentaires li {padding:10px 0; height:auto; border-top: 1px dotted #174f73;}
+.commentaires li:hover {background: #f0f0fa;}
+.commentaires a.titre{padding-top: 5px; margin: 0; font-size: 1.3em; font-weight: bold; line-height:1em; text-decoration: none;
+	color: #174f73;}
+.commentaires li .cartouche{margin : 0 0 10px 10px; font-size: 1.1em;}
+.commentaires li .complements{font-size: 1.1em;}
+
+/* Styles specifiques de la presentation hierarchique par fils */
+.commentaires .message .cartouche_simple .titre {margin-left: 0;}
+.commentaires .message.fil {padding-left: 50px;}
+
+/* -------------------------------------------------------------------- */
+/* 	Styles des blocs de type extraits                                   */
+/* -------------------------------------------------------------------- */
+.extrait {margin: 0 0 20px;	padding: 0 0 10px 15px;
+	background: transparent;
+	border-left: 5px solid #174f73;
+	border-bottom: 1px solid #174f73;}
+.extrait h3 a.titre {display: block; padding-top: 5px; margin: 0; font-size: 1.6em; font-weight: bold; line-height:1em; text-decoration: none;
+	color: #008080;}
+.extrait h3 a.titre:hover {color: #174f73; text-decoration: underline;}
+.extrait .cartouche {color: #008080;}
+.extrait .lire_suite {text-align: left; margin: 10px 0 0; font-size: 1.1em;}
+.extrait .cartouche a, .extrait .complements a  {color: #990000; text-decoration: none;}
+.extrait .lire_suite a {padding: 0 0 5px 20px; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/lire_suite.gif") left center no-repeat;
+	color: #990000; text-decoration: none;}
+.extrait .cartouche a:hover, .extrait .complements a:hover, .extrait .lire_suite a:hover {
+	color: #990000; text-decoration: underline;}
+.extrait .introduction {margin: 10px 0 0; font-size:1.2em; line-height : 1.4em;}
+
+/* -------------------------------------------------------------------- */
+/* 	Styles des blocs de type arbre (plan, agenda)                       */
+/* -------------------------------------------------------------------- */
+.arbre {margin: 0; padding-bottom: 10px;}
+.arbre ul { list-style-type: none; padding: 0; margin: 0; font-size: 1em; line-height: 1em;}
+.arbre ul li {font-weight: bold; padding: 5px 10px 10px; margin: 0 0 15px; 
+	border: 2px solid #888888;
+	background: #eeeeee;}
+.arbre ul li li {padding: 0 0 0 15px; margin: 0; border: 0; background: none;}
+.arbre ul li li li {padding: 0 0 0 15px; margin: 0; border: 0; background: none;}
+.arbre .noeud {padding: 5px 0 5px 15px; font-size: 1.5em; line-height: 1.4em; text-decoration: none;
+	color: #008080;}
+.arbre a.noeud:hover {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/puce0.jpg"); background-position: left center; background-repeat: no-repeat; 
+	color: #008080;
+	text-decoration: none;}
+.arbre a.feuille {padding: 0 0 0 15px; font-size: 1.1em; font-weight: normal; line-height: 1.2em;
+	color: #174f73;}
+.arbre a.feuille:hover {background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/puce-n0.gif"); background-position: left center; background-repeat: no-repeat; 
+	color: #174f73;
+	text-decoration: underline;}
+.arbre a.feuille .date {}
+
+/* -------------------------------------------------------------------- */
+/* 	Styles des blocs de type planches                                   */
+/* -------------------------------------------------------------------- */
+.planche {margin-top: 30px;}
+.planche h2 {font-size: 1.9em; line-height: 1em; font-weight: bold; margin: 0 0 10px; padding: 0 0 5px 20px;
+	color: #008080;
+	border-bottom: 2px solid #008080;}
+.planche ul {margin: 0; padding: 0; list-style-type: none;}
+.planche li {width: 45%; min-height: 18em; float: left; margin: 0 0 20px; padding: 10px 0;
+	background: transparent;
+	border-top: 1px dotted #174f73;}
+.planche li.n1 {border-top: 0;}
+.planche li.gauche {margin-right: 20px;}
+.planche li.droite {margin-left: 20px; float: right;}
+.planche h3 a.titre {display: block; padding-top: 5px; margin: 0; font-size: 1.6em; font-weight: bold; line-height:1em; text-decoration: none;
+	color: #174f73;}
+.planche h3 a.titre:hover {color: #174f73; text-decoration: underline;}
+.planche .complements {font-weight: normal; margin: 10px 0 5px; font-size: 1.1em;}
+.planche .cartouche {text-align: left; margin: 0; float: none;}
+.planche .cartouche a, .planche .complements a  {color: #990000; text-decoration: none;}
+.planche .cartouche a:hover, .planche .complements a:hover {
+	color: #990000; text-decoration: underline;}
+.planche a img {float:right; margin: 0 0 5px 5px; border: 4px solid  #eeeeee;}
+.planche a:hover img {border: 4px solid #174f73;}
+.planche .introduction {margin: 10px 0 0;font-size:1.2em;line-height:1.4em;}
+
+/* -------------------------------------------------------------------- */
+/* 	Styles specifiques a chaque page                                    */
+/* -------------------------------------------------------------------- */
+/* Style specifique a la notation (plugin Notation) */
+.description .plugin {margin: 10px 0 0; padding-top: 10px; font-size: 1em; line-height: 1.6em; 
+	border-top: 1px dotted #008080;
+	color: #008080;}
+.description .notation div.star-rating a {border: 0; text-align: left;}
+.description .notation .note { color: #008080;}
+
+/* Style specifique aux bookmarks sur les reseaux sociaux (plugin Social Tags) */
+.description .socialtags {margin: 0; padding: 0;}
+
+/* Titres de blocs */
+#images_jointes.portfolio h2 {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/portfolio_images.gif") top left no-repeat;}
+#documents_joints.portfolio h2 {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/portfolio_documents.gif") top left no-repeat;}
+#articles_recents.portfolio h2,
+#article_commentaire.portfolio h2,
+#articles_auteur.portfolio h2,
+#articles_rubrique.portfolio h2 {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_articles.gif") top left no-repeat;}
+#breves_site.commentaires h2 {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_breves.gif") top left no-repeat;}
+#sites_site.portfolio h2 {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_sites.gif") top left no-repeat;}
+.portfolio h2.jalon {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_tickets.gif") top left no-repeat;}
+
+/* Page rubrique */
+.rubrique {margin: 0; padding-bottom: 10px;}
+.rubrique .titre {}
+.rubrique .titre h1 {margin: 0 0 35px;}
+
+/* Page article */
+.article {margin: 0; padding-bottom: 10px;}
+.article .cartouche {font-size: 0.92em}
+
+/* -- Styles des petitions de l'article */
+#signatures.commentaires h2 {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_signatures.gif") top left no-repeat;}
+#signatures.commentaires table{width: 100%; margin-top: 10px; font-size: 1.2em;}
+
+/* Page sommaire */
+/* -- Edito et une */
+#edito.article, #une.article {margin: 0 0 30px; padding: 5px 10px; text-align: justify;}
+#edito.article {
+	border: 2px solid #008080;
+	background: #eeeeee;}
+#une.article {
+	border: 2px solid #008080;
+	background: #eeeeee;}
+#edito.article .titre, #edito.article .soustitre, #une.article .titre, #une.article .soustitre {}
+#edito.article .titre h1, #une.article .titre h1 {border: 0;}
+#edito.article a.fonction, #une.article a.fonction {display: none;}
+#edito.article .cartouche, #une.article .cartouche {font-size: 1.2em}
+#une.article .complements {font-size: 0.91em; margin-bottom: 10px;}
+
+/* -- Albums recents */
+#albums_recents.planche h2,
+#albums_auteur.planche h2 {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_albums.gif") top left no-repeat;}
+#albums_recents.planche li,
+#albums_auteur.planche li {
+	 min-height: 18em;
+	}
+
+/* Page evenement */
+#evenement.article .cartouche {text-align: left; float: left; margin: 0 10px 30px 0;}
+
+/* Page auteur */
+.auteur {margin: 0; padding-bottom: 10px;}
+#albums_auteur.planche li {}
+
+/* Page site */
+.site {margin: 0; padding-bottom: 10px;}
+
+/* -- Thumbshot du site */
+.site a img {margin: 0 0 10px 10px; border: 4px solid #eeeeee;}
+.site a:hover img{border-color: #174f73;}
+
+/* -- Liste des articles syndiques */
+#articles_syndiques.commentaires h2 {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_syndics.gif") top left no-repeat;}
+#articles_syndiques.commentaires .titre {margin: 0;}
+#articles_syndiques.commentaires .texte{margin: 5px 0 0;}
+.site .description li {margin-left: 0; margin-bottom: 10px;}
+.site .description li:hover {background:#f0f0fa;}
+
+/* Page galerie */
+.galerie {margin: 0; padding-bottom: 10px;width:100%;}
+.galerie .planche li {}
+
+/* Page Herbier */
+.herbier {margin: 0; padding-bottom: 10px;width:100%;}
+.herbier .planche li {width: 100%; min-height: 0;}
+
+/* Page Recherche */
+.recherche {margin: 0; padding-bottom: 10px; width:100%;}
+#recherche_rubrique.commentaires h2 {margin:0; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/portfolio_documents.gif") top left no-repeat;}
+#recherche_mot_article.commentaires h2 {margin:0; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_breves.gif") top left no-repeat;}
+#recherche_breve.commentaires h2 {margin:0; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_breves.gif") top left no-repeat;}
+#recherche_site.commentaires h2 {margin:0; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_sites.gif") top left no-repeat;}
+#recherche_commentaire.commentaires h2 {margin:0; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/commentaires.gif") top left no-repeat;}
+#recherche_article.commentaires h2 {margin:0; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/liste_articles.gif") top left no-repeat;}
+#recherche_album.commentaires h2 {margin:0; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/portfolio_images.gif") top left no-repeat;}
+#recherche_evenement.commentaires h2 {margin:0; background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/evenement.gif") top left no-repeat;}
+
+/* Page album */
+.album {padding: 0 0 10px 0; margin: 0 0 30px 0; clear: both; width:100%;}
+.carrousel {display: block; margin: 0 0 20px; padding: 10px 0}
+#a_defilement.carrousel {overflow: hidden; position: relative;}
+.carrousel .contenu {margin: 0 auto; position: relative;}
+#a_pagination.carrousel .contenu li {display: block; float: left;}
+.carrousel .contenu .vignette a img {margin-right: 5px; border: 4px solid #eeeeee;}
+.carrousel .contenu .vignette a:hover img {border: 4px solid #6262a4;}
+.carrousel .contenu .vignette a.survol {display:none;position:absolute;background: transparent url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/pointeur_bas.gif") no-repeat bottom center;}
+.carrousel .contenu .vignette a.survol img {margin: 0; border: 4px solid #6262a4;}
+.carrousel .navigation {margin: 10px 0 20px; text-align: center; font-size: 1.2em; font-weight: bold;}
+.carrousel .navigation a {background: transparent; 
+	color: #174f73;}
+.carrousel .navigation a:hover {background: #f0f0fa; 
+	color: #174f73;
+	text-decoration: none;}
+.carrousel .pagination {margin: 10px 0 20px; text-align: center; font-weight: bold;}
+
+.carrousel .contenu ul.vignettes span {width: 128px;}/* max thumbnail width + 2px */
+.carrousel .contenu ul.vignettes span.wrap1 {margin: 0 5px 5px 5px; display: inline-block; vertical-align: top; text-align: center;}
+.carrousel .contenu ul.vignettes span.wrap2 {height: 136px; 
+	background: transparent;
+	border: 4px solid #eeeeee; display: table-cell; vertical-align: middle;}
+.carrousel .contenu ul.vignettes span.wrap2:hover {
+	background: #888888; 
+	border: 4px solid #6262a4;}
+.carrousel .contenu ul.vignettes span.wrap2 a {display: block; width: 128px;}      /* max thumbnail width + 2px */
+.carrousel .contenu ul.vignettes span.titre {
+	display: block;  
+	height: 4em;    
+	padding-top: 5px;
+	font-size: 90%; overflow: hidden;
+	margin-left:auto;
+	margin-right:auto;
+	line-height : 1.2em;}
+
+.zoom {display: block; margin: 0 0 20px; padding: 10px 0;}
+.zoom #conteneur_photo {padding:0; margin: 0 0 10px;}
+.zoom #titre_photo {padding:0; margin: 0 0 20px; font-size: 1.2em; font-weight: bold; text-align: center;}
+.zoom #descriptif_photo {padding:0; margin: 0 0 20px;}
+.zoom #exif_photo {padding:0; margin: 0 0 20px;}
+
+#exif_photo.commentaires table{width: 300px;  font-family: verdana; border: 0; margin :0 auto;}
+#exif_photo.commentaires table tr{height: 20px;}
+#exif_photo.commentaires table td.titre {background-color : #EFEFEF; padding: 0 5px; border-bottom : 1px dotted #000000; font-weight:bold;height: 20px;}
+#exif_photo.commentaires table td.minilogo {text-align: right; height: 20px;}
+#exif_photo.commentaires table td.colonne1{width: 130px; font-size: 90%; text-align: right; padding: 5px;}
+#exif_photo.commentaires table td.colonne2{width: 170px;}
+
+/* Page forum */
+.forum {margin-bottom: 30px;}
+.forum .groupe {margin-bottom: 20px;}
+.forum .groupe h2.titre {
+	padding: 10px 5px; 
+	font-weight: bold; 
+	font-size: 1.2em; 
+	color: #ffffff; 
+	border: 1px solid #6262a4;
+	border-bottom: 0;
+	background-color: #6262a4;}
+.forum .groupe h2.titre a {	color: #ffffff;}
+.forum .groupe h2.titre a:hover { color: #ffffff; text-decoration: underline;}
+.forum .groupe .bord {border: 1px solid #6262a4;}
+.forum .cartouche {font-size: 0.92em}
+.forum .outils { clear: both; margin-bottom: 10px;}
+
+#reponses.forum h2 {font-size: 1.9em; line-height: 1.2em; font-weight: bold; padding: 0 0 5px 20px; margin: 0;
+	background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/reponses.gif") top left no-repeat;
+	color: #6262a4;
+	border-bottom: 2px solid #6262a4;}
+
+.forum table {width: 100%; font-size: 1.2em; border-collapse: separate;}
+.forum table th {
+	padding: 10px 5px; 
+	color: #6262a4; 
+	background-color: #f0f0fa;
+	font-weight: bold;}
+.forum table th.centre {text-align: center;}
+.forum table tbody tr:hover {background: #f0f0fa;}
+.forum table tr.row_odd {background: transparent; color: inherit}
+.forum table tr.row_even {background: transparent; color: inherit}
+.forum table td {padding: 10px 5px; vertical-align: top; line-height: 1.1em; border-top: 1px solid #6262a4;}
+.forum table td.rp_n1 {border-top: 0;}
+.forum table td.etat {width: 4%;}
+.forum table td.etat.forumferme {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/forum_ferme.png") no-repeat center 10px;}
+.forum table td.sujets, .forum table td.messages {text-align: center; width: 7%;}
+.forum table td.dernier_message {text-align: left; width: 21%;}
+.forum table td.dernier_message a.titre {font-style: italic;}
+.forum table td.description {font-weight: bold; font-size: 1em;}
+.forum table td.description h3.titre a {color: #6262a4; font-weight: bold;}
+.forum table td.description h3.titre a:hover {text-decoration: underline;}
+.forum table td.description .texte {font-weight: normal;}
+
+.forum table tr#rp_n1 {border-top: 0;}
+.forum .detail_auteur {width: 150px; background-color: #f0f0fa; vertical-align: top;}
+.forum .premier_message {margin-left: 155px; padding: 0 5px;}
+.forum .gravatar_pere {margin-right: 50px; float: left;}
+.forum .gravatar {font-weight: bold;}
+
+table.todolist  {width: 100%; border-collapse: separate;
+	border: 1px solid #6262a4;}
+table.todolist caption {
+	padding: 10px 5px;
+	font-weight: bold;
+	text-align: center;
+	color: #ffffff;
+	border: 1px solid #6262a4;
+	border-bottom: 0;
+	background-color: #6262a4;}
+table.todolist th {
+	padding: 10px 5px;
+	color: #6262a4;
+	background-color: #f0f0fa;
+	font-weight: bold;
+	text-align: center;}
+table.todolist th a {color: #6262a4;}
+table.todolist tbody tr:hover {background: #f0f0fa;}
+table.todolist tr.row_odd {background: transparent; color: inherit}
+table.todolist tr.row_even {background: transparent; color: inherit}
+table.todolist tr.alerte, table.todolist tr.inconnu { color: #8a1f11; background-color:#fbe3e4; }
+table.todolist tr.arrete { color: #514721; background-color:#fff6bf; }
+table.todolist td {padding: 10px 5px; vertical-align: top; line-height: 1.1em; border-top: 1px solid #6262a4;}
+table.todolist td.commit a.spip_out {background: inherit;}

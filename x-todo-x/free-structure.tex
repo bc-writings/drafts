@@ -1,0 +1,146 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{import} 
+\usepackage{wrapfig} 
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{lymath}
+
+
+\newtheorem{fact}{Fait}[section]
+\newtheorem{example}{Exemple}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+
+
+\let\oldsection\section
+\renewcommand\section[1]{\vfill\pagebreak\oldsection{#1}}	 
+	 
+\begin{document}
+
+\title{BROUILLON - Libérons nos structures... mathématiques}
+\author{Christophe BAL}
+\date{??? Juillet 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% ----------- %
+
+
+\subimport*{free-structure/}{intro}
+
+
+% ----------- %
+
+
+\section{Vecteurs et base libre}
+
+\subimport*{free-structure/}{vectorial-space}
+
+
+
+
+
+
+
+
+
+\bigskip
+
+\hrule
+
+\oldsection{AFFAIRE À SUIVRE...}
+
+\bigskip
+
+\hrule
+
+
+
+
+%% ----------- %
+%
+%
+%\section{Monoïde libre}
+%
+%
+%% ----------- %
+%
+%
+%\section{Groupe libre}
+%
+%
+%% ----------- %
+%
+%
+%\section{Structure libre}
+%
+
+\end{document}

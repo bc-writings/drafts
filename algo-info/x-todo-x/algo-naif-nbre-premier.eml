@@ -1,0 +1,121 @@
+Return-path: <Vincent.Deveaux@ac-grenoble.fr>
+Received: from mta2.ac-grenoble.fr ([195.221.235.166])
+ by vstore-profs5.in.ac-grenoble.fr
+ (Oracle Communications Messaging Server 8.0.1.1.0 64bit (built Jun 15 2016))
+ with ESMTP id <0QUR02OCF11KQ140@vstore-profs5.in.ac-grenoble.fr> for
+ Christophe.Bal@ac-grenoble.fr; Tue, 15 Jun 2021 17:15:20 +0200 (CEST)
+Original-recipient: rfc822;Christophe.Bal@ac-grenoble.fr
+Received: from imsva4.ac-grenoble.fr (imsva4.ac-grenoble.fr [195.221.235.180])
+	by mta2.ac-grenoble.fr (Postfix) with ESMTP id 1741920FE3	for
+ <Christophe.Bal@ac-grenoble.fr>; Tue, 15 Jun 2021 17:15:20 +0200 (CEST)
+Received: from imsva4.ac-grenoble.fr (unknown [127.0.0.1])	by IMSVA (Postfix)
+ with ESMTP id 0868F2006A	for <Christophe.Bal@ac-grenoble.fr>; Tue,
+ 15 Jun 2021 17:15:20 +0200 (CEST)
+Received: from imsva4.ac-grenoble.fr (unknown [127.0.0.1])	by IMSVA (Postfix)
+ with ESMTP id F0EDB2005B	for <Christophe.Bal@ac-grenoble.fr>; Tue,
+ 15 Jun 2021 17:15:19 +0200 (CEST)
+Received: from smtp1.ac-grenoble.fr (unknown [195.221.235.182])
+	by imsva4.ac-grenoble.fr (Postfix)
+ with ESMTPS	for <Christophe.Bal@ac-grenoble.fr>; Tue,
+ 15 Jun 2021 17:15:19 +0200 (CEST)
+Received: from [192.168.1.10] (82-65-219-3.subs.proxad.net [82.65.219.3])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)	(Authenticated sender: vdeveaux)
+	by smtp1.ac-grenoble.fr (Postfix) with ESMTPSA id D5D5B2028B	for
+ <Christophe.Bal@ac-grenoble.fr>; Tue, 15 Jun 2021 17:15:19 +0200 (CEST)
+Subject: =?UTF-8?Q?Re=3a_Tester_na=c3=afvement_qu=27un_nombre_est_premier?=
+To: =?UTF-8?Q?Christophe_BAL-_Maths_-_Lyc=c3=a9e_Monge_de_Chamb=c3=a9ry?=
+ <Christophe.Bal@ac-grenoble.fr>
+References: <85d626a0-74fe-76e5-b1d1-b6c7c4349b2a@ac-grenoble.fr>
+From: Vincent Deveaux <Vincent.Deveaux@ac-grenoble.fr>
+Message-id: <09f7a67d-1ff6-a094-a742-cf2c91f54e8c@ac-grenoble.fr>
+Date: Tue, 15 Jun 2021 17:15:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
+ Thunderbird/78.8.1
+MIME-version: 1.0
+In-reply-to: <85d626a0-74fe-76e5-b1d1-b6c7c4349b2a@ac-grenoble.fr>
+Content-type: multipart/alternative;
+ boundary=------------728D2303F7256F71FAEA69AC
+Content-language: fr-FR
+X-TM-AS-GCONF: 00
+
+This is a multi-part message in MIME format.
+--------------728D2303F7256F71FAEA69AC
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Je connais un algo semblable en évacuant les multiples de 2 et de 3:
+
+def is_prime(n):
+   if n%2 == 0 or n%3 == 0:
+     return True
+   k = 5
+   while k*k < n:
+     if n%k == 0 or n%(k+2) == 0:
+       return True
+     k += 5
+   return False
+
+Le 15/06/2021 à 11:42, Christophe BAL- Maths - Lycée Monge de Chambéry a 
+écrit :
+> Salut Vincent.
+>
+> Je ne connaissais pas celui-là. Peut-être que toi oui...
+>
+> Galère pour demain...
+>
+>
+-- 
+Vincent Deveaux
+DU-ISN 2018,
+Prof de Maths,
+Lycée Monge, Chambéry
+
+
+--------------728D2303F7256F71FAEA69AC
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Je connais un algo semblable en évacuant les multiples de 2 et de
+      3:</p>
+    <pre>def is_prime(n):
+  if n%2 == 0 or n%3 == 0:
+    return True
+  k = 5
+  while k*k &lt; n:
+    if n%k == 0 or n%(k+2) == 0:
+      return True
+    k += 5
+  return False
+</pre>
+    <div class="moz-cite-prefix">Le 15/06/2021 à 11:42, Christophe BAL-
+      Maths - Lycée Monge de Chambéry a écrit :<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:85d626a0-74fe-76e5-b1d1-b6c7c4349b2a@ac-grenoble.fr">Salut
+      Vincent.
+      <br>
+      <br>
+      Je ne connaissais pas celui-là. Peut-être que toi oui...
+      <br>
+      <br>
+      Galère pour demain...
+      <br>
+      <br>
+      <br>
+    </blockquote>
+    <pre class="moz-signature" cols="72">-- 
+Vincent Deveaux
+DU-ISN 2018,
+Prof de Maths,
+Lycée Monge, Chambéry</pre>
+  </body>
+</html>
+
+--------------728D2303F7256F71FAEA69AC--
+

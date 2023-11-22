@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="How to create QR codes that look like anything by inverting the
+                                    QR creation process. Then we set up web app to make those and
+                                    world's first QR gif!">
+  <meta name="author" content="Marien Raat">
+
+  <meta property="og:title" content="Hacking QR code design">
+  <meta property="og:image" content="assets/img/blog/hacking-qr-codes/header.svg">
+  <meta property="og:description" content="Creating QR codes that look like anything. Plus, world's
+                                    first QR gif!">
+
+  <title>Hacking QR code design - MarienRaat.nl</title>
+
+  <!-- Favicon-->
+  <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link rel="icon" type="image/x-icon" href="https://marienraat.nl/assets/img/favicon.ico">
+
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/styles.css" rel="stylesheet">
+
+  <!-- Font Awesome icons (free version)-->
+  <script src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/all.js" crossorigin="anonymous"></script>
+
+  <!-- Custom fonts for this template -->
+  <link href="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/css_002.css" rel="stylesheet" type="text/css">
+  <link href="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/css.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/clean-blog.css" rel="stylesheet">
+</head>
+
+<body data-new-gr-c-s-check-loaded="8.868.0" data-gr-ext-installed="">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="https://marienraat.nl/index.html">Marien Raat</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <svg class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg><!-- <i class="fas fa-bars"></i> Font Awesome fontawesome.com -->
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://marienraat.nl/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://marienraat.nl/blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://marienraat.nl/index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead blog-post-header" style="background-image: url('assets/img/blog/hacking-qr-codes/header.svg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>
+              Hacking QR code design
+            </h1>
+            <h2 class="subheading">
+              Let's see how we can create QR codes that look however we want, while preserving
+              links. We'll also show the world's first working QR gif (as far as I know).
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="blog-post col-lg-8 col-md-10 mx-auto">
+          <p><b>Check out <a href="https://my-qr.art/">My-QR.art</a> for the final result!</b></p>
+
+          <p>QR codes provide a clear and approachable way of translating the physical world to the
+          digital world. When I see a QR code, I always want to scan it to find out what is behind
+          it, somehow they always fascinate me. But QR codes always look very similar, could there
+          be a way to make them look more cool? Make them a certain specific shape or contain pixel
+          art?</p>
+
+          <p>People already (ab)use the error correction build into QR codes to embed their logo
+          in it, they simply put their logo over a part of the QR code and let the error correction
+          handle the missing data. However, you can never obscure more than 30% of the code (and
+          usually a lot less) if you choose this approach. But QR codes are mostly a visualisation
+          of data. Can we approach the problem from the other side? What if we don't try to
+          design a QR code to fit the data, but fit the data to the design of the QR code that we
+          want.</p>
+
+          <p>Spoiler, we can. Check out <a href="https://my-qr.art/">My-QR.art</a>. All the code is
+          totally free and open source, so feel free to
+          contribute <a href="https://github.com/raatmarien/my-qr.art">on GitHub</a></p>
+
+          <h2 id="the-idea" class="section-heading">The idea</h2>
+
+          <p>Say, we want to promote our website. And we have a nice grayscale logo. Now we want to
+          have an engaging QR code that looks like our logo.</p>
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/my-qr.svg" alt="My-QR.art logo">
+
+          <p>And we have an URL that we want the QR code to lead us too, for
+            example: <a href="https://my-qr.art/">https://my-qr.art</a>.</p>
+          
+          <p>We set up a web server that can redirect certain URLs to other URLs. Then we can make
+          the beginning of the data of our QR code the URL to that web-server and the rest of the
+          QR's data can be anything. So we can choose the rest of the data in any way that makes
+          our QR code look most like our design!</p>
+
+          <p>For example the QR code could send you
+            to <code>https://my-qr.art/r/arbitrary-super-long-string</code>. On the back-end we tell
+            the server to redirect any request with the
+            URL <code>https://my-qr.art/r/arbitrary-super-long-string</code>
+            to <code>https://my-qr.art</code>. And tada! We have a functional QR code that sends us to
+            the address we want, while having way more control over how the QR code looks! Up to 80%
+            of the code can be freely designed this way!</p>
+
+          <p>When we have this all working, we could even make nice scannable QR gifs. We could make
+          each frame separately and let them all redirect to the same page. I admit, most QR codes
+          are printed, so gifs might not make the most sense, but they look pretty cool! To keep you
+          excited for the rest of the article, here is world's first ever working QR gif (as far
+          as I know)!</p>
+          
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/qr.gif" alt="Animated QR code that shows a running horse">
+
+          <p><a href="https://en.wikipedia.org/wiki/The_Horse_in_Motion">The running horse might
+          remind you of some other movie...</a></p>
+
+          <h2 id="qr-codes" class="section-heading">How does QR work?</h2>
+
+          <p>Now that we know the concept, lets get started. First we need to know how QR codes
+          actually work.</p>
+
+          <p>QR codes encode data by making some blocks dark and other light. The QR scanner can
+          then read which are dark and which are light and reconstruct the original data. QR codes
+          can have 40 different sizes, from <em>version 1</em> (very small, 17x17) to <em>version
+          40</em> (very big, 177x177). QR codes are made of black and white 'modules' and
+          each module has one of the following 4 functions:</p>
+
+          <ol>
+            <li>Help the scanner recognise and orient the QR code</li>
+            <li>Give information about the QR code size, type and other internal QR stuff</li>
+            <li>Encode the actual data that the QR code represents</li>
+            <li>Encode error correction info about the QR code</li>
+          </ol>
+
+          <h2 id="drawing" class="section-heading">Creating a template</h2>
+
+          <p>Our plan is to allow the user to choose the colour of any module that has function 3. So
+          the first step is to let the user know which pixels they can control and which pixels they
+          can't control for the QR code size they chose. For now lets try to create an image on
+          which the modules with function 3 are coloured white and all other modules are coloured
+          grey.</p>
+
+          <p>For this we can colour all the modules and error data. To get this right you really need
+          to dive into how QR codes work. We need to think about the data encoding, interleaving,
+          extra eyes, error words and more. We'll also need to take into account that we'll
+          need to reserve first few characters of our data for the start of our URL. Luckily there
+          is a great source on QR codes on the
+          internet, <a href="https://www.thonky.com/qr-code-tutorial/introduction">the QR code
+          tutorial from Thonky.com</a>. Putting the work in, we get something like this, for version
+          30.</p>
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/qr-template.png" alt="A template for a QR design">
+
+          <h2 id="reading" class="section-heading">Reading a design</h2>
+
+          <p>Now let's work on the other side of the puzzle, when we have a design that a user
+          has drawn on our template, how do we convert it to a working QR code? QR codes have 4
+          possible types of encoding: <em>numeric</em>, <em>alphanumeric</em>, <em>binary</em>
+          and <em>kanji</em>. We need something that we can create valid URLs with, so numeric and
+          kanji are out. Secondly, we need the random string at the end of our URL to
+          be <em>normal</em> enough so that QR scanners will still recognise our code as an
+          URL. The <em>binary</em> encoding will create characters that aren't ordinarily found
+          in URLs ('\0' for example), which means lots of QR scanners won't let their
+          users open our URL. Luckily the <em>alphanumeric</em> encoding has just enough characters
+          to let us make valid URLs (although they'll have to be all caps).</p>
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/qr-design.png" alt="A design for a QR code that contains the My-QR.art logo">
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/qr-data-order.png" title="Made by Thonky, shared under the CC ANC 4.0" alt="An illustration from Thonky.com that shows how data is encoded in a QR code">
+
+          <p>So with that figured out, lets read that design the user made. First we'll extract
+          a bit string from all the data modules in the design. For small QR codes this is quite
+          straight forward, the QR code is simply read from right to left, bottom to top and back
+          again in double columns, see the illustration from Thonky above. However, when the QR code
+          size passes 5, we'll have to take into account interleaving. Then the data words are
+          scattered around the QR code, presumably to make the data pattern more random. So
+          we'll have to reverse that interleaving procedure. Luckily how it works is explained
+          by <a href="https://www.thonky.com/qr-code-tutorial/error-correction-coding">Thonky.com</a>. At
+          last we get a bit string from our design, here we only show the first 80 character, the
+          real bit string for this design is 13863 bits long.</p>
+          <p><code>01100011010101001100101010001100011110111010100000000001110100111110011101001001</code></p>
+
+          <h3 id="decoding">Decoding the bitstring</h3>
+          <p>Now we'll need to decode the bits to an alphanumeric string. Here we group 11 bits
+          together every time and then convert that into two alphanumeric characters
+          using <a href="https://www.thonky.com/qr-code-tutorial/alphanumeric-table">this
+          table</a>. We get the following data string (again truncated).</p>
+
+          <p><code>KS$#LKAHRDF9H8XQI9AL HRD$OIWHSRE94QX95IFR*IK9HF/ 5NM+/AMIA99LB I5R II98ULR JRD/AR1 IRG8...</code></p>
+
+          <p>We'll just replace the first 20 characters with our URL prefix and we get:</p>
+
+          <p><code>HTTPS://MY-QR.ART/R/ HRD$OIWHSRE94QX95IFR*IK9HF/ 5NM+/AMIA99LB I5R II98ULR JRD/AR1 IRG8...</code></p>
+
+          <h3 id="qr-code">Generating the QR code</h3>
+
+          <p>Now we can use any QR library to create the QR code! The QR library will handle adding
+          all the difficult error codes and other boring stuff for us.</p>
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/failed-qr.png" alt="A random looking QR code">
+
+          <p>But what is that? Why does it still look all random? The problem is masking. The QR
+          code spec includes 5 different masks and the mask that makes the QR code look most random
+          is chosen, which is almost certainly not our design. This is done to make the code easier
+          to read for scanners. However, in my experience, QR codes scan just fine with more
+          structured data. So we don't have to feel too bad about modifying our QR library to
+          always use the same mask. Then after we apply the same mask to our design before
+          processing it, we finally get the desired image.</p>
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/my-qr.png" alt="A QR code with the design in it">
+
+          <h2 id="redirecting" class="section-heading">Redirecting the request</h2>
+
+          <p>Now to redirect the QR code to the right domain. This should be easy, put the QR URL in
+          a database and link it to the redirect URL. When we receive a request, simply look up the
+          corresponding URL in a database. However, if we want to use a modern web server, we'll
+          have to jump through some hoops... Apache doesn't like most of our URLs, since they
+          are technically malformed (ugh, spoil the fun much Apache?). So it throws an <em>Error
+          400: Bad request</em>. We can't disable this error anywhere it seems. However, luckily
+          there is a workaround, we can set a custom error page for our <em>Error 400</em>, so if we
+          just set the redirect page as the error page for <em>Error 400</em>, we are home free!
+          Luckily Apache is not so much of a spoilsport that it throws a Bad Request error while
+          trying to handle a Bad Request...</p>
+
+          <p>For the back-end I've been using Django, and it has another fun bug that shows up
+          with these really weird URLs. It tries to decode the URL as an ISO-8859-1 string, but some
+          of the characters passed by Apache aren't in ISO-8859-1. So we have to derive our own
+          WSGI handler to workaround
+          this, <a href="https://github.com/raatmarien/my-qr.art/blob/main/my_qr_art/custom_wsgi.py">see
+          here</a>. But now it works, try to scan the QR we made, it redirects where we want it to
+            redirect!</p>
+
+          <p>One small caveat though, QR codes themselves are standardized and we create standard
+          compliant QR codes with correct URLs in them, but QR scanners aren't standardized and some
+          might not recognize our code as a URL and will see it as plain text instead.</p>
+
+          <h2 id="a-web-app" class="section-heading">Custom QR codes for everyone!</h2>
+
+          <p>Just outputting and parsing images isn't very user friendly, so I made a nice web
+          app at <a href="https://my-qr.art/">My-QR.art</a> using Django. It
+          has <a href="https://my-qr.art/editor">a friendly editor</a> where you can draw, fill or
+          upload black and white images to make your QR code. It also has some explanations and the
+          redirecting code we made. And it is completely free and open source, see exactly how it is
+          made at <a href="https://github.com/raatmarien/my-qr.art">the GitHub page</a>.</p>
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/screenshot-1.png" alt="A screenshot of the homepage of My-QR.art">
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/screenshot-2.png" alt="A screenshot of the editor of My-QR.art">
+
+          <img class="image-fluid" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/screenshot-3.png" alt="A screenshot of the success screen of My-QR.art">
+
+          <h2 id="future-work-" class="section-heading">Conclusion</h2>
+
+          <p>Alas, the shackles of purely random QR codes has been lifted. Go ahead and try to make
+          your own cool QR codes on <a href="https://my-qr.art/">My-QR.art</a> or check out the code
+          on <a href="https://github.com/raatmarien/my-qr.art">Github</a>. Think this is cool and
+          want to help? Share this blog post or the website with friends or family and star the
+          repository on Github. If you can spare the money, a donation using the button below would
+          be greatly appreciated, especially since hosting <a href="https://my-qr.art/">My-QR.art</a>
+          costs money.  Did you make a cool QR code using <a href="https://my-qr.art/">My-QR.art</a>?
+          Please <a href="mailto:contact@marienraat.nl">email it to me</a>!</p>
+
+          <form action="https://www.paypal.com/donate" method="post" target="_top">
+            <input type="hidden" name="hosted_button_id" value="AWTMSKS5U25UQ">
+            <input type="image" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/btn_donateCC_LG.webp" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" border="0">
+            <img alt="" src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/pixel.gif" width="1" height="1" border="0">
+          </form>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p class="copyright text-muted">Copyright © Marien Raat 2021</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/jquery.html"></script>
+  <script src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/bootstrap.html"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="Hacking%20QR%20code%20design%20-%20MarienRaat.nl_fichiers/clean-blog.js"></script>
+
+
+
+
+</body></html>

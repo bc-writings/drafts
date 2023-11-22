@@ -1,0 +1,3 @@
+/*! 20210530-6-RELEASE 2021-05-30 */
+
+TRC.StoriesVerticalUi={injectVerticalUiCss:()=>{TRC.dom.injectStyle(`.tbl-stories-container section.tbl-stories-placements-container section.tbl-stories-active-placement { display: block; } .tbl-stories-container section.tbl-stories-placements-container section.tbl-stories-active-placement .videoCube { display: block; position: fixed; transform: translate3d(0, 0, 0); width: 100vw; height: 100%; transform-origin: top left; transition: .25s; overflow: hidden; top: 0; bottom: 0; left: 0; right: 0; margin: 0; padding: 0; z-index: 9999999; }`)}};

@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html class="wf-istokweb-n4-active wf-istokweb-n7-active wf-istokweb-i4-active wf-istokweb-i7-active wf-active" lang="en"><head>
+		<title>physarum - Sage Jenson</title>
+
+		<meta name="ROBOTS" content="INDEX,FOLLOW">
+		<meta name="description" content="All images / gifs in this post are from my implentation of a Physarum transport model (described below).
+
+This February I spent a bit of time simulating slime...">
+		<meta name="keywords" content="composition, generative, motion, coding">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=1035">
+		
+		<meta property="og:url" content="https://www.sagejenson.com/physarum">		
+		<meta property="og:title" content="physarum - Sage Jenson">		
+		<meta property="og:description" content="All images / gifs in this post are from my implentation of a Physarum transport model (described below).
+
+This February I spent a bit of time simulating slime mold (Physarum polycephalum). I saw some incredible posts by Georgios Cherouvim with...">
+		<meta property="og:image" content="https://payload.cargocollective.com/1/18/598881/13800048/prt_1551049869_2x.jpg">
+
+		
+
+		<link href="https://favicon.cargocollective.com/598881-1429240292.ico" rel="shortcut icon">
+		<link href="https://www.sagejenson.com/rss" rel="alternate" type="application/rss+xml" title="Sage Jenson feed">
+
+		<script async="" src="physarum%20-%20Sage%20Jenson_fichiers/analytics.js"></script><script src="physarum%20-%20Sage%20Jenson_fichiers/webfont.js" type="text/javascript" async=""></script><script src="physarum%20-%20Sage%20Jenson_fichiers/cargo.js" data-main=""></script>
+<script src="physarum%20-%20Sage%20Jenson_fichiers/apipackage.js" data-main=""></script>
+<script src="physarum%20-%20Sage%20Jenson_fichiers/javascript.js" data-main=""></script>
+<link href="physarum%20-%20Sage%20Jenson_fichiers/stylesheet.css" id="member_stylesheet" rel="stylesheet" type="text/css">
+<link href="physarum%20-%20Sage%20Jenson_fichiers/global.css" id="" rel="stylesheet" type="text/css">
+<script type="text/json" data-set="defaults">{"route_name":"index","current_offset":0,"current_page":1,"cargo_url":"sagejenson","is_domain":true,"is_mobile":false,"is_tablet":false,"is_phone":false,"api_path":"\/\/sagejenson.com\/_api","is_editor":false,"route":null,"network":"Cargo","is_direct_link":true,"total_projects":"25","join_muid":"408512","squeeze_id":"435754190620483103326993812115427328","design_name":"polaris","template_basename":"design","_use_google_analytics":"1"}</script>
+<script type="text/json" data-set="DisplayOptions">{"user_id":598881,"pagination_count":60,"header_link_to_index":true,"header_2x":true,"total_projects":"25","thumb_size":{"w":"200","h":"134"},"image_width":"550","pages_do_not_paginate":false,"following_link_in_nav":false,"tags_in_thumb":true,"title_in_thumb":true,"view_count_in_project":true,"title_in_project":false,"footer_in_project":true,"pages_in_text_nav":true,"projects_in_text_nav":true,"use_sets":true,"sets_open_by_default":true,"sets_can_toggle":true,"sets_one_at_a_time":false,"use_set_links":false,"sets_are_clickable":null,"set_links_position":"top","disable_project_scroll":false,"recent_project_as_start":false,"excerpt_in_thumb":true,"thumbs_below_projects":false,"thumbs_below_pages":false,"lightbox_view":true,"slide_transition":"fade","slide_transition_duration":0.4,"slide_auto_play":{"enabled":false,"delay":"1"},"slide_text_nav":{"enabled":true,"prev":"Previous","slash":"\/","next":"Next image","number_enabled":true,"number_style":"parentheses"},"slide_nav_position":"top","slide_image_position":{"center":true,"responsive":false},"slide_thumbnails":{"enabled":false,"position":"bottom"},"slide_default_thumbs":false,"slide_toggle_thumb_link":{"enabled":true,"title":"Thumbnails"},"resource_url":null,"sticky_pages":null,"lightbox_zoom_enabled":true,"set_options":true,"slideshow_responsive":false,"slideshow_thumbnails_header":true}</script>
+<script type="text/json" data-set="Site">{"id":"598881","direct_link":"https:\/\/www.sagejenson.com","display_url":"sagejenson.com","following_url":"https:\/\/www.sagejenson.com\/following","website_title":"Sage Jenson","meta_tags":"composition, generative, motion, coding","meta_description":"","meta_head":"","start_project_id":null,"thumb_url":"https:\/\/payload.cargocollective.com\/1\/18\/598881\/14134718\/prt_1595319401.jpg","css_url":"\/stylesheet","rss_url":"https:\/\/www.sagejenson.com\/rss","js_url":"\/javascript","asset_path":"https:\/\/assets.cdn.cargocollective.com\/408512\/435754190620483103326993812115427328","favicon_url":"https:\/\/favicon.cargocollective.com\/598881-1429240292.ico","header_url":null,"header_width":1280,"header_height":720,"header_width_2x":640,"header_height_2x":360,"header_text":"Sage Jenson","mobile_header_url":null,"mobile_header_width":0,"mobile_header_height":0,"mobile_header_text":"Sage Jenson","custom_html":"<customhtml><div class=\"cargo_link\">Running on <a href=\"http:\/\/cargocollective.com\" target=\"_blank\">Cargo<\/a><\/div>\n\n\n<\/customhtml>","filter":false,"following_count":"0","is_editor":false,"use_hi_res":false,"files":[],"resource_url":"www.sagejenson.com\/_api\/v0\/site\/598881","current_set_key":null}</script>
+<script type="text/json" data-set="Assets">[{"id":"5ff383d741","filename":"arrow-down.svg"},{"id":"f3a4624d93","filename":"arrow-up.svg"},{"id":"80065187a8","filename":"index.svg"},{"id":"7059fdd879","filename":"preview-thumbnail.jpg"}]</script>
+<script type="text/json" data-set="ProjectDetail">{"id":13800048,"site_id":"598881","link_url":false,"project_url":"physarum","direct_link":"https:\/\/www.sagejenson.com\/physarum","type":"project","link_target":"","title":"physarum","title_no_html":"physarum","show_title":true,"tags":[],"display":true,"excerpt":"All images \/ gifs in this post are from my implentation of a Physarum transport model (described below).\r\n\r\nThis February I spent a bit of time simulating slime...","excerpt_long":"All images \/ gifs in this post are from my implentation of a Physarum transport model (described below).\r\n\r\nThis February I spent a bit of time simulating slime mold (Physarum polycephalum). I saw some incredible posts by Georgios Cherouvim with...","content":"<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/web_670.jpg\" width=\"550\" height=\"551\" width_o=\"958\" height_o=\"960\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/web_958.jpg\" data-mid=\"74643918\" border=\"0\" align=\"left\" data-title=\"550 \u2014 670 \u00d7 671\"data-hi-res=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/web_800.jpg\" \/><br \/>\r\nAll images \/ gifs in this post are from my implentation of a Physarum transport model (described below).<br \/>\r\n<br \/>\r\nThis February I spent a bit of time simulating slime mold (Physarum polycephalum). I saw some incredible posts by <a href=\"http:\/\/ch3.gr\/\" target=\"_blank\">Georgios Cherouvim<\/a> with reference to a 2010 paper by Jeff Jones, <a href=\"http:\/\/eprints.uwe.ac.uk\/15260\/1\/artl.2010.16.2.pdf\" target=\"_blank\">\u201cCharacteristics of pattern formation and evolution in approximations of Physarum transport networks.\u201d<\/a> When I read the paper, I was excited to learn that the model combined continuum and agent-based simulation systems in a way that I hadn't seen before. In this post I try to describe some of the concepts behind the system, and give an overview of how it functions.<br \/>\r\n<br \/>\r\nThere are two requirements of efficiency in foraging behavior: 1.) to search a maximal area and 2.) to optimize transport distance. Physarum polycephalum is a unicellular multinucleate organism that excels at these two competing tasks through the mechanisms of growth, movement, and area reduction. When the organism can choose to travel through two different paths to a destination, the emergent behavior allows it to effectively find shortest paths. This allows Physarum to navigate mazes, develop optimal road-like systems and solve other path-finding problems.<br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/network_2.gif\" width=\"550\" height=\"550\" width_o=\"555\" height_o=\"555\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/network_2.gif\" data-mid=\"74643705\" border=\"0\" align=\"left\" data-title=\"550 \u2014 555 \u00d7 555\"data-hi-res=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/network_2.gif\" \/><br \/>\r\n<br \/>\r\nThe model postulated by Jones employs both an agent-based layer (the data map) and a continuum-based layer (the trail map).\u00a0The data map consists of many particles, while the trail map consists of a 2D grid of intensities (similar to a pixel-based image). The data and trail map in turn affect each other; the particles of the data map deposit material onto the trail map, while those same particles sense values from the trail map in order to determine aspects of their locomotion.<br \/>\r\n<br \/>\r\nEach particle in the simulation has a heading angle, a location, and three sensors (front left, front, front right). The sensor readings effect the heading of the particle, causing it to rotate left or right (or stay facing the same direction). The trail map undergoes a diffusion and decay process every simulation step. A simple 3-by-3 mean filter is applied to simulate diffusion of the particle trail, and then a multiplicative decay factor is applied to simulate trail dissipation over time. The diagram below describes the six sub-steps of a simulation tick.<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/diagram_670.jpg\" width=\"550\" height=\"670\" width_o=\"800\" height_o=\"975\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/diagram_800.jpg\" data-mid=\"74643701\" border=\"0\" align=\"left\" data-title=\"550 \u2014 670 \u00d7 816\"data-hi-res=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/diagram_800.jpg\" \/><br \/>\r\n<br \/>\r\nMany of the parameters of this simulation are configurable, including sensor distance, sensor size, sensor angle, step size, rotation angle, deposition amount, decay factor, deposit size, diffuse size, decay factor, etc. For a more detailed description check out the original paper.<br \/>\r\n<br \/>\r\nThere are several substantial differences between the model as described by Jones and my implementation. In Jones\u2019s original paper there is a collision detection step that ensures that there is at most one particle in each grid square. For my implementations I usually ignored this step, preferring the patterns that arose without it. However, this step is crucial for exact mimicry of the behavior of Physarum polycephalum, as it approximates a sort of conservation of matter. Also (conveniently) this collision detection removes any sort of sequential dependence, allowing for increased computational parallelism.<br \/>\r\n<br \/>\r\nI also added a contagion behavior that alters properties of the simulation. When a particle is infected, it lays down an infected trail which then spreads to other particles. The gif below is an example of such an infected system, with the contagion spreading from the center of the image. <br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/ef_9.gif\" width=\"550\" height=\"550\" width_o=\"720\" height_o=\"720\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/ef_9.gif\" data-mid=\"74643943\" border=\"0\" align=\"left\" data-title=\"550 \u2014 720 \u00d7 720\"data-hi-res=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/ef_9.gif\" \/><br \/>\r\n<br \/>\r\nI implemented the model in C++ and GLSL using <a href=\"https:\/\/openframeworks.cc\/\" target=\"_blank\">openFrameworks<\/a>. All of the computation and rendering happen on the GPU, which stores both the particle information and the trail map. The simulation runs in real-time on a GTX 1070, with most of the examples comprised of between 5 and 10 million particles.<br \/>\r\n<br \/>\r\nThanks for reading, feel free to email me with any more questions. I hope to post a CPU version of the system described in the Jones paper soon.<br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/explosion.gif\" width=\"504\" height=\"500\" width_o=\"504\" height_o=\"500\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/explosion.gif\" data-mid=\"74643660\" border=\"0\" align=\"left\" data-title=\"550 (504) \u2014 504 \u00d7 500\"\/>","content_2x":"<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/web_800.jpg\" width=\"550\" height=\"551\" width_o=\"958\" height_o=\"960\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/web_958.jpg\" data-mid=\"74643918\" border=\"0\" align=\"left\" data-title=\"550 \u2014 800 \u00d7 801\"\/><br \/>\r\nAll images \/ gifs in this post are from my implentation of a Physarum transport model (described below).<br \/>\r\n<br \/>\r\nThis February I spent a bit of time simulating slime mold (Physarum polycephalum). I saw some incredible posts by <a href=\"http:\/\/ch3.gr\/\" target=\"_blank\">Georgios Cherouvim<\/a> with reference to a 2010 paper by Jeff Jones, <a href=\"http:\/\/eprints.uwe.ac.uk\/15260\/1\/artl.2010.16.2.pdf\" target=\"_blank\">\u201cCharacteristics of pattern formation and evolution in approximations of Physarum transport networks.\u201d<\/a> When I read the paper, I was excited to learn that the model combined continuum and agent-based simulation systems in a way that I hadn't seen before. In this post I try to describe some of the concepts behind the system, and give an overview of how it functions.<br \/>\r\n<br \/>\r\nThere are two requirements of efficiency in foraging behavior: 1.) to search a maximal area and 2.) to optimize transport distance. Physarum polycephalum is a unicellular multinucleate organism that excels at these two competing tasks through the mechanisms of growth, movement, and area reduction. When the organism can choose to travel through two different paths to a destination, the emergent behavior allows it to effectively find shortest paths. This allows Physarum to navigate mazes, develop optimal road-like systems and solve other path-finding problems.<br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/network_2.gif\" width=\"550\" height=\"550\" width_o=\"555\" height_o=\"555\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/network_2.gif\" data-mid=\"74643705\" border=\"0\" align=\"left\" data-title=\"550 \u2014 555 \u00d7 555\"\/><br \/>\r\n<br \/>\r\nThe model postulated by Jones employs both an agent-based layer (the data map) and a continuum-based layer (the trail map).\u00a0The data map consists of many particles, while the trail map consists of a 2D grid of intensities (similar to a pixel-based image). The data and trail map in turn affect each other; the particles of the data map deposit material onto the trail map, while those same particles sense values from the trail map in order to determine aspects of their locomotion.<br \/>\r\n<br \/>\r\nEach particle in the simulation has a heading angle, a location, and three sensors (front left, front, front right). The sensor readings effect the heading of the particle, causing it to rotate left or right (or stay facing the same direction). The trail map undergoes a diffusion and decay process every simulation step. A simple 3-by-3 mean filter is applied to simulate diffusion of the particle trail, and then a multiplicative decay factor is applied to simulate trail dissipation over time. The diagram below describes the six sub-steps of a simulation tick.<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/diagram_800.jpg\" width=\"550\" height=\"670\" width_o=\"800\" height_o=\"975\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/diagram_800.jpg\" data-mid=\"74643701\" border=\"0\" align=\"left\" data-title=\"550 \u2014 800 \u00d7 975\"\/><br \/>\r\n<br \/>\r\nMany of the parameters of this simulation are configurable, including sensor distance, sensor size, sensor angle, step size, rotation angle, deposition amount, decay factor, deposit size, diffuse size, decay factor, etc. For a more detailed description check out the original paper.<br \/>\r\n<br \/>\r\nThere are several substantial differences between the model as described by Jones and my implementation. In Jones\u2019s original paper there is a collision detection step that ensures that there is at most one particle in each grid square. For my implementations I usually ignored this step, preferring the patterns that arose without it. However, this step is crucial for exact mimicry of the behavior of Physarum polycephalum, as it approximates a sort of conservation of matter. Also (conveniently) this collision detection removes any sort of sequential dependence, allowing for increased computational parallelism.<br \/>\r\n<br \/>\r\nI also added a contagion behavior that alters properties of the simulation. When a particle is infected, it lays down an infected trail which then spreads to other particles. The gif below is an example of such an infected system, with the contagion spreading from the center of the image. <br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/ef_9.gif\" width=\"550\" height=\"550\" width_o=\"720\" height_o=\"720\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/ef_9.gif\" data-mid=\"74643943\" border=\"0\" align=\"left\" data-title=\"550 \u2014 720 \u00d7 720\"\/><br \/>\r\n<br \/>\r\nI implemented the model in C++ and GLSL using <a href=\"https:\/\/openframeworks.cc\/\" target=\"_blank\">openFrameworks<\/a>. All of the computation and rendering happen on the GPU, which stores both the particle information and the trail map. The simulation runs in real-time on a GTX 1070, with most of the examples comprised of between 5 and 10 million particles.<br \/>\r\n<br \/>\r\nThanks for reading, feel free to email me with any more questions. I hope to post a CPU version of the system described in the Jones paper soon.<br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/explosion.gif\" width=\"504\" height=\"500\" width_o=\"504\" height_o=\"500\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/explosion.gif\" data-mid=\"74643660\" border=\"0\" align=\"left\" data-title=\"550 (504) \u2014 504 \u00d7 500\"\/>","content_no_html":"{image 7}\r\nAll images \/ gifs in this post are from my implentation of a Physarum transport model (described below).\r\n\r\nThis February I spent a bit of time simulating slime mold (Physarum polycephalum). I saw some incredible posts by Georgios Cherouvim with reference to a 2010 paper by Jeff Jones, \u201cCharacteristics of pattern formation and evolution in approximations of Physarum transport networks.\u201d When I read the paper, I was excited to learn that the model combined continuum and agent-based simulation systems in a way that I hadn't seen before. In this post I try to describe some of the concepts behind the system, and give an overview of how it functions.\r\n\r\nThere are two requirements of efficiency in foraging behavior: 1.) to search a maximal area and 2.) to optimize transport distance. Physarum polycephalum is a unicellular multinucleate organism that excels at these two competing tasks through the mechanisms of growth, movement, and area reduction. When the organism can choose to travel through two different paths to a destination, the emergent behavior allows it to effectively find shortest paths. This allows Physarum to navigate mazes, develop optimal road-like systems and solve other path-finding problems.\r\n\r\n{image 6}\r\n\r\nThe model postulated by Jones employs both an agent-based layer (the data map) and a continuum-based layer (the trail map).\u00a0The data map consists of many particles, while the trail map consists of a 2D grid of intensities (similar to a pixel-based image). The data and trail map in turn affect each other; the particles of the data map deposit material onto the trail map, while those same particles sense values from the trail map in order to determine aspects of their locomotion.\r\n\r\nEach particle in the simulation has a heading angle, a location, and three sensors (front left, front, front right). The sensor readings effect the heading of the particle, causing it to rotate left or right (or stay facing the same direction). The trail map undergoes a diffusion and decay process every simulation step. A simple 3-by-3 mean filter is applied to simulate diffusion of the particle trail, and then a multiplicative decay factor is applied to simulate trail dissipation over time. The diagram below describes the six sub-steps of a simulation tick.\r\n{image 5}\r\n\r\nMany of the parameters of this simulation are configurable, including sensor distance, sensor size, sensor angle, step size, rotation angle, deposition amount, decay factor, deposit size, diffuse size, decay factor, etc. For a more detailed description check out the original paper.\r\n\r\nThere are several substantial differences between the model as described by Jones and my implementation. In Jones\u2019s original paper there is a collision detection step that ensures that there is at most one particle in each grid square. For my implementations I usually ignored this step, preferring the patterns that arose without it. However, this step is crucial for exact mimicry of the behavior of Physarum polycephalum, as it approximates a sort of conservation of matter. Also (conveniently) this collision detection removes any sort of sequential dependence, allowing for increased computational parallelism.\r\n\r\nI also added a contagion behavior that alters properties of the simulation. When a particle is infected, it lays down an infected trail which then spreads to other particles. The gif below is an example of such an infected system, with the contagion spreading from the center of the image. \r\n\r\n{image 11}\r\n\r\nI implemented the model in C++ and GLSL using openFrameworks. All of the computation and rendering happen on the GPU, which stores both the particle information and the trail map. The simulation runs in real-time on a GTX 1070, with most of the examples comprised of between 5 and 10 million particles.\r\n\r\nThanks for reading, feel free to email me with any more questions. I hope to post a CPU version of the system described in the Jones paper soon.\r\n\r\n{image 2}","content_partial_html":"<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/web_670.jpg\" width=\"550\" height=\"551\" width_o=\"958\" height_o=\"960\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/web_958.jpg\" data-mid=\"74643918\" border=\"0\" align=\"left\" data-title=\"550 \u2014 670 \u00d7 671\"data-hi-res=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/web_800.jpg\" \/><br \/>\r\nAll images \/ gifs in this post are from my implentation of a Physarum transport model (described below).<br \/>\r\n<br \/>\r\nThis February I spent a bit of time simulating slime mold (Physarum polycephalum). I saw some incredible posts by <a href=\"http:\/\/ch3.gr\/\" target=\"_blank\">Georgios Cherouvim<\/a> with reference to a 2010 paper by Jeff Jones, <a href=\"http:\/\/eprints.uwe.ac.uk\/15260\/1\/artl.2010.16.2.pdf\" target=\"_blank\">\u201cCharacteristics of pattern formation and evolution in approximations of Physarum transport networks.\u201d<\/a> When I read the paper, I was excited to learn that the model combined continuum and agent-based simulation systems in a way that I hadn't seen before. In this post I try to describe some of the concepts behind the system, and give an overview of how it functions.<br \/>\r\n<br \/>\r\nThere are two requirements of efficiency in foraging behavior: 1.) to search a maximal area and 2.) to optimize transport distance. Physarum polycephalum is a unicellular multinucleate organism that excels at these two competing tasks through the mechanisms of growth, movement, and area reduction. When the organism can choose to travel through two different paths to a destination, the emergent behavior allows it to effectively find shortest paths. This allows Physarum to navigate mazes, develop optimal road-like systems and solve other path-finding problems.<br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/network_2.gif\" width=\"550\" height=\"550\" width_o=\"555\" height_o=\"555\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/network_2.gif\" data-mid=\"74643705\" border=\"0\" align=\"left\" data-title=\"550 \u2014 555 \u00d7 555\"data-hi-res=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/network_2.gif\" \/><br \/>\r\n<br \/>\r\nThe model postulated by Jones employs both an agent-based layer (the data map) and a continuum-based layer (the trail map).\u00a0The data map consists of many particles, while the trail map consists of a 2D grid of intensities (similar to a pixel-based image). The data and trail map in turn affect each other; the particles of the data map deposit material onto the trail map, while those same particles sense values from the trail map in order to determine aspects of their locomotion.<br \/>\r\n<br \/>\r\nEach particle in the simulation has a heading angle, a location, and three sensors (front left, front, front right). The sensor readings effect the heading of the particle, causing it to rotate left or right (or stay facing the same direction). The trail map undergoes a diffusion and decay process every simulation step. A simple 3-by-3 mean filter is applied to simulate diffusion of the particle trail, and then a multiplicative decay factor is applied to simulate trail dissipation over time. The diagram below describes the six sub-steps of a simulation tick.<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/diagram_670.jpg\" width=\"550\" height=\"670\" width_o=\"800\" height_o=\"975\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/diagram_800.jpg\" data-mid=\"74643701\" border=\"0\" align=\"left\" data-title=\"550 \u2014 670 \u00d7 816\"data-hi-res=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/diagram_800.jpg\" \/><br \/>\r\n<br \/>\r\nMany of the parameters of this simulation are configurable, including sensor distance, sensor size, sensor angle, step size, rotation angle, deposition amount, decay factor, deposit size, diffuse size, decay factor, etc. For a more detailed description check out the original paper.<br \/>\r\n<br \/>\r\nThere are several substantial differences between the model as described by Jones and my implementation. In Jones\u2019s original paper there is a collision detection step that ensures that there is at most one particle in each grid square. For my implementations I usually ignored this step, preferring the patterns that arose without it. However, this step is crucial for exact mimicry of the behavior of Physarum polycephalum, as it approximates a sort of conservation of matter. Also (conveniently) this collision detection removes any sort of sequential dependence, allowing for increased computational parallelism.<br \/>\r\n<br \/>\r\nI also added a contagion behavior that alters properties of the simulation. When a particle is infected, it lays down an infected trail which then spreads to other particles. The gif below is an example of such an infected system, with the contagion spreading from the center of the image. <br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/ef_9.gif\" width=\"550\" height=\"550\" width_o=\"720\" height_o=\"720\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/ef_9.gif\" data-mid=\"74643943\" border=\"0\" align=\"left\" data-title=\"550 \u2014 720 \u00d7 720\"data-hi-res=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/ef_9.gif\" \/><br \/>\r\n<br \/>\r\nI implemented the model in C++ and GLSL using <a href=\"https:\/\/openframeworks.cc\/\" target=\"_blank\">openFrameworks<\/a>. All of the computation and rendering happen on the GPU, which stores both the particle information and the trail map. The simulation runs in real-time on a GTX 1070, with most of the examples comprised of between 5 and 10 million particles.<br \/>\r\n<br \/>\r\nThanks for reading, feel free to email me with any more questions. I hope to post a CPU version of the system described in the Jones paper soon.<br \/>\r\n<br \/>\r\n<img src=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/explosion.gif\" width=\"504\" height=\"500\" width_o=\"504\" height_o=\"500\" src_o=\"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/explosion.gif\" data-mid=\"74643660\" border=\"0\" align=\"left\" data-title=\"550 (504) \u2014 504 \u00d7 500\"\/>","date":"February 2019","bgcolor":"ffffff","comment_count":0,"thumb_url":"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/prt_1551049869.jpg","thumb_url_2x":"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/prt_1551049869_2x.jpg","thumb_url_4x":"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/prt_1551049869.jpg","thumb_width":200,"thumb_height":134,"default_thumb_url":"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/prt_1551049869.jpg","default_thumb_url_2x":"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/prt_1551049869_2x.jpg","default_thumb_url_4x":"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/prt_1551049869_4x.jpg","default_thumb_width":200,"default_thumb_height":134,"custom_thumb_url":"https:\/\/payload.cargocollective.com\/1\/18\/598881\/13800048\/prt_1551049869.jpg","custom_thumb_url_2x":null,"custom_thumb_url_4x":null,"custom_thumb_width":200,"custom_thumb_height":134,"sort":6,"set_id":13643996,"set_name":"Biofabrications","set_key":"Biofabrications","set_url":"https:\/\/www.sagejenson.com\/Biofabrications","set_count":null,"is_set":false,"views":"42,506"}</script>
+<script type="text/x-handlebars-template" id="loading_animation"><div class="retinaSpinner loading"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div></script>
+	<link rel="stylesheet" href="physarum%20-%20Sage%20Jenson_fichiers/css.css" media="all"><style type="text/css">[draggable=true] {-webkit-user-drag: element; -webkit-user-select: none; -moz-user-select: none;}</style><style>/**
+ * Body
+ * - Used to set up transition on elements
+ */
+
+/*html.rail_active,*/
+body.rail_active {
+	overflow: hidden;
+}
+
+body.home.rail_active {
+	overflow: initial;
+}
+
+/******************************************************************************
+ *
+ * rail wrapper
+ * - Contains everything rail
+ *
+ ******************************************************************************/
+
+#rail_wrapper {
+	background: #1a1a1a;
+	display: block;
+	font-family: sans-serif;
+	font-size: 14px;
+	letter-spacing: 0;
+	word-spacing: 0;
+	line-height: 1.5;
+	font-style: normal;
+	font-weight: normal;
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	text-align: left;
+	width: 300px;
+	z-index: 9999999;
+
+	transform: translate(301px, 0);
+	transition: transform 0.3s ease;
+
+	-webkit-transform: translate(301px, 0);
+	-webkit-transition: -webkit-transform 0.3s ease;
+
+	-moz-transform: translate(301px, 0);
+	-moz-transition: -webkit-transform 0.3s ease;
+}
+
+#rail_wrapper * {
+	-moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+#rail_wrapper.active {
+	right: 0;
+
+	transform: translate(0, 0);
+	-webkit-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+}
+
+#rail_wrapper.selection_active {
+	width: 300px;
+}
+
+#rail_wrapper.following_active {
+	min-width: 370px;
+	width: 33%;
+}
+
+#rail_wrapper .follow_bolt {
+	display: none;
+}
+
+#rail_screen {
+	background: rgba(110, 110, 110, 0);
+	cursor: pointer;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	height: 100%;
+	right: 0;
+	bottom: 0;
+	z-index: 9999998;
+
+	transition: background 0.3s ease;
+	-webkit-transition: background 0.3s ease;
+	-moz-transition: background 0.3s ease;
+}
+
+body.rail_active #rail_screen {
+	background: rgba(110, 110, 110, 0.8);
+	opacity: 1;
+	left: 0;
+	right: 0;
+}
+
+/******************************************************************************
+ * Header
+ *****************************************************************************/
+
+.rail_header {
+	font-size: 18px;
+	padding: 60px 20px 0;
+	position: relative;
+	text-align: center;
+	white-space: nowrap;
+	width: 100%;
+	z-index: 10;
+	height: 91px;
+	line-height: 30px;
+}
+
+.rail_favicon {
+	background: #fff;
+	display: inline-block;
+	height: 20px;
+	overflow: hidden;
+	margin: 5px 7px 0 0;
+	padding: 2px;
+	vertical-align: middle;
+	width: 20px;
+
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+
+.api .rail_favicon img {
+	display: block;
+}
+
+.rail_name {
+	color: #666;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+	vertical-align: middle;
+	max-width: 200px;
+	white-space: nowrap;
+	height: 25px;
+}
+
+.rail_name a {
+	color: #ccc;
+	text-decoration: none;
+	height: 20px;
+	padding-bottom: 2px;
+}
+
+.rail_name a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.rail_name a:active {
+	color: #999;
+}
+
+
+#rail_wrapper .loading_anim {
+	display: none;
+	margin: -2px;
+}
+
+
+/******************************************************************************
+ *
+ * Following
+ *
+ *****************************************************************************/
+
+#rail_following {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#rail_following .rail_follows_you {
+	position: absolute;
+	top: 18px;
+	left: 20px;
+	color: #666;
+	font-family: Menlo, monaco, monospace;
+	font-size: 11px;
+	line-height: 20px;
+}
+
+
+#rail_following #rail_follow_thumbs {
+	padding: 0 10px 20px 10px;
+}
+
+#rail_following .rail_module {
+	color: #666;
+	font-size: 12px;
+	line-height: 15px;
+	float: left;
+	padding: 10px 10px;
+	vertical-align: top;
+	min-width: 100px;
+	width: 33.3%;
+}
+
+#rail_following .rail_module a {
+	color: #666;
+	text-decoration: none;
+}
+
+#rail_following .rail_module a:hover {
+	color: #ccc;
+}
+
+#rail_following .rail_module a:active {
+	color: #999;
+}
+
+#rail_following .rail_module .rail_follow_crop {
+	height: 0;
+	margin: 0 0 8px 0;
+	padding-bottom: 68%;
+	overflow: hidden;
+	position: relative;
+}
+
+#rail_following .rail_module img {
+	position: absolute;
+	height: auto;
+	width: 100%;
+}
+
+#rail_following .rail_module .rail_project_info {
+	max-height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/**
+ * Rail header
+ */
+#rail_follow {
+	font-size: 14px;
+	position: absolute;
+	top: 16px;
+	right: 20px;
+	text-transform: capitalize;
+	line-height: 20px;
+}
+
+#rail_follow a.rail_follow {
+	color: #27dca6;
+	text-decoration: none;
+}
+
+#rail_follow a.rail_follow:hover {
+	text-decoration: underline;
+}
+
+#rail_follow a.rail_follow:active {
+	color: #999;
+}
+
+#rail_follow a.rail_unfollow {
+	color: #f06;
+	text-decoration: none;
+}
+
+#rail_follow a.rail_unfollow:hover {
+	text-decoration: underline;
+}
+
+#rail_follow a.rail_unfollow:active {
+	color: #999;
+}
+
+.rail_loading_anim {
+	display: none;
+	position: absolute;
+	top: -1px;
+	left: -30px;
+}
+
+/**
+ * Following links
+ */
+
+#rail_links {
+	font-size: 12px;
+	margin: 15px 0 35px 0;
+	padding: 0px 15px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#rail_links a {
+	color: #ccc;
+	text-decoration: none;
+	margin: 0 5px;
+}
+
+#rail_links a:hover {
+	color: #fff;
+}
+
+#rail_links a:hover span.rail_links_section {
+	text-decoration: underline;
+}
+
+#rail_links a:active {
+	color: #999;
+}
+
+.rail_links_count {
+	color: #666;
+	margin-left: 3px;
+}
+
+/**
+ * Misc
+ */
+
+#rail_count {
+	display: none !important;
+	color: #444;
+	float: left;
+	margin-left: 10px;
+}
+
+#rail_view_all {
+	clear: both;
+	padding: 30px 20px 20px;
+}
+
+#rail_view_all a {
+	color: #ccc;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+#rail_view_all a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#rail_view_all a:active {
+	color: #999;
+}
+
+/******************************************************************************
+ *
+ * Selections
+ *
+ *****************************************************************************/
+
+#rail_selections {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 300px;
+}
+
+.rail_header.selections_header {
+	padding-top: 35px;
+}
+
+#rail_selections .rail_name {
+	color: #ccc;
+}
+
+.rail_selections_name {
+	font-size: 12px;
+}
+
+.rail_selections_name a {
+	color: #ccc;
+	text-decoration: none;
+}
+
+.rail_selections_name a:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.rail_selections_name a:active {
+	color: #999;
+}
+
+#rail_droplet {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	text-align: center;
+	width: 300px;
+	z-index: 1;
+}
+
+#rail_droplet.active {
+	background: #000;
+}
+
+.rail_add {
+	background: #fff;
+	position: absolute;
+	top: 160px;
+	z-index: 2;
+
+	-moz-transition: opacity 0.3s ease;
+	-webkit-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+}
+
+.rail_add.vertical {
+	left: 140px;
+	height: 100px;
+	width: 20px;
+}
+
+.rail_add.horizontal {
+	margin-top: 40px;
+	left: 100px;
+	height: 20px;
+	width: 100px;
+}
+
+#rail_droplet.active .rail_add {
+	background: #00c462;
+}
+
+.rail_add.hidden {
+	display: none;
+}
+
+#rail_preview {
+	display: block;
+	padding: 50px;
+	position: relative;
+	margin-top: 110px;
+	color: #666;
+	font-size: 12px;
+}
+
+#rail_preview .rail_preview_img {
+	height: 130px;
+}
+
+#rail_preview img:not(.rail_preview_spinner) {
+	border: 0;
+	display: none;
+	opacity: 0.3;
+	max-height: 180px;
+	max-width: 180px;
+}
+
+#rail_preview.selection_dropped img:not(.rail_preview_spinner) {
+	display: inline;
+}
+
+#rail_preview.selection_sent img:not(.rail_preview_spinner) {
+	opacity: 1;
+}
+
+#rail_preview.selection_dropped #drop_here {
+	display: none;
+}
+
+#rail_preview #drop_here {
+	color: #666;
+}
+
+#rail_preview a {
+	color: #666;
+	display: block;
+	text-decoration: none;
+}
+
+#rail_preview a:hover {
+	color: #ccc;
+}
+
+#rail_preview a .note {
+	display: none;
+}
+
+#rail_preview a:hover .note {
+	text-decoration: underline;
+}
+
+#rail_preview a:active .note {
+	color: #999;
+}
+
+#rail_preview .arrow {
+	display: none;
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+}
+
+#rail_preview.selection_dropped .rail_preview_spinner {
+	display: block;
+}
+
+#rail_preview .rail_preview_spinner {
+	display: none;
+	position: absolute;
+	top: 240px;
+	left: 140px;
+	height: 20px;
+	width: 20px;
+}
+
+#selections_login {
+	color: #ccc;
+	padding: 100px 30px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+
+#selections_login a {
+	color: #ccc;
+}
+
+#selections_login a:hover {
+	color: #fff;
+}
+
+#selections_login a:active {
+	color: #999;
+}
+
+/* Dropped */
+
+
+
+/* Preview states */
+
+#rail_preview.selection_sent .rail_preview_spinner {
+	display: none;
+}
+
+#rail_preview.selection_sent .note,
+#rail_preview.selection_sent .arrow {
+	display: inline;
+}
+
+#rail_preview.selection_sent .rail_preview_img {
+	height: auto;
+	margin-bottom: 15px;
+}
+
+#rail_selections_note {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: 30px;
+	padding: 30px;
+	font-size: 11px;
+	text-align: center;
+	color: #666;
+}
+
+/**
+ * Helper
+ */
+
+.rail_helper {
+	opacity: 0.7;
+	position: fixed;
+	z-index: 9999999999;
+
+	/*-webkit-transform: scale(0.15);*/
+}
+
+.rail_helper img {
+	height: auto;
+	width: 200px;
+}
+
+/*.ui-draggable-dragging {
+	height: 1px;
+	opacity: 0;
+	position: fixed !important;
+	width: 1px;
+}*/
+
+/******************************************************************************
+ *
+ * follow alert
+ *
+ ******************************************************************************/
+
+#follow_alert {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin: -100px 0 0 -200px;
+	height: 200px;
+	width: 400px;
+	z-index: 99999;
+}
+
+
+/******************************************************************************
+ *
+ * IE
+ *
+ *****************************************************************************/
+
+#rail_wrapper.rail_ie {
+	display: none;
+	right: 0;
+}
+
+#rail_wrapper.rail_ie.active {
+	display: block;
+	right: 0;
+}</style></head>
+	<body data-bodyview="index" data-pagetype="project" class="open">
+
+		<customhtml><div class="cargo_link">Running on <a href="http://cargocollective.com/" target="_blank">Cargo</a></div>
+
+
+</customhtml>
+
+		<div class="loading" data-loading="page" style="display: none;">
+			<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+		</div>
+
+		<div class="site_header scroll">
+			
+
+			<div class="header_text">
+				<a href="https://www.sagejenson.com/" rel="show_index">
+					Sage Jenson
+				</a>
+			</div>
+
+		</div>
+
+		
+			<div class="navigation scroll">
+								<div id="autopagination_wrapper">
+					<ul class="list" data-view="Navigation" data-set="Navigation">
+						
+								<li id="menu_14132362" class="set_link open toggle first-set">
+
+										<a id="p14132362" class="set_name" data-id="14132362" href="#">Works</a>
+																		<ul class="set_wrapper inactive" id="set_14132362" data-setid="14132362">
+							
+
+							<li id="menu_14132375" class="project_link" data-id="14132375">
+								<a id="p14132375" href="https://sagejenson.com/dismantling-2019" rel="history">
+									dismantling (2019)
+								</a>
+							</li>
+						
+
+
+							<li id="menu_12890777" class="project_link" data-id="12890777">
+								<a id="p12890777" href="https://sagejenson.com/shadowbox-2017" rel="history">
+									shadowbox (2017)
+								</a>
+							</li>
+						
+
+
+							<li id="menu_14132368" class="project_link" data-id="14132368">
+								<a id="p14132368" href="https://sagejenson.com/particle-studies-2016" rel="history">
+									particle studies (2016)
+								</a>
+							</li>
+									</ul>
+								</li>
+						
+								<li id="menu_13643996" class="set_link open toggle">
+
+										<a id="p13643996" class="set_name active" data-id="13643996" href="#">Biofabrications</a>
+																		<ul class="set_wrapper active" id="set_13643996" data-setid="13643996">
+							
+
+							<li id="menu_14134718" class="project_link" data-id="14134718">
+								<a id="p14134718" href="https://sagejenson.com/tapestries" rel="history">
+									tapestries
+								</a>
+							</li>
+						
+
+
+							<li id="menu_13800048" class="project_link active" data-id="13800048">
+								<a id="p13800048" href="https://sagejenson.com/physarum" rel="history">
+									physarum
+								</a>
+							</li>
+						
+
+
+							<li id="menu_13802463" class="project_link" data-id="13802463">
+								<a id="p13802463" href="https://sagejenson.com/the-dissolve" rel="history">
+									the dissolve
+								</a>
+							</li>
+						
+
+
+							<li id="menu_13644091" class="project_link" data-id="13644091">
+								<a id="p13644091" href="https://sagejenson.com/growth-functors" rel="history">
+									growth functors
+								</a>
+							</li>
+						
+
+
+							<li id="menu_12890279" class="project_link" data-id="12890279">
+								<a id="p12890279" href="https://sagejenson.com/nesting" rel="history">
+									nesting
+								</a>
+							</li>
+						
+
+
+							<li id="menu_13013687" class="project_link" data-id="13013687">
+								<a id="p13013687" href="https://sagejenson.com/digital-morphologies" rel="history">
+									digital morphologies
+								</a>
+							</li>
+						
+
+
+							<li id="menu_12890309" class="project_link" data-id="12890309">
+								<a id="p12890309" href="https://sagejenson.com/shadowbox-hive" rel="history">
+									shadowbox: hive
+								</a>
+							</li>
+						
+
+
+							<li id="menu_11312376" class="project_link" data-id="11312376">
+								<a id="p11312376" href="https://sagejenson.com/mesh-creation" rel="history">
+									mesh creation
+								</a>
+							</li>
+						
+
+
+							<li id="menu_11938004" class="project_link" data-id="11938004">
+								<a id="p11938004" href="https://sagejenson.com/gestation" rel="history">
+									gestation
+								</a>
+							</li>
+									</ul>
+								</li>
+						
+								<li id="menu_10875251" class="set_link open toggle last-set">
+
+										<a id="p10875251" class="set_name" data-id="10875251" href="#">Other</a>
+																		<ul class="set_wrapper inactive" id="set_10875251" data-setid="10875251">
+							
+
+							<li id="menu_10629063" class="project_link" data-id="10629063">
+								<a id="p10629063" href="https://sagejenson.com/motion-blur-study" rel="history">
+									motion blur study
+								</a>
+							</li>
+						
+
+
+							<li id="menu_11936989" class="project_link" data-id="11936989">
+								<a id="p11936989" href="https://sagejenson.com/fracture" rel="history">
+									fracture
+								</a>
+							</li>
+						
+
+
+							<li id="menu_12879782" class="project_link" data-id="12879782">
+								<a id="p12879782" href="https://sagejenson.com/volumetric" rel="history">
+									volumetric
+								</a>
+							</li>
+						
+
+
+							<li id="menu_13076892" class="project_link" data-id="13076892">
+								<a id="p13076892" href="https://sagejenson.com/fractal-II" rel="history">
+									fractal II
+								</a>
+							</li>
+						
+
+
+							<li id="menu_9723378" class="project_link" data-id="9723378">
+								<a id="p9723378" href="https://sagejenson.com/particle-study-2" rel="history">
+									particle study 2
+								</a>
+							</li>
+						
+
+
+							<li id="menu_11918884" class="project_link" data-id="11918884">
+								<a id="p11918884" href="https://sagejenson.com/shards" rel="history">
+									shards
+								</a>
+							</li>
+						
+
+
+							<li id="menu_10879987" class="project_link" data-id="10879987">
+								<a id="p10879987" href="https://sagejenson.com/recursion" rel="history">
+									recursion
+								</a>
+							</li>
+						
+
+
+							<li id="menu_13095027" class="project_link" data-id="13095027">
+								<a id="p13095027" href="https://sagejenson.com/sculptures" rel="history">
+									sculptures
+								</a>
+							</li>
+						
+
+
+							<li id="menu_13026071" class="project_link" data-id="13026071">
+								<a id="p13026071" href="https://sagejenson.com/knight-s-tour" rel="history">
+									knight's tour
+								</a>
+							</li>
+						
+
+
+							<li id="menu_10879896" class="project_link" data-id="10879896">
+								<a id="p10879896" href="https://sagejenson.com/system-rotation" rel="history">
+									system rotation
+								</a>
+							</li>
+						
+
+
+							<li id="menu_9533934" class="project_link" data-id="9533934">
+								<a id="p9533934" href="https://sagejenson.com/motion-tests" rel="history">
+									motion tests
+								</a>
+							</li>
+						
+
+
+							<li id="menu_9724536" class="project_link" data-id="9724536">
+								<a id="p9724536" href="https://sagejenson.com/acousmatic-compositions" rel="history">
+									acousmatic compositions
+								</a>
+							</li>
+						
+
+
+							<li id="menu_9724427" class="project_link" data-id="9724427">
+								<a id="p9724427" href="https://sagejenson.com/vertebrata-for-amplified-violin" rel="history">
+									vertebrata for amplified violin
+								</a>
+							</li>
+									</ul>
+								</li>
+						
+
+
+							<li id="menu_9533835" class="page_link" data-id="9533835">
+								<a id="p9533835" href="https://sagejenson.com/About" rel="history">
+									About
+								</a>
+							</li>
+											</ul>
+				</div>
+
+				
+			</div>
+
+		
+
+
+
+		<div class="container">
+
+			<div id="project" class="project clear" data-view="ProjectDetail" data-set="Project" style="display: block;">
+
+				<div class="entry" data-id="13800048">
+
+
+
+					<div class="project_navigation project" style="left: 975px;">
+						<a href="#" rel="prev_project"><img src="physarum%20-%20Sage%20Jenson_fichiers/arrow-up.svg"></a>
+						<a href="#" rel="show_index"><img src="physarum%20-%20Sage%20Jenson_fichiers/index.svg"></a>
+						<a href="#" rel="next_project"><img src="physarum%20-%20Sage%20Jenson_fichiers/arrow-down.svg"></a>
+					</div>
+
+					<div class="project_content" data-ce-host="true" data-ce-model-id="13800048">
+						<img src="physarum%20-%20Sage%20Jenson_fichiers/web_800.jpg" width_o="958" height_o="960" src_o="https://payload.cargocollective.com/1/18/598881/13800048/web_958.jpg" data-mid="74643918" data-title="550 — 670 × 671" data-hi-res="https://payload.cargocollective.com/1/18/598881/13800048/web_800.jpg" style="cursor: zoom-in;" width="550" height="551" border="0" align="left"><br>
+All images / gifs in this post are from my implentation of a Physarum transport model (described below).<br>
+<br>
+This February I spent a bit of time simulating slime mold (Physarum polycephalum). I saw some incredible posts by <a href="http://ch3.gr/" target="_blank">Georgios Cherouvim</a> with reference to a 2010 paper by Jeff Jones, <a href="http://eprints.uwe.ac.uk/15260/1/artl.2010.16.2.pdf" target="_blank">“Characteristics of pattern formation and evolution in approximations of Physarum transport networks.”</a>
+ When I read the paper, I was excited to learn that the model combined 
+continuum and agent-based simulation systems in a way that I hadn't seen
+ before. In this post I try to describe some of the concepts behind the 
+system, and give an overview of how it functions.<br>
+<br>
+There are two requirements of efficiency in foraging behavior: 1.) to 
+search a maximal area and 2.) to optimize transport distance. Physarum 
+polycephalum is a unicellular multinucleate organism that excels at 
+these two competing tasks through the mechanisms of growth, movement, 
+and area reduction. When the organism can choose to travel through two 
+different paths to a destination, the emergent behavior allows it to 
+effectively find shortest paths. This allows Physarum to navigate mazes,
+ develop optimal road-like systems and solve other path-finding 
+problems.<br>
+<br>
+<img src="physarum%20-%20Sage%20Jenson_fichiers/network_2.gif" width_o="555" height_o="555" src_o="https://payload.cargocollective.com/1/18/598881/13800048/network_2.gif" data-mid="74643705" data-title="550 — 555 × 555" data-hi-res="https://payload.cargocollective.com/1/18/598881/13800048/network_2.gif" width="550" height="550" border="0" align="left"><br>
+<br>
+The model postulated by Jones employs both an agent-based layer (the 
+data map) and a continuum-based layer (the trail map).&nbsp;The data map
+ consists of many particles, while the trail map consists of a 2D grid 
+of intensities (similar to a pixel-based image). The data and trail map 
+in turn affect each other; the particles of the data map deposit 
+material onto the trail map, while those same particles sense values 
+from the trail map in order to determine aspects of their locomotion.<br>
+<br>
+Each particle in the simulation has a heading angle, a location, and 
+three sensors (front left, front, front right). The sensor readings 
+effect the heading of the particle, causing it to rotate left or right 
+(or stay facing the same direction). The trail map undergoes a diffusion
+ and decay process every simulation step. A simple 3-by-3 mean filter is
+ applied to simulate diffusion of the particle trail, and then a 
+multiplicative decay factor is applied to simulate trail dissipation 
+over time. The diagram below describes the six sub-steps of a simulation
+ tick.<br>
+<img src="physarum%20-%20Sage%20Jenson_fichiers/diagram_800.jpg" width_o="800" height_o="975" src_o="https://payload.cargocollective.com/1/18/598881/13800048/diagram_800.jpg" data-mid="74643701" data-title="550 — 670 × 816" data-hi-res="https://payload.cargocollective.com/1/18/598881/13800048/diagram_800.jpg" width="550" height="670" border="0" align="left"><br>
+<br>
+Many of the parameters of this simulation are configurable, including 
+sensor distance, sensor size, sensor angle, step size, rotation angle, 
+deposition amount, decay factor, deposit size, diffuse size, decay 
+factor, etc. For a more detailed description check out the original 
+paper.<br>
+<br>
+There are several substantial differences between the model as described
+ by Jones and my implementation. In Jones’s original paper there is a 
+collision detection step that ensures that there is at most one particle
+ in each grid square. For my implementations I usually ignored this 
+step, preferring the patterns that arose without it. However, this step 
+is crucial for exact mimicry of the behavior of Physarum polycephalum, 
+as it approximates a sort of conservation of matter. Also (conveniently)
+ this collision detection removes any sort of sequential dependence, 
+allowing for increased computational parallelism.<br>
+<br>
+I also added a contagion behavior that alters properties of the 
+simulation. When a particle is infected, it lays down an infected trail 
+which then spreads to other particles. The gif below is an example of 
+such an infected system, with the contagion spreading from the center of
+ the image. <br>
+<br>
+<img src="physarum%20-%20Sage%20Jenson_fichiers/ef_9.gif" width_o="720" height_o="720" src_o="https://payload.cargocollective.com/1/18/598881/13800048/ef_9.gif" data-mid="74643943" data-title="550 — 720 × 720" data-hi-res="https://payload.cargocollective.com/1/18/598881/13800048/ef_9.gif" width="550" height="550" border="0" align="left"><br>
+<br>
+I implemented the model in C++ and GLSL using <a href="https://openframeworks.cc/" target="_blank">openFrameworks</a>.
+ All of the computation and rendering happen on the GPU, which stores 
+both the particle information and the trail map. The simulation runs in 
+real-time on a GTX 1070, with most of the examples comprised of between 5
+ and 10 million particles.<br>
+<br>
+Thanks for reading, feel free to email me with any more questions. I 
+hope to post a CPU version of the system described in the Jones paper 
+soon.<br>
+<br>
+<img src="physarum%20-%20Sage%20Jenson_fichiers/explosion.gif" width_o="504" height_o="500" src_o="https://payload.cargocollective.com/1/18/598881/13800048/explosion.gif" data-mid="74643660" data-title="550 (504) — 504 × 500" width="504" height="500" border="0" align="left">
+					</div>
+
+					<directlink link="https://www.sagejenson.com/physarum" id="dl_13800048"></directlink>
+
+				</div>
+
+				<div class="project_footer">
+					
+						<span class="date">
+							February 2019
+						</span>
+					
+						<span class="views">(42,506 views)</span>
+					
+					
+					
+				</div>
+
+			<style id="site_bg_color"> body { background : #ffffff } </style></div>
+
+			<div id="thumbnails" class="thumbnails clear" data-view="Thumbnail" data-set="Projects" style="display: none;">
+
+				
+
+						<div class="set_thumbs_wrapper inactive" data-setid="14132362">
+							<div class="set_title_thumbnails">Works</div>
+					
+
+						<div class="project_thumb" id="item_14132375" data-id="14132375" style="max-width: 200px">
+
+								<div class="loading" data-loading="14132375" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/dismantling-2019" data-id="14132375" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1594845879_2x.JPG" data-hi-res="https://payload.cargocollective.com/1/18/598881/14132375/prt_1594845879_2x.JPG" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>dismantling (2019)</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_12890777" data-id="12890777" style="max-width: 200px">
+
+								<div class="loading" data-loading="12890777" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/shadowbox-2017" data-id="12890777" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1594846892_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/12890777/prt_1594846892_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>shadowbox (2017)</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_14132368" data-id="14132368" style="max-width: 200px">
+
+								<div class="loading" data-loading="14132368" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/particle-studies-2016" data-id="14132368" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1594848101_2x.png" data-hi-res="https://payload.cargocollective.com/1/18/598881/14132368/prt_1594848101_2x.png" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>particle studies (2016)</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+						</div>
+					
+
+				
+
+						<div class="set_thumbs_wrapper active" data-setid="13643996">
+							<div class="set_title_thumbnails">Biofabrications</div>
+					
+
+						<div class="project_thumb" id="item_14134718" data-id="14134718" style="max-width: 200px">
+
+								<div class="loading" data-loading="14134718" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/tapestries" data-id="14134718" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1595319401_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/14134718/prt_1595319401_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>tapestries</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb active" id="item_13800048" data-id="13800048" style="max-width: 200px">
+
+								<div class="loading" data-loading="13800048" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/physarum" data-id="13800048" rel="history" class="active">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1551049869_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/13800048/prt_1551049869_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>physarum</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_13802463" data-id="13802463" style="max-width: 200px">
+
+								<div class="loading" data-loading="13802463" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/the-dissolve" data-id="13802463" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1551255783_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/13802463/prt_1551255783_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>the dissolve</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_13644091" data-id="13644091" style="max-width: 200px">
+
+								<div class="loading" data-loading="13644091" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/growth-functors" data-id="13644091" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1536595633_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/13644091/prt_1536595633_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>growth functors</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_12890279" data-id="12890279" style="max-width: 200px">
+
+								<div class="loading" data-loading="12890279" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/nesting" data-id="12890279" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1496357167_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/12890279/prt_1496357167_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>nesting</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_13013687" data-id="13013687" style="max-width: 200px">
+
+								<div class="loading" data-loading="13013687" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/digital-morphologies" data-id="13013687" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1536592509_2x.jpeg" data-hi-res="https://payload.cargocollective.com/1/18/598881/13013687/prt_1536592509_2x.jpeg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>digital morphologies</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_12890309" data-id="12890309" style="max-width: 200px">
+
+								<div class="loading" data-loading="12890309" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/shadowbox-hive" data-id="12890309" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1496358166_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/12890309/prt_1496358166_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>shadowbox: hive</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_11312376" data-id="11312376" style="max-width: 200px">
+
+								<div class="loading" data-loading="11312376" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/mesh-creation" data-id="11312376" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1459206152.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/11312376/prt_1459206152.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>mesh creation</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_11938004" data-id="11938004" style="max-width: 200px">
+
+								<div class="loading" data-loading="11938004" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/gestation" data-id="11938004" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1473362084_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/11938004/prt_1473362084_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>gestation</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+						</div>
+					
+
+				
+
+						<div class="set_thumbs_wrapper inactive" data-setid="10875251">
+							<div class="set_title_thumbnails">Other</div>
+					
+
+						<div class="project_thumb" id="item_10629063" data-id="10629063" style="max-width: 200px">
+
+								<div class="loading" data-loading="10629063" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/motion-blur-study" data-id="10629063" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1446144958_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/10629063/prt_1446144958_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>motion blur study</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_11936989" data-id="11936989" style="max-width: 200px">
+
+								<div class="loading" data-loading="11936989" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/fracture" data-id="11936989" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1473346032_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/11936989/prt_1473346032_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>fracture</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_12879782" data-id="12879782" style="max-width: 200px">
+
+								<div class="loading" data-loading="12879782" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/volumetric" data-id="12879782" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1496119107_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/12879782/prt_1496119107_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>volumetric</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_13076892" data-id="13076892" style="max-width: 200px">
+
+								<div class="loading" data-loading="13076892" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/fractal-II" data-id="13076892" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1502883995_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/13076892/prt_1502883995_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>fractal II</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_9723378" data-id="9723378" style="max-width: 200px">
+
+								<div class="loading" data-loading="9723378" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/particle-study-2" data-id="9723378" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1429221428_2x.png" data-hi-res="https://payload.cargocollective.com/1/18/598881/9723378/prt_1429221428_2x.png" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>particle study 2</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_11918884" data-id="11918884" style="max-width: 200px">
+
+								<div class="loading" data-loading="11918884" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/shards" data-id="11918884" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1472934826.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/11918884/prt_1472934826.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>shards</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_10879987" data-id="10879987" style="max-width: 200px">
+
+								<div class="loading" data-loading="10879987" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/recursion" data-id="10879987" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1451420144_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/10879987/prt_1451420144_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>recursion</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_13095027" data-id="13095027" style="max-width: 200px">
+
+								<div class="loading" data-loading="13095027" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/sculptures" data-id="13095027" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1504303319_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/13095027/prt_1504303319_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>sculptures</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_13026071" data-id="13026071" style="max-width: 200px">
+
+								<div class="loading" data-loading="13026071" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/knight-s-tour" data-id="13026071" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1500550262_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/13026071/prt_1500550262_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>knight's tour</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_10879896" data-id="10879896" style="max-width: 200px">
+
+								<div class="loading" data-loading="10879896" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/system-rotation" data-id="10879896" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1451418707_2x.png" data-hi-res="https://payload.cargocollective.com/1/18/598881/10879896/prt_1451418707_2x.png" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>system rotation</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_9533934" data-id="9533934" style="max-width: 200px">
+
+								<div class="loading" data-loading="9533934" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/motion-tests" data-id="9533934" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1429217411_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/9533934/prt_1429217411_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>motion tests</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_9724536" data-id="9724536" style="max-width: 200px">
+
+								<div class="loading" data-loading="9724536" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/acousmatic-compositions" data-id="9724536" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1429250133_2x.png" data-hi-res="https://payload.cargocollective.com/1/18/598881/9724536/prt_1429250133_2x.png" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>acousmatic compositions</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+					
+
+				
+
+					
+
+						<div class="project_thumb" id="item_9724427" data-id="9724427" style="max-width: 200px">
+
+								<div class="loading" data-loading="9724427" style="display: none;">
+									<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>
+								</div>
+
+								<a href="https://sagejenson.com/vertebrata-for-amplified-violin" data-id="9724427" rel="history">
+
+									<div class="thumb_image" name="">
+										<img src="physarum%20-%20Sage%20Jenson_fichiers/prt_1429245344_2x.jpg" data-hi-res="https://payload.cargocollective.com/1/18/598881/9724427/prt_1429245344_2x.jpg" width="200" height="134">
+									</div>
+									
+									<div class="thumb_title">
+										<span>vertebrata for amplified violin</span>
+									</div>
+									
+								</a>
+
+								
+									<div class="thumb_tags">
+									</div>
+								
+						</div>
+					
+						</div>
+					
+
+				
+
+			</div>
+
+			
+			
+			<div id="autopaginate_loader" class="moreload" data-view="Autopaginate" data-preload_distance="500" style="display: none;">
+				<div class="retinaSpinner loading rotating"><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(0deg) translate(6px, 0px); transform: rotate(0deg) translate(6px, 0px);" class="spinner_circle part1"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(45deg) translate(6px, 0px); transform: rotate(45deg) translate(6px, 0px);" class="spinner_circle part2"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(90deg) translate(6px, 0px); transform: rotate(90deg) translate(6px, 0px);" class="spinner_circle part3"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(135deg) translate(6px, 0px); transform: rotate(135deg) translate(6px, 0px);" class="spinner_circle part4"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(180deg) translate(6px, 0px); transform: rotate(180deg) translate(6px, 0px);" class="spinner_circle part5"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(225deg) translate(6px, 0px); transform: rotate(225deg) translate(6px, 0px);" class="spinner_circle part6"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(270deg) translate(6px, 0px); transform: rotate(270deg) translate(6px, 0px);" class="spinner_circle part7"></div></div><div style="position: absolute; top: -2px;"><div style="-webkit-transform: rotate(315deg) translate(6px, 0px); transform: rotate(315deg) translate(6px, 0px);" class="spinner_circle part8"></div></div></div>			</div>
+		</div>
+
+
+
+	
+
+<div id="hi-res-queue" style="display: none;"><img id="hi-res-queue-74643918" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/web_800.jpg"><img id="hi-res-queue-74643705" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/network_2.gif"><img id="hi-res-queue-74643701" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/diagram_800.jpg"><img id="hi-res-queue-74643943" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/ef_9.gif"><img id="hi-res-queue-prt1594845879JPG" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1594845879_2x.JPG"><img id="hi-res-queue-prt159484689jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1594846892_2x.jpg"><img id="hi-res-queue-prt1594848101png" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1594848101_2x.png"><img id="hi-res-queue-prt1595319401jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1595319401_2x.jpg"><img id="hi-res-queue-prt1551049869jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1551049869_2x.jpg"><img id="hi-res-queue-prt155155783jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1551255783_2x.jpg"><img id="hi-res-queue-prt1536595633jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1536595633_2x.jpg"><img id="hi-res-queue-prt1496357167jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1496357167_2x.jpg"><img id="hi-res-queue-prt153659509jpeg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1536592509_2x.jpeg"><img id="hi-res-queue-prt1496358166jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1496358166_2x.jpg"><img id="hi-res-queue-prt14590615jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1459206152.jpg"><img id="hi-res-queue-prt147336084jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1473362084_2x.jpg"><img id="hi-res-queue-prt1446144958jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1446144958_2x.jpg"><img id="hi-res-queue-prt147334603jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1473346032_2x.jpg"><img id="hi-res-queue-prt1496119107jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1496119107_2x.jpg"><img id="hi-res-queue-prt150883995jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1502883995_2x.jpg"><img id="hi-res-queue-prt149148png" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1429221428_2x.png"><img id="hi-res-queue-prt14793486jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1472934826.jpg"><img id="hi-res-queue-prt145140144jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1451420144_2x.jpg"><img id="hi-res-queue-prt1504303319jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1504303319_2x.jpg"><img id="hi-res-queue-prt15005506jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1500550262_2x.jpg"><img id="hi-res-queue-prt1451418707png" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1451418707_2x.png"><img id="hi-res-queue-prt14917411jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1429217411_2x.jpg"><img id="hi-res-queue-prt14950133png" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1429250133_2x.png"><img id="hi-res-queue-prt14945344jpg" data-hi-res-status="1" src="physarum%20-%20Sage%20Jenson_fichiers/prt_1429245344_2x.jpg"></div></body></html>

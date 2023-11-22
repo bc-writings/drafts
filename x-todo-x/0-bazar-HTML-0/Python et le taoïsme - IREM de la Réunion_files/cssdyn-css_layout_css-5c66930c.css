@@ -1,0 +1,52 @@
+/* #PRODUIRE{fond=css/layout.css}
+   md5:92ba2bf199fae94c32ea781b17de6252 */
+
+/* LAYOUT.CSS                                                           */
+/* Cette feuille contient:                                              */
+/* - les styles de surcharge des layout Gala pour le squelette          */
+/* -------------------------------------------------------------------- */
+
+/* Correspond a une taille de 16px dans la plupart des navigateurs */
+html {font-size: 100%;}
+/* correspond a une taille de 10px car 10px/16px = 0,625 */
+body {
+	padding: 0; 
+	font: 0.625em/1em Lucida Grande,Lucida Sans,Liberation Sans,Arial,Helvetica,Verdana,sans-serif,Arial,sans-serif; 
+	color: #000000;
+	background: #ffffff;
+}
+
+#header {padding: 0 0 10px;}
+div#header h1{margin: 0; padding-left: 0; height: auto; line-height: 1.12em; color: transparent; background: none;}
+div#footer{padding: 30px 0 0; color: transparent; background: none; line-height: 1.12em;}
+div#navigation{width: 180px; background: none;}
+div#extra{width:180px; background: none;} 
+div#container{background: #ffffff; 
+}  
+
+/* Pour les layouts a largeur variable*/
+
+
+/* Pour les layouts a largeur fixe 3 colonnes*/
+
+
+/* Pour les layouts a 2 colonnes*/
+ 
+	  body{text-align:center}
+		div#container{width:980px; margin:0 auto;}
+		
+		
+		  
+		  		  
+		
+		
+	  
+	  #wrapper{zoom:normal;}
+		div#navigation{margin-left:10px ;}
+		div#extra     {margin-left:10px ;}
+		div#content{
+      width:740px ;
+      margin-right:10px ;
+    }
+		
+

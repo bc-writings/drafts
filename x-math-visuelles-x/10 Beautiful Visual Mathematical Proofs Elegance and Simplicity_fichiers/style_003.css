@@ -1,0 +1,21 @@
+/*
+Theme Name: JNews - Child Theme
+Version: 1.0.0
+Theme URI: http://themeforest.net/?ref=jegtheme
+Description: A basic starter child theme for customization purpose of JNews theme.
+Author: Jegtheme
+Author URI: http://themeforest.net/user/jegtheme?ref=jegtheme
+Template: jnews
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* ------------------------------------------------------------------------- *
+ *  Theme customization starts here
+/* ------------------------------------------------------------------------- */
+
+.jeg_read_progress_wrapper {display:none !important;}
+.jeg_header_sticky .jeg_read_progress_wrapper {display:block !important;}
+.admin-bar .jeg_read_progress_wrapper .jeg_progress_container.top{top: 78px !important;}
+.jeg_read_progress_wrapper .jeg_progress_container.top{top: 46px !important;}
+.display-none, .home .jeg_nav_item.jeg_nav_html{display: none}

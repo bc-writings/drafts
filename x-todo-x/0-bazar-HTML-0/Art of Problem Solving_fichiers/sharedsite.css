@@ -1,0 +1,321 @@
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-Italic.ttf") format("truetype");
+	font-style: italic;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-Thin.ttf") format("truetype");
+	font-weight: 200;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-ThinItalic.ttf") format("truetype");
+	font-weight: 200;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-Light.ttf") format("truetype");
+	font-weight: 300;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-LightItalic.ttf") format("truetype");
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-Medium.ttf") format("truetype");
+	font-weight: 500;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-MediumItalic.ttf") format("truetype");
+	font-weight: 500;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-Bold.ttf") format("truetype");
+	font-weight: bold;
+}
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/roboto/Roboto-BoldItalic.ttf") format("truetype");
+	font-weight: bold;
+	font-style: italic;
+}
+
+.sharedsite-wrapper {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: -35px;
+	height: 35px;
+	background-color: #ddd;
+	line-height: 37px;
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+	/* Fixes dropdown shadow artifacts on Safari */
+	transform: translateZ(0);
+	z-index: 1;
+}
+
+body.development .sharedsite-wrapper {
+	background-color: #ddd;
+}
+
+.sharedsitebar {
+	position: relative;
+	width: 100%;
+	margin: auto;
+	max-width: 1170px;
+	line-height: 35px;
+	height: 35px;
+}
+
+.sharedsite-links {
+	display: flex;
+}
+
+.sharedsite-links .site {
+	position: relative;
+	color: #606060;
+}
+
+.site-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 0 12px;
+	color: #606060;
+}
+
+.sharedsite-links .site-link.main {
+	width: 180px;
+	padding: 0 12px;
+}
+
+.sharedsite-links .site-link:hover {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sharedsite-links .site-link.selected,
+.sharedsite-links .site-link.selected:hover {
+	background-color: #eee;
+}
+
+.sharedsite-links .site-icon {
+	width: 24px;
+	height: 24px;
+	margin-right: 6px;
+	vertical-align: middle;
+}
+
+@media (max-width: 1230px) {
+	.sharedsitebar {
+		padding: 0 30px 0;
+	}
+}
+
+@media (min-width: 1171px) {
+}
+
+@media (max-width: 850px) {
+	.sharedsite-links .site-link {
+		width: 150px;
+		padding: 0 8px;
+	}
+	.sharedsite-links .site-link.main {
+		width: 198px;
+		padding: 0 12px 0;
+	}
+}
+
+@media (max-width: 700px) {
+	.site-name {
+		display: none;
+	}
+	.sharedsite-links .site-link {
+		width: 48px;
+		padding: 0 4px;
+	}
+	.sharedsite-links .site-icon {
+		margin: -4px 8px 0;
+	}
+
+	.site-dropdown-wrapper {
+		display: none !important;
+	}
+}
+
+@media (max-width: 420px) {
+	.sharedsitebar {
+		padding: 0 12px 0;
+	}
+}
+
+@media (max-width: 350px) {
+	.sharedsitebar {
+		padding: 0;
+	}
+	.sharedsite-links .site-link.main {
+		width: 180px;
+		padding: 0 12px;
+	}
+	.sharedsite-links .site-link {
+		width: 40px;
+	}
+	.sharedsite-links .site-icon {
+		margin: -4px 4px 0;
+	}
+}
+
+/* Rich Drop Downs T22721 */
+.site-dropdown-wrapper {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: -100px;
+	min-width: 500px;
+	height: 125px;
+	padding: 10px;
+	background: white;
+	z-index: 1;
+	cursor: default;
+	user-select: text;
+	/* box-shadow: 0px 0px 10px -5px black; */
+}
+
+#header:not(.shrunken-header) .dropdown-visible {
+	filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3));
+	z-index: 1;
+}
+
+#header:not(.shrunken-header) .dropdown-visible .site-link {
+	background-color: white !important;
+}
+
+#header:not(.shrunken-header) .dropdown-visible .site-dropdown-wrapper {
+	display: block;
+}
+
+.site-dropdown-wrapper .aops-primary {
+	color: #439faf;
+}
+
+.site-dropdown-wrapper .aops-primary:hover {
+	color: rgb(27, 54, 93);
+}
+
+.site-dropdown-wrapper .aops-btn:hover {
+	background: #439faf;
+}
+
+.site-dropdown-wrapper .academy-primary {
+	color: rgb(97, 173, 0);
+}
+
+.site-dropdown-wrapper .academy-primary:hover {
+	color: rgb(27, 54, 93);
+}
+
+.site-dropdown-wrapper .academy-btn:hover {
+	background: rgb(97, 173, 0);
+}
+
+.site-dropdown-wrapper .ba-primary {
+	color: #d41f37;
+}
+
+.site-dropdown-wrapper .ba-primary:hover {
+	color: rgb(27, 54, 93);
+}
+
+.site-dropdown-wrapper .ba-btn:hover {
+	background: #d41f37;
+}
+
+.site-dropdown {
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.site-info {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	line-height: 1.25em;
+	/* border: 1px solid red; */
+}
+
+.site-logo {
+	width: 100%;
+	height: 40px;
+	/* border: 1px solid green; */
+}
+
+.site-logo img {
+	width: auto;
+	height: 100%;
+}
+
+.site-snippet {
+	margin-left: 43px;
+	color: rgb(27, 54, 93);
+	white-space: nowrap;
+	/* border: 1px solid cyan; */
+}
+
+.site-visit {
+	display: flex;
+	margin-top: auto;
+	justify-content: flex-end;
+	align-items: center;
+	white-space: nowrap;
+	/* border: 1px solid magenta; */
+	transition: color 0.2s;
+}
+
+.site-visit .aops-font {
+	margin-left: 3px;
+	font-size: 1.5em;
+}
+
+.site-quick-nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 220px;
+	margin-left: 15px;
+	padding: 15px 5px 15px 15px;
+	border-left: 1px solid rgb(27, 54, 93);
+	/* border: 1px solid blue; */
+}
+
+.site-quick-nav .btn {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-bottom: 5px;
+	padding: 5px;
+	white-space: nowrap;
+	transition: background 0.2s;
+}
+
+/* Fixes the button being a weird color after clicking. */
+.site-quick-nav .btn:focus:not(:hover) {
+	background: rgb(27, 54, 93);
+}
+
+.site-quick-nav .btn:last-of-type {
+	margin-bottom: 0;
+}

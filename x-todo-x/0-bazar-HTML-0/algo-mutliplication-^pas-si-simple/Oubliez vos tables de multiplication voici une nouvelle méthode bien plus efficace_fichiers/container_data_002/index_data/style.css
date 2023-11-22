@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'HappinessV1';
+    src: url('fonts/happiness_light-webfont.woff') format('woff');
+}
+@font-face {
+    font-family: 'HappinessV1';
+    font-weight: bold;
+    src: url('fonts/happiness_v1-webfont.woff') format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.root, canvas {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+canvas {
+    background: transparent !important;
+}
+
+.underlay, .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.preload {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #F6A938;
+    top: 0;
+    left: 0;
+}
+
+.preload .wheel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 42px;
+    height: 42px;
+    margin-left: -21px;
+    margin-top: -21px;
+    background: url('images/loader.png');
+    
+    -webkit-animation-name: spinner;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 2.5s;
+
+    animation-name: spinner;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* WebKit and Opera browsers */
+ @-webkit-keyframes spinner {
+   from { -webkit-transform: rotateY(0deg);    }
+   to   { -webkit-transform: rotateY(-360deg); }
+ }
+
+ /* all other browsers */
+ @keyframes spinner {
+   from {
+     -moz-transform: rotateY(0deg);
+     -ms-transform: rotateY(0deg);
+     transform: rotateY(0deg);
+   }
+   to {
+     -moz-transform: rotateY(-360deg);
+     -ms-transform: rotateY(-360deg);
+     transform: rotateY(-360deg);
+   }
+ }
+
+.border {
+    position: absolute;
+}
+
+.border.top, .border.bottom {
+    left: 0;
+    height: 1px;
+    width: 100%;
+}
+
+.border.top {
+    top: 0;
+    border-top: 1px solid black;
+}
+
+.border.bottom {
+    bottom: 0;
+    border-bottom: 1px solid black;
+}
+
+.border.left, .border.right {
+    top: 0;
+    width: 1px;
+    height: 100%;
+}
+
+.border.left {
+    left: 0;
+    border-left: 1px solid black;
+}
+
+.border.right {
+    right: 0;
+    border-right: 1px solid black;
+}

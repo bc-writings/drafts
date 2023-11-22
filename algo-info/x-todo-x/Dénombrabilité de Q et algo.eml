@@ -1,0 +1,103 @@
+To: profs-maths-gt-monge-request@framalistes.org
+From: =?UTF-8?Q?Christophe_BAL-_Maths_-_Lyc=c3=a9e_Monge_de_Chamb=c3=a9ry?=
+ <Christophe.Bal@ac-grenoble.fr>
+Subject: =?UTF-8?Q?D=c3=a9nombrabilit=c3=a9_de_Q_et_algo?=
+Message-ID: <6831d925-3e0d-2542-2c38-466748c0eafc@ac-grenoble.fr>
+Date: Wed, 22 Sep 2021 15:03:10 +0200
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:78.0)
+ Gecko/20100101 Thunderbird/78.14.0
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------90165289CB7C9930DB2691BD"
+Content-Language: fr
+
+This is a multi-part message in MIME format.
+--------------90165289CB7C9930DB2691BD
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Rien de révolutionnaire mais je me disais que/"l'algo infini"/ suivant 
+donnait la dénombrabilité de Q+.
+
+
+*numero = 1*
+
+*fractions_trouvees = [1]**
+*
+
+*p = 1*
+
+**
+
+*Tant que VRAI:*
+
+*    Pour q allant de 1 à p:*
+
+*        Si PGCD(p ; q) == 1 et p/q non dans fractions_trouvees:*
+
+*            numero += 1*
+
+*            Ajouter **p/q à fractions_trouvees*
+
+
+Si vous vous en foutez, j'espère que c'est à maximum 60%...
+
+
+PS: la meilleure preuve rigoureuse et très accessible est celle 
+utilisant la décomposition d'un naturel. Par exemple, on passe de (2 x 
+3^3) / (5 x 7^10) à 2^2 x 3^6 x 5 x 7^19 et vice versa comme disaient 
+d'illustres inconnus.
+
+-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques
+
+
+--------------90165289CB7C9930DB2691BD
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p>Rien de révolutionnaire mais je me disais que<i> "l'algo infini"</i>
+      suivant donnait la dénombrabilité de Q+.</p>
+    <p><br>
+    </p>
+    <p><b>numero = 1</b></p>
+    <p><b>fractions_trouvees = [1]</b><b><br>
+      </b>
+    </p>
+    <p><b>p = 1</b></p>
+    <b>
+    </b>
+    <p><b>Tant que VRAI:</b></p>
+    <p><b>    Pour q allant de 1 à p:</b></p>
+    <p><b>        Si PGCD(p ; q) == 1 et p/q non dans
+        fractions_trouvees:</b></p>
+    <p><b>            numero += 1</b></p>
+    <p><b>            Ajouter </b><b>p/q à fractions_trouvees</b></p>
+    <p><br>
+    </p>
+    <p>Si vous vous en foutez, j'espère que c'est à maximum 60%...</p>
+    <p><br>
+    </p>
+    <p>PS: la meilleure preuve rigoureuse et très accessible est celle
+      utilisant la décomposition d'un naturel. Par exemple, on passe de
+      (2 x 3^3) / (5 x 7^10) à 2^2 x 3^6 x 5 x 7^19 et vice versa comme
+      disaient d'illustres inconnus.<br>
+    </p>
+    <pre class="moz-signature" cols="72">-- 
+Christophe BAL
+Lycée Monge de Chambéry (73000)
+
+Enseignant Agrégé de Mathématiques</pre>
+  </body>
+</html>
+
+--------------90165289CB7C9930DB2691BD--

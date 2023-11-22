@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="authoring-tool" content="Adobe_Animate_CC">
+    <meta name="ad.size" content="width=160,height=600">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>160x600_onetime</title>
+    <link rel="stylesheet" type="text/css" href="index_data/style.css">
+    <!-- platform enablers -->
+    <script type="text/javascript" src="index_data/Enabler_01_228.js"></script>
+    <!-- CreateJS -->
+    <script src="index_data/createjs_2015.js"></script>
+    <!-- controller -->
+    <script type="text/javascript" src="index_data/controller.js"></script>
+    <!-- platform -->
+    <script type="text/javascript">
+        'use strict';
+        var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function(obj) {
+            return typeof obj;
+        } : function(obj) {
+            return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+        };
+        window.DynamicContent._platformGet = function(id) {
+            if ('dynamicContent' in window) {
+                for (var feed in window.dynamicContent) {
+                    for (var i in window.dynamicContent[feed]) {
+                        if (id in window.dynamicContent[feed][i]) {
+                            var val = window.dynamicContent[feed][i][id];
+                            if (val != null && (typeof val === 'undefined' ? 'undefined' : _typeof(val)) === 'object' && 'Url' in val) return val.Url;
+                            return val;
+                        }
+                    }
+                }
+            }
+            return undefined;
+        };
+        window.DynamicContent._platformGetAssetURL = function(assetName) {
+            return undefined;
+        };
+        var PlatformClass = function PlatformClass() {
+            var self = this;
+            this.initializedSignal = new SimpleSignal();
+            this.exitSignal = new SimpleSignal();
+            this.__enablerInitReceived = Enabler.isInitialized();
+            if (!this.__enablerInitReceived) {
+                Enabler.addEventListener(studio.events.StudioEvent.INIT, function() {
+                    this.__enablerInitReceived = true;
+                    this.initializedSignal.dispatch();
+                }.bind(this));
+            } else {
+                this.initializedSignal.dispatch();
+            }
+            this.isInitialized = function() {
+                return this.__enablerInitReceived;
+            };
+            this.onInitialized = function(callback) {
+                if (this.isInitialized()) callback();
+                else this.initializedSignal.once(callback);
+            };
+            this.automaticCounter = function(name) {
+                Enabler.counter(name, true);
+            };
+            this.userCounter = function(name) {
+                Enabler.counter(name, true);
+            };
+            this.startTimer = function(name) {
+                Enabler.startTimer(name, true);
+            };
+            this.stopTimer = function(name) {
+                Enabler.stopTimer(name, true);
+            };
+            this.exit = function(name, url) {
+                if (url) Enabler.exitOverride(name, url);
+                else Enabler.exit(name);
+                self.exitSignal.dispatch(name);
+            };
+            /* [Legacy] */
+            this.getDynamic = function(id, def) {
+                return DynamicContent.get(id);
+            };
+            this.logError = function() {
+                // TODO log error
+            };
+            // abort creative and show backup image
+            this.fallback = function() {
+                document.body.innerHTML = '<img src="backup.jpg"/>';
+            };
+        };
+        var platform = new PlatformClass();
+    </script>
+    <script type="text/javascript" src="index_data/behaviours.js"></script>
+    <script type="text/javascript">
+        /* [[BEGIN CONTEXT]] */
+var GlobalContext = {};
+/* [[END CONTEXT]] */
+        /* This script spoofs the output of AnimateCC to determine what plugins we need */
+        var createjsPluginsToInstall = (function() {
+            var animate_CREATE_LOADER_script = function() {
+	var comp=AdobeAn.getComposition("8B3D99E3B95E3A44AD1F2042D1B9857C");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+            };
+            var scriptString = animate_CREATE_LOADER_script.toString();
+            var pluginRex = /createjs\.(\w+)\.install/ig;
+            var plugins = [];
+            do {
+                var match = pluginRex.exec(scriptString);
+                if (match) plugins.push(match[1]);
+            } while (match);
+            return plugins;
+        })();
+        var libDefinition = (function() {
+            function spoofed() {
+	var comp=AdobeAn.getComposition("8B3D99E3B95E3A44AD1F2042D1B9857C");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+            }
+            var compRegex = /AdobeAn\.getComposition\(["'](.+)["']\)/;
+            var matchComp = compRegex.exec(spoofed.toString());
+            if (matchComp) {
+                return {
+                    composition: matchComp[1]
+                };
+            } else {
+                var libRegex = /loader\.loadManifest\((.+)\.properties\.manifest\)/;
+                var matchLib = libRegex.exec(spoofed.toString());
+                if (matchLib) {
+                    return {
+                        library: matchLib[1]
+                    };
+                } else {
+                    return {
+                        library: 'lib'
+                    };
+                }
+            }
+        })();
+        <!-- -->
+        var collapseCreative;
+        /* [[BEGIN PROFILE_ID]] */
+Enabler.setProfileId(10018317);
+/* [[END PROFILE_ID]] */
+        self = window;
+        if (Enabler.isInitialized())
+            enablerInitHandler();
+        else
+            Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitHandler);
+        function enablerInitHandler() {
+            if (!Enabler.isVisible())
+                Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, politeLoad);
+            else
+                politeLoad();
+        }
+        function politeLoad() {
+            if (Enabler.isPageLoaded()) {
+                start();
+            } else {
+                Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, start);
+            }
+        }
+        var creativeStarted = false;
+        function start() {
+            if (creativeStarted) return;
+            creativeStarted = true;
+            // install plugins if any
+            createjsPluginsToInstall.map(function(pluginName) {
+                try {
+                    createjs[pluginName].install();
+                } catch (e) {
+                    platform.logError('error while installing createjs plugin', e);
+                }
+            });
+            collapseCreative = new AnimateCreative('160x600_onetime', libDefinition, 160, 600);
+            collapseCreative.onclick(exitClick);
+            collapseCreative.start(function() {
+                if (AnimateUtils.isMobile().any()) {
+                    platform.automaticCounter('Mobile_Served');
+                } else {
+                    platform.automaticCounter('Desktop_Served');
+                }
+            });
+            platform.exitSignal.on(function() {
+                collapseCreative.freeze();
+            });
+            /* this is a bugfix proxy for global variable stage, misused by an animate component syncing function */
+            window.stage = {
+                removeEventListener: function(evt, callback) {
+                    collapseCreative.stage.removeEventListener(evt, callback);
+                }
+            };
+        }
+        function addSuffix(url, dcmParameter) { 
+            var urlSuffix = Enabler.getParameter(dcmParameter); 
+            var _url = ''; 
+            if (url) { 
+                var symbol = (url.indexOf('?') > -1) ? '&': '?'; 
+                if(urlSuffix) { 
+                    while (urlSuffix.charAt(0) == '?' || urlSuffix.charAt(0) == '&') { 
+                        urlSuffix = urlSuffix.substring(1); 
+                    } 
+                    if (urlSuffix.indexOf('?') > -1) { 
+                        urlSuffix = urlSuffix.replace(/\?/g, '&'); 
+                    } 
+                } 
+                _url = url + symbol + urlSuffix; 
+            } 
+            return _url; 
+        }
+        function exitClick() {
+            var exitURL = DynamicContent.get('localization')['redirectionUrl'];
+            if(Enabler.getParameter("exit_suffix") != null){
+                exitURL = addSuffix(exitURL, "exit_suffix");
+            }
+            if (platform.isInitialized()) {
+                if (collapseCreative.isLoaded()) {
+                    if (collapseCreative.root.isPlayheadOnEndshot()) {
+                        platform.exit('Click_On_Endshot', exitURL);
+                    } else {
+                        platform.exit('Click_On_Intro', exitURL);
+                    }
+                } else {
+                    platform.exit('Click_On_Loader', exitURL);
+                }
+            } else {
+                collapseCreative.freeze();
+            }
+        }
+        function isTransparent(color) {
+            if (!color || color.trim().toLowerCase() == 'transparent') return true;
+            var match = color.match(/rgba\(.+,.+,.+,(.+)\)/i);
+            if (!match) return false;
+            return parseFloat(match[1].trim()) == 0;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!isTransparent(document.getElementById('160x600_onetime').style.backgroundColor)) {
+                document.body.style.backgroundColor = '#999999';
+            }
+        });
+        /* [[BEGIN EVENT_LISTING]] */
+(function(){
+                Enabler.counter("Mobile_Served");
+Enabler.counter("Desktop_Served");
+Enabler.exit("Click_On_Intro");
+Enabler.exit("Click_On_Endshot");
+            });
+/* [[END EVENT_LISTING]] */
+    </script>
+<script type="text/javascript" src="index_data/160x600_onetime.js"></script></head>
+<body style="margin: 0px; background-color: rgb(153, 153, 153);">
+    <!-- [[BEGIN PIXEL_TRACKING]] -->
+
+<!-- [[END PIXEL_TRACKING]] -->
+    <div id="160x600_onetime" class="root" style="width:160px; height:600px; overflow:hidden; background-color:rgba(51, 51, 51, 1.00)">
+        <div class="underlay" style="display: block;"></div>
+        <canvas width="320px" height="1200px" style="background-color: transparent; width: 160px; display: block; height: 600px;" data-orig-width="160" data-orig-height="600"></canvas>
+        <div class="overlay" style="display: block;"></div>
+        <div class="preload" style="background-color: rgb(35, 85, 120); display: none;">
+            <div class="wheel"></div>
+        </div>
+        <div class="border top"></div>
+        <div class="border left"></div>
+        <div class="border right"></div>
+        <div class="border bottom"></div>
+    </div>
+
+</body></html>

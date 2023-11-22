@@ -1,0 +1,99 @@
+Voici une légère modification de l'algorithme \ref{nat-algo} où l'on manipule des polynômes dans $\setpoly{\RR}{X}$.
+Notons au passage que nous passons d'un algorithme a priori indéterministe, car on fait un choix de naturels consécutifs, à un autre complètement déterministe.
+
+\begin{algo}[frame]
+	\caption{Version polynomiale} \label{nat-2-poly-algo}
+
+	\In{$n \in \NNs$}
+	\Out{?}
+	
+	\BlankLine
+	
+	\Actions{
+		$L \Store [ X^n , (X+1)^n , \dots , (X+n)^n ]$
+		\\
+		\BlankLine
+		\While{$taille(L) \neq 1$}{
+			$newL \Store \EmptyList$
+			\\
+			\ForRange*{i}{1}{taille(L) - 1}{
+				\Append{$newL$}{$(L[i + 1] - L[i])$}
+			}
+			$L \Store newL$
+		}
+		\BlankLine
+		\Return{$L[1]$}
+	}
+\end{algo}
+
+
+Il est aisée de traduire cet algorithme en Python. Le code suivant ne révèle aucun test raté.
+
+\medskip
+
+\inputcode{python}{diff-n-cons-int-to-the-power-of-n/exploring-poly-version.py}
+
+
+\medskip
+
+
+Il est clair que si l'on prouve que l'algorithme \ref{nat-2-poly-algo} renvoie $n!$, il en sera de même pour \ref{nat-algo}. Ceci découle directement de la validité de l'algorithme ci-dessous où $\setpoly{\RR_{n}}{X}$ désigne l'ensemble des polynômes réels de degré $n \in \NNs$.
+
+\medskip
+
+\begin{algo}[frame]
+	\caption{Version polynomiale élargie} \label{gene-poly-algo}
+
+	\In{$P \in \setpoly{\RR_{n}}{X}$ de coefficient dominant $a_n$}
+	\Out{$n! \, a_n$}
+	
+	\BlankLine
+	
+	\Actions{
+		$L \Store \List{P(X) , P(X+1) , \dots , P(X+n)}$
+		\\
+		\BlankLine
+		\While{$taille(L) \neq 1$}{
+			$newL \Store \EmptyList$
+			\\
+			\ForRange*{i}{1}{taille(L) - 1}{
+				\Append{$newL$}{$(L[i + 1] - L[i])$}
+			}
+			$L \Store newL$
+		}
+		\BlankLine
+		\Return{$L[1]$}
+	}
+\end{algo}
+
+
+\medskip
+
+
+Pourquoi cet algorithme est-il valide ? Pour la suite, nous posons $P(x) = \dsum_{k=0}^{n} a_k X^k$.
+\begin{enumerate}
+	\item Il est immédiat que $\forall k \in \NNs$, $(X+1)^k - X^k = kX^{k-1} + R(X)$ où $\deg R < k-1$ avec la convention $\deg 0 = - \infty$.
+
+% ----------------- %
+
+	\item Le point précédent donne sans effort $P(X+1) - P(X) = n a_n X^{n-1} + S(X)$ où le polynôme $S$ vérifie $\deg S < n-1$. Tout est dit comme nous allons le voir.
+
+% ----------------- %
+
+	\item A la 1\iere{} itération de la boucle, la liste 
+			  $\List{P(X) , P(X+1) , \dots , P(X+n)}$
+	 	  est transformée en 
+		      $\List{P(X+1) - P(X) , P(X+2) - P(X+1) , \dots , P(X+n) - P(X+n-1)}$
+		  soit $\List{Q(X) , Q(X+1) , \dots , Q(X+n-1)}$
+		  en posant $Q(X) = P(X+1) - P(X)$, un polynôme qui a pour coefficient dominant $n a_n$ et pour degré $\deg Q = n - 1$.
+
+% ----------------- %
+
+	\item Il est alors facile de faire une récurrence pour prouver que la boucle se finit en fournissant ce qui est annoncé.  
+\end{enumerate}
+
+Joli, efficace et éclairant sur le pourquoi du comment. Il se trouve que l'algorithme \ref{nat-algo} cache aussi une formule combinatoire très intéressante comme nous allons le voir dans les sections à venir.
+L'exposé qui suit reprend la démarche proposée sur le site \href{https://mathlesstraveled.com}{The Math Less Traveled}
+\footnote{
+	Chercher les articles \emph{\og A combinatorial proof \fg} publiés courant septembre 2019.
+} 

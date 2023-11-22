@@ -1,0 +1,419 @@
+\begin{frame}
+	\begin{center}
+		\Large
+		Que se passe-t-il en général avec
+		
+		\bigskip
+		
+		les puissances successives de $k \in \mathbb{N}_{{}_{\geqslant 2}}$ ?
+	\end{center}
+\end{frame}
+
+
+% -------------- %
+
+
+\begin{frame}
+	\begin{center}
+		\Large
+		Il est maintenant temps de démontrer
+		
+		\bigskip
+		
+		et non juste de constater.
+	\end{center}
+\end{frame}
+
+
+% -------------- %
+
+
+\begin{frame}
+	\begin{center}
+		\Large
+		Peut-on trouver une numérotation faisant
+		
+		\bigskip
+		
+		apparaître les puissances de $k$ à gauche ?
+	\end{center}
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \centering\Large
+  Pour $k = 2$, on fait comme suit.		
+  \bigskip
+		
+  \scriptsize
+  \scalebox{0.925}{
+      \begin{forest}
+        /tikz/every label/.append style={text height=1ex, label distance=3pt},
+        for tree={
+          circle,
+          draw,
+          very thick,
+          edge={very thick},
+          s sep+=20pt,
+          fill=blue!15,
+          minimum size=40pt,
+          bottom up,
+        }
+        [1
+          [2]
+          [3]
+        ]
+      \end{forest}
+  }
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \centering\Large
+  Pour $k = 3$, on fait comme suit.		
+  \bigskip
+		
+  \scriptsize
+  \scalebox{0.925}{
+      \begin{forest}
+        /tikz/every label/.append style={text height=1ex, label distance=3pt},
+        for tree={
+          circle,
+          draw,
+          very thick,
+          edge={very thick},
+          s sep+=20pt,
+          fill=blue!15,
+          minimum size=40pt,
+          bottom up,
+        }
+        [\updown{1}{2}
+          [\updown{3}{4}]
+          [\updown{5}{6}]
+          [\updown{7}{8}]
+        ]
+      \end{forest}
+  }
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \centering\Large
+  Pour $k = 4$, on fait comme suit.		
+  \bigskip
+		
+  \scriptsize
+  \scalebox{0.925}{
+      \begin{forest}
+        /tikz/every label/.append style={text height=1ex, label distance=3pt},
+        for tree={
+          circle,
+          draw,
+          very thick,
+          edge={very thick},
+          s sep+=20pt,
+          fill=blue!15,
+          minimum size=40pt,
+          bottom up,
+        }
+        [\updownB123
+          [\updownB456]
+          [\updownB789]
+          [\updownB{10}{11}{12}]
+          [\updownB{13}{14}{15}]
+        ]
+      \end{forest}
+  }
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \centering\Large
+  Pour $k = 5$, on fait comme suit.		
+  \bigskip
+		
+  \tiny
+  \scalebox{0.925}{
+      \begin{forest}
+        /tikz/every label/.append style={text height=1ex, label distance=3pt},
+        for tree={
+          circle,
+          draw,
+          very thick,
+          edge={very thick},
+          s sep+=20pt,
+          fill=blue!15,
+          minimum size=40pt,
+          bottom up,
+        }
+        [\updownBB1234
+          [\updownBB5678]
+          [\updownBB9{10}{11}{12}]
+          [\updownBB{13}{14}{15}{16}]
+          [\updownBB{17}{18}{19}{20}]
+          [\updownBB{21}{22}{23}{24}]
+        ]
+      \end{forest}
+  }
+\end{frame}
+
+
+% -------------- %
+
+
+\begin{frame}
+	\begin{center}
+		\Large
+		En fait la numérotation n'est pas importante !
+	
+		\uncover<2->{
+			\bigskip
+			
+			Le plus utile est le nombre d'entiers par noeud.
+    	}
+	
+		\uncover<3->{
+			\bigskip
+			
+			La numérotation est là pour le prestige...
+    	}
+	
+		\uncover<4->{
+			\bigskip
+			
+			Voici pourquoi.
+    	}
+	\end{center}
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \centering\Large
+  \only<1>{
+  		Niveau 1 -- Nombre de nouveaux entiers
+		
+		\bigskip
+		
+		$\,\,\,\,\,k-1$ 
+  }		
+  \only<2>{
+  		Niveau 2 -- Nombre de nouveaux entiers
+		
+		\bigskip
+		
+		$k(k-1) = k^2 - k\,\,$ 
+  }		
+  \only<3>{
+  		Niveau 3 -- Nombre de nouveaux entiers
+		
+		\bigskip
+		
+		$k^2(k-1) = k^3 - k^2\,\,\,\,$ 
+  }
+
+  \bigskip
+		
+  \scriptsize
+  \scalebox{0.925}{
+      \begin{forest}
+        /tikz/every label/.append style={text height=1ex, label distance=3pt},
+        for tree={
+          circle,
+          draw,
+          very thick,
+          edge={very thick},
+          s sep+=1pt,
+          fill=blue!15,
+          minimum size=25pt,
+          bottom up,
+        }
+        [
+          [, not before=2
+          	[, not before=3]
+          	[\dots, not before=3]
+          	[, not before=3]
+          ]
+          [\dots, not before=2
+          	[, not before=3]
+          	[\dots, not before=3]
+          	[, not before=3]
+          ]
+          [, not before=2
+          	[, not before=3]
+          	[\dots, not before=3]
+          	[, not before=3]
+          ]
+        ]
+      \end{forest}
+  }
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \begin{center}
+  	\Large
+	Faisons un 1ier bilan.
+  \end{center}
+  
+  \uncover<2->{
+  	\bigskip
+	
+	\,\,\,\,\,\,\,\,
+	Niveau 1 : $k - 1$ 
+  }
+  
+  \uncover<3->{
+  	\bigskip
+	
+	\,\,\,\,\,\,\,\,
+	Niveau 2 : $k^2 - k$ 
+  }
+  
+  \uncover<4->{
+  	\bigskip
+	
+	\,\,\,\,\,\,\,\,
+	Niveau 3 : $k^3 - k^2$ 
+  }
+  
+  \uncover<5->{
+  	\bigskip
+	
+	\,\,\,\,\,\,\,\,
+	\phantom{Niveau 3} $\vdots$
+  }
+  
+  \uncover<6->{
+  	\bigskip
+	
+	\,\,\,\,\,\,\,\,
+	Niveau $n$ : $k^n - k^{n-1}$ 
+  }
+  
+  \uncover<7->{
+  	\bigskip
+	
+	Niveau $n+1$ : $k^{n+1} - k^n$ 
+  }
+  
+  \uncover<8->{
+  	\bigskip
+	
+	\,\,\,\,\,\,\,\,
+	$\,\,TOTAL = k^{n+1} - 1$ 
+  }
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+  \begin{center}
+  	\Large
+	Faisons un 2nd bilan.
+  
+	\normalsize
+	\uncover<3->{
+  		\bigskip
+	
+		On multiplie le nombre de noeuds par $(k - 1)$.
+ 	}
+  
+	\uncover<4->{
+  		\bigskip
+	
+		Jusqu'au niveau $n+1$ :
+		
+		\bigskip
+	
+		$TOTAL = (k - 1)(1 + k + k^2 + \cdots + k^n)$
+ 	}
+	
+	\uncover<2->{
+	    \bigskip
+	    
+		  \scriptsize
+  \scalebox{0.925}{
+      \begin{forest}
+        /tikz/every label/.append style={text height=1ex, label distance=3pt},
+        for tree={
+          circle,
+          draw,
+          very thick,
+          edge={very thick},
+          s sep+=1pt,
+          fill=blue!15,
+          minimum size=25pt,
+          bottom up,
+        }
+        [
+          [
+          	[]
+          	[\dots]
+          	[]
+          ]
+          [\dots
+          	[]
+          	[\dots]
+          	[]
+          ]
+          [
+          	[]
+          	[\dots]
+          	[]
+          ]
+        ]
+      \end{forest}
+  }
+	}
+  \end{center}
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+	\begin{center}
+		\Large
+		Pour $k \in \mathbb{N}_{{}_{\geqslant 2}}$ , nous avons finalement démontré :
+				
+		\bigskip
+		
+		$(k-1) \, (1 + k + k^2 + \cdots + k^n) = k^{n+1} - 1$.
+	\end{center}
+\end{frame}
+   
+
+% -------------- %
+
+
+\begin{frame}
+	\begin{center}
+		\Large
+		Plus généralement, pour $q \in \mathbb{R}$ , nous avons :
+				
+		\bigskip
+		
+		$(q - 1) \, (1 + q + q^2 + \cdots + q^n) = q^{n+1} - 1$.
+	\end{center}
+\end{frame}

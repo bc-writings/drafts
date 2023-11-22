@@ -1,0 +1,75 @@
+====
+ALGO
+====
+
+turing
+    ---> finir le saute mouton !
+
+regex
+    ---> détailler automate vers regex pour MULTIPLE DE 3.
+
+
+====
+MATH
+====
+
+N à la von Neumann (cf image)
+    ---> 0
+    ---> 1 = succ(0)                    -> (0)
+    ---> 2 = succ(1)
+           = succ(succ(0))              -> ((0))
+    ---> 3 = succ(succ(succ(0)))
+    ---> 4 = succ(succ(succ(succ(0))))  -> (((0)))
+    ---> ...
+
+    on considère alors non le nombre mais la cardinatilté:
+
+    ---> 0 = ()
+    ---> 1 = {0}            -> { () }
+    ---> 2 = {0, 1}         -> { () , { () } }
+    ---> 3 = {0, 1, 2}      -> { () , { () } , { () , { () } } }
+    ---> ...
+
+    on passe ensuite à {} au lieu de ()
+
+
+preuve via un invariant (au sens large)
+    ---> somme des puissnce de q dans ]0;1[ via le coup du biscuit : l'ivariant est la quantité gloable de biscuit qui fait apparaître la formule
+
+
+compter moi le signe égal
+    ---> différentes significations de = (toutes ?)
+
+
+êytre nul fait aller vite
+    ---> formule puissnace succesive sur N ==> vraie sur R via poly nul sur ensemble infinie
+    ---> cas identiét relaruqable via uns impel dessn géométrique donc juste pour val > 0 mais en fait valable partout !
+
+
+eq-via-boite
+    ---> cf l'image  eq-via-boite.png dans x-todo-x
+
+
+notation infix
+    ---> on part des opéartiosn de abse + * : - que l'on écrit en fonctionnell via 1+2*3 est l'addition de 1 et du produit de 2*3 soit add(1; prod(2; 3)) on note que c'est lourd pais non ambidu¨
+    ---> on explique alors que structure algérbique utilise ces noation infixes dandgereuses mais au final bien plus efficace
+
+
+quadrature 33
+    ---> page 33 : idéé de passage farct continue à calcul via matrice, p^puis on consière même type de calcul amtriciel et ceci faitarriver sur un autre typed e représentation  TRES JOLI !!!!
+
+
+fixated-on-point-fixed-theorems
+    ---> balayer differnts theo du point fixe simple à comprendre
+
+
+squares-int
+    ---> simpliifier perreuve cas n = 2 via une bête réuc et garder la fonction pour le cas géénral
+    ---> histogramme : les normaliser car là axe bizazare !!!
+    ---> cas général : bigger-power-some-periods
+        + améliorer bigger-power-all-periods pour ne pas refaire des calcusl inutiles
+        + coder en C, là il y a besoin !!!! On prooduit résultat au format texte et python se charge de faire des gra^hiques !
+
+math-tool
+    ---> comment raisonner vai des exemples
+            + ex.1 : décompostion en facte premier unicité plus facile si on écrit -une suite ccroissante de premiers sans passer par valuation p-adique

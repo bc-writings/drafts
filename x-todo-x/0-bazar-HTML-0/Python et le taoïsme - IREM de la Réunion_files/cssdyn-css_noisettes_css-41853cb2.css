@@ -1,0 +1,356 @@
+/* #PRODUIRE{fond=css/noisettes.css}
+   md5:9fdb7422b5796625311850e98b83c551 */
+
+/* NOISETTES.CSS                                                        */
+/* Cette feuille contient:                                              */
+/* - les styles des noisettes des colonnes extra et navigation          */
+/* - les styles des menus verticaux et horizontaux                      */
+/* -------------------------------------------------------------------- */
+
+/* Initialisation des variables permettant de déterminer un alignement à droite ou à gauche */
+
+
+
+
+
+
+/* Noisettes pouvant etre inserees dans les colonnes extra et navigation */
+/* Styles generiques */
+.noisette {margin-bottom: 15px; color: #008080;}
+
+.noisette h1, h2, h3 {margin: 0; font-size: 1em;}
+.noisette h1.intitule, .noisette h1 a.intitule {
+	display: block;	margin-bottom: 10px; font-weight: bold; font-size: 1.5em; text-align: center; line-height:1.2em;
+	border: 1px solid #008080;
+	background: #008080;
+	color: #ffffff;
+	padding : 2px 0;}
+.noisette h1 a.intitule:hover {
+	background: #eeeeee;
+	color: #008080; 
+	text-decoration: none;}
+
+.noisette .contenu {margin-bottom: 5px; padding: 0; 
+		border: 1px solid #008080;
+		background: transparent;}
+.noisette .contenu.mixte {padding: 5px 0 0;}
+.noisette .contenu.mixte .pagination {padding: 5px 0 0;}
+.noisette .contenu h2.titre_bloc,
+.noisette .contenu h2 a.titre_bloc {
+	display: block;	margin: 0; padding: 1px; font-size: 1.25em; line-height: 1.5em; font-weight: bold; text-align: center;
+	border-bottom: 1px solid #008080;
+	background: #eeeeee;
+	color: #008080;}
+.noisette .contenu h2 a.titre_bloc:hover {
+	background: #008080;
+	color: #ffffff; 
+	text-decoration: none;}
+
+.noisette .contenu .liste ul {margin: 0; padding: 0;}
+.noisette .contenu .liste ol {margin: 0; padding: 0 5px;}
+.noisette .contenu .liste ol li {list-style: decimal inside;}
+.noisette .contenu h2.titre, .noisette .contenu h2 a.titre, .noisette .contenu .liste li .titre {
+	display: block; padding: 0 0 5px 10px; margin: 0 5px;	font-weight: bold; text-decoration: none;
+	color: #008080;
+	background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/puce-n0.gif") left top no-repeat;}
+.noisette .contenu .liste ol li .titre {background: none; display: inline; margin:0; padding: 0;}
+.noisette .contenu h2 a.titre:hover, .noisette .contenu .liste li a.titre:hover{
+	color: #008080;
+	text-decoration: underline;}
+.noisette .contenu .liste li span.titre {color: #000000;} /* A REVOIR */
+
+.noisette .contenu .date_bloc {
+	margin-left: 30%; padding: 1px; font-size: 0.9em; text-align: center;
+	border-bottom: 1px solid #008080;
+	border-left: 1px solid #008080;}
+
+.noisette .contenu div.introduction, .noisette .contenu a.introduction {
+	display: block;	margin: 0 5px; padding:0 0 5px 10px;	
+	color: #008080;}
+.noisette .contenu a.introduction:hover{
+	color: #008080;
+	text-decoration: underline;}
+.noisette .contenu div.introduction * {margin: 0;}
+
+.noisette .contenu .liste {margin: 0;	padding: 5px 0;}
+.noisette .contenu .texte {margin: 0; padding: 5px; line-height: 1.1em;}
+.noisette .contenu .texte p {margin:0.7em 0em; padding:0;}
+
+.noisette .contenu .notes {margin: 0; padding: 5px; line-height: 100%; border-top: 1px solid #008080;}
+.noisette .contenu .notes p {margin: 0;}
+
+.noisette .contenu h3 {padding: 3px 0; line-height: 1.1em;}
+.noisette .contenu  a {}
+.noisette .contenu a:hover {}
+.noisette .contenu strong {}
+.noisette .contenu blockquote, .noisette .contenu code {margin : 2px;}
+
+/* Styles specifiques pour la pagination dans les noisettes */
+.noisette .pagination {margin: 0 5px 5px; font-size: 1em;}
+
+/* Styles specifiques pour l'herbier */
+#noisette_herbier.noisette .contenu .texte {text-align: center;}
+#noisette_herbier.noisette .contenu .texte ul {width: 120px; margin: 0 auto;}
+
+/* Styles specifiques pour les statistiques */
+#noisette_statistiques.noisette .contenu .texte {text-align: center;}
+
+/* Styles specifiques pour la navigation des articles et rubrique mots-cles et categories */
+#noisette_filtre.noisette .contenu h2.titre_bloc.bouton {border-bottom: 0;	
+	background: #008080;
+	color: #ffffff; 
+	text-decoration: none;}
+
+#noisette_filtre.noisette .contenu h2 a.titre_bloc.bouton {border-bottom: 0;}
+#noisette_navigation.noisette .contenu .liste li .titre,
+#noisette_filtre.noisette .contenu .liste li .titre,
+#noisette_motscles.noisette .contenu .liste li .titre {
+	display: block;
+	padding: 0 0 5px 10px;
+	margin: 0 5px;
+	font-size: 1em;
+	font-weight: bold;
+	text-decoration: none;
+}
+#noisette_navigation.noisette .contenu .liste li span.titre,
+#noisette_filtre.noisette .contenu .liste li span.titre,
+#noisette_motscles.noisette .contenu .liste li span.titre {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/puce-n1.gif") left top no-repeat;}
+#noisette_navigation.noisette .contenu .liste li a.titre,
+#noisette_filtre.noisette .contenu .liste li a.titre,
+#noisette_motscles.noisette .contenu .liste li a.titre {background-image: none;}
+#noisette_navigation.noisette .contenu .liste li a.titre:hover,
+#noisette_filtre.noisette .contenu .liste li a.titre:hover,
+#noisette_motscles.noisette .contenu .liste li a.titre:hover {
+	color: #008080;
+	 background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/puce-n1.gif") left top no-repeat;
+	text-decoration: underline;}
+
+/* Styles specifiques pour les badges */
+.noisette .badges a {display: block; margin: 2px 0; padding: 0; border: 0; width: 80px; height: 15px; float:left; clear: left; }
+.noisette .badges a:hover {text-decoration: none;}
+#logo_rss {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_rss.png") no-repeat;}
+#logo_rss:hover {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_rss_hover.png") no-repeat;}
+#logo_sarkaspip {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_sarkaspip.png") no-repeat;}
+#logo_sarkaspip:hover {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_sarkaspip_hover.png") no-repeat;}
+#logo_spip {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_spip.png") no-repeat;}
+#logo_spip:hover {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_spip_hover.png") no-repeat;}
+#logo_xhtml {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_xhtml.png") no-repeat;}
+#logo_xhtml:hover {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_xhtml_hover.png") no-repeat;}
+#logo_perso {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_perso.png") no-repeat;}
+#logo_perso:hover {background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/badge_perso_hover.png") no-repeat;}
+
+/* Styles specifiques pour le mini-agenda */
+#noisette_miniagenda.noisette {overflow: hidden; width:180px}
+#noisette_miniagenda.noisette .contenu table {table-layout: fixed; border-spacing:0; width:100% !important /*FF*/; width:178px /*IE*/; font-size: 1.1em; text-align: center;border-collapse:inherit;}
+#noisette_miniagenda.noisette .contenu table thead {
+	background: #008080;
+	color: #ffffff;}
+#noisette_miniagenda.noisette .contenu table th {text-align: center; padding: 2px 0;}
+#noisette_miniagenda.noisette .contenu table td {line-height: 1.1em; color: #008080}
+#noisette_miniagenda.noisette .contenu table td.libre,
+#noisette_miniagenda.noisette .contenu table td.occupe {background-color: transparent; border: 1px solid transparent;}
+#noisette_miniagenda.noisette .contenu table td.horsperiode {
+    background: #eeeeee;
+    border: 1px solid #eeeeee;
+	color: #aaaaaa;}
+#noisette_miniagenda.noisette .contenu table td.today {font-weight: bolder;  
+    background: transparent;
+    border: 1px solid #990000;}
+#noisette_miniagenda.noisette .contenu table td a {font-weight: bolder;}
+#noisette_miniagenda.noisette .contenu table td a:hover {}
+
+#noisette_miniagenda.noisette .contenu h2 a.titre_bloc {padding: 0 0; font-size: 1.2em;border-top: 1px solid #008080;}
+#noisette_miniagenda.noisette .contenu h2.titre_bloc.centre,
+#noisette_miniagenda.noisette .contenu h2 a.titre_bloc.bord {padding: 1px 0; border-top: 0;float: left;font-size: 1.2em;}
+#noisette_miniagenda.noisette .contenu h2.titre_bloc.centre {width: 50%;}
+#noisette_miniagenda.noisette .contenu h2 a.titre_bloc.bord {width: 25%;}
+#noisette_miniagenda.noisette .contenu h2 a.titre_bloc.bord.vide:hover {
+	background: #eeeeee; }
+
+#noisette_miniagenda.noisette .contenu .texte {padding: 2px; border-top: 1px solid #008080;}
+#noisette_miniagenda.noisette .contenu table#footer_evenements {padding: 2px 0; table-layout: fixed; border-top: 1px solid #008080; text-align: left; font-size: 1em;}
+#noisette_miniagenda.noisette .contenu table#footer_evenements td{line-height:1.1em;}
+#noisette_miniagenda.noisette .contenu table#footer_evenements td.footer_colg {padding: 1px; font-weight: bold;
+	width: 37% !important /*FF*/;width: 66px /*IE*/;}
+#noisette_miniagenda.noisette .contenu table#footer_evenements td.footer_cold {padding: 1px;
+	width: 63% !important /*FF*/;width: 112px /*IE*/;}
+#noisette_miniagenda.noisette .contenu table#footer_evenements td.footer_cold a {font-weight: normal; color: #008080;}
+#noisette_miniagenda.noisette .contenu table#footer_evenements td.footer_cold a:hover {color: #008080;}
+
+/* Styles specifiques pour la noisette Rainette */
+#noisette_rainette.noisette .contenu .texte .maj {text-align: center;}
+#noisette_rainette.noisette .contenu .texte .resume {text-align: center; font-size: 1.2em; font-weight: bold;margin: 10px 0}
+#noisette_rainette.noisette .contenu .texte .resume ul{font-weight: normal; margin-top: 5px;font-size: 0.9em;}
+#noisette_rainette.noisette .contenu .texte .resume li{}
+#noisette_rainette.noisette .contenu .texte .temperature {font-size: 2em; font-weight: bold; margin: 0 5px;}
+#noisette_rainette.noisette .contenu .texte .previsions {font-size: 1.3em;}
+#noisette_rainette.noisette .contenu .texte .temperature img {float:left;}
+#noisette_rainette.noisette .contenu .texte .temperature p {padding: 30px 0 0 90px;}
+#noisette_rainette.noisette .contenu .texte .liens {text-align: center;}
+.pave-prevision {overflow: hidden; float: left; width: 168px; height: 190px;}
+.conteneur_selection {overflow: hidden; float: left; width: 168px; height: 190px;}
+
+/* Styles specifiques pour la noisette Nuage de mots */
+#noisette_nuage.noisette .contenu ul.nuage {padding:5px;}
+#noisette_nuage.noisette .contenu ul.nuage a {color: #008080;}
+
+/* Menus vertical des rubriques et raccourcis inseres dans les colonnes extra et navigation */
+/* Navigation dans les rubriques - arborescence deroulante */
+.menu_rub1 { padding: 0; font-size: 1.2em; text-align: left;}
+.menu_rub1 ul.menulist,
+.menu_rub1 ul.menulist ul {
+	 background: #174f73;
+	 border: 1px solid #ffffff; 
+	 border-bottom: 0;
+	 list-style: none;
+	 z-index: 500;
+	 margin: 0;
+	 padding: 0;
+	 line-height:1.2em;
+	 width:178px;}
+
+.menu_rub1 ul.menulist ul {position: absolute; top: -1px;  left: 178px;}
+.menu_rub1 ul.menulist li {position: relative; margin: 0; padding: 0; border-bottom: 1px solid #ffffff;}
+.menu_rub1 ul.menulist li ul {display:none;}
+.menu_rub1 ul.menulist li:hover>ul {display:block;}
+
+.menu_rub1 ul.menulist a {
+	 background: #174f73;
+	color: #ffffff; text-decoration: none; display: block; padding: 5px;}
+
+.menu_rub1 ul.menulist a:hover {
+	background: #008080;
+	color: #ffffff;
+	text-decoration: none;}
+.menu_rub1 ul.menulist li.smenu, .menu_rub1 ul.menulist li.smenu>a {
+	 background: #174f73;
+	 
+	background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/arrow_from_left.gif");
+	 background-position: 170px;
+	background-repeat: no-repeat;}
+.menu_rub1 ul.menulist li.smenu:hover, .menu_rub1 ul.menulist li.smenu>a:hover {
+	background: #008080;
+	 
+	background-image: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/arrow_from_top.gif");
+	 background-position: 167px;
+	background-repeat: no-repeat;}
+.menu_rub1 ul.menulist a.menu_articles {}
+.menu_rub1 ul.menulist a.menu_articles:hover {}
+
+/* Navigation dans les rubriques - arborescence depliee */
+.menu_rub2 {font-size: 1.2em; border: 0; font-weight: normal;}
+.menu_rub2 ul {margin: 0; padding: 0; list-style: none;}
+.menu_rub2 ul li { margin: 0; padding: 0; border: 0; line-height: 1.3em;}
+.menu_rub2 ul li a {
+	display: block; width: 158px; margin-bottom: 0; padding: 5px 10px; 
+	border: 1px solid #ffffff; border-top: 0;
+	color: #ffffff; 
+	background: #174f73;}
+
+.menu_rub2 ul li a#m1 {border-top: 1px solid #ffffff;}
+.menu_rub2 ul li ul li a {
+	display: block; width: 148px; margin-bottom: 0; padding: 5px 10px 5px 20px; 
+	color: #ffffff; 
+	background: #174f73;}
+.menu_rub2 ul li ul li ul li a {
+	display: block; width: 138px; margin-bottom: 0; padding: 5px 10px 5px 30px; 
+	color: #ffffff; 
+	background: #174f73;}
+.menu_rub2 a.on {
+	background: #008080;
+	color: #ffffff; font-weight: bold;}
+.menu_rub2 a:hover {
+	background: #008080;
+	color: #ffffff; 
+	text-decoration: none;}
+
+/* Navigation dans les rubriques - arborescence accordeon a ouverture automatique */
+.menu_rub3 {width: 100%; padding:0; font-size: 1.2em;}
+.menu_rub3 .cache {padding-left:10%; width: 90%; background: none; display: none;}
+.menu_rub3 .cache a {
+	display: block; border-top: 1px solid #ffffff;
+	background: #174f73;}
+.menu_rub3 .cache a.on {background: #008080;}
+.menu_rub3 ul.menulist {background: none; border: 0; list-style: none; z-index: 500; margin: 0; padding: 0; line-height: 1.2em}
+.menu_rub3 ul.menulist li {position: relative; margin: 0; padding: 0; border-bottom: 1px solid #ffffff;}
+.menu_rub3 ul.menulist a {
+	display: block; text-decoration: none; padding: 5px;
+	color: #ffffff; 
+	background: #174f73;}
+.menu_rub3 ul.menulist a:hover {
+	background: #008080;
+	color: #ffffff;}
+.menu_rub3 ul.menulist a.on {
+	background: #008080;
+	color: #ffffff;}
+
+/* Bloc de menus des raccourcis de navigation*/
+.nav2 {font-size: 1.2em; width: 178px;border: 1px solid #008080;}
+.nav2 ul {padding: 5px 0; margin: 0}
+.nav2 li {
+	list-style: none; margin: 5px 10px; line-height: 1.4em;
+	background: #174f73;
+	 border: #ffffff solid 1px;
+	 color: #ffffff;}
+.raccourci_nav1 {text-align: center;}
+.raccourci_nav1 a {display: block; width: 100%; color: #ffffff;}
+.raccourci_nav1 a:hover {
+	text-decoration: none; 
+	background: #008080;
+	 color: #ffffff;}
+.nav2 .auteur {margin: 7px 10px; padding-top: 3px; padding-bottom: 2px; text-align: center;	background: transparent; border: 0;}
+
+/* Menu horizontal dans le bandeau bas */
+ 
+	
+
+ 
+	
+
+.menu_horiz{font-size:1.2em;
+	 width: 960px;
+	
+	  margin: 0 auto 0;
+	 min-height: 23px;
+}
+.menu_horiz, .menu_horiz ul {list-style: none; line-height: 1; padding: 0;
+	 min-height: 23px;
+}
+.menu_horiz ul{width:100%; margin: 0; float: left;}
+
+.menu_horiz a {display: block; text-decoration: none; padding: 5px 10px;
+	 color: #ffffff;
+	 border-left: #ffffff solid 1px;
+	 text-align: center;
+}
+.menu_horiz a#mh_n1 {border-left: none;}
+.menu_horiz a.it_n1 { border-top: #ffffff solid 1px;}
+.menu_horiz a.pere { background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/arrow_from_left.gif") center right no-repeat; background-position: 152px;}
+.menu_horiz a.pere:hover { background: url("http://irem.univ-reunion.fr/plugins/sarkaspip_33/images/arrow_from_top.gif") center right no-repeat; background-position: 149px;}
+.menu_horiz a:hover { text-decoration: none; color: #ffffff;}
+
+.menu_horiz li {float: left; padding: 0; width: 160px;
+	background: #008080;}
+.menu_horiz li ul {position: absolute; left: -999em; height: auto; font-weight: normal;	margin: 0;	padding: 0;z-index:2;
+	width: 170px;
+}
+.menu_horiz li li {padding: 0 ; overflow : hidden;
+   border-right: #ffffff solid 1px;
+  border-left: none;
+  clear:left;
+  }
+
+.menu_horiz li ul ul {margin: -24px 0 0 160px;}
+.menu_horiz li:hover ul ul, .menu_horiz li:hover ul ul ul, .menu_horiz li:hover ul ul ul ul,
+.menu_horiz li.sfhover ul ul, .menu_horiz li.sfhover ul ul ul, .menu_horiz li.sfhover ul ul ul ul {left: -999em;}
+.menu_horiz li:hover ul, 
+.menu_horiz li li:hover ul, 
+.menu_horiz li li li:hover ul,
+.menu_horiz li li li li:hover ul {left: auto;}
+.menu_horiz li.sfhover ul {left:auto;}
+.menu_horiz li li.sfhover ul,
+.menu_horiz li li li.sfhover ul,
+.menu_horiz li li li li.sfhover ul {left: auto;}
+.menu_horiz li:hover,
+.menu_horiz li.sfhover {background: #174f73;}
+.menu_horiz li li a, .menu_horiz li li li a { border-bottom: #ffffff solid 1px;}

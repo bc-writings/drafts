@@ -1,0 +1,140 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    outline: none;
+    color: black;
+    border-bottom: solid 1px grey;
+}
+a:hover {
+    color: #000;
+    text-decoration: none;
+    background-color: #f2f5f2;
+    border-bottom: solid 1px #cfcebe;
+    cursor: pointer;
+}
+
+/* Used in all pages except the homepage */
+.nav_bar_button {
+    cursor: pointer;
+    float: left;
+    padding: 8px 8px 8px 8px;
+    border: 4px solid #f5fff5;
+    background:linear-gradient(#ddffdd, white);
+}
+.nav_bar_button:hover {
+    background:linear-gradient(#ddffdd, #ddffdd);
+}
+.nav_bar_button img {
+    height:60px;
+}
+.nav_bar_button_text {
+    color:black;
+    font-family:'Kalam',cursive;
+    font-size:14px;
+    margin-top:5px;
+}
+
+/* Used in icons on index page and breadcrumb on all pages */
+.icon_box img {
+    height: 30px;
+    max-height:30px;
+    margin-right:16px;
+}
+
+/* Used in poetry, inspiration sections with youtube embedding at the top */
+.youtube_box {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+}
+.youtube_box iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* BEGIN Photos and Origami pages */
+.link_to_picasaweb_album {
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+.photo_album_container {
+    margin: 0 auto;
+    text-align: center;
+}
+.photo_album_container a {
+    border-bottom: none;
+    display: block;
+    height: 100%;
+}
+.photo_album_thumbnail {
+    display: inline-block;
+    padding: 5px;
+}
+.photo_album_thumbnail img {
+    border: 2px solid black;
+}
+.picasaweb_thumbnail_288x216 {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    width: 292px;
+    overflow: hidden;
+}
+.picasaweb_thumbnail_288x216:hover {
+    opacity:1.0;
+}
+.picasaweb_thumbnail_144x108 {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid white;
+    width: 144px;
+    overflow: hidden;
+}
+.picasaweb_thumbnail_144x108:hover {
+    border: 1px solid black;
+}
+.picasaweb_thumbnail_64x64 {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid white;
+    width: 64px;
+    overflow: hidden;
+}
+.picasaweb_thumbnail_64x64:hover {
+    border: 1px solid black;
+}
+.picasaweb_thumbnail_48x48 {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid white;
+    width: 48px;
+    overflow: hidden;
+}
+.picasaweb_thumbnail_48x48:hover {
+    border: 1px solid black;
+}
+/* END Photos and Origami pages */
+
+/* BEGIN Useful in cluster pages to remove underline below links */
+.no_underline a, .no_underline a:hover .no_underline a:visited, .no_underline a:link, .no_underline a:active {
+    text-decoration: none;
+    border-bottom: 0px;
+}
+.no_underline a {
+    background-color: transparent;
+}
+/* END Useful in cluster pages ...*/
+
+li {
+    margin-bottom: 16px;
+}

@@ -1,0 +1,382 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Tower of Hanoi</title>
+   <link rel="meta" href="https://www.cut-the-knot.org/labels.rdf" type="application/rdf+xml" title="ICRA labels">
+   <meta http-equiv="pics-Label" content="(pics-1.1 &quot;https://www.icra.org/pics/vocabularyv03/&quot; l gen true 
+      for &quot;https://cut-the-knot.org&quot; r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 1) gen true 
+      for &quot;https://www.cut-the-knot.org&quot; r (n 0 s 0 v 0 l 0 oa 0 ob 0 oc 0 od 0 oe 0 of 0 og 0 oh 0 c 1))">
+   <meta http-equiv="revisit-after" content="15 days">
+   <link rel="shortcut icon" href="http://www.cut-the-knot.org/gifs/favicon.jpg">
+   <meta name="Author" content="Alexander Bogomolny">
+   <meta name="Copyright" content="1996-2018 Alexander Bogomolny">
+   <meta name="Description" content="The Tower of Hanoi puzzle was invented by the French mathematician Edouard Lucas in 1883. We are given a tower of eight disks (initially four in the applet below), initially stacked in increasing size on one of three pegs. The objective is to transfer the entire tower to one of the other pegs (the rightmost one in the applet below), moving only one disk at a time and never a larger one onto a smaller">
+   <meta name="KeyWords" content="Mathematics, recurrence, puzzle, education, Tower of Hanoi">
+<style>
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body{font-family:lucida,courier new,trebuchet ms,Verdana,Arial,Helvetica,sans-serif;font-size:120%;color:#000000;position:relative;}
+h1{font-size:16pt;font-family:verdana,arial;margin-top:10px}
+h2{font-size:15pt;font-family:verdana,arial;margin-top:10px;line-height:140%}
+h3{font-size:12pt;font-family:verdana,arial}
+h4{font-size:11pt;font-family:verdana,arial}
+div.eqBox{width:100%;margin:0px;}
+div.boxed{width:100%; margin:1px; border:1px solid gray ;}
+div.boxed2{width:99%; margin:1px; border:9px solid white ;}
+a {text-decoration:none}
+.note{border:.1em solid purple;color:black;padding:1em;margin-left:60px;font-style:italic;width:570}
+.shift{margin-left:60px;}
+.theorem{width:96%;border:1px dotted purple;background:#FFe8cc;color:black;padding:1em;margin-left:40px;font-style:italic;}
+td {line-height:150%}
+td.menuLine{background:lightblue;z-index:5;cursor:pointer;min-width:4em;}
+table.menu{font-size:100%;position:fixed;visibility:hidden;border:1px solid black;min-width:5em;text-align:center;z-index:5;}
+span.menu{background:lightblue;cursor:pointer;border:0px;z-index:5;line-height:110%}
+span.handSelected{cursor:pointer;}
+#centerDiv{position:absolute;top:25px;left:30px;width:1180px;border:0px;padding:0px}
+#content{position:absolute;left:10px;width:770px;border:0px;padding-top:0px;top: 0 !important;}
+#menuContainer{left:160px;width:770px;height:40px;}
+#rightColumn{position:absolute;width:200px;left:782px;}
+#leftColumn{position:absolute;width:160px;left:2px}
+#leftColumnBottom{position:relative;float:left;width:160px;margin-left:5px}
+#logo{left:0px;width:120;float:left}
+#header{position:absolute;top:2;left:30px;width:1020px;vertical-align:top;display:inline;height:20px}
+#footer{height:0px}
+#donate{position:absolute;left:905px;width:150px;}
+#rightFloater {position:relative;padding:0px;}
+.mainFrame {margin:auto;width:740px;margin-top:50px;}
+.FirstLineIndent {text-indent:20px;}
+a:link {color:#0000ff;font-style:italic;}
+a:hover {font-size:105%;color:#aa0000;}
+p {padding-bottom:2px; padding-top:5px;line-height:150%}
+</style>
+
+<link href="Tower%20of%20Hanoi_fichiers/bootstrap.css" rel="stylesheet">
+<link href="Tower%20of%20Hanoi_fichiers/jquery.css" rel="stylesheet">
+</head>
+
+<body vlink="#8844aa" text="#000000" link="#4444aa" bgcolor="#ffffff" alink="#008080">
+
+<div id="centerDiv">
+
+<div id="content">
+
+<div id="menuContainer">
+<div class="navbar navbar-default" role="navigation">
+<div class="navbar-collapse collapse">
+
+<ul class="nav navbar-nav sm" data-smartmenus-id="1588448953527037">
+	<li><a href="#" class="has-submenu">Site<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="http://www.cut-the-knot.org/changes.shtml">What's new</a>
+			</li><li><a href="http://www.cut-the-knot.org/content.shtml">Content page</a>
+			</li><li><a href="http://www.cut-the-knot.org/front.shtml">Front page</a>
+			</li><li><a href="http://www.cut-the-knot.org/index.shtml">Index page</a>
+			<!-- <li><a href="https://www.cut-the-knot.org/wiki-math/index.php">CTK wiki-math</a> -->
+			</li><li><a href="http://www.cut-the-knot.org/wanted.shtml">About</a>
+			</li><li><a href="http://www.cut-the-knot.org/Privacy.shtml">Privacy policy</a>
+			</li><li><a href="http://www.cut-the-knot.org/MathHelp.shtml">Help with math</a>
+		</li></ul>
+	</li>
+	<li><a href="#" class="has-submenu">Subjects<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="http://www.cut-the-knot.org/arithmetic.shtml">Arithmetic</a>
+			</li><li><a href="http://www.cut-the-knot.org/algebra.shtml">Algebra</a>
+			</li><li><a href="http://www.cut-the-knot.org/geometry.shtml">Geometry</a>
+			</li><li><a href="http://www.cut-the-knot.org/probability.shtml">Probability</a>
+			</li><li><a href="http://www.cut-the-knot.org/WhatIs/WhatIsTrigonometry.shtml">Trigonometry</a>
+			</li><li><a href="http://www.cut-the-knot.org/VisualIllusions.shtml">Visual illusions</a>
+		</li></ul>
+	</li>
+	<li><a href="#" class="has-submenu">Articles<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="http://www.cut-the-knot.org/ctk/index.shtml">Cut the knot!</a>
+			</li><li><a href="http://www.cut-the-knot.org/WhatIs/index.shtml">What is what?</a>
+		<!--	<li><a href="/manifesto/index.shtml">Manifesto</a>  -->
+			</li><li><a href="http://www.cut-the-knot.org/Generalization/epairs.shtml">Inventor's paradox</a>
+			</li><li><a href="http://www.cut-the-knot.org/language/index.shtml">Math as language</a>
+			<!-- <li><a href="http://www.mathteacherctk.com/blog/">CTK Insights blog</a>  -->
+			</li><li><a href="http://www.cut-the-knot.org/m/ProblemSolving.shtml">Problem solving</a>
+		</li></ul>
+	</li>
+	<li><a href="#" class="has-submenu">Collections<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="http://www.cut-the-knot.org/Outline/index.shtml">Outline mathematics</a>
+			</li><li><a href="http://www.cut-the-knot.org/books/Reviews/index.shtml">Book reviews</a>
+			</li><li><a href="http://www.cut-the-knot.org/Curriculum/index.shtml">Interactive activities</a>
+			</li><li><a href="http://www.cut-the-knot.org/do_you_know/index.shtml">Did you know?</a>
+			</li><li><a href="http://www.cut-the-knot.org/pythagoras/tricky.shtml">Eye opener</a>
+			</li><li><a href="http://www.cut-the-knot.org/pythagoras/ellipse.shtml">Analogue gadgets</a>
+			<!-- <li><a href="https://www.cut-the-knot.org/wiki-math/index.php?n=MathematicalOlympiads.MathematicalOlympiads">Math Olympiads</a> -->
+      </li><li><a href="http://www.cut-the-knot.org/proofs/index.shtml">Proofs in mathematics</a>
+			</li><li><a href="https://www.cut-the-knot.org/impossible/index.shtml">Things impossible</a>
+			</li><li><a href="http://www.cut-the-knot.org/glossary/atop.shtml">Index/Glossary</a>
+		</li></ul>
+	</li>
+	<li><a href="#" class="has-submenu">Simple math<span class="sub-arrow">...</span></a>
+		<ul class="dropdown-menu">
+			<li><a href="http://www.cut-the-knot.org/arithmetic/rapid/index.shtml">Fast Arithmetic Tips</a>
+			</li><li><a href="http://www.cut-the-knot.org/ForYoung/Introduction.shtml">Stories for young</a>
+			</li><li><a href="http://www.cut-the-knot.org/arithmetic/WProblem.shtml">Word problems</a>
+			</li><li><a href="http://www.cut-the-knot.org/games.shtml">Games and puzzles</a>
+			</li><li><a href="http://www.cut-the-knot.org/logo.shtml">Our logo</a>
+			</li><li><a href="http://www.cut-the-knot.org/Curriculum/Arithmetic/MakeIdentity/index.shtml">Make an identity</a>
+			</li><li><a href="http://www.cut-the-knot.org/Curriculum/index.shtml#ElementaryGeometry">Elementary geometry</a>
+		</li></ul>
+	</li>
+	<!-- <li><a href="#">Misc</a>
+		<ul class="dropdown-menu">
+		  <li><a href="https://www.facebook.com/CutTheKnotMath/">CutTheKnotMath facebook page</a>
+			<li><a href="https://twitter.com/CutTheKnotMath">CutTheKnotMath twitter account</a>
+      <li><a href="http://mathteacherctk.com/blog">CTK Insights blog</a>
+    	<li><a href="/PHP/SpeakLoud.php"  title="Tell a friend about it" target=_top>
+Tell a friend</a></li>
+    	<li><a href="#spotim"  title="Talk about it" target=_top>
+Talk about it</a></li> -->
+<!--
+      <li><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.cut-the-knot.org%2F%23.VNvfpq1i_NQ.facebook&p[title]=CutTheKnotMath&display=popup"><img src="/gifs/facebook.png" alt="facebook.png"></a></li>
+-->
+    <!-- </ul>
+	</li> -->
+ </ul>
+ 
+ <ul class="nav navbar-nav navbar-right sm" data-smartmenus-id="1588448953535335">
+<!--
+    <li><nobr><a href="https://www.facebook.com/CutTheKnotMath"><img src="/gifs/facebook.png" alt="facebook.png"></a>
+	    <a href="https://twitter.com/CutTheKnotMath"><img src="/gifs/tweeter.png" alt="tweeter.png"></a>
+-->			
+	  	<a href="https://www.cut-the-knot.org/"><img src="Tower%20of%20Hanoi_fichiers/ctklogo.png" alt="ctklogo.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</ul>
+</div><!--/.nav-collapse -->
+</div>
+
+
+
+
+</div>
+
+
+<div class="mainFrame">
+
+<h1>Tower of Hanoi</h1>
+<p>The Tower of Hanoi puzzle was invented by the French mathematician 
+Edouard Lucas in 1883. We are given a tower of eight disks (initially 
+four in the applet below), initially stacked in increasing size on one 
+of three pegs. The objective is to transfer the entire tower to one of 
+the other pegs (the rightmost one in the applet below), moving only one 
+disk at a time and never a larger one onto a smaller.</p>
+
+<p>The puzzle is well known to students of Computer Science since it 
+appears in virtually any introductory text on data structures or 
+algorithms. Its solution touches on two important topics discussed later
+ on:</p>
+
+<ul>
+<li>recursive functions and stacks
+</li><li>recurrence relations
+</li></ul>
+
+<p>The applet has several controls that allow one to select the number 
+of disks and observe the solution in a Fast or Slow manner. To solve the
+ puzzle drag disks from one peg to another following the rules. You can 
+drop a disk on to a peg when its center is sufficiently close to the 
+center of the peg. The applet expects you to move disks from the 
+leftmost peg to the rightmost peg.</p>
+
+<p class="shift">
+<applet code="hanoi" codebase="../classes" archive="CTKUtility.zip,hanoi.zip,pvEdits.jar" width="500" height="300">
+    <param name="fcolor" value="000000">
+    <param name="bcolor" value="ffffff">
+<hr>
+<h3>
+<p>If you are reading this, your browser is not set to run Java applets.
+ Try IE11 or Safari and declare the site https://www.cut-the-knot.org as
+ trusted in the Java setup.</p>
+<p class="shift">
+<img src="Tower%20of%20Hanoi_fichiers/TowersOfHanoi.jpg" alt="Towers of Hanoi puzzle" width="509" height="304">
+</p>
+<hr>
+</h3></applet>
+</p>
+
+<table width="100%"><tbody><tr><td align="right"><font face="verdana"><!--<a href="https://www.cut-the-knot.org/PHP/Referrer.php">Buy this applet</a><br>--><a href="https://www.cut-the-knot.org/HelpWithJava.shtml">What if applet does not run?</a></font></td></tr></tbody></table>
+
+<h2>Recursive solution</h2>
+
+<p>Let call the three pegs Src (Source), Aux (Auxiliary) and Dst (Destination). To better understand
+and appreciate the following solution you should try solving the puzzle for small number of disks, 
+say, 2,3, and, perhaps, 4. However one solves the problem, sooner or later the bottom disk will
+have to be moved from Src to Dst. At this point in time all the remaining disks will have to be stacked
+in decreasing size order on Aux. After moving the bottom disk from Src to Dst these disks will have to be
+moved from Aux to Dst. Therefore, for a given number N of disks, the problem appears to be solved if we 
+know how to accomplish the following tasks:</p>
+<ol>
+<li>Move the top N - 1 disks from Src to Aux (using Dst as an intermediary peg)
+</li><li>Move the bottom disk from Src to Dst
+</li><li>Move N - 1 disks from Aux to Dst (using Src as an intermediary peg)
+</li></ol>
+<p>Assume there is a function Solve with four arguments - number of 
+disks and three pegs (source, intermediary and destination - in this 
+order). Then the body of the function might look like</p>
+
+<pre><i>
+Solve(N, Src, Aux, Dst)
+    if N is 0 
+      exit
+    else
+      Solve(N - 1, Src, Dst, Aux)
+      Move from Src to Dst
+      Solve(N - 1, Aux, Src, Dst)
+</i></pre>
+
+<p>This actually serves as the definition of the function Solve. The 
+function is recursive in that it calls itself repeatedly with decreasing
+ values of N until a terminating condition (in our case <nobr>N = 0)</nobr> has been met. To me the sheer simplicity of the solution is breathtaking. For <nobr>N = 3</nobr> it translates into</p>
+<ol>
+<li>Move from Src to Dst
+</li><li>Move from Src to Aux
+</li><li>Move from Dst to Aux
+</li><li>Move from Src to Dst
+</li><li>Move from Aux to Src
+</li><li>Move from Aux to Dst
+</li><li>Move from Src to Dst
+</li></ol>
+<p>Of course "Move" means moving the topmost disk. For <nobr>N = 4</nobr> we get the following sequence</p>
+<ol>
+<li>Move from Src to Aux
+</li><li>Move from Src to Dst
+</li><li>Move from Aux to Dst
+</li><li>Move from Src to Aux
+</li><li>Move from Dst to Src
+</li><li>Move from Dst to Aux
+</li><li>Move from Src to Aux
+</li><li>Move from Src to Dst
+</li><li>Move from Aux to Dst
+</li><li>Move from Aux to Src
+</li><li>Move from Dst to Src
+</li><li>Move from Aux to Dst
+</li><li>Move from Src to Aux
+</li><li>Move from Src to Dst
+</li><li>Move from Aux to Dst
+</li></ol>
+<center><img src="Tower%20of%20Hanoi_fichiers/tbow_sh.gif" width="240" height="18" border="0"></center>
+
+<a name="recrel"></a>
+<h2>Recurrence relations</h2>
+<p>Let T<sub>N</sub> be the minimum number of moves needed to solve the puzzle with N disks. From the previous section <nobr>T<sub>3</sub> = 7</nobr> and <nobr>T<sub>4</sub> = 15.</nobr> One can easily convince oneself that <nobr>T<sub>2</sub> = 3</nobr> and <nobr>T<sub>1</sub> = 1.</nobr> A trained mathematician would also note that <nobr>T<sub>0</sub> = 0.</nobr> Now let us try to derive a general formula.</p>
+
+<p>The recursive solution above involves moving twice <nobr>(N - 1)</nobr> disks from one peg to another and making
+one additional move in between. It then follows that</p>
+
+<p class="shift">
+T<sub>N</sub> &#8804; T<sub>N-1</sub> + 1 + T<sub>N-1</sub> = 2T<sub>N-1</sub> + 1
+</p>
+
+<p>The inequality suggests that it might be possible to move N disks with fewer than <nobr>2T<sub>N-1</sub> + 1</nobr> moves. Which is actually not the case. Indeed, when the time comes to move the bottom disk, <nobr>(N - 1)</nobr> smaller disks will have been moved from Src to Aux in at least <nobr>T<sub>N-1</sub></nobr> moves. Since we are trying to use as few steps as possible, we may assume that that portion of the task took exactly <nobr>T<sub>N-1</sub></nobr> moves. It takes just one move to move the biggest disk from Src to Dst. One then needs exactly <nobr>T<sub>N-1</sub></nobr> more steps to finish the task. Therefore the minimum number of moves needed to solve the puzzle with N disks equals <nobr>T<sub>N-1</sub> + 1 + T<sub>N-1</sub> = 2T<sub>N-1</sub> + 1</nobr> moves.
+
+</p><p>In other words,</p>
+
+<p class="shift">
+T<sub>N</sub> = 2T<sub>N-1</sub> + 1
+</p>
+
+<p>Thus we can define the quantity T<sub>N</sub> as</p>
+
+<p class="shift">
+T<sub>0</sub> = 0<br>
+T<sub>N</sub> = 2T<sub>N-1</sub> + 1 for N &gt; 0
+</p>
+
+<p>We may compute T<sub>1</sub> = 2T<sub>0</sub> + 1 = 1, <nobr>T<sub>2</sub> = 2T<sub>1</sub> + 1= 3,</nobr> <nobr>T<sub>3</sub> = 2T<sub>2</sub> + 1 = 7</nobr> and so on sequentially.</p>
+
+<p>The above expression is known as a <a name="recurrence"></a>recurrence relation which, as you might have noticed, is but a recursive function. T<sub>N</sub> is defined in terms of only one of its preceding values. Other recurrence relations may be more complicated, for example, <nobr>f(N) = 2f(N - 1) + 3f(N - 2).</nobr> Recurrence relations appear under various guises in numerous branches of Mathematics and applications. </p>
+
+<p>Returning to the definition of T<sub>N</sub>, define <nobr>S<sub>N</sub> = T<sub>N</sub> + 1.</nobr> Then <nobr>S<sub>0</sub> = 1</nobr> and S<sub>N</sub> = T<sub>N</sub> + 1 = (2T<sub>N-1</sub> + 1) + 1 = 2T<sub>N-1</sub> + 2 = 2(T<sub>N-1</sub> + 1) = 2S<sub>N-1</sub>. Which is to say that S<sub>N</sub> could be defined as</p>
+
+<p class="shift">
+S<sub>0</sub> = 1<br>
+S<sub>N</sub> = 2S<sub>N-1</sub> for N &gt; 0
+</p>
+
+<p>The latter is solved easily in the closed (non-recurrent) form S<sub>N</sub>=2<sup>N</sup>. 
+Wherefrom</p>
+
+<p class="shift">
+T<sub>N</sub> = 2<sup>N</sup> - 1 for N  &#8805; 0.
+</p>
+
+<center><img src="Tower%20of%20Hanoi_fichiers/tbow_sh.gif" width="240" height="18" border="0"></center>
+
+<h3>Remark 1</h3>
+
+<p>The latest implementation of the applet sports a "Suggest move" 
+button that exploits an algorithm devised by Romek Zylla who graciously <a href="https://zylla.wipos.p.lodz.pl/games/hanoi-ex.html">put up on the We</a>b an explanation of his algorithm. The algorithm actually provides another, a non-recursive solution to the puzzle.</p>
+
+<h3>Remark 2</h3>
+<p>There are quite a few variations on the puzzle. For example, you may want to experiment with its <a href="https://www.cut-the-knot.org/recurrence/BiColorHanoi.shtml">bicolor</a> or <a href="https://www.cut-the-knot.org/Curriculum/Combinatorics/Hanoi3c.shtml">3 colors</a> versions.</p>
+
+<h3>Reference</h3>
+<ol>
+<li>A. Beck, M. N. Bleicher, D. W. Crowe, <a href="https://www.amazon.com/exec/obidos/ISBN=1568811152/ctksoftwareincA/"><em>Excursions into Mathematics</em></a>, A K Peters, 2000
+</li></ol>
+
+<center><img src="Tower%20of%20Hanoi_fichiers/tbow_sh.gif" width="240" height="18" border="0"></center>
+
+<ol>
+<li><font color="#aa0000">Tower of Hanoi</font>
+</li><li><a href="https://www.cut-the-knot.org/recurrence/LongHanoi.shtml">Tower of Hanoi, the Hard Way</a>
+</li><li><a href="https://www.cut-the-knot.org/recurrence/BiColorHanoi.shtml">Bicolor Towers of Hanoi</a>
+<ul>
+ <li><a href="https://www.cut-the-knot.org/recurrence/BicolorHanoiSolution.shtml">Bicolor Towers of Hanoi, Solution</a>
+</li></ul>
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Combinatorics/Hanoi3c.shtml">3-Colors Tower of Hanoi</a>
+</li><li><a href="https://www.cut-the-knot.org/recurrence/TricolorHanoiAuto.shtml">3-Colors Tower of Hanoi (Algorithm)</a>
+</li><li><a href="https://www.cut-the-knot.org/Curriculum/Combinatorics/Hanoing.shtml">Hanoing</a>
+</li><li><a href="https://www.cut-the-knot.org/triangle/Hanoi.shtml">Sierpinski Gasket and Tower of Hanoi</a>
+</li></ol>
+
+<center><img src="Tower%20of%20Hanoi_fichiers/tbow_sh.gif" width="240" height="18" border="0"></center>
+<p align="right">
+<a href="https://www.cut-the-knot.org/MailNotificationPage.shtml">|Contact|</a>
+<a href="https://www.cut-the-knot.org/front.shtml">|Front page|</a>
+<a href="https://www.cut-the-knot.org/content.shtml">|Contents|</a>
+<a href="https://www.cut-the-knot.org/games.shtml">|Games|</a>
+
+</p>
+<font size="-1">Copyright © 1996-2018 <a href="https://www.cut-the-knot.org/">Alexander Bogomolny</a></font>
+</div>
+<p><span style="background-color:#00aaaa; display:inline-block; padding:0px 2px;">66740280</span></p>
+<div id="footer">
+<br>
+<!-- #include virtual="/cgi-bin/runHiddenCounter.sh"-->
+
+</div> <!-- footer -->
+</div> <!-- "content" -->
+
+
+<div id="rightColumn">
+
+</div>
+
+</div> <!-- centerDiv -->
+
+<div id="header">
+<nobr>
+
+<div id="logo" style="display:inline">
+<!--
+<a href="https://www.cut-the-knot.org/manifesto/index.shtml">&nbsp;&nbsp;<img src="/gifs/NewLogoOpal.gif" width=4 height=4 border=0 alt="Cut the knot: learn to enjoy mathematics"></a> -->
+</div>
+
+
+</nobr></div><nobr>
+
+
+<script type="text/javascript" src="Tower%20of%20Hanoi_fichiers/jquery-2.js"></script>
+<script type="text/javascript" src="Tower%20of%20Hanoi_fichiers/bootstrap.js"></script>
+<script type="text/javascript" src="Tower%20of%20Hanoi_fichiers/jquery_002.js"></script>
+<script type="text/javascript" src="Tower%20of%20Hanoi_fichiers/jquery.js"></script>
+
+
+</nobr></body></html>

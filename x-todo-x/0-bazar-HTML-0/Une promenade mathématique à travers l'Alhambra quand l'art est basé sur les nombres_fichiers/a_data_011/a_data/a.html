@@ -1,0 +1,97 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script>var sdkScript = document.createElement('script');
+sdkScript.onload = function() {
+  if (typeof bntInit == 'function') bntInit(); else console.error("bnt: no bntInit()");
+  if (typeof bntStart == 'function') bntStart(); else console.warn("bnt: no bntStart()");
+}
+sdkScript.onerror = function() {
+  throw new Error("bnt: sdk load error");
+}
+sdkScript.src = 'https://s8t.teads.tv/sdk/2020.0.0';
+document.documentElement.firstChild.appendChild(sdkScript);
+var stylesNode = document.createElement('style');
+stylesNode.type = 'text/css';
+stylesNode.appendChild(document.createTextNode(".slideFromRight{animation-name:slideFromRight}@keyframes slideFromRight{from{transform:translate3d(100%, 0, 0);visibility:visible;opacity:0}to{transform:translate3d(0, 0, 0);opacity:1}}.slideFromLeft{animation-name:slideFromLeft}@keyframes slideFromLeft{from{transform:translate3d(-100%, 0, 0);visibility:visible;opacity:0}to{transform:translate3d(0, 0, 0);opacity:1}}.slideFromTop{animation-name:slideFromTop}@keyframes slideFromTop{from{transform:translate3d(0, -100%, 0);visibility:visible;opacity:0}to{transform:translate3d(0, 0, 0);opacity:1}}.slideFromBottom{animation-name:slideFromBottom}@keyframes slideFromBottom{from{transform:translate3d(0, 100%, 0);visibility:visible;opacity:0}to{transform:translate3d(0, 0, 0);opacity:1}}.horizontalFlipIn{animation-name:horizontalFlipIn}@keyframes horizontalFlipIn{from{transform:perspective(500px) rotate3d(1, 0, 0, 90deg);animation-timing-function:ease-in;opacity:0}to{transform:perspective(500px)}}.verticalFlipIn{animation-name:verticalFlipIn}@keyframes verticalFlipIn{from{transform:perspective(500px) rotate3d(0, 1, 0, 90deg);animation-timing-function:ease-in;opacity:0}to{transform:perspective(500px)}}.fadeIn{animation-name:fadeIn}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.zoomIn{animation-name:zoomIn}@keyframes zoomIn{from{opacity:0;transform:scale3d(0.3, 0.3, 0.3)}to{opacity:1}}.slideToRight{animation-name:slideToRight}@keyframes slideToRight{from{transform:translate3d(0, 0, 0);opacity:1}to{transform:translate3d(100%, 0, 0);visibility:visible;opacity:0}}.slideToLeft{animation-name:slideToLeft}@keyframes slideToLeft{from{transform:translate3d(0, 0, 0);opacity:1}to{transform:translate3d(-100%, 0, 0);visibility:visible;opacity:0}}.slideToTop{animation-name:slideToTop}@keyframes slideToTop{from{transform:translate3d(0, 0, 0);opacity:1}to{transform:translate3d(0, -100%, 0);visibility:visible;opacity:0}}.slideToBottom{animation-name:slideToBottom}@keyframes slideToBottom{from{transform:translate3d(0, 0, 0);opacity:1}to{transform:translate3d(0, 100%, 0);visibility:visible;opacity:0}}.horizontalFlipOut{animation-name:horizontalFlipOut}@keyframes horizontalFlipOut{from{transform:perspective(500px)}to{transform:perspective(500px) rotate3d(1, 0, 0, 90deg);animation-timing-function:ease-in;opacity:0}}.verticalFlipOut{animation-name:verticalFlipOut}@keyframes verticalFlipOut{from{transform:perspective(500px)}to{transform:perspective(500px) rotate3d(0, 1, 0, 90deg);animation-timing-function:ease-in;opacity:0}}.fadeOut{animation-name:fadeOut}@keyframes fadeOut{from{opacity:1}to{opacity:0}}.zoomOut{animation-name:zoomOut}@keyframes zoomOut{from{opacity:1}to{opacity:0;transform:scale3d(0.3, 0.3, 0.3)}}/*# sourceMappingURL=animations.css.map */\n"));
+document.documentElement.firstChild.appendChild(stylesNode);
+var VAST_PLAYER = 'https://s8t.teads.tv/format/2020.0.0'
+function bntInit() {
+bnt.LIBRARY.TEADS_FLOW_LANDSCAPE_960x540_100ko_jpg = {
+  "id": "TEADS_FLOW_LANDSCAPE_960x540_100ko_jpg",
+  "link": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.jpg",
+  "name": "TEADS_FLOW_LANDSCAPE_960x540_100ko.jpg",
+  "size": 88623,
+  "nature": "image",
+  "created": "2021-06-02T13:39:27.923Z",
+  "updated": "2021-06-02T13:39:27.923Z",
+  "external": false,
+  "filename": "teads_flow_landscape_960x540_100ko-1622641167544.jpg"
+};;
+bnt.ASSET_VERSIONS.TEADS_FLOW_LANDSCAPE_960x540_100ko_jpg = {
+  "15": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.15.webp",
+  "30": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.30.webp",
+  "60": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.60.webp",
+  "120": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.120.webp",
+  "240": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.240.webp",
+  "480": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.480.webp",
+  "960": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.960.webp",
+  "fallback": "https://s8t.teads.tv/creative-6753877076749231/teads_flow_landscape_960x540_100ko-1622641167544.960.jpg"
+};
+
+uid = 6874;
+cid = "6753877076749231";
+
+creative = bnt.unmarshall([{"ctor":"Creative","paths":[[]],"props":{}},{"ctor":"Array","paths":[["screens"]],"props":{}},{"ctor":"Screen","paths":[["screens","0"]],"props":{"name":"Screen1"}},{"ctor":"Array","paths":[["screens","0","customLoads"]],"props":{}},{"ctor":"Array","paths":[["screens","0","eos"]],"props":{}},{"ctor":"ElementOnScreen","paths":[["screens","0","eos","0"]],"props":{}},{"ctor":"Image","paths":[["screens","0","eos","0","element"]],"props":{"elementId":"backgroud"}},{"ctor":"Map","paths":[["screens","0","eos","0","element","configs"]],"props":{}},{"ctor":"StateHash","paths":[["screens","0","eos","0","element","configs","hashFn"]],"props":{}},{"ctor":"Object","paths":[["screens","0","eos","0","element","configs","store"]],"props":{}},{"ctor":"Entry","paths":[["screens","0","eos","0","element","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875"]],"props":{}},{"ctor":"State","paths":[["screens","0","eos","0","element","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","k"],["screens","0","eos","0","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","k"]],"props":{}},{"ctor":"Canvas","paths":[["screens","0","eos","0","element","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","k","canvas"],["canvases","0"]],"props":{"uuid":"deee13b2-874d-7774-debf-831b00ab0149"}},{"ctor":"CanvasConfig","paths":[["screens","0","eos","0","element","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","k","canvas","config"]],"props":{"name":"Main Canvas","width":960,"height":540}},{"ctor":"Segment","paths":[["screens","0","eos","0","element","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","k","segment"],["segments","0"]],"props":{"uuid":"7dbbb39b-35ff-b23c-1f91-f39aa9ff9875"}},{"ctor":"Array","paths":[["screens","0","eos","0","element","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","k","segment","signalHolders"]],"props":{}},{"ctor":"SegmentConfig","paths":[["screens","0","eos","0","element","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","k","segment","config"]],"props":{"name":"Default segment","readonly":true}},{"ctor":"ImageConfig","paths":[["screens","0","eos","0","element","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","v"]],"props":{"src":"asset://TEADS_FLOW_LANDSCAPE_960x540_100ko_jpg","angle":0,"width":960,"height":540,"visible":true,"panActive":false,"hoverImage":"","imageWidth":960,"usePointer":true,"imageHeight":540,"useGyroscope":true,"preserveAspectRatio":false}},{"ctor":"ImageConfig","paths":[["screens","0","eos","0","element","baseConfig"]],"props":{"src":"","angle":0,"width":100,"height":100,"visible":true,"panActive":false,"hoverImage":"","imageWidth":0,"usePointer":true,"imageHeight":0,"useGyroscope":true,"preserveAspectRatio":false}},{"ctor":"Map","paths":[["screens","0","eos","0","configs"]],"props":{}},{"ctor":"StateHash","paths":[["screens","0","eos","0","configs","hashFn"]],"props":{}},{"ctor":"Object","paths":[["screens","0","eos","0","configs","store"]],"props":{}},{"ctor":"Entry","paths":[["screens","0","eos","0","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875"]],"props":{}},{"ctor":"ElementOnScreenConfig","paths":[["screens","0","eos","0","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","v"]],"props":{"x":0,"y":0,"zIndex":0}},{"ctor":"AnimationConfig","paths":[["screens","0","eos","0","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","v","onHide"]],"props":{"ease":"linear","name":"","delay":0,"repeat":1,"_duration":0.4}},{"ctor":"AnimationConfig","paths":[["screens","0","eos","0","configs","store","deee13b2-874d-7774-debf-831b00ab0149_7dbbb39b-35ff-b23c-1f91-f39aa9ff9875","v","onShow"]],"props":{"ease":"linear","name":"","delay":0,"repeat":1,"_duration":0.4}},{"ctor":"ElementOnScreenConfig","paths":[["screens","0","eos","0","baseConfig"]],"props":{"x":0,"y":0,"zIndex":0}},{"ctor":"AnimationConfig","paths":[["screens","0","eos","0","baseConfig","onHide"]],"props":{"ease":"linear","name":"","delay":0,"repeat":1,"_duration":0.4}},{"ctor":"AnimationConfig","paths":[["screens","0","eos","0","baseConfig","onShow"]],"props":{"ease":"linear","name":"","delay":0,"repeat":1,"_duration":0.4}},{"ctor":"Array","paths":[["screens","0","eos","0","interactions"]],"props":{}},{"ctor":"Interaction","paths":[["screens","0","eos","0","interactions","0"]],"props":{"_action":"clickthru","fireOnce":false,"triggerName":"onclick","triggerFilter":""}},{"ctor":"Array","paths":[["screens","0","eos","0","interactions","0","_actionParameters"]],"props":{"0":"https://ad.doubleclick.net/ddm/trackclk/N1237753.3242647TEADSFR/B25877812.304777683;dc_trk_aid=497349551;dc_trk_cid=151936428;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;ltd="}},{"ctor":"Object","paths":[["screens","0","eos","0","interactions","0","transition"]],"props":{"in":"","out":"","name":""}},{"ctor":"Map","paths":[["screens","0","indexMapping"]],"props":{}},{"ctor":"ElementHash","paths":[["screens","0","indexMapping","hashFn"]],"props":{}},{"ctor":"Object","paths":[["screens","0","indexMapping","store"]],"props":{}},{"ctor":"Array","paths":[["screens","0","interactions"]],"props":{}},{"ctor":"Interaction","paths":[["screens","0","interactions","0"]],"props":{"_action":"","fireOnce":false,"triggerName":"","triggerFilter":""}},{"ctor":"Array","paths":[["screens","0","interactions","0","_actionParameters"]],"props":{}},{"ctor":"Object","paths":[["screens","0","interactions","0","transition"]],"props":{"in":"","out":"","name":""}},{"ctor":"ScreenConfig","paths":[["screens","0","config"]],"props":{"duration":"90"}},{"ctor":"AnimationConfig","paths":[["screens","0","config","onHide"]],"props":{"ease":"linear","name":"","delay":0,"repeat":1,"_duration":0.4}},{"ctor":"AnimationConfig","paths":[["screens","0","config","onShow"]],"props":{"ease":"linear","name":"","delay":0,"repeat":1,"_duration":0.4}},{"ctor":"Array","paths":[["canvases"]],"props":{}},{"ctor":"Array","paths":[["segments"]],"props":{}},{"ctor":"Map","paths":[["screensToPreload"]],"props":{}},{"ctor":"ScreenHash","paths":[["screensToPreload","hashFn"]],"props":{}},{"ctor":"Object","paths":[["screensToPreload","store"]],"props":{}},{"ctor":"CreativeConfig","paths":[["config"]],"props":{"name":"Custom Display","color":"#bada55","skippable":false}},{"ctor":"Object","paths":[["config","options"]],"props":{}},{"ctor":"Object","paths":[["code"]],"props":{"js":"","css":""}}]) ;
+bnt.QueryParams.params = {};
+
+adController = new bnt.AdController(creative);
+
+backgroud = creative.elements.get("backgroud");
+
+backgroud.onclick
+	.addObserver(function () {
+		creative.getController().clickthru("https://ad.doubleclick.net/ddm/trackclk/N1237753.3242647TEADSFR/B25877812.304777683;dc_trk_aid=497349551;dc_trk_cid=151936428;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;ltd=");
+		bntTracking.trackEvent("backgroud: onclick", null);
+	});
+
+Screen1 = creative.screens[0];
+
+
+trkConfig = { uid: uid, cid: cid };
+bntTracking = new bnt.TrackingUnit(trkConfig);
+bntTracking.trackCreative(creative);
+            
+/* TEADS API CALLS */
+bnt.TeadsPlayerAddons.apiProxy.addObserver(function (api) {
+    if (api) {
+        api.getStudioData().map(function (data) {
+            if (data) data.display = true;else data = { display: true };
+            api.setStudioData(data).map(function () {
+                var state = bnt.get(bnt.State);
+                if (state) {
+                    api.sendVideoMetadata({ width: state.canvas.config.width, height: state.canvas.config.height });
+                } else {
+                    var fixStage = function (state) {
+                        api.sendVideoMetadata({ width: state.canvas.config.width, height: state.canvas.config.height }); // force player to resize slot in case it got a different size from the vast tag
+                        bnt.get(bnt.StateChangeDetector).stateUpdated.removeObserver(fixStage); // we do this only once -
+                    };
+                    bnt.get(bnt.StateChangeDetector).stateUpdated.addObserver(fixStage);
+                }
+            });
+        });
+    }
+});
+
+try {
+    bntAd.adApi.environment.videoSlot = null;
+} catch (err) {}
+
+/* END TEADS API CALLS */
+
+
+
+
+}</script><script src="a_data/2020.0"></script><style type="text/css">.slideFromRight{animation-name:slideFromRight}@keyframes slideFromRight{from{transform:translate3d(100%, 0, 0);visibility:visible;opacity:0}to{transform:translate3d(0, 0, 0);opacity:1}}.slideFromLeft{animation-name:slideFromLeft}@keyframes slideFromLeft{from{transform:translate3d(-100%, 0, 0);visibility:visible;opacity:0}to{transform:translate3d(0, 0, 0);opacity:1}}.slideFromTop{animation-name:slideFromTop}@keyframes slideFromTop{from{transform:translate3d(0, -100%, 0);visibility:visible;opacity:0}to{transform:translate3d(0, 0, 0);opacity:1}}.slideFromBottom{animation-name:slideFromBottom}@keyframes slideFromBottom{from{transform:translate3d(0, 100%, 0);visibility:visible;opacity:0}to{transform:translate3d(0, 0, 0);opacity:1}}.horizontalFlipIn{animation-name:horizontalFlipIn}@keyframes horizontalFlipIn{from{transform:perspective(500px) rotate3d(1, 0, 0, 90deg);animation-timing-function:ease-in;opacity:0}to{transform:perspective(500px)}}.verticalFlipIn{animation-name:verticalFlipIn}@keyframes verticalFlipIn{from{transform:perspective(500px) rotate3d(0, 1, 0, 90deg);animation-timing-function:ease-in;opacity:0}to{transform:perspective(500px)}}.fadeIn{animation-name:fadeIn}@keyframes fadeIn{from{opacity:0}to{opacity:1}}.zoomIn{animation-name:zoomIn}@keyframes zoomIn{from{opacity:0;transform:scale3d(0.3, 0.3, 0.3)}to{opacity:1}}.slideToRight{animation-name:slideToRight}@keyframes slideToRight{from{transform:translate3d(0, 0, 0);opacity:1}to{transform:translate3d(100%, 0, 0);visibility:visible;opacity:0}}.slideToLeft{animation-name:slideToLeft}@keyframes slideToLeft{from{transform:translate3d(0, 0, 0);opacity:1}to{transform:translate3d(-100%, 0, 0);visibility:visible;opacity:0}}.slideToTop{animation-name:slideToTop}@keyframes slideToTop{from{transform:translate3d(0, 0, 0);opacity:1}to{transform:translate3d(0, -100%, 0);visibility:visible;opacity:0}}.slideToBottom{animation-name:slideToBottom}@keyframes slideToBottom{from{transform:translate3d(0, 0, 0);opacity:1}to{transform:translate3d(0, 100%, 0);visibility:visible;opacity:0}}.horizontalFlipOut{animation-name:horizontalFlipOut}@keyframes horizontalFlipOut{from{transform:perspective(500px)}to{transform:perspective(500px) rotate3d(1, 0, 0, 90deg);animation-timing-function:ease-in;opacity:0}}.verticalFlipOut{animation-name:verticalFlipOut}@keyframes verticalFlipOut{from{transform:perspective(500px)}to{transform:perspective(500px) rotate3d(0, 1, 0, 90deg);animation-timing-function:ease-in;opacity:0}}.fadeOut{animation-name:fadeOut}@keyframes fadeOut{from{opacity:1}to{opacity:0}}.zoomOut{animation-name:zoomOut}@keyframes zoomOut{from{opacity:1}to{opacity:0;transform:scale3d(0.3, 0.3, 0.3)}}/*# sourceMappingURL=animations.css.map */
+</style><script>
+function bntStart() { bntIframeLoaded() }
+var bntAdParameters = {};
+			</script></head><body data-new-gr-c-s-check-loaded="8.876.0" data-gr-ext-installed=""></body></html>

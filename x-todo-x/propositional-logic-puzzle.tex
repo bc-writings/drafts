@@ -1,0 +1,91 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{amsmath}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+\usepackage{textcomp}
+\usepackage{tcolorbox}
+\usepackage{lymath}
+
+    
+\newtheorem{fact}{Fait}%[section]
+\newtheorem*{theorem}{Théorème}
+\newtheorem{example}{Exemple}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloorx}
+
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+	 
+
+\newcommand\word[1]{\emph{\og #1 \fg}}
+	 
+\begin{document}
+
+\title{BROUILLON - Est-il logique de dire que \texttt{MANGER + MANGER = GROSSIR} ?}
+\author{Christophe BAL}
+\date{20 Mars 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+	
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+
+doc sur énummge logique comme 
+
+MANGER + MANGER = GROSSIR (ch The oeie Ensemble le top bouquin)
+
+excuse pour excusrtion dans logique propositionnelle
+\end{document}

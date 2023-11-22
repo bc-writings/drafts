@@ -1,0 +1,159 @@
+.easySpoilerWrapper
+{
+font-family: Arial, Helvetica, sans-serif;
+padding: 0px;
+margin: 0px 0px;
+}
+
+.easySpoilerGroupWrapperFirst
+{
+padding: 0px;
+margin: 0px 0px;
+}
+
+.easySpoilerGroupWrapperLast
+{
+padding: 0px;
+margin: 0px 0px;
+}
+
+.easySpoilerGroupWrapperLastRow
+{
+margin:1px 0px;
+padding:5px;outline:5px;font-size:100%;vertical-align:middle;
+margin-left:auto; margin-right:auto;text-align:justify;
+}
+
+.easySpoilerGroupWrapper
+{
+padding: 0px;
+margin: 0px 0px;
+}
+
+.easySpoilerButtonBare
+{
+font-size:11px;
+}
+
+.easySpoilerButtonOther
+{
+margin: 0px 0px;
+font-size:11px !important;
+font-weight: bold !important;
+padding: 0 8px !important;
+text-decoration: none !important;
+font-weight: normal;
+background-color: #333 !important;
+color: #eee !important;
+border-color: #333 !important;
+}
+
+a.easySpoilerButtonOther:hover
+{
+ text-decoration: none;
+}
+
+.easySpoilerButton
+{
+margin: 0px 0px;
+font-size:11px !important;
+font-weight: bold !important;
+padding: 0 8px !important;
+text-decoration: none !important;
+font-weight: normal;
+background-color: #333 !important;
+color: #eee !important;
+border-color: #333 !important;
+}
+
+a.easySpoilerButton:hover
+{
+ text-decoration: none;
+}
+
+.easySpoilerGroupButton
+{
+border-radius: 0px;
+margin: 0px 0px;
+font-size:100%;
+text-decoration: none;
+font-weight: normal;
+}
+
+a.easySpoilerGroupButton:hover
+{
+ text-decoration: none;
+}
+
+.easySpoilerTitleA a {
+color: #eee !important;
+}
+
+.easySpoilerTitleA
+{
+margin:0px 0px;
+padding: 4px 8px !important;   
+border:0px;
+font-size: 11px !important;
+background-color: #333;
+color: #eee !important;
+}
+
+a.easySpoilerTitleA:hover
+{
+ text-decoration: none;
+}
+
+.easySpoilerTitleB
+{
+margin:0px 0px;
+padding: 4px 8px !important;   
+border:0px;
+background-color: #333;
+color: #eee;
+}
+
+.easySpoilerGroup
+{
+margin:0px 0px;
+padding:5px;
+border:0px;
+}
+
+.easySpoilerConclude
+{
+background-color: #fff;
+border-color: #222;
+margin:0px 0px;  
+padding:0px;     
+border-spacing:0px;      
+}
+
+.easySpoilerImage
+{margin:0px 0px !important; padding:0px !important; border:0px !important; border-spacing:0px !important; border-radius:0px; -moz-border-radius:0px; }
+
+.easySpoilerTable
+{margin:0px 0px;padding:0px;border:0px;outline:0px;font-size:100%;vertical-align:middle;
+border-collapse:collapse; border-spacing:0px; border-color:#000;
+margin-left:auto; margin-right:auto; width:100%;background:transparent;}
+
+.easySpoilerRow
+{margin:1px 0px;padding:0px;border:0;outline:5px;font-size:100%;vertical-align:middle;
+border-collapse:collapse;
+margin-left:auto; margin-right:auto;text-align:justify;}
+
+.easySpoilerSpoils
+{margin:0px 0px;padding:10px 0;
+outline:0px;
+font-family: Georgia, Times, "Times New Roman", sans-serif;
+line-height: 25px;
+font-size: 14px;
+vertical-align:middle;
+margin-left:auto; margin-right:auto;
+text-align: left !important;
+}
+
+.easySpoilerEnd
+{margin:1px 0px;padding:0px;border:0;outline:5px;font-size:100%;vertical-align:middle;
+border-collapse:collapse; border-spacing:1px; border-color:#AAAAAA; border-style:solid;
+margin-left:auto; margin-right:auto;text-align:justify;}

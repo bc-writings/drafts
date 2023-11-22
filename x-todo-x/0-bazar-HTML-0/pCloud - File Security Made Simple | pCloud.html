@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="" lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style id="react-tooltip">.__react_component_tooltip{border-radius:3px;display:inline-block;font-size:13px;left:-999em;opacity:0;padding:8px 21px;position:fixed;pointer-events:none;transition:opacity 0.3s ease-out;top:-999em;visibility:hidden;z-index:999}.__react_component_tooltip.allow_hover{pointer-events:auto}.__react_component_tooltip:before,.__react_component_tooltip:after{content:"";width:0;height:0;position:absolute}.__react_component_tooltip.show{opacity:0.9;margin-top:0px;margin-left:0px;visibility:visible}.__react_component_tooltip.type-dark{color:#fff;background-color:#222}.__react_component_tooltip.type-dark.place-top:after{border-top-color:#222;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-dark.place-bottom:after{border-bottom-color:#222;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-dark.place-left:after{border-left-color:#222;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-dark.place-right:after{border-right-color:#222;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-dark.border{border:1px solid #fff}.__react_component_tooltip.type-dark.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-dark.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-dark.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-dark.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-success{color:#fff;background-color:#8DC572}.__react_component_tooltip.type-success.place-top:after{border-top-color:#8DC572;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-success.place-bottom:after{border-bottom-color:#8DC572;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-success.place-left:after{border-left-color:#8DC572;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-success.place-right:after{border-right-color:#8DC572;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-success.border{border:1px solid #fff}.__react_component_tooltip.type-success.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-success.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-success.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-success.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-warning{color:#fff;background-color:#F0AD4E}.__react_component_tooltip.type-warning.place-top:after{border-top-color:#F0AD4E;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-warning.place-bottom:after{border-bottom-color:#F0AD4E;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-warning.place-left:after{border-left-color:#F0AD4E;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-warning.place-right:after{border-right-color:#F0AD4E;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-warning.border{border:1px solid #fff}.__react_component_tooltip.type-warning.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-warning.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-warning.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-warning.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-error{color:#fff;background-color:#BE6464}.__react_component_tooltip.type-error.place-top:after{border-top-color:#BE6464;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-error.place-bottom:after{border-bottom-color:#BE6464;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-error.place-left:after{border-left-color:#BE6464;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-error.place-right:after{border-right-color:#BE6464;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-error.border{border:1px solid #fff}.__react_component_tooltip.type-error.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-error.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-error.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-error.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-info{color:#fff;background-color:#337AB7}.__react_component_tooltip.type-info.place-top:after{border-top-color:#337AB7;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-info.place-bottom:after{border-bottom-color:#337AB7;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-info.place-left:after{border-left-color:#337AB7;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-info.place-right:after{border-right-color:#337AB7;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-info.border{border:1px solid #fff}.__react_component_tooltip.type-info.border.place-top:before{border-top:8px solid #fff}.__react_component_tooltip.type-info.border.place-bottom:before{border-bottom:8px solid #fff}.__react_component_tooltip.type-info.border.place-left:before{border-left:8px solid #fff}.__react_component_tooltip.type-info.border.place-right:before{border-right:8px solid #fff}.__react_component_tooltip.type-light{color:#222;background-color:#fff}.__react_component_tooltip.type-light.place-top:after{border-top-color:#fff;border-top-style:solid;border-top-width:6px}.__react_component_tooltip.type-light.place-bottom:after{border-bottom-color:#fff;border-bottom-style:solid;border-bottom-width:6px}.__react_component_tooltip.type-light.place-left:after{border-left-color:#fff;border-left-style:solid;border-left-width:6px}.__react_component_tooltip.type-light.place-right:after{border-right-color:#fff;border-right-style:solid;border-right-width:6px}.__react_component_tooltip.type-light.border{border:1px solid #222}.__react_component_tooltip.type-light.border.place-top:before{border-top:8px solid #222}.__react_component_tooltip.type-light.border.place-bottom:before{border-bottom:8px solid #222}.__react_component_tooltip.type-light.border.place-left:before{border-left:8px solid #222}.__react_component_tooltip.type-light.border.place-right:before{border-right:8px solid #222}.__react_component_tooltip.place-top{margin-top:-10px}.__react_component_tooltip.place-top:before{border-left:10px solid transparent;border-right:10px solid transparent;bottom:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-top:after{border-left:8px solid transparent;border-right:8px solid transparent;bottom:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-bottom{margin-top:10px}.__react_component_tooltip.place-bottom:before{border-left:10px solid transparent;border-right:10px solid transparent;top:-8px;left:50%;margin-left:-10px}.__react_component_tooltip.place-bottom:after{border-left:8px solid transparent;border-right:8px solid transparent;top:-6px;left:50%;margin-left:-8px}.__react_component_tooltip.place-left{margin-left:-10px}.__react_component_tooltip.place-left:before{border-top:6px solid transparent;border-bottom:6px solid transparent;right:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-left:after{border-top:5px solid transparent;border-bottom:5px solid transparent;right:-6px;top:50%;margin-top:-4px}.__react_component_tooltip.place-right{margin-left:10px}.__react_component_tooltip.place-right:before{border-top:6px solid transparent;border-bottom:6px solid transparent;left:-8px;top:50%;margin-top:-5px}.__react_component_tooltip.place-right:after{border-top:5px solid transparent;border-bottom:5px solid transparent;left:-6px;top:50%;margin-top:-4px}.__react_component_tooltip .multi-line{display:block;padding:2px 0px;text-align:center}</style>
+<meta charset="utf-8">
+<title>pCloud - File Security Made Simple | pCloud</title>
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="apple-itunes-app" content="app-id=692002098">
+<meta name="HandheldFriendly" content="true">
+<meta name="description" content="pCloud - service de stockage sur le cloud avec jusqu'à 10GB gratuit ! Stockez, partagez et envoyez de gros fichiers à n'importe qui. Inscrivez-vous maintenant et ayez vos fichiers partout avec vous.">
+<meta name="keywords" content="stockage sur le cloud, stockage en ligne, espace de stockage personnel, stockage en ligne gratuit, envoyer de gros fichiers, collaboration, partage de fichiers">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="last-modified" content="Tue, 24 Nov 2020 12:20:08 GMT">
+<meta name="google-site-verification" content="YkYcN4JMEPH_a4g3dnMeL1V9rOLTnAqe0NTqjOF1IVs">
+<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/npamdkabjncnnoaofdjcaipmnccofeem">
+<meta property="og:image" content="//pcdn-www.pcloud.com/Zmk/images/social_img/home-eu.png">
+<link rel="alternate" href="https://www.pcloud.com/fr/" hreflang="fr">
+
+
+<style>
+	#userinfo_wrap {
+		float: right;
+		height: 60px;
+		width: 147px;
+	}
+
+	body.logged_out .open-login-modal {
+		display: block;
+	}
+
+	body.logged_in .user,
+	body.logged_out .no_user,
+	body.is_mobile .for_mobile,
+	body.is_tablet .for_tablet,
+	body.is_tablet .for_desktop.for_tablet,
+	body.is_desktop .for_desktop.for_tablet,
+	body.is_premium .for_premium,
+	body.os_ios .for_ios,
+	body.os_android .for_android,
+	body.os_windows_phone .for_windowsphone {
+		display: block;
+	}
+
+	body.logged_in .user.inline,
+	body.logged_out .no_user.inline,
+	body.is_mobile .for_mobile.inline,
+	body.is_tablet .for_tablet.inline,
+	body.is_tablet .for_desktop.for_tablet.inline,
+	body.is_desktop .for_desktop.for_tablet.inline,
+	body.is_premium .for_premium.inline,
+	body.os_ios .for_ios.inline,
+	body.os_android .for_android.inline,
+	body.os_windows_phone .for_windowsphone.inline {
+		display: inline-block;
+	}
+
+	body.logged_in .user.table,
+	body.logged_out .no_user.table,
+	body.is_mobile .for_mobile.table,
+	body.is_tablet .for_tablet.table,
+	body.is_tablet .for_desktop.for_tablet.table,
+	body.is_desktop .for_desktop.for_tablet.table,
+	body.is_premium .for_premium.table,
+	body.os_ios .for_ios.table,
+	body.os_android .for_android.table,
+	body.os_windows_phone .for_windowsphone.table {
+		display: table;
+	}
+
+	body.logged_in .user.table-cell,
+	body.logged_out .no_user.table-cell,
+	body.is_mobile .for_mobile.table-cell,
+	body.is_tablet .for_tablet.table-cell,
+	body.is_tablet .for_desktop.for_tablet.table-cell,
+	body.is_desktop .for_desktop.for_tablet.table-cell,
+	body.is_premium .for_premium.table-cell,
+	body.os_ios .for_ios.table-cell,
+	body.os_android .for_android.table-cell,
+	body.os_windows_phone .for_windowsphone.table-cell {
+		display: table-cell;
+	}
+
+  body.logged_in .no_user,
+  body.logged_in .for_desktop.for_tablet.no_user,
+	body.logged_out .user,
+	body.is_mobile .for_desktop,
+	body.is_mobile .for_tablet,
+	body.is_tablet .for_desktop,
+	body.is_desktop .for_mobile,
+	body.is_desktop .for_tablet,
+	body .user,
+	body .no_user,
+	body .for_mobile,
+	body .for_premium,
+	body .for_android,
+	body .for_windowsphone,
+  body .for_ios,
+	body.is_mobile .for_tablet {
+		display: none;
+	}
+
+	@media(max-width: 767px) {
+		body .for_desktop {
+			display: none !important;
+		}
+		body .for_mobile {
+			display: block;
+		}
+		body .for_mobile.inline {
+			display: inline-block;
+		}
+		body .for_mobile.table {
+			display: table;
+		}
+	}
+
+	@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(359deg)}}
+	@-moz-keyframes spin{0%{-moz-transform:rotate(0deg)}to{-moz-transform:rotate(359deg)}}
+	@-o-keyframes spin{0%{-o-transform:rotate(0deg)}to{-o-transform:rotate(359deg)}}
+	@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(359deg)}}
+</style>
+
+<script type="text/javascript" async="" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/js_004"></script><script type="text/javascript" async="" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/analytics.js"></script><script type="text/javascript" async="" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/analytics.js"></script><script type="text/javascript" async="" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/js_002"></script><script type="text/javascript" async="" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/js"></script><script async="" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/uwt.js"></script><script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/280549965449042.js" async=""></script><script async="" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/fbevents.js"></script><script>
+    (function() {
+        if (typeof window.Set === "undefined" || typeof Array.prototype.map === "undefined") {
+            var s = document.createElement('script');
+            s.src = "https://pcdn-my.pcloud.com/Zmk/dist/js/polyfill.min.js";
+            document.getElementsByTagName('head')[0].appendChild(s);
+        }
+		})();
+	var globalFilesPath = "https://pcdn-my.pcloud.com/Zmk";
+	var detectedMobile = detectIsMobile();
+	var detectedTablet = detectIsTablet();
+	var detectedRetina = window.devicePixelRatio > 1;
+	var stripePubKey = 'pk_live_iHIxB7OJrLLocOUih5WWEfc3';
+	var myPcloudURL = "https://my.pcloud.com/".replace('pcdn-', '').split('.com').shift() + '.com/';
+	var upaymentURL = 'https://payments.pcloud.com';
+	var epaymentURL = 'https://epayments.pcloud.com';
+	var safeChargeURL = 'https://secure.gate2shop.com/ppp/purchase.do';
+  var safeChargeMerchantID = '161748';
+  var safeChargeMerchantSiteID = '161748';
+	var safeChargeEnv = 'prod';
+	var currentPageClass = 'home-eu';
+	var premiumPlanURL = "/fr/cloud-storage-pricing-plans.html?product=premium";
+	var premiumPlusPlanURL = "/fr/cloud-storage-pricing-plans.html?product=premium-plus";
+	var customPlanURL = "/fr/cloud-storage-pricing-plans.html?product=custom-plan";
+	var cryptoPlanURL = "/fr/cloud-storage-pricing-plans.html?product=crypto";
+	var webview = '';
+	var upgradeText = "Passer au niveau supérieur";
+	var initDevAddon = function(){};
+	var thisBranch = "Branch: master/";
+	var inFBnxfo = '' != 1 ? false : true;
+	var currentBAtext = webview ? "Rendez-vous dans les paramètres de votre compte ou contactez le propriétaire du compte si vous avez besoin de plus d'utilisateurs ou d'espace." : "Si vous avez besoin de plus d\'utilisateurs ou de stockage, rendez-vous dans <a href=\"https://my.pcloud.com/#page=b_account&tab-baccount=myaccount\" target=\"blank\">vos paramètres de compte</a> ou contactez le propriétaire du compte. Pour toute autre demande, veuillez <a href=\"mailto:support@pcloud.com\">nous contacter</a>.";
+	var driveDLcode = {
+		'Mac': 			  'XZRYKzXZ2z8Fr6282QFxca2UsLJzA7LXMOsV',
+		'Windows 10': 	  'XZPjiVXZm4bkm0EUAIBCfDdHdYdIdJVovGE7',
+		'Windows 10 32bit': 'XZPjiVXZm4bkm0EUAIBCfDdHdYdIdJVovGE7',
+		'Windows 10 64bit': 'XZ9jiVXZFJp8LPY7XSJ5PyXYvVPKQJw8738V',
+		'Windows 8': 	  'XZPjiVXZm4bkm0EUAIBCfDdHdYdIdJVovGE7',
+		'Windows 7': 	  'XZPjiVXZm4bkm0EUAIBCfDdHdYdIdJVovGE7',
+		'Windows Vista':  'XZPjiVXZm4bkm0EUAIBCfDdHdYdIdJVovGE7',
+		'Windows XP': 	  'XZANnh7ZJEbWISKu0KhteiyjlHFmq7eo0BdV',
+		'Windows 2000':   'XZANnh7ZJEbWISKu0KhteiyjlHFmq7eo0BdV',
+		'Linux 32bit':    'XZFLUXZgiFvDjEWrjBd5A0yP6qRvhcw4kAk',
+		'Linux 64bit':    'XZ5LUXZnCaQsycCaLFoymzccM68XFRwXyNX',
+		'Android apk':    'XZRJYYkZ54VtRuSAcxYLzyRyiiRSeYwCb1ck',
+		'Electron':       'XZjfKzXZ6h3uGRFId48VRNHHkuqajhRvMlPV',
+		'Electron 32bit': 'XZFBKzXZExVS86W0P8BgDdLs7EpE2pcNWyk0',
+		'Lightroom': 	  'XZXu2z7Z9rLkGvLPek5auaSWuwEwtpk8xw1X'
+	};
+	var addonDlLinks = {
+		'chrome': "https://chrome.google.com/webstore/detail/pcloud-save/npamdkabjncnnoaofdjcaipmnccofeem?authuser=1",
+		'firefox': "https://addons.mozilla.org/en-US/firefox/addon/pcloud-save/",
+		'opera': "https://addons.opera.com/en/extensions/details/pcloud-save/"
+	};
+		var CDN = "//pcdn-www.pcloud.com/Zmk/";
+	var apiServer = "eapi.pcloud.com";
+	var apiUrl = "//"+apiServer+"/";
+	var detectLang = true;
+	var isRtl = false;
+	var dlDriveSuccess = {
+		'windows': '/fr/how-to-install-pcloud-drive-windows.html',
+		'mac': '/fr/how-to-install-pcloud-drive-mac-os.html',
+		'linux': '/fr/how-to-install-pcloud-drive-linux.html'
+	};
+	var mobileButton = {
+		'android': {
+			'text': "Obtenir sur Google Play",
+			'link': "https://play.google.com/store/apps/details?id=com.pcloud.pcloud&referrer=utm_source?website&utm_medium?click"
+		},
+		'ios': {
+			'text': "Disponible d'App Store",
+			'link': "https://itunes.apple.com/us/app/pcloud/id692002098"
+		}
+			};	var jstranslations = {"_error_2000":"Mauvais nom d'utilisateur ou mot de passe","email_not_valid":"Adresse email invalide","short_mail":"L'adresse email est trop courte","must_accept_terms":"Vous devez accepter les conditions g\u00e9n\u00e9rales d\u2019utilisation","email_required":"Une adresse email est requise","pass_required":"Un mot de passe est requis","DOWNGRADE":"Passer au niveau inf\u00e9rieur","CHANGE_SUBSCRIPTION":"Changer de souscription","UPGRADE":"Passer au niveau sup\u00e9rieur","Current":"Actuel","PREMIUM_PLAN":"Plan Premium","PREMIUM_PLUS_PLAN":"Plan Premium Plus","PCLOUD_CRYPTO":"pCloud Encryption","for_month":"\/ mois","for_year":"\/ an","ba_expired_owner_error":"Votre compte a expir\u00e9, veuillez contacter votre Responsable de compte %manager%","ba_expired_owner_no_acc_error":"Votre compte a expir\u00e9, veuillez contacter notre \u00c9quipe de vente \u00e0 %sales_email%","ba_expired_user_error":"Votre compte Business a expir\u00e9, veuillez contacter %ba_owner% pour plus d'informations.","Free":"Gratuit","product_change":"modifier","HOME_PREMIUM_PLAN":"Premium 500 Go","HOME_PREMIUM_NAV":"Prix","HOME_PREMIUM_PLUS_PLAN":"Premium Plus 2 \u0422\u043e","GB":"Go","TB":"To","billed_annually":"annuellement","billed_monthly":"mensuellement","space":"espace","upsale_text_for_premium":"<h1>74 %<\/h1> des utilisateurs de pCloud Crypto ont \u00e9galement achet\u00e9 un plan Premium ! ","Premium":"Premium","get_premium":"Passer au mode Premium","upsale_text_for_crypto":"<h1>74 %<\/h1> des utilisateurs ayant un plan Premium ont \u00e9galement pCloud Crypto !","get_crypto":"Passer \u00e0 Crypto","custom_plan_description":"Faites votre choix","lifetime_premium":"Premium Lifetime","Business":"Business","your_current_plan_storage_traffic":"Votre plan actuel est %plan%. Vous avez %storage% d'espace et %traffic% de trafic de partage par mois.","plans_vivapcloud_current_message":"Votre plan actuel est VIVApCloud. Si vous souhaitez vous abonner \u00e0 un plan Premium ou \u00e0 un plan personnalis\u00e9, veuillez vous connecter avec une adresse e-mail diff\u00e9rente pour obtenir plus d'espace et de trafic de t\u00e9l\u00e9chargement d\u00e8s maintenant","plans_ba_current_msg_short":"Rendez-vous dans les param\u00e8tres de votre compte ou contactez le propri\u00e9taire du compte si vous avez besoin de plus d'utilisateurs ou d'espace.","your_ba_acc_settings":"vos param\u00e8tres de compte","premium_plan_valid_till":"Votre plan est valide jusqu'au %expires_date%","SIGN_UP_NEW":"S'inscrire","get_premium_plus":"Obtenez Premium Plus","design_your_plan_btn":"Concevez votre plan","add_storage_traffic_btn":"Ajoutez de l'espace et du trafic","go_premium_btn":"Passez au plant Premium","go_premium_plus_btn":"Passez au plant Premium Plus","header_logout":"D\u00e9connexion","Mobile App":"Appli mobile","pCloud Drive for %os%":"pCloud Drive pour %os%","annual_payment":"Annuel","i_want_efh":"Oui, je veux l'historique de fichiers prolong\u00e9","dont_want_efh":"Non, je ne veux pas l'historique de fichiers prolong\u00e9 !","access_files_with_efh":"Acc\u00e8s supprim\u00e9 ou versions pr\u00e9c\u00e9dentes des fichiers avec Historique de fichiers prolong\u00e9 pour %price% par %period% !","you_are_logged_with_premium_acc":"Vous \u00eates connect\u00e9 avec un compte %type%","You are currently logged in as":"Vous \u00eates actuellement connect\u00e9 en tant que","month_jan":"Janv","month_feb":"F\u00e9vr","month_mar":"Mars","month_apr":"Avril","month_may":"Mai","month_jun":"Juin","month_jul":"Juil","month_aug":"Aug","month_sep":"Sept","month_oct":"Oct","month_nov":"Nov","month_dec":"D\u00e9c.","or":"ou","and":"et","bf2018_upsell_cta":"Ajouter","footer_swiss_love":"Fait en %flag% avec amour","thank_you_payment":"Je vous remercie! Votre paiement a \u00e9t\u00e9 re\u00e7u!","bf2018_go_account":"ALLER SUR MON COMPTE","signup":"Inscription","signin":"Connexion","i_accept_pcloud_terms":"J'accepte les\u00a0https:\/\/www.pcloud.com\/fr\/terms_and_conditions.html[Conditions g\u00e9n\u00e9rales d\u2019utilisation], la https:\/\/www.pcloud.com\/fr\/privacy_policy.html[Politique de confidentialit\u00e9] et la https:\/\/www.pcloud.com\/fr\/int_pr_policy.html[Politique sur la propri\u00e9t\u00e9 intellectuelle]","form_email":"E-mail","form_password":"Mot de passe","create_account":"Cr\u00e9er un compte","data_region":"R\u00e9gion de donn\u00e9es","data_region_fail":"Echec du chargement de la r\u00e9gion de donn\u00e9es","data_region_united_states":"\u00c9tats-Unis","data_region_european_union":"Union europ\u00e9enne","data_region_tooltip_register":"La r\u00e9gion de donn\u00e9es est l'endroit o\u00f9 vos donn\u00e9es seront stock\u00e9es.","or_continue":"ou continuer avec","bottom_banner_off":"jusqu'\u00e0 %percent% de r\u00e9duction","bf2018_counter":"D\u00e9p\u00eachez-vous! La promotion se termine dans","hours":"heures","minutes":"minutes","seconds":"secondes","footer_family":"Famille","Encryption":"Chiffrement","bf2018_cta":"ACHETEZ ICI","modal_discount":"75% remise","timer_hurryup":"D\u00e9p\u00eachez-vous ! La promotion se terminera en..."};
+	var currentLang = "fr";
+	var jsTranslate = jsTranslate || {};
+	var globalLang = globalLang || {};
+	var redirecting = false;
+	var userDropdownWrap;
+	var scrollWidth;
+	var allImages;
+	var siteLogo;
+	var domBody;
+	var defaultLang = "en";
+	var pagekeysforlabel = [];
+	var showMobileMenu = true;
+	function __(key, str, repl) {
+				if (jsTranslate && key in jsTranslate) {
+			return jsTranslate[key];
+		} else if (key in jstranslations) {
+			return jstranslations[key];
+		} else if (currentLang in globalLang && key in globalLang[currentLang]) {
+			return _repl(globalLang[currentLang][key]);
+		} else if (defaultLang in globalLang && key in globalLang[defaultLang]) {
+			return _repl(globalLang[defaultLang][key]);
+		} else if (str) {
+			return _repl(str);
+		} else {
+			return _repl(key);
+		}
+
+		function _repl(str) {
+			for (var n in repl) {
+				str = str.replace('%' + n + '%', repl[n]);
+			}
+
+			return str;
+		}
+	}
+
+	function initStripeKey() {
+		if (typeof Stripe != 'undefined') {
+			Stripe.setPublishableKey('pk_live_iHIxB7OJrLLocOUih5WWEfc3');
+		}
+	};
+
+	function detectIsMobile() {
+		return /Mobile|mini|Fennec|Android|iP(od|hone)/.test(navigator.appVersion);
+	};
+
+	function detectIsTablet() {
+		return /ipad/.test(navigator.appVersion.toLowerCase()) ||
+			(/android/.test(navigator.appVersion.toLowerCase()) && !(/mobile/.test(navigator.appVersion.toLowerCase()))) ||
+			/tablet|kindle|playbook|sch-i800|xoom/.test(navigator.appVersion.toLowerCase());
+	};
+
+	function detectOS(showVersion, shortOS) {
+	    var os;
+	    var result;
+	    var osVersion ;
+	    var nAgt = navigator.userAgent;
+	    var nVer = navigator.appVersion;
+	    var clientStrings = [
+	        {s:'Windows 10', r:/(Windows 10|Windows NT 10.0)/},
+	        {s:'Windows 8', r:/(Windows 8.1|Windows NT 6.3)/},
+	        {s:'Windows 8', r:/(Windows 8|Windows NT 6.2)/},
+	        {s:'Windows 7', r:/(Windows 7|Windows NT 6.1)/},
+	       	{s:'Windows Vista', r:/Windows NT 6.0/},
+	        {s:'Windows Server 2003', r:/Windows NT 5.2/},
+	        {s:'Windows XP', r:/(Windows NT 5.1|Windows XP)/},
+	        {s:'Windows 2000', r:/(Windows NT 5.0|Windows 2000)/},
+	        {s:'Windows ME', r:/(Win 9x 4.90|Windows ME)/},
+	        {s:'Windows 98', r:/(Windows 98|Win98)/},
+	        {s:'Windows 95', r:/(Windows 95|Win95|Windows_95)/},
+	        {s:'Windows NT 4.0', r:/(Windows NT 4.0|WinNT4.0|WinNT|Windows NT)/},
+	        {s:'Windows CE', r:/Windows CE/},
+	        {s:'Windows 3.11', r:/Win16/},
+			{s:'Windows Phone', r:/Windows Phone/},
+	        {s:'Android', r:/Android/},
+	        {s:'Open BSD', r:/OpenBSD/},
+	        {s:'Sun OS', r:/SunOS/},
+	        {s:'Linux', r:/(Linux|X11)/},
+	        {s:'iOS', r:/(iPhone|iPad|iPod)/},
+	        {s:'Mac OS X', r:/Mac OS X/},
+	        {s:'Mac OS', r:/(MacPPC|MacIntel|Mac_PowerPC|Macintosh)/},
+	        {s:'QNX', r:/QNX/},
+	        {s:'UNIX', r:/UNIX/},
+	        {s:'BeOS', r:/BeOS/},
+	        {s:'OS/2', r:/OS\/2/},
+	        {s:'Search Bot', r:/(nuhk|Googlebot|Yammybot|Openbot|Slurp|MSNBot|Ask Jeeves\/Teoma|ia_archiver)/}
+	    ];
+
+	    for (var id in clientStrings) {
+	        var cs = clientStrings[id];
+
+	        if (cs.r.test(nAgt)) {
+	            os = cs.s;
+	            break;
+	        }
+	    }
+
+		if (/Windows/.test(os)) {
+			osVersion = /Windows (.*)/.exec(os)[1];
+			os = 'Windows';
+		}
+
+	    switch (os) {
+	        case 'Android':
+	            osVersion = /Android ([\.\_\d]+)/.exec(nAgt)[1];
+	            break;
+
+	        case 'iOS':
+	            osVersion = /OS (\d+)_(\d+)_?(\d+)?/.exec(nVer);
+	            osVersion = osVersion[1] + '.' + osVersion[2] + '.' + (osVersion[3] | 0);
+	            break;
+
+	        case 'Linux':
+		        osVersion = nVer.indexOf("Linux i686") != -1 ? '32bit' : '64bit';
+	    }
+
+	    if (!os) {
+	    	os = 'Linux';
+	    }
+
+	    result = os + (osVersion ? (' ' + osVersion) : '' );
+
+	    if (showVersion) {
+	    	result = osVersion;
+	    }
+
+	    if (shortOS) {
+	    	result = osVersion == 'Phone' ? os + ' phone' : os.split(' ')[0].replace(/\d+/, '');
+	    	result = result.toLowerCase();
+	    }
+
+	    return result;
+	};
+
+	function onLoadChanges() {
+		for (var i = 0; i < allImages.length; i++) {
+			if (allImages[i].getAttribute('data-lazy')) {
+				var source;
+				var forceHide = allImages[i].getAttribute('data-forcehide');
+
+				if (forceHide == 'mobile' && detectedMobile) {
+					return;
+				}
+
+				if (detectedRetina && allImages[i].getAttribute('data-lazy-retina')) {
+					source = allImages[i].getAttribute('data-lazy-retina');
+				} else {
+					source = allImages[i].getAttribute('data-lazy');
+				}
+
+				allImages[i].setAttribute('src',  source);
+			}
+		}
+
+		domBody.classList.add('window_loaded');
+	};
+
+	function onReadyChanges() {
+		domBody = document.body;
+		siteLogo = document.getElementById('main_logo');
+		userDropdownWrap = document.getElementById('userinfo_wrap');
+
+		if (document.cookie.search('pcauth') != -1) {
+			domBody.classList.add('logged_in');
+			domBody.classList.remove('logged_out');
+
+			if (!detectedMobile && !detectedTablet && siteLogo) {
+				siteLogo.setAttribute('href', myPcloudURL);
+			}
+		} else {
+			domBody.classList.add('logged_out');
+			domBody.classList.remove('logged_in');
+		}
+
+		var scrollDiv = document.getElementById('scroll_div');
+		scrollWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+		allImages = document.images;
+
+		domBody.classList.add('os_' + detectOS(false, true).replace(/ /g, '_'));
+
+		if (detectedRetina) {
+			domBody.classList.add('is_retina');
+		}
+
+		if (detectedMobile) {
+			domBody.classList.add('is_mobile');
+		}
+
+		if (detectedTablet) {
+			domBody.classList.add('is_tablet');
+			domBody.classList.remove('is_mobile');
+		}
+
+		if (!detectedMobile && !detectedTablet) {
+			domBody.classList.remove('is_mobile', 'is_tablet');
+			domBody.classList.add('is_desktop');
+		}
+
+		if (scrollWidth > 0) {
+			domBody.classList.add('has_scroll');
+		}
+
+		for (var i = 0; i < allImages.length; i++) {
+			var forceHide = allImages[i].getAttribute('data-forcehide');
+
+			if (forceHide == 'mobile' && detectedMobile && !detectedTablet) {
+				continue;
+      }
+
+      if (detectedMobile && allImages[i].getAttribute('data-src-mobile')) {
+        allImages[i].setAttribute('src',  allImages[i].getAttribute('data-src-retina'));
+      } else if (allImages[i].getAttribute('data-src-retina')) {
+				allImages[i].setAttribute('src',  allImages[i].getAttribute(detectedRetina ? 'data-src-retina' : 'data-src'));
+      }
+		}
+	};
+
+		if (document.cookie.search('pcauth') != -1) {
+		if (!detectedMobile && !detectedTablet && location.search.indexOf("unsubscribe") == -1) {
+			window.location = myPcloudURL;
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', onReadyChanges, false);
+	window.addEventListener('load', onLoadChanges);
+</script>
+<script type="text/javascript">
+	pageLanguage = 'fr';
+	jsCookies = {
+	    get: function(name) {
+	        var nameEQ = name + "=";
+	        var ca = document.cookie.split(';');
+
+	        for (var i in ca) {
+	            var c = ca[i];
+
+				while (c.charAt(0) == ' ') {
+					c = c.substring(1,c.length);
+				}
+
+				if (c.indexOf(nameEQ) == 0) {
+					return c.substring(nameEQ.length,c.length);
+				}
+			}
+
+			return null;
+		},
+	    set: function(name, value, days, path, domain) {
+	        var date = new Date();
+	        date.setTime(date.getTime()+(days*24*60*60*1000));
+	        var expires = "; expires="+date.toGMTString();
+
+	        document.cookie = name+"="+value+expires+((path) ? "; path=" + path : "")+((domain) ? "; domain=" + domain : "");
+	    },
+	};
+
+	function setLangCookie(lang) {
+	    jsCookies.set('lang', lang, 365, '/', '.pcloud.com');
+	};
+
+	function getBrowserLang() {
+	    var lang = {'bg':'bg','tr':'tr','en':'en','es':'es','ru':'ru','pt':'pt','fr':'fr','it':'it','zh':'zh','fa':'fa', 'de':'de'};
+	    var code;
+
+	    if (typeof navigator.languages == 'undefined') {
+	        return 'en';
+	    }
+
+	    for (var n = 0; n < navigator.languages.length; ++n) {
+	        code = navigator.languages[n].match(/^[a-z]{2}/i)[0].toLowerCase();
+
+	        if (code in lang) {
+	            return lang[code];
+	        }
+	    }
+
+	    return 'en';
+	};
+
+
+	function getRefIdForReferer(referrer) {
+		if (!referrer || referrer == '') {
+			return;
+		}
+		var referrers = [
+			{ baseurl: 'cloudgratuit\.fr',  refid: 2620 },
+			{ baseurl: 'onlinecloudbackups\.net', refid: 2672 },
+			{ baseurl: 'almacenamientoenlanube\.org', refid: 3000 },
+			{ baseurl: 'bulut-depolama\.com', refid: 3083 },
+			{ baseurl: 'macg\.co', refid: 6894 },
+			{ baseurl: 'medium\.com/@Vanina/dropbox-alternatives-top-5best-cloud-storage-services-2017-a703af7d7796', refid: 9765 },
+			{ baseurl: 'beebom\.com', refid: 12864 }
+		];
+		for (var i=0; i < referrers.length; i++) {
+			var r = referrers[i];
+			var refFound = new RegExp("//[^.]*\.?" + r.baseurl + "/?");
+			if (refFound.test(referrer)) {
+				return r.refid;
+			}
+		}
+	}
+
+	function setRefFromReferer(referrer) {
+		var refid = getRefIdForReferer(referrer);
+		if (refid) {
+			jsCookies.set('ref', refid, 5, '/', '.pcloud.com');
+		}
+		return refid;
+	}
+	if (!jsCookies.get('ref') || jsCookies.get('ref') === "0") {
+		setRefFromReferer(document.referrer);
+	}
+
+	function detect_language() {
+		if (!detectLang) {
+			return;
+		}
+
+	    var t = getBrowserLang();
+	    var c = jsCookies.get('lang');
+	    var redirect = false;
+	    var lang_cookie = jsCookies.get('lang') || getBrowserLang();
+
+	    setLangCookie(lang_cookie);
+	    if (pageLanguage=="fa" || c=="fa" || lang_cookie=="fa"){
+			  setLangCookie("en");
+	    }
+
+	    if (pageLanguage == 'en' && pageLanguage != lang_cookie) {
+	    	redirecting = true;
+	        window.location.replace('/'+ lang_cookie + window.location.pathname + window.location.search + window.location.hash);
+	    }
+	};
+
+	detect_language();
+</script>
+
+ <link type="text/css" rel="stylesheet" href="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/site.css"> <link type="text/css" rel="stylesheet" href="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/home-eu.css"><!--[if lte IE 9]>
+	<link type="text/css" rel="stylesheet" href="//pcdn-www.pcloud.com/Zmk/css/c_site_ie9.css" />
+<![endif]-->
+<link href="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/css.css" rel="stylesheet">
+
+<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/jquery.js"></script>
+<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/jquery_002.js"></script>
+
+
+
+<!-- [if IE ]> -->
+	<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/polyfill.js"></script>
+<!-- <![endif] -->
+
+<!--[if lt IE 9]>
+  <script src="//pcdn-www.pcloud.com/Zmk/js/ie/html5shiv.js"></script>
+  <script src="//pcdn-www.pcloud.com/Zmk/js/ie/nwmatcher-1.2.5-min.js"></script>
+  <script src="//pcdn-www.pcloud.com/Zmk/js/ie/selectivizr-1.0.3b.js"></script>
+  <script src="//pcdn-www.pcloud.com/Zmk/js/ie/respond.min.js"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+	<script src="//pcdn-www.pcloud.com/Zmk/js/ie/jquery.corner.js"></script>
+<![endif]-->
+
+<link href="https://www.pcloud.com/images/fav.ico" rel="shortcut icon" type="image/x-icon">
+
+<link rel="prefetch" href="https://pcdn-www.pcloud.com/Zmk/css/plans-family.css">
+<link rel="prefetch" href="https://pcdn-www.pcloud.com/Zmk/js/plans.js">
+<link rel="prefetch" href="https://www.pcloud.com/fr/cloud-storage-pricing-plans.html">
+
+
+<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/global-lang.js"></script>
+<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/common.js"></script>
+<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/global.js"></script><style type="text/css" data-styled-components="LQmCp jNQJt eYnhLs" data-styled-components-is-local="true">
+/* sc-component-id: sc-keyframes-LQmCp */
+@-webkit-keyframes LQmCp{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes LQmCp{100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+/* sc-component-id: ButtonDefault__ButtonWrap-igbuEU */
+
+.jNQJt{height:34px;line-height:34px;border-radius:5px;color:#fff;font-family:Roboto;-webkit-text-decoration:none;text-decoration:none;text-align:center;cursor:pointer;font-weight:600;font-size:13px;position:relative;padding:0;width:auto;min-width:auto;padding:0 20px;margin:0 auto;display:inline-block;box-sizing:border-box;border:none;opacity:1;background:transparent;-webkit-transition:all 250ms ease-in-out;transition:all 250ms ease-in-out;display:inline-block;margin:0 auto;}.jNQJt > span{visibility:visible;}
+.eYnhLs{height:34px;line-height:34px;border-radius:5px;color:#fff;font-family:Roboto;-webkit-text-decoration:none;text-decoration:none;text-align:center;cursor:pointer;font-weight:600;font-size:13px;position:relative;padding:0;width:auto;min-width:auto;padding:0 20px;margin:0 auto;display:inline-block;box-sizing:border-box;border:none;opacity:1;background:#17bed0;-webkit-transition:all 250ms ease-in-out;transition:all 250ms ease-in-out;display:inline-block;margin:0 auto;}.eYnhLs > span{visibility:visible;}</style><style type="text/css" data-styled-components="lcoAGj iFZoIK fALrvP hDmxRT fiqpCt bwhBNk gEivgy drBrCT ifQYBd cbMIyP dVWOzY hIoolk hEJseJ fwiqzD" data-styled-components-is-local="true">
+/* sc-component-id: sc-keyframes-lcoAGj */
+@-webkit-keyframes lcoAGj{0%{-webkit-transform:scale(0.1,0.1);-ms-transform:scale(0.1,0.1);transform:scale(0.1,0.1);opacity:0;}50%{opacity:1;}100%{-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0) scale(1.2,1.2);-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);-webkit-transform:scale(1.0,1.0);-ms-transform:scale(1.0,1.0);transform:scale(1.0,1.0);opacity:0;}}@keyframes lcoAGj{0%{-webkit-transform:scale(0.1,0.1);-ms-transform:scale(0.1,0.1);transform:scale(0.1,0.1);opacity:0;}50%{opacity:1;}100%{-webkit-backface-visibility:hidden;-webkit-transform:translateZ(0) scale(1.2,1.2);-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);-webkit-transform:scale(1.0,1.0);-ms-transform:scale(1.0,1.0);transform:scale(1.0,1.0);opacity:0;}}
+/* sc-component-id: DataCenterDropdown__Wrapper-ceTeua */
+
+.ifQYBd{display:table;width:100%;height:25px;font-size:13px;border-bottom:1px solid #eeeeee;margin-bottom:15px;}.ifQYBd .tooltip-icon{float:right;}.ifQYBd .tooltip-container{padding:15px 20px;max-width:250px;border-radius:6px;font-size:12px;line-height:1.35;font-weight:400;width:100%;}
+/* sc-component-id: DataCenterDropdown__DropdownArrow-evgpVg */
+
+.hEJseJ{width:7px;height:7px;margin-bottom:5px;margin-left:7px;cursor:pointer !important;border-right:1px solid #000000;border-bottom:1px solid #000000;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+/* sc-component-id: DataCenterDropdown__DropdownText-bssUxI */
+
+.dVWOzY{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;line-height:10px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:black;cursor:pointer !important;}
+/* sc-component-id: DataCenterDropdown__SelectedLocation-tnrbc */
+
+.hIoolk{display:inline-block;margin-left:5px;font-weight:600;color:#000;cursor:pointer !important;}
+/* sc-component-id: DataCenterDropdown__InfoIcon-hTVhLC */
+
+.fwiqzD{float:right;width:16px;height:16px;cursor:pointer !important;background-position:center;background-repeat:no-repeat;background-size:contain;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTEvMTMvMTk7EuPxAAAA0ElEQVQ4jaWTMQ6CQBBFH1t6BcMpfoK1hcfQyoKE85hQWOkxLKwlO5eQeAVaLNg1xCiIvHJ2/p/s7vykbVv6mFkG7IENsAzlB3ABjpKqfn8SDcxsAZTAlmHOQC6peRkE8RXIRsSRClhLalwolBPEhN4SIPHeZ8DtU5ckAMzsm9HKAcWEye8Uiff+DqR/GtRuSCzpdY0vpG7o9BccUM/Q147u///l6oDDDIND3MQT4yv8zlnSLj5iTreev1IFDQ4gBGNNF5TRyYQcQC+NkalxfgL/N0iBmuE65wAAAABJRU5ErkJggg==);}@media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min--moz-device-pixel-ratio:1.5), only screen and (-o-min-device-pixel-ratio:1.5/1), only screen and (min-resolution:144dpi), only screen and (min-resolution:1.5dppx){.fwiqzD{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTEvMTMvMTk7EuPxAAABu0lEQVRYhc2XMWoCQRSGvx20S9J4AiFdQIKvCXZWtoKHSHIBwRMIXiDJIQTbVHbB5oUgpBM8gY2xs5gUM5O4RnFXd9183TKy/+/Mznv/i6y1JEFVK0AbaAI1oApc+OUVMAemwBgYicgiyXujQwZUtQb0gA5QTuQW1sAQ6IvI9CgDqnoJDIB7IEoovI0FXoCuiHwlNqCqN8AIuD5SeJsZ0BaRz4MGVPUOeAWuMhIPLIGWiEz2GvD//C0H8U0Tjc2d+DHgz/yd7LZ9HzOgHr4Js7EwOIM4XmMQHiJrbbhqH6T42kUk9qyqaUxY4FZEpmEHemnEMyDymhhf4TpnFA90VLVicOU1aYXLkjLQLuFqe2pSnvk+mgbXWIqiVsJ1tdSceAsCVcNvSy2CC3P4N/licGGiKFYGl2SKYm5wMaoopgaX4YpibHDJZ12A+BoYGZ9ehwUYGIrIIlzDPq5FngvrNWOJ6Al4OJOBZxF5hHgi6uLiUt7MvBYxAz6jtXHBMS+WuHj+MyPESrFPq62cTIRYHpsN/vQCn9sbZHscM1wcn2wv7GxG3mUdeOa022H9O+q7piL4z8PpDiO5jOfftvSnxiiTvPIAAAAASUVORK5CYII=);}}
+/* sc-component-id: DataCenterDropdown__DropdownWrapper-kKAkgx */
+
+.cbMIyP{float:left;color:#000;}
+/* sc-component-id: InputStyledCheckbox__Container-kbtRqP */
+
+.fiqpCt{display:block;position:relative;line-height:13px;padding-left:13px;padding-bottom:0;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.fiqpCt input{position:absolute;opacity:0;height:0;width:0;}.fiqpCt:hover input ~ span{background-color:#fafafa;}.fiqpCt input[type="checkbox"]:checked ~ span{background-color:#17bed0;border:2px solid #17bed0;border-radius:2px;}.fiqpCt input[type="checkbox"]:checked ~ span:after{display:block;}.fiqpCt span:after{top:0px;left:3px;height:5px;width:2px;border:solid white;border-width:0 2px 2px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);}
+/* sc-component-id: InputStyledCheckbox__Checkmark-bdcGSj */
+
+.bwhBNk{position:absolute;top:0;left:0;width:13px;height:13px;border:1px solid #b9b9b9;border-radius:2px;box-sizing:border-box;}.bwhBNk:after{content:"";position:absolute;display:none;}
+/* sc-component-id: FormSharedComponents__InputPassWrapper-kqQtoi */
+
+.fALrvP{position:relative;}
+/* sc-component-id: FormSharedComponents__Terms-gzapug */
+
+.gEivgy{display:inline-block;font-size:13px;color:#000;text-align:left;margin-left:10px;margin-top:-2px;}.gEivgy a{color:#26b8c7;-webkit-text-decoration:underline;text-decoration:underline;}
+/* sc-component-id: FormSharedComponents__TermsWrapper-YMwPj */
+
+.hDmxRT{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;margin-bottom:15px;}
+/* sc-component-id: FormSharedComponents__ErrorMessage-fYpcBv */
+
+.iFZoIK{color:#ff4d4d;text-align:center;line-height:15px;padding:5px 0;min-width:initial;min-height:15px;font-size:13px;}
+/* sc-component-id: FormSharedComponents__Or-ePIXMY */
+
+.drBrCT{text-align:center;margin:10px 0px;color:#999;font-size:13px;}</style><style type="text/css" data-styled-components="gTcftA iORkxx iECmZH dBuhod ucfzi" data-styled-components-is-local="true">
+/* sc-component-id: sc-keyframes-gTcftA */
+@-webkit-keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}@keyframes gTcftA{10%,90%{-webkit-transform:translate3d(-1px,0,0);-ms-transform:translate3d(-1px,0,0);transform:translate3d(-1px,0,0);}20%,80%{-webkit-transform:translate3d(2px,0,0);-ms-transform:translate3d(2px,0,0);transform:translate3d(2px,0,0);}30%,50%,70%{-webkit-transform:translate3d(-4px,0,0);-ms-transform:translate3d(-4px,0,0);transform:translate3d(-4px,0,0);}40%,60%{-webkit-transform:translate3d(4px,0,0);-ms-transform:translate3d(4px,0,0);transform:translate3d(4px,0,0);}}
+/* sc-component-id: sc-keyframes-iORkxx */
+@-webkit-keyframes iORkxx{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes iORkxx{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+/* sc-component-id: Registration__Wrapper-kawNjB */
+
+.ucfzi{position:relative;}.ucfzi .butt{border-radius:7px;}
+/* sc-component-id: sc-keyframes-iECmZH */
+@-webkit-keyframes iECmZH{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes iECmZH{0%{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg);}}
+/* sc-component-id: sc-keyframes-dBuhod */
+@-webkit-keyframes dBuhod{0%{opacity:0;-webkit-transform:scale(0.92,0.92);-ms-transform:scale(0.92,0.92);transform:scale(0.92,0.92);}100%{opacity:1;-webkit-transform:scale(1,1);-ms-transform:scale(1,1);transform:scale(1,1);}}@keyframes dBuhod{0%{opacity:0;-webkit-transform:scale(0.92,0.92);-ms-transform:scale(0.92,0.92);transform:scale(0.92,0.92);}100%{opacity:1;-webkit-transform:scale(1,1);-ms-transform:scale(1,1);transform:scale(1,1);}}</style><style type="text/css" data-styled-components="hTeFeX iEuydt rsVTh hdWFoF guspRC" data-styled-components-is-local="true">
+/* sc-component-id: FacebookButton__ButtonSmall-kbnVOo */
+
+.rsVTh{background-color:#ffffff;color:black !important;border:1px solid #dfdfdf !important;background-repeat:no-repeat;background-position:center;background-size:22px 22px;width:49% !important;margin:0 7px;position:relative;display:inline-block;box-sizing:border-box;height:40px !important;line-height:40px !important;padding-left:15px;border-radius:7px;font-weight:600;font-size:13px;text-align:center;cursor:pointer !important;margin:0;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMi8yNC8yME7WUPwAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAABNElEQVQ4jaWVbXHDMAyGn+4GoBaBLgw2BAuEMViKYC2DlEGHYCmDQQiElkEQvAuD7EfdzEvjXFPrzhdbVp6T9WHTdR1zh3OucM4dnXNlzOaRmWJmFfDul5uY3aLrujnQAvjyy0ZSFrN9uJl6ljKYr6cM54JXQA28SKqnDEdDYWZPQBGoKkmN31sCb34AHMP9KNjM9sDHiBMnoAVeI07uJJWj4EHG75Hs4nkfYzPLE6HrMBxh8ooE6EFSFSpCcJ4A3g8VfYzN7PZOGYikxVA3t45HxZdnFNwksPMp8CkBXPrGGQXXCeAVUJvZ80URJm8J/CTAIbjxeo8ltcAhEdz/P6yKMgHaENTzP7Bvyd2d4K0/9TXYw0ugmgn9lPQdKmINsuXvWI2f50DmvxXnK7QFNpKu3r5fYa6o5dvze6cAAAAASUVORK5CYII=);}@media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min--moz-device-pixel-ratio:1.5), only screen and (-o-min-device-pixel-ratio:1.5/1), only screen and (min-resolution:144dpi), only screen and (min-resolution:1.5dppx){.rsVTh{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMi8yNC8yME7WUPwAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAACe0lEQVRYhc2Y0XHTQBCGvzC8m9kGcAdABSgVBCpAqSCmgjgV4HRgVxBTAaID04HTwOJUYB50GMbaPZ1lneR/Jg+R7taf13f/7d7Vfr9nKInIG6AMfztVLU6N8apfJF8iMgd+A9+Ad13jvO4LyFPIakUTctcl3hAZrrAzWnUJlhVYRBbYsDtg2SVmNmARmQJ3zutHVb24JTFznm+ARdegOYE/Gc92wG3X7EJe4LdH/2+AD6q6OSdodlsjLAFVXfURrBNw2FDTv0DOT1yo6k9jbnH0aKuq29TPvko9mgPkjHptHv/cz8CaOpONDxeRMsy7ccI/U9vcom19twKHk2qOb1HH+kUNvwWKADpJnPsCzFR16Q2IAkeO1dxaqWppvXBdYkRYgC8iYvp4zNaWjAMLtV+b9mcuibCTf+RlcrUBrr3N52V4ng0nrtaTsAEc7OtjRqiYHtpOQivDVg0whLaq2loUWcBF/yxJSjq6LeBpvxzJqlIGWcBjWVlSFTdY19ym1Br5YoBF5H3KuIsBJnHvWMCNGnYgFSmDLODO/daZKkPBFZUFfFbPdYYm+J32QRZw1TtKuu5Dd+LKq9aGu9Js6gUoVXVtvfRc4ns+nlZNgCcRmVtr2gM2v93AusfYTyZwaALHcov/1Uhc7OB4zAiSqka5GQNeMG6WV9YdhwscipExs2wW8221xIL6QmRoPXqtUhQ4ZPlrFiRfOyJNcGu1Fgx8yKXx+aSu2ZKqzhimxnhQ1So24JR6+Jq80EtVnbcNSr5uhcOdxRPgdQdbarOv+GeJU+pat4yEXqrqbQrDScBwuCS8CwDTALam9s2qZd5NmFeEeRW1I7jzjvUHNVLeZueceUQAAAAASUVORK5CYII=);}}
+.hdWFoF{background-color:#ffffff;color:black !important;border:1px solid #dfdfdf !important;background-repeat:no-repeat;background-position:center;background-size:22px 22px;width:49% !important;margin:0 7px;position:relative;display:inline-block;box-sizing:border-box;height:40px !important;line-height:40px !important;padding-left:15px;border-radius:7px;font-weight:600;font-size:13px;text-align:center;cursor:pointer !important;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAxMS8wNC8xOZul8vgAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzbovLKMAAABrElEQVQ4ja2VvUvDQBiHn5yt4mDAD2gGcbCC4OTX4lQQpJtOoovF2cVF2kVB0CXQpYvO6l/gWNTBQVc7OWkHF2+oQlNQS9U45KIxpk1b+0zJvZcnl+TN7zTbtgnCyFgGsAYkgUlgUJWegAKQB06kqcug6zW/2MhYfcAesAFEA+/6Qw04AHakqVfqio2MNQGcAmMhQj93wJI09ds/YiW9BIZalLqUgIQr12zbdh//Boi3KXW5B6akqVciamC/GenWQg+rM1GG+wXWm8118YP1oxfvlLhybWqxdNkAHgj5UCuzUXLLvX/GjYzlH6oBIwJIhUkBVme6w6a4RIFUBKdPQ5kb7fo+zp5VyZ5XG01PCpzmb4kQKcCkAAZaFTfBgBZLl4P/aUCaesOry68247uVwJoAnttd1u3jZ73Ss8AJlLa4Kr7XKxUiOCk1H1T19qj3tQT0rp+8AI5xmrpT1IBjofL0sIPiQ2nqUqiTbZwA+S/3yoUAUCG9iBN97VICFt3Ad1eMytEETmi3yh2eLP4l9singRzNfdCamjvtlULAnufi30ylqQ96aheEbKZfwdyRw727oHEAAAAASUVORK5CYII=);}@media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min--moz-device-pixel-ratio:1.5), only screen and (-o-min-device-pixel-ratio:1.5/1), only screen and (min-resolution:144dpi), only screen and (min-resolution:1.5dppx){.hdWFoF{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMTEvMDQvMTmbpfL4AAADfUlEQVRYhc2ZO2gUQRiAv9ucJj5YyVlkEW1OjIXRKoImYiw02ojaiRDF4BNErhDXxiCx2i4SQW0MKAjaiGgTqyjkgY9GkxRKbARdCyO3EnPiJWcxc+flbtfdvZ3c5Sv3dv/5mJv9559/Y7lcjkoxTCcB7AE6gBZgE7AWWClv+QV8Bz4C48ALYMi29OlKx4yFFTZMJw4cArqBTiAecsws8By4CzyxLT0b5uHAwobpxIAuoAfYGFLSiymgF7hvW3ogkUDChulsA+4AOyLpeTMGnLUt/Z3fjZrfDYbpnANesXiyyNiv5Fj/xXOGDdOpA/qAC2rdfLkJpGxLn3P70VVYyt4Dji2umycPgONu0l5Loo/aySLH7nP7oWyG5Tq6VQWpIJy3Lf128YUFwobpbAVeA/VVFvPiN7DdtvT3+QsFYZlnR1CYDdqScY62LqMtWcf6RrH6nEyOiS/zDH/KMjI1x8gn331jDGjL5+niXapLpez1gw2c3rW87LreEGNnso6dyTrYC4bp+IXaId3ugXzpZFboUSV7aV+9q2wEeqRjIUscRtF2u2ZFjDNqZUG4HYZ/wt2qIh/YEkdviKkKV0w3gCZLxE5VUduTYYu3wHQappOII2pZZaNsaHTfi9KzOa4+zTA4mSU9W1ENHgc68sLK2LLOXbjnWYZHb/9EDd+hIU4KyvBavw/fRJYFaNGAZhWRqkSzBiRqbRGChAasqrVFCFbFmi6nK3plbUuPPHp6Nsfmaz9DPaMBM5FHrpDJr/NhH5nRgIp7BFEZ9q/USpnWgA+L4BKIzz9Cz/AHDdGRqQmfp0O/PuMaMKReJRgBivdShmJNl9MJ4BuK6gmv7BGgUPcjCzRpsjE3GDVaFRi0LX06X6kM1FQlGAPwr4B/jGjMLVWmEI5C2Lb0eUQXcanSKx0XdH7uI47US40xhBtQJCzP/aeATA2kvMgAp4p7xwuOB7alTwCpalv9h5R0KlB2nrEt/Q7QXzUlb/qlywK8upcpRMuzVjzA4592FZZvZBe1mel+oCufFUrx3I7lAxcN05lA9GobFsevQAaxZsuWQTG+3zhkgFZgVJGYG6NAq58sBBCGQvZoB06gdkeckjHbS7OBF5V8WNSAI8BJYD8lyypAtZZFFFsDwGOvtapMuEQiAexGfL5tAZpfX1m9fkOjVtZNMUznBqL2fhnl0+1flWoarwZN5e8AAAAASUVORK5CYII=);}}
+.guspRC{background-color:#ffffff;color:black !important;border:1px solid #dfdfdf !important;background-repeat:no-repeat;background-position:center;background-size:22px 22px;width:49% !important;margin:0 7px;position:relative;display:inline-block;box-sizing:border-box;height:40px !important;line-height:40px !important;padding-left:15px;border-radius:7px;font-weight:600;font-size:13px;text-align:center;cursor:pointer !important;margin:0;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAihJREFUeNpi/P//PwM28NrFTABIJQCxAxAbALE8VOohEF8A4g0gLLrn1Ads+hnRDYYaWADF/Az4wUcgngA0vAGvwUBDQS5bAMT6DKSBiyCfIbueBc3QA0S4EhuYgB4kLEjeX4DH0A3QcGWAhjco3AWg/ESgoQuQFTu3fYW7uACH90FhNxHdNVCH1IOCAGYoyDCUMP69h1XgxzHxNd8PSjqjGYrhEnRX4QMgFydwWL10ZpH/cuvzEhUuhn+MMkCxRmyGEjIM3WAHMEP6q5pA/pVPn+apn/z3kW0CqQZhJDdgUDxASvwgsNH95PsAHOr/E2Pob57jtUxohoLAhb1V3AyUAKbfkipMuCQpNhyIH6CJGSAbTqYFr5mg2REMPv9n/Rj03kXSdGWIAA7XM6JjYHh6o5vK/FNhKxM0GzNc+SN40+ut+5fnf7nMoBmGqKBh+iPShkX4AMjgBf1fdXamfrBV/8PAJA2VqAe6OoGQ4b95Tkxi/qGKkmP/sT29AraQxfnXh1XflU5gsXU+0PAGbMHySTle4Lv4jDmsXyxysaTgSnixCdW8Hzni0MBGLIUQP/NPOQbOF/mg4ABL/GV/dAMopolSHgMNN4AaLkBSDvvHBTVc4AvTbwlZoNAHWHIDg9Pha0AuckRyGVHgP9M3hm9S7Qd+Cq1XgRmKYjCa4Q3IivAAkJoGoD7HY8klL/HWeTAADfd4pMpUASr1AKky3Qg09AO2EhAgwAAcW9vhvhPDoQAAAABJRU5ErkJggg==);}@media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min--moz-device-pixel-ratio:1.5), only screen and (-o-min-device-pixel-ratio:1.5/1), only screen and (min-resolution:144dpi), only screen and (min-resolution:1.5dppx){.guspRC{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAsCAYAAAD8WEF4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABB9JREFUeNrMmV1IFFEUx2dnP9zcwhW0xJBWRCp6cIU+3nIWg1Yh3IfC6EX3qadKX+1BfamnSHryIdiV6AsK1yIi0hz7IDKKXRJMiZBAiTTdD3XX/ZrOlTs2zs7s3hl3Zz1wGXTnzv1x5n/POfeMjuM4Sq0tnjlphQsDw46v6O8G0W0BGEEYLBqVo5Os2vV0amAB0gWXThhtKtYMwfDB8CoFVwQLkAiwD8YhKj82gZ5HCk0EC5DoNQ/AaKIKYwjaBdDBbDfRhN5kCwhK4WfPYXmp8yxM9sKlg9LWHHKyoHcZaNZNR+8yULcizWKN7jrQDM3iXY9eQ5nCxfw4dqK5AX5X46TRgBMGcoJNLagUrNJdj+7vJ42T8HwEfRtnvJygzTfWpGHx6/cQQiLPdcNCXpVpuhelZpjfnQtQEjbSU+uLTVa2EYKi8OLPh1izwUnCJsdMKBgPJ+cts5F79QcoTlazeQFVAigF6+OLEi6mD4cGj/7koga7xP1uNa9eLVwGbGLUiHbsiviHNZ+NjU9bGeFmAlCH1oBCM+CwkmEW1xxjOlYWWH1aa8Oy6NcaTgrWLvejsT7UUHZ5ej48VP+h4vlXthiARJ7dSnHlGwetXVN3VcBx+QRNln77ROOjCEnwL6rRif1VtMSZSS6dUmM9luLBJsuraCKtNMe3KviiAXOmElrNPARcDGgiWEgaVjlorWFJUqc9m5c1MV0iSuNzfC5jii0Ljo7N0rnC0kKqNOz86zxFqmWhL0hH2rRwjoD2R1YZvIjVTF1YaaZCnMl54vF5RgUwodfWruZUQdry3iDn2euR4+ybjWohYF8uOYiBCTOelY7XkBRILI1j6Aj/nwhnDLUsOwMi0M1GBHi3U2mIy2Up88ygLm02ZPf8+jJSAB+6NmvUqWT5DOiTDqZNclltAIDt+QJO7P3Yqo8dbieIBCPbjjW3njUOP4rWuQjWR9GD+dz+RNFpQSyJuPVluzHsuA9e1RNMbxR6lgLQEcJ1UW3LqpEE7+V42esuY5h5SAKaNix/54PAtqM4AIyTbiJsmy1L8DJRVQbPR32DPkP0SMee39dgh5cS9b74ICCGRXocJywbhRYQNDn8AB/Ez7NS/7vijLAngUARMIDLe9W4+IpOVDolmxx4ASX9gx2beekSZQqdzYwA+siqLrWvBp+opQsZ8IqXjw5aWKziAbVedQeFJ5FX/7QKQWWrLgB2awmctHyh1qtvUqmSX3zs7dXH6t5l7XVJbAgPbqhpU1ilLSHz0sVuY+S0R3E9iz3sFr+OApkfagTm7ZUWj+riG2vYUeBDI/q44uATjVzWU/RpCWTRgQsaW54gkQP65eK0bMtTiQF0G9aySwVgEMfkIdJkwkPrdvI5FAf9Jmr751C7xDF+63MoAE6oWQsB/xNgAIo71M20s75BAAAAAElFTkSuQmCC);}}
+/* sc-component-id: ButtonsWrapper__Wrapper-igAHbi */
+
+.iEuydt{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}
+/* sc-component-id: UserHeader__Wrap-iAAHvE */
+
+.hTeFeX{width:147px;height:60px;border:1px solid transparent;}</style><style type="text/css" data-styled-components="fxPVzs iacudm cPbpGz dcpRpK bcCCNc jxNrlH efPTnN" data-styled-components-is-local="true">
+/* sc-component-id: UserHeader__LogoutWrap-dkmIpr */
+
+
+/* sc-component-id: UserHeader__Sign-hDcTWm */
+
+.efPTnN{-webkit-text-decoration:none;text-decoration:none;display:block;color:#17bed0;font-size:14px;font-weight:700;margin:22px 0 0 37px;padding:0 0 0 33px;border-left:1px solid #ccc;cursor:pointer;}
+/* sc-component-id: sc-keyframes-fxPVzs */
+@-webkit-keyframes fxPVzs{0%{opacity:0;bottom:-30px;-webkit-transform:scale(0.92);-ms-transform:scale(0.92);transform:scale(0.92);}100%{opacity:1;bottom:0px;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes fxPVzs{0%{opacity:0;bottom:-30px;-webkit-transform:scale(0.92);-ms-transform:scale(0.92);transform:scale(0.92);}100%{opacity:1;bottom:0px;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}
+/* sc-component-id: sc-keyframes-iacudm */
+@-webkit-keyframes iacudm{0%{opacity:0;left:-6px;}100%{opacity:1;left:0px;}}@keyframes iacudm{0%{opacity:0;left:-6px;}100%{opacity:1;left:0px;}}
+/* sc-component-id: sc-keyframes-cPbpGz */
+@-webkit-keyframes cPbpGz{0%{opacity:0;bottom:80%;-webkit-transform:scale(0.94);-ms-transform:scale(0.94);transform:scale(0.94);}100%{opacity:1;bottom:100%;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes cPbpGz{0%{opacity:0;bottom:80%;-webkit-transform:scale(0.94);-ms-transform:scale(0.94);transform:scale(0.94);}100%{opacity:1;bottom:100%;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}
+/* sc-component-id: sc-keyframes-dcpRpK */
+@-webkit-keyframes dcpRpK{0%{opacity:0;-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);}100%{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes dcpRpK{0%{opacity:0;-webkit-transform:scale(0.9);-ms-transform:scale(0.9);transform:scale(0.9);}100%{opacity:1;-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}
+/* sc-component-id: sc-keyframes-bcCCNc */
+@-webkit-keyframes bcCCNc{0%{opacity:0;}100%{opacity:1;}}@keyframes bcCCNc{0%{opacity:0;}100%{opacity:1;}}</style><script type="text/javascript" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/safecharge.js"></script><style type="text/css" data-styled-components="ecRlSS hpJVpg eriGDp kwmwNy vzqWW" data-styled-components-is-local="true">
+/* sc-component-id: CookieConsentModal__Wrapper-fhKmcr */
+
+.eriGDp{display:inline-block;}
+/* sc-component-id: CookieConsentModal__ButtonStyled-fmpOgK */
+
+.kwmwNy span{color:#fff;-webkit-text-decoration:none;text-decoration:none;}
+/* sc-component-id: CookieConsent__WrapperCookieConsent-lkMuzO */
+
+.ecRlSS{position:fixed;left:0;bottom:0;z-index:20000;width:100%;color:#fff;background-color:rgba(0,0,0,0.82);padding:20px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:22px;text-align:left;box-sizing:border-box;}.ecRlSS > div{max-width:1180px;box-sizing:border-box;padding-right:310px;position:relative;margin:0 auto;}.ecRlSS > div > span{color:#fff;}.ecRlSS > div > a{color:#17bed0;-webkit-text-decoration:none;text-decoration:none;}@media only screen and (max-width:550px){.ecRlSS > div{padding:0;}}
+/* sc-component-id: CookieConsent__WrapperButtons-cYYLwC */
+
+.hpJVpg{float:right;overflow:hidden;position:absolute;top:50%;right:0;margin:-17px auto;}@media only screen and (max-width:550px){.hpJVpg{float:none;text-align:center;display:block;position:relative;margin:15px 0 0 0;}}
+/* sc-component-id: CookieConsent__TransformButton-faOPMK */
+
+.vzqWW{-webkit-text-decoration:none !important;text-decoration:none !important;}.vzqWW span{color:#fff;}</style><style type="text/css" data-styled-components="" data-styled-components-is-local="true"></style><style type="text/css" data-styled-components="" data-styled-components-is-local="true"></style>
+<link rel="stylesheet" href="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/common.css">
+<link rel="stylesheet" href="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/global.css">
+<script type="text/javascript" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/ptr.js"></script>
+<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/common_002.js"></script>
+<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/bottombanner.js"></script>
+<script type="text/javascript" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/a"></script>
+<script type="text/javascript" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/a_002"></script>
+<script type="text/javascript" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/safecharge.js"></script>
+<script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/promostickybar.js"></script>
+
+<script>
+  var api = "eapi.pcloud.com";
+  setTracking();
+</script><script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/js_003"></script><script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/klaviyo.js"></script>
+<script type="text/javascript" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/appleid.js"></script><script type="text/javascript" async="" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/klaviyo_analytics.js"></script><script charset="utf-8" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/profiling.js"></script><link rel="stylesheet" type="text/css" href="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/0.css"><script charset="utf-8" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/styles.js"></script><script charset="utf-8" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/sentry.js"></script><script charset="utf-8" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/vendorssignupForms.js"></script><script charset="utf-8" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/signupForms.js"></script><link rel="prefetch" as="script" href="https://static.klaviyo.com/onsite/js/vendors~View.6cd7a290b7db0f04ca18.js"><link rel="prefetch" as="script" href="https://static.klaviyo.com/onsite/js/View.37d0ed30be8905fcd66b.js"></head>
+
+<body class="fr home-eu modal_contain logged_out os_mac is_retina is_desktop cookie_consent window_loaded">
+	<div id="scroll_div" style="width:100px;height:100px;overflow:scroll !important;position:absolute;top:-9999px"></div>
+
+	<header class="modal_contain fixed">
+    <div class="unverified-users-alert"> </div>
+    <div class="topbar-notification for_desktop">
+      <div class="content-wrapper">
+      </div>
+      <img class="close-button" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/close2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/close.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/close@2x.png" width="30">
+    </div>
+		<div class="header_wrap">
+      <div class="content-wrapper">
+        <div class="logo">
+					          <a href="https://www.pcloud.com/" id="main_logo">pCloud Secure Cloud Storage</a>
+          <img id="img-logo" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/logo.webp" data-src="https://pcdn-my.pcloud.com/Zmk/img/header/logo.png" data-src-retina="https://pcdn-my.pcloud.com/Zmk/img/header/logo@2x.png" alt="Logo pCloud.com" title="pCloud - Cloud Storage" width="135">
+        </div>
+
+        <div class="header_right_wrap">
+          <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div id="userinfo_wrap" class="for_desktop for_tablet"><div class="UserHeader__Wrap-iAAHvE hTeFeX"><div class="UserHeader__LogoutWrap-dkmIpr jxNrlH"><a class="UserHeader__Sign-hDcTWm efPTnN" data-testid="signin-header-button">Connexion</a></div></div></div>
+
+          <nav>
+            <div class="top_nav_links_holder">
+              <div class="add_menu_shadow_wrap for_mobile">
+                <div class="add_menu_shadow"></div>
+              </div>
+
+              <ul class="mob_user_info for_mobile user">
+                <li class="_name"></li>
+              </ul>
+
+              <ul class="nav_links">
+                                <li class="downloads">
+
+                  <a href="https://www.pcloud.com/fr/download-free-online-cloud-file-storage.html">Téléchargement</a>
+                </li>
+                                <li class="plans">
+
+                  <a href="https://www.pcloud.com/fr/cloud-storage-pricing-plans.html">Prix</a>
+                </li>
+                                <li class="crypto">
+
+                  <a href="https://www.pcloud.com/fr/encrypted-cloud-storage.html">Chiffrement</a>
+                </li>
+                              </ul>
+
+              <ul class="mob_login for_mobile no_user">
+                <li>
+                                    <a href="https://www.pcloud.com/fr/cloud-storage-pricing-plans.html" class="blue_btn signup_btn">S'inscrire</a></li>
+                                  <li class="mob_login_btn"><a href="javascript:;" class="login_btn" data-open="login" data-hide="tabs">Connexion</a></li>
+              </ul>
+
+              <ul class="mob_logout for_mobile user">
+                <li class="goto_pcloud"><a href="javascript:;" onclick="window.location='https://my.pcloud.com/#authtoken='+$.cookie('pcauth');">Allez sur Mon pCloud</a></li>
+                <li class="upgr_acc"><a href="https://www.pcloud.com/fr/cloud-storage-pricing-plans.html">Mettre votre compte à niveau</a></li>
+                <li class="manage_subscrb for_premium"><a href="https://www.pcloud.com/fr/manage-subscriptions.html">Gérer l'abonnement</a></li>
+                <li class="logout_btn"><a href="javascript:;" onclick="logoutUser();">Déconnexion</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+		<div class="header_ribbon ribbon-wrapper" style="display: block;"><a href="https://www.pcloud.com/fr/black-friday?channelid=170&amp;label=BlackFriday2020" target="_blank"><img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/th-NIMGdvM3dJ0-104x144.jpg" alt="pCloud promotion" width="52px"></a></div></div>
+	</header>
+
+<article>
+	<section>
+		<div class="section top">
+			<div class="content">
+				<div class="box_holder top">
+					<div class="box top_box">
+            <h1>Le stockage en ligne le plus sécurisé d'Europe</h1>
+            <div class="image for_mobile"><img class="top_box_image active" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/12x.webp"><img class="top_box_image" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/22x.webp"><img class="top_box_image" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/32x.webp"></div>
+            <p>Stockez, partagez et accédez à tous vos fichiers en 
+utilisant une plateforme simple et hautement sécurisée, à tout moment et
+ où que vous alliez.</p>
+
+						<div class="for_mobile table app_box">
+							<a href="https://itunes.apple.com/us/app/pcloud/id692002098" class="for_ios retina a_badge" data-gevent="AppleStore">
+								<span style="font-size: 13px; z-index: 6;">Télécharger </span>
+								<img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/lazy-load.webp" alt="Télécharger su l'App Store">
+							</a>
+							<a href="https://play.google.com/store/apps/details?id=com.pcloud.pcloud&amp;referrer=utm_source?website&amp;utm_medium?click" class="for_android g_badge img" data-gevent="GooglePlay">
+								<span style="left: 28%;z-index: 6;">Obtenez-le sur</span>
+								<img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/lazy-load.webp" alt="Obtenez-le sur Google Play">
+							</a>
+							<a href="javascript:;" class="for_android apk_badge" data-download="Android apk" data-gevent="Android APK">
+								<span style="font-size: 11px;z-index: 6;margin: 0;text-align: left;width: inherit;">Téléchargement</span>
+								<img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/lazy-load.webp" style="margin-bottom: 0;" alt="Télécharger pCloud.apk">
+							</a>
+						</div>
+						<div class="image for_desktop"><img class="top_box_image" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/12x.webp"><img class="top_box_image animateOut" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/22x.webp"><img class="top_box_image animateIn active" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/32x.webp"></div>
+					</div>
+				 	<div class="box for_desktop">
+						<div class="section form_section no_user">
+              <h2>Rejoignez pCloud GRATUITEMENT</h2>
+              <p>Inscrivez-vous dès aujourd'hui et obtenez jusqu'à 10 Go de stockage en ligne gratuitement.</p>
+							<div class="form_holder"><div class="responsive-wrap"><div class="form Registration__Wrapper-kawNjB ucfzi"><div class="FormSharedComponents__ErrorMessage-fYpcBv iFZoIK"></div><input class="text" type="email" placeholder="E-mail" name="email" autocapitalize="none" autocorrect="off" spellcheck="false"><div class="FormSharedComponents__InputPassWrapper-kqQtoi fALrvP"><input class="text" type="password" placeholder="Mot de passe" name="password" value=""></div><div class="DataCenterDropdown__Wrapper-ceTeua ifQYBd"><div class="DataCenterDropdown__DropdownWrapper-kKAkgx cbMIyP">Région de données:<div class="dropdown-holder"><div class="DataCenterDropdown__DropdownText-bssUxI dVWOzY"><div class="DataCenterDropdown__SelectedLocation-tnrbc hIoolk">Union européenne</div><div class="DataCenterDropdown__DropdownArrow-evgpVg hEJseJ" size="5" direction="bottom"></div></div></div></div><div class="tooltip-icon" data-tip="true" data-for="info" currentitem="false"><div class="DataCenterDropdown__InfoIcon-hTVhLC fwiqzD"></div></div><div class="__react_component_tooltip place-right type-dark " id="info" data-id="tooltip">La région de données est l'endroit où vos données seront stockées.</div></div><div class="FormSharedComponents__TermsWrapper-YMwPj hDmxRT"><label class="checkbox-checkmark InputStyledCheckbox__Container-kbtRqP fiqpCt" color="#17bed0"><input type="checkbox" name="terms"><span class="InputStyledCheckbox__Checkmark-bdcGSj bwhBNk" data-testid="terms-checkbox"></span></label><div class="regsitration-terms FormSharedComponents__Terms-gzapug gEivgy"><span>J'accepte les&nbsp;</span><a href="https://www.pcloud.com/fr/terms_and_conditions.html" target="_blank">Conditions générales d’utilisation</a><span>, la </span><a href="https://www.pcloud.com/fr/privacy_policy.html" target="_blank">Politique de confidentialité</a><span> et la </span><a href="https://www.pcloud.com/fr/int_pr_policy.html" target="_blank">Politique sur la propriété intellectuelle</a></div></div><div class="butt-wrap"><button type="submit" class="butt submitbut" data-toggle="remove-tooltip">Créer un compte</button></div></div><div class="FormSharedComponents__Or-ePIXMY drBrCT">ou continuer avec</div><div class="ButtonsWrapper__Wrapper-igAHbi iEuydt"><div class="FacebookButton__ButtonSmall-kbnVOo rsVTh"></div><div class="FacebookButton__ButtonSmall-kbnVOo hdWFoF"></div><div class="FacebookButton__ButtonSmall-kbnVOo guspRC"></div></div></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="reviews_bar usedby">
+  <div class="rev_headline"><span>Utilisé par des personnes travaillant chez:</span></div>
+  <div class="align_container">
+    <div class="prev_rev rev_control"></div>
+    <div class="reviews_inner">
+      <div class="prev_gradient rev_control"></div>
+
+      <div class="reviews_box">
+        <div class="rev_holder">
+          <div class="rev_box first" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/nike@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/nike@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/nike2x.webp" width="62">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/twitter@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/twitter@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/twitter2x.webp" width="36">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/coca-cola@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/coca-cola@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/coca-cola2x.webp" width="98">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/instagram@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/instagram@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/instagram2x.webp" width="34">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/uber@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/uber@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/uber2x.webp" width="105">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/adidas@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/adidas@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/adidas2x.webp" width="46">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/etihad@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/etihad@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/etihad2x.webp" width="142">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/ddb@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/ddb@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/ddb2x.webp" width="70">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/pepsi@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/pepsi@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/pepsi2x.webp" width="94">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/snap@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/snap@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/snap2x.webp" width="34">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/linkedin@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/linkedin@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/linkedin2x.webp" width="118">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/bmw@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/bmw@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/bmw2x.webp" width="34">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/shell@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/shell@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/shell2x.webp" width="36">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/stanford@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/stanford@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/stanford2x.webp" width="185">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/raiffeisen@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/raiffeisen@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/raiffeisen2x.webp" width="120">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/vayner@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/vayner@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/vayner2x.webp" width="216">
+          </div>
+          <div class="rev_box" style="margin: 0px 40px;">
+            <img data-lazy="//pcdn-www.pcloud.com/Zmk/images/used_by/saatchi@2x.png" data-lazy-retina="//pcdn-www.pcloud.com/Zmk/images/used_by/saatchi@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/saatchi2x.webp" width="313">
+          </div>
+        </div>
+      </div>
+
+      <div class="next_gradient rev_control"></div>
+    </div>
+    <div class="next_rev rev_control active"></div>
+  </div>
+</div>
+
+
+<script>
+$(function() {
+	function usedByBarJS() {
+		var holder = $('.reviews_bar.usedby');
+		var revControl = holder.find('.rev_control:visible');
+		var nextRev = holder.find('.next_rev');
+		var prevRev = holder.find('.prev_rev');
+		var logoSpace = 0;
+		var controlsWidth = 0;
+		var countedLogos = 0;
+		var visibleLogos = 5;
+		var visibleLogosWidth = 0;
+		var currentBarPosition = 0;
+		var totalLogosWidth;
+    var logoMargins;
+
+		revControl.each(function() {
+			controlsWidth += $(this).outerWidth();
+    });
+
+    console.log("controlsWidth", controlsWidth);
+
+		logoSpace = holder.find('.reviews_inner').outerWidth() - controlsWidth;
+		totalLogosWidth = holder.find('.rev_holder').outerWidth() - controlsWidth;
+
+		// if (detectedMobile) {
+		// 	holder.find('.rev_box.first').css({'padding-left': (controlsWidth / 4) });
+		// } else {
+		// 	holder.find('.rev_box.first').css({'padding-left': (controlsWidth / 3) });
+		// }
+
+		holder.find('.rev_box img').each(function() {
+			if (countedLogos == visibleLogos) {
+				return;
+			}
+
+			countedLogos++
+
+			visibleLogosWidth += $(this).outerWidth();
+		});
+
+		logoMargins = 40;
+
+		holder.find('.rev_box').css({'margin': '0px ' + Math.abs(logoMargins.toFixed(0)) + 'px'});
+
+		if (visibleLogos < $('.usedby .rev_box').length) {
+			nextRev.addClass('active');
+		}
+
+		nextRev.on('click', function() {
+			if ($(this).hasClass('active')) {
+				currentBarPosition -= logoSpace;
+
+				prevRev.addClass('active');
+				$('.usedby .reviews_box').css({'left': currentBarPosition});
+			}
+
+			if (Math.abs(currentBarPosition) * 2 >= (totalLogosWidth * 1.5) ) {
+				nextRev.removeClass('active');
+			}
+		});
+
+		prevRev.on('click', function() {
+			if ($(this).hasClass('active')) {
+				currentBarPosition += logoSpace;
+
+				nextRev.addClass('active');
+				$('.usedby .reviews_box').css({'left': currentBarPosition});
+			}
+
+			if (currentBarPosition >= 0 ) {
+				prevRev.removeClass('active');
+			}
+		});
+	};
+
+	usedByBarJS();
+});
+</script>
+		<div class="section user for_desktop logged_in_section">
+			<div class="content">
+				<h1>Commencez à utiliser pCloud dès maintenant!</h1>
+				<a href="https://my.pcloud.com/" class="btn blue_btn txt-center">Aller vers vos fichiers</a>
+			</div>
+		</div>
+
+		<div class="section grey">
+			<div class="content">
+        <h2>Pourquoi avez-vous besoin de pCloud dans votre vie ?</h2>
+				<div class="box_holder features">
+          <div class="box">
+            <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/swiss-privacy2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/swiss-privacy.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/swiss-privacy@2x.png" data-src-mobile="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/swiss-privacy-mobile.png" width="128">
+            <h3>Protection des données comme en Suisse</h3>
+            <p>Notre société est basée en Suisse, et nous suivons les 
+lois suisses qui sont les plus strictes en ce qui concerne les données 
+d'une personne.</p>
+            <a href="https://www.pcloud.com/fr/company/about.html">
+              En savoir plus              <img class="more" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/more2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more@2x.png" width="6">
+            </a>
+          </div>
+          <div class="box">
+            <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/any-device2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/any-device.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/any-device@2x.png" data-src-mobile="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/any-device-mobile.png" width="128">
+            <h3>Accessibilité sur n'importe quel appareil</h3>
+            <p>pCloud offre une facilité d'utilisation 
+multi-dispositifs, ce qui signifie que vous pouvez accéder à tous vos 
+fichiers sur n'importe quel appareil, même en déplacement.</p>
+            <a href="https://www.pcloud.com/fr/features/accessibility.html">
+              En savoir plus              <img class="more" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/more2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more@2x.png" width="6">
+            </a>
+          </div>
+          <div class="box">
+            <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/easy2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/easy.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/easy@2x.png" data-src-mobile="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/easy-mobile.png" width="128">
+            <h3>Facilité d'utilisation</h3>
+            <p>pCloud est une solution complète et facile à utiliser qui a été créée en pensant à l'utilisateur final.</p>
+            <a href="https://www.pcloud.com/fr/features/file-management.html">
+              En savoir plus              <img class="more" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/more2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more@2x.png" width="6">
+            </a>
+          </div>
+          <div class="box">
+            <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/server-location2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/server-location.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/server-location@2x.png" data-src-mobile="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/server-location-mobile.png" width="128">
+            <h3>Emplacement des serveurs</h3>
+            <p>Les données de tous les utilisateurs sont stockées dans 
+un centre de données certifié et hautement sécurisé situé dans l'Union 
+européenne.</p>
+            <a href="https://www.pcloud.com/fr/data-regions.html">
+              En savoir plus              <img class="more" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/more2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more@2x.png" width="6">
+            </a>
+          </div>
+          <div class="box">
+            <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/security2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/security.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/security@2x.png" data-src-mobile="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/security-mobile.png" width="128">
+            <h3>Sécurité</h3>
+            <p>Chez pCloud, la sécurité des données est notre priorité 
+absolue, et nous faisons de notre mieux pour appliquer des mesures de 
+sécurité de haut niveau.</p>
+            <a href="https://www.pcloud.com/fr/features/security.html">
+              En savoir plus              <img class="more" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/more2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more@2x.png" width="6">
+            </a>
+          </div>
+          <div class="box">
+            <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/share2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/share.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/share@2x.png" width="128">
+            <h3>File Sharing</h3>
+            <p>Grâce aux multiples options de partage de fichiers de pCloud, vous pouvez envoyer et recevoir des fichiers volumineux.</p>
+            <a href="https://www.pcloud.com/fr/features/file-sharing.html">
+              En savoir plus              <img class="more" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/more2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more@2x.png" width="6">
+            </a>
+          </div>
+        </div>
+			</div>
+    </div>
+
+    <div class="section custon_section">
+      <div class="partnership_wrapper">
+        <img data-src="//pcdn-www.pcloud.com/Zmk/images/custom_lifetime_section/pre-citron-logo.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/custom_lifetime_section/pre-citron-logo@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/pre-citron-logo2x.webp" style="max-width: 380px" width="380">
+        <h2>pCloud est le meilleur service de stockage en ligne avec un rapport qualité/prix excellent</h2>
+        <a href="https://www.presse-citron.net/stockage-en-ligne/">
+          En savoir plus          <img class="more" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/more2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/more@2x.png" width="6">
+        </a>
+      </div>
+    </div>
+    <div class="section grey grey_mobile custon_section testemonials">
+      <div class="testimonials_wrapper">
+        <h3 class="blue_headline">Des avis concrets et honnêtes</h3>
+        <p>Plus de 10 millions de personnes ont choisi pCloud pour tous leurs besoins de stockage en ligne.</p>
+        <div class="verified">
+          Des avis vérifiés de          <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/trustpilot2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/trustpilot.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/trustpilot@2x.png" width="120">
+        </div>
+
+        <div class="box_wrapper">
+          <div class="box testimonial">
+            <div class="customer_name">Jean-Luc Smeyers</div>
+            <div class="customer_stars">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+            </div>
+            <div class="quote"><strong>Très bon choix</strong><br>"Très 
+bon choix. L'utilisation du site est simple et convivial ce qui rend la 
+manipulation et l'organisation des fichiers très facile.Ayant dû faire 
+appel au helpdesk pour une explication, j'ai eu un très bon retour, 
+rapide et clair. Je recommande sans réserve."</div>
+          </div>
+          <div class="box testimonial">
+            <div class="customer_name">Marie Clémence</div>
+            <div class="customer_stars">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+            </div>
+            <div class="quote"><strong>EXCELLENT !</strong><br>“SAV 
+rapide, clair et courtois utilisation du service pcloud très facile, 
+interface sobre rien à dire sinon qu'on attendait depuis longtemps tel 
+service rapport qualité /prix correct”</div>
+          </div>
+          <div class="box testimonial">
+            <div class="customer_name">Arnaud Grenier</div>
+            <div class="customer_stars">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+              <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/star2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/star@2x.png" width="21">
+            </div>
+            <div class="quote"><strong>Premier REX</strong><br>“Après 
+plusieurs essais infructueux voire désastreux avec d'autres clouds, je 
+me suis lancé avec pCloud pour synchroniser ma base de 720.000 fichiers ;
+ au bout de quelques semaines, je n'ai pas constaté d'anomalies et suis 
+bien satisfait. Et le SAV est à l'écoute, réactif et aimable.”</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="section grey bottom_section">
+      <h2>Ouvrez un compte GRATUIT dès aujourd'hui et rejoignez la communauté grandissante de pCloud !</h2>
+      <div class="btn blue_btn for_desktop">Obtenez jusqu'à 10 Go maintenant</div>
+      <div class="for_mobile table app_box">
+        <a href="https://itunes.apple.com/us/app/pcloud/id692002098" class="for_ios retina a_badge" data-gevent="AppleStore">
+          <span style="font-size: 13px; z-index: 6;">Télécharger </span>
+          <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/lazy-load.webp" alt="Télécharger su l'App Store">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.pcloud.pcloud&amp;referrer=utm_source?website&amp;utm_medium?click" class="for_android g_badge img" data-gevent="GooglePlay">
+          <span style="left: 28%;z-index: 6;">Obtenez-le sur</span>
+          <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/lazy-load.webp" alt="Obtenez-le sur Google Play">
+        </a>
+        <a href="javascript:;" class="for_android apk_badge" data-download="Android apk" data-gevent="Android APK">
+          <span style="font-size: 11px;z-index: 6;margin: 0;text-align: left;width: inherit;">Téléchargement</span>
+          <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/lazy-load.webp" style="margin-bottom: 0;" alt="Télécharger pCloud.apk">
+        </a>
+      </div>
+    </div>
+		<div class="blank for_mobile">
+	</div></section>
+</article>
+
+<script>
+	$(function() {
+		login_callback = function() {
+			window.location = myPcloudURL;
+    };
+
+    register_callback = function() {
+      window.location = myPcloudURL;
+    }
+
+    var userAuth = $.cookie('pcauth');
+
+    if (userAuth) {
+      sendAnalyticsEvent({
+          category: "Home page",
+          label: "www-site",
+          action: "view",
+          auth: userAuth,
+          tag: "home view"
+        }
+      );
+    }
+
+		function homePageJS() {
+			var images = window.devicePixelRatio < 1.5 ? [
+				$('<img class="top_box_image active animateIn" src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/1.png">'),
+				$('<img class="top_box_image" src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/2.png">'),
+				$('<img class="top_box_image" src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/3.png">'),
+			] : [
+				$('<img class="top_box_image active animateIn" src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/1@2x.png">'),
+				$('<img class="top_box_image" src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/2@2x.png">'),
+				$('<img class="top_box_image" src="//pcdn-www.pcloud.com/Zmk/images/p_home_eu/3@2x.png">'),
+			]
+
+			$(".image").html(images);
+
+			var transitionEnd = animationEndEvent();
+			var wordAnimationTime = 4000;
+
+			function animate() {
+        var currentImage = $(".image:visible").find('.active');
+        var nextImage = currentImage.next().length ? currentImage.next() : $(".image:visible").find('img').first();
+
+        $(".image img").removeClass("animateOut animateIn");
+
+        currentImage.addClass("animateOut");
+        currentImage.removeClass("active");
+
+        nextImage.addClass("animateIn");
+        nextImage.addClass("active");
+      };
+
+			setInterval(function() {
+				animate();
+			}, wordAnimationTime);
+
+			if (!detectedMobile) {
+				insertForm('register', $('.form_holder'), null, { showTitle: false });
+			} else {
+				$(".content > .box_holder.bottom").addClass("mobile_style");
+				$("body.home").addClass("mobile_style");
+				$(".blank").hide(0);
+				var imageTarget;
+				var imageSource;
+				var shortOS = detectOS(false, true);
+
+				function resizeSection() {
+					var sectionTwoWidth = ($(window).width() - 45) - $('.section.top .box_holder.bottom img').outerWidth();
+
+					$('.section.top .box_holder.bottom .txt, .section.top .box_holder.bottom .headline').css({'max-width': sectionTwoWidth});
+				};
+
+				resizeSection();
+
+				if (shortOS == 'ios') {
+					imageTarget = $('.app_box .for_ios img');
+					imageSource = 'images/p_mob/appstore_badge.png';
+				} /* else if (shortOS == 'windows phone') {
+					imageTarget = $('.app_box .for_windowsphone img');
+					imageSource = 'images/p_mob/microsoft_badge.png';
+				} */ else {
+					imageTarget = $('.app_box .for_android.g_badge img');
+					imageSource = 'images/p_mob/googleplay_badge.png';
+				}
+
+				imageTarget.on('load', function() {
+					imageTarget.off('load');
+
+					if (shortOS == 'android') {
+						$('.apk_badge img').on('load', function() {
+							var badgeWidth = $('.g_badge img').outerWidth() + $('.apk_badge img').outerWidth() + 10;
+							var leftMargin = $('.app_box').width() - badgeWidth;
+
+							setTimeout(function() {
+								$('.app_box .g_badge').css({'margin-left': leftMargin / 2});
+							}, 1);
+
+							$('.app_box .for_android').addClass('animate_show');
+
+						}).attr('src', 'images/p_mob/apk_badge.png');
+					} else {
+						imageTarget.parent().addClass('animate_show');
+					}
+				}).attr('src', imageSource);
+
+				onResizeFunctions['section_resize'] = function() {
+					resizeSection();
+				};
+			}
+
+			$('.bottom_section .btn').on('click', function() {
+        $('html, body').animate({ scrollTop: $('.section.top').offset().top}, {
+          duration: 500,
+        });
+      })
+    };
+
+		homePageJS();
+	});
+</script><div class="footer-wrapper">
+
+	<footer>
+					<div class="footer-menu">
+				<h4><img data-lazy="//pcdn-www.pcloud.com/Zmk/images/newsletter-pointer.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/newsletter-pointer.webp" class="toggle">pCloud</h4>
+				<ul>
+									<li><a class="" href="https://www.pcloud.com/fr/download-free-online-cloud-file-storage.html">Téléchargement</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/cloud-storage-pricing-plans.html">Prix</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/encrypted-cloud-storage.html">Chiffrement</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/business.html">Business</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/family.html">Famille</a></li>
+									<li><a class="" target="_blank" href="https://transfer.pcloud.com/">Transférer</a></li>
+								</ul>
+			</div>
+					<div class="footer-menu">
+				<h4><img data-lazy="//pcdn-www.pcloud.com/Zmk/images/newsletter-pointer.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/newsletter-pointer.webp" class="toggle">Paramètres</h4>
+				<ul>
+									<li><a class="" href="https://www.pcloud.com/fr/features/file-management.html">Gestion de fichiers</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/features/file-sharing.html">Partage</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/features/security.html">Sécurité</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/features/file-versioning.html">Versionnage de fichiers</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/features/integrations.html">Sauvegarde de fichiers</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/digital-asset-management.html">Gestion des ressources numériques</a></li>
+								</ul>
+			</div>
+					<div class="footer-menu">
+				<h4><img data-lazy="//pcdn-www.pcloud.com/Zmk/images/newsletter-pointer.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/newsletter-pointer.webp" class="toggle">Société</h4>
+				<ul>
+									<li><a class="" href="https://www.pcloud.com/fr/company/about.html">Qui sommes-nous</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/data-regions.html">Régions de données</a></li>
+									<li><a class="" target="_blank" href="https://www.pcloud.com/gdpr/">RGPD</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/company/press.html">Centre de presse</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/testimonials.html">Témoignages</a></li>
+									<li><a class="" target="_blank" href="https://blog.pcloud.com/">Le blog pCloud</a></li>
+									<li><a class="" target="_blank" href="https://blog.pcloud.com/jobs/">Carrières</a></li>
+								</ul>
+			</div>
+					<div class="footer-menu">
+				<h4><img data-lazy="//pcdn-www.pcloud.com/Zmk/images/newsletter-pointer.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/newsletter-pointer.webp" class="toggle">Centre d'aide</h4>
+				<ul>
+									<li><a class="" href="https://www.pcloud.com/fr/help.html">F.A.Q.</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/help/privacy.html">Options de confidentialité</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/company/contactus.html">Nous contacter</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/release-notes/windows.html">Notes de Mise à jour </a></li>
+								</ul>
+			</div>
+					<div class="footer-menu">
+				<h4><img data-lazy="//pcdn-www.pcloud.com/Zmk/images/newsletter-pointer.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/newsletter-pointer.webp" class="toggle">Community</h4>
+				<ul>
+									<li><a class="" href="https://www.pcloud.com/fr/affiliate.html">Programme partenaire</a></li>
+									<li><a class="" target="_blank" href="https://my.pcloud.com/#page=referral">Programme de parrainage</a></li>
+									<li><a class="" href="https://www.pcloud.com/fr/reseller.html">Revendeurs pCloud</a></li>
+									<li><a class="" target="_blank" href="https://docs.pcloud.com/">Pour les développeurs</a></li>
+								</ul>
+			</div>
+
+		<div class="footer-inputs">
+			<div class="follow_wrap">
+				<div class="follow_headline">Suivez-nous</div>
+				<div class="follow-buttons">
+					<a href="https://www.facebook.com/pCloudapp" target="_blank">
+						<img class="ico-off" data-src="//pcdn-www.pcloud.com/Zmk/images/footer/f.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/footer/f@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/f2x.webp" width="32">
+						<img class="ico-on" data-src="//pcdn-www.pcloud.com/Zmk/images/footer/f-a.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/footer/f-a@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/f-a2x.webp" width="32">
+					</a>
+					<a href="https://twitter.com/pCloudapp" target="_blank">
+						<img class="ico-off" data-src="//pcdn-www.pcloud.com/Zmk/images/footer/t.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/footer/t@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/t2x.webp" width="32">
+						<img class="ico-on" data-src="//pcdn-www.pcloud.com/Zmk/images/footer/t-a.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/footer/t-a@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/t-a2x.webp" width="32">
+					</a>
+					<a href="https://www.instagram.com/pcloud/" target="_blank">
+						<img class="ico-off" data-src="//pcdn-www.pcloud.com/Zmk/images/footer/in.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/footer/in@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/in2x.webp" width="32">
+						<img class="ico-on" data-src="//pcdn-www.pcloud.com/Zmk/images/footer/in-a.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/footer/in-a@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/in-a2x.webp" width="32">
+					</a>
+					<a href="https://www.youtube.com/channel/UCdiQK9arQfrgtxAclns9p2g" target="_blank">
+						<img class="ico-off" data-src="//pcdn-www.pcloud.com/Zmk/images/footer/y.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/footer/y@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/y2x.webp" width="32">
+						<img class="ico-on" data-src="//pcdn-www.pcloud.com/Zmk/images/footer/y-a.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/footer/y-a@2x.png" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/y-a2x.webp" width="32">
+					</a>
+				</div>
+				<div class="follow_sep for_mobile"></div>
+			</div>
+		</div>
+	</footer>
+
+
+	<div class="footer_bottom">
+		<div class="copyright"><span>©</span> 2020 pCloud AG</div>
+		<div class="terms_links"><a href="https://www.pcloud.com/fr/terms_and_conditions.html">Conditions générales d’utilisation</a>. <a href="https://www.pcloud.com/fr/privacy_policy.html">Politique de Confidentialité</a>. <a href="https://www.pcloud.com/fr/int_pr_policy.html">Politique sur la propriété intellectuelle</a></div>
+		<div class="language_wrap" data-hover="open">
+ 			<div class="lang">
+				<div class="inptitle">Langue:</div>
+				<div class="lang-box">
+					<span class="chosen">Français</span>
+					<span class="flag"><span class="load-bg"></span></span>
+					<div class="other-langs">
+						<div class="other-langs-wrap">
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/eu.html" data-lang="en">
+										<span class="name">English</span>
+																			</a>
+								</div>
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/bg/eu.html" data-lang="bg">
+										<span class="name">Български</span>
+																			</a>
+								</div>
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/tr/eu.html" data-lang="tr">
+										<span class="name">Türkçe</span>
+																			</a>
+								</div>
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/es/eu.html" data-lang="es">
+										<span class="name">Español</span>
+																			</a>
+								</div>
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/ru/eu.html" data-lang="ru">
+										<span class="name">Русский</span>
+																			</a>
+								</div>
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/zh/eu.html" data-lang="zh">
+										<span class="name">正體中文</span>
+																			</a>
+								</div>
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/de/eu.html" data-lang="de">
+										<span class="name">Deutsch</span>
+																			</a>
+								</div>
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/it/eu.html" data-lang="it">
+										<span class="name">Italiano</span>
+																			</a>
+								</div>
+															<div class="each-lang">
+								  	<a class="set-lang" href="https://www.pcloud.com/pt/eu.html" data-lang="pt">
+										<span class="name">Português</span>
+																			</a>
+								</div>
+
+							<div class="langs-arrow-border"></div>
+							<div class="langs-arrow"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cookie_consent_holder"><div><div class="CookieConsent__WrapperCookieConsent-lkMuzO ecRlSS"><div><span data-translate="cookie_consent">Ce
+ site utilise des cookies afin de vous fournir la meilleure expérience 
+possible. Nous n'utilisons pas de cookies pour recueillir des 
+informations personnelles. En continuant d'utiliser ce site, vous 
+confirmez que vous acceptez ces informations.</span><a href="https://www.pcloud.com/fr/privacy_policy.html" target="_blank"><span data-translate="learn_more_cookie_policy">Informez-vous sur notre politique concernant les cookies.</span></a><div class="CookieConsent__WrapperButtons-cYYLwC hpJVpg"><div class="CookieConsentModal__Wrapper-fhKmcr eriGDp"><a class="CookieConsentModal__ButtonStyled-fmpOgK kwmwNy ButtonDefault__ButtonWrap-igbuEU jNQJt" color="transparent" href="javascript:;"><span>Paramètres de cookies</span></a><form></form></div><a class="CookieConsent__TransformButton-faOPMK vzqWW ButtonDefault__ButtonWrap-igbuEU eYnhLs" color="cyan" href="javascript:;"><span>J'accepte</span></a></div></div></div></div></div>
+</div>
+
+<div class="mob_menu_overlay"></div>
+<div class="mob_menu_overlay_mask"></div>
+<div class="bottom-wrapper"> </div>
+
+<div class="modal standart login">
+	<div class="modal_holder">
+		<div class="modal_wrap">
+			<div class="modal_inner">
+				<div class="content">
+					<div class="h1">Connexion sur votre compte pCloud</div>
+
+					<div class="tabs">
+						<div class="tab_wrap">
+							<div class="tab active">Connexion</div>
+							<div class="tab" data-open="register">S'inscrire</div>
+						</div>
+					</div>
+
+					<div class="inner">
+						<div class="error"></div>
+
+						<div class="input_row">
+							<label>Votre email</label>
+							<input class="form-control email" data-tooltip="" data-tooltip-type="error" type="email" name="email" placeholder="" autocomplete="off" autocorrect="off" spellcheck="false">
+						</div>
+
+						<div class="input_row">
+							<label class="login-pass-label">Votre mot de passe</label>
+							<input class="form-control password" data-tooltip="" data-tooltip-type="error" type="password" name="password" value="" placeholder="" autocomplete="off" autocorrect="off" spellcheck="false">
+						</div>
+
+						<div class="check_box remember-me">
+							<label>
+								<input id="login_remember" data-tooltip="" data-tooltip-type="error" type="checkbox" name="remember" checked="checked"> Se souvenir de moi							</label>
+							<div class="reset_pass" data-open="reset_password">Mot de passe oublié?</div>
+						</div>
+					</div>
+
+					<div class="bottom">
+                        <div class="btn blue" data-tooltip="" data-tooltip-type="error" onclick="loginUser();" data-gevent="Login button">
+                            Connexion<img class="spinner" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/button_loading.html" data-lazy="images/button_loading.png">
+                        </div>
+					</div>
+				</div>
+				<div class="close"></div>
+				<div class="mask"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal standart register">
+    <div class="modal_holder">
+        <div class="modal_wrap">
+            <div class="modal_inner">
+                <div class="content">
+                    <div class="h1">Créer un nouveau compte</div>
+
+                    <div class="tabs">
+                        <div class="tab_wrap">
+                            <div class="tab" data-open="login">Connexion</div>
+                            <div class="tab active">S'inscrire</div>
+                        </div>
+                    </div>
+
+                    <div class="inner">
+                        <div class="error"></div>
+
+                        <div class="input_row">
+                            <label>Votre email <span class="errorche_email errorche" style="float: right; display: none;"></span></label>
+                            <input class="form-control input" data-tooltip="" data-tooltip-type="error" type="email" placeholder="" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false">
+                        </div>
+
+                        <div class="input_row">
+                            <label>Votre mot de passe <span class="errorche_password errorche" style="float: right; display: none;"></span></label>
+                            <span class="pass_err"></span>
+                            <div class="input_wrap">
+                                <input id="check_complex" class="form-control input" data-tooltip="" data-tooltip-type="error" type="password" value="" placeholder="" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false">
+                                <div class="pass_actions">
+                                    <div class="show_pass"></div>
+                                    <div class="progress_box">
+                                        <div class="progress_fill"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="check_box accept-terms">
+                            <label>
+                                <input required="" type="checkbox" name="trms" class="input" data-tooltip="" data-tooltip-type="error" data-tooltip-margin="1"> Je suis d’accord avec les&nbsp;<a href="https://www.pcloud.com/terms_and_conditions.html" target="_blank">Conditions générales d’utilisation</a>&nbsp;de pCloud, <a href="https://www.pcloud.com/privacy_policy.html" target="_blank"> la Politique de confidentialité </a>, et <a href="https://www.pcloud.com/int_pr_policy.html" target="_blank">Politique sur la propriété intellectuelle.</a>                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <div class="btn blue" data-tooltip="" data-tooltip-type="error" onclick="registerUser();" data-gevent="Sign Up button">
+                            Commencez<img class="spinner" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/button_loading.html" data-lazy="images/button_loading.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="close"></div>
+                <div class="mask"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal download_app">
+	<div class="modal_holder">
+		<div class="modal_wrap">
+			<div class="modal_inner">
+				<div class="content">
+					<div class="left_box">
+						<div class="mobile mob_heading">Prenez vos fichiers n'importe où avec vous !</div>
+						<img class="app_image" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/download_mac2x.webp" width="540">
+					</div><!--
+				 --><div class="right_box">
+						<h1>Pour profiter de tout le potentiel de pCloud , téléchargez <b>pCloud Drive</b></h1>
+						<a href="javascript:;" class="btn blue_btn" data-download="drive" data-gevent="Mid Download Drive button">Téléchargement</a>
+					</div><!--
+				 --><div class="mobile button_box">
+						<a href="javascript:;" class="btn_badge">
+							<span style="left: 28%;z-index: 6;"></span>
+							<img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/lazy-load.webp" width="193">
+						</a>
+						<a href="https://cafebazaar.ir/app/com.pcloud.pcloud/?l=fa" class="iran_playstore">
+							<img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/iran_playstore2x.webp" data-lazy="//pcdn-www.pcloud.com/Zmk/images/iran_playstore@2x.png" alt="">
+						</a>
+						<div class="for_android dw-apk">
+							<span class="or_apk">ou</span>
+							<a href="javascript:;" data-gevent="Mid Download Android button" data-download="Android apk" class="apk_badge">
+								<span style="font-size: 10px;z-index: 6;margin: 0;text-align: left;width: inherit;top: 5%;">Téléchargement</span>
+								<img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/apk_badge.webp" data-lazy="//pcdn-www.pcloud.com/Zmk/images/p_mob/apk_badge.png" style="margin-bottom: 0;" alt="Télécharger pCloud.apk" width="193">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="close" data-gevent="Mid Close button"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$(function() {
+	var dwAppImage = $('.modal.download_app .app_image');
+	var dwAppImageSource;
+
+	if (pCloud.isMobile) {
+		var storeButton = $('.btn_badge');
+		var allStoreButtons = $('.btn_badge, .iran_playstore, .apk_badge');
+		var getItOn = {
+			'ios': {
+				'text': "Télécharger ",
+				'link': "https://itunes.apple.com/us/app/pcloud/id692002098",
+				'image': 'images/p_mob/appstore_badge.png',
+				'eventName': 'Mid Download iOS button'
+			},
+			'android': {
+				'text': "Obtenez-le sur",
+				'link': "https://play.google.com/store/apps/details?id=com.pcloud.pcloud&referrer=utm_source?website&utm_medium?click",
+				'image': 'images/p_mob/googleplay_badge.png',
+				'eventName': 'Mid Download Android button'
+			},
+			'windows phone': {
+				'image': 'images/p_mob/microsoft_badge.png'
+				/*'text': ''
+				'link': ''
+				'eventName': 'Mid Download WinPhone button' */
+			}
+		};
+
+		function imageHeight() {
+			var val = $(window).height() - $('.download_app .mob_heading').outerHeight() - 140;
+
+			$('.download_app .app_image').css({'max-height': val + 'px'});
+		};
+
+		if (pCloud.osShort == 'android') {
+			$('.modal.download_app .button_box').addClass('is_android');
+		}
+
+		dwAppImage.attr('width', '');
+		dwAppImageSource = '//pcdn-www.pcloud.com/Zmk/images/download_app/download_' + 'mob_' + pCloud.osShort.replace(' ', '') + '.png';
+
+		storeButton.find('img').attr('src', getItOn[pCloud.osShort].image);
+		storeButton.find('span').html(getItOn[pCloud.osShort].text);
+		storeButton.attr({'href': getItOn[pCloud.osShort].link, 'target': '_blank'});
+		storeButton.on('click.sendgooglevent', function() {
+      if (typeof gaAll == 'function') {
+        gaAll('event', getItOn[pCloud.osShort].eventName,'click');
+      }
+		});
+
+		allStoreButtons.on('click.gotostore', function() {
+			closeModal();
+		});
+
+		$(window).on('resize', function() {
+			imageHeight();
+		});
+
+		imageHeight();
+	} else {
+		dwAppImageSource = '//pcdn-www.pcloud.com/Zmk/images/download_app/download_' + pCloud.osShort + (pCloud.isRetina ? '@2x.png' : '.png');
+	}
+
+	dwAppImage.attr('src', dwAppImageSource);
+});
+</script>
+<div class="modal standart reset_password">
+    <div class="modal_holder">
+        <div class="modal_wrap">
+            <div class="modal_inner">
+                <div class="content">
+                    <div class="h1">Réinitialiser le mot de passe</div>
+                    <div class="inner">
+                        <div class="error"></div>
+
+                        <div class="input_row">
+                            <label>Votre email</label>
+                            <input class="form-control email" data-tooltip="" data-tooltip-type="error" type="email" name="email" placeholder="" autocomplete="off" autocorrect="off" spellcheck="false">
+                        </div>
+
+                        <div class="reset_success">
+                            <img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/check-green.webp">
+                            Vérifiez votre mail pour plus d'informations.                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <div class="btn blue" data-tooltip="" data-tooltip-type="error" onclick="resetPassword();">
+                            Réinitialiser<img class="spinner" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/button_loading.html" data-lazy="images/button_loading.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="close"></div>
+                <div class="mask"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal standart newsletter_welcome">
+    <div class="modal_holder">
+        <div class="modal_wrap">
+            <div class="modal_inner">
+                <div class="content">
+                    <div class="h1">Bienvenue dans le bulletin d'information pCloud!</div>
+
+                    <div class="inner">
+                        Merci d'avoir souscrit à notre bulletin d'information pCloud.<br>
+                        Vous recevrez régulièrement les dernières infos 
+pCloud ainsi que des promotions directement dans votre boîte mail.      
+              </div>
+
+                    <div class="bottom">
+                        <div class="btn blue close">
+                            Fermer<img class="spinner" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/button_loading.html" data-lazy="images/button_loading.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="close"></div>
+                <div class="mask"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal standart newsletter_goodbye">
+    <div class="modal_holder">
+        <div class="modal_wrap">
+            <div class="modal_inner">
+                <div class="content">
+                    <div class="h1">You have been unsubscribed from pCloud newsletter.</div>
+
+                    <div class="bottom">
+                        <div class="btn blue close">
+                            Fermer<img class="spinner" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/button_loading.html" data-lazy="images/button_loading.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="close"></div>
+                <div class="mask"></div>
+            </div>
+        </div>
+    </div>
+</div><div class="modal standart youtube">
+	<div class="modal_holder">
+		<div class="modal_wrap">
+			<div class="modal_inner">
+				<div class="content">
+					<div class="h1">pCloud Video</div>
+					<div class="inner"></div>
+					<div class="spinner"></div>
+				</div>
+				<div class="close"></div>
+				<div class="mask"></div>
+			</div>
+		</div>
+	</div>
+</div><div class="modal standart email_verify">
+    <div class="modal_holder">
+        <div class="modal_wrap">
+            <div class="modal_inner">
+                <div class="content">
+                    <div class="h1">Vérifier votre compte</div>
+
+                    <div class="inner">
+                        <div class="user_message">
+                            Un email contenant un lien de vérification a été envoyé à <b>%email%</b>.<br><span style="color: #999;">Si
+ vous ne recevez pas d'email d'ici quelques minutes, consultez votre 
+dossier Courrier indésirable/Spam ou cliquez sur renvoyer.</span>                        </div>
+                    </div>
+
+                    <div class="bottom">
+                        <div class="btn blue close">
+                            Fermer<img class="spinner" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/button_loading.html" data-lazy="images/button_loading.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="close"></div>
+                <div class="mask"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal promo_lifetime">
+	<div class="modal_holder">
+		<div class="modal_wrap">
+			<div class="modal_inner">
+				<div class="content">
+					<div class="discount">
+						<img src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/lifetime_promo_modal2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/p_promo/lifetime_promo_modal.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/p_promo/lifetime_promo_modal@2x.png" width="640">
+					</div>
+					<div class="h1">pCloud offers a new industry first LIFETIME PLAN!</div>
+					<div class="h2">You buy it once, you keep it forever!</div>
+					<div class="bottom">
+						<a href="https://www.pcloud.com/fr/cloud-storage-pricing-plans.html?product=premium" class="btn blue_btn" data-gevent="ShopNowModal">GET NOW</a>
+					</div>
+				</div>
+				<div class="close"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="notify_bar_wrap is_closed" style="display: block;">
+	<div class="nt_inner">
+		<div class="open_text">
+			<img class="finish_jingle" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/bell2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/notifications/bell.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/notifications/bell@2x.png" width="16">
+		</div>
+		<div class="notify_content">
+			<img class="close_notify" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/bell_close2x.webp" data-src="//pcdn-www.pcloud.com/Zmk/images/notifications/bell_close.png" data-src-retina="//pcdn-www.pcloud.com/Zmk/images/notifications/bell_close@2x.png" width="20">
+			<div class="notify_headline">Notifications</div>
+			<div class="notify_message">Ne manquez plus de promotions ou de mises à jour ! Abonnez-vous pour les recevoir en premier!</div>
+			<div class="ask_for_notify">S'abonner</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$(function() {
+	if (!pCloud.isMobile) {
+		var notifyBar = $('.notify_bar_wrap');
+		var notifyBell = $('.open_text img');
+		var openedHeight;
+
+		function initNotificationBoxToggle() {
+			notifyBar.on('mouseenter', function() {
+				notifyBell.removeClass('jingle');
+				toggleNotificationBox();
+			}).on('mouseleave', function() {
+				toggleNotificationBox();
+			});
+		};
+
+		function toggleNotificationBox(openCallback, closeCallback) {
+			if (notifyBar.hasClass('is_closed')) {
+				notifyBar.on(transitionEnd, function() {
+					if (typeof openCallback == 'function') {
+						openCallback();
+					}
+				}).removeClass('is_closed').addClass('is_opened').css({'height': openedHeight, 'width': 220});
+			} else {
+				notifyBar.on(transitionEnd, function() {
+					if (typeof closeCallback == 'function') {
+						closeCallback();
+					}
+				}).removeClass('is_opened').addClass('is_closed').css({'height': 48, 'width': 48});
+			}
+		};
+
+		initNotificationBoxToggle();
+
+		if (!$.cookie('notifications-subscribed')) {
+			notifyBar.fadeIn(300, function() {
+				openedHeight = $('.notify_content').outerHeight() + 40;
+			});
+		}
+
+		notifyBell.on(animationEnd, function() {
+			notifyBell.off(animationEnd).removeClass('jingle').addClass('finish_jingle');
+		});
+
+		$('.ask_for_notify').on('click', function() {
+			notifyBar.off('mouseenter mouseleave').fadeOut(150);
+			window.open("https://my.pcloud.com/notifications.html", "notifications", "width=580,height=550");
+		});
+
+		$('.close_notify').on('click', function() {
+			notifyBar.off('mouseenter mouseleave');
+
+			toggleNotificationBox(false, function() {
+				notifyBar.fadeOut(150);
+			});
+		});
+	}
+});
+</script>
+<!--DEV_HELPER_PLUGIN-->
+
+
+
+<!--[if lt IE 9]>
+<script src="//pcdn-www.pcloud.com/Zmk/js/ie/rem.js"></script>
+<![endif]-->
+<script>
+// Password strenght
+COMPLEXIFY_BANLIST = '000000|111111|11111111|112233|121212|123123|123456|1234567|12345678|123456789|131313|232323|654321|666666|696969|777777|7777777|8675309|987654|nnnnnn|bbbbbb|cccccc|dddddd|eeeeee|ffffff|gggggg|hhhhhh|iiiiii|jjjjjj|llllll|oooooo|pppppp|qqqqqq|rrrrrr|ssssss|tttttt|uuuuuu|yyyyyy|wwwwww|nop123|nopqrs|noteglh|npprff|npprff14|npgvba|nyoreg|nyoregb|nyrkvf|nyrwnaqen|nyrwnaqeb|nznaqn|nzngrhe|nzrevpn|naqern|naqerj|natryn|natryf|navzny|nagubal|ncbyyb|nccyrf|nefrany|neguhe|nfqstu|nfuyrl|nffubyr|nhthfg|nhfgva|onqobl|onvyrl|onanan|onearl|onfronyy|ongzna|orngevm|ornire|ornivf|ovtpbpx|ovtqnqql|ovtqvpx|ovtqbt|ovtgvgf|oveqvr|ovgpurf|ovgrzr|oynmre|oybaqr|oybaqrf|oybjwbo|oybjzr|obaq007|obavgn|obaavr|obbobb|obbtre|obbzre|obfgba|oenaqba|oenaql|oenirf|oenmvy|oebapb|oebapbf|ohyyqbt|ohfgre|ohggre|ohggurnq|pnyiva|pnzneb|pnzreba|pnanqn|pncgnva|pneybf|pnegre|pnfcre|puneyrf|puneyvr|purrfr|puryfrn|purfgre|puvpntb|puvpxra|pbpnpbyn|pbssrr|pbyyrtr|pbzcnd|pbzchgre|pbafhzre|pbbxvr|pbbcre|pbeirggr|pbjobl|pbjoblf|pelfgny|phzzvat|phzfubg|qnxbgn|qnyynf|qnavry|qnavryyr|qroovr|qraavf|qvnoyb|qvnzbaq|qbpgbe|qbttvr|qbycuva|qbycuvaf|qbanyq|qentba|qernzf|qevire|rntyr1|rntyrf|rqjneq|rvafgrva|rebgvp|rfgeryyn|rkgerzr|snypba|sraqre|sreenev|sveroveq|svfuvat|sybevqn|sybjre|sylref|sbbgonyy|sberire|serqql|serrqbz|shpxrq|shpxre|shpxvat|shpxzr|shpxlbh|tnaqnys|tngrjnl|tngbef|trzvav|trbetr|tvnagf|tvatre|tvmzbqb|tbyqra|tbysre|tbeqba|tertbel|thvgne|thaare|unzzre|unaanu|uneqpber|uneyrl|urngure|uryczr|uragnv|ubpxrl|ubbgref|ubearl|ubgqbt|uhagre|uhagvat|vprzna|vybirlbh|vagrearg|vjnagh|wnpxvr|wnpxfba|wnthne|wnfzvar|wnfcre|wraavsre|wrerzl|wrffvpn|wbuaal|wbuafba|wbeqna|wbfrcu|wbfuhn|whavbe|whfgva|xvyyre|xavtug|ynqvrf|ynxref|ynhera|yrngure|yrtraq|yrgzrva|yvggyr|ybaqba|ybiref|znqqbt|znqvfba|znttvr|zntahz|znevar|znevcbfn|zneyobeb|znegva|zneiva|znfgre|zngevk|znggurj|znirevpx|znkjryy|zryvffn|zrzore|zreprqrf|zreyva|zvpunry|zvpuryyr|zvpxrl|zvqavtug|zvyyre|zvfgerff|zbavpn|zbaxrl|zbafgre|zbetna|zbgure|zbhagnva|zhssva|zhecul|zhfgnat|anxrq|anfpne|anguna|anhtugl|app1701|arjlbex|avpubynf|avpbyr|avccyr|avccyrf|byvire|benatr|cnpxref|cnagure|cnagvrf|cnexre|cnffjbeq|cnffjbeq1|cnffjbeq12|cnffjbeq123|cngevpx|crnpurf|crnahg|crccre|cunagbz|cubravk|cynlre|cyrnfr|cbbxvr|cbefpur|cevapr|cevaprff|cevingr|checyr|chffvrf|dnmjfk|djregl|djreglhv|enoovg|enpury|enpvat|envqref|envaobj|enatre|enatref|erorppn|erqfxvaf|erqfbk|erqjvatf|evpuneq|eboreg|eboregb|ebpxrg|ebfrohq|ehaare|ehfu2112|ehffvn|fnznagun|fnzzl|fnzfba|fnaqen|fnghea|fpbbol|fpbbgre|fpbecvb|fpbecvba|fronfgvna|frperg|frkfrk|funqbj|funaaba|funirq|fvreen|fvyire|fxvccl|fynlre|fzbxrl|fabbcl|fbppre|fbcuvr|fcnaxl|fcnexl|fcvqre|fdhveg|fevavinf|fgnegerx|fgnejnef|fgrryref|fgrira|fgvpxl|fghcvq|fhpprff|fhpxvg|fhzzre|fhafuvar|fhcrezna|fhesre|fjvzzvat|flqarl|grdhvreb|gnlybe|graavf|grerfn|grfgre|grfgvat|gurzna|gubznf|guhaqre|guk1138|gvssnal|gvtref|gvttre|gbzpng|gbctha|gblbgn|genivf|gebhoyr|gehfgab1|ghpxre|ghegyr|gjvggre|havgrq|intvan|ivpgbe|ivpgbevn|ivxvat|ibbqbb|iblntre|jnygre|jneevbe|jrypbzr|jungrire|jvyyvnz|jvyyvr|jvyfba|jvaare|jvafgba|jvagre|jvmneq|knivre|kkkkkk|kkkkkkkk|lnznun|lnaxrr|lnaxrrf|lryybj|mkpioa|mkpioaz|mmmmmm|password|1234|pussy|12345|dragon|qwerty|mustang|letmein|baseball|master|michael|football|shadow|monkey|abc123|pass|fuckme|6969|jordan|harley|ranger|iwantu|jennifer|hunter|fuck|2000|test|batman|trustno1|thomas|tigger|robert|access|love|buster|soccer|hockey|killer|george|sexy|andrew|charlie|superman|asshole|fuckyou|dallas|jessica|panties|pepper|1111|austin|william|daniel|golfer|summer|heather|hammer|yankees|joshua|maggie|biteme|enter|ashley|thunder|cowboy|silver|richard|fucker|orange|merlin|michelle|corvette|bigdog|cheese|matthew|patrick|martin|freedom|ginger|blowjob|nicole|sparky|yellow|camaro|secret|dick|falcon|taylor|bitch|hello|scooter|please|porsche|guitar|chelsea|black|diamond|nascar|jackson|cameron|computer|amanda|wizard|xxxxxxxx|money|phoenix|mickey|bailey|knight|iceman|tigers|purple|andrea|horny|dakota|aaaaaa|player|sunshine|morgan|starwars|boomer|cowboys|edward|charles|girls|booboo|coffee|xxxxxx|bulldog|ncc1701|rabbit|peanut|john|johnny|gandalf|spanky|winter|brandy|compaq|carlos|tennis|james|mike|brandon|fender|anthony|blowme|ferrari|cookie|chicken|maverick|chicago|joseph|diablo|sexsex|hardcore|willie|welcome|chris|panther|yamaha|justin|banana|driver|marine|angels|fishing|david|maddog|hooters|wilson|butthead|dennis|fucking|captain|bigdick|chester|smokey|xavier|steven|viking|snoopy|blue|eagles|winner|samantha|house|miller|flower|jack|firebird|butter|united|turtle|steelers|tiffany|zxcvbn|tomcat|golf|bond007|bear|tiger|doctor|gateway|gators|angel|junior|thx1138|porno|badboy|debbie|spider|melissa|booger|1212|flyers|fish|porn|matrix|teens|scooby|jason|walter|cumshot|boston|braves|yankee|lover|barney|victor|tucker|princess|mercedes|5150|doggie|zzzzzz|gunner|horney|bubba|2112|fred|johnson|xxxxx|tits|member|boobs|donald|bigdaddy|bronco|penis|voyager|rangers|birdie|trouble|white|topgun|bigtits|bitches|green|super|qazwsx|magic|lakers|rachel|slayer|scott|2222|asdf|video|london|7777|marlboro|srinivas|internet|action|carter|jasper|monster|teresa|jeremy|bill|crystal|peter|pussies|cock|beer|rocket|theman|oliver|prince|beach|amateur|muffin|redsox|star|testing|shannon|murphy|frank|hannah|dave|eagle1|11111|mother|nathan|raiders|steve|forever|angela|viper|ou812|jake|lovers|suckit|gregory|buddy|whatever|young|nicholas|lucky|helpme|jackie|monica|midnight|college|baby|cunt|brian|mark|startrek|sierra|leather|4444|beavis|bigcock|happy|sophie|ladies|naughty|giants|booty|blonde|fucked|golden|fire|sandra|pookie|packers|einstein|dolphins|chevy|winston|warrior|sammy|slut|zxcvbnm|nipples|power|victoria|asdfgh|vagina|toyota|travis|hotdog|paris|rock|xxxx|extreme|redskins|erotic|dirty|ford|freddy|arsenal|access14|wolf|nipple|iloveyou|alex|florida|eric|legend|movie|success|rosebud|jaguar|great|cool|cooper|1313|scorpio|mountain|madison|brazil|lauren|japan|naked|squirt|stars|apple|alexis|aaaa|bonnie|peaches|jasmine|kevin|matt|qwertyui|danielle|beaver|4321|4128|runner|swimming|dolphin|gordon|casper|stupid|shit|saturn|gemini|apples|august|3333|canada|blazer|cumming|hunting|kitty|rainbow|arthur|cream|calvin|shaved|surfer|samson|kelly|paul|mine|king|racing|5555|eagle|hentai|newyork|little|redwings|smith|sticky|cocacola|animal|broncos|private|skippy|marvin|blondes|enjoy|girl|apollo|parker|qwert|time|sydney|women|voodoo|magnum|juice|abgrtyu|dreams|maxwell|music|rush2112|russia|scorpion|rebecca|tester|mistress|phantom|billy|6666|albert|abcdef|password1|password12|password123|twitter'.split('|');
+
+(function ($) {
+  $.fn.extend({
+    complexify: function(options, callback) {
+    	var MIN_COMPLEXITY = 49, // 12 chars with Upper, Lower and Number
+    		MAX_COMPLEXITY = 120, //  25 chars, all charsets
+			CHARSETS = [[0x0020, 0x0020],[0x0030, 0x0039],[0x0041, 0x005A],[0x0061, 0x007A],[0x0021, 0x002F],[0x003A, 0x0040],[0x005B, 0x0060],[0x007B, 0x007E],[0x0080, 0x00FF],[0x0100, 0x017F],[0x0180, 0x024F],[0x0250, 0x02AF],[0x02B0, 0x02FF],[0x0300, 0x036F],[0x0370, 0x03FF],[0x0400, 0x04FF],[0x0530, 0x058F],[0x0590, 0x05FF],[0x0600, 0x06FF],[0x0700, 0x074F],[0x0780, 0x07BF],[0x0900, 0x097F],[0x0980, 0x09FF],[0x0A00, 0x0A7F],[0x0A80, 0x0AFF],[0x0B00, 0x0B7F],[0x0B80, 0x0BFF],[0x0C00, 0x0C7F],[0x0C80, 0x0CFF],[0x0D00, 0x0D7F],[0x0D80, 0x0DFF],[0x0E00, 0x0E7F],[0x0E80, 0x0EFF],[0x0F00, 0x0FFF],[0x1000, 0x109F],[0x10A0, 0x10FF],[0x1100, 0x11FF],[0x1200, 0x137F],[0x13A0, 0x13FF],[0x1400, 0x167F],[0x1680, 0x169F],[0x16A0, 0x16FF],[0x1780, 0x17FF],[0x1800, 0x18AF],[0x1E00, 0x1EFF],[0x1F00, 0x1FFF],[0x2000, 0x206F],[0x2070, 0x209F],[0x20A0, 0x20CF],[0x20D0, 0x20FF],[0x2100, 0x214F],[0x2150, 0x218F],[0x2190, 0x21FF],[0x2200, 0x22FF],[0x2300, 0x23FF],[0x2400, 0x243F],[0x2440, 0x245F],[0x2460, 0x24FF],[0x2500, 0x257F],[0x2580, 0x259F],[0x25A0, 0x25FF],[0x2600, 0x26FF],[0x2700, 0x27BF],[0x2800, 0x28FF],[0x2E80, 0x2EFF],[0x2F00, 0x2FDF],[0x2FF0, 0x2FFF],[0x3000, 0x303F],[0x3040, 0x309F],[0x30A0, 0x30FF],[0x3100, 0x312F],[0x3130, 0x318F],[0x3190, 0x319F],[0x31A0, 0x31BF],[0x3200, 0x32FF],[0x3300, 0x33FF],[0x3400, 0x4DB5],[0x4E00, 0x9FFF],[0xA000, 0xA48F],[0xA490, 0xA4CF],[0xAC00, 0xD7A3],[0xD800, 0xDB7F],[0xDB80, 0xDBFF],[0xDC00, 0xDFFF],[0xE000, 0xF8FF],[0xF900, 0xFAFF],[0xFB00, 0xFB4F],[0xFB50, 0xFDFF],[0xFE20, 0xFE2F],[0xFE30, 0xFE4F],[0xFE50, 0xFE6F],[0xFE70, 0xFEFE],[0xFEFF, 0xFEFF],[0xFF00, 0xFFEF],[0xFFF0, 0xFFFD]],
+	    	defaults = {
+				minimumChars: 6,
+				strengthScaleFactor: 0.36, // Default is 1
+				bannedPasswords: window.COMPLEXIFY_BANLIST || [],
+				banMode: 'strict' // (strict|loose)
+			};
+
+		if ($.isFunction(options) && !callback) {
+			callback = options;
+			options = {};
+		}
+
+      	options = $.extend(defaults, options);
+		function additionalComplexityForCharset(str, charset) {
+			for (var i = str.length - 1; i >= 0; i--) {
+				if (charset[0] <= str.charCodeAt(i) && str.charCodeAt(i) <= charset[1])
+					return charset[1] - charset[0] + 1;
+			}
+			return 0;
+		}
+		function inBanlist(str) {
+			var passLen = $('#check_complex').val().length;
+
+			if (options.banMode === 'strict') {
+				for (var i = 0; i < options.bannedPasswords.length; i++) {
+					if (str.toLowerCase().indexOf(options.bannedPasswords[i].toLowerCase()) !== -1 && passLen < 10)
+						return true;
+				}
+				return false;
+			} else
+				return $.inArray(str, options.bannedPasswords) > -1 ? true : false;
+		}
+		function evaluateSecurity() {
+			var password = $(this).val(),
+				complexity = 0, valid = false;
+
+			password.length > 0 ? $('.pass_actions').fadeIn(500) : $('.pass_actions').fadeOut(500);
+
+			if (!inBanlist(password)) {
+				for (var i = CHARSETS.length - 1; i >= 0; i--)
+					complexity += additionalComplexityForCharset(password, CHARSETS[i]);
+			} else
+				complexity = 1;
+
+			var pass_uniqueChars = [], diffCharsCount=0, len = password.length;
+
+			for (var c in password) {
+				if (!pass_uniqueChars[password[c]]) {
+					diffCharsCount++;
+					pass_uniqueChars[password[c]]=1;
+				}
+			}
+
+			if (diffCharsCount < 4)
+				len = diffCharsCount;
+
+			complexity = Math.log(Math.pow(complexity, len)) * (1/options.strengthScaleFactor);
+
+			if (diffCharsCount >= 4)
+				complexity = complexity * ( diffCharsCount / len );
+
+			valid = (complexity > MIN_COMPLEXITY && password.length >= options.minimumChars);
+
+			complexity = (complexity / MAX_COMPLEXITY) * 100;
+			complexity = (complexity > 100) ? 100 : complexity;
+
+			callback.call(this, valid, complexity);
+		}
+
+		function evaluateSecurityDirect(password) {
+			var complexity = 0, valid = false;
+			if (!inBanlist(password)) {
+				for (var i = CHARSETS.length - 1; i >= 0; i--)
+					complexity += additionalComplexityForCharset(password, CHARSETS[i]);
+			} else
+				complexity = 1;
+			complexity = Math.log(Math.pow(complexity, password.length)) * (1/options.strengthScaleFactor);
+			valid = (complexity > MIN_COMPLEXITY && password.length >= options.minimumChars);
+			complexity = (complexity / MAX_COMPLEXITY) * 100;
+			complexity = (complexity > 100) ? 100 : complexity;
+			return {
+				valid: valid,
+				complexity: complexity
+			}
+		}
+
+		this.each(function () {
+			if($(this).val())
+			 	evaluateSecurity.apply(this);
+		});
+
+		window.evaluateSecurityDirect = evaluateSecurityDirect;
+
+		return this.each(function () {
+			$(this).bind('keypress input propertychange mouseup', evaluateSecurity); // bind('keyup focus input propertychange mouseup')
+		});
+    }
+  });
+
+})(jQuery);
+
+//var passInit = false;
+function evaluatePassword() {
+/*	if (!passInit) {
+		$('input').complexify({}, function () {});
+		passInit = true;
+	}*/
+	return evaluateSecurityDirect.apply(this, arguments);
+};
+
+(function($) {
+	var pass_field = $('body').find('#check_complex');
+	var isShiftPressed = false;
+	var isCapsOn = null;
+
+    function check_pass_onblur() {
+    	if (pass_field.val().length < 6)
+			$('.pass_err').html(__('La longueur minimum est de 6 caractères.')).show();
+    	else if (!evaluatePassword(pass_field.val()).valid)
+			$('.pass_err').html(__('Le mot de passe est trop faible !')).show();
+    };
+
+	pass_field.complexify({}, function (valid, complexity) {
+		var progressBar = $('.progress_fill');
+
+		if (valid) $('.pass_err').hide();
+
+		progressBar.toggleClass('pass_ok', valid);
+		progressBar.css({'width': complexity.toFixed(1) + '%'});
+		$('.progress_box').attr('title', Math.round(complexity) + '%');
+	});
+
+    pass_field
+    .bind('keydown', function (e) {
+        var keyCode = e.keyCode ? e.keyCode : e.which;
+        if (keyCode == 16) isShiftPressed = true;
+    })
+    .bind('keyup', function (e) {
+        var keyCode = e.keyCode ? e.keyCode : e.which;
+        if (keyCode == 16) isShiftPressed = false;
+        if (keyCode == 20) {
+            if (isCapsOn == true) {
+                isCapsOn = false;
+               	if (!evaluatePassword(pass_field.val()).valid)
+	                $('.pass_err').hide();
+            } else if (isCapsOn == false) {
+                isCapsOn = true;
+                $('.pass_err').html('La touche MAJ est active !').show();
+            }
+        }
+    })
+    .bind('keypress', function (e) {
+        var keyCode = e.keyCode ? e.keyCode : e.which;
+        if (keyCode >= 65 && keyCode <= 90 && !isShiftPressed) {
+            isCapsOn = true;
+            $('.pass_err').html('La touche MAJ est active !').show();
+        } else {
+        	if (!evaluatePassword(pass_field.val()).valid)
+	            $('.pass_err').hide();
+        }
+    });
+
+	$('.show_pass').on('click', function() {
+		if (!$(this).hasClass('checked')) {
+			$(this).addClass('checked');
+			pass_field.attr('type', 'text').focus();
+		} else {
+			$(this).removeClass('checked');
+			pass_field.attr('type', 'password').focus();
+		}
+	});
+
+	$('#check_complex').on('click.checkcomplex', function() {
+		if (pass_field.val().length) {
+			check_pass_onblur();
+		}
+	});
+
+})(jQuery);
+
+
+var hasCookieConsent = $.cookie('cookieconsent');
+!hasCookieConsent && subscribeForPcloudInit(function() {
+	if (!pCloud.user) {
+		addCookieConsent($('.cookie_consent_holder'));
+		$('body').addClass('cookie_consent');
+	}
+});
+
+// function mockGaFuncs() {
+// 	window.ga = function() {};
+// 	window.gaAll = function() {};
+// }
+
+// function mockFbqFuncs() {
+// 	window.fbq = function() {};
+// }
+
+// function mockTwqFuncs() {
+// 	window.twq = function() {};
+// }
+
+// pCloudGlobals && pCloudGlobals.initTracking([
+// 	{
+// 		type: pCloudGlobals.GA_FLAG,
+// 		onStart: initAnalytics,
+// 		onDisabled: mockGaFuncs
+// 	},
+// 	{
+// 		type: pCloudGlobals.FBQ_FLAG,
+// 		onStart: function() {
+// 			initFacebookTracking();
+// 			initTwitterTracking()
+// 		},
+// 		onDisabled: function() {
+// 			mockFbqFuncs();
+// 			mockTwqFuncs()
+// 		}
+// 	}
+// ]);
+
+setFBTrackingForReferral(document.referrer);
+
+
+subscribeForPcloudInit(function () {
+	initUnverifiedUsersAlert();
+			initShowPromoOffer();
+	})
+
+
+
+	</script>
+
+
+<iframe style="display: none;" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/cookie.html"></iframe><iframe name="stripeXDM_default63773_provider" id="stripeXDM_default63773_provider" aria-hidden="true" style="position: absolute; top: -2000px; left: 0px;" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/channel.html" frameborder="0"></iframe><iframe allowtransparency="true" scrolling="no" name="__privateStripeMetricsController3890" allowpaymentrequest="true" src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/m-outer-26f06e6dfafc73ef8d70171c2397785d.html" aria-hidden="true" tabindex="-1" style="border: medium none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;" frameborder="0"></iframe><div id="dynamic-react-root"></div><script src="pCloud%20-%20File%20Security%20Made%20Simple%20|%20pCloud_fichiers/adsct" type="text/javascript"></script></body></html>

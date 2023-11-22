@@ -1,0 +1,144 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{hyperref}
+\usepackage{import}
+
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{tnsmath}
+
+
+\newtheorem{fact}{Fait}[section]
+\newtheorem{example}{Exemple}[section]
+\newtheorem{definition}{Définition}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+	 
+
+%\let\oldsection\section
+%\renewcommand\section[1]{\vfill\pagebreak\oldsection{#1}}
+
+\let\oldsubsection\subsection
+\renewcommand\subsection[1]{\bigskip\oldsubsection{#1}}
+
+\newcommand\squote[1]{\og #1 \fg{}}
+
+
+	 
+\begin{document}
+
+\title{BROUILLON - Ellipses, paraboles, hyperboles et constructions cycliques}
+\author{Christophe BAL}
+\date{27 Juillet 2019 - 1\ier Août 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+Nous allons présenter une construction récursive très simple de points qui produit une suite périodique lorsque l'on est sur le cercle trigonométrique, la parabole $\setgeo{P} : y = x^2$ ou l'hyperbole $\setgeo{H} : y = \frac{1}{x}$ .
+Même si ces courbes font partie de la belle famille des coniques du plan réel, lesquelles partagent des propriétés géométriques communes, la construction reste magique quand on la découvre.
+Nous finirons ce document en utilisant un point de vue plus technique qui expliquera pourquoi la construction fonctionne plus généralement avec n'importe quelle ellipse, parabole ou hyperbole. 
+
+
+% ------------------ %
+
+
+\section{Une construction naturelle sur un cercle}
+\label{circle}
+
+\subimport{beautiful-cycle-on-conics/}{circle}
+
+
+% ------------------ %
+
+
+\section{\texorpdfstring{La construction reste valable sur la parabole d'équation $y = x^2$}%
+                        {La construction reste valable sur la parabole d'équation y = x**2}}
+\label{parabola}
+
+\subimport{beautiful-cycle-on-conics/}{parabola}
+
+
+% ------------------ %
+
+
+\section{\texorpdfstring{Encore mieux, cela marche aussi avec l'hyperbole d'équation $y = \frac{1}{x}$}%
+                        {Encore mieux, cela marche aussi avec l'hyperbole d'équation y = 1 / x}}
+\label{hyperbola}
+                        
+\subimport{beautiful-cycle-on-conics/}{hyperbola}
+
+
+% ------------------ %
+
+
+\section{Tout ceci est facile si l'on prend un peu de recul}
+\label{group}
+
+\subimport{beautiful-cycle-on-conics/}{group}
+
+
+\end{document}

@@ -1,0 +1,53 @@
+/* NOTES BIBLIO */
+
+.see-footnote.footnote-link.footnote-reference.tooltipstered.scroll-processed {
+top: 0em;
+line-height: inherit;
+font-size: inherit;
+}
+/*
+.see-footnote.footnote-reference {
+  font-size: 17px;
+  font-weight: 400;
+line-height: 1.65em;
+  font-weight: 500;
+  position:  relative; 
+  padding-left:7px;
+  padding-right:7px;
+  top:0px;
+ 
+}
+*/
+.see-footnote.footnote-link.footnote-reference.tooltipstered.scroll-processed {
+   padding-right: 0px;
+margin-right: 0px;
+padding-left: 1px;
+ }
+.see-footnote.footnote-link.footnote-reference.tooltipstered.scroll-processed::before {
+    content: '[';
+/*  right: 0;*/
+top: initial;
+position:revert;
+
+}
+ .see-footnote.footnote-link.footnote-reference.tooltipstered.scroll-processed::after {
+    content: ']';
+  right: 0;
+top: initial;
+position:revert;
+
+}
+
+
+.footnotes-reference-container .footnote-label::before {
+ content:'[';
+}
+ .footnotes-reference-container .footnote-label::after {
+ content:']'
+}
+.see-footnote.footnote-reference::after {
+    content: ']';
+}
+ .xcolor .see-footnote{
+   color:white;
+ }

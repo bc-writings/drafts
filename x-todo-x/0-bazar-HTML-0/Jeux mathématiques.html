@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<meta name="keywords" content="jeu, jeux, fort, boyard, gagner, logique, ebay">
+	<title>Jeux mathématiques</title> 
+	<link href="Jeux%20mathe%CC%81matiques_fichiers/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body class="2">
+<div id="bloc-fixe">
+	
+<div style="text-align:center;"><p>
+<input type="button" class="BOUTONMENU" value="Accueil" onclick="location.href='index.php'">
+<img src="Jeux%20mathe%CC%81matiques_fichiers/hobbes4.gif" align="right"></p><p>
+<input type="button" class="BOUTONMENU" value="Le démineur" onclick="location.href='demineur.php'">
+<input type="button" class="BOUTONMENU" value="Le compte est bon" onclick="location.href='comptebon.php'">
+<input type="button" class="BOUTONMENU" value="Le voyageur itinérant" onclick="location.href='commerce.php'">
+<input type="button" class="BOUTONMENU" value="Jeux mathématiques" onclick="location.href='jeuxtele.php'">
+</p><p>
+</p><p>
+<input type="button" class="BOUTONMENU" value="Les tarifs aériens" onclick="location.href='tarifsaeriens.php'">
+<input type="button" class="BOUTONMENU" value="Théorie des enchères" onclick="location.href='encheres.php'">
+<input type="button" class="BOUTONMENU" value="Options américaines" onclick="location.href='amoptions.php'">
+</p><p>
+<input type="button" class="BOUTONMENU" value="Défilé du 14 juillet" onclick="location.href='14juillet.php'">
+</p><p>
+<input type="button" class="BOUTONMENU" value="Contact" onclick="location.href='form_contact.php'">
+</p></div>
+</div>
+	
+<div id="contenu">
+
+<h1>Jeux mathématiques</h1>
+
+<div align="center">
+
+<table class="sommaire"><tbody><tr><td>
+
+<table cellspacing="2" cellpadding="2" border="0"><tbody><tr align="center">
+<td width="25%">
+	<img src="Jeux%20mathe%CC%81matiques_fichiers/fortboyard.jpg" alt="Fort Boyard" style="border-size:0; vertical-align:middle;" width="150"></td>
+<td width="25%">
+	<img src="Jeux%20mathe%CC%81matiques_fichiers/ebay.jpg" alt="EBAY" style="border-size:0; vertical-align:middle; align:center;" width="150">
+	</td>
+
+<td width="25%">
+	<img src="Jeux%20mathe%CC%81matiques_fichiers/bigdil1.jpg" alt="Gobelets" style="border-size:0; vertical-align:middle; align:center;" width="150">
+	</td>
+<td width="25%">
+
+	<img src="Jeux%20mathe%CC%81matiques_fichiers/queue.jpg" style="border-size:0; vertical-align:middle; align:center;" width="150">
+	</td></tr>
+
+<tr align="center"><td><a href="#htoc1">Le jeu des bâtons</a></td>
+<td><a href="#htoc7">Les enchères ascendantes au deuxième prix</a></td>
+<td><a href="#htoc5">Le jeu des trois gobelets</a></td>
+<td><a href="#htoc6">Le concours séquentiel</a></td></tr>
+
+</tbody></table>
+
+</td></tr></tbody></table>
+
+</div>
+
+<a name="htoc1"> </a>
+<h3><img src="Jeux%20mathe%CC%81matiques_fichiers/batons.jpg" alt="Fort Boyard" style="border-size:0; vertical-align:middle;" width="200"> Fort-Boyard : comment gagner au jeu des bâtons</h3>
+<div class="redaction">
+<p>Les brillants candidats de Fort-Boyard (France 2), après avoir 
+glorieusement conquis toutes les clés malgré la présence de 
+l'animatrice,  doivent affronter les maîtres du temps.</p>
+<p>Un des défis consiste en un duel de bâton	nets : 20 bâtons sont 
+alignés sur la table et les deux joueurs doivent tour à tour en retirer 
+1, 2 ou 3 à leur convenance. Celui qui retire le dernier bâton a perdu.</p>
+<p style="text-align:center;"><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxfb1.gif" alt="Présentation du jeu"></p>
+<p>La solution de ce jeu est assez simple : raisonnons en partant de la fin.</p>
+<ol>
+	<li>Celui qui prend le dernier bâton a perdu. Mon adversaire n'étant 
+pas fou, il ne le prendra que s'il n'a pas d'autre choix, c'est à dire 
+si à la fin de mon tour il ne reste plus qu'un seul bâton sur la table. 
+J'ai donc gagné si je ne laisse qu'un seul bâton sur la table à la fin 
+de mon tour (situation gagnante).
+	</li><li>De manière générale, je peux toujours faire en sorte que, sur 
+deux tours où je joue en dernier, la somme des bâtons enlevés est de 4 :
+ en effet, il suffit que j'en prenne 1 si l'adversaire en a retiré 3, 2 
+s'il en a retiré 2, et 3 s'il en a retiré 1. On dit que le jeu est 
+invariant modulo 4 (règle d'invariance).
+	</li><li>En appliquant cette invariance 2) à la situation gagnante 1), 
+on montre que les situations où je laisse (1+4n) bâtons à la fin de mon 
+tour de jeu sont également des situations gagnantes.
+	</li><li>En conclusion, je gagne si à la fin de mon tour il reste 9 
+bâtons, ou bien 13, ou bien 17. Il faut donc chercher à se mettre dans 
+une telle configuration.
+</li></ol>
+
+<p style="text-align:center;"><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxfb2.gif" alt="Stratégie gagnante"></p>
+<strong>CONCLUSION :</strong> si le jeu commence avec 20 bâtons, et que 
+je joue en premier, je dois prendre au premier tour 3 bâtons, et à 
+chaque tour suivant, je dois jouer le complémentaire à 4 du jeu de mon 
+adversaire.
+Avec cette stratégie, je gagne à tous les coups !
+</div>
+
+
+
+
+<a name="htoc5"> </a>
+<h3><img src="Jeux%20mathe%CC%81matiques_fichiers/bigdil.jpg" alt="Big Dil" style="border-size:0; vertical-align:middle;" width="200"> Big Dil : comment doubler ses chances de gagner la voiture</h3>
+<div class="redaction">
+<p>Les sympathiques candidats du Big Dil (TF1), après avoir remporté un 
+somptueux cadeau grâce à leur euh ... disons talent,  peuvent l'échanger
+ contre une voiture. Ils doivent pour cela deviner derrière quelle case 
+(1, 2 ou 3) elle se trouve.</p>
+
+<p>On supposera pour simplifier que le jeu est non truqué, c'est à dire 
+que les cadeaux sont répartis aléatoirement derrière les cases, sans 
+tenir compte des impératifs de l'émission en matière d'<a title="TF1 a trop bien compris le principe du panem et circenses">audimat</a>, d'<a title="le candidat qui gagne doit bien passer à la télé et ne pas déplaire au public">image</a> et de <a title="ca coute un peu cher de distribuer des millions">budget</a>.</p>
+<p>Déroulement du jeux :</p>
+<table>
+<tbody><tr valign="middle">
+<td>i.</td>
+<td>Le candidat choisit une des trois cases, où il pense que le gros lot se cache.</td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdsel.jpg" alt="selection"></td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdcase.jpg" alt="case"></td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdcase.jpg" alt="case"></td>
+</tr>
+<tr valign="middle">
+<td>ii.</td>
+<td>L'animateur, qui connaît la réponse, dévoile une des deux autres cases, et on voit que le gros lot ne s'y trouvait pas.</td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdsel.jpg" alt="selection"></td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdcase.jpg" alt="case"></td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdperdu.gif" alt="perdu"></td>
+</tr>
+<tr valign="middle">
+<td>iii.</td>
+<td>Le candidat peut ensuite modifier son choix entre les 2 cases qui ne sont toujours pas dévoilées.</td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdcase.jpg" alt="case"></td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdsel.jpg" alt="selection"></td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdperdu.gif" alt="perdu"></td>
+</tr>
+<tr valign="middle">
+<td>iv.</td>
+<td>On vérifie ce qui se cache derrière les cases, et le candidat gagne le lot s'il a trouvé la bonne case.</td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdcase.jpg" alt="case"></td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdgagne.jpg" alt="gagne"></td>
+<td><img src="Jeux%20mathe%CC%81matiques_fichiers/jeuxbdperdu.gif" alt="perdu"></td>
+</tr>
+</tbody></table>
+
+<p>Il s'agit d'un simple jeu de probabilités. Analysons :
+</p><ol style="list-style-type:lower-latin;"><li>Au stade i) il n'existe
+ absolument aucune stratégie meilleure ou pire qu'une autre, malgré le 
+vote du public et les conseils du singe rose ou du castor bleu.
+Toutes les cases ont la même probabilité de cacher le gros lot : <em>1/3</em>.
+</li><li>Au stade ii), l'animateur sait où se cache le gros lot. Au 
+moins une des 2 cases non choisies en i) ne contient pas le gros lot, et
+ l'animateur désigne cette case. Cela ne change en rien la probabilité 
+de gagner du candidat, qui était à <em>1/3</em> et reste à <em>1/3</em>. Notons bien que si l'animateur ne connaissait pas la réponse, la probabilité passerait alors à <em>1/2</em>, mais le gros lot risquerait d'être dévoilé à ce moment.
+</li><li>Au stade iii), le candidat a intérêt à changer de case. En 
+effet, la case qu'il a choisie au début est gagnante avec probabilité <em>1/3</em>, et donc perdante avec probabilité <em>2/3</em>.
+Cela signifie que l'autre case est gagnante avec la  probabilité double <em>2/3</em>
+ ! Encore une fois, ceci vient du fait que l'animateur connaît la 
+réponse et donne une information capitale en retirant une des mauvaises 
+options.</li></ol>
+
+<p><strong>CONCLUSION :</strong> le candidat a intérêt à changer son choix.</p>
+</div>
+
+
+<a name="htoc7"> </a>
+<h3><a href="http://www.ebay.fr/"><img src="Jeux%20mathe%CC%81matiques_fichiers/ebay.jpg" alt="EBAY" style="border-size:0; vertical-align:middle;" width="200"></a> Ebay : les enchères ascendantes au deuxième prix</h3>
+<div class="redaction">
+<p>Les acheteurs calculateurs sur EBAY participent à une une vente 
+ascendante au deuxième prix, c'est-à-dire que, sur la base d'une enchère
+ maximale, ou valuation, le site d'enchères compare votre offre à celle 
+des autres enchérisseurs, et l'augmente automatiquement du montant 
+nécessaire pour qu'elle reste toujours la plus élevée.
+</p><p>Exemple : Corbeau (joueur C) et Renard (joueur R) s'affrontent pour emporter un fromage (objet).<br>
+Supposons que C soit prêt à payer 60 sous pour cet objet alors que R, 
+bien plus gourmand, accepterait potentiellement d'aller jusqu'à 80 sous.
+Voici plusieurs séquences d'enchère envisageables. A chaque fois, l'axe 
+des abscisses représente la chronologie des enchères, qui se déroulent 
+entre le temps 0 et le temps 10, et les ordonnées présentent, pour 
+chaque instant, la mise de C en noir, la mise de R en orange et le prix 
+affiché de l'objet en bleu, le vainqueur du moment étant celui de R ou C
+ ayant la mise la plus élevée.
+</p><p></p><table><tbody><tr><td><img src="Jeux%20mathe%CC%81matiques_fichiers/cr1.png" alt="Scénario 1" style="border-size:0; vertical-align:middle;"></td>
+<td>Scénario 1 : Le joueur C dévoile très tôt sa valuation de 60. Il est
+ provisoirement vainqueur de l'objet au prix de 1. Le deuxième joueur 
+dévoile alors sa valuation, de 80, ce qui lui donne l'ascendant sur 
+l'objet à un prix de 61. Il s'agit du résultat final.</td></tr>
+<tr><td>Scénario 2 : Le joueur C suit la même stratégie qu'auparavant 
+mais le joueur R attend le dernier moment pour miser sa valuation. R 
+emporte l'objet au prix de 61.</td><td><img src="Jeux%20mathe%CC%81matiques_fichiers/cr2.png" alt="Scénario 2" style="border-size:0; vertical-align:middle;"></td></tr>
+<tr><td><img src="Jeux%20mathe%CC%81matiques_fichiers/cr3.png" alt="Scénario 3" style="border-size:0; vertical-align:middle;"></td>
+<td>Scénario 3 : Le joueur C affiche rapidement sa valuation et cette 
+fois le joueur R attaque en augmentant progressivement sa mise tout en 
+la maintenant inférieure à sa valuation.
+Il dévoile la valuation de C en faisant augmenter le prix mais ne 
+l'emporte qu'au moment où mise dépasse 60. Il emporte alors l'objet au 
+prix de 61</td></tr>
+<tr><td>Scénario 4 : les joueurs augmentent progressivement leur mise à 
+chaque fois que la victoire leur échappe. Le joueur C perd 
+définitivement l'objet quand R mise au-delà de 60. R emporte l'objet au 
+prix de 61, sans même avoir dévoilé sa valuation de 80.</td><td><img src="Jeux%20mathe%CC%81matiques_fichiers/cr4.png" alt="Scénario 4" style="border-size:0; vertical-align:middle;"></td></tr>
+</tbody></table>
+
+<p>Des joueurs ont développé toutes sortes de stratégie pour emporter 
+des enchères au meilleur prix. Voici quelques conseils pour éviter une 
+surchauffe des neurones, toutes ces stratégies n'étant que perte de 
+temps.
+</p><ol><li>Un joueur possède une et une seule valuation pour un objet.
+Cette valuation dépend essentiellement du prix d'un objet similaire ou 
+meilleur sur les autres marchés et de l'utilité que retire 
+personnellement le joueur de cet objet. Sauf dans un dessein de 
+spéculation ou de manipulation des cours (qui n'est généralement pas 
+très légal), la valuation d'un joueur pour un objet ne dépend pas des 
+autres joueurs ni du vendeur.
+Si un joueur est prêt, au dernier moment, à revoir à la hausse sa 
+valuation, c'est qu'il ne s'est pas suffisamment interrogé, en amont, 
+sur la valeur qu'il accordait à l'objet, ou alors c'est qu'il est pris 
+par l'excitation du dernier moment et agit de manière irrationnelle en 
+payant davantage pour l'objet qu'il ne le voudrait et le regrettera 
+quelques instants plus tard (on voit parfois des objets d'occasion sur 
+ebay se vendre plus chers que les mêmes objets neufs sur d'autres sites 
+comme amazon).
+</li><li><b>Le joueur ayant la plus forte valuation emporte l'objet au prix de la deuxième plus forte valuation</b>, et ce quel que soit le nombre de joueurs.
+</li><li>Un joueur n'a aucun avantage à cacher sa valuation. En effet, 
+en application du 1), la valuation d'un joueur n'est pas influencée par 
+les autres acteurs du marché. L'afficher publiquement est par contre une
+ source d'efficacité, puisqu'elle améliore l'information sincère et 
+accélère la fixation du prix (sans le modifier). Il est donc inutile de 
+surenchérir plusieurs fois sur le même objet.
+</li><li>Un joueur n'a aucun avantage à "jouer la montre", en 
+application des mêmes principes. Un joueur peut miser plusieurs heures 
+avant la clôture d'une enchère, il ne sera pas lésé par rapport à celui 
+qui attend la dernière minute.
+</li></ol>
+
+
+<p><strong>CONCLUSION :</strong> Dans tous les cas, le joueur ayant la 
+plus forte valuation emporte l'objet au prix de la deuxième valuation. 
+Il n'y a aucune stratégie permettant de modifier les valuations des 
+autres joueurs ou de dévier de ce résultat final.
+Donc, s'il vous plait, quand vous achetez sur ebay, ne faites pas perdre
+ leur temps aux autres acheteurs et saisissez dès le début votre enchère
+ maximale.
+</p></div>
+
+
+
+
+
+<a name="htoc6"> </a>
+<h3><img src="Jeux%20mathe%CC%81matiques_fichiers/eurovision.jpg" alt="Eurovision" style="border-size:0; vertical-align:middle;" width="100"> Eurovision : pourquoi les punks finlandais ont-ils gagné le concours du plus kitsch ?</h3>
+<p style="text-align:right; font-style:italic;">Avec le concours d'Etienne Roussel</p>
+<div class="redaction">
+
+<p>Le principe de l'Eurovision : 24 candidats de tous les pays qui se 
+succèdent dans l'interprétation de leur « tube » national pour le plus 
+grand ravissement de nos oreilles éblouies. Ensuite des juges attribuent
+ des points à leurs morceaux favoris (dur métier, ce choix doit leur 
+déchirer le coeur tellement tous les candidats méritent de gagner...), 
+d'où un classement final.</p>
+
+<p>Plaçons-nous dans la peau d'un juge : <br>
+Début de soirée : c'est émouvant, c'est bouleversifiant, les chansons 
+sont plus belles les unes que les autres, j'attends la suite avec 
+impatience... <br>
+Milieu de soirée : ah oui, cuila il est bien, attends cuila aussi, oh cuila est encore mieux<br>
+Fin de soirée : j'ai envie de faire pipi et ma femme va encore me 
+rouspéter si je rentre tard, quand est-ce que ça se termine ? de toute 
+façon mon choix est fait<br>
+Le concours s'achève : bon, je ne me souviens plus des premiers, les 
+tout derniers j'ai pas écouté, mais ceux juste avant ils étaient pas mal
+ je crois.</p>
+<p>Et le classement est le suivant :
+
+</p><p style="text-align:center;"><a href="http://j.mochel.free.fr/documents/eurovision.xls" title="Télécharger en format XLS"><img src="Jeux%20mathe%CC%81matiques_fichiers/eurovisiong.jpg" alt="Classement eurovision" style="border: solid black 1pt;"></a></p>
+
+<p>
+On retrouve ces trois phases dans le classement final, donné en fonction
+ du rang de passage des candidats : la phase de calibrage, pendant 
+laquelle on se fait une idée du niveau de la compétition, suivie de la 
+phase d'enthousiasme, pendant laquelle on aime les morceaux, et 
+finalement la phase d'exaspération, durant laquelle on attend 
+impatiemment la fin de la soirée.<br>
+La courbe binomiale de tendance, d'une détermination de 31%, montre un 
+optimal de bons sentiments pour les groupes s'exécutant entre le 17e et 
+le 21e rang (l'optimal est atteint au 19e rang, soit à 77%). La tendance
+ est très semblable si on exclut le vainqueur du calcul, ce n'est donc 
+pas autoréalisateur.<br>
+Le découpage du graphe est formel : si l'on passe dans les 9 premiers 
+(37%, cela vous rappelle-t-il quelque chose sur la durée d'apprentissage
+ d'une loi aléatoire ?), on est condamné à finir dans les 11 derniers 
+(et on remercie la France qui, bien que idéalement placée en ordre de 
+passage, n'est comme d'habitude pas capable de trouver une chanson et 
+une chanteuse dignes de ce nom).</p>
+
+<p><strong>CONCLUSION :</strong> si les Finlandais ont gagné 
+l'Eurovision 2006, c'est du au fait qu'ils soient passés aux 71%. 
+Retenez-le pour vos prochains concours/auditions...</p>
+
+</div>
+
+
+<div><hr class="FIN"><table class="FIN"><tbody><tr><td width="300" align="LEFT"><a href="http://validator.w3.org/check?uri=http%3A%2F%2Fj.mochel.free.fr/jeuxtele.php%3Fnoframe" style="target: W3V tab back;">	<img src="Jeux%20mathe%CC%81matiques_fichiers/valid-html401.png" alt="Conforme au standard HTML 4.01" style="border:0;" width="88" height="31"></a><a href="http://jigsaw.w3.org/css-validator/validator?uri=http://j.mochel.free.fr/style.css" style="target: W3CSS tab back;">	<img src="Jeux%20mathe%CC%81matiques_fichiers/vcss.png" alt="Feuille de style CSS valide" style="border-width:0;"></a><a href="http://amphi-gouri.org/blog/2005/05/31/108-SiteMondialSansTabacEnClairSiteNonFumeur" style="target: gouri;">		<img src="Jeux%20mathe%CC%81matiques_fichiers/valid_non_fumeur.png" alt="Page non-fumeur" style="border-width:0;"></a></td><td align="center">(c) JM</td><td align="center">04-08-2010</td><td width="150" align="right"><a href="http://j.mochel.free.fr/form_contact.php">	<img src="Jeux%20mathe%CC%81matiques_fichiers/puceContact.gif" alt="Me laisser un message" style="border:0;"></a><a href="http://j.mochel.free.fr/index.php">			<img src="Jeux%20mathe%CC%81matiques_fichiers/puceHome.gif" alt="Page d'accueil" style="border:0;"></a></td></tr></tbody></table></div>	
+</div>
+
+
+</body></html>

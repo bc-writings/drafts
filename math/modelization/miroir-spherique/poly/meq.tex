@@ -1,0 +1,171 @@
+La Physique nous indique que la lumière va parcourir le chemin le plus court, donc on cherche le point $M \in \setgeo{C}$  tel que la distance $MS + MI$ soit minimale avec $x_M > 0$. Calculons donc cette distance en fonction de $y_M$.
+
+\medskip
+
+\begin{stepcalc}[style=ar*]
+	MS + MI
+\explnext{}   
+	\sqrt{ \big( x_M - s \big)^2 + y_M^2 }
+	+
+	\sqrt{ \big( x_M - i \big)^2 + \big( y_M - j \big)^2 }
+\explnext{}   
+	\sqrt{ x_M^2 + s^2 - 2 s x_M + y_M^2 }
+	+
+	\sqrt{ x_M^2 + i^2 - 2 i x_M + y_M^2 + j^2 - 2 j y_M }
+\explnext*{$x_M^2 + y_M^2 = 1$}{}   
+	\sqrt{ 1 + s^2 - 2 s x_M  }
+	+
+	\sqrt{ 1 + i^2 + j^2 - 2 i x_M - 2 j y_M }
+\explnext*{$t \eq[nota] OI$}{}   
+	\sqrt{ 1 + s^2 - 2 s x_M  }
+	+
+	\sqrt{ 1 + t^2 - 2 i x_M - 2 j y_M }
+\explnext*{$x_M^2 + y_M^2 = 1$ et $x_M > 0$}{} 
+	\sqrt{ 1 + s^2 - 2 s \sqrt{1 - y_M^2} }
+	+
+	\sqrt{ 1 + t^2 - 2 i \sqrt{1 - y_M^2} - 2 j y_M }  
+\explnext*{$2 \alpha \eq[nota] 1 + s^2$ \\ $2 \beta \eq[nota] 1 + t^2$}{} 
+	\sqrt{ 2 \alpha - 2 s \sqrt{1 - y_M^2} }
+	+
+	\sqrt{ 2 \beta - 2 i \sqrt{1 - y_M^2} - 2 j y_M }  
+\end{stepcalc}
+
+\bigskip
+
+On doit donc commencer à chercher toutes les racines $y \in \intervalO{-1}{1}$ de l'équation $\der{f}{x}{1}(y) = 0$ où 
+$f(y) \eq[def] \sqrt{ 2 \alpha - 2 s \sqrt{1 - y^2} } + \sqrt{ 2 \beta - 2 i \sqrt{1 - y^2} - 2 j y } $ . 
+Or nous avons :
+
+\bigskip
+
+\begin{stepcalc}[style=sar]
+	\der{f}{x}{1}(y)
+\explnext{}
+    \dfrac{2 s y}{ \sqrt{1 - y^2} }
+	\cdot
+    \dfrac{1}{ 2 \sqrt{ 2 \alpha - 2 s \sqrt{1 - y^2} } }
+	%
+	\\ &
+	\kern-1em + \,
+	%
+    \bigg( \dfrac{2 i y}{ \sqrt{1 - y^2} } - 2 j \bigg)
+	\cdot
+    \dfrac{1}{ 2 \sqrt{ 2 \beta - 2 i \sqrt{1 - y^2} - 2 j y } }
+\explnext{}
+	\dfrac{1}{\sqrt{1 - y^2}}
+	\bigg(
+        \dfrac{s y}{ \sqrt{ 2 \alpha - 2 s \sqrt{1 - y^2} } }	%
+    	+
+        \dfrac{i y - j \sqrt{1 - y^2} }{ \sqrt{ 2 \beta - 2 i \sqrt{1 - y^2} - 2 j y } }
+    \bigg)
+\end{stepcalc}
+
+\bigskip
+
+Nous avons alors :
+
+\medskip
+
+\begin{stepcalc}[style=ar*, ope = {\implies[donc]}]
+	\der{f}{x}{1}(y) = 0
+\explnext{}
+	s y \, \sqrt{ 2 \beta - 2 i \sqrt{1 - y^2} - 2 j y }
+	+
+	\big( i y - j \sqrt{1 - y^2} \big) \, \sqrt{ 2 \alpha - 2 s \sqrt{1 - y^2} }
+	=
+	0
+\explnext{}
+	s y \, \sqrt{ 2 \beta - 2 i \sqrt{1 - y^2} - 2 j y }
+	=
+	\big( j \sqrt{1 - y^2} - i y \big) \, \sqrt{ 2 \alpha - 2 s \sqrt{1 - y^2} }
+\explnext{}
+	s^2 y^2 \big( \beta - i \sqrt{1 - y^2} - j y \big)
+	=
+	\big( j \sqrt{1 - y^2} - i y \big)^2 \, \big( \alpha - s \sqrt{1 - y^2} \big)
+\end{stepcalc}
+
+\bigskip
+
+Concentrons-nous \qty{2}{\min} sur la partie droite de la dernière équation.
+
+\medskip
+
+\begin{stepcalc}[style=ar*]
+	\big( j \sqrt{1 - y^2} - i y \big)^2 \, \big( \alpha - s \sqrt{1 - y^2} \big)
+\explnext{}
+	\big( j^2 (1 - y^2) + i^2 y^2 - 2 i j y \sqrt{1 - y^2} \big) \, \big( \alpha - s \sqrt{1 - y^2} \big)
+\explnext{}
+	\big( j^2 + (i^2 - j^2) y^2 - 2 i j y \sqrt{1 - y^2} \big) \, \big( \alpha - s \sqrt{1 - y^2} \big)
+\explnext{}
+	j^2 \alpha - j^2 s \sqrt{1 - y^2}
+	%
+	\\ &
+	\kern-1em + \,
+	%
+	(i^2 - j^2) y^2 \alpha - (i^2 - j^2) y^2 s \sqrt{1 - y^2}
+	%
+	\\ &
+	\kern-1em -
+	%
+	2 \alpha i j y \sqrt{1 - y^2} + 2 i j s y (1 - y^2)
+\end{stepcalc}
+
+
+\bigskip
+
+Nous devons de nouveau introduire des notations pour les constantes. Nous posons donc
+$XXX$ ,
+et
+$YYY$ ,
+afin d'obtenir :
+
+\medskip
+
+\begin{stepcalc}[style=ar*, ope = {\implies[donc]}]
+	\der{f}{x}{1}(y) = 0
+\explnext{}
+	A y^3 + B y^2 + C y
+	=
+	( D y^2 + E y + F ) \sqrt{1 - y^2}
+\explnext{}
+	A^2 y^6 + B^2 y^4 + C^2 y^2
+	+
+	2 A B y^5 + 2 A C y^4 + 2 B C y^3
+	%
+	\\ &
+	\kern-1em = \,
+	%
+	\big( 
+	    D^2 y^4 + E^2 y^2 + F^2 
+	    +
+	    2 D E y^3 + 2 D F y^2 + 2 E F y
+	\big)
+	(1 - y^2)
+\explnext{}
+	XXX y^6 
+	+ 
+	XXX y^5
+	+ 
+	XXX y^4
+	+ 
+	XXX y^3
+	+ 
+	XXX y^2
+	+ 
+	XXX y
+	+ 
+	XXX
+	=
+	0
+\end{stepcalc}
+
+
+\bigskip
+
+Il est de temps de passer à quelques applications numériques puisqu'il est bien connu que seules les équations polynomiales de degré au plus $4$ peuvent être résolues par radicaux de façon générique
+\footnote{
+	Par exemple, il est très simple de résoudre $x^{2048} = 2$ via des racines carrées successives.
+}.
+
+
+

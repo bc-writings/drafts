@@ -1,0 +1,1750 @@
+
+/* BEGIN TEMPLATE css.tpl */
+
+/* overall style */
+
+body {
+    background-color: White;
+}
+
+#phorum {
+    font-family: Arial;
+    font-size: small;
+    color: Black;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* HTML level styles */
+
+img {
+    vertical-align: midle;
+    border: none;
+}
+
+#phorum div.generic table th {
+    text-align: left;
+}
+
+#phorum table.list {
+    width: 100%;
+    margin-bottom: 4px;
+    border: 1px solid #c0cdc0;
+    border-bottom: 0;
+}
+
+#phorum table.list th  {
+    background-repeat: repeat-x;
+    background-image: url('templates/emerald_perso/images/header_background.png');
+    color: Black;
+    background-color: #c0cdc0;
+    font-size: 85%;
+    padding: 5px;
+}
+
+#phorum table.list th a {
+    color: Black;
+}
+
+#phorum table.list td {
+    background-color: White;
+    padding: 8px;
+    border-bottom: 1px solid #c0cdc0;
+    font-size: 85%;
+}
+
+#phorum table.list td.alt {
+    background-color: #edf2ed;
+}
+
+#phorum table.list td.current {
+    background-color: #f0f7f0;
+}
+
+#phorum table.list td p {
+    margin: 4px 8px 16px 4px;
+}
+
+#phorum table.list td h3 {
+    margin: 0;
+}
+
+#phorum table.list td h4 {
+    font-size: 115%;
+    margin: 0;
+    font-weight: normal;
+}
+
+#phorum table.list td span.new-indicator {
+    color: red;
+    font-size: 80%;
+    font-weight: normal;
+}
+
+#phorum a {
+    color: #355F35;
+}
+
+#phorum a:hover {
+    color: #709CCC;
+}
+
+#phorum a.icon {
+    background-repeat: no-repeat;
+    background-position: 1px 2px;
+    padding: 4px 10px 2px 21px;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+#phorum h1 {
+    margin: 5px 0 0 0;
+    font-size: 145%;
+}
+
+#phorum h2 {
+    margin: 0;
+    font-size: 115%;
+    font-weight: normal;
+}
+
+#phorum h4 {
+    margin: 0 0 5px 0;
+}
+
+#phorum hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #c0cdc0;
+}
+
+/* global styles */
+
+#phorum div.generic table {
+}
+
+#phorum div.generic {
+    padding: 8px;
+    background-color: #edf2ed;
+    border: 1px solid #c0cdc0;
+}
+
+#phorum div.generic-lower {
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+#phorum div.paging {
+    float: right;
+}
+
+#phorum div.paging a {
+    font-weight: bold;
+    margin: 0 4px 0 4px;
+    padding: 0 0 1px 0;
+}
+
+#phorum div.paging img{
+    vertical-align: bottom;
+}
+
+#phorum div.paging strong.current-page {
+    margin: 0 4px 0 4px;
+}
+
+#phorum div.nav {
+    font-size: 85%;
+    margin: 0 0 5px 0;
+}
+
+#phorum div.nav-right {
+    float: right;
+}
+
+#phorum div.information {
+    padding: 8px;
+    border: 1px solid #62a762;
+    background-color: #e6ffe6;
+    margin-bottom: 8px;
+}
+
+#phorum div.notice {
+    padding: 8px;
+    background-color: #edf2ed;
+    border: 1px solid #c0cdc0;
+    margin-bottom: 8px;
+}
+
+#phorum div.warning {
+    border: 1px solid #A76262;
+    background-color: #FFD1D1;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+#phorum div.attachments {
+    background-color: White;
+    margin-top: 8px;
+    padding: 16px;
+    border: 1px solid #c0cdc0;
+}
+
+#phorum span.new-flag {
+    color: red;
+}
+
+#phorum a.message-new {
+    font-weight: bold;
+}
+
+#phorum table.menu td {
+    vertical-align: top;
+}
+
+#phorum table.menu td.menu {
+    font-size: 85%;
+    padding: 0 8px 0 0;
+}
+
+#phorum table.menu td.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 8px 8px;
+}
+
+#phorum table.menu td.menu ul li {
+    margin: 0 0 4px 0;
+}
+
+#phorum table.menu td.menu ul li a {
+    text-decoration: none;
+}
+
+#phorum table.menu td.menu ul li a.current {
+    font-weight: bold;
+}
+
+#phorum table.menu td.menu span.new {
+    color: red;
+}
+
+#phorum table.menu td.content {
+    width: 100%;
+    padding: 0;
+}
+
+#phorum table.menu td.content h2 {
+    margin: 0 0 8px 0;
+    background-repeat: repeat-x;
+    background-image: url('templates/emerald_perso/images/header_background.png');
+    color: Black;
+    background-color: #c0cdc0;
+    padding: 4px;
+}
+
+#phorum table.menu td.content div.generic {
+    margin: 0 0 8px 0;
+}
+
+#phorum table.menu td.content dl {
+    margin: 0;
+    padding: 0;
+}
+
+#phorum table.menu td.content dt {
+    font-weight: bold;
+}
+
+#phorum table.menu td.content dd {
+    padding: 4px;
+    margin: 0 0 8px 0;
+}
+
+#phorum fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#phorum textarea.body {
+    font-family: Arial;
+    width: 100%;
+    border: 0;
+}
+
+#phorum table.form-table {
+    width: 100%;
+}
+
+
+
+/* header styles */
+
+#phorum #logo {
+    height: 46px;
+    background-color: #78ad78;
+    vertical-align: bottom;
+    background-image: url('templates/emerald_perso/images/top_background.png');
+}
+
+#phorum #logo img {
+    margin: 16px 0 0px 16px;
+}
+
+#phorum #page-info {
+    padding: 8px 8px 8px 0;
+    margin: 0 16px 16px 0;
+}
+
+#phorum #page-info .description {
+    margin: 8px 8px 0 0;
+    padding-right: 32px;
+    font-size: 85%;
+}
+
+#phorum #breadcrumb {
+    border-bottom: 1px solid #b6b6b6;
+    border-top: 0;
+    padding: 5px;
+    font-size: 85%;
+}
+
+#phorum #user-info {
+    font-size: 85%;
+    margin: 0 0 4px 0;
+    text-align: right;
+}
+
+#phorum #user-info a {
+    margin: 0 0 0 10px;
+    padding: 4px 0 2px 21px;
+
+    background-repeat: no-repeat;
+    background-position: 1px 2px;
+}
+
+#phorum #user-info img {
+    border-width : 0;
+    margin: 4px 3px 0 0;
+}
+
+#phorum #user-info small a{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+#phorum div.attention {
+    /* does not use template values on purpose */
+    padding: 24px 8px 24px 64px;
+    border: 1px solid #A76262;
+    background-image: url('templates/emerald_perso/images/dialog-warning.png');
+    background-color: #FFD1D1;
+    background-repeat: no-repeat;
+    background-position: 8px 8px;
+    color: Black;
+    margin: 8px 0 8px 0;
+}
+
+#phorum div.attention a {
+    /* does not use template values on purpose */
+    color: #68312C;
+    padding: 2px 2px 2px 21px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: 1px 2px;
+}
+
+#phorum #right-nav {
+    float: right;
+}
+
+#phorum #search-area {
+    float: right;
+    text-align: right;
+    padding: 8px 8px 8px 32px;
+    background-repeat: no-repeat;
+    background-position: 8px 12px;
+    margin: 0 16px 0 0;
+}
+
+#phorum #header-search-form {
+    display: inline;
+}
+
+#phorum #header-search-form a {
+    font-size: 65%;
+}
+
+
+
+/* Read styles */
+
+#phorum div.message div.generic {
+    border-bottom: 0;
+}
+
+#phorum td.message-user-info {
+    float: right;
+    font-size: 85%;
+}
+
+#phorum div.message-author {
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
+    padding: 0px 0 0px 21px;
+    font-size: 115%;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#phorum div.message-author small {
+    font-size: 65%;
+    font-weight: normal;
+    margin: 0 0 0 16px;
+}
+
+#phorum div.message-subject {
+    font-weight: bold;
+    font-size: 85%;
+}
+
+#phorum div.message-body {
+      font-size: 100%;
+      font-weight: normal;
+    padding: 16px;
+    margin: 0 0 16px 0;
+    border: 1px solid #c0cdc0;
+    border-top: 0;
+    background-image: url('templates/emerald_perso/images/message_background.png');
+    background-repeat: repeat-x;
+    background-color: White;
+    overflow: hidden; /* makes the div extend around floated elements */
+}
+
+#phorum div.message-body br {
+    clear: both;
+}
+
+#phorum div.message-date {
+    font-size: 85%;
+}
+
+#phorum div.message-moderation {
+    margin-top: 8px;
+    font-size: 85%;
+    border-top: 0;
+    padding: 6px;
+    background-color: #edf2ed;
+    border: 1px solid #c0cdc0;
+}
+
+#phorum div.message-options {
+    text-align: right;
+    font-size: 85%;
+    clear: both;
+}
+
+#phorum #thread-options {
+    margin: 8px 0 32px 0;
+    background-color: #edf2ed;
+    border: 1px solid #c0cdc0;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Changes styles */
+
+#phorum span.addition {
+    background-color: #CBFFCB;
+    color: #000000;
+}
+
+#phorum span.removal {
+    background-color: #FFCBCB;
+    color: #000000;
+}
+
+/* Posting styles */
+
+#phorum #post {
+    clear: both;
+}
+
+#phorum #post ul {
+    margin: 2px;
+}
+
+#phorum #post ul li {
+    font-size: 85%;
+}
+
+#phorum #post-body {
+    border: 1px solid #c0cdc0;
+    background-color: White;
+    padding: 8px;
+}
+
+#phorum #post-moderation {
+    font-size: 85%;
+    float: right;
+    border: 1px solid #c0cdc0;
+    background-color: #fffdf6;
+    padding: 8px;
+}
+
+#phorum #post-buttons {
+    text-align: center;
+    margin-top: 8px;
+}
+
+#phorum div.attach-link {
+    background-image: url('templates/emerald_perso/images/attach.png');
+    background-repeat: no-repeat;
+    background-position: 1px 2px;
+    padding: 4px 10px 2px 21px;
+    font-size: 85%;
+    font-weight: normal;
+}
+
+#phorum #attachment-list td {
+    font-size: 85%;
+    padding: 6px;
+}
+
+#phorum #attachment-list input {
+    font-size: 65%;
+}
+
+
+/* PM styles */
+
+#phorum input.rcpt-delete-img {
+    vertical-align: bottom;
+}
+
+#phorum div.pm {
+    padding: 8px;
+    background-color: #edf2ed;
+    border: 1px solid #c0cdc0;
+    border-bottom: 0;
+}
+
+#phorum div.pm div.message-author {
+    font-size: 85%;
+}
+
+#phorum .phorum-gaugetable {
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+#phorum .phorum-gauge {
+    border: 1px solid #c0cdc0;
+    background-color: White;
+}
+
+#phorum .phorum-gaugeprefix {
+    border: none;
+    background-color: White;
+    padding-right: 10px;
+}
+
+
+/* Profile styles */
+
+#phorum #profile div.icon-user {
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
+    padding: 0px 0 0px 21px;
+    font-size: 115%;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#phorum #profile div.icon-user small {
+    font-size: 65%;
+    font-weight: normal;
+    margin: 0 0 0 16px;
+}
+
+#phorum #profile dt {
+    font-weight: bold;
+}
+
+#phorum #profile dd {
+    padding: 4px;
+    margin: 0 0 8px 0;
+}
+
+
+/* Search Styles */
+
+#phorum #search-form {
+    margin-bottom: 35px;
+}
+
+#phorum #search-form form {
+    font-size: 85%;
+}
+
+#phorum div.search {
+    background-color: White;
+}
+
+#phorum div.search-result {
+    font-size: 85%;
+    margin-bottom: 20px;
+}
+
+#phorum div.search-result h4 {
+    font-size: 125%;
+    margin: 0;
+}
+
+#phorum div.search-result h4 small {
+    font-size: 75%;
+}
+
+#phorum div.search-result blockquote {
+    margin: 3px 0 3px 0;
+    padding: 0;
+}
+
+/* Footer styles */
+
+#phorum #footer-plug {
+    margin-top: 26px;
+    font-size: 65%;
+    text-align: center;
+}
+
+
+/* Icon Styles */
+
+.icon-accept {
+    background-image: url('templates/emerald_perso/images/accept.png');
+}
+
+.icon-bell {
+    background-image: url('templates/emerald_perso/images/bell.png');
+}
+
+.icon-bullet-black {
+    background-image: url('templates/emerald_perso/images/bullet_black.png');
+}
+
+.icon-bullet-go {
+    background-image: url('templates/emerald_perso/images/bullet_go.png');
+}
+
+.icon-cancel {
+    background-image: url('templates/emerald_perso/images/cancel.png');
+}
+
+.icon-close {
+    background-image: url('templates/emerald_perso/images/lock.png');
+}
+
+.icon-comment {
+    background-image: url('templates/emerald_perso/images/comment.png');
+}
+
+.icon-comment-add {
+    background-image: url('templates/emerald_perso/images/comment_add.png');
+}
+
+.icon-comment-edit {
+    background-image: url('templates/emerald_perso/images/comment_edit.png');
+}
+
+.icon-comment-delete {
+    background-image: url('templates/emerald_perso/images/comment_delete.png');
+}
+
+.icon-delete {
+    background-image: url('templates/emerald_perso/images/delete.png');
+}
+
+.icon-exclamation {
+    background-image: url('templates/emerald_perso/images/exclamation.png');
+}
+
+.icon-feed {
+    background-image: url('templates/emerald_perso/images/feed.png');
+}
+
+.icon-flag-red {
+    background-image: url('templates/emerald_perso/images/flag_red.png');
+}
+
+.icon-folder {
+    background-image: url('templates/emerald_perso/images/folder.png');
+}
+
+.icon-group-add {
+    background-image: url('templates/emerald_perso/images/group_add.png');
+}
+
+.icon-key-go {
+    background-image: url('templates/emerald_perso/images/key_go.png');
+}
+
+.icon-key-delete {
+    background-image: url('templates/emerald_perso/images/key_delete.png');
+}
+
+.icon-list {
+    background-image: url('templates/emerald_perso/images/text_align_justify.png');
+}
+
+.icon-merge {
+    background-image: url('templates/emerald_perso/images/arrow_join.png');
+}
+
+.icon-move {
+    background-image: url('templates/emerald_perso/images/page_go.png');
+}
+
+.icon-next {
+    background-image: url('templates/emerald_perso/images/control_next.png');
+}
+
+.icon-note-add {
+    background-image: url('templates/emerald_perso/images/note_add.png');
+}
+
+.icon-open {
+    background-image: url('templates/emerald_perso/images/lock_open.png');
+}
+
+.icon-page-go {
+    background-image: url('templates/emerald_perso/images/page_go.png');
+}
+
+.icon-prev {
+    background-image: url('templates/emerald_perso/images/control_prev.png');
+}
+
+.icon-printer {
+    background-image: url('templates/emerald_perso/images/printer.png');
+}
+
+.icon-split {
+    background-image: url('templates/emerald_perso/images/arrow_divide.png');
+}
+
+.icon-table-add {
+    background-image: url('templates/emerald_perso/images/table_add.png');
+}
+
+.icon-tag-green {
+    background-image: url('templates/emerald_perso/images/tag_green.png');
+}
+
+.icon-user {
+    background-image: url('templates/emerald_perso/images/user.png');
+}
+
+.icon-user-add {
+    background-image: url('templates/emerald_perso/images/user_add.png');
+}
+
+.icon-user-comment {
+    background-image: url('templates/emerald_perso/images/user_comment.png');
+}
+
+.icon-user-edit {
+    background-image: url('templates/emerald_perso/images/user_edit.png');
+}
+
+.icon-zoom {
+    background-image: url('templates/emerald_perso/images/zoom.png');
+}
+
+
+.icon-information {
+    background-image: url('templates/emerald_perso/images/information.png');
+}
+
+.icon1616 {
+    width: 16px;
+    height: 16px;
+    border: 0;
+}
+
+
+
+
+
+
+/*   BBCode styles  */
+
+#phorum blockquote.bbcode {
+    font-size: 85%;
+    margin: 0 0 0 10px;
+}
+
+#phorum blockquote.bbcode>div {
+    margin: 0;
+    padding: 5px;
+    border: 1px solid #808080;
+}
+
+#phorum blockquote.bbcode strong {
+    font-style: italic;
+    margin: 0 0 3px 0;
+}
+
+#phorum pre.bbcode {
+    border: 1px solid #C4C6A2;
+    background-color: #FEFFEC;
+    padding: 8px;
+    overflow: auto;
+}
+
+/* END TEMPLATE css.tpl */
+
+
+
+
+/* Added by module "editor_tools", file "mods/editor_tools/editor_tools.css" */
+#editor-tools {
+    padding: 3px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* padding is arranged in editor_tools.js, so do not define it here. */
+#editor-tools .editor-tools-button {
+    margin-right: 2px;
+    margin-bottom: 2px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    vertical-align: bottom;
+}
+
+#editor-tools .editor-tools-button:hover {
+    border: 1px solid #777;
+}
+
+.editor-tools-popup {
+    text-align: left;
+    position:absolute;
+    padding: 5px 10px;
+    background-color:#eee;
+    border:1px solid #777;
+    font-family: arial, helvetica, sans-serif;
+    z-index: 1000;
+}
+
+.editor-tools-popup a,
+.editor-tools-popup a:active,
+.editor-tools-popup a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.editor-tools-popup a:hover {
+    text-decoration: underline;
+}
+
+#editor-tools-smiley-picker img,
+#editor-tools-subjectsmiley-picker img {
+    border: none;
+    margin: 3px;
+}
+
+#editor-tools-a-help {
+    float: right;
+}
+
+/* Override fixes for color picker within XHTML transitional */
+
+* html .colorPickerTab_inactive span,
+* html .colorPickerTab_active span{
+    position:/**/relative;
+}
+
+* html .colorPickerTab_inactive img,
+* html .colorPickerTab_active img{
+    position:relative;
+    left:-3px;
+}
+
+* html #dhtmlgoodies_colorPicker .colorPicker_topRow{
+    height:20px;
+}
+
+
+
+/* Added by module "smileys", file "mods/smileys/smileys.css" */
+.mod_smileys_img {
+    vertical-align: middle;
+    margin: 0px 3px 0px 3px;
+    border: none;
+}
+
+
+/* Added by module "spamhurdles", template "spamhurdles::css" */
+#spamhurdles_captcha {
+    font-size: small;
+    padding: 10px 0px 10px 0px;
+}
+
+#spamhurdles_captcha_title {
+    font-weight: bold;
+}
+
+#spamhurdles_captcha_explain {
+    width: 85%;
+}
+
+#spamhurdles_spoken_captcha {
+    padding-left: 15px;
+    background: url(http://www.les-mathematiques.net/phorum/mods/spamhurdles/templates/emerald_perso/audio.gif) no-repeat;
+    padding-bottom: 10px;
+    font-size: small;
+}
+
+#spamhurdles_captcha_image {
+    margin: 8px 0px 8px 0px;
+}
+
+#spamhurdles_captcha_image .captcha_image {
+    border: 1px solid #333;
+}
+
+#spamhurdles_captcha_asciiart {
+    font-family: "courier new", courier, monospace;
+    line-height: 4px;
+    font-size: 6px;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+/* Added by module "jumpmenu", file "mods/jumpmenu/jumpmenu.css.php" */
+div.mod_jumpmenu_menu
+{
+    text-align: left;
+    position:absolute;
+    padding: 2px;
+    background-color:#eee;
+    border:1px solid #777;
+    font-family: arial, helvetica, sans-serif;
+    display: none;
+}
+
+div.mod_jumpmenu_menu_content
+{
+}
+
+a.mod_jumpmenu_menu_item
+{
+    font-size: 12px;
+    float: none;
+    display: block;
+    padding: 3px 8px 3px 25px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+a.mod_jumpmenu_menu_separator
+{
+    font-size: 12px;
+    float: none;
+    display: block;
+    padding: 0 8px 0 25px;
+    text-decoration: none;
+    cursor: default;
+    background-image: url(http://www.les-mathematiques.net/phorum/mods/jumpmenu/templates/separator.gif);
+    background-position: center left;
+    background-repeat: repeat-x;
+}
+
+a.mod_jumpmenu_menu_item:link,
+a.mod_jumpmenu_menu_item:active,
+a.mod_jumpmenu_menu_item:visited
+{
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* Needs specific #phorum prefixed override for Emerald-like template. */
+a.mod_jumpmenu_menu_item:hover,
+#phorum a.mod_jumpmenu_menu_item:hover
+{
+    background-color: #666;
+    color: white;
+    text-decoration: none;
+}
+
+a.mod_jumpmenu_folder
+{
+    background-image: url(http://www.les-mathematiques.net/phorum/mods/jumpmenu/templates/folder.gif);
+    background-position: 5px 1px;
+    background-repeat: no-repeat;
+    cursor: default;
+    color: black;
+}
+
+a.mod_jumpmenu_forum
+{
+    background-image: url(http://www.les-mathematiques.net/phorum/mods/jumpmenu/templates/forum.gif);
+    background-position: 5px 1px;
+    background-repeat: no-repeat;
+    color: black;
+}
+
+
+
+/* Added by module "jumpmenu", template "jumpmenu::css" */
+
+a.mod_jumpmenu_root
+{
+    float: right;
+    cursor: default;
+}
+
+div.mod_jumpmenu_menu
+{
+    border: 1px solid #c0cdc0;
+    background-image: url('templates/emerald_perso/images/message_background.png');
+    background-repeat: repeat-x;
+    background-color: White;
+    color: Black;
+}
+
+a.mod_jumpmenu_menu_item:link,
+a.mod_jumpmenu_menu_item:active,
+a.mod_jumpmenu_menu_item:visited {
+    background-color: transparent;
+}
+
+#phorum a.mod_jumpmenu_menu_item:hover
+{
+    color: Black;
+    background-color: #c0cdc0;
+}
+
+a.mod_jumpmenu_folder
+{
+    background-image: url(http://www.les-mathematiques.net/phorum/templates/emerald/images/folder.png);
+    background-position: 5px 1px;
+}
+
+a.mod_jumpmenu_forum
+{
+    background-image: url(http://www.les-mathematiques.net/phorum/templates/emerald/images/text_align_justify.png);
+    background-position: 5px 1px;
+}
+
+
+
+
+/* Added by module "recent_messages", template "recent_messages::css" */
+a.mod_jumpmenu_menu_item.recent_messages {
+    background-image: url(http://www.les-mathematiques.net/phorum/mods/recent_messages/templates/emerald/icon_recent_messages.gif);
+}
+
+#phorum .recent_messages .options {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+#phorum .recent_messages .options input,
+#phorum .recent_messages .options select {
+    margin-left: 5px;
+}
+
+#phorum .recent_messages .options option,
+#phorum .recent_messages .options optgroup {
+    padding-left: 8px;
+}
+
+#phorum .recent_messages .list th {
+    border-bottom: 2px solid White;
+}
+
+#phorum .recent_messages .footer th {
+    text-align: right;
+}
+
+#phorum .recent_messages .footer {
+    background-color: #c0cdc0;
+    color: Black;
+}
+
+#phorum .recent_messages .footer a {
+    color: Black;
+}
+
+#phorum .recent_messages .nomessages {
+    text-align: center;
+    padding: 30px;
+}
+
+#phorum .recent_messages .group {
+    background-color: #edf2ed;
+    color: Black;
+}
+
+#phorum .recent_messages td.author {
+    white-space: nowrap;
+}
+
+
+
+
+/* Added by module "embed_images", template "embed_images::css" */
+/* The style to use for standard images */
+#phorum div.mod_embed_images {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+}
+
+/* Extended is used in case an image is scaled down or inside a URL */
+#phorum div.mod_embed_images_extended {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    border: 1px solid #b0b0b0;
+    background-color: #f5f5f5;
+}
+
+#phorum div.mod_embed_images_image {
+}
+
+#phorum div.mod_embed_images_image a,
+#phorum div.mod_embed_images_info a {
+    text-decoration: none;
+    color: black;
+}
+
+#phorum div.mod_embed_images_image a:hover,
+#phorum div.mod_embed_images_info a:hover {
+    text-decoration: underline;
+}
+
+#phorum div.mod_embed_images_loading {
+    font-size: 10px;
+    padding: 5px 5px 3px 22px;
+    height: 16px;
+    background-position: 3px 3px;
+    background-repeat: no-repeat;
+    background-image: url(http://www.les-mathematiques.net/phorum/mods/embed_images/templates/ajax_loading.gif);
+}
+
+#phorum div.mod_embed_images_info {
+    border-top: 1px solid #b0b0b0;
+    height: 18px;
+    padding: 3px 0px 0px 21px;
+    white-space: nowrap;
+    overflow: hidden;
+    background-position: 3px 5px;
+    background-repeat: no-repeat;
+    background-image: url(http://www.les-mathematiques.net/phorum/mods/embed_images/templates/magnify_icon.gif);
+
+    /* Will be made visible if extended viewing is triggered */
+    display: none;
+}
+
+#phorum div.mod_embed_images_info_link
+{
+    padding-left: 22px;
+    background-image: url(http://www.les-mathematiques.net/phorum/mods/embed_images/templates/link_icon.png);
+}
+
+#phorum div.mod_embed_images_error
+{
+    color: #a00000;
+    border: 1px solid #a00000;
+    padding: 5px 5px 5px 43px;
+    background-image: url(http://www.les-mathematiques.net/phorum/mods/embed_images/templates/broken_image.gif);
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+}
+
+#phorum div.mod_embed_images_error strong
+{
+    font-size: 12px;
+}
+
+#phorum div.mod_embed_images_attachments
+{
+    margin-top: 20px;
+}
+
+/* Should be in the main Phorum CSS too, but let's make sure. */
+#phorum div.message-body br {
+    clear: both;
+}
+
+
+
+
+/* Added by module "embed_images/viewer:fancybox", function "fancybox_get_css" */
+/*
+ * FancyBox - jQuery Plugin
+ * Simple and fancy lightbox alternative
+ *
+ * Examples and documentation at: http://fancybox.net
+ * 
+ * Copyright (c) 2008 - 2010 Janis Skarnelis
+ * That said, it is hardly a one-person project. Many people have submitted bugs, code, and offered their advice freely. Their support is greatly appreciated.
+ * 
+ * Version: 1.3.4 (11/11/2010)
+ * Requires: jQuery v1.3+
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1104;
+	display: none;
+}
+
+#fancybox-loading div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 480px;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png');
+}
+
+#fancybox-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1100;
+	display: none;
+}
+
+#fancybox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none;
+}
+
+#fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	z-index: 1101;
+	outline: none;
+	display: none;
+}
+
+#fancybox-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+}
+
+#fancybox-content {
+	width: 0;
+	height: 0;
+	padding: 0;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 1102;
+	border: 0px solid #fff;
+}
+
+#fancybox-hide-sel-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 1101;
+}
+
+#fancybox-close {
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	width: 30px;
+	height: 30px;
+	background: transparent url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png') -40px 0px;
+	cursor: pointer;
+	z-index: 1103;
+	display: none;
+}
+
+#fancybox-error {
+	color: #444;
+	font: normal 12px/20px Arial;
+	padding: 14px;
+	margin: 0;
+}
+
+#fancybox-img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	line-height: 0;
+	vertical-align: top;
+}
+
+#fancybox-frame {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+}
+
+#fancybox-left, #fancybox-right {
+	position: absolute;
+	bottom: 0px;
+	height: 100%;
+	width: 35%;
+	cursor: pointer;
+	outline: none;
+	background: transparent url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/blank.gif');
+	z-index: 1102;
+	display: none;
+}
+
+#fancybox-left {
+	left: 0px;
+}
+
+#fancybox-right {
+	right: 0px;
+}
+
+#fancybox-left-ico, #fancybox-right-ico {
+	position: absolute;
+	top: 50%;
+	left: -9999px;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	cursor: pointer;
+	z-index: 1102;
+	display: block;
+}
+
+#fancybox-left-ico {
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png');
+	background-position: -40px -30px;
+}
+
+#fancybox-right-ico {
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png');
+	background-position: -40px -60px;
+}
+
+#fancybox-left:hover, #fancybox-right:hover {
+	visibility: visible; /* IE6 */
+}
+
+#fancybox-left:hover span {
+	left: 20px;
+}
+
+#fancybox-right:hover span {
+	left: auto;
+	right: 20px;
+}
+
+.fancybox-bg {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 20px;
+	height: 20px;
+	z-index: 1001;
+}
+
+#fancybox-bg-n {
+	top: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox-x.png');
+}
+
+#fancybox-bg-ne {
+	top: -20px;
+	right: -20px;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png');
+	background-position: -40px -162px;
+}
+
+#fancybox-bg-e {
+	top: 0;
+	right: -20px;
+	height: 100%;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox-y.png');
+	background-position: -20px 0px;
+}
+
+#fancybox-bg-se {
+	bottom: -20px;
+	right: -20px;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png');
+	background-position: -40px -182px; 
+}
+
+#fancybox-bg-s {
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox-x.png');
+	background-position: 0px -20px;
+}
+
+#fancybox-bg-sw {
+	bottom: -20px;
+	left: -20px;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png');
+	background-position: -40px -142px;
+}
+
+#fancybox-bg-w {
+	top: 0;
+	left: -20px;
+	height: 100%;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox-y.png');
+}
+
+#fancybox-bg-nw {
+	top: -20px;
+	left: -20px;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png');
+	background-position: -40px -122px;
+}
+
+#fancybox-title {
+	font-family: Helvetica;
+	font-size: 12px;
+	z-index: 1102;
+}
+
+.fancybox-title-inside {
+	padding-bottom: 10px;
+	text-align: center;
+	color: #333;
+	background: #fff;
+	position: relative;
+}
+
+.fancybox-title-outside {
+	padding-top: 10px;
+	color: #fff;
+}
+
+.fancybox-title-over {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #FFF;
+	text-align: left;
+}
+
+#fancybox-title-over {
+	padding: 10px;
+	background-image: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_title_over.png');
+	display: block;
+}
+
+.fancybox-title-float {
+	position: absolute;
+	left: 0;
+	bottom: -20px;
+	height: 32px;
+}
+
+#fancybox-title-float-wrap {
+	border: none;
+	border-collapse: collapse;
+	width: auto;
+}
+
+#fancybox-title-float-wrap td {
+	border: none;
+	white-space: nowrap;
+}
+
+#fancybox-title-float-left {
+	padding: 0 0 0 15px;
+	background: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png') -40px -90px no-repeat;
+}
+
+#fancybox-title-float-main {
+	color: #FFF;
+	line-height: 29px;
+	font-weight: bold;
+	padding: 0 0 3px 0;
+	background: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox-x.png') 0px -40px;
+}
+
+#fancybox-title-float-right {
+	padding: 0 0 0 15px;
+	background: url('http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancybox.png') -55px -90px no-repeat;
+}
+
+/* IE6 */
+
+.fancybox-ie6 #fancybox-close { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_close.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-left-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_nav_left.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-right-ico { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_nav_right.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-title-over { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
+.fancybox-ie6 #fancybox-title-float-left { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_title_left.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-float-main { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_title_main.png', sizingMethod='scale'); }
+.fancybox-ie6 #fancybox-title-float-right { background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_title_right.png', sizingMethod='scale'); }
+
+.fancybox-ie6 #fancybox-bg-w, .fancybox-ie6 #fancybox-bg-e, .fancybox-ie6 #fancybox-left, .fancybox-ie6 #fancybox-right, #fancybox-hide-sel-frame {
+	height: expression(this.parentNode.clientHeight + "px");
+}
+
+#fancybox-loading.fancybox-ie6 {
+	position: absolute; margin-top: 0;
+	top: expression( (-20 + (document.documentElement.clientHeight ? document.documentElement.clientHeight/2 : document.body.clientHeight/2 ) + ( ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop )) + 'px');
+}
+
+#fancybox-loading.fancybox-ie6 div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_loading.png', sizingMethod='scale'); }
+
+/* IE6, IE7, IE8 */
+
+.fancybox-ie .fancybox-bg { background: transparent !important; }
+
+.fancybox-ie #fancybox-bg-n { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_shadow_n.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-ne { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_shadow_ne.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-e { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_shadow_e.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-se { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_shadow_se.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-s { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_shadow_s.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-sw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_shadow_sw.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-w { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_shadow_w.png', sizingMethod='scale'); }
+.fancybox-ie #fancybox-bg-nw { filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.les-mathematiques.net/phorum/mods/embed_images/viewers/fancybox/code/fancy_shadow_nw.png', sizingMethod='scale'); }
+
+/* Added by module "bbcode", file "mods/bbcode/colorpicker/js_color_picker_v2.css" */
+	#dhtmlgoodies_colorPicker{
+		position:absolute;
+		width:250px;
+		padding-bottom:1px;
+		background-color:#FFF;
+		border:1px solid #777;
+		
+		width: 252px;	/* IE 5.x */
+		width/* */:/**/250px;	/* Other browsers */
+		width: /**/250px;	
+				
+        z-index: 1000;
+	}
+	
+	#dhtmlgoodies_colorPicker .colorPicker_topRow{
+		padding-bottom:1px;
+		border-bottom:3px double #777;
+		background-color:#E2EBED;
+		padding-left:2px;
+		
+		width: 250px;	/* IE 5.x */
+		width/* */:/**/248px;	/* Other browsers */
+		width: /**/248px;	
+		
+		height: 20px;	/* IE 5.x */
+		height/* */:/**/16px;	/* Other browsers */
+		height: /**/16px;	
+				
+	}
+	
+	#dhtmlgoodies_colorPicker .colorPicker_statusBar{
+		height:13px;
+		padding-bottom:2px;
+		width:248px;
+		border-top:3px double #777;	
+		background-color:#E2EBED;
+		padding-left:2px;
+		clear:both;
+		
+		width: 250px;	/* IE 5.x */
+		width/* */:/**/248px;	/* Other browsers */
+		width: /**/248px;	
+		
+		height: 18px;	/* IE 5.x */
+		height/* */:/**/13px;	/* Other browsers */
+		height: /**/13px;	
+						
+	}
+	
+	#dhtmlgoodies_colorPicker .colorSquare{
+		margin-left:1px;
+		margin-bottom:1px;
+		float:left;
+		border:1px solid #000;
+		cursor:pointer;
+		
+		width: 12px;	/* IE 5.x */
+		width/* */:/**/10px;	/* Other browsers */
+		width: /**/10px;	
+		
+		height: 12px;	/* IE 5.x */
+		height/* */:/**/10px;	/* Other browsers */
+		height: /**/10px;	
+				
+	}
+	
+	.colorPickerTab_inactive,.colorPickerTab_active{
+	
+		height:17px;
+		padding-left:4px;
+		cursor:pointer;	
+		
+		
+	}
+/* path fixed for Phorum */
+	.colorPickerTab_inactive span{
+		background-image:url(mods/bbcode/colorpicker/images/tab_left_inactive.gif);
+	}
+	
+/* path fixed for Phorum */
+	.colorPickerTab_active span{
+		background-image:url(mods/bbcode/colorpicker/images/tab_left_active.gif);
+
+	}
+	.colorPickerTab_inactive span, .colorPickerTab_active span{
+		line-height:16px;
+		font-weight:bold;
+		font-family:arial;
+		font-size:11px;
+		padding-top:1px;
+		vertical-align:middle;
+		background-position:top left;
+		background-repeat: no-repeat;	
+		float:left;
+		padding-left:6px;
+		-moz-user-select:none;
+	}	
+	.colorPickerTab_inactive img,.colorPickerTab_active img{
+		float:left;
+	}
+	.colorPickerCloseButton{
+		width:11px;
+		height:11px;
+		text-align:center;
+		line-height:10px;
+		border:1px solid #777;
+		position:absolute;
+		right:1px;
+		font-size:12px;
+		font-weight:bold;
+		top:1px;
+		padding:1px;
+		cursor:pointer;	
+		
+		width: 15px;	/* IE 5.x */
+		width/* */:/**/11px;	/* Other browsers */
+		width: /**/11px;
+		
+		height: 15px;	/* IE 5.x */
+		height/* */:/**/11px;	/* Other browsers */
+		height: /**/11px;
+
+			
+	}
+	#colorPicker_statusBarTxt{
+		font-size:11px;
+		font-family:arial;
+		vertical-align:top;
+		line-height:13px;
+
+	}
+
+    /* disabled for Phorum
+	form{
+		padding-left:5px;
+	}
+    */
+	
+	.form_widget_amount_slider{
+		border-top:1px solid #9d9c99;
+		border-left:1px solid #9d9c99;
+		border-bottom:1px solid #eee;
+		border-right:1px solid #eee;
+		background-color:#f0ede0;
+		position:absolute;
+		bottom:0px;
+		
+		width: 5px;	/* IE 5.x */
+		width/* */:/**/3px;	/* Other browsers */
+		width: /**/3px;
+		
+		height: 5px;	/* IE 5.x */
+		height/* */:/**/3px;	/* Other browsers */
+		height: /**/3px;
+				
+	}
+	.colorSliderLabel{
+		width:15px;
+		height:20px;
+		float:left;
+		font-size:11px;
+		font-weight:bold;
+	}
+	.colorSlider{
+		width:175px;
+		height:20px;
+		float:left;
+	}
+	.colorInput{
+		width:45px;
+		height:20px;
+		float:left;
+	}	
+	.colorPreviewDiv{
+		width:186px;
+		margin-right:2px;
+		margin-top:1px;
+		border:1px solid #CCC;
+		height:20px;
+		float:left;
+		cursor:pointer;
+		
+		width: 188px;	/* IE 5.x */
+		width/* */:/**/186px;	/* Other browsers */
+		width: /**/186px;
+		
+		height: 22px;	/* IE 5.x */
+		height/* */:/**/20px;	/* Other browsers */
+		height: /**/20px;
+				
+
+	}
+	.colorCodeDiv{
+		width:50px;
+		height:20px;
+		float:left;
+	}

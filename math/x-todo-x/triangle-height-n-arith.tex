@@ -1,0 +1,100 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\usepackage{lymath}
+
+\DeclareMathOperator{\taille}{\tau}
+
+\newtheorem{fact}{Fait}
+\newtheorem*{proof*}{Preuve}
+
+\newtheorem{remark}{Remarque}[section]
+
+\setlength\parindent{0pt}
+
+
+\newcommand\squote[1]{\og #1 \fg{}}
+
+
+\begin{document}
+
+\title{BROUILLON - Faire des additions modulaires sur une ellipse}
+\author{Christophe BAL}
+\date{20 Juillet 2019 - 27 Juillet 2019}
+\maketitle
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% ------------- %
+
+
+\newpage
+\section{Addition d'angles orientés sur un cercle trigonométrique}
+
+\input{addition-on-ellipsis/conjecture}
+
+
+% ------------- %
+
+
+\section{Preuve de la conjecture via le déterminant et le produit scalaire} 
+
+\input{addition-on-ellipsis/proof-rambo-style}
+
+
+% ------------- %
+
+
+\section{Preuve de la conjecture via les complexes}
+                        
+\input{addition-on-ellipsis/proof-via-C}
+
+
+% ------------- %
+
+
+\section{Preuve de la conjecture via la si belle géométrie} 
+
+\input{addition-on-ellipsis/proof-beauty-n-geo}
+
+
+% ------------- %
+
+
+\section{\texorpdfstring{Toute ellipse d'équation $(x(t) , y(t)) = (x_0 + a \cos t , y_0 + b \sin t)$ est un groupe}%
+                        {Toute ellipse d'équation (x(t) , y(t)) = (x0 + a cos t , y0 + b sin t) est un groupe}}
+      
+\input{addition-on-ellipsis/group}
+
+\end{document}

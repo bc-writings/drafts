@@ -1,0 +1,149 @@
+body {
+  position: relative;
+  padding-top: 50px;
+}
+
+.app-nav {
+  background-color: #563d7c;
+}
+.app-nav .navbar-brand {
+  color: #fff;
+}
+.app-nav .navbar-nav > li > a {
+  color: #cdbfe3;
+}
+.app-nav .navbar-nav > li > a:hover {
+  color: #fff;
+}
+.app-nav .navbar-nav > .active > a,
+.app-nav .navbar-nav > .active > a:hover {
+  color: #fff;
+  background-color: #463265;
+}
+.app-nav .navbar-toggle {
+  border-color: #563d7c;
+}
+.app-nav .navbar-toggle:hover {
+  background-color: #463265;
+  border-color: #463265;
+}
+
+.app-sidebar.affix {
+  position: static;
+}
+.app-nav .navbar-nav > .open > a:focus {
+  background-color: #563d7c;
+}
+.app-header {
+  padding: 30px 30px 40px;
+  font-size: 16px;
+  color: #5a5a5a;
+  text-align: center;
+}
+.app-header h1 {
+  color: #563d7c;
+}
+.app-header p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+.app-header .container {
+  position: relative;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #463265;    
+  background-image: linear-gradient(to bottom, #463265 0%, #463265 100%);
+  background-repeat: repeat-x;  
+}
+
+/* First level of nav */
+.app-sidenav {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #f7f5fa;
+  border-radius: 5px;
+}
+
+/* All levels of nav */
+.app-sidebar .nav > li > a {
+  display: block;
+  color: #716b7a;
+  padding: 5px 20px;
+}
+.app-sidebar .nav > li > a:hover,
+.app-sidebar .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #e5e3e9;
+  border-right: 1px solid #dbd8e0;
+}
+.app-sidebar .nav > .active > a,
+.app-sidebar .nav > .active:hover > a,
+.app-sidebar .nav > .active:focus > a {
+  font-weight: bold;
+  color: #563d7c;
+  background-color: transparent;
+  border-right: 1px solid #563d7c;
+}
+
+/* Nav: second level (shown on .active) */
+.app-sidebar .nav .nav {
+  display: none;
+  margin-bottom: 8px;
+}
+.app-sidebar .nav > .active > ul {
+  display: block;
+}
+.app-sidebar .nav .nav > li > a {
+  padding-top:    3px;
+  padding-bottom: 3px;
+  padding-left: 30px;
+  font-size: 90%;
+}
+@media screen and (min-width: 768px) {
+  .app-sidebar {
+    display: block;
+  }
+  .app-header {
+    font-size: 21px;
+    text-align: left;
+  }
+  .app-header h1 {
+    font-size: 60px;
+    line-height: 1;
+  }
+}
+@media screen and (min-width: 992px) {
+
+  /* Widen the fixed sidebar */
+  .app-sidebar.affix,
+  .app-sidebar.affix-bottom {
+    width: 213px;
+  }
+  .app-sidebar.affix {
+    position: fixed; /* Undo the static from mobile-first approach */
+    top: 80px;
+  }
+  .app-sidebar.affix-bottom {
+    position: absolute; /* Undo the static from mobile-first approach */
+  }
+  .app-sidebar.affix-bottom .app-sidenav,
+  .app-sidebar.affix .app-sidenav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .app-header h1,
+  .app-header p {
+    margin-right: 380px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .app-sidebar.affix-bottom,
+  .app-sidebar.affix {
+    width: 270px;
+  }
+
+}

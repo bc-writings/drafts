@@ -1,0 +1,20 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="10.633ex" height="2.843ex" style="vertical-align: -0.838ex;" viewBox="0 -863.1 4578 1223.9" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" aria-labelledby="MathJax-SVG-1-Title">
+<title id="MathJax-SVG-1-Title">{\displaystyle {\boldsymbol {\hat {v}}}={\boldsymbol {v}}/\|{\boldsymbol {v}}\|}</title>
+<defs aria-hidden="true">
+<path stroke-width="1" id="E1-MJMATHBI-76" d="M380 367Q380 397 406 425T465 453Q493 453 516 430T540 357Q540 314 524 250T467 115T373 13Q338 -8 292 -8Q218 -8 167 23T116 129Q116 178 152 275T189 388Q189 396 187 398T176 401Q148 398 125 372T89 304Q84 288 81 285T61 282H55H44Q24 282 24 296Q24 306 34 330T64 382T116 431T189 452Q231 452 269 429T308 362Q308 346 273 255T238 114Q238 43 306 43Q336 43 363 65T407 118T437 182T456 239T462 268Q462 290 417 315Q380 335 380 367Z"></path>
+<path stroke-width="1" id="E1-MJMAINB-5E" d="M207 632L287 694Q289 693 368 632T448 570T431 545T413 520Q410 520 350 559L287 597L224 559Q164 520 161 520Q160 520 143 544T126 570T207 632Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path>
+<path stroke-width="1" id="E1-MJMAIN-2225" d="M133 736Q138 750 153 750Q164 750 170 739Q172 735 172 250T170 -239Q164 -250 152 -250Q144 -250 138 -244L137 -243Q133 -241 133 -179T132 250Q132 731 133 736ZM329 739Q334 750 346 750Q353 750 361 744L362 743Q366 741 366 679T367 250T367 -178T362 -243L361 -244Q355 -250 347 -250Q335 -250 329 -239Q327 -235 327 250T329 739Z"></path>
+</defs>
+<g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)" aria-hidden="true">
+ <use xlink:href="#E1-MJMATHBI-76" x="4" y="0"></use>
+ <use xlink:href="#E1-MJMAINB-5E" x="31" y="42"></use>
+ <use xlink:href="#E1-MJMAIN-3D" x="885" y="0"></use>
+ <use xlink:href="#E1-MJMATHBI-76" x="1941" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2F" x="2508" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2225" x="3009" y="0"></use>
+ <use xlink:href="#E1-MJMATHBI-76" x="3509" y="0"></use>
+ <use xlink:href="#E1-MJMAIN-2225" x="4077" y="0"></use>
+</g>
+</svg>

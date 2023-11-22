@@ -1,0 +1,287 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{cleveref}
+\usepackage{multicol}
+
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows, matrix, positioning,fit}
+
+
+\usepackage{lymath}
+\usepackage{lyalgo}
+
+
+\newtheorem{fact}{Fait}
+\newtheorem*{fact*}{Fait}
+
+\newtheorem{example}{Exemple}
+
+\newtheorem{remark}{Remarque}
+\newtheorem*{remark*}{Remarque}
+
+\newtheorem*{proof*}{Preuve}
+
+\setlength\parindent{0pt}
+
+
+% -- NEW ENVIRONMENTS -- %
+
+
+
+
+% -- NEW MACROS -- %
+
+\newcommand\ph{\phantom{x}}
+
+\newcommand\myquote[1]{\emph{\og #1 \fg}}
+
+
+\newcommand\bb{Bachet-Bézout}
+\newcommand\algoeucl{algorithme d'Euclide}
+
+
+% Arguments
+%    #1 Caption
+%    #2 TiKZ file
+
+\newcommand\showstep[2]{
+    \begin{center}
+        \input{bezout-coef-for-human/#2.tkz}
+    
+        \vfill
+        
+        \small \itshape #1
+    \end{center}    
+}
+
+
+\newcommand\showstepnovfill[2]{
+    \begin{center}
+        \input{bezout-coef-for-human/#2.tkz}
+  
+        \small \itshape #1
+    \end{center}    
+}
+
+
+% -- SETTINGS -- %
+
+\tikzset{
+    % Good spacing hack (the ghost mode)
+     gs/.style={
+        rectangle,
+        thick,
+        text width=3.5em,
+        align=center,
+        draw=white,
+        rounded corners,
+        minimum height=2em
+    }, 
+	% Common
+    rc/.style={rectangle,
+        thick,rounded corners,draw,
+        minimum height=2em},
+    % Operator in a circle
+    oc/.style={
+        circle,
+        draw,
+        fill=white,
+        inner sep=1pt, 
+        outer sep=1pt
+    },
+    % Blue frame
+    bf/.style={
+        rc,
+        align=center,
+        draw=blue,
+        fill=blue!20,
+        text width=3.5em,
+    },
+    % Explain remained
+    er/.style={
+        rc,
+        align=center,
+        text width=3.5em,
+        draw=gray,
+        text=darkgray
+    },
+    % Explain activated
+    ea/.style={
+        rc,
+        align=center,
+        text width=3.5em,
+        draw=gray,
+        text=darkgray
+    },
+    % Long explain activated
+    le/.style={
+        rc,
+        align=center,
+        text width=8em,
+        draw=gray,
+        text=darkgray
+    },
+    % Blur effect
+    be/.style={
+        rectangle,
+        thick,rounded corners,
+        minimum height=2em,
+        align=center,
+        opacity = 0.3,
+        text width=3.5em,
+    },
+    % Focus effect
+    fe/.style={
+        rc,
+        align=center,
+        text width=8em,
+        draw=red,
+        text=magenta
+    },
+    % Focus effect Bis
+    feb/.style={
+        rc,
+        align=center,
+        text width=8em,
+        draw=blue,
+        text=violet
+    },
+    % Long focus effect
+    lfe/.style={
+        rc,
+        align=center,
+        text width=12em,
+        draw=red,
+        text=magenta
+    },
+    % Long focus effect bis
+    lfeb/.style={
+        rc,
+        align=center,
+        text width=12em,
+        draw=blue,
+        text=violet
+    },
+}
+      
+
+     
+     
+\begin{document}
+
+\title{BROUILLON - Des coefficients de Bachet-Bézout pour les humains}
+\author{Christophe BAL}
+\date{10 Sept. 2019 - 20 Sept. 2019}
+
+\maketitle
+
+\begin{center}
+    \itshape
+    Document, avec son source \LaTeX, disponible sur la page
+    
+    \url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+    \hrule\vspace{.3em}
+    {
+        \fontsize{1.35em}{1em}\selectfont
+        \textbf{Mentions \og légales \fg}
+    }
+            
+    \vspace{0.45em}
+    \doclicenseThis
+    \hrule
+\end{center}
+
+
+\vspace{4em}
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% --------------- %
+
+
+\newpage
+\section{Où allons-nous ?}
+
+\input{bezout-coef-for-human/intro}
+
+
+% --------------- %
+
+
+\newpage
+\section{L'algorithme \og human friendly \fg{} appliqué de façon magique}
+
+\input{bezout-coef-for-human/how-to}
+
+
+% --------------- %
+
+
+\newpage
+\section{Pourquoi cela marche-t-il ?}
+
+\input{bezout-coef-for-human/why}
+
+
+% --------------- %
+
+
+\newpage
+\section{Des coefficients via des algorithmes programmables}
+
+\input{bezout-coef-for-human/algo-human}
+
+
+% --------------- %
+
+
+\newpage
+\section{Un algorithme classique bien plus efficace}
+
+\input{bezout-coef-for-human/algo-efficient}
+
+
+% --------------- %
+
+
+\newpage
+\section{Une infinité de coefficients de \bb}
+
+\input{bezout-coef-for-human/coef-infinity}
+
+
+% --------------- %
+
+
+\newpage
+\section{Nombre d'étapes de l'algorithme d'Euclide} \label{euclide-complexity}
+
+\input{bezout-coef-for-human/euclide-complexity}
+
+
+\end{document}

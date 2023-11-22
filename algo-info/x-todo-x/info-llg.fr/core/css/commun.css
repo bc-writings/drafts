@@ -1,0 +1,12 @@
+a, a:hover {
+    color: #428bca  ;
+}
+
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    background: #428bca ;
+}
+
+.glyphicon-file {
+    color: #428bca ;
+}

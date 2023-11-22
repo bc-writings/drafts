@@ -1,0 +1,16 @@
+Bonjour.
+
+Un petit mail gentil mais rigoureux :-) faisant suite à votre vidéo visible à cette adresse :
+https://mathix.org/linux/archives/15766
+
+Les arguments ne tiennent pas dans la mesure où le fait de dépendre de AB en dimension 2 n'assure en rien que l'on aura une fonction en AB^2 : rien n'empêche par exemple qu'interviennent des différentielles. Sinon la Physique serait bien terne...
+
+Par contre, on peut garder l'esprit de votre vidéo pour raisonner comme suit afin d'avoir le point clé qu'est  Aire(ABC) = AB^2 x f(alpha) .
+
+1) On considère  Aire(ABC) / AB^2 .
+
+2) À alpha fixé, un "agrandissement" de coefficient k > 0 "montre" que Aire(ABC) / AB^2  est constant.
+
+3) Donc  Aire(ABC) / AB^2 = f(alpha)  ie  Aire(ABC) = AB^2 * f(alpha) .
+
+PS: je n'ai rien contre la vulgarisation, et j'adore vos vidéos, mais tacler les démonstrations formelles c'est juste une hérésie. Une démonstration est par essence formelle. Soyons rigoureux dans nos approches et ingénieux dans nos simplifications pédagogiques.
