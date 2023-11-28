@@ -89,7 +89,7 @@
 
 \title{BROUILLON - A propos de la récurrence}
 \author{Christophe BAL}
-\date{4 Avril 2019 - 4 Mai 2019}
+\date{11 Nov. 2023}
 
 \maketitle
 
@@ -150,7 +150,7 @@
 
 \bigskip
 
-Dès lors, le schéma de preuve suivant n'est pas une preuve par récurrence.
+Dès lors, le schéma de preuve suivant ne reprend pas le schéma précédent.
 	
 	\begin{itemize}[label=\small\textbullet]
 		\item \textbf{Initialisation :}
@@ -160,12 +160,26 @@ Dès lors, le schéma de preuve suivant n'est pas une preuve par récurrence.
 		      supposons qu'il existe $k \in \NN$ tel que $\setproba{P}(k)$ soit vraie, puis déduisons-en que $\setproba{P}(k+1)$ est vraie.
 	\end{itemize}
 
-En effet, l'hérédité bis est de la forme :
+L'hérédité bis est de la forme :
 $\big[ \exists k \in \NN \text{ tel que } \setproba{P}(k) \text{ vraie} \big] \implies \big[ \setproba{P}(k+1) \text{ vraie} \big]$ .
 
-\bigskip
+Ceci peut se réécrire :
+$\exists k \in \NN$ , $\big[ \setproba{P}(k) \text{ vraie} \big] \implies \big[ \setproba{P}(k+1) \text{ vraie} \big]$ .
 
-Est-ce pour autant un raisonnement faux ? Non car une preuve similaire à celle indiquée ci-dessus permet d'avoir malgré tout que $\forall n \in \NN$, $\setproba{P}(n)$ est vraie.
+De façon équivalente, on a :
+$\exists k \in \NN$ , $\big[ \setproba{P}(k) \big] \implies \big[ \setproba{P}(k+1) \big]$ . 
+
+\medskip
+
+La deuxième proposition est clairement fausse contrairement à la suivante utilisable au lycée.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\item \textbf{Initialisation :}
+		      $\setproba{P}(0)$ est vraie.
+
+		\item \textbf{Hérédité bis OK :}
+		      supposons avoir $\setproba{P}(k)$ vraie pour un certain $k \in \NN$ , montrons alors que $\setproba{P}(k+1)$ est vraie.
+	\end{itemize}
 
 
 \end{document}
