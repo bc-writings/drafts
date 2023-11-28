@@ -1,0 +1,171 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{tnsmath}
+
+
+\newtheorem{fact}{Fait}[section]
+\newtheorem{example}{Exemple}[section]
+\newtheorem{notation}{Notation}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem{unproved}{Non Prouvé}[section]
+\newtheorem*{proof*}{Preuve}
+
+
+\newcommand\seefact[1]{
+
+	\smallskip
+
+	\hfill {\footnotesize $\rightarrow$ Voir le fait \ref{#1}.}
+}
+
+
+\newcommand\seefactproof[2]{
+
+	\smallskip
+
+	\hfill {\footnotesize $\rightarrow$ Voir le fait \ref{#1} et la preuve dans la section \ref{#2}.}
+}
+
+
+\newcommand\seethreefacts[3]{
+
+	\smallskip
+
+	\hfill {\footnotesize $\rightarrow$ Voir les faits \ref{#1} et \ref{#2} ainsi que la section \ref{#3}.}
+}
+
+
+\npthousandsep{.}
+\setlength\parindent{0pt}
+
+\floatstyle{boxed}
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+
+\newcommand\sqrtp{\sqrt{p\,\vphantom{M}}}
+
+
+
+\newcommand{\logicneg}{\text{\normalfont non \!}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+
+
+
+\begin{document}
+
+\title{BROUILLON - A propos de la récurrence}
+\author{Christophe BAL}
+\date{4 Avril 2019 - 4 Mai 2019}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\bigskip
+%\setcounter{tocdepth}{2}
+%\tableofcontents
+
+
+% --------------------- %
+
+
+\begin{fact} \label{recursivity}
+	La preuve par récurrence s'exprime comme suit où $\setproba{P}(k)$ désignera n'importe quelle proposition dépendant d'un paramètre naturel $k \in \NN$.
+
+	\medskip
+
+	On suppose avoir démontré les deux faits suivants.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\item \textbf{Initialisation :}
+		      $\setproba{P}(0)$ est vraie.
+
+		\item \textbf{Hérédité :}
+		      $\forall k \in \NN$ , $\big[ \setproba{P}(k) \implies \setproba{P}(k+1) \big]$ .
+	\end{itemize}
+
+	Sous ces hypothèses, nous pouvons affirmer que $\forall n \in \NN$, $\setproba{P}(n)$ est vraie.
+\end{fact}
+
+
+\begin{proof}
+	Par l'absurde, en considérant le plus petit naturel $n_0$ tel que $\setproba{P}(n_0)$ soit fausse, et en notant que $n_0 > 0$ . 
+\end{proof}
+
+\bigskip
+
+Dès lors, le schéma de preuve suivant n'est pas une preuve par récurrence.
+	
+	\begin{itemize}[label=\small\textbullet]
+		\item \textbf{Initialisation :}
+		      $\setproba{P}(0)$ est vraie.
+
+		\item \textbf{Hérédité bis :}
+		      supposons qu'il existe $k \in \NN$ tel que $\setproba{P}(k)$ soit vraie, puis déduisons-en que $\setproba{P}(k+1)$ est vraie.
+	\end{itemize}
+
+En effet, l'hérédité bis est de la forme :
+$\big[ \exists k \in \NN \text{ tel que } \setproba{P}(k) \text{ vraie} \big] \implies \big[ \setproba{P}(k+1) \text{ vraie} \big]$ .
+
+\bigskip
+
+Est-ce pour autant un raisonnement faux ? Non car une preuve similaire à celle indiquée ci-dessus permet d'avoir malgré tout que $\forall n \in \NN$, $\setproba{P}(n)$ est vraie.
+
+
+\end{document}

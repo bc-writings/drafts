@@ -1,6 +1,6 @@
 import math
 
-max = 10**5
+max = 1500
 
 targets_found = {}
 
