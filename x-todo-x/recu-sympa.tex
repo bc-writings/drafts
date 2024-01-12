@@ -6,6 +6,11 @@
 
 \begin{document}
 
+A la recherche des naturels $n$ forcément impair tels que $n \divides \big( 2^n + 1 \big)$ .
+
+
+\section{Les puissances de 3 sont dans la place}
+
 Démontrons rapidement que $n \divides \big( 2^n + 1 \big)$ dès que $n = 3^k$ par récurrence sur $k \in \NNs$ car le cas $k = 0$ est trivial.
 
 \bigskip
@@ -27,13 +32,13 @@ On a les implications logiques suivantes.
 \medskip
 
 \begin{stepcalc}[style=ar*, ope=\implies]
-	\big( 3^k \big) \divides \Big( 2^{\big( 3^k \big)} + 1 \Big)
+	( 3^k ) \divides \Big( 2^{( 3^k )} + 1 \Big)
 \explnext{}
-	\exists m \in \ZZ \,.\, \Big[ 2^{\big( 3^k \big)} + 1 = m \cdot 3^k  \Big]
+	\exists m \in \ZZ \,.\, \Big[ 2^{( 3^k )} + 1 = m \cdot 3^k  \Big]
 \explnext{}
-	\exists m \in \ZZ \,.\, \Big[ 2^{\big( 3^k \big)} = - 1 + m \cdot 3^k  \Big]
+	\exists m \in \ZZ \,.\, \Big[ 2^{( 3^k )} = - 1 + m \cdot 3^k  \Big]
 \explnext{}
-	\exists m \in \ZZ \,.\, \Big[ \left( 2^{\big( 3^k \big)} \right)^3 = \big( - 1 + m \cdot 3^k \big)^3  \Big]
+	\exists m \in \ZZ \,.\, \Big[ \left( 2^{( 3^k )} \right)^3 = \big( - 1 + m \cdot 3^k \big)^3  \Big]
 \explnext{}
 	\exists m \in \ZZ \,.\, \Big[ 2^{\big( 3^{k+1} \big)} = - 1 + 3 \cdot m \cdot 3^k - 3 \cdot \big( m \cdot 3^k \big)^2 + \big( m \cdot 3^k \big)^3  \Big]
 \explnext*{Besoin de \\ $k \neq 0$ ici.}{}
@@ -43,7 +48,7 @@ On a les implications logiques suivantes.
 \smallskip
 
 En résumé, 
-$\big( 3^k \big) \divides \Big( 2^{\big( 3^k \big)} + 1 \Big)$ 
+$( 3^k ) \divides \Big( 2^{( 3^k )} + 1 \Big)$ 
 implique
 $\big( 3^{k+1} \big) \divides \Big( 2^{\big( 3^{k+1} \big)} + 1 \Big)$  .
 
@@ -56,18 +61,13 @@ $\big( 3^{k+1} \big) \divides \Big( 2^{\big( 3^{k+1} \big)} + 1 \Big)$  .
 \textbf{Seul truc intéressant dans cette affaire de niveau TS de l'ancien temps :} calcul d'une limite de suite dans l'anneau des entiers $3$-adique.
 
 
-\bigskip
+\section{A la recherche d'autres solutions}
 
-La preuve passe en fait à l'échelle pour démontrer que si 
-$d \divides \big( 2^d + 1 \big)$
-alors
-$d^k \divides \big( 2^{(d^k)} + 1 \big)$
-%pour $k \in \NNs$ ,
-%et aussi que si
-%$a \divides \big( 2^a + 1 \big)$ et $b \divides \big( 2^b + 1 \big)$
-%alors
-%$a^k \cdot b \divides \big( 2^{(a^k \cdot b)} + 1 \big)$ 
-pour $k \in \NNs$ .
+Supposons que $d \divides \big( 2^d + 1 \big)$ .
+
+Alors pour $k \in \NNs$ , 
+$\big( - 1 + m \cdot d^k \big)^d = - 1 + d \cdot m \cdot d^k + x \cdot d^{k+1}$ car $d$ est impair et $2k \geq k + 1$ .
+Ceci permet de voir que $\forall k \in \NNs$ , $d^k \divides \big( 2^{( d^k )} + 1 \big)$ via une récurrence.
 
 
 \bigskip
