@@ -1,4 +1,4 @@
-N_MAX      = 10**4
+N_MAX      = 10**6
 POWER_OF_3 = 2
 
 from common import *

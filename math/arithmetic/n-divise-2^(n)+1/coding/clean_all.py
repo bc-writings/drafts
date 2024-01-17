@@ -4,11 +4,6 @@ from shutil    import rmtree
 
 THIS_DIR     = Path(__file__).parent
 RESULTS_FILE = THIS_DIR / "results.txt"
-TESTED_DIR   = THIS_DIR / "tested"
-
-
-if TESTED_DIR.is_dir():
-    rmtree(TESTED_DIR)
 
 
 with RESULTS_FILE.open(mode = "r") as f:

@@ -12,15 +12,10 @@ from sympy import primerange
 
 THIS_DIR     = Path(__file__).parent
 RESULTS_FILE = THIS_DIR / "results.txt"
-TESTED_DIR   = THIS_DIR / "tested"
 LAST_DIR     = THIS_DIR / "last"
 
-for pdir in [
-    TESTED_DIR,
-    LAST_DIR
-]:
-    if not pdir.is_dir():
-        pdir.mkdir()
+if not LAST_DIR.is_dir():
+    LAST_DIR.mkdir()
 
 
 def lastjson(what):
@@ -39,31 +34,7 @@ def lastdata(what):
     return data
 
 
-
-def factors2path(factors):
-    testedfile = TESTED_DIR
-
-    for f in factors[:-1]:
-        testedfile /= str(f)
-
-    testedfile /= f"{factors[-1]}.tested.txt"
-
-    return testedfile
-
-
-def skiptest(factors):
-    return factors2path(factors).is_file()
-
-
 def memotest(what, factors):
-    testedfile = factors2path(factors)
-
-    if not testedfile.parent.is_dir():
-        testedfile.parent.mkdir(parents = True)
-
-    factors2path(factors).touch()
-
-
     with what.open(
         mode = "w",
     ) as f:
@@ -71,9 +42,6 @@ def memotest(what, factors):
 
 
 def testnavak(what, factors):
-    if skiptest(factors):
-        return None
-
     print(f"--- {factors} ---")
     print("TESTING...")
 
