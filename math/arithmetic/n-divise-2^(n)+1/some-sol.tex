@@ -1,0 +1,57 @@
+\begin{fact}
+	$1 \in \ourset$\,.
+\end{fact}
+
+\begin{proof}
+	C'est clair.
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
+	$\forall k \in \NNs$, $3^k \in \ourset$\,.
+\end{fact}
+
+\begin{proof}
+	Nous allons raisonner par récurrence.
+    
+    \medskip
+    
+    \textbf{Initialisation pour $k = 1$.}    
+    Clairement, $3 \divides \big( 2^3 + 1 \big)$ .
+    
+    
+    \medskip
+    
+    \textbf{Étape de récurrence.}    
+    On a les implications logiques suivantes.
+    
+    \medskip
+    
+    \begin{stepcalc}[style=ar*, ope=\implies]
+    	( 3^k ) \divides \Big( 2^{( 3^k )} + 1 \Big)
+    \explnext{}
+    	\exists m \in \ZZ \,.\, \Big[ 2^{( 3^k )} + 1 = m \cdot 3^k  \Big]
+    \explnext{}
+    	\exists m \in \ZZ \,.\, \Big[ 2^{( 3^k )} = - 1 + m \cdot 3^k  \Big]
+    \explnext{}
+    	\exists m \in \ZZ \,.\, \Big[ \big( 2^{( 3^k )} \big)^3 = \big( - 1 + m \cdot 3^k \big)^3  \Big]
+    \explnext{}
+    	\exists m \in \ZZ \,.\, \Big[ 2^{( 3^{k+1} )} = - 1 + 3 \cdot m \cdot 3^k - 3 \cdot \big( m \cdot 3^k \big)^2 + \big( m \cdot 3^k \big)^3  \Big]
+    \explnext*{Besoin de \\ $k \neq 0$ ici.}{}
+    	2^{( 3^{k+1} )} \equiv - 1 \mod\!( 3^{k+1} )
+    \end{stepcalc}
+    
+    \smallskip
+    
+    En résumé, 
+    $3^k \divides 2^{( 3^k )} + 1$ 
+    implique
+    $3^{k+1} \divides 2^{( 3^{k+1} )} + 1$\,.
+    
+    \medskip
+    
+    \textbf{Conclusion :} par récurrence sur $k \in \NNs$, nous savons que $3^k \in \ourset$\,.
+\end{proof}

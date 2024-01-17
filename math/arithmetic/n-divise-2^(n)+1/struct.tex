@@ -1,0 +1,89 @@
+\begin{fact}
+	$\forall n \in \ourset$, $\forall p \in \primeset$\,,
+	si $p \divides n$ alors $p n \in \ourset$\,.
+\end{fact}
+
+\begin{proof}
+	Notons que forcément $p > 2$\,.
+	Ensuite, comme $2^n = -1 + k n$ où $k \in \ZZ$\,,
+	nous avons :
+    
+    \medskip
+    
+    \begin{stepcalc}[style=sar]
+    	2^{p n}
+    \explnext{}
+    	\big( 2^n \big)^p
+    \explnext{}
+    	\big( -1 + k n \big)^p
+    \explnext{}
+    	\dsum_{i=0}^p \binom{p}{i} \, (-1)^{p-i} \cdot (k n)^i
+    \explnext*{$p \divides \binom{p}{i}$ si $0 < i < p$}{}
+    	- 1 + \dsum_{i=1}^{p-1} p c_i \cdot (-1)^{p-i} \cdot (k n)^i + k^p \cdot n^p
+    \explnext*{$n = p q$}{}
+    	- 1 + pn \, \dsum_{i=1}^{p-1} c_i \cdot (-1)^{p-i} \cdot k^i n^{i-1} + pq \cdot n \cdot k^p \cdot n^{p-2}
+    \explnext{}
+    	- 1 + pn \cdot r
+    \end{stepcalc}
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
+	$\forall (n , m) \in \ourset^2$, $n \vee m \in \ourset$ où $n \vee m$ désigne le PPCM de $n$ et $m$.
+\end{fact}
+
+\begin{proof}
+	TODO
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
+	$\forall (n , m) \in \ourset^2$, $n \wedge m \in \ourset$ où $n \wedge m$ désigne le PGCD de $n$ et $m$.
+\end{fact}
+
+\begin{proof}
+	TODO
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
+	Ordonné via la relation de divisibilité, l'ensemble $\ourset$ est un treillis.
+\end{fact}
+
+\begin{proof}
+	TODO
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
+	$\forall (n , m) \in \ourset^2$, $n m \in \ourset$\,.
+\end{fact}
+
+\begin{proof}
+	TODO
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
+	$\forall n \in \ourset$, $2^n + 1 \in \ourset$\,.
+\end{fact}
+
+\begin{proof}
+	TODO
+\end{proof}
+

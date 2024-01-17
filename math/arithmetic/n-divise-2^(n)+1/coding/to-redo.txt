@@ -1,0 +1,3 @@
+python /Users/projetmbc/Dropbox/git\[NEW\]/1-next-projects-1/creation/my-docs/public/drafts/math/arithmetic/n-divise-2^\(n\)+1/coding/bruteforce-3-POWER-3-primes.py
+
+python /Users/projetmbc/Dropbox/git\[NEW\]/1-next-projects-1/creation/my-docs/public/drafts/math/arithmetic/n-divise-2^\(n\)+1/coding/bruteforce-3-POWER-2-primes.py
