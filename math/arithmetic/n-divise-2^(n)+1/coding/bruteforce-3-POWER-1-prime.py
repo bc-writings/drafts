@@ -1,5 +1,5 @@
 N_MAX      = 10**6
-POWER_OF_3 = 2
+POWER_OF_3 = 4
 
 from common import *
 
