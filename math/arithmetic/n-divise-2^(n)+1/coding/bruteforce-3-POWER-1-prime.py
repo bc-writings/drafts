@@ -1,5 +1,5 @@
 N_MAX      = 10**6
-POWER_OF_3 = 2
+POWER_OF_3 = 6
 
 from common import *
 
@@ -11,21 +11,23 @@ if lastdatatested is None:
     N_MIN = 5
 
 else:
-    N_MIN = max(5, lastdatatested[-1])
+    N_MIN = max(5, lastdatatested[-1]) + 1
 
+
+decoplus = "*" * POWER_OF_3
 
 print(
     "",
-    "******************",
-    "** TEST - START **",
-    "******************",
+    "*************************" + decoplus,
+    f"** TEST: 3^{POWER_OF_3} x p - START **",
+    "*************************" + decoplus,
     "",
     sep = "\n"
 
 )
 
 for a in primerange(N_MIN, N_MAX):
-    testnavak(
+    testnovak(
         what    = WHAT,
         factors = [3]*POWER_OF_3 + [a]
     )
@@ -33,9 +35,9 @@ for a in primerange(N_MIN, N_MAX):
 
 print(
     "",
-    "****************",
-    "** TEST - END **",
-    "****************",
+    "***********************" + decoplus,
+    f"** TEST: 3^{POWER_OF_3} x p - END **",
+    "***********************" + decoplus,
     "",
     sep = "\n"
 )

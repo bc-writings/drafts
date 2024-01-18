@@ -5,6 +5,9 @@ from shutil    import rmtree
 THIS_DIR     = Path(__file__).parent
 RESULTS_FILE = THIS_DIR / "results.txt"
 
+RESULTS_FILE_CLEANED = THIS_DIR / "results-cleaned.txt"
+RESULTS_FILE_CLEANED = RESULTS_FILE
+
 
 with RESULTS_FILE.open(mode = "r") as f:
     results = f.read()
@@ -38,5 +41,5 @@ ALL_RESULTS = list(
 
 ALL_RESULTS.append('')
 
-with RESULTS_FILE.open(mode = "w") as f:
+with RESULTS_FILE_CLEANED.open(mode = "w") as f:
     f.write("\n".join(ALL_RESULTS))

@@ -11,6 +11,37 @@
 
 
 \begin{fact}
+	$\forall k \in \NNs$, $2^k \not\in \ourset$\,.
+\end{fact}
+
+\begin{proof}
+	C'est clair car $2^k \divides 2^{(2^k)}$\,.
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
+	$\ourset \cap \primeset = \setgene{3}$\,.
+\end{fact}
+
+\begin{proof}
+	$2^p \equiv - 1 \mod p$
+	implique
+	$2^{2p} \equiv 1 \mod p$
+	donc l'ordre $\sigma$ de $2$ divise à la fois $2p$ et $p-1$, ce qui n'est possible que si $\sigma = 2$ , puis $\ourset \cap \primeset \subseteq \setgene{3}$\,.
+	
+	\medskip
+	
+	Clairement, $3 \divides \big( 2^3 + 1 \big)$ donc $3 \in \ourset$\,, d'où finalement $\ourset \cap \primeset = \setgene{3}$\,.
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
 	$\forall k \in \NNs$, $3^k \in \ourset$\,.
 \end{fact}
 
@@ -20,7 +51,7 @@
     \medskip
     
     \textbf{Initialisation pour $k = 1$.}    
-    Clairement, $3 \divides \big( 2^3 + 1 \big)$ .
+    Vu avant.
     
     
     \medskip

@@ -8,17 +8,20 @@ WHAT = lastjson(f"{Path(__file__).stem}-{POWER_OF_3}")
 
 lastdatatested = lastdata(WHAT)
 
-ALL_N_MIN = [5]
-
 if lastdatatested is None:
-    ALL_N_MIN.append(
-        lambda x: x
-    )
+    ALL_N_MIN = [
+        5,
+        lambda x: x,
+    ]
 
 else:
-    ALL_N_MIN.append(
-        lambda x: max(x, lastdatatested[-1])
-    )
+    ALL_N_MIN = [
+        lastdatatested[POWER_OF_3],
+        lambda x:  max(
+            x,
+            lastdatatested[POWER_OF_3 + 1]
+        ),
+    ]
 
 
 print(
@@ -31,9 +34,9 @@ print(
 
 )
 
-for a in primerange(4, N_MAX):
+for a in primerange(5, N_MAX):
     for b in primerange(ALL_N_MIN[1](a), N_MAX):
-        testnavak(
+        testnovak(
             what    = WHAT,
             factors = [3]*POWER_OF_3 + [a, b]
         )
