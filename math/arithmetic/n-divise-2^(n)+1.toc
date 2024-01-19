@@ -1,6 +1,6 @@
 \babel@toc {french}{}\relax 
 \contentsline {section}{\tocsection {}{1}{Ce qui nous intéresse}}{2}{section.1}%
-\contentsline {section}{\tocsection {}{2}{Des solutions basiques}}{2}{section.2}%
-\contentsline {section}{\tocsection {}{3}{Un peu de codage pour y voir plus clair}}{2}{section.3}%
+\contentsline {section}{\tocsection {}{2}{Des résultats basiques}}{2}{section.2}%
+\contentsline {section}{\tocsection {}{3}{Un peu de codage pour y voir plus clair}}{3}{section.3}%
 \contentsline {section}{\tocsection {}{4}{Structure de l'ensemble des solutions}}{3}{section.4}%
-\contentsline {section}{\tocsection {}{5}{AFFAIRE À SUIVRE...}}{3}{section.5}%
+\contentsline {section}{\tocsection {}{5}{AFFAIRE À SUIVRE...}}{4}{section.5}%

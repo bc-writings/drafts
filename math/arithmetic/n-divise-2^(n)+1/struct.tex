@@ -4,10 +4,10 @@
 \end{fact}
 
 \begin{proof}
-	Notons que forcément $p > 2$\,.
+	Nous savons que $p > 2$\,.
 	Ensuite, comme $2^n = -1 + k n$ où $k \in \ZZ$\,,
 	nous avons :
-    
+
     \medskip
     
     \begin{stepcalc}[style=sar]
@@ -22,13 +22,21 @@
     	- 1 + \dsum_{i=1}^{p-1} p c_i \cdot (-1)^{p-i} \cdot (k n)^i + k^p \cdot n^p
     \explnext*{$n = p q$}{}
     	- 1 + pn \, \dsum_{i=1}^{p-1} c_i \cdot (-1)^{p-i} \cdot k^i n^{i-1} + pq \cdot n \cdot k^p \cdot n^{p-2}
-    \explnext{}
-    	- 1 + pn \cdot r
     \end{stepcalc}
 
-    \vspace{-1ex}
-    \null
+    \medskip
+
+    On obtient finalement $2^{p n} = - 1 + pn \cdot r$ avec $r \in \ZZ$ comme souhaité.
 \end{proof}
+
+
+% -------------------- %
+
+
+Notons au passage que le fait \ref{prime-sol} et le fait précédent donnent un exemple de preuve par récurrence où l'initialisation est essentielle car nous avons :
+$\forall p \in \PP$\,, $p^k \divides 2^{( p^k )} + 1$ 
+implique
+$p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
 
 
 % -------------------- %
