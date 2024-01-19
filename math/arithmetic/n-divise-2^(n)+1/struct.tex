@@ -1,11 +1,10 @@
-\begin{fact}
+\begin{fact} \label{prime-divisor}
 	$\forall n \in \ourset$, $\forall p \in \primeset$\,,
 	si $p \divides n$ alors $p n \in \ourset$\,.
 \end{fact}
 
 \begin{proof}
-	$p > 2$ d'après le fait \ref{no-even}.
-	Ensuite, $2^n = -1 + k n$, où $k \in \ZZ$\,, donne :
+	$2^n = -1 + k n$, où $k \in \ZZ$\,, donne :
 
     \medskip
     
@@ -41,48 +40,92 @@ $p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
 % -------------------- %
 
 
-\begin{fact}
+\begin{fact} \label{lcm}
 	$\forall (n , m) \in \ourset^2$, $n \vee m \in \ourset$\,.
 \end{fact}
 
 \begin{proof}
-	TODO
+	Nous avons $r \in \NN$ tel que $n \vee m = n r$\,. Rappelons que d'après le fait \ref{no-even}, aucun des entiers considérés ne peut être pair.
+	
+	\medskip
+	
+	Posons $d = 2^n$\,. Comme $r \in 2 \NN + 1$\,, nous avons :
+	
+	\medskip
+	
+	\begin{stepcalc}[style = ar*]
+		2^{nr} + 1
+	\explnext*{$r \in 2 \NN + 1$}{}
+		1 - (-d)^r
+	\explnext{}
+		\big( 1 + d \big) \, \big( 1 + (-d) + \cdots + (-d)^{r-1} \big)
+	\end{stepcalc}
+	
+	\medskip
+	
+	Comme $n \divides 2^n + 1$\,, nous savons que $n \divides 2^{nr} + 1$\,, i.e. $n \divides 2^{n \vee m} + 1$\,.
+	Par symétrie des rôles, nous avons aussi $m \divides 2^{n \vee m} + 1$\,.
+	Finalement, $n \vee m \in \ourset$\,.
 \end{proof}
+
+
+Notons que la preuve précédente donne une démonstration alternative du fait \ref{prime-divisor} qui est valable pour tout diviseur $p$ non trivial, premier ou non, de $n \in \ourset$\,.
+En effet,
+partons de nouveau de $2^{np} + 1 = \big( 1 + d \big) \, \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$ où $d = 2^n$\,.
+Comme $p \divides n \divides 2^n + 1$\,, nous avons modulo $p$ :
+
+\medskip
+
+\begin{stepcalc}[style = ar*, ope = \equiv]
+	1 + (-d) + \cdots + (-d)^{p-1} 
+\explnext*{$d \equiv 2^n \equiv - 1 \mod p$}{}
+	1 + 1 + \cdots + 1^{p-1} 
+\explnext{}
+	p
+\explnext{}
+	0
+\end{stepcalc}
+
+\medskip 
+
+Finalement,
+$n \divides 2^n + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\, de sorte que $n p \divides 2^{n p} + 1$\,.
 
 
 % -------------------- %
 
 
-\begin{fact}
-	$\forall (n , m) \in \ourset^2$, $n \wedge m \in \ourset$\,.
-\end{fact}
-
-\begin{proof}
-	TODO
-\end{proof}
-
-
-% -------------------- %
-
-
-\begin{fact}
-	Ordonné via la relation de divisibilité, l'ensemble $\ourset$ est un treillis.
-\end{fact}
-
-\begin{proof}
-	TODO
-\end{proof}
-
-
-% -------------------- %
-
-
-\begin{fact}
+\begin{fact} \label{product}
 	$\forall (n , m) \in \ourset^2$, $n m \in \ourset$\,.
 \end{fact}
 
 \begin{proof}
-	TODO
+	Nous avons
+	$n = \dprod_{p \divides n} p^{\padicval{n}}$
+	et
+	$m = \dprod_{p \divides m} p^{\padicval{m}}$
+	où les produits sont finis.
+	Les faits suivants permettent de conclure.
+%
+	\begin{itemize}
+		\item $n \vee m = \dprod_{p \divides m} p^{\max ( \padicval{n} ; \padicval{m} )}$
+
+		\item Si $\max ( \padicval{n} ; \padicval{m} ) < \padicval{n} + \padicval{m}$\,, alors le fait \ref{prime-divisor} donne que $p^\delta \cdot \big( n \vee m \big) \in \ourset$ où $\delta = \padicval{n} + \padicval{m} - \max ( \padicval{n} ; \padicval{m} )$\,.
+
+		\item En répétant l'opération précédente autant de fois que nécessaire, on arrive à obtenir que $n m \in \ourset$\,.
+	\end{itemize}
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact} \label{gcd}
+	$\forall (n , m) \in \ourset^2$, $n \wedge m \in \ourset$\,.
+\end{fact}
+
+\begin{proof}
+	Cela découle directement des faits \ref{lcm} et \ref{product}.
 \end{proof}
 
 
@@ -94,6 +137,19 @@ $p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
 \end{fact}
 
 \begin{proof}
-	TODO
+	Le principe est similaire à la preuve du fait \ref{lcm}.
+	Notant $M = 2^n + 1 = n k$ et $d = 2^n$\,, nous avons :
+
+	\medskip
+	
+	\begin{stepcalc}[style = sar]
+		2^M + 1
+	\explnext{}
+		2^{nk} + 1
+	\explnext{}
+		\big( 1 + d \big) \, \big( 1 + (-d) + \cdots + (-d)^{k-1} \big)
+	\explnext{}
+		M \, \big( 1 + (-d) + \cdots + (-d)^{k-1} \big)
+	\end{stepcalc}
 \end{proof}
 

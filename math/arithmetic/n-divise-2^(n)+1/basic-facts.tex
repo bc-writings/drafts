@@ -10,24 +10,12 @@
 % -------------------- %
 
 
-\begin{fact}
-	$\forall k \in \NNs$, $2^k \not\in \ourset$\,.
-\end{fact}
-
-\begin{proof}
-	C'est clair car $2^k \divides 2^{(2^k)}$\,.
-\end{proof}
-
-
-% -------------------- %
-
-
 \begin{fact} \label{no-even}
 	$\ourset \cap 2\,\NN = \emptyset$\,.
 \end{fact}
 
 \begin{proof}
-	TODO
+	Notant $n = 2 k$\,, nous avons $n \in \ourset$ si, et seulement si, $2^{2 k} = 1 + 2 k r$ où $r \in \NN$\,; ceci permet de conclure.
 \end{proof}
 
 
@@ -42,7 +30,7 @@
 	$2^p \equiv - 1 \mod p$
 	implique
 	$2^{2p} \equiv 1 \mod p$
-	donc l'ordre $\sigma$ de $2$ divise à la fois $2p$ et $p-1$, ce qui n'est possible que si $\sigma = 2$ , puis $\ourset \cap \primeset \subseteq \setgene{3}$\,.
+	donc l'ordre $\sigma$ de $2$ divise à la fois $2p$ et $p-1$, ce qui n'est possible que si $\sigma = 2$ , d'où $\ourset \cap \primeset \subseteq \setgene{3}$\,.
 	
 	\medskip
 	

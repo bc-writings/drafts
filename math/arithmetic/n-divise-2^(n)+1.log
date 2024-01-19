@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.17)  19 JAN 2024 09:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.17)  19 JAN 2024 23:23
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1594,54 +1594,54 @@ File: csquotes.cfg
 (./n-divise-2^(n)+1.aux)
 \openout1 = `n-divise-2^(n)+1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-61.
+63.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 61
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 63
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 6
-1.
+3.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 
-61.
+63.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
@@ -1681,7 +1681,7 @@ File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 61.
+Package hyperref Info: Link coloring OFF on input line 63.
 (./n-divise-2^(n)+1.out) (./n-divise-2^(n)+1.out)
 \@outlinefile=\write6
 \openout6 = `n-divise-2^(n)+1.out'.
@@ -1709,14 +1709,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \degres on input line 61.
+LaTeX Info: Redefining \degres on input line 63.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 61.
+(french.ldf)             reported on input line 63.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 61.
-LaTeX Info: Redefining \up on input line 61.
+(french.ldf)             reported on input line 63.
+LaTeX Info: Redefining \up on input line 63.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen404
 \c__nicematrix_shift_exterior_Vdots_dim=\dimen405
 \c__nicematrix_innersep_middle_dim=\dimen406
@@ -1729,7 +1729,7 @@ LaTeX Info: Redefining \up on input line 61.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 61.
+ on input line 63.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-d
@@ -1738,26 +1738,26 @@ File: translations-basic-dictionary-french.trsl (french translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `french'. on input line 61.
+or `french'. on input line 63.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
-3.
+5.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <15.85869> not available
-(Font)              size <17.28> substituted on input line 83.
+(Font)              size <17.28> substituted on input line 85.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <15.85869> not available
-(Font)              size <17.28> substituted on input line 84.
+(Font)              size <17.28> substituted on input line 86.
 
-<doclicense-CC-by-nc-sa-eu-88x31.pdf, id=30, 90.3375pt x 31.61812pt>
+<doclicense-CC-by-nc-sa-eu-88x31.pdf, id=34, 90.3375pt x 31.61812pt>
 File: doclicense-CC-by-nc-sa-eu-88x31.pdf Graphic file (type pdf)
 <use doclicense-CC-by-nc-sa-eu-88x31.pdf>
 Package pdftex.def Info: doclicense-CC-by-nc-sa-eu-88x31.pdf  used on input lin
-e 88.
+e 90.
 (pdftex.def)             Requested size: 117.47131pt x 41.1151pt.
 (./n-divise-2^(n)+1.toc)
 \tf@toc=\write7
@@ -1773,7 +1773,7 @@ LaTeX Font Info:    Trying to load font information for U+dsrom on input line 2
 (/usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ))
-(./n-divise-2^(n)+1/basic-facts.tex
+(./n-divise-2^(n)+1/notations.tex) (./n-divise-2^(n)+1/basic-facts.tex
 \l__witharrows_x_dim=\dimen407
 \l__witharrows_initial_int=\count496
 \l__witharrows_final_int=\count497
@@ -1790,8 +1790,8 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 \g__witharrows_x_final_dim=\dimen409
 \g__witharrows_y_initial_dim=\dimen410
 \g__witharrows_y_final_dim=\dimen411
-) (./n-divise-2^(n)+1/coding.tex [2])
-(./n-divise-2^(n)+1/struct.tex [3])
+)
+(./n-divise-2^(n)+1/struct.tex [2] [3]) (./n-divise-2^(n)+1/lattice.tex)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
@@ -1809,16 +1809,16 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.42131pt have occurred.
 
 Package rerunfilecheck Info: File `n-divise-2^(n)+1.out' has not changed.
-(rerunfilecheck)             Checksum: 522FE3908AECB4A3B5FEC83B42FF470A;1061.
+(rerunfilecheck)             Checksum: 3D02C1DA0E6A3C8B8D21AEA4BAED153C;1140.
  ) 
 Here is how much of TeX's memory you used:
- 61251 strings out of 474172
- 1518960 string characters out of 5745767
- 2034573 words of memory out of 5000000
- 82474 multiletter control sequences out of 15000+600000
+ 61486 strings out of 474172
+ 1523601 string characters out of 5745767
+ 2046181 words of memory out of 5000000
+ 82708 multiletter control sequences out of 15000+600000
  585616 words of font info for 123 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 101i,13n,107p,1617b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,13n,107p,1617b,1324s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -1830,24 +1830,25 @@ al/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
 texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
 live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
 ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
-e/2023/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/t
-exlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive
-/2023/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/202
-3/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texm
-f-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf-
-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2023/texmf-di
-st/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dist
-/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on n-divise-2^(n)+1.pdf (4 pages, 328253 bytes).
+e/2023/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texl
+ive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texliv
+e/2023/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/20
+23/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2023
+/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf
+-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dis
+t/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on n-divise-2^(n)+1.pdf (4 pages, 342469 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 62 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 224 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 500000)
+ 70 words of extra memory for PDF output out of 10000 (max. 10000000)
 

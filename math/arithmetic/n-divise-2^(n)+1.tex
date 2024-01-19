@@ -57,12 +57,14 @@
 \newcommand\contentdir{\jobname}
 \newcommand\ourset{\setproba{S}}
 \newcommand\primeset{\setalge{P}}
+%\NewDocumentCommand\primefield{ O{p} }{\setalge{F}_{#1}}
+\NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
 	 
 \begin{document}
 
 \title{BROUILLON - n divise 2\^\,\!n + 1}
 \author{Christophe BAL}
-\date{16 Jan. 2024}
+\date{16 Jan. 2024 -- 19 Jan. 2024}
 
 \maketitle
 
@@ -100,19 +102,32 @@
 \input{\contentdir/what}
 
 
+
+\section{Notations utilisées}
+
+\input{\contentdir/notations}
+
+
 \section{Des résultats basiques}
 
 \input{\contentdir/basic-facts}
 
+%
+%\section{Un peu de codage pour y voir plus clair}
+%
+%\input{\contentdir/coding}
 
-\section{Un peu de codage pour y voir plus clair}
 
-\input{\contentdir/coding}
+\section{Comportement des solutions}
+
+\input{\contentdir/struct}
 
 
 \section{Structure de l'ensemble des solutions}
 
-\input{\contentdir/struct}
+\input{\contentdir/lattice}
+
+
 
 
 \bigskip
