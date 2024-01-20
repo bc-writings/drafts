@@ -53,14 +53,6 @@ i, imax = 0, 10
 for a in primerange(ALL_N_MIN[0], N_MAX):
     for b in primerange(ALL_N_MIN[1](a), N_MAX):
         for c in primerange(ALL_N_MIN[2](b), N_MAX):
-            print(f"---\n{a = }\n{b = }\n{c = }")
-
-            i += 1
-            if i == imax:
-                exit()
-
-            continue
-
             testnovak(
                 what    = WHAT,
                 factors = [3]*POWER_OF_3 + [a, b, c]

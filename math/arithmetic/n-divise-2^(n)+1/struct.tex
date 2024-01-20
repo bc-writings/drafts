@@ -1,3 +1,5 @@
+La preuve du fait \ref{power-of-3} amène naturellement au fait suivant.
+
 \begin{fact} \label{prime-divisor}
 	$\forall n \in \ourset$, $\forall p \in \primeset$\,,
 	si $p \divides n$ alors $p n \in \ourset$\,.
@@ -31,7 +33,7 @@
 % -------------------- %
 
 
-Notons au passage que ce qui précède et le fait \ref{prime-sol} donnent un exemple de preuve par récurrence où l'initialisation est essentielle car nous avons :
+Notons au passage que ce qui précède et le fait \ref{prime-sol} donnent un exemple non trivial pour insister sur la nécessité de l'initialisation dans une preuve par récurrence car nous avons :
 $\forall p \in \PP$\,, $p^k \divides 2^{( p^k )} + 1$ 
 implique
 $p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
@@ -45,7 +47,7 @@ $p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
 \end{fact}
 
 \begin{proof}
-	Nous avons $r \in \NN$ tel que $n \vee m = n r$\,. Rappelons que d'après le fait \ref{no-even}, aucun des entiers considérés ne peut être pair.
+	Soit $r \in \NN$ tel que $n \vee m = n r$\,. Rappelons que d'après le fait \ref{no-even}, aucun des entiers considérés ne peut être pair.
 	
 	\medskip
 	
@@ -63,15 +65,15 @@ $p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
 	
 	\medskip
 	
-	Comme $n \divides 2^n + 1$\,, nous savons que $n \divides 2^{nr} + 1$\,, i.e. $n \divides 2^{n \vee m} + 1$\,.
+	Comme $n \divides 2^n + 1$\,, c'est-à-dire $n \divides d + 1$\,, nous obtenons que $n \divides 2^{nr} + 1$\,, i.e. $n \divides 2^{n \vee m} + 1$\,.
 	Par symétrie des rôles, nous avons aussi $m \divides 2^{n \vee m} + 1$\,.
 	Finalement, $n \vee m \in \ourset$\,.
 \end{proof}
 
 
-Notons que la preuve précédente donne une démonstration alternative du fait \ref{prime-divisor} qui est valable pour tout diviseur $p$ non trivial, premier ou non, de $n \in \ourset$\,.
+Notons que la preuve précédente donne une démonstration alternative du fait \ref{prime-divisor} mais pour tout diviseur $p$ non trivial, premier ou non, de $n \in \ourset$\,.
 En effet,
-partons de nouveau de $2^{np} + 1 = \big( 1 + d \big) \, \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$ où $d = 2^n$\,.
+posons $d = 2^n$ et partons de nouveau de $2^{np} + 1 = \big( 1 + d \big) \, \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,.
 Comme $p \divides n \divides 2^n + 1$\,, nous avons modulo $p$ :
 
 \medskip
@@ -89,7 +91,7 @@ Comme $p \divides n \divides 2^n + 1$\,, nous avons modulo $p$ :
 \medskip 
 
 Finalement,
-$n \divides 2^n + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\, de sorte que $n p \divides 2^{n p} + 1$\,.
+$n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\, de sorte que $n p \divides 2^{n p} + 1$\,.
 
 
 % -------------------- %

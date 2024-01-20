@@ -6,13 +6,21 @@ THIS_DIR     = Path(__file__).parent
 RESULTS_FILE = THIS_DIR / "results.txt"
 
 RESULTS_FILE_CLEANED = THIS_DIR / "results-cleaned.txt"
-RESULTS_FILE_CLEANED = RESULTS_FILE
+# RESULTS_FILE_CLEANED = RESULTS_FILE
 
 
 with RESULTS_FILE.open(mode = "r") as f:
     results = f.read()
 
-ALL_RESULTS = []
+ALL_RESULTS = [
+    tuple(
+        3
+        for _ in range(n)
+    )
+    for n in range(2, 8)
+]
+
+set_3 = set([3])
 
 for line in results.split("\n"):
     line = line.strip()
@@ -20,7 +28,14 @@ for line in results.split("\n"):
     if not line:
         continue
 
-    print(line)
+    r = tuple(
+        int(f.strip())
+        for f in line[1:-1].split(',')
+    )
+
+    if set(r) == set_3:
+        continue
+
     ALL_RESULTS.append(
         tuple(
             int(f.strip())
@@ -32,7 +47,10 @@ for line in results.split("\n"):
 ALL_RESULTS = list(
     map(list, set(ALL_RESULTS))
 )
-ALL_RESULTS.sort()
+
+ALL_RESULTS.sort(
+    key = lambda x: (len(x), x)
+)
 
 
 ALL_RESULTS = list(

@@ -3,8 +3,12 @@ Un ensemble $\mathcal{T}$ est appelé treillis s'il vérifie les conditions suiv
 	\begin{itemize}
 		\item $\big( \mathcal{T} ; \leq \big)$ est un ensemble ordonné.
 
-		\item $\forall (a ; b) \in \mathcal{T}^2$\,, l'ensemble $\setgene{a ; b}$ possède une borne inférieure et une borne supérieure.
+		\item $\forall (a ; b) \in \mathcal{T}^2$\,, l'ensemble $\setgene{a ; b}$ possède une borne inférieure et une borne supérieure
+		\footnote{
+			Rappelons que ces bornes ne sont pas forcément dans $\setgene{a ; b}$\,.
+		}\,. 
 	\end{itemize}
+
 
 \begin{fact}
 	La relation de divisibilité ordonne l'ensemble $\ourset$ via $n  \leq m$ si, et seulement si, $n \divides m$\,.
@@ -19,7 +23,40 @@ Un ensemble $\mathcal{T}$ est appelé treillis s'il vérifie les conditions suiv
 \end{proof}
 
 
+
 % -------------------- %
 
 
-Nous allons nous intéresser naturellement aux éléments minimaux de $\big( \ourset ; \divides \big)$\,.
+\begin{fact}
+	$\forall n \in \ourset_{>1}$\,, $3 \divides n$\,, autrement dit $3$ est le minimum de $\ourset_{>1}$ dans le treillis $\big( \ourset ; \divides \big)$\,.
+\end{fact}
+
+\begin{proof}
+	Soit $p \in \primeset$ tel que $p \divides n$\,.
+	Modulo $p$\,, nous avons
+	$2^{2n} \equiv (- 1)^2 \equiv 1$
+	et
+	$2^{p-1} \equiv 1$
+	d'où
+	$2^{(2n) \wedge (p-1)} \equiv 1$\,.
+	%
+	Or, on sait que $2$ est impair, donc $(2n) \wedge (p-1) = 2 \cdot \big( n \wedge \frac{p-1}{2} \big)$\,.
+	%
+	Dès lors, l'ordre $\sigma$ de $2$ divise $2 \cdot \big( n \wedge \frac{p-1}{2} \big)$\,.
+	
+	\medskip
+	
+	Considérons maintenant $p$ minimal, pour l'ordre usuel, parmi les diviseurs premiers de $n$\,.
+	Clairement, $n \wedge \frac{p-1}{2} = 1$
+	\footnote{
+		Tout diviseur premier $q$ de $n \wedge \frac{p-1}{2}$ vérifierait $q \leq \frac{p-1}{2} < p$\,.
+	},
+	d'où $\sigma = 2$ puisque forcément $\sigma \neq 1$\,.
+	%
+	Finalement, $p = 3$\,.
+\end{proof}
+
+
+% -------------------- %
+
+
