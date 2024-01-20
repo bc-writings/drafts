@@ -1,13 +1,16 @@
 Un ensemble $\mathcal{T}$ est appelé treillis s'il vérifie les conditions suivantes.
 %
-	\begin{itemize}
-		\item $\big( \mathcal{T} ; \leq \big)$ est un ensemble ordonné.
+\begin{itemize}
+	\item $\big( \mathcal{T} ; \leq \big)$ est un ensemble ordonné.
 
-		\item $\forall (a ; b) \in \mathcal{T}^2$\,, l'ensemble $\setgene{a ; b}$ possède une borne inférieure et une borne supérieure
-		\footnote{
-			Rappelons que ces bornes ne sont pas forcément dans $\setgene{a ; b}$\,.
-		}\,. 
-	\end{itemize}
+	\item $\forall (a ; b) \in \mathcal{T}^2$\,, l'ensemble $\setgene{a ; b}$ possède une borne inférieure et une borne supérieure
+	\footnote{
+		Rappelons que ces bornes ne sont pas forcément dans $\setgene{a ; b}$\,.
+	}\,. 
+\end{itemize}
+
+
+% -------------------- %
 
 
 \begin{fact}
@@ -23,16 +26,18 @@ Un ensemble $\mathcal{T}$ est appelé treillis s'il vérifie les conditions suiv
 \end{proof}
 
 
+Dans la suite, $\dinf$ et $\dsup$ désigneront des bornes inférieures et supérieures dans le treillis $\big( \ourset ; \divides \big)$ où \enquote{d} est pour \enquote{division}\,.
+
 
 % -------------------- %
 
 
 \begin{fact}
-	$\forall n \in \ourset_{>1}$\,, $3 \divides n$\,, autrement dit $3$ est le minimum de $\ourset_{>1}$ dans le treillis $\big( \ourset ; \divides \big)$\,.
+	$\forall n \in \ourset_{>1}$\,, $3 \divides n$\,, autrement dit $3 = \dinf \big( \ourset_{>1} \big)$\,.
 \end{fact}
 
 \begin{proof}
-	Soit $p \in \primeset$ tel que $p \divides n$\,.
+	Soit $p \in \PP$ tel que $p \divides n$\,.
 	Modulo $p$\,, nous avons
 	$2^{2n} \equiv (- 1)^2 \equiv 1$
 	et
@@ -40,7 +45,7 @@ Un ensemble $\mathcal{T}$ est appelé treillis s'il vérifie les conditions suiv
 	d'où
 	$2^{(2n) \wedge (p-1)} \equiv 1$\,.
 	%
-	Or, on sait que $2$ est impair, donc $(2n) \wedge (p-1) = 2 \cdot \big( n \wedge \frac{p-1}{2} \big)$\,.
+	Or, on sait que $p$ est impair, donc $(2n) \wedge (p-1) = 2 \cdot \big( n \wedge \frac{p-1}{2} \big)$\,.
 	%
 	Dès lors, l'ordre $\sigma$ de $2$ divise $2 \cdot \big( n \wedge \frac{p-1}{2} \big)$\,.
 	
@@ -59,4 +64,69 @@ Un ensemble $\mathcal{T}$ est appelé treillis s'il vérifie les conditions suiv
 
 % -------------------- %
 
+
+\begin{fact}
+	$\forall n \in \ourset_{>3}$\,, $9 \divides n$\,, autrement dit $9 = \dinf \big( \ourset_{>3} \big)$\,.
+\end{fact}
+
+\begin{proof}
+	Si $n = 3^k$\,, il n'y a rien à faire. Supposons donc que $3^k \strictdivides n$\,. 
+	D'après le fait précédent, nous savons que $k \geq 1$\,. Notons $n = 3^k m$ où $m \wedge 3 = 1$\,, et considérons $p\in\PP$ minimal, pour l'ordre usuel, parmi les diviseurs premiers de $m$\,.
+	
+	\medskip
+
+	Modulo $3^k p$\,, nous avons
+	$2^{2n} \equiv 1$
+	et
+	$2^{2 \cdot 3^{k-1} \cdot (p-1)} \equiv 1$
+	via l'indicatrice d'Euler.
+	%
+	Dès lors, comme $n = 3^k m$\,, l'ordre $\sigma$ de $2$\,, avec forcément $\sigma \neq 1$\,, divise 
+	$(2 \cdot 3^k m) \wedge (2 \cdot 3^{k-1} \cdot (p-1))$\,,
+	c'est-à-dire
+	$2 \cdot 3^{k-1} \cdot \big( (3 m) \wedge (p-1) \big)$\,.
+	%
+	Comme dans la démonstration précédente, le caractère minimal de $p$ implique que 
+	$m \wedge (p-1) = 1$
+	d'où
+	$(3 m) \wedge (p-1) = 3 \wedge (p-1) \in \setgene{1 ; 3}$\,.
+	%
+	\begin{itemize}
+		\item Si $3 \wedge (p-1) = 1$ alors, modulo $p$\,,
+		nous avons $2^{2 \cdot 3^{k-1}} \equiv 1$\,.
+		Ceci implique que $k > 1$ car $p \neq 3$\,.
+		%
+		Notons au passage que
+		$2^{(3^{k-1})} \equiv \pm 1$
+		et
+		$3 \wedge (p-1) = 1$\,,
+		et donc
+		$3^{k-1} \ndivides p-1$\,,
+		impliquent que
+		$2^{(3^{k-1})} \equiv -1$ modulo $p$\,.
+
+		\item KO ou OK ?
+		
+		Si $3 \wedge (p-1) = 3$ alors $2^{2 \cdot 3^k} \equiv 1$ modulo $3^k p$ rend impossible d'avoir $k = 1$\,.
+		En effet, dans le cas contraire, on a $63 \equiv 0$ modulo $3 p$ avec $p \in \PP_{>3}$\,, d'où forcément $p = 7$\,.
+		XXXX
+		%
+		Notons au passage que
+		XXXX	
+	\end{itemize}
+\end{proof}
+
+
+% -------------------- %
+
+La preuve précédente nous donne le fait intéressant suivant.
+
+\begin{fact}
+	$\forall n \in \ourset_{>3}$ tel que $3^k \strictdivides n$\,, si $p \in \PP_{>3}$ est un diviseur minimal, pour l'ordre usuel, de $n$ parmi les diviseurs dans $\PP_{>3}$\,, alors $k > 1$ et deux alternatives sont possibles.
+	\begin{enumerate}
+		\item Soit $3 \wedge (p-1) = 1$\,, et dans ce cas $p \divides 2^{(3^{k-1})} + 1$\,.
+
+		\item Soit $3 \wedge (p-1) = 3$\,, et dans ce cas $p \divides 2^{(3^k)} + 1$\,. KO ou OK ?
+	\end{enumerate}
+\end{fact}
 

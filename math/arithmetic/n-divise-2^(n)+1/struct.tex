@@ -1,7 +1,7 @@
 La preuve du fait \ref{power-of-3} amène naturellement au fait suivant.
 
 \begin{fact} \label{prime-divisor}
-	$\forall n \in \ourset$, $\forall p \in \primeset$\,,
+	$\forall n \in \ourset$, $\forall p \in \PP$\,,
 	si $p \divides n$ alors $p n \in \ourset$\,.
 \end{fact}
 
@@ -112,7 +112,7 @@ $n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,
 	\begin{itemize}
 		\item $n \vee m = \dprod_{p \divides m} p^{\max ( \padicval{n} ; \padicval{m} )}$
 
-		\item Si $\max ( \padicval{n} ; \padicval{m} ) < \padicval{n} + \padicval{m}$\,, alors le fait \ref{prime-divisor} donne que $p^\delta \cdot \big( n \vee m \big) \in \ourset$ où $\delta = \padicval{n} + \padicval{m} - \max ( \padicval{n} ; \padicval{m} )$\,.
+		\item Si $\max ( \padicval{n} ; \padicval{m} ) < \padicval{n} + \padicval{m}$\,, alors le fait \ref{prime-divisor} donne que $p^\delta \cdot ( n \vee m ) \in \ourset$ où $\delta = \padicval{n} + \padicval{m} - \max ( \padicval{n} ; \padicval{m} )$\,.
 
 		\item En répétant l'opération précédente autant de fois que nécessaire, on arrive à obtenir que $n m \in \ourset$\,.
 	\end{itemize}
@@ -127,7 +127,7 @@ $n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,
 \end{fact}
 
 \begin{proof}
-	Cela découle directement des faits \ref{lcm} et \ref{product}.
+	TODO
 \end{proof}
 
 
