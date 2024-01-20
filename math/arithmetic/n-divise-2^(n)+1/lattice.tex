@@ -65,7 +65,7 @@ Dans la suite, $\dinf$ et $\dsup$ désigneront des bornes inférieures et supér
 % -------------------- %
 
 
-\begin{fact}
+\begin{fact} \label{9-divisor}
 	$\forall n \in \ourset_{>3}$\,, $9 \divides n$\,, autrement dit $9 = \dinf \big( \ourset_{>3} \big)$\,.
 \end{fact}
 
@@ -93,40 +93,34 @@ Dans la suite, $\dinf$ et $\dsup$ désigneront des bornes inférieures et supér
 	%
 	\begin{itemize}
 		\item Si $3 \wedge (p-1) = 1$ alors, modulo $p$\,,
-		nous avons $2^{2 \cdot 3^{k-1}} \equiv 1$\,.
-		Ceci implique que $k > 1$ car $p \neq 3$\,.
-		%
-		Notons au passage que
-		$2^{(3^{k-1})} \equiv \pm 1$
-		et
-		$3 \wedge (p-1) = 1$\,,
-		et donc
-		$3^{k-1} \ndivides p-1$\,,
-		impliquent que
-		$2^{(3^{k-1})} \equiv -1$ modulo $p$\,.
+		nous avons $2^{2 \cdot 3^{k-1}} \equiv 1$\,, d'où $k > 1$ car $p \neq 3$\,.
 
-		\item KO ou OK ?
-		
-		Si $3 \wedge (p-1) = 3$ alors $2^{2 \cdot 3^k} \equiv 1$ modulo $3^k p$ rend impossible d'avoir $k = 1$\,.
-		En effet, dans le cas contraire, on a $63 \equiv 0$ modulo $3 p$ avec $p \in \PP_{>3}$\,, d'où forcément $p = 7$\,.
-		XXXX
-		%
-		Notons au passage que
-		XXXX	
+		\item Si $3 \wedge (p-1) = 3$ alors $2^{2 \cdot 3^k} \equiv 1$ modulo $3^k p$ rend impossible d'avoir $k = 1$\,.
+		En effet, dans le cas contraire, on aurait $63 \equiv 0$ modulo $3 p$ avec $p \in \PP_{>3}$\,, d'où forcément $p = 7$\,,
+		or ceci n'est pas possible d'après le fait \ref{not-7-divisor}.
 	\end{itemize}
 \end{proof}
 
 
 % -------------------- %
 
+
 La preuve précédente nous donne le fait intéressant suivant.
 
-\begin{fact}
-	$\forall n \in \ourset_{>3}$ tel que $3^k \strictdivides n$\,, si $p \in \PP_{>3}$ est un diviseur minimal, pour l'ordre usuel, de $n$ parmi les diviseurs dans $\PP_{>3}$\,, alors $k > 1$ et deux alternatives sont possibles.
-	\begin{enumerate}
-		\item Soit $3 \wedge (p-1) = 1$\,, et dans ce cas $p \divides 2^{(3^{k-1})} + 1$\,.
 
-		\item Soit $3 \wedge (p-1) = 3$\,, et dans ce cas $p \divides 2^{(3^k)} + 1$\,. KO ou OK ?
-	\end{enumerate}
+\begin{fact}
+	Soient 
+	$n \in \ourset_{>3}$ tel que $3^k \strictdivides n$\,, où $k > 1$ nécessairement,
+	et
+	$p \in \PP_{>3}$ le diviseur de $n$ qui est minimal, pour l'ordre usuel, parmi les diviseurs dans $\PP_{>3}$\,.
+	
+	\medskip
+	
+	Si $3 \ndivides (p-1)$\,, alors $p \divides 2^{(3^{k-1})} + 1$\,.
 \end{fact}
 
+
+\begin{proof}
+	Dans la preuve précédente, nous avons vu que $2^{2 \cdot 3^{k-1}} \equiv 1$ modulo $p$\,.
+	Ceci donne $2^{( 3^{k-1} )} \equiv \pm 1$\,, mais comme $3^{k-1} \ndivides (p-1)$\,, forcément nous avons $2^{( 3^{k-1} )} \equiv -1$\,.
+\end{proof}
