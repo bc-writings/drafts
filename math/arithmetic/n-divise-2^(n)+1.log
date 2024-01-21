@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.17)  20 JAN 2024 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.17)  21 JAN 2024 01:21
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1916,14 +1916,17 @@ L3 programming layer <2024-01-04>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.42131pt have occurred.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `n-divise-2^(n)+1.out' has not changed.
 (rerunfilecheck)             Checksum: 3D02C1DA0E6A3C8B8D21AEA4BAED153C;1140.
  ) 
 Here is how much of TeX's memory you used:
- 63768 strings out of 474172
- 1581433 string characters out of 5745767
- 2116174 words of memory out of 5000000
- 84975 multiletter control sequences out of 15000+600000
+ 63770 strings out of 474172
+ 1581456 string characters out of 5745767
+ 2116173 words of memory out of 5000000
+ 84977 multiletter control sequences out of 15000+600000
  587065 words of font info for 129 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  101i,13n,107p,1617b,1322s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1958,7 +1961,7 @@ st/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf-dist
 /fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2023/texmf-dist/f
 onts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dist/fon
 ts/type1/public/cm-super/sfti1200.pfb>
-Output written on n-divise-2^(n)+1.pdf (5 pages, 392902 bytes).
+Output written on n-divise-2^(n)+1.pdf (5 pages, 393735 bytes).
 PDF statistics:
  263 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams
