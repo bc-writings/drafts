@@ -67,7 +67,7 @@ Dans la suite, $\dinf$ et $\dsup$ désigneront des bornes inférieures et supér
 \end{fact}
 
 \begin{proof}
-	Si $n = 3^k$\,, il n'y a rien à faire. Supposons donc que $3^k \strictdivides n$\,. 
+	Si $n = 3^k$\,, il n'y a rien à faire. Supposons donc que $3^k \strictdivides n$ où $k = \padicval[3]{n}$\,. 
 	D'après le fait précédent, nous savons que $k \geq 1$\,. Notons $n = 3^k m$ où $m \wedge 3 = 1$\,, et considérons $p\in\PP$ minimal, pour l'ordre usuel, parmi les diviseurs premiers de $m$\,. On sait que $p \in \PP_{>3}$\,.
 	
 	\medskip
@@ -102,14 +102,13 @@ Dans la suite, $\dinf$ et $\dsup$ désigneront des bornes inférieures et supér
 % -------------------- %
 
 
-La preuve précédente donne le fait intéressant suivant.
+La preuve précédente permet d'aboutir au fait intéressant suivant.
 
 
 \begin{fact}
-	Soient 
-	$n \in \ourset_{>3}$ tel que $3^k \strictdivides n$\,, où $k > 1$ nécessairement,
-	et
-	$p \in \PP_{>3}$ le diviseur de $n$ qui est minimal, pour l'ordre usuel, parmi les diviseurs dans $\PP_{>3}$\,.
+	Soit 
+	$n \in \ourset_{>3}$ tel que $3^k \strictdivides n$ où $k = \padicval[3]{n}$ (le fait \ref{9-divisor} donne $k > 1$).
+	Notons $p = \min \setgene{q \in \PP_{>3} \text{ tel que } q \divides n}$ où le minimum est celui pour l'ordre usuel.
 	%
 	\begin{itemize}
 		\item Si $3 \wedge (p-1) = 1$\,, alors $p \divides 2^{(3^{k-1})} + 1$\,.
@@ -120,7 +119,7 @@ La preuve précédente donne le fait intéressant suivant.
 
 
 \begin{proof}
-	Seul le premier point apporte une petite nouveauté.
+	Seul le premier point apporte une nouveauté.
 	Travaillons modulo $p$\,.
 	La preuve précédente donne $2^{2 \cdot 3^{k-1}} \equiv 1$\,, ce qui ne se peut que si $2^{( 3^{k-1} )} \equiv \pm 1$\,.
 	Supposons avoir $2^{( 3^{k-1} )} \equiv 1$\,.

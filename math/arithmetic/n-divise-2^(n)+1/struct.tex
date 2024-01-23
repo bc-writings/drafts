@@ -47,7 +47,7 @@ $p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
 \end{fact}
 
 \begin{proof}
-	Soit $r \in \NN$ tel que $n \vee m = n r$\,. Rappelons que d'après le fait \ref{no-even}, aucun des entiers considérés ne peut être pair.
+	Soit $r \in \NN$ tel que $n \vee m = n r$\,. Rappelons que, d'après le fait \ref{no-even}, aucun des entiers considérés ne peut être pair.
 	Posant $d = 2^n$\,, nous avons :
 	
 	\medskip
@@ -109,9 +109,9 @@ $n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,
 	\begin{itemize}
 		\item $n \vee m = \dprod_{p \divides m} p^{\max ( \padicval{n} ; \padicval{m} )}$
 
-		\item Si $\max ( \padicval{n} ; \padicval{m} ) < \padicval{n} + \padicval{m}$\,, alors le fait \ref{prime-divisor} donne que $p^\delta \cdot ( n \vee m ) \in \ourset$ où $\delta = \padicval{n} + \padicval{m} - \max ( \padicval{n} ; \padicval{m} )$\,.
+		\item Le fait \ref{prime-divisor} donne que $p^{\delta_p} \cdot ( n \vee m ) \in \ourset$ où $\delta_p = \padicval{n} + \padicval{m} - \max ( \padicval{n} ; \padicval{m} )$\,.
 
-		\item En répétant l'opération précédente autant de fois que nécessaire, on arrive à obtenir que $n m \in \ourset$\,.
+		\item En répétant l'opération précédente chaque fois que $\delta_p > 0$\,, on obtient $n m \in \ourset$\,.
 	\end{itemize}
 \end{proof}
 
@@ -124,13 +124,52 @@ $n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,
 \end{fact}
 
 \begin{proof}
-	TODO
+	Comme $(n , m) \in \big( 2 \NN + 1 \big)^2$, la preuve vient directement du joli résultat suivant.
+\end{proof}
+
+
+% -------------------- %
+
+
+\begin{fact}
+	$\forall (n , m) \in \big( 2 \NN + 1 \big)^2$, on a :
+	$(2^n + 1) \wedge (2^m + 1) = 2^{n \wedge m} + 1$\,.
+\end{fact}
+
+\begin{proof}
+	Notons $\delta = (2^n + 1) \wedge (2^m + 1)$\,, et supposons avoir $n \leq m$ quitte à échanger les rôles de $n$ et $m$\,.
+	Essayons de localiser $\delta$\,.
+		
+	\medskip
+	\begin{stepcalc}[style = ar*, ope = \implies]
+		\delta \divides 2^n + 1 \text{ et } \delta \divides 2^m + 1
+	\explnext*{Via $2^m + 1 - 2^n - 1$\,.}{}
+		\delta \divides 2^n \big( 2^{m-n} - 1 \big)
+	\explnext*{$\delta \in 2 \NN + 1$ car $(n, m) \in \NNs \times \NNs$.}{}
+		\delta \divides 2^{m-n} - 1
+	\end{stepcalc}
 	
-	Clairement, $n \wedge m \divides {(2^n + 1) \wedge (2^m + 1)}$\,.
+	\medskip
 	
-	????
+	Ensuite $m - n \in 2 \NN$ donne $\delta \divides d^{m-n} - 1$ où $d = -2$\,.
+	Comme $m \in 2 \NN + 1$\,, nous avons aussi $2^m + 1 = 1 - d^m$, et donc $\delta \divides d^m - 1$\,. 
+	L'algorithme des différences du calcul d'un PGCD nous donne $\delta \divides d^{n \wedge m} - 1$\,, soit $\delta \divides 2^{n \wedge m} + 1$ puisque $n \wedge m \in 2 \NN + 1$\,.
+	Notons que ceci suffit à la justification du fait \ref{gcd}.
 	
-	$(2^n + 1) \wedge (2^m + 1) \divides ? = ? 2^{n \wedge m} + 1$ lorsque $(m ; n) \in (2 \NN + 1)^2$
+	\medskip
+	
+	En fait, $\delta = 2^{n \wedge m} + 1$ car nous avons les implications suivantes.
+		
+	\medskip
+	\begin{stepcalc}[style = ar*, ope = \implies]
+		\delta \divides d^m - 1 \text{ et } \delta \divides d^{m-n} - 1
+	\explnext{}
+		\delta \divides d^m - 1 \text{ et } \delta \divides d^m - d^n
+	\explnext*{$(n , m) \in \big( 2 \NN + 1 \big)^2$ et $d = -2$\,.}{}
+		\delta \divides 2^m + 1 \text{ et } \delta \divides 2^n - 2^m
+	\explnext*{Via $2^m + 1 + 2^n - 2^m$\,.}{}
+		\delta \divides 2^m + 1 \text{ et } \delta \divides 2^n + 1
+	\end{stepcalc}
 \end{proof}
 
 

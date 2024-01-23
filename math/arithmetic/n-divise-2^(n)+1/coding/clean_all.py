@@ -17,7 +17,7 @@ ALL_RESULTS = [
         3
         for _ in range(n)
     )
-    for n in range(2, 8)
+    for n in range(2, 10)
 ]
 
 set_3 = set([3])
