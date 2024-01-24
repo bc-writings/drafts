@@ -6,7 +6,7 @@ THIS_DIR     = Path(__file__).parent
 RESULTS_FILE = THIS_DIR / "results.txt"
 
 RESULTS_FILE_CLEANED = THIS_DIR / "results-cleaned.txt"
-# RESULTS_FILE_CLEANED = RESULTS_FILE
+RESULTS_FILE_CLEANED = RESULTS_FILE
 
 
 with RESULTS_FILE.open(mode = "r") as f:

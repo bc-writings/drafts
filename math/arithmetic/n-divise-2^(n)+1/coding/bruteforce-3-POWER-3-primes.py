@@ -1,5 +1,5 @@
-N_MAX      = 70
-POWER_OF_3 = 2
+N_MAX      = 2*10**4
+POWER_OF_3 = 4
 
 from common import *
 
