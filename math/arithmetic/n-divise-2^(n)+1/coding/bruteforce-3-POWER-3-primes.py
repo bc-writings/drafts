@@ -1,5 +1,5 @@
 N_MAX      = 10**3
-POWER_OF_3 = 2
+POWER_OF_3 = 4
 
 from common import *
 
@@ -12,7 +12,7 @@ if lastdatatested is None:
     ALL_N_MIN = [
         5,
         lambda x: x,
-        lambda x: x,
+        lambda x, _: x,
     ]
 
 else:
@@ -26,12 +26,12 @@ else:
             if x == lastdatatested[POWER_OF_3] else
             x
         ),
-        lambda x: (
+        lambda x,y : (
             max(
                 x,
                 lastdatatested[POWER_OF_3 + 2]
             )
-            if x == lastdatatested[POWER_OF_3 + 1] else
+            if y == lastdatatested[POWER_OF_3] else
             x
         ),
     ]
@@ -52,7 +52,7 @@ i, imax = 0, 10
 
 for a in primerange(ALL_N_MIN[0], N_MAX):
     for b in primerange(ALL_N_MIN[1](a), N_MAX):
-        for c in primerange(ALL_N_MIN[2](b), N_MAX):
+        for c in primerange(ALL_N_MIN[2](b, a), N_MAX):
             testnovak(
                 what    = WHAT,
                 factors = [3]*POWER_OF_3 + [a, b, c]
