@@ -1,3 +1,5 @@
+BUG HONTEUX
+
 N_MAX      = 10**3
 POWER_OF_3 = 6
 
