@@ -1,7 +1,5 @@
-BUG HONTEUX
-
-N_MAX      = 10**3
-POWER_OF_3 = 6
+N_MAX      = 2*10**5
+POWER_OF_3 = 2
 
 from common import *
 
@@ -22,7 +20,7 @@ else:
         lambda x: (
             max(
                 x,
-                lastdatatested[POWER_OF_3 + 1]
+                lastdatatested[POWER_OF_3 + 1] + 1
             )
             if x == lastdatatested[POWER_OF_3] else
             x

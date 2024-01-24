@@ -34,6 +34,9 @@ def lastdata(what):
 
 
 def memotest(what, factors):
+    # DEBUG
+    input("OK?")
+
     with what.open(
         mode = "w",
     ) as f:

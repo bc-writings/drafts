@@ -1,7 +1,5 @@
-BUG HONTEUX
-
-N_MAX      = 10**3
-POWER_OF_3 = 4
+N_MAX      = 70
+POWER_OF_3 = 2
 
 from common import *
 
@@ -13,9 +11,13 @@ lastdatatested = lastdata(WHAT)
 if lastdatatested is None:
     ALL_N_MIN = [
         5,
-        lambda x: x,
+        lambda x   : x,
         lambda x, _: x,
     ]
+
+# for a in primerange(ALL_N_MIN[0], N_MAX):
+#     for b in primerange(ALL_N_MIN[1](a), N_MAX):
+#         for c in primerange(ALL_N_MIN[2](a, b), N_MAX):
 
 else:
     ALL_N_MIN = [
@@ -28,13 +30,17 @@ else:
             if x == lastdatatested[POWER_OF_3] else
             x
         ),
-        lambda x,y : (
+        lambda x, y : (
             max(
-                x,
-                lastdatatested[POWER_OF_3 + 2]
+                y,
+                lastdatatested[POWER_OF_3 + 2] + 1
             )
-            if y == lastdatatested[POWER_OF_3] else
-            x
+            if (
+                x == lastdatatested[POWER_OF_3]
+                and
+                y == lastdatatested[POWER_OF_3 + 1]
+            ) else
+            y
         ),
     ]
 
@@ -54,7 +60,7 @@ i, imax = 0, 10
 
 for a in primerange(ALL_N_MIN[0], N_MAX):
     for b in primerange(ALL_N_MIN[1](a), N_MAX):
-        for c in primerange(ALL_N_MIN[2](b, a), N_MAX):
+        for c in primerange(ALL_N_MIN[2](a, b), N_MAX):
             testnovak(
                 what    = WHAT,
                 factors = [3]*POWER_OF_3 + [a, b, c]
