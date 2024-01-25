@@ -19,8 +19,8 @@ La preuve du fait \ref{power-of-3} amène naturellement au fait suivant.
     \explnext{}
     	\dsum_{i=0}^p \binom{p}{i} \, (-1)^{p-i} \cdot (k n)^i
     \explnext*{$p \divides \binom{p}{i}$ si $0 < i < p$}{}
-    	- 1 + \dsum_{i=1}^{p-1} p c_i \cdot (-1)^{p-i} \cdot (k n)^i + k^p \cdot n^p
-    \explnext*{$n = p q$}{}
+    	(- 1)^p + \dsum_{i=1}^{p-1} p c_i \cdot (-1)^{p-i} \cdot (k n)^i + k^p \cdot n^p
+    \explnext*{$n = p q$ où $q \in \NN$ \\ $p \in 2 \NN + 1$ car $\ourset \cap 2 \NN = \emptyset$\,.}{}
     	- 1 + pn \, \dsum_{i=1}^{p-1} c_i \cdot (-1)^{p-i} \cdot k^i n^{i-1} + pq \cdot n \cdot k^p \cdot n^{p-2}
     \end{stepcalc}
 
@@ -33,10 +33,10 @@ La preuve du fait \ref{power-of-3} amène naturellement au fait suivant.
 % -------------------- %
 
 
-Notons au passage que ce qui précède et le fait \ref{prime-sol} donnent un exemple non trivial pour insister sur la nécessité de l'initialisation dans une preuve par récurrence car nous avons :
+Notons au passage que ce qui précède et le fait \ref{prime-sol} donnent un exemple non trivial pour insister sur la nécessité de l'initialisation dans une preuve par récurrence car nous avons
 $\forall p \in \PP$\,, $p^k \divides 2^{( p^k )} + 1$ 
 implique
-$p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
+$p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,, mais juste $\ourset \cap \PP = \setgene{3}$\,.
 
 
 % -------------------- %
@@ -57,7 +57,7 @@ $p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
 	\explnext*{$r \in 2 \NN + 1$}{}
 		1 - (-d)^r
 	\explnext{}
-		\big( 1 + d \big) \, \big( 1 + (-d) + \cdots + (-d)^{r-1} \big)
+		(1 + d) \cdot \dsum_{i=0}^{r-1} (-d)^i
 	\end{stepcalc}
 	
 	\medskip
@@ -68,27 +68,15 @@ $p^{k+1} \divides 2^{( p^{k+1} )} + 1$\,.
 \end{proof}
 
 
-Notons que la preuve précédente donne une démonstration alternative du fait \ref{prime-divisor} mais pour tout diviseur $p$ non trivial, premier ou non, de $n \in \ourset$\,.
+Notons que la preuve précédente donne une démonstration alternative du fait \ref{prime-divisor}, et ceci pour tout diviseur $p$\,, non forcément premier, de $n \in \ourset$\,.
 En effet,
-posons $d = 2^n$ et partons de nouveau de $2^{np} + 1 = \big( 1 + d \big) \, \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,.
-Comme $p \divides n \divides 2^n + 1$\,, nous avons modulo $p$ :
+posons $d = 2^n$ et partons de nouveau de $2^{np} + 1 = (1 + d) \cdot \dsum_{i=0}^{p-1} (-d)^i$\,.
 
-\medskip
-
-\begin{stepcalc}[style = ar*, ope = \equiv]
-	1 + (-d) + \cdots + (-d)^{p-1} 
-\explnext*{$d \equiv 2^n \equiv - 1 \mod p$}{}
-	1 + 1 + \cdots + 1^{p-1} 
-\explnext{}
-	p
-\explnext{}
-	0
-\end{stepcalc}
-
-\medskip 
-
+Comme $p \divides n \divides 2^n + 1$\,, nous avons, modulo $p$\,, $d \equiv 2^n \equiv - 1 $\, d'où 
+$\dsum_{i=0}^{p-1} (-d)^i \equiv \dsum_{i=0}^{p-1} 1 \equiv p \equiv 0$\,.
+%
 Finalement,
-$n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\, de sorte que $n p \divides 2^{n p} + 1$\,.
+$n \divides d + 1$ et $p \divides \dsum_{i=0}^{p-1} (-d)^i$\, de sorte que $n p \divides 2^{n p} + 1$\,.
 
 
 % -------------------- %
@@ -109,7 +97,7 @@ $n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,
 	\begin{itemize}
 		\item $n \vee m = \dprod_{p \divides m} p^{\max ( \padicval{n} ; \padicval{m} )}$
 
-		\item Le fait \ref{prime-divisor} donne que $p^{\delta_p} \cdot ( n \vee m ) \in \ourset$ où $\delta_p = \padicval{n} + \padicval{m} - \max ( \padicval{n} ; \padicval{m} )$\,.
+		\item Le fait \ref{prime-divisor} donne $p^{\delta_p} \cdot ( n \vee m ) \in \ourset$ où $\delta_p = \padicval{n} + \padicval{m} - \max ( \padicval{n} ; \padicval{m} )$\,.
 
 		\item En répétant l'opération précédente chaque fois que $\delta_p > 0$\,, on obtient $n m \in \ourset$\,.
 	\end{itemize}
@@ -133,7 +121,13 @@ $n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,
 
 \begin{fact}
 	$\forall (n , m) \in \big( 2 \NN + 1 \big)^2$, on a :
-	$(2^n + 1) \wedge (2^m + 1) = 2^{n \wedge m} + 1$\,.
+	$(2^n + 1) \wedge (2^m + 1) = 2^{n \wedge m} + 1$
+	\footnote{
+		Les conditions de parité sont essentielles puisque
+		$(2^3 + 1) \wedge (2^6 + 1) \neq 2^{3 \wedge 6} + 1$
+		et
+		$(2^2 + 1) \wedge (2^4 + 1) \neq 2^{2 \wedge 4} + 1$\,.
+	}.
 \end{fact}
 
 \begin{proof}
@@ -143,7 +137,7 @@ $n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,
 	\medskip
 	\begin{stepcalc}[style = ar*, ope = \implies]
 		\delta \divides 2^n + 1 \text{ et } \delta \divides 2^m + 1
-	\explnext*{Via $2^m + 1 - 2^n - 1$\,.}{}
+	\explnext*{Via $2^m + 1 - \big( 2^n + 1 \big)$\,.}{}
 		\delta \divides 2^n \big( 2^{m-n} - 1 \big)
 	\explnext*{$\delta \in 2 \NN + 1$ car $(n, m) \in \NNs \times \NNs$.}{}
 		\delta \divides 2^{m-n} - 1
@@ -182,20 +176,7 @@ $n \divides d + 1$ et $p \divides \big( 1 + (-d) + \cdots + (-d)^{p-1}  \big)$\,
 
 \begin{proof}
 	Le principe est similaire à la preuve du fait \ref{lcm}.
-	Notant $M = 2^n + 1 = n k$ et $d = 2^n$\,, nous avons :
-
-	\medskip
-	
-	\begin{stepcalc}[style = sar]
-		2^M + 1
-	\explnext{}
-		2^{nk} + 1
-	\explnext{}
-		\big( 1 + d \big) \, \big( 1 + (-d) + \cdots + (-d)^{k-1} \big)
-	\explnext{}
-		M \, \big( 1 + (-d) + \cdots + (-d)^{k-1} \big)
-	\end{stepcalc}
-	
-	\leavevmode
+	Notant $M = 2^n + 1 = n k$ et $d = 2^n$\,, nous avons
+	$2^M + 1 = 2^{nk} + 1 = (1 + d) \cdot \dsum_{i=0}^{k-1} (-d)^i = M \cdot \dsum_{i=0}^{k-1} (-d)^i$\,.
 \end{proof}
 

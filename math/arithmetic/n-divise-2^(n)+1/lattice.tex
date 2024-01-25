@@ -1,11 +1,11 @@
 Un ensemble $\mathcal{T}$ est appelé treillis s'il vérifie les conditions suivantes.
 %
 \begin{itemize}
-	\item $\big( \mathcal{T} ; \leq \big)$ est un ensemble ordonné.
+	\item $\big( \mathcal{T} ; \preccurlyeq \big)$ est un ensemble ordonné.
 
 	\item $\forall (a ; b) \in \mathcal{T}^2$\,, l'ensemble $\setgene{a ; b}$ possède une borne inférieure et une borne supérieure
 	\footnote{
-		Rappelons que ces bornes ne sont pas forcément dans $\setgene{a ; b}$\,.
+		Ces bornes ne sont pas forcément dans $\setgene{a ; b}$\,.
 	}\,. 
 \end{itemize}
 
@@ -14,7 +14,7 @@ Un ensemble $\mathcal{T}$ est appelé treillis s'il vérifie les conditions suiv
 
 
 \begin{fact}
-	La relation de divisibilité ordonne l'ensemble $\ourset$ via $n  \leq m$ si, et seulement si, $n \divides m$\,.
+	La relation de divisibilité ordonne l'ensemble $\ourset$ via $n  \preccurlyeq m$ si, et seulement si, $n \divides m$\,.
 	Muni de cet ordre, $\ourset$ est un treillis.
 \end{fact}
 
@@ -123,7 +123,7 @@ La preuve précédente permet d'aboutir au fait intéressant suivant.
 	Travaillons modulo $p$\,.
 	La preuve précédente donne $2^{2 \cdot 3^{k-1}} \equiv 1$\,, ce qui ne se peut que si $2^{( 3^{k-1} )} \equiv \pm 1$\,.
 	Supposons avoir $2^{( 3^{k-1} )} \equiv 1$\,.
-	L'ordre $\sigma$ de $2$ serait de la forme $\sigma = 3^s$ avec $1 \leq s \leq k-1$\,.
+	L'ordre $\sigma \neq 1$ de $2$ serait de la forme $\sigma = 3^s$ avec $1 \leq s \leq k-1$\,.
 	Comme $\sigma \divides (p-1)$\,, on aurait $3 \wedge (p-1) = 3 \neq 1$\,.
 	Cette contradiction donne $2^{( 3^{k-1} )} \equiv -1$\,.
 	
