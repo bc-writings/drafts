@@ -57,20 +57,18 @@
 	 
 	 
 \newcommand\contentdir{\jobname}
-\newcommand\ourset{\setproba{N}}
-%\NewDocumentCommand\primefield{ O{p} }{\setalge{F}_{#1}}
+\newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
+\newcommand\NNssquare{\seqsuprageo{\NN}{}{*}{}{2}}
 \NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
-\newcommand\strictdivides{\divides\kern.5pt\divides}
-\newcommand\dinf{\inf_d}
-\newcommand\dsup{\sup_d}
+\NewDocumentCommand\consprod{ O{n} D<>{k} }{\pi_{#1}^{#2}}
 
 %\RenewDocumentEnvironment{proof}{}{}{}
 	 
 \begin{document}
 
-\title{BROUILLON - n divise 2\^\,\!n + 1}
+\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs}
 \author{Christophe BAL}
-\date{16 Jan. 2024 -- 25 Jan. 2024}
+\date{25 Jan. 2024}
 
 \maketitle
 
@@ -113,24 +111,11 @@
 \input{\contentdir/notations}
 
 
-\section{Des résultats basiques}
+\foreach \k in {0,...,4} {
+	\section{Cas \k}
 
-\input{\contentdir/basic-facts}
-
-%
-%\section{Un peu de codage pour y voir plus clair}
-%
-%\input{\contentdir/coding}
-
-
-\section{Comportement des solutions}
-
-\input{\contentdir/struct}
-
-
-\section{Structure de l'ensemble des solutions}
-
-\input{\contentdir/lattice}
+	\input{\contentdir/case-\k}
+}
 
 
 

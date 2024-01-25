@@ -1,0 +1,36 @@
+Donnons juste un fait basique concernant l'ensemble $\NNsquare$\,, fait qui nous sera utile par la suite.
+
+
+% -------------------- %
+
+
+\begin{fact} \label{dist-square}
+	$\forall (n, m) \in \NNssquare \times \NNssquare$, 
+	si $n \neq m$\,, alors $\abs{n - m} \geq 3$\,.
+\end{fact}
+
+\begin{proof}
+	Quitte à échanger les rôles, on peut supposer $n > m$\,.
+	Par hypothèse, nous avons $(N, M) \in \NNs \times \NNs$ tel que $n = N^2$ et $m = M^2$\,.
+	Comme $n > m$\,, nous avons aussi $N > M$\,. 
+	Les implications suivantes permettent de conclure.
+	
+	\medskip
+	
+	\begin{stepcalc}[style = ar*, ope = \implies]
+		N > M
+	\explnext{}
+		N \geq M + 1
+	\explnext{}
+		N^2 \geq (M + 1)^2
+	\explnext{}
+		n \geq m + 2 M + 1
+	\explnext{}
+		n - m \geq 2 M + 1
+	\explnext{}
+		n - m \geq 3
+	\end{stepcalc}
+	
+	\leavevmode
+\end{proof}
+
