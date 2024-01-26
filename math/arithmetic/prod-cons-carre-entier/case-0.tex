@@ -6,18 +6,24 @@ Donnons juste un fait basique concernant l'ensemble $\NNsquare$\,, fait qui nous
 
 \begin{fact} \label{dist-square}
 	$\forall (n, m) \in \NNssquare \times \NNssquare$, 
-	si $n \neq m$\,, alors $\abs{n - m} \geq 3$\,.
+	si $n \neq m$\,, alors nous avons :
+	%
+	\begin{enumerate}
+		\item $\abs{n - m} = 3 \iff (n, m) \in \setgene{(1, 4) ; (4, 1)}$
+
+		\item $\abs{n - m} \geq 5$ si $(n, m) \notin \setgene{(1, 4) ; (4, 1)}$\,.
+	\end{enumerate}
 \end{fact}
 
 \begin{proof}
 	Quitte à échanger les rôles, on peut supposer $n > m$\,.
 	Par hypothèse, nous avons $(N, M) \in \NNs \times \NNs$ tel que $n = N^2$ et $m = M^2$\,.
 	Comme $n > m$\,, nous avons aussi $N > M$\,. 
-	Les implications suivantes permettent de conclure.
+	Pour conclure, il suffit de s'appuyer sur les équivalences suivantes.
 	
 	\medskip
 	
-	\begin{stepcalc}[style = ar*, ope = \implies]
+	\begin{stepcalc}[style = ar*, ope = \iff]
 		N > M
 	\explnext{}
 		N \geq M + 1
@@ -27,10 +33,7 @@ Donnons juste un fait basique concernant l'ensemble $\NNsquare$\,, fait qui nous
 		n \geq m + 2 M + 1
 	\explnext{}
 		n - m \geq 2 M + 1
-	\explnext{}
-		n - m \geq 3
 	\end{stepcalc}
 	
 	\leavevmode
 \end{proof}
-
