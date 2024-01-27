@@ -11,7 +11,25 @@
     %
     Clairement, $\forall p \in \PP_{>3}$\,, 
     $\big( \padicval{n} , \padicval{n + 1} , \padicval{n + 2} , \padicval{n + 3} , \padicval{n + 4} \big) \in \big( 2 \NN \big)^5$\,.
-    Pour $p = 2$ et $p = 3$\,, comme dans la preuve alternative du fait \ref{case-3}, nous avons quatre alternatives, mais ici comme nous avons aussi cinq facteurs, ce bon vieux principe des tiroirs va nous permettre de lever des contradictions très facilement.
+    Pour $p = 2$ et $p = 3$\,, nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<3>$\,.
+    %
+    \begin{itemize}
+    	\item \alt{1}\,
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times 2 \NN$
+
+    	\item \alt{2}\,
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times \big( 2 \NN + 1)$
+
+    	\item \alt{3}\,
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times 2 \NN$
+
+    	\item \alt{4}\,
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times \big( 2 \NN + 1)$
+    \end{itemize}
+    
+    \medskip
+    
+    Comme nous avons cinq facteurs pour quatre alternatives, ce bon vieux principe des tiroirs va nous permettre de lever des contradictions très facilement.
     %
     \begin{itemize}
     	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{1}\,.
