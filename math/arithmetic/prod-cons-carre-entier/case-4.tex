@@ -34,20 +34,19 @@
     Quatre alternatives pour cinq facteurs, il est temps d'utiliser ce bon vieux principe des tiroirs qui va nous permettre de lever des contradictions.
     %
     \begin{itemize}
-    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{4}\,.
-		
-		\noindent
-		Dans ce cas, on aurait deux facteurs différents divisibles par $6$\,, mais ceci est impossible.
-
-
     	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{1}\,.
 		
+		\smallskip
 		\noindent
-		Dans ce cas, on sait juste que $(n+i, n+i^\prime) \in \NNsquare \times \NNsquare$\,, mais ceci permet d'affirmer qu'au moins l'une des deux alternatives \alt{2} et \alt{3} a lieu, sinon on aurait deux entiers consécutifs qui seraient des carrés parfaits, mais ceci contredirait le fait \ref{dist-square}.
+		Dans ce cas, on sait juste que $(n+i, n+i^\prime) \in \NNsquare \times \NNsquare$\,.
+		Or $n \notin \NNsquare$ puisque sinon nous aurions $(n+1)(n+2)(n+3)(n+4) \in \NNsquare$ via $n(n+1)(n+2)(n+3)(n+4) \in \NNsquare$\,, mais ceci ne se peut d'après le fait \ref{case-3}.
+		De même, $n+4 \notin \NNsquare$\,.
+		Dès lors, nous avons $\setgene{n+i, n+i^\prime} \subseteq \setgene{n+1, n+2, n+3}$ qui donne deux carrés parfaits éloignés de moins de $3$\,, et ceci contredit le fait \ref{dist-square}.
 
 
     	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{2}\,.
 		
+		\smallskip
 		\noindent
 		Dans ce cas, le couple de facteurs est $(n, n + 3)$\,, ou $(n + 1, n + 4)$\,.    
 		%
@@ -64,8 +63,22 @@
 		\end{enumerate}
 
 
-    	\item Comme dans le point précédent, on vérifie qu'il n'est pas possible d'avoir deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifiant \alt{3} via $2 = 2 M^2 - 2 N^2$\,, ou $4 = 2 M^2 - 2 N^2$\,. 
-	En effet, ici les couples possibles sont $(n, n + 2)$\,, $(n, n + 4)$\,,  $(n + 2, n + 4)$ et $(n + 1, n + 3)$\,, rien n'empêchant d'avoir $n$\,, $(n + 2)$ et $(n + 4)$ vérifiant tous les trois \alt{3}\,. \qedhere
+    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{3}\,.
+		
+		\smallskip
+		\noindent
+		Comme dans le point précédent, c'est impossible car on aurait $2 = 2 M^2 - 2 N^2$\,, ou $4 = 2 M^2 - 2 N^2$\,. 
+		En effet, ici les couples possibles sont $(n, n + 2)$\,, $(n, n + 4)$\,,  $(n + 2, n + 4)$ et $(n + 1, n + 3)$
+		\footnote{
+			Rien n'empêche d'avoir $n$\,, $(n + 2)$ et $(n + 4)$ vérifiant tous les trois \alt{3}\,.
+		}.
+
+
+    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{4}\,.
+		
+		\smallskip
+		\noindent
+		Dans ce cas, on aurait deux facteurs différents divisibles par $6$\,, mais ceci est impossible. \qedhere
     \end{itemize}
 \end{proof}
 
