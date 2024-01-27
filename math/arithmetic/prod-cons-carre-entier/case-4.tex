@@ -3,35 +3,15 @@
 \end{fact}
 
 
+% ------------------ %
+
+
 \begin{proof}
     Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,.
     %
-    Comme $p \in \PP_{>3}$ ne peut diviser au maximum qu'un seul des quatre facteurs $n$\,, $(n+1)$\,, $(n+2)$\,, $(n+3)$ et $(n+4)$\,, nous savons que 
-    $\forall p \in \PP_{>3}$\,, 
+    Clairement, $\forall p \in \PP_{>3}$\,, 
     $\big( \padicval{n} , \padicval{n + 1} , \padicval{n + 2} , \padicval{n + 3} , \padicval{n + 4} \big) \in \big( 2 \NN \big)^5$\,.
-    Mais que se passe-t-il pour $p = 2$ et $p = 3$ ?
-    
-    \medskip
-    
-    Nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<4>$\,.
-    %
-    \begin{itemize}
-    	\item \alt{1}\,
-		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times 2 \NN$
-
-    	\item \alt{2}\,
-		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times \big( 2 \NN + 1)$
-
-    	\item \alt{3}\,
-		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times 2 \NN$
-
-    	\item \alt{4}\,
-		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times \big( 2 \NN + 1)$
-    \end{itemize}
-    
-    \medskip
-    
-    Quatre alternatives pour cinq facteurs, il est temps d'utiliser ce bon vieux principe des tiroirs qui va nous permettre de lever des contradictions.
+    Pour $p = 2$ et $p = 3$\,, comme dans la preuve alternative du fait \ref{case-3}, nous avons quatre alternatives, mais ici comme nous avons aussi cinq facteurs, ce bon vieux principe des tiroirs va nous permettre de lever des contradictions très facilement.
     %
     \begin{itemize}
     	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{1}\,.
@@ -39,7 +19,7 @@
 		\smallskip
 		\noindent
 		Dans ce cas, on sait juste que $(n+i, n+i^\prime) \in \NNsquare \times \NNsquare$\,.
-		Or $n \notin \NNsquare$ puisque sinon nous aurions $(n+1)(n+2)(n+3)(n+4) \in \NNsquare$ via $n(n+1)(n+2)(n+3)(n+4) \in \NNsquare$\,, mais ceci ne se peut d'après le fait \ref{case-3}.
+		Or $n \notin \NNsquare$ puisque sinon nous aurions $(n+1)(n+2)(n+3)(n+4) \in \NNsquare$ via $n(n+1)(n+2)(n+3)(n+4) \in \NNsquare$\,, mais ceci ne se peut pas d'après le fait \ref{case-3}.
 		De même, $n+4 \notin \NNsquare$\,.
 		Dès lors, nous avons $\setgene{n+i, n+i^\prime} \subseteq \setgene{n+1, n+2, n+3}$ qui donne deux carrés parfaits éloignés de moins de $3$\,, et ceci contredit le fait \ref{dist-square}.
 
@@ -78,7 +58,7 @@
 		
 		\smallskip
 		\noindent
-		Dans ce cas, on aurait deux facteurs différents divisibles par $6$\,, mais ceci est impossible. \qedhere
+		Ceci donne deux facteurs différents divisibles par $6$\,, mais c'est impossible. \qedhere
     \end{itemize}
 \end{proof}
 
