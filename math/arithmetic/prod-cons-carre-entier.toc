@@ -5,5 +5,5 @@
 \contentsline {section}{\tocsection {}{4}{Cas 1}}{2}{section.4}%
 \contentsline {section}{\tocsection {}{5}{Cas 2}}{3}{section.5}%
 \contentsline {section}{\tocsection {}{6}{Cas 3}}{3}{section.6}%
-\contentsline {section}{\tocsection {}{7}{Cas 4}}{3}{section.7}%
-\contentsline {section}{\tocsection {}{8}{AFFAIRE À SUIVRE...}}{4}{section.8}%
+\contentsline {section}{\tocsection {}{7}{Cas 4}}{4}{section.7}%
+\contentsline {section}{\tocsection {}{8}{AFFAIRE À SUIVRE...}}{5}{section.8}%

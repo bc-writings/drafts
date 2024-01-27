@@ -1,20 +1,59 @@
-Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
-
-\medskip
-
-Posant $m = n+1$\,, nous avons $\consprod<2> = (m-1)m(m+1) = m(m^2 - 1)$ où $m \in \NN_{\geq 2}$\,.
-
-\medskip
-
-Comme $\forall p \in \PP$\,, $\padicval{\consprod<2>} \in 2 \NN$\,, et comme de plus $p \in \PP$ ne pent diviser à la fois $m$ et $m^2 - 1$\,, nous savons que 
-$\forall p \in \PP$\,, 
-$\padicval{m} \in 2 \NN$ et $\padicval{m^2 - 1} \in 2 \NN$\,,
-d'où 
-$(m, m^2 - 1) \in \NNsquare \times \NNsquare$\,.
-D'après le fait \ref{dist-square}, $m^2 - 1 \in \NNsquare$ est impossible.
-%
-Nous arrivons donc au fait suivant. 
-
-\begin{fact} \label{case-3}
+\begin{fact} \label{case-2}
 	 $\forall n \in \NNs$\,, $n(n+1)(n+2) \notin \NNsquare$\,.
 \end{fact}
+
+
+% ------------------ %
+
+
+\begin{proof}
+    Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
+    %
+    Posant $m = n+1$\,, nous avons $\consprod<2> = (m-1)m(m+1) = m(m^2 - 1)$ où $m \in \NN_{\geq 2}$\,.
+    %
+    Comme $\forall p \in \PP$\,, $\padicval{\consprod<2>} \in 2 \NN$\,, et comme de plus $p \in \PP$ ne peut diviser à la fois $m$ et $m^2 - 1$\,, nous savons que 
+    $\forall p \in \PP$\,, 
+    $\padicval{m} \in 2 \NN$ et $\padicval{m^2 - 1} \in 2 \NN$\,,
+    d'où 
+    $(m, m^2 - 1) \in \NNsquare \times \NNsquare$\,.
+    Or, d'après le fait \ref{dist-square}, $m^2 - 1 \in \NNsquare$ est impossible.
+\end{proof}
+
+
+% ------------------ %
+
+
+\begin{proof}[Une preuve alternative]
+    Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
+    %
+    Comme $p \in \PP_{>2}$ ne peut diviser au maximum qu'un seul des trois facteurs $n$\,, $(n+1)$ et $(n+2)$\,, nous savons que 
+    $\forall p \in \PP_{>2}$\,, 
+    $(\padicval{n} , \padicval{n + 1} , \padicval{n + 2}) \in \big( 2 \NN \big)^3$\,.
+    Mais que se passe-t-il pour $p = 2$ ?
+    
+    \medskip
+    
+    Supposons d'abord $n \in 2 \NN$\,.
+	%
+	\begin{itemize}
+		\item Posant $n = 2 m$\,, nous avons $\consprod<2> = 4 m(2m+1)(m+1)$\,, d'où $m(2m+1)(m+1) \in \NNssquare$\,.
+		
+		\item Ce qui précède nous donne aussi $2m+1 \in \NNssquare$\,.
+		
+		\item Si $m \in 2 \NN + 1$\,, alors $m \in \NNssquare$\,.
+		De $m(2m+1)(m+1) \in \NNssquare$ nous déduisons que $m+1 \in \NNssquare$\,.
+		Or $(m , m+1) \in \NNssquare \times \NNssquare$ est impossible d'après le fait \ref{dist-square}.
+		
+		\item De même, $m \in 2 \NN$ est impossible via $m + 1 \in 2 \NN + 1$\,.
+	\end{itemize}
+    
+    \medskip
+    
+    Supposons maintenant $n \in 2 \NN + 1$\,.
+	%
+	\begin{itemize}
+		\item Nous savons que $n \in \NNssquare$\,.
+
+		\item Dès lors, $(n+1)(n+2) \in \NNssquare$\,, mais le fait \ref{case-1} interdit cela.
+	\end{itemize}
+\end{proof}

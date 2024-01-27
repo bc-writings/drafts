@@ -1,19 +1,54 @@
-Supposons que $\consprod<1> = n(n+1) \in \NNssquare$\,.
-
-\medskip
-
-Clairement $\forall p \in \PP$\,, $\padicval{\consprod<1>} \in 2 \NN$\,.
-%
-Or $p \in \PP$ ne pent diviser à la fois $n$ et $n+1$\,.
-%
-Nous savons donc que $\forall p \in \PP$\,, 
-$\padicval{n} \in 2 \NN$ et $\padicval{n+1} \in 2 \NN$\,,
-autrement dit 
-$(n, n + 1) \in \NNsquare \times \NNsquare$\,.
-D'après le fait \ref{dist-square}, nous savons que ceci est impossible.
-%
-Nous arrivons donc au fait suivant. 
-
-\begin{fact}
+\begin{fact} \label{case-1}
 	 $\forall n \in \NNs$\,, $n(n+1) \notin \NNsquare$\,.
 \end{fact}
+
+
+% ------------------ %
+
+
+\begin{proof}
+    Supposons que $\consprod<1> = n(n+1) \in \NNssquare$\,.
+    %
+    Clairement $\forall p \in \PP$\,, $\padicval{\consprod<1>} \in 2 \NN$\,.
+    %
+    Or $p \in \PP$ ne pent diviser à la fois $n$ et $n+1$\,.
+    %
+    Nous savons donc que $\forall p \in \PP$\,, 
+    $\padicval{n} \in 2 \NN$ et $\padicval{n+1} \in 2 \NN$\,,
+    autrement dit 
+    $(n, n + 1) \in \NNsquare \times \NNsquare$\,.
+    D'après le fait \ref{dist-square}, nous savons que ceci est impossible.
+\end{proof}
+
+
+% ------------------ %
+
+
+\begin{proof}[Une preuve alternative]
+     Supposons que $\consprod<1> = n(n+1) = N^2$ où $N \in \NNs$.
+     Rappelons les deux identités classiques suivantes.
+     %
+     \begin{itemize}
+     	\item $n(n+1) = 2 \dsum_{k=1}^{n} k$
+
+     	\item $N^2 = \dsum_{k=1}^{N} (2 k - 1)$
+     \end{itemize}
+     %
+     Dès lors, après avoir noté que $N > n$\,, les équivalences suivantes donnent une contradiction.
+	
+	\medskip
+	
+	\begin{stepcalc}[style = sar, ope = \iff]
+		n(n+1) = N^2
+	\explnext{}
+		2 \dsum_{k=1}^{n} k = \dsum_{k=1}^{N} (2 k - 1)
+	\explnext{}
+		\dsum_{k=1}^{n} 2k = \dsum_{k=1}^{N} 2 k - N
+	\explnext{}
+		\dsum_{k=n}^{N} 2k = N
+	\explnext*{Se souvenir que $N > n > 0$\,.}{}
+		\dsum_{k=n}^{N-1} 2k + N = 0
+	\end{stepcalc}
+
+	\leavevmode
+\end{proof}
