@@ -62,7 +62,9 @@
 \NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
 \NewDocumentCommand\consprod{ O{n} D<>{k} }{\pi_{#1}^{#2}}
 
-%\RenewDocumentEnvironment{proof}{}{}{}
+
+\NewDocumentCommand\alt{ m }{\textbf{[A\kern1pt#1]}}
+
 	 
 \begin{document}
 
@@ -117,6 +119,11 @@
 	\input{\contentdir/case-\k}
 }
 
+
+
+%\section{Et après ?}
+%
+%\input{\contentdir/case-gene}
 
 
 

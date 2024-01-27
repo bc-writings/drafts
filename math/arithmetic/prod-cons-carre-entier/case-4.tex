@@ -5,8 +5,66 @@
 
 \begin{proof}
     Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,.
-	%
-	XXX
+    %
+    Comme $p \in \PP_{>3}$ ne peut diviser au maximum qu'un seul des quatre facteurs $n$\,, $(n+1)$\,, $(n+2)$\,, $(n+3)$ et $(n+4)$\,, nous savons que 
+    $\forall p \in \PP_{>3}$\,, 
+    $\big( \padicval{n} , \padicval{n + 1} , \padicval{n + 2} , \padicval{n + 3} , \padicval{n + 4} \big) \in \big( 2 \NN \big)^5$\,.
+    Mais que se passe-t-il pour $p = 2$ et $p = 3$ ?
+    
+    \medskip
+    
+    Nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<4>$\,.
+    %
+    \begin{itemize}
+    	\item \alt{1} 
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times 2 \NN$
+
+    	\item \alt{2}
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times \big( 2 \NN + 1)$
+
+    	\item \alt{3}
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times 2 \NN$
+
+    	\item \alt{4}
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times \big( 2 \NN + 1)$
+    \end{itemize}
+    
+    \medskip
+    
+    Quatre alternatives pour cinq facteurs, il est temps d'utiliser ce bon vieux principe des tiroirs qui va nous permettre de lever des contradictions.
+    %
+    \begin{itemize}
+    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{4}\,.
+		
+		\noindent
+		Dans ce cas, on aurait deux facteurs différents divisibles par $6$\,, mais ceci est impossible.
+
+
+    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{1}\,.
+		
+		\noindent
+		Dans ce cas, on sait juste que $(n+i, n+i^\prime) \in \NNsquare \times \NNsquare$\,, mais ceci permet d'affirmer qu'au moins l'une des deux alternatives \alt{2} et \alt{3} a lieu, sinon on aurait deux entiers consécutifs de produit égal à un carré parfait, mais ceci contredirait le fait \ref{dist-square}.
+
+
+    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{2}\,.
+		
+		\noindent
+		Dans ce cas, le couple de facteurs est $(n, n + 3)$\,, ou $(n + 1, n + 4)$\,.    
+		%
+		\begin{enumerate}
+			\item Supposons d'abord que $n$ et $(n+3)$ vérifient \alt{2}\,.
+			Nous avons alors $n = 3 N^2$ et $n+3 = 3 M^2$ où $(N, M) \in \NN^2$\,. Ceci donnerait alors $3 = 3 M^2 - 3 N^2$\,, puis 
+
+			\item Supposons maintenant que $(n+1)$ et $(n+4)$ vérifient \alt{2}\,.
+		\end{enumerate}
+
+
+    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{3}\,.
+		
+		\noindent
+		Dans ce cas, le couple de facteurs est $(n, n + 2)$\,, $(n, n + 4)$\,, ou $(n+1, n + 3)$\,.
+		Notons qu'il est possible que $n$\,, $(n + 2)$ et $(n + 4)$ vérifient \alt{3} tous les trois.
+    \end{itemize}
 \end{proof}
 
 
@@ -128,13 +186,4 @@
 		\noindent
 		Via $m = 2 M^2$, nous obtenons $2 \divides m - 2$\,, et donc $6 \divides m - 2$\,.
 	\end{itemize}
-\end{proof}
-
-
-% ----------------------- %
-
-
-\begin{proof}[Démonstration 2]
-
-	 XXX
 \end{proof}

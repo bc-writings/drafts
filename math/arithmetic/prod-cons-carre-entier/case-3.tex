@@ -25,13 +25,45 @@
     
     \medskip
     
-    De nouveau, le fait \ref{dist-square} nous permet d'aboutir au fait suivant. 
+    D'après le fait \ref{dist-square}, $m^2 - 1 \notin \NNsquare$\,, c'est-à-dire $\consprod<3> \notin \NNsquare$\,. 
 \end{proof}
 
 
 % ------------------ %
 
-
-\begin{proof}[Une preuve alternative]
-    XXX
-\end{proof}
+%
+%\begin{proof}[Une preuve alternative]
+%    Supposons que $\consprod<2> = n(n+1)(n+2)(n+3) \in \NNssquare$\,.
+%    %
+%    Comme $p \in \PP_{>3}$ ne peut diviser au maximum qu'un seul des quatre facteurs $n$\,, $(n+1)$\,, $(n+2)$ et $(n+3)$\,, nous savons que 
+%    $\forall p \in \PP_{>3}$\,, 
+%    $\big( \padicval{n} , \padicval{n + 1} , \padicval{n + 2} , \padicval{n + 3} \big) \in \big( 2 \NN \big)^4$\,.
+%    Mais que se passe-t-il pour $p = 2$ et $p = 3$ ?
+%    Nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<2>$\,.
+%    %
+%    \begin{itemize}
+%    	\item \alt{1} 
+%		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times 2 \NN$
+%
+%    	\item \alt{2}
+%		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times \big( 2 \NN + 1)$
+%
+%    	\item \alt{3}
+%		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times 2 \NN$
+%
+%    	\item \alt{4}
+%		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times \big( 2 \NN + 1)$
+%    \end{itemize}
+%    
+%    Notons alors les obligations suivantes. 
+%    %
+%    \begin{itemize}
+%    	\item Si $(n+i)$ vérifie \alt{1}\,, alors $n+i \in \NNsquare$\,.
+%
+%    	\item Si $(n+i)$ vérifie \alt{2}\,, alors il existe un autre facteur $(n+i^\prime)$ tel que $\padicval[3]{n + i^\prime} \in 2 \NN + 1$\,. Ceci montre que forcément le couple de facteurs est $(n , n+3)$\,.
+%
+%    	\item Si $(n+i)$ vérifie \alt{3}\,, alors forcément le couple de facteurs est soit $(n , n+2)$\,, soit $(n+1 , n+3)$\,.
+%
+%    	\item Si $(n+i)$ vérifie \alt{4}\,, alors XXX
+%    \end{itemize}
+%\end{proof}
