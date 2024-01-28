@@ -1,40 +1,16 @@
-$\forall N \in \NN$\,, $N^2 = \dsum_{k=1}^{N} (2 k - 1)$ donne le fait très utile suivant.
-
-
-% -------------------- %
+Via $N^2 - M^2 = (N - M)(N + M)$\,, il est immédiat de noter que 
+$\forall (N, M) \in \NNs \times \NNs$\,, si $N > M$\,, alors $N^2 - M^2 \geq 3$\,. Le fait suivant précise ceci.
 
 
 \begin{fact} \label{dist-square}
 	$\forall (N, M) \in \NNs \times \NNs$, 
 	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
-	
-	En particulier, $N^2 - M^2 \geq 3 (N - M) \geq 3$ dès que $N > M$\,.
 \end{fact}
 
 
 % ------------------ %
 
 
-%\begin{proof}
-%	Quitte à échanger les rôles, on peut supposer $n > m$\,.
-%	Par hypothèse, nous avons $(N, M) \in \NNs \times \NNs$ tel que $n = N^2$ et $m = M^2$\,.
-%	Comme $n > m$\,, nous avons aussi $N > M$\,. 
-%	Pour conclure, il suffit de s'appuyer sur les équivalences suivantes.
-%	
-%	\medskip
-%	
-%	\begin{stepcalc}[style = sar, ope = \iff]
-%		N > M
-%	\explnext{}
-%		N \geq M + 1
-%	\explnext{}
-%		N^2 \geq (M + 1)^2
-%	\explnext{}
-%		n \geq m + 2 M + 1
-%	\explnext{}
-%		n - m \geq 2 M + 1 \hfill
-%	\end{stepcalc}
-%
-%	\vspace{-2ex}	
-%	\leavevmode
-%\end{proof}
+\begin{proof}
+	Il suffit d'utiliser $N^2 = \dsum_{k=1}^{N} (2 k - 1)$\,.
+\end{proof}

@@ -17,15 +17,17 @@
     	n(n+3) \cdot (n+1)(n+2)
     \explnext{}
     	(n^2 + 3n) \cdot (n^2 + 3n + 2)
-    \explnext*{$m = n^2 + 3n + 1$}{}
-    	(m - 1) (m + 1)
+    \explnext*{$m = n^2 + 3n$}{}
+    	m (m + 2)
     \explnext{}
-    	m^2 - 1
+    	m^2 + 2m
+    \explnext{}
+    	(m + 1)^2 - 1
     \end{stepcalc}
     
     \medskip
     
-    D'après le fait \ref{dist-square}, $m^2 - 1 \notin \NNsquare$\,, c'est-à-dire $\consprod<3> \notin \NNsquare$\,. 
+    Comme $m > 0$\,, d'après le fait \ref{dist-square}, $(m + 1)^2 - 1 \notin \NNsquare$\,, c'est-à-dire $\consprod<3> \notin \NNsquare$\,. 
 \end{proof}
 
 
@@ -41,14 +43,14 @@
     	\consprod<3>
     \explnext{}
     	n(n+1)(n+2)(n+3)
-    \explnext*{$m = n + \dfrac32$}{}
-    	\big( m - \dfrac32 \big) \big( m - \dfrac12 \big) \big( m + \dfrac12 \big) \big(m + \dfrac32 \big)
+    \explnext*{$x = n + \dfrac32$}{}
+    	\big( x - \dfrac32 \big) \big( x - \dfrac12 \big) \big( x + \dfrac12 \big) \big( x + \dfrac32 \big)
     \explnext{}
-    	\big( m^2 - \dfrac94 \big) \big( m^2 - \dfrac14 \big)
-    \explnext*{$x = m^2  - \dfrac54$}{}
-    	(x - 1) (x + 1)
+    	\big( x^2 - \dfrac94 \big) \big( x^2 - \dfrac14 \big)
+    \explnext*{$y = x^2  - \dfrac54$}{}
+    	(y - 1) (y + 1)
     \explnext{}
-    	x^2 - 1
+    	y^2 - 1
     \explnext{}
     	\Big( \big( n + \dfrac32 \big)^2 - \dfrac54 \Big)^2 - 1
     \explnext{}

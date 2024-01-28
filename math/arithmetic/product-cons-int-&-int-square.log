@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.23)  28 JAN 2024 21:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.23)  28 JAN 2024 22:58
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1688,54 +1688,54 @@ Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
 (./product-cons-int-&-int-square.aux)
 \openout1 = `product-cons-int-&-int-square.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 77.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 77.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-74.
+77.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 74
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 77
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-4.
+7.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 
-74.
+77.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
@@ -1775,7 +1775,7 @@ File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 74.
+Package hyperref Info: Link coloring OFF on input line 77.
 (./product-cons-int-&-int-square.out) (./product-cons-int-&-int-square.out)
 \@outlinefile=\write6
 \openout6 = `product-cons-int-&-int-square.out'.
@@ -1806,14 +1806,14 @@ e
 (/usr/local/texlive/2023/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
-LaTeX Info: Redefining \degres on input line 74.
+LaTeX Info: Redefining \degres on input line 77.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 74.
+(french.ldf)             reported on input line 77.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 74.
-LaTeX Info: Redefining \up on input line 74.
+(french.ldf)             reported on input line 77.
+LaTeX Info: Redefining \up on input line 77.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen446
 \c__nicematrix_shift_exterior_Vdots_dim=\dimen447
 \c__nicematrix_innersep_middle_dim=\dimen448
@@ -1826,7 +1826,7 @@ LaTeX Info: Redefining \up on input line 74.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 74.
+ on input line 77.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-d
@@ -1835,26 +1835,26 @@ File: translations-basic-dictionary-french.trsl (french translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `french'. on input line 74.
+or `french'. on input line 77.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
-6.
+9.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <15.85869> not available
-(Font)              size <17.28> substituted on input line 96.
+(Font)              size <17.28> substituted on input line 99.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <15.85869> not available
-(Font)              size <17.28> substituted on input line 97.
+(Font)              size <17.28> substituted on input line 100.
 
 <doclicense-CC-by-nc-sa-eu-88x31.pdf, id=42, 90.3375pt x 31.61812pt>
 File: doclicense-CC-by-nc-sa-eu-88x31.pdf Graphic file (type pdf)
 <use doclicense-CC-by-nc-sa-eu-88x31.pdf>
 Package pdftex.def Info: doclicense-CC-by-nc-sa-eu-88x31.pdf  used on input lin
-e 101.
+e 104.
 (pdftex.def)             Requested size: 117.47131pt x 41.1151pt.
 (./product-cons-int-&-int-square.toc)
 \tf@toc=\write7
@@ -1924,13 +1924,13 @@ hanged.
 (rerunfilecheck)             Checksum: 58A85305A37E4C3925C6F8DB31395F26;1238.
  ) 
 Here is how much of TeX's memory you used:
- 63554 strings out of 474228
- 1576243 string characters out of 5746458
- 2113266 words of memory out of 5000000
- 84705 multiletter control sequences out of 15000+600000
+ 63575 strings out of 474228
+ 1576640 string characters out of 5746458
+ 2114408 words of memory out of 5000000
+ 84726 multiletter control sequences out of 15000+600000
  588129 words of font info for 130 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 101i,13n,107p,1630b,1387s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,14n,107p,1630b,1387s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -1959,7 +1959,7 @@ exmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/tex
 mf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2023/texmf
 -dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on product-cons-int-&-int-square.pdf (6 pages, 373312 bytes).
+Output written on product-cons-int-&-int-square.pdf (6 pages, 374245 bytes).
 PDF statistics:
  258 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams
