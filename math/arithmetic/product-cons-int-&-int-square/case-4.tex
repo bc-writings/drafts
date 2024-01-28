@@ -1,5 +1,5 @@
-\begin{fact}
-	 $\forall n \in \NNs$\,, $n(n+1)(n+2)(n+3)(n+4) \notin \NNsquare$\,.
+\begin{fact} \label{case-3}
+	 $\forall n \in \NNs$\,, $n(n+1)(n+2)(n+3) \notin \NNsquare$\,.
 \end{fact}
 
 
@@ -7,77 +7,25 @@
 
 
 \begin{proof}
-    Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,.
-    %
-    Clairement, $\forall p \in \PP_{>3}$\,, 
-    $\big( \padicval{n} , \padicval{n + 1} , \padicval{n + 2} , \padicval{n + 3} , \padicval{n + 4} \big) \in \big( 2 \NN \big)^5$\,.
-    Pour $p = 2$ et $p = 3$\,, nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<3>$\,.
-    %
-    \begin{itemize}
-    	\item \alt{1}\,
-		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times 2 \NN$
-
-    	\item \alt{2}\,
-		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times \big( 2 \NN + 1)$
-
-    	\item \alt{3}\,
-		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times 2 \NN$
-
-    	\item \alt{4}\,
-		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times \big( 2 \NN + 1)$
-    \end{itemize}
+    Nous pouvons ici faire les manipulations algébriques naturelles suivantes.
     
     \medskip
     
-    Comme nous avons cinq facteurs pour quatre alternatives, ce bon vieux principe des tiroirs va nous permettre de lever des contradictions très facilement.
-    %
-    \begin{itemize}
-    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{1}\,.
-		
-		\smallskip
-		\noindent
-		Dans ce cas, on sait juste que $(n+i, n+i^\prime) \in \NNsquare \times \NNsquare$\,.
-		Or $n \notin \NNsquare$ puisque sinon nous aurions $(n+1)(n+2)(n+3)(n+4) \in \NNsquare$ via $n(n+1)(n+2)(n+3)(n+4) \in \NNsquare$\,, mais ceci ne se peut pas d'après le fait \ref{case-3}.
-		De même, $n+4 \notin \NNsquare$\,.
-		Dès lors, nous avons $\setgene{n+i, n+i^\prime} \subseteq \setgene{n+1, n+2, n+3}$ qui donne deux carrés parfaits éloignés de moins de $3$\,, et ceci contredit le fait \ref{dist-square}.
-
-
-    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{2}\,.
-		
-		\smallskip
-		\noindent
-		Dans ce cas, le couple de facteurs est $(n, n + 3)$\,, ou $(n + 1, n + 4)$\,.    
-		%
-		\begin{enumerate}
-			\item Supposons d'abord que $n$ et $(n+3)$ vérifient \alt{2}\,.
-			
-			\noindent
-			Comme $\forall p \in \PP - \setgene{3}$\,, $\padicval{n} \in 2 \NN$ et $\padicval{n + 3} \in 2 \NN$\,,
-			mais aussi $\padicval[3]{n} \in 2 \NN + 1$ et $\padicval[3]{n + 3} \in 2 \NN + 1$\,,
-			nous avons $n = 3 N^2$ et $n+3 = 3 M^2$ où $(N, M) \in \NN^2$\,.
-			Or, ceci donne $3 = 3 M^2 - 3 N^2$\,, puis $M^2 - N^2 = 1$ qui contredit le fait \ref{dist-square}.
-
-			\item De façon analogue, on ne peut pas avoir $(n+1)$ et $(n+4)$ vérifiant \alt{2}\,.
-		\end{enumerate}
-
-
-    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{3}\,.
-		
-		\smallskip
-		\noindent
-		Comme dans le point précédent, c'est impossible car on aurait $2 = 2 M^2 - 2 N^2$\,, ou $4 = 2 M^2 - 2 N^2$\,. 
-		En effet, ici les couples possibles sont $(n, n + 2)$\,, $(n, n + 4)$\,,  $(n + 2, n + 4)$ et $(n + 1, n + 3)$
-		\footnote{
-			Rien n'empêche d'avoir $n$\,, $(n + 2)$ et $(n + 4)$ vérifiant tous les trois \alt{3}\,.
-		}.
-
-
-    	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{4}\,.
-		
-		\smallskip
-		\noindent
-		Ceci donne deux facteurs différents divisibles par $6$\,, mais c'est impossible. \qedhere
-    \end{itemize}
+    \begin{stepcalc}[style = sar]
+    	\consprod<3>
+    \explnext{}
+    	n(n+3) \cdot (n+1)(n+2)
+    \explnext{}
+    	(n^2 + 3n) \cdot (n^2 + 3n + 2)
+    \explnext*{$m = n^2 + 3n + 1$}{}
+    	(m - 1) (m + 1)
+    \explnext{}
+    	m^2 - 1
+    \end{stepcalc}
+    
+    \medskip
+    
+    D'après le fait \ref{dist-square}, $m^2 - 1 \notin \NNsquare$\,, c'est-à-dire $\consprod<3> \notin \NNsquare$\,. 
 \end{proof}
 
 
@@ -85,140 +33,35 @@
 
 
 \begin{proof}[Une preuve alternative]
-	Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,.
-	%
-	Posant $m = n+2$\,, nous avons $\consprod<4> = (m-2)(m-1)m(m+1)(m+2) = m(m^2 - 1)(m^2 - 4)$ où $m \in \NN_{\geq 3}$\,.
-	On notera dans la suite $u = m^2 - 1$ et $q = m^2 - 4$\,.
-	
-	\medskip
-	
-	Supposons d'abord que $m \in \NNssquare$\,.
-	%
-	\begin{itemize}
-		\item De $muq \in \NNssquare$\,, nous déduisons $uq \in \NNssquare$\,.
+	En \enquote{symétrisant} certaines expressions, nous obtenons les manipulations algébriques suivantes qui sont moins magiques.
+    
+    \medskip
+    
+    \begin{stepcalc}[style = sar]
+    	\consprod<3>
+    \explnext{}
+    	n(n+1)(n+2)(n+3)
+    \explnext*{$m = n + \dfrac32$}{}
+    	\big( m - \dfrac32 \big) \big( m - \dfrac12 \big) \big( m + \dfrac12 \big) \big(m + \dfrac32 \big)
+    \explnext{}
+    	\big( m^2 - \dfrac94 \big) \big( m^2 - \dfrac14 \big)
+    \explnext*{$x = m^2  - \dfrac54$}{}
+    	(x - 1) (x + 1)
+    \explnext{}
+    	x^2 - 1
+    \explnext{}
+    	\Big( \big( n + \dfrac32 \big)^2 - \dfrac54 \Big)^2 - 1
+    \explnext{}
+    	\big( n^2 + 3n + 1 \big)^2 - 1
+    \end{stepcalc}
 
-		\item Comme $u - q = 3$\,, nous savons que $u \wedge q \in \setgene{1, 3}$\,.
-
-		\item Si $u \wedge q = 1$\,, 
-		alors $\forall p \in \PP$\,, 
-		$\padicval{u} \in 2 \NN$ et $\padicval{q} \in 2 \NN$\,,
-		d'où 
-		$(u, q) \in \NNsquare \times \NNsquare$\,.
-		Or ceci est impossible d'après le fait \ref{dist-square}
-		\footnote{
-			On peut aussi noter que le fait \ref{case-2} lève une contradiction car nous avons $m \in \NNsquare$ et $u \in \NNsquare$ qui donnent $(m-1)m(m+1) \in \NNsquare$
-		}.
-
-		\item Si $u \wedge q = 3$\,, 
-		alors $\forall p \in \PP - \setgene{3}$\,, 
-		$\padicval{u} \in 2 \NN$ et $\padicval{q} \in 2 \NN$\,,
-		mais aussi $\padicval[3]{u} \in 2 \NN + 1$ et $\padicval[3]{q} \in 2 \NN + 1$\,.
-		Donc 
-		$u = 3 U^2$ et $q = 3 Q^2$ avec $(U, Q) \in \NN^2$\,.
-		Or $u - q = 3$ donne $U^2 - Q^2 = 1$\,, et le fait \ref{dist-square} nous indique une contradiction.
-	\end{itemize}
-	
-	\medskip
-	
-	Supposons maintenant que $m \notin \NNssquare$\,.
-	%
-	\begin{itemize}
-		\item Nous avons vu ci-dessus que $u \notin \NNsquare$ et $q \notin \NNsquare$\,. On peut donc écrire $m = \alpha M^2$\,, $u = \beta U^2$\,, $q = \gamma Q^2$ où $(M, U, Q) \in \NN^3$, et $(\alpha, \beta, \gamma) \in \big( \NN_{>1} \big)^3$ formant un triplet de naturels sans facteur carré.
-
-
-		\item Notons que $\beta \neq \gamma$ car, dans le cas contraire, nous aurions $3 = u - q = \beta \big( U^2 - Q^2 \big)$ qui fournirait $0 < \abs{U^2 - Q^2} < 3$\,, et ceci contredirait le fait \ref{dist-square}.
-
-
-		\item Nous avons $m \wedge u = 1$\,, $m \wedge q \in \setgene{1, 2, 4}$ et $u \wedge q \in \setgene{1, 3}$
-		avec $m \wedge u = m \wedge q = u \wedge q = 1$ impossible car sinon on aurait $(m, u, q) \in \big( \kern-1.5pt\NNsquare \big)^3$ via $muq \in \NNsquare$\,.
-
-
-		\item Dès lors, $\forall p \in \PP_{>3}$\,, $\big( \padicval{m} , \padicval{u} , \padicval{q} \big) \in \big( 2 \NN \big)^3$.
-
-
-		\item Les points précédents donnent 
-		$\setgene{\alpha, \beta, \gamma} \subseteq \setgene{2, 3, 6}$\,,
-		où $\beta \neq \gamma$\,,
-		ainsi que 
-		$\alpha \wedge \beta = 1$\,, $\alpha \wedge \gamma \in \setgene{1, 2}$\,, $\beta \wedge \gamma \in \setgene{1, 3}$
-		avec $\alpha \wedge \beta = \alpha \wedge \gamma = \beta \wedge \gamma = 1$ impossible. 
-		Ceci nous donne le tableau \enquote{mécanique} suivant qui montre que forcément $(\alpha, \beta, \gamma) = (2, 3, 2)$ ou $(\alpha, \beta, \gamma) = (2, 3, 6)$\,. Le plus dur est fait !
-	\end{itemize}
-
-	\begin{center}
-		\begin{tblr}{
-			colspec={*{6}{Q[c,$]}c},
-			vline{2-7} = {},
-			hline{2-5} = {}
-		}
-        	\alpha & \beta & \gamma 
-				& \alpha \wedge \beta & \alpha \wedge \gamma & \beta \wedge \gamma
-				& Statut
-			\\
-        	2 & 3 & 2
-				& 1 & 2 & 1
-				& OK
-%			\\
-%        	2 & 3 & 3
-%				& 1 & 1 & 3
-%				& OK
-			\\
-        	2 & 3 & 6
-				& 1 & 2 & 3
-				& OK
-%			\\
-%        	3 & 2 & 2
-%				& 1 & 1 & 2
-%				& KO
-			\\
-        	3 & 2 & 3
-				& 1 & 3 & 1
-				& KO
-			\\
-        	3 & 2 & 6
-				& 1 & 3 & 2
-				& KO
-        \end{tblr}
-	\end{center}
-
-
-	\begin{itemize}
-		\item $(\alpha, \beta, \gamma) = (2, 3, 2)$ nous donne $m = 2 M^2$, $m^2 - 1 = 3 U^2$ et $m^2 - 4 = 2 Q^2$.
-
-		\noindent
-		Comme $m$ est pair, posant $m - 2 = 2 r$ et notant $s = m + 2$\,, les faits suivants lèvent une contradiction.
-		%
-		\begin{itemize}
-			\item $2 r s = 2 Q^2$ donne $r s = Q^2$.
-			
-			\item $s \notin \NNsquare$\,, car dans le cas contraire, nous aurions $(m-2)(m-1)m(m+1) \in \NNsquare$ via $(m-2)(m-1)m(m+1)(m+2)  \in \NNsquare$\,, mais ceci ne se peut d'après le fait \ref{case-3}.
-			
-			\item Les deux résultats précédents donnent $(\pi, R, S) \in \NN_{>1} \times \NN^2$ tel que $r = \pi R^2$ et $s = \pi S^2$ avec $\pi$ sans facteur carré.
-			
-			\item $4 = s - 2r = \pi (S^2 - 2 R^2)$ donne alors $\pi = 2$\,, d'où $m + 2 = 2 S^2$\,.
-			
-			\item Finalement, $m = 2 M^2$ et $m + 2 = 2 S^2$ contredisent le fait \ref{dist-square} via $2 = 2(S^2 - M^2)$.
-		\end{itemize}
-
-
-
-		\item $(\alpha, \beta, \gamma) = (2, 3, 6)$ nous donne $m = 2 M^2$, $m^2 - 1 = 3 U^2$ et $m^2 - 4 = 6 Q^2$.
-		
-		\noindent
-		Les faits suivants lèvent une autre contradiction via une technique similaire à celle employée ci-dessus.
-		%
-		\begin{itemize}
-			\item Travaillons modulo $3$\,.
-			Comme $m = 2 M^2$, nous avons $m \equiv 0$ ou $m \equiv -1$\,. 
-			Or $m^2 - 1 = 3 U^2$ donne $m^2 \equiv 1$\,, d'où $m \equiv -1$\,, puis $3 \divides m - 2$\,, et enfin $6 \divides m - 2$ puisque $m$ est pair.
-			
-			\item Posant $m - 2 = 6 r$ et notant $s = m + 2$\,, nous avons $6 r s = 6 Q^2$\,, puis $r s = Q^2$.
-			
-			\item $s \notin \NNsquare$ reste valable ici.
-			
-			\item Les deux résultats précédents donnent $(\pi, R, S) \in \NN_{>1} \times \NN^2$ tel que $r = \pi R^2$ et $s = \pi S^2$ avec $\pi$ sans facteur carré.
-			
-			\item $4 = s - 6r = \pi (S^2 - 6 R^2)$ donne $\pi = 2$\,, et on conclut comme avant. \qedhere
-		\end{itemize} \qedhere
-	\end{itemize}
+	\vspace{-2ex}	
+	\leavevmode
 \end{proof}
+
+
+
+
+
+
+

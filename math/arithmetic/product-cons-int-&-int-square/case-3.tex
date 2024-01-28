@@ -1,5 +1,5 @@
-\begin{fact} \label{case-3}
-	 $\forall n \in \NNs$\,, $n(n+1)(n+2)(n+3) \notin \NNsquare$\,.
+\begin{fact} \label{case-2}
+	 $\forall n \in \NNs$\,, $n(n+1)(n+2) \notin \NNsquare$\,.
 \end{fact}
 
 
@@ -7,25 +7,16 @@
 
 
 \begin{proof}
-    Nous pouvons ici faire les manipulations algébriques naturelles suivantes.
-    
-    \medskip
-    
-    \begin{stepcalc}[style = sar]
-    	\consprod<3>
-    \explnext{}
-    	n(n+3) \cdot (n+1)(n+2)
-    \explnext{}
-    	(n^2 + 3n) \cdot (n^2 + 3n + 2)
-    \explnext*{$m = n^2 + 3n + 1$}{}
-    	(m - 1) (m + 1)
-    \explnext{}
-    	m^2 - 1
-    \end{stepcalc}
-    
-    \medskip
-    
-    D'après le fait \ref{dist-square}, $m^2 - 1 \notin \NNsquare$\,, c'est-à-dire $\consprod<3> \notin \NNsquare$\,. 
+    Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
+    %
+    Posant $m = n+1$\,, nous avons $\consprod<2> = (m-1)m(m+1) = m(m^2 - 1)$ où $m \in \NN_{\geq 2}$\,.
+    %
+    Comme $\forall p \in \PP$\,, $\padicval{\consprod<2>} \in 2 \NN$\,, et comme de plus $p \in \PP$ ne peut diviser à la fois $m$ et $m^2 - 1$\,, nous savons que 
+    $\forall p \in \PP$\,, 
+    $\padicval{m} \in 2 \NN$ et $\padicval{m^2 - 1} \in 2 \NN$\,,
+    d'où 
+    $(m, m^2 - 1) \in \NNsquare \times \NNsquare$\,.
+    Or, d'après le fait \ref{dist-square}, $m^2 - 1 \in \NNsquare$ est impossible.
 \end{proof}
 
 
@@ -33,35 +24,32 @@
 
 
 \begin{proof}[Une preuve alternative]
-    Nous avons aussi les manipulations algébriques moins magiques suivantes où l'on \enquote{symétrise} certaines expressions.
+    Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
+    %
+    Comme $p \in \PP_{>2}$ ne peut diviser au maximum qu'un seul des trois facteurs $n$\,, $(n+1)$ et $(n+2)$\,, nous savons que 
+    $\forall p \in \PP_{>2}$\,, 
+    $\big( \padicval{n} , \padicval{n + 1} , \padicval{n + 2} \big) \in \big( 2 \NN \big)^3$\,.
+    Mais que se passe-t-il pour $p = 2$ ?
     
     \medskip
     
-    \begin{stepcalc}[style = sar]
-    	\consprod<3>
-    \explnext{}
-    	n(n+1)(n+2)(n+3)
-    \explnext*{$m = n + \dfrac32$}{}
-    	\big( m - \dfrac32 \big) \big( m - \dfrac12 \big) \big( m + \dfrac12 \big) \big(m + \dfrac32 \big)
-    \explnext{}
-    	\big( m^2 - \dfrac94 \big) \big( m^2 - \dfrac14 \big)
-    \explnext*{$x = m^2  - \dfrac54$}{}
-    	(x - 1) (x + 1)
-    \explnext{}
-    	x^2 - 1
-    \explnext{}
-    	\Big( \big( n + \dfrac32 \big)^2 - \dfrac54 \Big)^2 - 1
-    \explnext{}
-    	\big( n^2 + 3n + 1 \big)^2 - 1
-    \end{stepcalc}
+    Supposons d'abord $n \in 2 \NN$\,.
+	%
+	\begin{itemize}
+		\item Posant $n = 2 m$\,, nous avons $\consprod<2> = 4 m(2m+1)(m+1)$\,, d'où $m(2m+1)(m+1) \in \NNssquare$\,.
+		
+		\item Comme $\padicval[2]{2m+1} = 0$\,, nous savons que $2m+1 \in \NNssquare$\,.
+		
+		\item Donc $m(m+1)\in \NNssquare$\,, mais le fait \ref{case-1} interdit cela.
+	\end{itemize}
+    
+    \medskip
+    
+    Supposons maintenant $n \in 2 \NN + 1$\,.
+	%
+	\begin{itemize}
+		\item Nous savons que $n \in \NNssquare$ via $\padicval[2]{n} = 0$\,.
 
-	\vspace{-2ex}	
-	\leavevmode
+		\item Dès lors, on obtient $(n+1)(n+2) \in \NNssquare$\,, mais de nouveau ceci contredit le fait \ref{case-1}. \qedhere
+	\end{itemize}
 \end{proof}
-
-
-
-
-
-
-

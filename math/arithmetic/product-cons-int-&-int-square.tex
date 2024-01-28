@@ -118,8 +118,12 @@
 \input{\contentdir/notations}
 
 
-\foreach \k in {0,...,4} {
-	\section{Cas \k}
+\foreach \k in {1,...,5} {
+	\ifthenelse{\k = 1}{
+		\section{Avec \k\ seul facteur}
+	}{
+		\section{Avec \k\ facteurs}
+	}
 
 	\input{\contentdir/case-\k}
 }

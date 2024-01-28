@@ -1,5 +1,5 @@
-\begin{fact} \label{case-2}
-	 $\forall n \in \NNs$\,, $n(n+1)(n+2) \notin \NNsquare$\,.
+\begin{fact} \label{case-1}
+	 $\forall n \in \NNs$\,, $n(n+1) \notin \NNsquare$\,.
 \end{fact}
 
 
@@ -7,16 +7,17 @@
 
 
 \begin{proof}
-    Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
+    Supposons que $\consprod<1> = n(n+1) \in \NNssquare$\,.
     %
-    Posant $m = n+1$\,, nous avons $\consprod<2> = (m-1)m(m+1) = m(m^2 - 1)$ où $m \in \NN_{\geq 2}$\,.
+    Clairement $\forall p \in \PP$\,, $\padicval{\consprod<1>} \in 2 \NN$\,.
     %
-    Comme $\forall p \in \PP$\,, $\padicval{\consprod<2>} \in 2 \NN$\,, et comme de plus $p \in \PP$ ne peut diviser à la fois $m$ et $m^2 - 1$\,, nous savons que 
-    $\forall p \in \PP$\,, 
-    $\padicval{m} \in 2 \NN$ et $\padicval{m^2 - 1} \in 2 \NN$\,,
-    d'où 
-    $(m, m^2 - 1) \in \NNsquare \times \NNsquare$\,.
-    Or, d'après le fait \ref{dist-square}, $m^2 - 1 \in \NNsquare$ est impossible.
+    Or $p \in \PP$ ne pent diviser à la fois $n$ et $n+1$\,.
+    %
+    Nous savons donc que $\forall p \in \PP$\,, 
+    $\padicval{n} \in 2 \NN$ et $\padicval{n+1} \in 2 \NN$\,,
+    autrement dit 
+    $(n, n + 1) \in \NNsquare \times \NNsquare$\,.
+    D'après le fait \ref{dist-square}, nous savons que ceci est impossible.
 \end{proof}
 
 
@@ -24,32 +25,23 @@
 
 
 \begin{proof}[Une preuve alternative]
-    Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
-    %
-    Comme $p \in \PP_{>2}$ ne peut diviser au maximum qu'un seul des trois facteurs $n$\,, $(n+1)$ et $(n+2)$\,, nous savons que 
-    $\forall p \in \PP_{>2}$\,, 
-    $\big( \padicval{n} , \padicval{n + 1} , \padicval{n + 2} \big) \in \big( 2 \NN \big)^3$\,.
-    Mais que se passe-t-il pour $p = 2$ ?
-    
-    \medskip
-    
-    Supposons d'abord $n \in 2 \NN$\,.
-	%
-	\begin{itemize}
-		\item Posant $n = 2 m$\,, nous avons $\consprod<2> = 4 m(2m+1)(m+1)$\,, d'où $m(2m+1)(m+1) \in \NNssquare$\,.
-		
-		\item Comme $\padicval[2]{2m+1} = 0$\,, nous savons que $2m+1 \in \NNssquare$\,.
-		
-		\item Donc $m(m+1)\in \NNssquare$\,, mais le fait \ref{case-1} interdit cela.
-	\end{itemize}
-    
-    \medskip
-    
-    Supposons maintenant $n \in 2 \NN + 1$\,.
-	%
-	\begin{itemize}
-		\item Nous savons que $n \in \NNssquare$ via $\padicval[2]{n} = 0$\,.
+     Supposons que $\consprod<1> = n(n+1) = N^2$ où $N \in \NNs$.
+     Les équivalences suivantes donnent alors une contradiction.
+	
+	\medskip
+	
+	\begin{stepcalc}[style = ar*, ope = \iff]
+		n(n+1) = N^2
+	\explnext*{$n(n+1) = 2 \dsum_{k=1}^{n} k$ et $N^2 = \dsum_{k=1}^{N} (2 k - 1)$\,.}{}
+		2 \dsum_{k=1}^{n} k = \dsum_{k=1}^{N} (2 k - 1)
+	\explnext{}
+		\dsum_{k=1}^{n} 2k = \dsum_{k=1}^{N} 2 k - N
+	\explnext*{$N > n$}{}
+		\dsum_{k=n+1}^{N} 2k = N
+	\explnext*{$N > 0$ rend impossible la dernière égalité.}{}
+		\dsum_{k=n+1}^{N-1} 2k + N = 0
+	\end{stepcalc}
 
-		\item Dès lors, on obtient $(n+1)(n+2) \in \NNssquare$\,, mais de nouveau ceci contredit le fait \ref{case-1}. \qedhere
-	\end{itemize}
+	\vspace{-2ex}	
+	\leavevmode
 \end{proof}

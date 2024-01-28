@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.23)  28 JAN 2024 17:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.23)  28 JAN 2024 21:30
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1872,7 +1872,8 @@ LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 ))
 (./product-cons-int-&-int-square/notations.tex)
-(./product-cons-int-&-int-square/case-0.tex
+(./product-cons-int-&-int-square/case-1.tex)
+(./product-cons-int-&-int-square/case-2.tex
 \l__witharrows_x_dim=\dimen449
 \l__witharrows_initial_int=\count519
 \l__witharrows_final_int=\count520
@@ -1880,8 +1881,6 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 \l__witharrows_pos_of_arrow_int=\count522
 \l__witharrows_jump_int=\count523
 \l__witharrows_env_box=\box256
-)
-(./product-cons-int-&-int-square/case-1.tex
 \l__witharrows_first_arrow_of_group_int=\count524
 \l__witharrows_first_line_of_group_int=\count525
 \l__witharrows_last_line_of_group_int=\count526
@@ -1891,10 +1890,10 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 \g__witharrows_x_final_dim=\dimen451
 \g__witharrows_y_initial_dim=\dimen452
 \g__witharrows_y_final_dim=\dimen453
- [2])
-(./product-cons-int-&-int-square/case-2.tex)
-(./product-cons-int-&-int-square/case-3.tex [3])
-(./product-cons-int-&-int-square/case-4.tex [4]
+)
+(./product-cons-int-&-int-square/case-3.tex [2])
+(./product-cons-int-&-int-square/case-4.tex)
+(./product-cons-int-&-int-square/case-5.tex [3] [4]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1903,13 +1902,13 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
- [5]) [6]
+) [5]
 (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [7]
+) [6]
 (./product-cons-int-&-int-square.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1922,16 +1921,16 @@ LaTeX Font Warning: Size substitutions with differences
 
 Package rerunfilecheck Info: File `product-cons-int-&-int-square.out' has not c
 hanged.
-(rerunfilecheck)             Checksum: C7B7E67354282040786E4CBC590595A0;950.
+(rerunfilecheck)             Checksum: 58A85305A37E4C3925C6F8DB31395F26;1238.
  ) 
 Here is how much of TeX's memory you used:
- 63601 strings out of 474228
- 1576960 string characters out of 5746458
- 2115348 words of memory out of 5000000
- 84749 multiletter control sequences out of 15000+600000
+ 63554 strings out of 474228
+ 1576243 string characters out of 5746458
+ 2113266 words of memory out of 5000000
+ 84705 multiletter control sequences out of 15000+600000
  588129 words of font info for 130 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 101i,13n,107p,1630b,1388s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,13n,107p,1630b,1387s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -1960,10 +1959,10 @@ exmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/tex
 mf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2023/texmf
 -dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on product-cons-int-&-int-square.pdf (7 pages, 376065 bytes).
+Output written on product-cons-int-&-int-square.pdf (6 pages, 373312 bytes).
 PDF statistics:
- 266 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
+ 258 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
  86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
