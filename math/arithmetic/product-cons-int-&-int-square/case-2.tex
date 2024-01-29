@@ -1,5 +1,5 @@
 \begin{fact} \label{case-1}
-	 $\forall n \in \NNs$\,, $n(n+1) \notin \NNsquare$\,.
+	 $\forall n \in \NNs$, $n(n+1) \notin \NNsquare$\,.
 \end{fact}
 
 
@@ -7,11 +7,19 @@
 
 
 \begin{proof}
+	Il suffit de noter que $n^2 < n(n+1) < (n+1)^2$.
+\end{proof}
+
+
+% ------------------ %
+
+
+\begin{proof}[Preuve alternative no.1]
     Supposons que $\consprod<1> = n(n+1) \in \NNssquare$\,.
     %
     Clairement $\forall p \in \PP$\,, $\padicval{\consprod<1>} \in 2 \NN$\,.
     %
-    Or $p \in \PP$ ne pent diviser à la fois $n$ et $n+1$\,.
+    Or $p \in \PP$ ne peut diviser à la fois $n$ et $n+1$\,.
     %
     Nous savons donc que $\forall p \in \PP$\,, 
     $\padicval{n} \in 2 \NN$ et $\padicval{n+1} \in 2 \NN$\,,
@@ -24,7 +32,7 @@
 % ------------------ %
 
 
-\begin{proof}[Une preuve alternative]
+\begin{proof}[Preuve alternative no.2]
      Supposons que $\consprod<1> = n(n+1) = N^2$ où $N \in \NNs$.
      Les équivalences suivantes donnent alors une contradiction.
 	
