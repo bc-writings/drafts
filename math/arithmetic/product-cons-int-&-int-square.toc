@@ -1,0 +1,9 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\tocsection {}{1}{Ce qui nous intéresse}}{2}{section.1}%
+\contentsline {section}{\tocsection {}{2}{Notations utilisées}}{2}{section.2}%
+\contentsline {section}{\tocsection {}{3}{Avec 1\ seul facteur}}{2}{section.3}%
+\contentsline {section}{\tocsection {}{4}{Avec 2\ facteurs}}{2}{section.4}%
+\contentsline {section}{\tocsection {}{5}{Avec 3\ facteurs}}{3}{section.5}%
+\contentsline {section}{\tocsection {}{6}{Avec 4\ facteurs}}{3}{section.6}%
+\contentsline {section}{\tocsection {}{7}{Avec 5\ facteurs}}{4}{section.7}%
+\contentsline {section}{\tocsection {}{8}{AFFAIRE À SUIVRE...}}{7}{section.8}%
