@@ -1,1 +1,40 @@
-{\Huge TODO}
+\leavevmode
+\smallskip
+
+Supposons que $\consprod<1> = n(n+1) \in \NNssquare$\,. Nous avons alors les $p$-tableaux de Vogler suivants pour $p \in \PP$ divisant $\consprod<1>$\,, car les valeurs $p$ de la deuxième ligne doivent apparaître un nombre pair de fois tout en étant espacés par $(p-1)$ valeurs $1$\,. 
+
+\begin{center}
+	\begin{tblr}{
+		colspec  = {Q[r,$]*{2}{Q[c,$]}},
+		vline{2} = {.95pt},
+		vline{3} = {dashed},
+		hline{2} = {.95pt}
+	}
+		n + \bullet
+			&  0  
+			&  1
+	\\
+		p
+			&  1
+			&  1
+	\end{tblr}
+\end{center}
+
+
+La multiplication de tous les $p$-tableaux de Vogler précédents donne le tableau de Vogler ci-après qui contredit le fait \ref{illegal-vogler}.
+
+\begin{center}
+	\begin{tblr}{
+		colspec  = {Q[r,$]*{2}{Q[c,$]}},
+		vline{2} = {.95pt},
+		vline{3} = {dashed},
+		hline{2} = {.95pt}
+	}
+		n + \bullet
+			&  0  
+			&  1
+	\\
+			&  1
+			&  1
+	\end{tblr}
+\end{center}

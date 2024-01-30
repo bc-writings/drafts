@@ -37,6 +37,7 @@
 
 
 \newtheorem{fact}{Fait}[section]
+\newtheorem{defi}{Définition}[section]
 \newtheorem{example}{Exemple}[section]
 \newtheorem{remark}{Remarque}[section]
 \newtheorem*{proof*}{Une preuve alternative}
@@ -78,7 +79,7 @@
 
 \title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs}
 \author{Christophe BAL}
-\date{25 Jan. 2024 -- 30 Jan. 2024}
+\date{25 Jan. 2024 -- 31 Jan. 2024}
 
 \maketitle
 
@@ -153,12 +154,8 @@
 \input{\contentdir/table-trick}
 
 
-\foreach \k in {1,...,5} {
-	\ifthenelse{\k = 1}{
-		\subsection{Avec \k\ seul facteur}
-	}{
-		\subsection{Avec \k\ facteurs}
-	}
+\foreach \k in {2,...,5} {
+	\subsection{Application au cas de \k\ facteurs}
 
 	\input{\contentdir/table-trick/case-\k}
 }

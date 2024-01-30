@@ -1,1 +1,207 @@
-{\Huge TODO}
+\leavevmode
+\smallskip
+
+Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,. Nous avons alors les $p$-tableaux de Vogler suivants pour $p \in \PP_{>5}$ divisant $\consprod<4>$\,.
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{5}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-6} = {dashed},
+		hline{2}   = {.95pt}
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3 
+			&  4
+	\\
+		p
+			&  1
+			&  1
+			&  1
+			&  1
+			&  1
+	\end{tblr}
+\end{center}
+
+
+Pour $p = 2$\,, nous avons les $2$-tableaux de Vogler suivants.
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{5}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-6} = {dashed},
+		hline{2}   = {.95pt}
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3 
+			&  4
+	\\
+		2
+			&  1
+			&  1
+			&  1
+			&  1
+			&  1
+	\\
+			&  2
+			&  1
+			&  2
+			&  1
+			&  1
+	\\
+			&  2
+			&  1
+			&  1
+			&  1
+			&  2
+	\\
+			&  1
+			&  2
+			&  1
+			&  2
+			&  1
+	\\
+			&  1
+			&  1
+			&  2
+			&  1
+			&  2
+	\end{tblr}
+\end{center}
+
+
+Pour $p = 3$\,, nous obtenons les $3$-tableaux de Vogler suivants.
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{5}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-6} = {dashed},
+		hline{2}   = {.95pt}
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3 
+			&  4
+	\\
+		3
+			&  1
+			&  1
+			&  1
+			&  1
+			&  1
+	\\
+			&  3
+			&  1
+			&  1
+			&  3
+			&  1
+	\\
+			&  1
+			&  3
+			&  1
+			&  1
+			&  3
+	\end{tblr}
+\end{center}
+
+
+Pour $p = 5$\,, nous obtenons les $5$-tableaux de Vogler suivants.
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{5}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-6} = {dashed},
+		hline{2}   = {.95pt}
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3 
+			&  4
+	\\
+		5
+			&  1
+			&  1
+			&  1
+			&  1
+			&  1
+	\\
+			&  5
+			&  1
+			&  1
+			&  1
+			&  5
+	\end{tblr}
+\end{center}
+
+
+La multiplication de tous les $d$-tableaux de Vogler précédents donnerait $30$ cas, mais comme nous savons que $\consprod<3> = n(n+1)(n+2)(n+3) \notin \NNssquare$\,, nous pouvons ignorer tous les tableaux commençant, ou finissant, par une valeur $1$ en plus de ceux rejetés par le le fait \ref{illegal-vogler}.
+Ceci nous amène à ne considérer que les six tableaux de Vogler suivants.
+
+\begin{center}
+	\begin{tblr}{
+		colspec  = {Q[r,$]*{5}{Q[c,$]}},
+		vline{2} = {.95pt},
+		vline{3-6} = {dashed},
+		hline{2} = {.95pt}
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3 
+			&  4
+
+	\\
+			&  30
+			&  1
+			&  2
+			&  3
+			&  5
+	\\
+			&  15
+			&  2
+			&  1
+			&  6
+			&  5
+	\\
+			&  15
+			&  1
+			&  2
+			&  3
+			&  10
+	\\
+			&  10
+			&  3
+			&  2
+			&  1
+			&  15
+	\\
+			&  5
+			&  6
+			&  1
+			&  2
+			&  15
+	\\
+			&  5
+			&  3
+			&  2
+			&  1
+			&  30
+	\end{tblr}
+\end{center}
+
+
+TODO
