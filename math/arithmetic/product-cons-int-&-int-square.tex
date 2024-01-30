@@ -110,10 +110,16 @@
 \tableofcontents
 
 
+% ------------------ %
+
+
 \newpage
 \section{Ce qui nous intéresse}
 
 \input{\contentdir/what}
+
+
+% ------------------ %
 
 
 \section{Notations utilisées}
@@ -121,22 +127,44 @@
 \input{\contentdir/notations}
 
 
+% ------------------ %
+
+
+\section{Résolution au cas par cas}
+
 \foreach \k in {1,...,5} {
 	\ifthenelse{\k = 1}{
-		\section{Avec \k\ seul facteur}
+		\subsection{Avec \k\ seul facteur}
 	}{
-		\section{Avec \k\ facteurs}
+		\subsection{Avec \k\ facteurs}
 	}
 
-	\input{\contentdir/case-\k}
+	\input{\contentdir/by-hand/case-\k}
 }
 
 
+% ------------------ %
 
-%\section{Et après ?}
-%
-%\input{\contentdir/case-gene}
 
+\section{Une méthode efficace}
+
+\subsection{Prenons du recul}
+
+\input{\contentdir/table-trick}
+
+
+\foreach \k in {1,...,5} {
+	\ifthenelse{\k = 1}{
+		\subsection{Avec \k\ seul facteur}
+	}{
+		\subsection{Avec \k\ facteurs}
+	}
+
+	\input{\contentdir/table-trick/case-\k}
+}
+
+
+% ------------------ %
 
 
 %\bigskip
