@@ -1,6 +1,54 @@
 \leavevmode
 \smallskip
 
-La méthode présentée ci-dessus permet de faire appel à un programme pour n'avoir à traiter que les tableaux de Vogler problématiques comme nous avons dû le faire dans la section \ref{apply-4}. Voyons comment en traitant le cas de $6$ facteurs.
+La méthode présentée ci-dessus permet de faire appel à un programme pour n'avoir à traiter à la main, et aux neurones, que certains tableaux de Vogler problématiques comme nous avons dû le faire dans la section \ref{apply-4}.
+Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 
-TODO
+
+\begin{enumerate}
+	\item On fabrique la liste $\setproba{P}$ des diviseurs premiers stricts de $6$ : nous avons juste $2$\,, $3$ et $5$\,.
+	Notons qu'avec $7$ facteurs, nous n'aurions pas garder $7$ car il est forcément de valuation paire dans chaque facteur $(n + i)$ de $\consprod<7>$\,.
+	
+ 
+	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des $p$-tableaux de Vogler possibles relativement à $\consprod<6>$\,.
+	
+ 
+	\item On calcule toutes les multiplications de $p$-tableaux de Vogler, et pour chacune d'elles on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme.
+	%
+	\begin{enumerate}
+		\item Le tableau \enquote{produit} commence, ou se termine, par la valeur $1$\,. Dans ce cas, on sait par récurrence que le tableau produit n'est pas possible. 
+
+		\item L'une des interdictions du fait \ref{illegal-vogler} est validée par le tableau \enquote{produit}\,.
+		
+		\item Le tableau \enquote{produit} contient un sous-tableau que nous savons impossible suite à un raisonnement humain fait \emph{localement}\,, c'est-à-dire que seul les facteurs indiqués dans le sous-tableau, et le sous-tableau lui-même sont utilisés pour raisonner.
+		Comme c'est ce qui a été fait en fin de section \ref{apply-4}, nous pouvons indiquer les deux sous-tableaux impossibles suivants.
+	\end{enumerate}
+\end{enumerate}
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{4}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-5} = {dashed},
+		hline{2}   = {.95pt}
+	}
+		m + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3
+	\\
+			&  6
+			&  1
+			&  2
+			&  3
+	\\
+			&  3
+			&  2
+			&  1
+			&  6
+	\end{tblr}
+\end{center}
+
+
+{\Huge YAPLUKA !}
