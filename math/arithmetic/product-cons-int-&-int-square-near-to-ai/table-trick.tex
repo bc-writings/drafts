@@ -1,8 +1,23 @@
-\leavevmode
-\smallskip
+Il est facile de trouver des démonstrations à la main du fait que $n(n+1) \cdots (n + k) \notin \NNssquare$ pour les premières valeurs de $k$.
+Certains preuves sont très sympathiques, mais, malheureusement, elles ne reposent pas sur un schéma général de raisonnement autre que de découvrir des carrés mal espacés : par exemple, tomber sur $N^2 - M^2 = 4$ lève une contradiction du fait \ref{dist-square} donné ci-dessous.
+Dans la suite, nous allons tenter de limiter au maximum l'emploi de fourberies déductives ; pour cela, commençons par noter le fait suivant
+\footnote{
+	$N^2 - M^2 = (N - M)(N + M)$ donne directement $N^2 - M^2 \geq 3$ dès que $(N, M) \in \big( \NNs \big)^2$ vérifie $N > M$\,.
+}.
 
-Les exemples proposés précédemment sont tous sympathiques, mais, malheureusement, ils ne nous ont pas permis de noter un schéma général de raisonnement autre que de découvrir des carrés mal espacés : par exemple, tomber sur $N^2 - M^2 = 4$ lève une contradiction du fait \ref{dist-square}.
-Tentons donc de limiter au maximum l'emploi de fourberies déductives ; pour cela, commençons par noter le fait suivant.
+
+\begin{fact} \label{dist-square}
+	$\forall (N, M) \in \NNs \times \NNs$, 
+	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
+\end{fact}
+
+
+\begin{proof}
+	Il suffit d'utiliser $N^2 = \dsum_{k=1}^{N} (2 k - 1)$\,.
+\end{proof}
+
+
+% ------------------ %
 
 
 \begin{fact} \label{facto-square}
@@ -18,7 +33,7 @@ Tentons donc de limiter au maximum l'emploi de fourberies déductives ; pour cel
 % ------------------ %
 
 
-Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod\ = \dprod_{i = 0}^{k} (n + i)$\,. 
+Passons aux diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod = \dprod_{i = 0}^{k} (n + i)$\,. 
 
 
 \begin{defi}
@@ -58,6 +73,7 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 % ------------------ %
 
 
+\newpage
 \begin{example}
 	Supposons avoir le tableau de Vogler suivant où $n \in \NNs$.
 
@@ -174,28 +190,28 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 	Les tableaux de Vogler ci-après sont impossibles. 
 
 
-	\begin{enumerate}
-		\item Pas de facteurs carrés consécutifs.
-	\end{enumerate}
-		
-    \begin{center}
-    	\begin{tblr}{
-    		colspec     = {Q[r,$]*{2}{Q[c,$]}},
-    		vline{2}    = {.95pt},
-    		vline{3}    = {dashed},
-   			hline{2}    = {.95pt},
-			column{2-Z} = {2em},
-			% Rejected
-			cell{2}{2,3} = {red!15},
-    	}
-    		n + \bullet
-   				&  i 
-    			&  i + 1
-    	\\
-    			&  a
-				&  a
-    	\end{tblr}
-    \end{center}
+%	\begin{enumerate}
+%		\item Pas de facteurs carrés consécutifs.
+%	\end{enumerate}
+%		
+%    \begin{center}
+%    	\begin{tblr}{
+%    		colspec     = {Q[r,$]*{2}{Q[c,$]}},
+%    		vline{2}    = {.95pt},
+%    		vline{3}    = {dashed},
+%   			hline{2}    = {.95pt},
+%			column{2-Z} = {2em},
+%			% Rejected
+%			cell{2}{2,3} = {red!15},
+%    	}
+%    		n + \bullet
+%   				&  i 
+%    			&  i + 1
+%    	\\
+%    			&  a
+%				&  a
+%    	\end{tblr}
+%    \end{center}
 
 
 	\begin{enumerate}[start=2]
@@ -263,12 +279,12 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 	Tout est contenu dans le fait \ref{dist-square}.
 	
 	\begin{enumerate}
-		\item \label{vogler-no-witness}
-		Ici, $n + i = a A^2$ et $n + i + 1 = a B^2$ donnent $a (B^2 - A^2) = 1$\,, d'où $B^2 - A^2 = 1$ qui ne se peut pas car nous sommes dans $\NNs$, d'où $A^2 > B^2 \geq 1$\,.
+%		\item \label{vogler-no-witness}
+%		Ici, $n + i = a A^2$ et $n + i + 1 = a B^2$ donnent $a (B^2 - A^2) = 1$\,, d'où $B^2 - A^2 = 1$ qui ne se peut pas car nous sommes dans $\NNs$, d'où $A^2 > B^2 \geq 1$\,.
 
-		\item Ici, $n + i = ad A^2$ et $n + i + d = ad B^2$ donnent $ad (B^2 - A^2) = d$\,, puis $a (B^2 - A^2) = 1$ qui a été rejeté dans l'explication précédente.
+		\item Ici, $n + i = ad A^2$ et $n + i + d = ad B^2$ donnent $ad (B^2 - A^2) = d$\,, puis $a (B^2 - A^2) = 1$, d'où $B^2 - A^2 = 1$ qui ne se peut pas car $B^2 > A^2 \geq 1$\,.
 
-		\item Ici, $n + i = ad A^2$ et $n + i + 2 d = ad B^2$ donnent $ad (B^2 - A^2) = 2d$\,, \emph{i.e.} $a (B^2 - A^2) = 2$\,, d'où $B^2 - A^2 \in \setgene{1, 2}$ qui est impossible d'après l'explication \ref{vogler-no-witness} ci-dessus et le fait \ref{dist-square}.
+		\item Ici, $n + i = ad A^2$ et $n + i + 2 d = ad B^2$ donnent $ad (B^2 - A^2) = 2d$\,, \emph{i.e.} $a (B^2 - A^2) = 2$\,, d'où $B^2 - A^2 \in \setgene{1, 2}$ qui est impossible.
 	\end{enumerate}
 \end{proof}
 
@@ -276,7 +292,7 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 % ------------------ %
 
 
-Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $d$-tableaux de Vogler qui sont moins précis et définis comme suit.
+Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $d$-tableaux de Vogler qui sont moins précis ; ils sont définis comme suit.
 	
 
 \begin{defi}
@@ -364,7 +380,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $d$-
 
 
 \begin{example}
-	La multiplication de deux $d$-tableaux de Vogler est \enquote{naturelle} lorsqu'elle porte sur des $d$ premiers entre eux.
+	La multiplication de deux $d$-tableaux de Vogler est \enquote{naturelle} lorsqu'elle porte sur des nombres $d$ premiers entre eux.
 	Considérons le $2$-tableau de Vogler et le $3$-tableau de Vogler suivants.
 	
 	\begin{multicols}{2}
@@ -474,7 +490,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $d$-
 
 
 \begin{fact} \label{vogler-parity-square}
-	$\forall p \in \PP$\,, si $\consprod\ \in \NNsquare$\,, alors dans le $p$-tableau de Vogler associé à $\consprod\ \in \NNsquare$\,, le nombre de valeurs $p$ est forcément pair.
+	$\forall p \in \PP$\,, si $\consprod \in \NNsquare$\,, alors dans le $p$-tableau de Vogler associé à $\consprod$\,, le nombre de valeurs $p$ est forcément pair.
 \end{fact}
 
 

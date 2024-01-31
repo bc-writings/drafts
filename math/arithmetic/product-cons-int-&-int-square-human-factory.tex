@@ -72,7 +72,7 @@
 
 \begin{document}
 
-\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs}
+\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Résolutions à la main}
 \author{Christophe BAL}
 \date{25 Jan. 2024 -- 31 Jan. 2024}
 
@@ -127,40 +127,15 @@
 % ------------------ %
 
 
-\section{Résolutions à fortes empreintes cognitives} \label{warmup-your-brain}
-
 \foreach \k in {1,...,5} {
 	\ifthenelse{\k = 1}{
-		\subsection{Avec \k\ seul facteur}
+		\section{Avec \k\ seul facteur}
 	}{
-		\subsection{Avec \k\ facteurs}
+		\section{Avec \k\ facteurs}
 	}
 
-	\input{\contentdir/by-hand/case-\k}
+	\input{\contentdir/case-\k}
 }
-
-
-% ------------------ %
-
-
-\section{Une méthode efficace} \label{lazzy-is-easy}
-
-\subsection{Prenons du recul}
-
-\input{\contentdir/table-trick}
-
-
-\foreach \k in {2,...,5} {
-%\foreach \k in {5} {
-	\subsection{Application au cas de \k\ facteurs} \label{apply-\k}
-
-	\input{\contentdir/table-trick/case-\k}
-}
-
-
-\subsection{Et après ?}
-
-\input{\contentdir/table-trick/case-after}
 
 
 % ------------------ %

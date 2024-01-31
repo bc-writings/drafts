@@ -1,0 +1,170 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+\usepackage{float}
+\usepackage{cleveref}
+\usepackage{multicol}
+\usepackage{fancyvrb}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{numprint}
+\usepackage{tabularray}
+\usepackage[french]{babel}
+\frenchsetup{StandardItemLabels=true}
+\usepackage{csquotes}
+
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
+
+\usepackage{tnsmath}
+
+
+\newtheorem{fact}{Fait}[section]
+\newtheorem{defi}{Définition}[section]
+\newtheorem{example}{Exemple}[section]
+\newtheorem{remark}{Remarque}[section]
+\newtheorem*{proof*}{Une preuve alternative}
+
+\npthousandsep{.}
+\setlength\parindent{0pt}
+
+\floatstyle{boxed} 
+\restylefloat{figure}
+
+
+\DeclareMathOperator{\taille}{\text{\normalfont\texttt{taille}}}
+
+\newcommand{\logicneg}{\text{\normalfont non \!}}
+
+\newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
+
+
+\DefineVerbatimEnvironment{rawcode}%
+	{Verbatim}%
+	{tabsize=4,%
+	 frame=lines, framerule=0.3mm, framesep=2.5mm}
+	 
+	 
+\newcommand\contentdir{\jobname}
+\newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
+\newcommand\NNssquare{\seqsuprageo{\NN}{}{*}{}{2}}
+\NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
+\NewDocumentCommand\consprod{ O{n} D<>{k} }{\pi_{#1}^{#2}}
+
+\NewDocumentCommand\alt{ m }{\textbf{[A\kern1pt#1]}}
+
+\newcommand\mycheckmark{{\color{green!60!black} \checkmark}}
+\newcommand\myboxtimes{{\color{red!80!black} \boxtimes}}
+
+
+
+\begin{document}
+
+\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Une méthode efficace}
+\author{Christophe BAL}
+\date{25 Jan. 2024 -- 31 Jan. 2024}
+
+\maketitle
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \enquote{légales}}
+	}
+			
+	\vspace{0.45em}
+	\small
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% ------------------ %
+
+
+\newpage
+\section{Ce qui nous intéresse}
+
+\input{\contentdir/what}
+
+
+% ------------------ %
+
+
+\section{Notations utilisées}
+
+\input{\contentdir/notations}
+
+
+% ------------------ %
+
+
+\section{Prenons du recul}
+
+\input{\contentdir/table-trick}
+
+
+\foreach \k in {2,...,5} {
+%\foreach \k in {5} {
+	\section{Application au cas de \k\ facteurs} \label{apply-\k}
+
+	\input{\contentdir/case-\k}
+}
+
+
+\section{Et après ?}
+
+\input{\contentdir/case-after}
+
+
+% ------------------ %
+
+
+\section{Sources utilisées}
+
+\input{\contentdir/sources}
+
+
+% ------------------ %
+
+
+%\bigskip
+\newpage
+
+\hrule
+
+\section{AFFAIRE À SUIVRE...}
+
+\bigskip
+
+\hrule
+
+\end{document}
