@@ -109,10 +109,13 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 		
     \begin{center}
     	\begin{tblr}{
-    		colspec  = {Q[r,$]*{2}{Q[c,$]}},
-    		vline{2} = {.95pt},
-    		vline{3} = {dashed},
-   			hline{2} = {.95pt}
+    		colspec     = {Q[r,$]*{2}{Q[c,$]}},
+    		vline{2}    = {.95pt},
+    		vline{3}    = {dashed},
+   			hline{2}    = {.95pt},
+			column{2-Y} = {2em},
+			% Rejected
+			cell{2}{2,3} = {red8},
     	}
     		n + \bullet
    				&  i 
@@ -130,10 +133,13 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 		
     \begin{center}
     	\begin{tblr}{
-    		colspec    = {Q[r,$]*{5}{Q[c,$]}},
-    		vline{2}   = {.95pt},
-    		vline{3-6} = {dashed},
-   			hline{2}   = {.95pt}
+    		colspec     = {Q[r,$]*{5}{Q[c,$]}},
+    		vline{2}    = {.95pt},
+    		vline{3-6}  = {dashed},
+   			hline{2}    = {.95pt},
+			column{2-Y} = {3em},
+			% Rejected
+			cell{2}{2,6} = {red8},
     	}
     		n + \bullet
    				&  i 
@@ -157,10 +163,13 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 		
     \begin{center}
     	\begin{tblr}{
-    		colspec    = {Q[r,$]*{5}{Q[c,$]}},
-    		vline{2}   = {.95pt},
-    		vline{3-6} = {dashed},
-   			hline{2}   = {.95pt}
+    		colspec     = {Q[r,$]*{5}{Q[c,$]}},
+    		vline{2}    = {.95pt},
+    		vline{3-6}  = {dashed},
+   			hline{2}    = {.95pt},
+			column{2-Y} = {3.75em},
+			% Rejected
+			cell{2}{2,6} = {red8},
     	}
     		n + \bullet
    				&  i 
@@ -183,11 +192,12 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 	Tout est contenu dans le fait \ref{dist-square}.
 	
 	\begin{enumerate}
-		\item Ici, $n + i = a A^2$ et $n + i + 1 = a B^2$ donnent $a (B^2 - A^2) = 1$\,, d'où $B^2 - A^2 = 1$ qui ne se peut pas car nous sommes dans $\NNs$.
+		\item \label{vogler-no-witness}
+		Ici, $n + i = a A^2$ et $n + i + 1 = a B^2$ donnent $a (B^2 - A^2) = 1$\,, d'où $B^2 - A^2 = 1$ qui ne se peut pas car nous sommes dans $\NNs$, d'où $A^2 > B^2 \geq 1$\,.
 
-		\item Ici, $n + i = ad A^2$ et $n + i + d = ad B^2$ donnent $ad (B^2 - A^2) = d$\,, \emph{i.e.} $a (B^2 - A^2) = 1$ qui a été rejeté dans l'explication précédente.
+		\item Ici, $n + i = ad A^2$ et $n + i + d = ad B^2$ donnent $ad (B^2 - A^2) = d$\,, puis $a (B^2 - A^2) = 1$ qui a été rejeté dans l'explication précédente.
 
-		\item Ici, $n + i = ad A^2$ et $n + i + 2 d = ad B^2$ donnent $ad (B^2 - A^2) = 2d$\,, \emph{i.e.} $a (B^2 - A^2) = 2$\,, d'où $B^2 - A^2 \in \setgene{1, 2}$ qui est impossible.
+		\item Ici, $n + i = ad A^2$ et $n + i + 2 d = ad B^2$ donnent $ad (B^2 - A^2) = 2d$\,, \emph{i.e.} $a (B^2 - A^2) = 2$\,, d'où $B^2 - A^2 \in \setgene{1, 2}$ qui est impossible d'après l'explication \ref{vogler-no-witness} ci-dessus et le fait \ref{dist-square}.
 	\end{enumerate}
 \end{proof}
 
@@ -207,7 +217,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $d$-
 	tels que 
 	$\forall i \in \ZintervalC{0}{k}$\,, $n + i = d^{\,2q_i + \epsilon_i} f_i$ avec $f_i \wedge d = 1$\,.
 	%
-	Ce type de situation sera résumé par le tableau suivant que nous nommerons $d$-tableau de Vogler (noter que $d^{\,\epsilon_i} \in \setgene{1, d}$).
+	Ce type de situation sera résumé par le tableau suivant que nous nommerons $d$-tableau de Vogler où $d^{\,\epsilon_i} \in \setgene{1, d}$\,.
 
 	\begin{center}
 		\begin{tblr}{
@@ -283,7 +293,8 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $d$-
 
 
 \begin{example}
-	La multiplication de deux $d$-tableaux de Vogler est \enquote{naturelle}\,. Considérons le $2$-tableau de Vogler et le $3$-tableau de Vogler suivants.
+	La multiplication de deux $d$-tableaux de Vogler est \enquote{naturelle} lorsqu'elle porte sur des $d$ premiers entre eux.
+	Considérons le $2$-tableau de Vogler et le $3$-tableau de Vogler suivants.
 	
 	\begin{multicols}{2}
 	\begin{center}
@@ -378,7 +389,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $d$-
 % ------------------ %
 
 
-\begin{fact}
+\begin{fact} \label{vogler-multiple}
 	Dans la deuxième ligne d'un $d$-tableau de Vogler, les valeurs $d$ sont séparées par exactement $(d-1)$ valeurs $1$\,.
 \end{fact}
 
@@ -392,7 +403,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $d$-
 
 
 \begin{fact} \label{vogler-parity-square}
-	$\forall p \in \PP$\,, si $\consprod\ \in \NNsquare$\,, alors dans un $p$-tableau de Vogler, le nombre de valeurs $p$ est forcément pair.
+	$\forall p \in \PP$\,, si $\consprod\ \in \NNsquare$\,, alors dans le $p$-tableau de Vogler associé à $\consprod\ \in \NNsquare$\,, le nombre de valeurs $p$ est forcément pair.
 \end{fact}
 
 

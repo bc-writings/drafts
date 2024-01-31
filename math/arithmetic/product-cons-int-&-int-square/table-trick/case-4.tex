@@ -88,14 +88,16 @@ Pour $p = 3$\,, nous obtenons les deux $3$-tableaux de Vogler suivants.
 \end{center}
 
 
-La multiplication de tous les $d$-tableaux de Vogler précédents donne juste les six tableaux de Vogler suivants.
+La multiplication des $d$-tableaux de Vogler précédents donne les tableaux de Vogler suivants.
 
 \begin{center}
 	\begin{tblr}{
 		colspec    = {Q[r,$]*{4}{Q[c,$]}},
 		vline{2}   = {.95pt},
 		vline{3-5} = {dashed},
-		hline{2}   = {.95pt}
+		hline{2}   = {.95pt},
+		% Focus
+		cell{5-7}{2-5} = {gray8},
 	}
 		n + \bullet
 			&  0  
@@ -136,7 +138,60 @@ La multiplication de tous les $d$-tableaux de Vogler précédents donne juste le
 \end{center}
 
 
-Le fait \ref{illegal-vogler} rejette tous les tableaux de Vogler ci-dessus sauf les deux derniers que nous reproduisons ci-après.
+Le fait \ref{illegal-vogler} rejette les quatre premiers tableaux de Vogler : voir les cellules surlignées ci-dessous.
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{4}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-5} = {dashed},
+		hline{2}   = {.95pt},
+		% Rejected
+		cell{2}{2,3} = {red8},
+		cell{3}{2,4} = {red8},
+		cell{4}{3,5} = {red8},
+		cell{5}{3,4} = {red8},
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3
+	\\
+			&  1
+			&  1
+			&  1
+			&  1
+	\\
+			&  2
+			&  1
+			&  2
+			&  1
+	\\
+			&  1
+			&  2
+			&  1
+			&  2
+	\\
+			&  3
+			&  1
+			&  1
+			&  3
+	\\
+			&  6
+			&  1
+			&  2
+			&  3
+	\\
+			&  3
+			&  2
+			&  1
+			&  6
+	\end{tblr}
+\end{center}
+
+
+Il nous reste à étudier les deux derniers tableaux reproduits ci-après.
 
 \begin{center}
 	\begin{tblr}{

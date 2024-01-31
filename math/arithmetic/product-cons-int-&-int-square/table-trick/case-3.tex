@@ -1,7 +1,7 @@
 \leavevmode
 \smallskip
 
-Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,. Nous avons alors les $p$-tableaux de Vogler suivants pour $p \in \PP_{>2}$ divisant $\consprod<2>$\,.
+Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,. Nous avons alors les $p$-tableaux de Vogler suivants pour $p \in \PP_{>2}$ divisant $\consprod<2>$\,, de nouveau car les valeurs $p$ doivent apparaître un nombre pair de fois, et être espacées par $(p-1)$ valeurs $1$ (voir les faits \ref{vogler-multiple} et \ref{vogler-parity-square}).
 
 \begin{center}
 	\begin{tblr}{
@@ -23,7 +23,7 @@ Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,. Nous avons alors le
 \end{center}
 
 
-Pour $p = 2$\,, en se souvenant du fait \ref{vogler-parity-square}, seulement deux $2$-tableaux de Vogler sont possibles. Nous utilisons un abus de notation évident pour indiquer ces deux possibilités.
+Pour $p = 2$\,, via les faits \ref{vogler-multiple} et \ref{vogler-parity-square}, seulement deux $2$-tableaux de Vogler sont possibles. Nous utilisons un abus de notation évident pour indiquer ces deux possibilités.
 
 \begin{center}
 	\begin{tblr}{
@@ -56,7 +56,10 @@ La multiplication de tous les $d$-tableaux de Vogler précédents donne juste le
 		colspec    = {Q[r,$]*{3}{Q[c,$]}},
 		vline{2}   = {.95pt},
 		vline{3-4} = {dashed},
-		hline{2}   = {.95pt}
+		hline{2}   = {.95pt},
+		% Rejected
+		cell{2}{2,3} = {red8},
+		cell{3}{2,4} = {red8},
 	}
 		n + \bullet
 			&  0  
