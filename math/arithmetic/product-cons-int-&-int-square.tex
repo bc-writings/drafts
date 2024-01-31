@@ -1,8 +1,3 @@
-% Source.
-%    + "Le produit de 5 entiers consécutifs n'est pas le carré d'un entier." de T. Hayashi [Nouvelles Annales de Mathématiques]
-%    + Discussion du forum lesmathematiques.net
-%    + math/arithmetic/prod-cons-carre-entier.pdf
-
 \documentclass[12pt]{amsart}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -77,88 +72,102 @@
 
 \begin{document}
 
-\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs}
-\author{Christophe BAL}
-\date{25 Jan. 2024 -- 31 Jan. 2024}
-
-\maketitle
-
-\begin{center}
-	\itshape
-	Document, avec son source \LaTeX, disponible sur la page
-	
-	\url{https://github.com/bc-writing/drafts}.
-\end{center}
-
-
-\bigskip
-
-
-\begin{center}
-	\hrule\vspace{.3em}
-	{
-		\fontsize{1.35em}{1em}\selectfont
-		\textbf{Mentions \og légales \fg}
-	}
-			
-	\vspace{0.45em}
-	\doclicenseThis
-	\hrule
-\end{center}
-
-
-\setcounter{tocdepth}{2}
-\tableofcontents
+%\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs}
+%\author{Christophe BAL}
+%\date{25 Jan. 2024 -- 31 Jan. 2024}
+%
+%\maketitle
+%
+%\begin{center}
+%	\itshape
+%	Document, avec son source \LaTeX, disponible sur la page
+%	
+%	\url{https://github.com/bc-writing/drafts}.
+%\end{center}
+%
+%
+%\bigskip
+%
+%
+%\begin{center}
+%	\hrule\vspace{.3em}
+%	{
+%		\fontsize{1.35em}{1em}\selectfont
+%		\textbf{Mentions \enquote{légales}}
+%	}
+%			
+%	\vspace{0.45em}
+%	\small
+%	\doclicenseThis
+%	\hrule
+%\end{center}
+%
+%
+%\setcounter{tocdepth}{2}
+%\tableofcontents
+%
+%
+%% ------------------ %
+%
+%
+%\newpage
+%\section{Ce qui nous intéresse}
+%
+%\input{\contentdir/what}
+%
+%
+%% ------------------ %
+%
+%
+%\section{Notations utilisées}
+%
+%\input{\contentdir/notations}
+%
+%
+%% ------------------ %
+%
+%
+%\section{Résolutions à fortes empreintes cognitives} \label{warmup-your-brain}
+%
+%\foreach \k in {1,...,5} {
+%	\ifthenelse{\k = 1}{
+%		\subsection{Avec \k\ seul facteur}
+%	}{
+%		\subsection{Avec \k\ facteurs}
+%	}
+%
+%	\input{\contentdir/by-hand/case-\k}
+%}
 
 
 % ------------------ %
 
 
-\newpage
-\section{Ce qui nous intéresse}
-
-\input{\contentdir/what}
-
-
-% ------------------ %
-
-
-\section{Notations utilisées}
-
-\input{\contentdir/notations}
-
-
-% ------------------ %
-
-
-\section{Résolution au cas par cas}
-
-\foreach \k in {1,...,5} {
-	\ifthenelse{\k = 1}{
-		\subsection{Avec \k\ seul facteur}
-	}{
-		\subsection{Avec \k\ facteurs}
-	}
-
-	\input{\contentdir/by-hand/case-\k}
-}
+%\section{Une méthode efficace} \label{lazzy-is-easy}
+%
+%\subsection{Prenons du recul}
+%
+%\input{\contentdir/table-trick}
+%
+%
+%\foreach \k in {2,...,5} {
+%	\subsection{Application au cas de \k\ facteurs}
+%
+%	\input{\contentdir/table-trick/case-\k}
+%}
+%
+%
+%\subsection{Et après ?}
+%
+%\input{\contentdir/table-trick/case-after}
 
 
 % ------------------ %
 
 
-\section{Une méthode efficace}
+\section{Sources utilisées}
 
-\subsection{Prenons du recul}
-
-\input{\contentdir/table-trick}
-
-
-\foreach \k in {2,...,5} {
-	\subsection{Application au cas de \k\ facteurs}
-
-	\input{\contentdir/table-trick/case-\k}
-}
+\input{\contentdir/sources}
 
 
 % ------------------ %

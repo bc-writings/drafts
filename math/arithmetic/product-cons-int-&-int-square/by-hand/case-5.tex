@@ -1,4 +1,4 @@
-\begin{fact}
+\begin{fact} \label{case-5}
 	 $\forall n \in \NNs$\,, $n(n+1)(n+2)(n+3)(n+4) \notin \NNsquare$\,.
 \end{fact}
 
@@ -41,7 +41,7 @@
 		\smallskip
 		\noindent
 		Dans ce cas, on sait juste que $(n+i, n+i^\prime) \in \NNsquare \times \NNsquare$\,.
-		Or $n \notin \NNsquare$ puisque sinon nous aurions $(n+1)(n+2)(n+3)(n+4) \in \NNsquare$ via $n(n+1)(n+2)(n+3)(n+4) \in \NNsquare$\,, mais ceci ne se peut pas d'après le fait \ref{case-3}.
+		Or $n \notin \NNsquare$ puisque sinon nous aurions $(n+1)(n+2)(n+3)(n+4) \in \NNsquare$ via $n(n+1)(n+2)(n+3)(n+4) \in \NNsquare$\,, mais ceci ne se peut pas d'après le fait \ref{case-4}.
 		De même, $n+4 \notin \NNsquare$\,.
 		Dès lors, nous avons $\setgene{n+i, n+i^\prime} \subseteq \setgene{n+1, n+2, n+3}$ qui donne deux carrés parfaits non nuls éloignés de moins de $3$\,, et ceci contredit le fait \ref{dist-square}.
 
@@ -114,7 +114,7 @@ De plus, cette preuve utilise une technique dont nous reparlerons plus tard lors
 		$(u, q) \in \NNsquare \times \NNsquare$\,.
 		Le fait \ref{dist-square} impose d'avoir $(u, q) = (4, 1)$\,, d'où $m^2 - 1 = 4$\,, mais ceci est impossible
 		\footnote{
-			On peut aussi noter que le fait \ref{case-2} lève une contradiction car nous avons $m \in \NNsquare$ et $u \in \NNsquare$ qui donnent $(m-1)m(m+1) \in \NNsquare$
+			On peut aussi noter que le fait \ref{case-3} lève une contradiction car nous avons $m \in \NNsquare$ et $u \in \NNsquare$ qui donnent $(m-1)m(m+1) \in \NNsquare$
 		}.
 
 		\item Si $u \wedge q = 3$\,, 
@@ -196,7 +196,7 @@ De plus, cette preuve utilise une technique dont nous reparlerons plus tard lors
 		\begin{itemize}
 			\item $2 r s = 2 Q^2$ donne $r s = Q^2$.
 			
-			\item $s \notin \NNsquare$\,, car dans le cas contraire, nous aurions $(m-2)(m-1)m(m+1) \in \NNsquare$ via $(m-2)(m-1)m(m+1)(m+2)  \in \NNsquare$\,, mais ceci ne se peut pas d'après le fait \ref{case-3}.
+			\item $s \notin \NNsquare$\,, car dans le cas contraire, nous aurions $(m-2)(m-1)m(m+1) \in \NNsquare$ via $(m-2)(m-1)m(m+1)(m+2)  \in \NNsquare$\,, mais ceci ne se peut pas d'après le fait \ref{case-4}.
 			
 			\item Les deux résultats précédents donnent $(\pi, R, S) \in \NN_{>1} \times \big( \NNs \big)^2$ tel que $r = \pi R^2$ et $s = \pi S^2$ avec $\pi$ sans facteur carré.
 			

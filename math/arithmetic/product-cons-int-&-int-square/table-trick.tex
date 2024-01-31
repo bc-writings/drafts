@@ -98,6 +98,77 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
 % ------------------ %
 
 
+\begin{fact} \label{vogler-sub-square}
+	\leavevmode
+	\begin{enumerate}
+		\item Si nous avons un tableau de Vogler du type suivant, où les puces $\bullet$ indiquent des valeurs inconnues, alors nous pouvons affirmer que $\consprod<k-1> \in \NNssquare$\,.
+	\end{enumerate}
+
+	\begin{center}
+		\begin{tblr}{
+			colspec     = {Q[r,$]*{5}{Q[c,$]}},
+			vline{2}    = {.95pt},
+			vline{3-6}  = {dashed},
+			hline{2}    = {.95pt},
+			column{2-Z} = {2em},
+			% Subsquare
+			cell{2}{6} = {blue!15},
+		}
+			n + \bullet
+				&  0  
+				&  1  
+				&  \dots
+				&  k - 1
+				&  k
+		\\
+				&  \bullet
+				&  \bullet
+				&  \dots  
+				&  \bullet
+				&  1
+		\end{tblr}
+	\end{center}
+
+
+	\begin{enumerate}
+		\item Si nous avons un tableau de Vogler du type suivant, où les puces $\bullet$ indiquent des valeurs inconnues, alors nous pouvons affirmer que $\consprod[n+1]<k-1> \in \NNssquare$\,.
+	\end{enumerate}
+
+	\begin{center}
+		\begin{tblr}{
+			colspec     = {Q[r,$]*{5}{Q[c,$]}},
+			vline{2}    = {.95pt},
+			vline{3-6}  = {dashed},
+			hline{2}    = {.95pt},
+			column{2-Z} = {2em},
+			% Subsquare
+			cell{2}{2} = {blue!15},
+		}
+			n + \bullet
+				&  0  
+				&  1  
+				&  \dots
+				&  k - 1
+				&  k
+		\\
+				&  1
+				&  \bullet
+				&  \dots  
+				&  \bullet
+				&  \bullet
+		\end{tblr}
+	\end{center}
+\end{fact}
+
+
+\begin{proof}
+	C'est immédiat via le fait \ref{facto-square}.
+\end{proof}
+
+
+% ------------------ %
+
+
 \begin{fact} \label{illegal-vogler}
 	Soit $(n, d, i, a) \in \big( \NNs \big)^4$.
 	Les tableaux de Vogler ci-après sont impossibles. 
@@ -113,9 +184,9 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
     		vline{2}    = {.95pt},
     		vline{3}    = {dashed},
    			hline{2}    = {.95pt},
-			column{2-Y} = {2em},
+			column{2-Z} = {2em},
 			% Rejected
-			cell{2}{2,3} = {red8},
+			cell{2}{2,3} = {red!15},
     	}
     		n + \bullet
    				&  i 
@@ -137,9 +208,9 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
     		vline{2}    = {.95pt},
     		vline{3-6}  = {dashed},
    			hline{2}    = {.95pt},
-			column{2-Y} = {3em},
+			column{2-Z} = {3em},
 			% Rejected
-			cell{2}{2,6} = {red8},
+			cell{2}{2,6} = {red!15},
     	}
     		n + \bullet
    				&  i 
@@ -167,9 +238,9 @@ Concentrons-nous sur les diviseurs sans facteur carré des facteurs $(n + i)$ de
     		vline{2}    = {.95pt},
     		vline{3-6}  = {dashed},
    			hline{2}    = {.95pt},
-			column{2-Y} = {3.75em},
+			column{2-Z} = {3.75em},
 			% Rejected
-			cell{2}{2,6} = {red8},
+			cell{2}{2,6} = {red!15},
     	}
     		n + \bullet
    				&  i 
