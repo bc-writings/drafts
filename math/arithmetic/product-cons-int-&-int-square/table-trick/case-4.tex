@@ -138,6 +138,8 @@ La multiplication des $d$-tableaux de Vogler précédents donne les tableaux de 
 \end{center}
 
 
+%\newpage
+
 Le fait \ref{illegal-vogler} rejette les quatre premiers tableaux de Vogler : voir les cellules surlignées ci-dessous.
 
 \begin{center}
@@ -219,4 +221,29 @@ Il nous reste à étudier les deux derniers tableaux reproduits ci-après.
 \end{center}
 
 
-TODO
+Commençons par démontrer que l'on ne peut pas avoir 
+$n = 6 A^2$\,, $n + 1 = B^2$\,, $n + 2 = 2 C^2$ et $n + 3 = 3 D^2$ 
+où $(A, B, C, D) \in \big( \NNs \big)^4$\,.
+
+\begin{itemize}
+	\item Posons $x = n + \frac32$\, de sorte que 
+	$x - \frac32 = 6 A^2$\,, $x - \frac12 = B^2$\,, $x + \frac12 = 2 C^2$ et $x + \frac32 = 3 D^2$\,.
+
+	\item Nous avons
+	$\big( x - \frac32 \big) \big( x + \frac32 \big) = 2 E^2$\,, c'est-à-dire $x^2 - \frac94 = 2 E^2$\,, avec $E \in \NNs$.
+
+	\item De même,
+	$x^2 - \frac14 = 2 F^2$ avec $F \in \NNs$.	
+
+	\item Par simple soustraction, nous obtenons $2 F^2 - 2 E^2 = 2$\,, puis $F^2 - E^2 = 1$\,, mais ceci contredit le fait \ref{dist-square}.
+\end{itemize}
+
+
+Le même type de raisonnement
+\footnote{
+	Noter la \enquote{symmétrie} respectée par les valeurs des deux tableaux.
+}
+démontre l'impossibilité d'avoir 
+$n = 3 A^2$\,, $n + 1 = 2 B^2$\,, $n + 2 = C^2$ et $n + 3 = 6 D^2$ 
+où $(A, B, C, D) \in \big( \NNs \big)^4$\,.
+
