@@ -24,7 +24,7 @@ Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,. Nous avon
 \end{center}
 
 
-\newpage
+%\newpage
 Pour $p = 2$\,, nous avons les $2$-tableaux de Vogler suivants.
 
 \begin{center}
@@ -75,6 +75,8 @@ Pour $p = 2$\,, nous avons les $2$-tableaux de Vogler suivants.
 \end{center}
 
 
+%\newpage
+
 Pour $p = 3$\,, nous obtenons les $3$-tableaux de Vogler suivants.
 
 \begin{center}
@@ -113,16 +115,17 @@ Pour $p = 3$\,, nous obtenons les $3$-tableaux de Vogler suivants.
 \end{center}
 
 
+\newpage
 La multiplication de tous les $d$-tableaux de Vogler précédents donne les $15$ cas suivants.
 
+\vspace{-1ex}
+\begin{multicols}{3}
 \begin{center}
 	\begin{tblr}{
 		colspec  = {Q[r,$]*{5}{Q[c,$]}},
 		vline{2} = {.95pt},
 		vline{3-6} = {dashed},
 		hline{2} = {.95pt},
-		% Focus
-		cell{7-11}{2-6} = {gray!15},
 	}
 		n + \bullet
 			&  0  
@@ -161,7 +164,24 @@ La multiplication de tous les $d$-tableaux de Vogler précédents donne les $15$
 			&  2
 			&  1
 			&  2
-	%
+	\end{tblr}
+\end{center}
+
+
+\begin{center}
+	\begin{tblr}{
+		colspec  = {Q[r,$]*{5}{Q[c,$]}},
+		vline{2} = {.95pt},
+		vline{3-6} = {dashed},
+		hline{2} = {.95pt},
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3 
+			&  4
+
 	\\
 			&  3
 			&  1
@@ -192,7 +212,24 @@ La multiplication de tous les $d$-tableaux de Vogler précédents donne les $15$
 			&  2
 			&  3
 			&  2
-	%
+	\end{tblr}
+\end{center}
+
+
+\begin{center}
+	\begin{tblr}{
+		colspec  = {Q[r,$]*{5}{Q[c,$]}},
+		vline{2} = {.95pt},
+		vline{3-6} = {dashed},
+		hline{2} = {.95pt},
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3 
+			&  4
+
 	\\
 			&  1
 			&  3
@@ -225,8 +262,10 @@ La multiplication de tous les $d$-tableaux de Vogler précédents donne les $15$
 			&  6
 	\end{tblr}
 \end{center}
+\end{multicols}
 
 
+\vspace{-1ex}
 Comme $\consprod<3> = n(n+1)(n+2)(n+3) \notin \NNssquare$ et $\consprod[n+1]<3> = (n+1)(n+2)(n+3)(n+4) \notin \NNssquare$\,, nous pouvons ignorer tous les tableaux commençant, ou finissant, par une valeur $1$ d'après le fait \ref{vogler-sub-square}. Cela laisse les tableaux de Vogler ci-après, mais ces derniers sont rejetés par le fait \ref{illegal-vogler}.
 
 \begin{center}

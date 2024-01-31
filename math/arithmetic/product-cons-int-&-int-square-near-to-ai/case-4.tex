@@ -85,17 +85,17 @@ Pour $p = 3$\,, nous obtenons les deux $3$-tableaux de Vogler suivants.
 \end{center}
 
 
-\newpage
+%\newpage
 La multiplication des $d$-tableaux de Vogler précédents donne les tableaux de Vogler suivants.
 
+\vspace{-1ex}
+\begin{multicols}{2}
 \begin{center}
 	\begin{tblr}{
 		colspec    = {Q[r,$]*{4}{Q[c,$]}},
 		vline{2}   = {.95pt},
 		vline{3-5} = {dashed},
 		hline{2}   = {.95pt},
-		% Focus
-		cell{5-7}{2-5} = {gray!15},
 	}
 		n + \bullet
 			&  0  
@@ -117,6 +117,22 @@ La multiplication des $d$-tableaux de Vogler précédents donne les tableaux de 
 			&  2
 			&  1
 			&  2
+	\end{tblr}
+\end{center}
+
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{4}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-5} = {dashed},
+		hline{2}   = {.95pt},
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3
 	\\
 			&  3
 			&  1
@@ -134,12 +150,15 @@ La multiplication des $d$-tableaux de Vogler précédents donne les tableaux de 
 			&  6
 	\end{tblr}
 \end{center}
+\end{multicols}
 
 
-%\newpage
+\newpage
 
-Le fait \ref{illegal-vogler} rejette les quatre premiers tableaux de Vogler : voir les cellules surlignées ci-dessous.
+Le fait \ref{illegal-vogler} rejette quatre tableaux de Vogler : voir les cellules surlignées ci-dessous.
 
+\vspace{-1ex}
+\begin{multicols}{2}
 \begin{center}
 	\begin{tblr}{
 		colspec    = {Q[r,$]*{4}{Q[c,$]}},
@@ -150,7 +169,6 @@ Le fait \ref{illegal-vogler} rejette les quatre premiers tableaux de Vogler : vo
 		cell{2}{2,3} = {red!15},
 		cell{3}{2,4} = {red!15},
 		cell{4}{3,5} = {red!15},
-		cell{5}{3,4} = {red!15},
 	}
 		n + \bullet
 			&  0  
@@ -172,6 +190,24 @@ Le fait \ref{illegal-vogler} rejette les quatre premiers tableaux de Vogler : vo
 			&  2
 			&  1
 			&  2
+	\end{tblr}
+\end{center}
+
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{4}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-5} = {dashed},
+		hline{2}   = {.95pt},
+		% Rejected
+		cell{2}{3,4} = {red!15},
+	}
+		n + \bullet
+			&  0  
+			&  1 
+			&  2 
+			&  3
 	\\
 			&  3
 			&  1
@@ -189,8 +225,10 @@ Le fait \ref{illegal-vogler} rejette les quatre premiers tableaux de Vogler : vo
 			&  6
 	\end{tblr}
 \end{center}
+\end{multicols}
 
 
+\vspace{-1ex}
 Il nous reste à étudier les deux derniers tableaux reproduits ci-après.
 
 \begin{center}
