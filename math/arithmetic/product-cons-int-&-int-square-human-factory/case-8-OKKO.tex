@@ -7,25 +7,21 @@
 
 
 \begin{proof}
-    Dans ce qui suit, nous utiliserons $(a \pm b)$ comme raccourci de $(a + b) (a - b)$\,.
-
-    \begin{stepcalc}[style = ar*, ope = \iff]
-    	\consprod<7> = 
-			n (n+1) (n+2) (n+3) (n+4) (n+5) (n+6) (n+7)
-    \explnext*{$x = n + 3 + \dfrac12$}{}
-    	\consprod<7> = 
-			\big( x \pm \dfrac72 \big) \big( x \pm \dfrac52 \big) \big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big) 
-    \explnext*{$y = 2 x$}{}
-    	2^8 \consprod<7> = 
-			(y \pm 7) (y \pm 5) (y \pm 3) (y \pm 1)
-    \explnext*{$z = y^2$}{}
-    	2^8 \consprod<7> = 
-			(z - 49) (z - 25) (z - 9) (z - 1) 
-    \explnext*{$u = z - 17$ où $17 = \dfrac{25 + 9}{2}$\,.}{}
-    	2^8 \consprod<7> = 
-			(u - 32) (u + 16) (u - 8) (u + 8)
+    Supposons que $\consprod<7> \in \NNsquare$\,.
+    Commençons par de petites manipulations algébriques où l'on cherche à faire apparaître le même coefficient pour $n$ dans chaque parenthèse.
+    
+    \medskip
+    \begin{stepcalc}[style = sar]
+    	\consprod<5>
+	\explnext{}
+		n (n+7) \cdot (n+1) (n+6) \cdot (n+2) (n+5) \cdot (n+3) (n+4)
+	\explnext{}
+		(n^2 + 7n) (n^2 + 7n + 6) (n^2 + 7n + 10) (n^2 + 7n + 12)
+	\explnext*{$x = n^2 + 7n \in \NN_{\geq 6}$}{}
+		x (x + 6) (x + 10) (x + 12)
     \end{stepcalc}
-
+  
+    \medskip
     XXXX
 \end{proof}
 
