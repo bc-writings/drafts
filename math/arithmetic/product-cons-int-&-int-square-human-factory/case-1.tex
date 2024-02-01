@@ -5,9 +5,27 @@ $\forall (N, M) \in \NNs \times \NNs$\,, si $N > M$\,, alors $N^2 - M^2 \geq 3$\
 \begin{fact} \label{dist-square}
 	$\forall (N, M) \in \NNs \times \NNs$, 
 	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
+	
+	En particulier, $N^2 - M^2 \geq 3$\,.
 \end{fact}
 
 
 \begin{proof}
 	Il suffit d'utiliser $N^2 = \dsum_{k=1}^{N} (2 k - 1)$\,.
+\end{proof}
+
+
+% ------------------ %
+
+
+Bien que simple, le fait suivant va nous rendre de grands services dans la suite.
+
+
+\begin{fact} \label{facto-square}
+	$\forall n \in \NNssquare$\,, s'il existe $m \in \NNssquare$ tel que $n =  f m$ alors $f  \in \NNssquare$\,.
+\end{fact}
+
+
+\begin{proof}
+	Il suffit de passer via les décompositions en facteurs premiers de $n$\,, $m$ et $f$\,.
 \end{proof}

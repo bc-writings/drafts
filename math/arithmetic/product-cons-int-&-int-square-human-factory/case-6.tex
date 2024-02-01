@@ -11,34 +11,38 @@ La démonstration suivante se trouve dans l'article \enquote{Solution of a Probl
 	The Analyst (1874).
 }
 de G. W. Hill et J. E. Oliver.
+Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) a (a + 2)$\,.
 
 
 \begin{proof}
-    Supposons que $\consprod<5> \in \NNsquare$\,. Dans ce qui suit, nous utilisons $(a \pm b)$ comme raccourci de $(a + b) (a - b)$\,.
-
-    \medskip
-    \begin{stepcalc}[style = ar*, ope = \iff]
-    	\consprod<5> = 
-			n (n+1) (n+2) (n+3) (n+4) (n+5)
-    \explnext*{$x = n + 2 + \dfrac12$}{}
-    	\consprod<5> = 
-			\big( x \pm \dfrac52 \big) \big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big) 
-    \explnext*{$z = x^2$}{}
-    	\consprod<5> = 
-			\big( z - \dfrac{25}{4} \big) \big( z - \dfrac94 \big) \big( z - \dfrac14 \big) 
-    \explnext*{$a = z - \dfrac94$}{}
-    	\consprod<5> = 
-			(a - 4) a (a + 2) 
-    \end{stepcalc}
+    Supposons que $\consprod<5> \in \NNsquare$\,.
+    Commençons par de petites manipulations algébriques où l'on cherche à faire apparaître le même coefficient pour $n$ dans chaque parenthèse.
     
     \medskip
-    Nous avons donc $a = \big( n + \dfrac52 \big)^2 - \dfrac94 \in \NNs$ vérifiant $a (a + 2) (a - 4) \in \NNssquare$\,. 
+    \begin{stepcalc}[style = sar]
+    	\consprod<5>
+	\explnext{}
+		n (n+5) \cdot (n+1) (n+4) \cdot (n+2) (n+3)
+	\explnext{}
+		(n^2 + 5n) (n^2 + 5n + 4) (n^2 + 5n + 6)
+	\explnext*{$x = n^2 + 5n \in \NN_{\geq 6}$}{}
+		x (x + 4) (x + 6)
+	\explnext*{$a = x + 4 \in \NN_{\geq 10}$}{}
+		(a - 4) a (a + 2)
+    \end{stepcalc}
+  
+    \medskip
+    Nous avons donc $a \in \NNs$ vérifiant $a (a + 2) (a - 4) \in \NNssquare$\,. 
     Posons alors $a = \alpha A^2$ où $(\alpha, A) \in \big( \NNs \big)^2$ avec $\alpha$ sans facteur carré.
     Nous avons alors $a = \alpha (\alpha A^2 + 2) (\alpha A^2 - 4) \in \NNssquare$\,.
-    Comme $\alpha$ est sans facteur carré, nous devons avoir $\alpha \divides (\alpha A^2 + 2) (\alpha A^2 - 4)$\,, d'où $\alpha \divides 8$\,, et finalement $\alpha \in \setgene{1, 2}$\,.
+    Comme $\alpha$ est sans facteur carré, nous devons avoir $\alpha \divides (\alpha A^2 + 2) (\alpha A^2 - 4)$\,, d'où $\alpha \divides 8$\,, et finalement $\alpha \in \setgene{1, 2}$
+    \footnote{
+    	On comprend ici le choix d'avoir $\consprod<5> = (a - 4) a (a + 2)$\,.
+    }.
     Nous allons voir que ceci est impossible.
     
-    \medskip
+%    \medskip
+    \newpage
     
     Supposons avoir $\alpha = 1$\,.
     
@@ -49,7 +53,7 @@ de G. W. Hill et J. E. Oliver.
         \noindent\kern-6pt%
         \begin{stepcalc}[style=ar*, ope=\iff]
         	(A^2 + 2) (A^2 - 4) \in \NNssquare
-    	\explnext*{$u = A^2 - 1$ où $- 1 = \dfrac{2 - 4}{2}$\,.}{}
+    	\explnext{$u = A^2 - 1$ où $- 1 = \dfrac{2 - 4}{2}$\,.}
         	(u + 3) (u - 3) \in \NNssquare
     	\explnext{}
         	u^2 - 9 \in \NNssquare
@@ -59,7 +63,7 @@ de G. W. Hill et J. E. Oliver.
 		\footnote{
 			Noter que $2 u - 1 \leq 9$ implique $u \in \ZintervalC{0}{5}$\,. Ceci permet d'analyser tous les cas mentalement.
 		}.
-		On aboutit alors la contradiction suivante.
+		On aboutit alors à la contradiction suivante.
         
         \medskip
         \noindent\kern-6pt%
@@ -102,7 +106,7 @@ de G. W. Hill et J. E. Oliver.
 Bien que très longue, la preuve suivante est simple à comprendre car elle ne fait que dérouler le fil des faits découverts.
 
 \begin{proof}[Une preuve alternative]%
-    Supposons que $\consprod<5> \in \NNsquare$\,. Dans ce qui suit, nous utilisons de nouveau $(a \pm b)$ comme raccourci de $(a + b) (a - b)$\,.
+    Supposons que $\consprod<5> \in \NNsquare$\,.
 
     \medskip
     \begin{stepcalc}[style = ar*, ope = \iff]
@@ -139,7 +143,8 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		$(\padicval{a}, \padicval{b}, \padicval{c}) \in \big( 2 \NN \big)^3$.
 	\end{itemize}
 
-
+%	\newpage
+	
 	Démontrons qu'aucun des trois entiers $a$\,, $b$ et $c$ ne peut être un carré parfait.
 	%
 	\begin{itemize}

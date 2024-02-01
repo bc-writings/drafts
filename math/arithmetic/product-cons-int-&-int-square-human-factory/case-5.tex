@@ -9,8 +9,10 @@
 \begin{proof}
     Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,.
     %
-    Clairement, $\forall p \in \PP_{>3}$\,, 
-    $\big( \padicval{n} , \padicval{n + 1} , \padicval{n + 2} , \padicval{n + 3} , \padicval{n + 4} \big) \in \big( 2 \NN \big)^5$\,.
+    Clairement, 
+    $\forall p \in \PP_{>3}$\,, 
+    $\forall i \in \ZintervalC{0}{4}$\,, 
+    $\padicval{n + i} \in 2 \NN$\,.
     Pour $p = 2$ et $p = 3$\,, nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<3>$\,.
     %
     \begin{itemize}
@@ -98,7 +100,7 @@ Bien que longue, la preuve suivante est simple à comprendre car elle ne fait qu
 \begin{proof}[Une preuve alternative]%
 	Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,.
 	%
-	Posant $m = n+2$\,, nous avons $\consprod<4> = (m-2)(m-1)m(m+1)(m+2) = m(m^2 - 1)(m^2 - 4)$ où $m \in \NN_{\geq 3}$\,.
+	Posant $m = n+2$\,, nous avons $\consprod<4> = (m \pm 2) (m \pm 1) m = m(m^2 - 1)(m^2 - 4)$ où $m \in \NN_{\geq 3}$\,.
 	On notera dans la suite $u = m^2 - 1$ et $q = m^2 - 4$\,.
 	
 	\medskip
@@ -134,7 +136,42 @@ Bien que longue, la preuve suivante est simple à comprendre car elle ne fait qu
 	Supposons maintenant que $m \notin \NNssquare$\,.
 	%
 	\begin{itemize}
-		\item Nous avons vu ci-dessus que $u \notin \NNsquare$ et $q \notin \NNsquare$\,. On peut donc écrire $m = \alpha M^2$\,, $u = \beta U^2$\,, $q = \gamma Q^2$ où $(M, U, Q) \in \big( \NNs \big)^3$, et $(\alpha, \beta, \gamma) \in \big( \NN_{>1} \big)^3$, le dernier triplet étant formé d'entiers sans facteur carré.
+		\item Montrons que $u \notin \NNsquare$ et $q \notin \NNsquare$\,.
+		%
+		\begin{enumerate}
+			\item $u \in \NNsquare$ donne les équivalences logiques suivantes qui lèvent une contradiction.
+
+        	\smallskip
+
+			\begin{stepcalc}[style = sar, ope = \iff]
+        		m^2 - 1 \in \NNsquare
+        	\explnext{}
+        		\exists r \in \NN \,.\, \big( m^2 - 1 = r^2 \big)
+        	\explnext{}
+        		\exists r \in \NN \,.\, \big( m^2 - r^2 = 1 \big)
+        	\explnext*{Via le fait \ref{dist-square}, mais \\ ceci contredit $m \in \NN_{\geq 3}$\,.}{}
+        		m = 1
+        	\end{stepcalc}
+
+
+			\item $q \in \NNsquare$ donne les équivalences logiques suivantes qui lèvent une contradiction.
+
+        	\smallskip
+
+			\begin{stepcalc}[style = sar, ope = \iff]
+        		m^2 - 4 \in \NNsquare
+        	\explnext{}
+        		\exists r \in \NN \,.\, \big( m^2 - r^2 = 4 \big)
+        	\explnext*{Voir le fait \ref{dist-square}, mais \\ ceci contredit $m \in \NN_{\geq 3}$\,.}{}
+        		m = 2
+        	\end{stepcalc}
+		\end{enumerate}		
+
+
+
+
+
+		\item Donc $m = \alpha M^2$\,, $u = \beta U^2$\,, $q = \gamma Q^2$ où $(M, U, Q) \in \big( \NNs \big)^3$, et $(\alpha, \beta, \gamma) \in \big( \NN_{>1} \big)^3$, le dernier triplet étant formé d'entiers sans facteur carré.
 
 
 		\item Notons que $\beta \neq \gamma$ car, dans le cas contraire, $3 = u - q = \beta \big( U^2 - Q^2 \big)$ fournirait $\beta = 3$\, puis $U^2 - Q^2 = 1$\,, et ceci contredirait le fait \ref{dist-square}.
