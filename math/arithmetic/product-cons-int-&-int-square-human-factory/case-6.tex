@@ -5,16 +5,109 @@
 
 % ------------------ %
 
-Bien que très longue, la preuve suivante est simple à comprendre car elle ne fait que dérouler le fil des faits découverts.
+
+La démonstration suivante se trouve dans l'article \enquote{Solution of a Problem}
+\footnote{
+	The Analyst (1874).
+}
+de G. W. Hill et J. E. Oliver.
+
 
 \begin{proof}
-    Supposons que in $\consprod<5> \in \NNsquare$\,. Dans ce qui suit, nous utiliserons $(a \pm b)$ comme raccourci de $(a + b) (a - b)$\,.
+    Supposons que $\consprod<5> \in \NNsquare$\,. Dans ce qui suit, nous utilisons $(a \pm b)$ comme raccourci de $(a + b) (a - b)$\,.
 
     \medskip
     \begin{stepcalc}[style = ar*, ope = \iff]
     	\consprod<5> = 
 			n (n+1) (n+2) (n+3) (n+4) (n+5)
-    \explnext*{$x = n + 3 + \dfrac12$}{}
+    \explnext*{$x = n + 2 + \dfrac12$}{}
+    	\consprod<5> = 
+			\big( x \pm \dfrac52 \big) \big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big) 
+    \explnext*{$z = x^2$}{}
+    	\consprod<5> = 
+			\big( z - \dfrac{25}{4} \big) \big( z - \dfrac94 \big) \big( z - \dfrac14 \big) 
+    \explnext*{$a = z - \dfrac94$}{}
+    	\consprod<5> = 
+			(a - 4) a (a + 2) 
+    \end{stepcalc}
+    
+    \medskip
+    Nous avons donc $a = \big( n + \dfrac52 \big)^2 - \dfrac94 \in \NNs$ vérifiant $a (a + 2) (a - 4) \in \NNssquare$\,. 
+    Posons alors $a = \alpha A^2$ où $(\alpha, A) \in \big( \NNs \big)^2$ avec $\alpha$ sans facteur carré.
+    Nous avons alors $\alpha (\alpha A^2 + 2) (\alpha A^2 - 4) \in \NNssquare$\,, d'où $\alpha \divides 8$\,, puis $\alpha \in \setgene{1, 2}$\,.
+    Nous allons voir que ceci est impossible.
+    
+    \medskip
+    
+    Supposons avoir $\alpha = 1$\,.
+    
+    \begin{itemize}
+    	\item Notons les équivalences suivantes.
+        
+        \medskip
+        \noindent\kern-6pt%
+        \begin{stepcalc}[style=ar*, ope=\iff]
+        	(A^2 + 2) (A^2 - 4) \in \NNssquare
+    	\explnext*{$u = A^2 - 1$ où $- 1 = \dfrac{2 - 4}{2}$\,.}{}
+        	(u + 3) (u - 3) \in \NNssquare
+    	\explnext{}
+        	u^2 - 9 \in \NNssquare
+        \end{stepcalc}
+
+		\item Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, comme $u^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,, on a $(u, m) = (5, 4)$
+		\footnote{
+			Noter que $2 u - 1 \leq 9$ implique $u \in \ZintervalC{0}{5}$\,. Ceci permet d'analyser tous les cas mentalement.
+		}.
+		On aboutit alors la contradiction suivante.
+        
+        \medskip
+        \noindent\kern-6pt%
+        \begin{stepcalc}[style=ar*, ope=\iff]
+        	u = 5
+    	\explnext{}
+        	A^2 - 1 = 5
+    	\explnext*{$6 \notin \NNsquare$\,.}{}
+        	A^2 = 6
+        \end{stepcalc}
+    \end{itemize}
+    
+    \medskip
+    
+    Supposons avoir $\alpha = 2$\,.
+    
+    \begin{itemize}
+    	\item Notons l'équivalence suivante.
+        
+        \medskip
+        \noindent\kern-6pt%
+        \begin{stepcalc}[style=ar*, ope=\iff]
+        	2 (2 A^2 + 2) (2 A^2 - 4) \in \NNssquare
+    	\explnext{Via $4 \cdot 2 (A^2 + 1) (A^2 - 2)$\,.}
+        	2 (A^2 + 1) (A^2 - 2) \in \NNssquare
+        \end{stepcalc}
+
+		\item Ensuite, en travaillant modulo $3$\,, nous avons
+		$2 (A^2 + 1) (A^2 - 2) \equiv -4 \equiv -1$ qui ne correspond pas à un carré modulo $3$\,.
+		%
+		\qedhere 
+    \end{itemize}   
+\end{proof}
+
+
+
+% ------------------ %
+
+
+Bien que très longue, la preuve suivante est simple à comprendre car elle ne fait que dérouler le fil des faits découverts.
+
+\begin{proof}[Une preuve alternative]%
+    Supposons que $\consprod<5> \in \NNsquare$\,. Dans ce qui suit, nous utilisons de nouveau $(a \pm b)$ comme raccourci de $(a + b) (a - b)$\,.
+
+    \medskip
+    \begin{stepcalc}[style = ar*, ope = \iff]
+    	\consprod<5> = 
+			n (n+1) (n+2) (n+3) (n+4) (n+5)
+    \explnext*{$x = n + 2 + \dfrac12$}{}
     	\consprod<5> = 
 			\big( x \pm \dfrac52 \big) \big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big) 
     \explnext*{$y = 2 x$}{}
@@ -29,10 +122,10 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
     \end{stepcalc}
 
     \medskip
-    Notant $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 7)^2 - 17 \in 2 \NN$\,, nous avons les faits suivants.
+    Notant $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 5)^2 - 17 \in 2 \NN$\,, nous avons les faits suivants.
     
     \begin{itemize}
-		\item $(a, b, c) \in \big( \NNs \big)^3$ et $abc = 2^6 \consprod<5>$ où $\consprod<5> \in \NNsquare$\,.
+		\item $(a, b, c) \in \big( \NNs \big)^3$ et $abc \in \NNssquare$ car $(2^6, \consprod<5>) \in \big( \NNssquare \big)^2$\,.
 
 		\item $a \wedge b \divides 16$ via $b - a = 16$\,.
 
@@ -84,9 +177,9 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
    		\begin{stepcalc}[style = sar, ope = \iff]
 			u + 4 = 20
 		\explnext{}
-			(2 n + 7)^2 - 17 = 24
+			(2 n + 5)^2 - 17 = 24
 		\explnext*{$41 \notin \NNsquare$}{}
-			(2 n + 7)^2 = 41
+			(2 n + 5)^2 = 41
 		\end{stepcalc}	
 		
 		
@@ -105,9 +198,9 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
    		\begin{stepcalc}[style = sar, ope = \iff]
 			u = 10
 		\explnext{}
-			(2 n + 7)^2 - 17 = 10
+			(2 n + 5)^2 - 17 = 10
 		\explnext*{$27 \notin \NNsquare$}{}
-			(2 n + 7)^2 = 27
+			(2 n + 5)^2 = 27
 		\end{stepcalc}
 	\end{itemize}
 
@@ -175,9 +268,9 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
     		\explnext{}
     			u = 16
     		\explnext{}
-    			(2 n + 7)^2 - 17 = 16
+    			(2 n + 5)^2 - 17 = 16
     		\explnext*{$33 \notin \NNsquare$}{}
-    			(2 n + 7)^2 = 33
+    			(2 n + 5)^2 = 33
     		\end{stepcalc}	
 			\smallskip
 	
@@ -192,9 +285,9 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
     		\explnext{}
     			u = 11
     		\explnext{}
-    			(2 n + 7)^2 - 17 = 11
+    			(2 n + 5)^2 - 17 = 11
     		\explnext*{$28 \notin \NNsquare$}{}
-    			(2 n + 7)^2 = 28
+    			(2 n + 5)^2 = 28
     		\end{stepcalc}	
 			\smallskip
 			
@@ -262,7 +355,7 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 	\end{center}
 
 
-	Traitons les deux cas restants en nous souvenant que $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 7)^2 - 17 \in 2 \NN$\,.
+	Traitons les deux cas restants en nous souvenant que $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 5)^2 - 17 \in 2 \NN$\,.
 	
 	\begin{itemize}
 		\item Supposons $(\alpha, \beta, \gamma) = (3, 2, 6)$\,, 
@@ -286,7 +379,7 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		
 		\smallskip
 		\noindent
-		La preuve précédente s'adapte sans difficulté puisque que $a \equiv 6 A^2 \equiv 0$ et $b \equiv 2 B^2$\,.
+		La preuve précédente s'adapte sans difficulté puisque que $a \equiv 6 A^2 \equiv 0$ et $b \equiv 2 B^2$ modulo $3$\,.
 	\end{itemize}
 \end{proof}
 

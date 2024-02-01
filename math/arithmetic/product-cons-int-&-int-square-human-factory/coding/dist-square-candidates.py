@@ -1,4 +1,4 @@
-DIST = 12
+DIST = 9
 
 
 from math import sqrt, floor
