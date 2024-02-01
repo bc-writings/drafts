@@ -1,0 +1,280 @@
+\begin{fact} \label{case-6}
+	 $\forall n \in \NNs$\,, $\consprod<5> \notin \NNsquare$\,.
+\end{fact}
+
+
+% ------------------ %
+
+Bien que très longue, la preuve suivante est simple à comprendre car elle ne fait que dérouler le fil des faits découverts.
+
+\begin{proof}
+    Supposons que in $\consprod<5> \in \NNsquare$\,. Dans ce qui suit, nous utiliserons $(a \pm b)$ comme raccourci de $(a + b) (a - b)$\,.
+
+    \medskip
+    \begin{stepcalc}[style = ar*, ope = \iff]
+    	\consprod<5> = 
+			n (n+1) (n+2) (n+3) (n+4) (n+5)
+    \explnext*{$x = n + 3 + \dfrac12$}{}
+    	\consprod<5> = 
+			\big( x \pm \dfrac52 \big) \big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big) 
+    \explnext*{$y = 2 x$}{}
+    	2^6 \consprod<5> = 
+			(y \pm 5) (y \pm 3) (y \pm 1)
+    \explnext*{$z = y^2$}{}
+    	2^6 \consprod<5> = 
+			(z - 25) (z - 9) (z - 1) 
+    \explnext*{$u = z - 17$ où $17 = \dfrac{25 + 9}{2}$\,.}{}
+    	2^6 \consprod<5> = 
+			(u - 8) (u + 8) (u + 16)
+    \end{stepcalc}
+
+    \medskip
+    Notant $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 7)^2 - 7 \in 2 \NN$\,, nous avons les faits suivants.
+    
+    \begin{itemize}
+		\item $(a, b, c) \in \big( \NNs \big)^3$ et $abc = 2^6 \consprod<5>$ où $\consprod<5> \in \NNsquare$\,.
+
+		\item $a \wedge b \divides 16$ via $b - a = 16$\,.
+
+		\item $a \wedge c \divides 24$ via $c - a = 24$\,.
+
+		\item $b \wedge c \divides 8$  via $c - b = 8$\,.
+
+		\item En particulier, 
+		$\forall p \in \PP_{>3}$\,, 
+		$(\padicval{a}, \padicval{b}, \padicval{c}) \in \big( 2 \NN \big)^3$.
+	\end{itemize}
+
+
+	Démontrons qu'aucun des trois entiers $a$\,, $b$ et $c$ ne peut être un carré parfait.
+	%
+	\begin{itemize}
+		\medskip
+		\item Commençons par supposer que $(a, b, c) \in \NNssquare \times \NNs \times \NNs$. 
+		
+		\smallskip
+		\noindent
+		Dans ce cas, $bc \in \NNssquare$\,, soit $(u + 8) (u + 16) \in \NNssquare$\,.
+		En posant $w = u + 12$\,, on arrive à $(w - 4) (w + 4) \in \NNssquare$\,, soit $w^2 - 16 \in \NNssquare$\,.
+		Notant $m \in \NNs$ tel que $m^2 = w^2 - 16$\,, nous arrivons à $w^2 - m^2 = 16$\,.
+		D'après le fait \ref{dist-square}, $w^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,.
+		Ceci n'est possible que si $(w, m) = (5, 3)$
+		\footnote{
+			Noter que l'on doit avoir $2 w - 1 \leq 16$\,, d'où $w \in \ZintervalC{0}{8}$\,.
+		}.
+		Or $u \in 2 \NN$ donne $w \in 2 \NN$\,, d'où une contradiction.		
+		
+		
+		\medskip
+		\item Supposons maintenant que $(a, b, c) \in \NNs \times \NNssquare \times \NNs$. 
+		
+		\smallskip
+		\noindent
+		Dans ce cas, $ac \in \NNssquare$\,, soit $(u - 8) (u + 16) \in \NNssquare$\,.
+		En posant $w = u + 4$\,, on arrive à $(w - 12) (w + 12) \in \NNssquare$\,, soit $w^2 - 144 \in \NNssquare$\,.
+		Notant $m \in \NNs$ tel que $m^2 = w^2 - 144$\,, nous arrivons à $w^2 - m^2 = 144$\,, d'où $w^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,.
+		Ceci n'est possible que si $(w, m) \in \setgene{(13, 5) , (15, 9) , (20, 16) , (37, 35)}$
+		\footnote{
+			Comme $2 w - 1 \leq 144$ donne $w \in \ZintervalC{0}{72}$\,, il suffit de faire appel à un petit programme pour obtenir brutalement toutes les valeurs possibles.
+		}.
+		Ici aussi, $u \in 2 \NN$ donne $w \in 2 \NN$\,, donc $(w, m) = (20, 16)$\,, mais les équivalences suivantes lèvent une contradiction.
+
+		\medskip
+		\noindent\!\!%
+   		\begin{stepcalc}[style = sar, ope = \iff]
+			u + 4 = 20
+		\explnext{}
+			(2 n + 7)^2 - 7 = 24
+		\explnext*{$31 \notin \NNsquare$}{}
+			(2 n + 7)^2 = 31
+		\end{stepcalc}	
+		
+		
+		\medskip
+		\item Supposons enfin que $(a, b, c) \in \NNs \times \NNs \times \NNssquare$\,. 
+		
+		\smallskip
+		\noindent
+		Dans ce cas, $ab \in \NNssquare$\,, soit $(u - 8) (u + 8) \in \NNssquare$\,, c'est-à-dire $u^2 - 64 \in \NNssquare$\,.
+		Notant $m \in \NNs$ tel que $m^2 = u^2 - 64$\,, nous arrivons à $u^2 - m^2 = 64$\,.
+		Ceci n'est possible que si $(u, m) \in \setgene{(10, 6), (17, 15)}$\,.
+		Comme $u \in 2 \NN$\,, forcément $(u, m) = (10, 6)$\,, mais les équivalences suivantes lèvent une contradiction.
+
+		\medskip
+		\noindent\!\!%
+   		\begin{stepcalc}[style = sar, ope = \iff]
+			u = 10
+		\explnext{}
+			(2 n + 7)^2 - 7 = 10
+		\explnext*{$17 \notin \NNsquare$}{}
+			(2 n + 7)^2 = 17
+		\end{stepcalc}
+	\end{itemize}
+
+
+	Nous avons donc $a = \alpha A^2$\,, $b = \beta B^2$ et $c = \gamma C^2$ avec $(A, B, C) \in \big( \NNs \big)^3$, et $(\alpha, \beta, \gamma) \in \big( \NN_{>1} \big)^3$ un triplet d'entiers sans facteurs carrés.
+	Nous avons les faits suivants.
+    
+    \begin{itemize}
+		\item $\alpha \wedge \beta \in \setgene{1, 2}$
+		d'après $a \wedge b \divides 16$\,.
+
+		\item $\alpha \wedge \gamma \in \setgene{1, 2, 3}$
+		d'après $a \wedge c \divides 24$ via $c - a = 24$\,.
+
+		\item $\beta \wedge \gamma \in \setgene{1, 2}$
+		d'après $b \wedge c \divides 8$  via $c - b = 8$\,.
+
+		\item $\setgene{\alpha, \beta, \gamma} \subseteq \setgene{2, 3, 6}$
+		car $\forall p \in \PP_{>3}$\,, $(\padicval{a}, \padicval{b}, \padicval{c}) \in \big( 2 \NN \big)^3$\,. 
+		
+
+		\item Démontrons que $\alpha \neq \beta$\,. 
+		
+		\noindent
+		Dans le cas contraire, $16 = b - a = \alpha(B^2 - A^2)$ et $\alpha > 1$ donnent $B^2 - A^2 \in \setgene{1, 2, 4, 8}$\,.
+		Or nous avons les impossibilités suivantes.
+		%
+		\begin{enumerate}
+			\item $B^2 - A^2 = 1$  et $B^2 - A^2 = 2$ contredisent le fait \ref{dist-square}.
+			\item $B^2 - A^2 = 4$ n'est possible que si $(B, A) = (2, 0)$\,.
+			\item $B^2 - A^2 = 8$ n'est possible que si $(B, A) = (3, 1)$ et $\alpha = 2$\,.
+			Ceci donne $a = 2$\,, puis $u = 10$\,, mais nous avons vu que ceci était impossible.
+		\end{enumerate}
+		
+
+		\item Nous avons aussi $\beta \neq \gamma$\,. 
+		
+		\noindent
+		Dans le cas contraire, $8 = c - b = \beta(C^2 - B^2)$ et $\beta > 1$ donnent $C^2 - B^2 \in \setgene{1, 2, 4}$\,, mais ce qui précède ne laisse aucun choix possible.
+		
+
+		\item Enfin, $\alpha \neq \gamma$\,. 
+		
+		\noindent
+		Dans le cas contraire,
+		$C^2 - A^2 \in \setgene{1, 2, 3, 4, 6, 8, 12}$
+		car 
+		$24 = c - a = \alpha(C^2 - A^2)$ et $\alpha > 1$\,.
+		Nous obtenons alors les impossibilités suivantes.
+		%
+		\begin{enumerate}
+			\item $C^2 - A^2 \in \setgene{1, 2, 4}$ est à rejeter comme précédemment.
+			
+			\item $C^2 - A^2 = 3$ n'est possible que si $(C, A) = (2, 1)$ et $\alpha = 8$\,, mais les équivalences suivantes lèvent une contradiction.
+
+    		\smallskip
+    		\noindent\!\!%
+       		\begin{stepcalc}[style = sar, ope = \iff]
+    			a = 8
+    		\explnext{}
+    			u = 16
+    		\explnext{}
+    			(2 n + 7)^2 - 7 = 16
+    		\explnext*{$33 \notin \NNsquare$}{}
+    			(2 n + 7)^2 = 33
+    		\end{stepcalc}	
+			\smallskip
+	
+			\item $C^2 - A^2 = 6$ est impossible.
+			
+			\item $C^2 - A^2 = 8$ n'est possible que si $(C, A) = (3, 1)$ et $\alpha = 3$\,, mais les équivalences suivantes lèvent une contradiction.
+
+    		\smallskip
+    		\noindent\!\!%
+       		\begin{stepcalc}[style = sar, ope = \iff]
+    			a = 3
+    		\explnext{}
+    			u = 11
+    		\explnext{}
+    			(2 n + 7)^2 - 7 = 11
+    		\explnext*{$18 \notin \NNsquare$}{}
+    			(2 n + 7)^2 = 18
+    		\end{stepcalc}	
+			\smallskip
+			
+			
+			\item $C^2 - A^2 = 12$ n'est possible que si $(C, A) = (4, 2)$ et $\alpha = 2$\,, mais ceci donnerait $a = 8$\,, or nous savons que cela est impossible.
+		\end{enumerate}
+	\end{itemize}
+
+
+	Comme
+	$\setgene{\alpha, \beta, \gamma} \subseteq \setgene{2, 3, 6}$\,,
+	$\alpha \wedge \beta \in \setgene{1, 2}$\,,
+	$\alpha \wedge \gamma \in \setgene{1, 2, 3}$ et
+	$\beta \wedge \gamma \in \setgene{1, 2}$\,,
+	et comme de plus $\alpha$\,, $\beta$ et $\gamma$ sont différents deux à deux, il ne nous reste plus qu'à analyser les cas suivants.
+
+	\begin{center}
+		\begin{tblr}{
+			colspec={*{7}{Q[c,$]}},
+			vline{2-7} = {},
+			hline{2-7} = {}
+		}
+        	\alpha & \beta & \gamma 
+				& \alpha \wedge \beta & \alpha \wedge \gamma & \beta \wedge \gamma
+				& Statut
+			\\
+        	2 & 3 & 6
+				& 1 
+				& 2 
+				& 3
+				& \myboxtimes
+			\\
+        	2 & 6 & 3
+				& 3 
+				& 1
+				& 3
+				& \myboxtimes
+			%
+			\\
+        	3 & 2 & 6
+				& 1 
+				& 3
+				& 2
+				& \mycheckmark
+			\\
+        	3 & 6 & 2
+				& 3
+				& 1
+				& 2
+				& \myboxtimes
+			%
+			\\
+        	6 & 2 & 3
+				& 2
+				& 3 
+				& 1
+				& \mycheckmark
+			\\
+        	6 & 3 & 2
+				& 3 
+				& 1
+				& 1
+				& \myboxtimes
+        \end{tblr}
+	\end{center}
+
+
+	Traitons les deux cas restants en nous souvenant que $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 7)^2 - 7 \in 2 \NN$\,.
+	
+	\begin{itemize}
+		\item Supposons $(\alpha, \beta, \gamma) = (3, 2, 6)$\,, 
+		autrement dit 
+		$a = 3 A^2$\,, $b = 2 B^2$ et $c = 6 C^2$\,.
+		
+		\smallskip
+		\noindent
+		TODO
+		
+		\item Supposons $(\alpha, \beta, \gamma) = (6, 2, 3)$\,, 
+		autrement dit 
+		$a = 6 A^2$\,, $b = 2 B^2$ et $c = 3 C^2$\,.
+		
+		\smallskip
+		\noindent
+		TODO
+	\end{itemize}
+\end{proof}
+
