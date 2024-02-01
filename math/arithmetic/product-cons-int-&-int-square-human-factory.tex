@@ -71,102 +71,102 @@
 
 
 \begin{document}
-%
-%\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Résolutions à la main}
-%\author{Christophe BAL}
-%\date{25 Jan. 2024 -- 1\ier\ Fév. 2024}
-%
-%\maketitle
-%
-%\begin{center}
-%	\itshape
-%	Document, avec son source \LaTeX, disponible sur la page
-%	
-%	\url{https://github.com/bc-writing/drafts}.
-%\end{center}
-%
-%
-%\bigskip
-%
-%
-%\begin{center}
-%	\hrule\vspace{.3em}
-%	{
-%		\fontsize{1.35em}{1em}\selectfont
-%		\textbf{Mentions \enquote{légales}}
-%	}
-%			
-%	\vspace{0.45em}
-%	\small
-%	\doclicenseThis
-%	\hrule
-%\end{center}
-%
-%
-%\setcounter{tocdepth}{2}
-%\tableofcontents
-%
-%
-%% ------------------ %
-%
-%
-%\newpage
-%\section{Ce qui nous intéresse}
-%
-%\input{\contentdir/what}
-%
-%
-%% ------------------ %
-%
-%
-%\section{Notations utilisées}
-%
-%\input{\contentdir/notations}
-%
-%
-%% ------------------ %
-%
 
-%\foreach \k in {1,...,6} {
-%%\foreach \k in {6} {
-%	\ifthenelse{\k = 1}{
-%		\section{Avec \k\ seul facteur}
-%	}{
-%		\section{Avec \k\ facteurs}
-%	}
-%
-%	\input{\contentdir/case-\k}
-%}
-%
+\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Résolutions à la main}
+\author{Christophe BAL}
+\date{25 Jan. 2024 -- 1\ier\ Fév. 2024}
 
-% Searching...
-\foreach \k in {7, 8} {
-	\section{\k\ facteurs ?}
+\maketitle
 
-	\input{\contentdir/case-\k-OKKO}
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \enquote{légales}}
+	}
+			
+	\vspace{0.45em}
+	\small
+	\doclicenseThis
+	\hrule
+\end{center}
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+
+% ------------------ %
+
+
+\newpage
+\section{Ce qui nous intéresse}
+
+\input{\contentdir/what}
+
+
+% ------------------ %
+
+
+\section{Notations utilisées}
+
+\input{\contentdir/notations}
+
+
+% ------------------ %
+
+
+\foreach \k in {1,...,6} {
+%\foreach \k in {6} {
+	\ifthenelse{\k = 1}{
+		\section{Avec \k\ seul facteur}
+	}{
+		\section{Avec \k\ facteurs}
+	}
+
+	\input{\contentdir/case-\k}
 }
 
 
-%% ------------------ %
+%% Searching...
+%\foreach \k in {7, 8} {
+%	\section{\k\ facteurs ?}
 %
-%
-%\section{Sources utilisées}
-%
-%\input{\contentdir/sources}
-%
-%
-%% ------------------ %
-%
-%
-%%\bigskip
-%\newpage
-%
-%\hrule
-%
-%\section{AFFAIRE À SUIVRE...}
-%
+%	\input{\contentdir/case-\k-OKKO}
+%}
+
+
+% ------------------ %
+
+
+\section{Sources utilisées}
+
+\input{\contentdir/sources}
+
+
+% ------------------ %
+
+
 %\bigskip
-%
-%\hrule
+\newpage
+
+\hrule
+
+\section{AFFAIRE À SUIVRE...}
+
+\bigskip
+
+\hrule
 
 \end{document}
