@@ -1,24 +1,7 @@
-Via $N^2 - M^2 = (N - M)(N + M)$\,, il est immédiat de noter que 
-$\forall (N, M) \in \NNs \times \NNs$\,, si $N > M$\,, alors $N^2 - M^2 \geq 3$\,. Le fait suivant précise ceci.
-
-
-\begin{fact} \label{dist-square}
-	$\forall (N, M) \in \NNs \times \NNs$, 
-	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
-	
-	En particulier, $N^2 - M^2 \geq 3$\,.
-\end{fact}
-
-
-\begin{proof}
-	Il suffit d'utiliser $N^2 = \dsum_{k=1}^{N} (2 k - 1)$\,.
-\end{proof}
-
-
 % ------------------ %
 
 
-Bien que simple, le fait suivant va nous rendre de grands services dans la suite.
+Bien que simple, le fait suivant va être régulièrement utilisé dans la suite.
 
 
 \begin{fact} \label{facto-square}
@@ -29,3 +12,60 @@ Bien que simple, le fait suivant va nous rendre de grands services dans la suite
 \begin{proof}
 	Il suffit de passer via les décompositions en facteurs premiers de $n$\,, $m$ et $f$\,.
 \end{proof}
+
+
+% ------------------ %
+
+
+Nous allons souvent être amené à étudier des différences de carrés parfaits.
+Commençons par indiquer une jolie formule.
+
+\begin{fact} \label{dist-square}
+	$\forall (N, M) \in \NNs \times \NNs$, 
+	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
+\end{fact}
+
+
+\begin{proof}
+	Il suffit d'utiliser $N^2 = \dsum_{k=1}^{N} (2 k - 1)$\,, une formule facile à démontrer algébriquement, et évidente à découvrir géométriquement.
+\end{proof}
+
+
+% ------------------ %
+
+
+L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, si besoin, d'un petit programme informatique comme celui donné à la fin de cette section.
+
+\begin{fact} \label{diff-square-ko}
+	Soit $(N, M) \in \NNs \times \NNs$ tel que $N > M$\,.
+	%
+	\begin{enumerate}
+		\item $N^2 - M^2 \geq 2M + 1$\,.
+		
+		\item $N^2 - M^2 < 3$ est impossible.
+	\end{enumerate}
+\end{fact}
+
+
+\begin{proof}
+	\leavevmode
+	
+	\begin{enumerate}
+		\item $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1) \geq 2(M + 1) - 1 = 2M + 1$
+		
+		\smallskip
+		\noindent
+		On peut aussi juste procéder comme suit. 
+		
+		\smallskip
+		\noindent
+		$N^2 - M^2 = (N - M)(N + M) \geq 1 \cdot (M + 1 + M) = 2M + 1$
+
+
+
+		\item Immédiat puisque $2M + 1 \geq 3$\,.
+	\end{enumerate}
+
+\end{proof}
+
+
