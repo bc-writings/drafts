@@ -58,8 +58,14 @@
 	 
 	 
 \newcommand\contentdir{\jobname}
+
+\newcommand\NNsf{\NN_{\kern-1pt s\kern-1pt f}}
+
 \newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
-\newcommand\NNssquare{\seqsuprageo{\NN}{}{*}{}{2}}
+\newcommand\NNssquare{\seqsuprageo{\NN}{*}{}{}{2}}
+
+\NewDocumentCommand\GCD{ m  m }{#1 \wedge #2}
+
 \NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
 \NewDocumentCommand\consprod{ O{n} D<>{k} }{\pi_{#1}^{#2}}
 
@@ -74,7 +80,7 @@
 
 \title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Résolutions à la main}
 \author{Christophe BAL}
-\date{25 Jan. 2024 -- 2 Fév. 2024}
+\date{25 Jan. 2024 -- 3 Fév. 2024}
 
 \maketitle
 
@@ -129,11 +135,11 @@
 
 
 %\foreach \k in {1,...,6} {
-\foreach \k in {1,...,1} {
+\foreach \k in {1} {
 	\newpage
 
 	\ifthenelse{\k = 1}{
-		\section{Avec un seul facteur - Du basique très utile}
+		\section{Les carrés parfaits}
 	}{
 		\section{Avec \k\ facteurs}
 	}

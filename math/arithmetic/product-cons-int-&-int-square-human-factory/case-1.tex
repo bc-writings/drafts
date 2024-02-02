@@ -1,7 +1,4 @@
-% ------------------ %
-
-
-Bien que simple, le fait suivant va être régulièrement utilisé dans la suite.
+\subsection{Structure}
 
 
 \begin{fact} \label{facto-square}
@@ -10,16 +7,81 @@ Bien que simple, le fait suivant va être régulièrement utilisé dans la suite
 
 
 \begin{proof}
-	Il suffit de passer via les décompositions en facteurs premiers de $n$\,, $m$ et $f$\,.
+	Considérer les décompositions en facteurs premiers de $n$\,, $m$ et $f$\,.
 \end{proof}
 
 
 % ------------------ %
 
 
-Nous allons souvent être amené à étudier des différences de carrés parfaits.
-Commençons par indiquer une jolie formule.
+\begin{fact} \label{prime-square}
+	$\forall (a, b) \in \NNs \times \NNs$, 
+	si $\GCD{a}{b} = 1$ et $a b \in \NNssquare$\,,
+	alors $a \in \NNssquare$ et $b \in \NNssquare$\,.
+\end{fact}
 
+
+\begin{proof}
+	Clairement, $\forall p \in \PP$\,, nous avons $\padicval{ab} \in 2 \NN$\,.
+    %
+    Or $p \in \PP$ ne peut diviser à la fois $a$ et $b$\,, donc
+    $\forall p \in \PP$\,, 
+    $\padicval{a} \in 2 \NN$ et $\padicval{b} \in 2 \NN$\,,
+    autrement dit 
+    $(a, b) \in \NNssquare \times \NNssquare$\,.
+\end{proof}
+
+
+% ------------------ %
+
+
+\begin{fact} \label{same-square-free}
+	Soit $(a, b) \in \NNs \times \NNs$ tel que $a b \in \NNssquare$\,,
+	ainsi que $(\alpha, \beta, A, B) \in \big( \NNsf \big)^2 \times \NN^2$ tel que $a = \alpha A^2$ et $b = \beta B^2$.
+	Nous avons alors forcément $\alpha = \beta$\,.
+\end{fact}
+
+
+\begin{proof}
+	Le fait \ref{facto-square} donne $\alpha \beta \in \NNssquare$\,.
+	De plus, $\forall p \in \PP$\,, nous avons 
+	$\padicval{\alpha} \in \setgene{0, 1}$
+	et
+	$\padicval{\beta} \in \setgene{0, 1}$\,.
+	Finalement, $\forall p \in \PP$\,, $\padicval{\alpha} = \padicval{\beta}$\,, autrement dit $\alpha = \beta$\,.
+\end{proof}
+
+
+% ------------------ %
+
+
+\subsection{Distance entre deux carrés parfaits}
+
+
+$C^2 - A^2 = 6$ est impossible.
+
+
+$B^2 - A^2 = 8$ avec $(B, A) = (3, 1)$
+
+
+$C^2 - A^2 = 3$    n'est possible que si $(C, A) = (2, 1)$
+
+
+Notant $m \in \NNs$ tel que $m^2 = w^2 - 16$\,, nous arrivons à $w^2 - m^2 = 16$\,.
+		D'après le fait \ref{diff-square-ko}, $w^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,.
+		Ceci n'est possible que si $(w, m) = (5, 3)$
+		\footnote{
+			Noter que l'on doit avoir $2 w - 1 \leq 16$\,, d'où $w \in \ZintervalC{0}{8}$\,.
+		}.
+		
+		
+		
+Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, comme $u^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,, on a $(u, m) = (5, 4)$
+		\footnote{
+			Noter que $2 u - 1 \leq 9$ implique $u \in \ZintervalC{0}{5}$\,. Ceci permet d'analyser tous les cas mentalement.
+		}.
+		On aboutit alors à la contradiction suivante.
+		
 \begin{fact} \label{dist-square}
 	$\forall (N, M) \in \NNs \times \NNs$, 
 	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
@@ -34,7 +96,7 @@ Commençons par indiquer une jolie formule.
 % ------------------ %
 
 
-L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, si besoin, d'un petit programme informatique comme celui donné à la fin de cette section.
+L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, si besoin, d'un petit programme informatique (voir un peu plus bas).
 
 \begin{fact} \label{diff-square-ko}
 	Soit $(N, M) \in \NNs \times \NNs$ tel que $N > M$\,.

@@ -6,26 +6,26 @@
 % ------------------ %
 
 
-\begin{proof}
-    Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
-    %
+\begin{proof}[Preuve 1]
+    Supposons que $\consprod<2> \in \NNssquare$\,.
+
+    \smallskip
+    
     Posant $m = n+1$\,, nous avons $\consprod<2> = (m-1)m(m+1) = m(m^2 - 1)$ où $m \in \NN_{\geq 2}$\,.
     %
-    Comme $\forall p \in \PP$\,, $\padicval{\consprod<2>} \in 2 \NN$\,, et comme de plus $p \in \PP$ ne peut diviser à la fois $m$ et $m^2 - 1$\,, nous savons que 
-    $\forall p \in \PP$\,, 
-    $\padicval{m} \in 2 \NN$ et $\padicval{m^2 - 1} \in 2 \NN$\,,
-    d'où 
-    $(m, m^2 - 1) \in \NNssquare \times \NNssquare$\,.
-    Or, d'après le fait \ref{diff-square-ko}, $m^2 - 1 \in \NNsquare$ est impossible.
+    Comme $\GCD{m}{(m^2 - 1)} = 1$\,, le fait \ref{prime-square} donne $(m, m^2 - 1) \in \NNssquare \times \NNssquare$\,.
+    Or, $m^2 - 1 \in \NNssquare$ est impossible d'après le fait \ref{diff-square-ko}.
 \end{proof}
 
 
 % ------------------ %
 
 
-\begin{proof}[Une preuve alternative]
-    Supposons que $\consprod<2> = n(n+1)(n+2) \in \NNssquare$\,.
-    %
+\begin{proof}[Preuve 2]
+    Supposons que $\consprod<2> \in \NNssquare$\,.
+
+    \smallskip
+    
     Comme $p \in \PP_{>2}$ ne peut diviser au maximum qu'un seul des trois facteurs $n$\,, $(n+1)$ et $(n+2)$\,, nous savons que 
     $\forall p \in \PP_{>2}$\,, 
     $\forall i \in \ZintervalC{0}{2}$\,, 
@@ -51,6 +51,6 @@
 	\begin{itemize}
 		\item Nous savons que $n \in \NNssquare$ via $\padicval[2]{n} = 0$\,.
 
-		\item Dès lors, on obtient $(n+1)(n+2) \in \NNssquare$\,, mais de nouveau ceci contredit le fait \ref{case-2}. \qedhere
+		\item On conclut comme dans le cas précédent mais en passant via $(n+1)(n+2)$\,. \qedhere
 	\end{itemize}
 \end{proof}

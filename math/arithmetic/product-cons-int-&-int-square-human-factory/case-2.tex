@@ -6,7 +6,7 @@
 % ------------------ %
 
 
-\begin{proof}
+\begin{proof}[Preuve 1]
 	Il suffit de noter que $n^2 < n(n+1) < (n+1)^2$.
 \end{proof}
 
@@ -14,27 +14,25 @@
 % ------------------ %
 
 
-\begin{proof}[Preuve alternative no.1]
+\begin{proof}[Preuve 2]
     Supposons que $\consprod<1> = n(n+1) \in \NNssquare$\,.
-    %
-    Clairement $\forall p \in \PP$\,, nous avons : $\padicval{\consprod<1>} \in 2 \NN$\,.
-    %
-    Or $p \in \PP$ ne peut diviser à la fois $n$ et $n+1$\,.
-    %
-    Nous savons donc que $\forall p \in \PP$\,, 
-    $\padicval{n} \in 2 \NN$ et $\padicval{n+1} \in 2 \NN$\,,
-    autrement dit 
-    $(n, n + 1) \in \NNsquare \times \NNsquare$\,.
-    D'après le fait \ref{diff-square-ko}, nous savons que ceci est impossible.
+    
+    \smallskip
+    
+    Comme $\GCD{n}{(n + 1)} = 1$\,, le fait \ref{prime-square} donne $(n, n + 1) \in \NNssquare \times \NNssquare$\,, d'où l'existence de deux carrés parfaits non nuls distants de $1$\,.
+    D'après le fait \ref{diff-square-ko}, ceci est impossible.
 \end{proof}
 
 
 % ------------------ %
 
 
-\begin{proof}[Preuve alternative no.2]
-     Supposons que $\consprod<1> = n(n+1) = N^2$ où $N \in \NNs$.
-     Les équivalences suivantes donnent alors une contradiction.
+\begin{proof}[Preuve 3]
+	Supposons que $\consprod<1> = n(n+1) = N^2$ où $N \in \NNs$.
+     
+    \smallskip
+    
+    Les équivalences suivantes donnent une contradiction.
 	
 	\medskip
 	

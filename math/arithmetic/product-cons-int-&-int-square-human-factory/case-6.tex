@@ -14,9 +14,12 @@ de G. W. Hill et J. E. Oliver.
 Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) a (a + 2)$\,.
 
 
-\begin{proof}
+\begin{proof}[Preuve 1]%
     Supposons que $\consprod<5> \in \NNsquare$\,.
-    Commençons par de petites manipulations algébriques où l'on cherche à faire apparaître le même coefficient pour $n$ dans chaque parenthèse.
+    
+    \smallskip
+    
+    Commençons par de petites manipulations algébriques où l'on commence en cherchant à faire apparaître le même coefficient pour $n$ dans chaque parenthèse.
     
     \medskip
     \begin{stepcalc}[style = sar]
@@ -32,10 +35,11 @@ Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) 
     \end{stepcalc}
   
     \medskip
-    Nous avons donc $a \in \NNs$ vérifiant $a (a + 2) (a - 4) \in \NNssquare$\,. 
-    Posons alors $a = \alpha A^2$ où $(\alpha, A) \in \big( \NNs \big)^2$ avec $\alpha$ sans facteur carré.
-    Nous avons alors $a = \alpha (\alpha A^2 + 2) (\alpha A^2 - 4) \in \NNssquare$\,.
-    Comme $\alpha$ est sans facteur carré, nous devons avoir $\alpha \divides (\alpha A^2 + 2) (\alpha A^2 - 4)$\,, d'où $\alpha \divides 8$\,, et finalement $\alpha \in \setgene{1, 2}$
+    Nous avons $a \in \NN_{\geq 10}$ vérifiant $a (a + 2) (a - 4) \in \NNssquare$\,. 
+    Posons $a = \alpha A^2$ où $(\alpha, A) \in \NNsf \times \NNs$\,,
+    de sorte que $a = \alpha (\alpha A^2 + 2) (\alpha A^2 - 4) \in \NNssquare$\,.
+    Or $\alpha\in \NNsf$\,, donc $\alpha \divides (\alpha A^2 + 2) (\alpha A^2 - 4)$\,, 
+    d'où $\alpha \divides 8$\,, et finalement $\alpha \in \setgene{1, 2}$
     \footnote{
     	On comprend ici le choix d'avoir $\consprod<5> = (a - 4) a (a + 2)$\,.
     }.
@@ -43,12 +47,12 @@ Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) 
     
     \medskip
     
-    Supposons avoir $\alpha = 1$\,.
+    Supposons que $\alpha = 1$\,.
     
     \begin{itemize}
     	\item Notons les équivalences suivantes.
         
-        \medskip
+%        \medskip
         \noindent\kern-6pt%
         \begin{stepcalc}[style=ar*, ope=\iff]
         	(A^2 + 2) (A^2 - 4) \in \NNssquare
@@ -58,13 +62,9 @@ Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) 
         	u^2 - 9 \in \NNssquare
         \end{stepcalc}
 
-		\item Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, comme $u^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,, on a $(u, m) = (5, 4)$
-		\footnote{
-			Noter que $2 u - 1 \leq 9$ implique $u \in \ZintervalC{0}{5}$\,. Ceci permet d'analyser tous les cas mentalement.
-		}.
-		On aboutit alors à la contradiction suivante.
+		\item Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, le fait \ref{diff-square-ko} donne $(u, m) = (5, 4)$\, d'où la contradiction suivante.
         
-        \medskip
+%        \medskip
         \noindent\kern-6pt%
         \begin{stepcalc}[style=ar*, ope=\iff]
         	u = 5
@@ -77,12 +77,12 @@ Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) 
     
     \medskip
     
-    Supposons avoir $\alpha = 2$\,.
+    Supposons que $\alpha = 2$\,.
     
     \begin{itemize}
     	\item Notons l'équivalence suivante.
         
-        \medskip
+%        \medskip
         \noindent\kern-6pt%
         \begin{stepcalc}[style=ar*, ope=\iff]
         	2 (2 A^2 + 2) (2 A^2 - 4) \in \NNssquare
@@ -104,17 +104,22 @@ Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) 
 
 Bien que très longue, la preuve suivante est simple à comprendre car elle ne fait que dérouler le fil des faits découverts.
 
-\begin{proof}[Une preuve alternative]%
+\begin{proof}[Preuve 2]%
     Supposons que $\consprod<5> \in \NNsquare$\,.
 
     \medskip
     \begin{stepcalc}[style = ar*, ope = \iff]
     	\consprod<5> = 
 			n (n+1) (n+2) (n+3) (n+4) (n+5)
-    \explnext*{$x = n + 2 + \dfrac12$}{}
+    \explnext*{$x = n + 2 + \dfrac12$ (on symétrise la formule).}{}
     	\consprod<5> = 
 			\big( x \pm \dfrac52 \big) \big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big) 
-    \explnext*{$y = 2 x$}{}
+    \explnext*{$y = 2 x$ (on chasse les fractions).}{}
+    	2^6 \consprod<5> = 
+			(y \pm 5) (y \pm 3) (y \pm 1)
+    \end{stepcalc}
+    
+    \begin{stepcalc}[style = ar*, ope = \iff]
     	2^6 \consprod<5> = 
 			(y \pm 5) (y \pm 3) (y \pm 1)
     \explnext*{$z = y^2$}{}
@@ -129,7 +134,9 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
     Notant $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 5)^2 - 17 \in 2 \NN$\,, nous avons les faits suivants.
     
     \begin{itemize}
-		\item $(a, b, c) \in \big( \NNs \big)^3$ et $abc \in \NNssquare$ car $(2^6, \consprod<5>) \in \big( \NNssquare \big)^2$\,.
+		\item $u \in \NN_{\geq 32}$ car $(2 + 5)^2 - 17 = 32$\,.
+
+		\item $(a, b, c) \in \big( \NN_{\geq 24} \big)^3$ avec $abc \in \NNssquare$ puisque $2^6 \consprod<5> \in \NNssquare$\,.
 
 		\item $a \wedge b \divides 16$ via $b - a = 16$\,.
 
@@ -143,6 +150,7 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 	\end{itemize}
 
 %	\newpage
+	\medskip
 	
 	Démontrons qu'aucun des trois entiers $a$\,, $b$ et $c$ ne peut être un carré parfait.
 	%
@@ -152,16 +160,10 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		
 		\smallskip
 		\noindent
-		Dans ce cas, $bc \in \NNssquare$\,, soit $(u + 8) (u + 16) \in \NNssquare$\,.
-		En posant $w = u + 12$\,, on arrive à $(w - 4) (w + 4) \in \NNssquare$\,, soit $w^2 - 16 \in \NNssquare$\,.
-		Notant $m \in \NNs$ tel que $m^2 = w^2 - 16$\,, nous arrivons à $w^2 - m^2 = 16$\,.
-		D'après le fait \ref{diff-square-ko}, $w^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,.
-		Ceci n'est possible que si $(w, m) = (5, 3)$
-		\footnote{
-			Noter que l'on doit avoir $2 w - 1 \leq 16$\,, d'où $w \in \ZintervalC{0}{8}$\,.
-		}.
-		Or $u \in 2 \NN$ donne $w \in 2 \NN$\,, d'où une contradiction.		
-		
+		Dans ce cas, $bc \in \NNssquare$ via le fait \ref{facto-square}, soit $(u + 8) (u + 16) \in \NNssquare$\,.
+		En posant $w = u + 12$\,, on arrive à $(w - 4) (w + 4) \in \NNssquare$\,, soit $w^2 - 16 \in \NNssquare$\,, d'où $(w, m) = (5, 3)$ grâce au fait \ref{diff-square-ko}.
+		Or $u \in \NN_{\geq 32}$ donne $w \in \NN_{\geq 20}$\,, d'où une contradiction.
+
 		
 		\medskip
 		\item Supposons maintenant que $(a, b, c) \in \NNs \times \NNssquare \times \NNs$. 
@@ -170,21 +172,22 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		\noindent
 		Dans ce cas, $ac \in \NNssquare$\,, soit $(u - 8) (u + 16) \in \NNssquare$\,.
 		En posant $w = u + 4$\,, on arrive à $(w - 12) (w + 12) \in \NNssquare$\,, soit $w^2 - 144 \in \NNssquare$\,.
-		Notant $m \in \NNs$ tel que $m^2 = w^2 - 144$\,, nous arrivons à $w^2 - m^2 = 144$\,, d'où $w^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,.
-		Ceci n'est possible que si $(w, m) \in \setgene{(13, 5) , (15, 9) , (20, 16) , (37, 35)}$
+		Notant $m \in \NNs$ tel que $m^2 = w^2 - 144$\,, nous arrivons à $w^2 - m^2 = 144$\,, d'où $(w, m) \in \setgene{(13, 5) , (15, 9) , (20, 16) , (37, 35)}$
 		\footnote{
-			Comme $2 w - 1 \leq 144$ donne $w \in \ZintervalC{0}{72}$\,, il suffit de faire appel à un petit programme pour obtenir brutalement toutes les valeurs possibles.
+			Le programme reproduit après la preuve du fait \ref{diff-square-ko} donne rapidement cet ensemble de couples.
 		}.
-		Ici aussi, $u \in 2 \NN$ donne $w \in 2 \NN$\,, donc $(w, m) = (20, 16)$\,, mais les équivalences suivantes lèvent une contradiction.
+		Comme $u \in 2 \NN$ donne $w \in 2 \NN$\,, nécessairement $(w, m) = (20, 16)$\,, mais les équivalences suivantes lèvent une contradiction.
 
-		\medskip
+%		\medskip
 		\noindent\!\!%
    		\begin{stepcalc}[style = sar, ope = \iff]
 			u + 4 = 20
 		\explnext{}
-			(2 n + 5)^2 - 17 = 24
-		\explnext*{$41 \notin \NNsquare$}{}
-			(2 n + 5)^2 = 41
+			u = 16
+		\explnext{}
+			(2 n + 5)^2 - 17 = 16
+		\explnext*{$33 \notin \NNsquare$}{}
+			(2 n + 5)^2 = 33
 		\end{stepcalc}	
 		
 		
@@ -196,22 +199,17 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		Dans ce cas, $ab \in \NNssquare$\,, soit $(u - 8) (u + 8) \in \NNssquare$\,, c'est-à-dire $u^2 - 64 \in \NNssquare$\,.
 		Notant $m \in \NNs$ tel que $m^2 = u^2 - 64$\,, nous arrivons à $u^2 - m^2 = 64$\,.
 		Ceci n'est possible que si $(u, m) \in \setgene{(10, 6), (17, 15)}$\,.
-		Comme $u \in 2 \NN$\,, forcément $(u, m) = (10, 6)$\,, mais les équivalences suivantes lèvent une contradiction.
-
-		\medskip
-		\noindent\!\!%
-   		\begin{stepcalc}[style = sar, ope = \iff]
-			u = 10
-		\explnext{}
-			(2 n + 5)^2 - 17 = 10
-		\explnext*{$27 \notin \NNsquare$}{}
-			(2 n + 5)^2 = 27
-		\end{stepcalc}
+		Or $u \in \NN_{\geq 32}$ donne une contradiction.
 	\end{itemize}
 
+	\medskip
 
-	Nous avons donc $a = \alpha A^2$\,, $b = \beta B^2$ et $c = \gamma C^2$ avec $(A, B, C) \in \big( \NNs \big)^3$, et $(\alpha, \beta, \gamma) \in \big( \NN_{>1} \big)^3$ un triplet d'entiers sans facteurs carrés.
-	Nous avons les faits suivants.
+	Donc 
+	$a = \alpha A^2$\,, $b = \beta B^2$ et $c = \gamma C^2$ 
+	avec $(A, B, C) \in \big( \NNs \big)^3$
+	et
+	$\setgene{\alpha, \beta, \gamma} \subset \NNsf \cap \NN_{>1}$\,,
+	ceci nous donnant les faits suivants.
     
     \begin{itemize}
 		\item $\alpha \wedge \beta \in \setgene{1, 2}$
@@ -227,7 +225,8 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		car $\forall p \in \PP_{>3}$\,, $(\padicval{a}, \padicval{b}, \padicval{c}) \in \big( 2 \NN \big)^3$\,. 
     \end{itemize}
 		
-
+%	\medskip
+	\newpage
 
 	En fait, $\alpha$\,, $\beta$ et $\gamma$ sont différents deux à deux.
 	
@@ -235,21 +234,13 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		\item Démontrons que $\alpha \neq \beta$\,. 
 		
 		\noindent
-		Dans le cas contraire, $16 = b - a = \alpha(B^2 - A^2)$ et $\alpha > 1$ donnent $B^2 - A^2 \in \setgene{1, 2, 4, 8}$\,.
-		Or nous avons les impossibilités suivantes.
-		%
-		\begin{enumerate}
-			\item $B^2 - A^2 = 1$  et $B^2 - A^2 = 2$ contredisent le fait \ref{diff-square-ko}.
-			\item $B^2 - A^2 = 4$ n'est possible que si $(B, A) = (2, 0)$\,.
-			\item $B^2 - A^2 = 8$ n'est possible que si $(B, A) = (3, 1)$ et $\alpha = 2$\,.
-			Ceci donne $a = 2$\,, puis $u = 10$\,, mais nous avons vu que ceci était impossible.
-		\end{enumerate}
-		
+		Dans le cas contraire, $16 = b - a = \alpha(B^2 - A^2)$ et $\alpha > 1$ donnent $B^2 - A^2 \in \setgene{1, 2, 4, 8}$\,, puis forcément $B^2 - A^2 = 8$ avec $(B, A) = (3, 1)$ d'après le fait \ref{diff-square-ko}.
+		Comme de plus, $\alpha = 2$\,, nous obtenons $a = 2$ qui contredit $a \in \NN_{\geq 24}$\,.		
 
 		\item Nous avons aussi $\beta \neq \gamma$\,. 
 		
 		\noindent
-		Dans le cas contraire, $8 = c - b = \beta(C^2 - B^2)$ et $\beta > 1$ donnent $C^2 - B^2 \in \setgene{1, 2, 4}$\,, mais ce qui précède ne laisse aucun choix possible.
+		Dans le cas contraire, $8 = c - b = \beta(C^2 - B^2)$ et $\beta > 1$ donnent $C^2 - B^2 \in \setgene{1, 2, 4}$\,, mais c'est impossible d'après le fait \ref{diff-square-ko}.
 		
 
 		\item Enfin, $\alpha \neq \gamma$\,. 
@@ -259,55 +250,32 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		$C^2 - A^2 \in \setgene{1, 2, 3, 4, 6, 8, 12}$
 		car 
 		$24 = c - a = \alpha(C^2 - A^2)$ et $\alpha > 1$\,.
-		Nous obtenons alors les impossibilités suivantes.
+		Le fait \ref{diff-square-ko} ne laisse plus que les possibilités suivantes.
 		%
 		\begin{enumerate}
-			\item $C^2 - A^2 \in \setgene{1, 2, 4}$ est à rejeter comme précédemment.
-			
-			\item $C^2 - A^2 = 3$ n'est possible que si $(C, A) = (2, 1)$ et $\alpha = 8$\,, mais les équivalences suivantes lèvent une contradiction.
-
-    		\smallskip
-    		\noindent\!\!%
-       		\begin{stepcalc}[style = sar, ope = \iff]
-    			a = 8
-    		\explnext{}
-    			u = 16
-    		\explnext{}
-    			(2 n + 5)^2 - 17 = 16
-    		\explnext*{$33 \notin \NNsquare$}{}
-    			(2 n + 5)^2 = 33
-    		\end{stepcalc}	
-			\smallskip
-	
-			\item $C^2 - A^2 = 6$ est impossible.
-			
-			\item $C^2 - A^2 = 8$ n'est possible que si $(C, A) = (3, 1)$ et $\alpha = 3$\,, mais les équivalences suivantes lèvent une contradiction.
-
-    		\smallskip
-    		\noindent\!\!%
-       		\begin{stepcalc}[style = sar, ope = \iff]
-    			a = 3
-    		\explnext{}
-    			u = 11
-    		\explnext{}
-    			(2 n + 5)^2 - 17 = 11
-    		\explnext*{$28 \notin \NNsquare$}{}
-    			(2 n + 5)^2 = 28
-    		\end{stepcalc}	
-			\smallskip
+			\item $C^2 - A^2 = 3$ n'est possible que si $(C, A) = (2, 1)$\,.
+			Comme de plus $\alpha = 8$\,, nous avons $a = 8$ qui contredit $a \in \NN_{\geq 24}$\,.
 			
 			
-			\item $C^2 - A^2 = 12$ n'est possible que si $(C, A) = (4, 2)$ et $\alpha = 2$\,, mais ceci donnerait $a = 8$\,, or nous savons que cela est impossible.
+			\item $C^2 - A^2 = 8$ n'est possible que si $(C, A) = (3, 1)$.
+			Comme de plus $\alpha = 3$\,, nous avons $a = 3$ qui contredit $a \in \NN_{\geq 24}$\,.
+			
+			
+			\item $C^2 - A^2 = 12$ n'est possible que si $(C, A) = (4, 2)$\,.
+			Comme de plus $\alpha = 2$\,, nous avons $a = 8$ qui contredit $a \in \NN_{\geq 24}$\,.
 		\end{enumerate}
 	\end{itemize}
 
 
+	\medskip
+	
 	Comme
 	$\setgene{\alpha, \beta, \gamma} \subseteq \setgene{2, 3, 6}$\,,
 	$\alpha \wedge \beta \in \setgene{1, 2}$\,,
 	$\alpha \wedge \gamma \in \setgene{1, 2, 3}$ et
 	$\beta \wedge \gamma \in \setgene{1, 2}$\,,
 	et comme de plus $\alpha$\,, $\beta$ et $\gamma$ sont différents deux à deux, il ne nous reste plus qu'à analyser les cas suivants.
+	La lumière est proche...
 
 	\begin{center}
 		\begin{tblr}{
@@ -360,7 +328,7 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 	\end{center}
 
 
-	Traitons les deux cas restants en nous souvenant que $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 5)^2 - 17 \in 2 \NN$\,.
+	Traitons les deux cas restants en nous souvenant que $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,.
 	
 	\begin{itemize}
 		\item Supposons $(\alpha, \beta, \gamma) = (3, 2, 6)$\,, 
@@ -384,7 +352,7 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		
 		\smallskip
 		\noindent
-		La preuve précédente s'adapte sans difficulté puisque que $a \equiv 6 A^2 \equiv 0$ et $b \equiv 2 B^2$ modulo $3$\,.
+		La preuve précédente s'adapte directement car $a \equiv 6 A^2 \equiv 0$ et $b \equiv 2 B^2$ modulo $3$\,.
 	\end{itemize}
 \end{proof}
 
