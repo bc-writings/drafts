@@ -1,15 +1,32 @@
-DIST = 4
-
-
 from math import sqrt, floor
 
-for i in range(1, (DIST + 1) // 2 + 1):
-    tested = i**2 - DIST
+def sol(diff):
+    solfound = []
 
-    if tested < 0:
-        continue
+    for i in range(1, (diff + 1) // 2 + 1):
+        tested = i**2 - diff
 
-    tested = sqrt(i**2 - DIST)
+        if tested < 0:
+            continue
 
-    if tested == floor(tested):
-        print(f"({i}, {floor(tested)})")
+        tested = floor(sqrt(i**2 - diff))
+
+        if tested == 0:
+            continue
+
+        if tested**2 == i**2 - diff:
+            solfound.append((i, tested))
+
+    return solfound
+
+
+for c in sol(3):
+    print(c)
+
+# exit()
+
+for d in range(1, 50):
+    if len(sol(d)) == 0:
+        print(d, end=", ")
+
+print()

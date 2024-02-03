@@ -7,7 +7,13 @@
 
 
 \begin{proof}
-	Considérer les décompositions en facteurs premiers de $n$\,, $m$ et $f$\,.
+	Clairement, $\forall p \in \PP$\,, nous avons 
+	$\padicval{f m} \in 2 \NN$
+	et
+	$\padicval{m} \in 2 \NN$
+	qui donnent
+	$\padicval{f} \in 2 \NN$
+	car $\padicval{f m} = \padicval{f} + \padicval{m}$\,.
 \end{proof}
 
 
@@ -57,31 +63,7 @@
 
 \subsection{Distance entre deux carrés parfaits}
 
-
-$C^2 - A^2 = 6$ est impossible.
-
-
-$B^2 - A^2 = 8$ avec $(B, A) = (3, 1)$
-
-
-$C^2 - A^2 = 3$    n'est possible que si $(C, A) = (2, 1)$
-
-
-Notant $m \in \NNs$ tel que $m^2 = w^2 - 16$\,, nous arrivons à $w^2 - m^2 = 16$\,.
-		D'après le fait \ref{diff-square-ko}, $w^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,.
-		Ceci n'est possible que si $(w, m) = (5, 3)$
-		\footnote{
-			Noter que l'on doit avoir $2 w - 1 \leq 16$\,, d'où $w \in \ZintervalC{0}{8}$\,.
-		}.
-		
-		
-		
-Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, comme $u^2 - m^2 = \dsum_{k=m+1}^{w} (2 k - 1)$\,, on a $(u, m) = (5, 4)$
-		\footnote{
-			Noter que $2 u - 1 \leq 9$ implique $u \in \ZintervalC{0}{5}$\,. Ceci permet d'analyser tous les cas mentalement.
-		}.
-		On aboutit alors à la contradiction suivante.
-		
+	
 \begin{fact} \label{dist-square}
 	$\forall (N, M) \in \NNs \times \NNs$, 
 	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
@@ -89,7 +71,10 @@ Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, comme $u^2 - m^2 = \dsu
 
 
 \begin{proof}
-	Il suffit d'utiliser $N^2 = \dsum_{k=1}^{N} (2 k - 1)$\,, une formule facile à démontrer algébriquement, et évidente à découvrir géométriquement.
+	$N^2 = \dsum_{k=1}^{N} (2 k - 1)$ donne l'identité indiquée
+	\footnote{
+		La formule utilisée est facile à démontrer algébriquement, et évidente à découvrir géométriquement.
+	}.
 \end{proof}
 
 
@@ -105,6 +90,15 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 		\item $N^2 - M^2 \geq 2M + 1$\,.
 		
 		\item $N^2 - M^2 < 3$ est impossible.
+		
+		\item $N^2 - M^2 = 3$ uniquement si $(N, M) = (2, 1)$\,.
+		
+		\item Le nombre $nb_{sol}$ de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$ est connu pour les cas suivants (dont certains seront rencontrés dans ce document).
+		\begin{enumerate}
+			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
+
+			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9, 11, 12, 13, 16}$\,.
+		\end{enumerate}
 	\end{enumerate}
 \end{fact}
 
@@ -112,6 +106,7 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 \begin{proof}
 	\leavevmode
 	
+	\vspace{-1ex}
 	\begin{enumerate}
 		\item $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1) \geq 2(M + 1) - 1 = 2M + 1$
 		
@@ -124,10 +119,40 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 		$N^2 - M^2 = (N - M)(N + M) \geq 1 \cdot (M + 1 + M) = 2M + 1$
 
 
-
 		\item Immédiat puisque $2M + 1 \geq 3$\,.
-	\end{enumerate}
 
+
+		\item Notant $\delta = N^2 - M^2$\,, nous avons $2 N - 1 \leq \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
+		Ceci permet de limiter notre zone de recherche à $N \in \ZintervalC{1}{2}$\,, ce qui permet de conclure.
+		
+
+		\item Il suffit de s'appuyer sur le programme \verb#Python# donné juste après.
+		%
+		\qedhere
+	\end{enumerate}
 \end{proof}
 
+
+\begin{Python}
+from math import sqrt, floor
+
+def sol(diff):
+    solfound = []
+
+    for i in range(1, (diff + 1) // 2 + 1):
+        tested = i**2 - diff
+
+        if tested < 0:
+            continue
+
+        tested = floor(sqrt(i**2 - diff))
+
+        if tested == 0:
+            continue
+
+        if tested**2 == i**2 - diff:
+            solfound.append((i, tested))
+
+    return solfound
+\end{Python}
 

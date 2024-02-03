@@ -1,6 +1,6 @@
 \documentclass[12pt]{amsart}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
 
 \usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
 
@@ -19,6 +19,29 @@
 \usepackage[french]{babel}
 \frenchsetup{StandardItemLabels=true}
 \usepackage{csquotes}
+\usepackage{piton}
+
+\NewPitonEnvironment{Python}{}
+  {\begin{tcolorbox}}
+  {\end{tcolorbox}}
+  
+\SetPitonStyle{
+ 	Number = ,
+    String = \itshape ,
+    String.Doc = \color{gray} \slshape ,
+    Operator = ,
+    Operator.Word = \bfseries ,
+    Name.Builtin = ,
+    Name.Function = ,
+    Comment = \color{gray} ,
+    Comment.LaTeX = \normalfont \color{gray},
+    Keyword = \bfseries ,
+    Name.Namespace = ,
+    Name.Class = ,
+    Name.Type = ,
+    InitialValues = \color{gray}
+}
+
 
 \usepackage[
     type={CC},
@@ -134,8 +157,8 @@
 % ------------------ %
 
 
-%\foreach \k in {1,...,6} {
-\foreach \k in {1} {
+\foreach \k in {1,...,6} {
+%\foreach \k in {1} {
 	\newpage
 
 	\ifthenelse{\k = 1}{
@@ -158,6 +181,8 @@
 
 % ------------------ %
 
+
+\newpage
 
 \section{Sources utilisées}
 
