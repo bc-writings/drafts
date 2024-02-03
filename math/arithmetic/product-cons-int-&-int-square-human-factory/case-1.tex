@@ -93,11 +93,13 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 		
 		\item $N^2 - M^2 = 3$ uniquement si $(N, M) = (2, 1)$\,.
 		
-		\item Le nombre $nb_{sol}$ de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$ est connu pour les cas suivants (dont certains seront rencontrés dans ce document).
+		\item Le nombre $nb_{sol}$ de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$ est connu pour $\delta \in \ZintervalC{1}{20}$ (certains cas seront rencontrés dans ce document).
 		\begin{enumerate}
 			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
 
 			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9, 11, 12, 13, 16}$\,.
+
+			\item $nb_{sol}= 2$ si $\delta = 15$\,.
 		\end{enumerate}
 	\end{enumerate}
 \end{fact}
@@ -122,11 +124,11 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 		\item Immédiat puisque $2M + 1 \geq 3$\,.
 
 
-		\item Notant $\delta = N^2 - M^2$\,, nous avons $2 N - 1 \leq \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
+		\item Notant $\delta = N^2 - M^2$ \,, nous avons $2 N - 1 \leq \dsum_{k=M+1}^{N} (2 k - 1) = \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
 		Ceci permet de limiter notre zone de recherche à $N \in \ZintervalC{1}{2}$\,, ce qui permet de conclure.
 		
 
-		\item Il suffit de s'appuyer sur le programme \verb#Python# donné juste après.
+		\item Il suffit de s'appuyer sur le programme \verb#Python# donné ci-dessous.
 		%
 		\qedhere
 	\end{enumerate}

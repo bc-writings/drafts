@@ -25,8 +25,12 @@ for c in sol(3):
 
 # exit()
 
-for d in range(1, 50):
-    if len(sol(d)) == 0:
-        print(d, end=", ")
+for nbsol in range(20):
+    print()
+    print(f"{nbsol = }")
+
+    for d in range(1, 21):
+        if len(sol(d)) == nbsol:
+            print(d, end=", ")
 
 print()
