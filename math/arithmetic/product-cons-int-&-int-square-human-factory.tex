@@ -138,26 +138,26 @@
 % ------------------ %
 
 
-%\newpage
-%\section{Ce qui nous intéresse}
-%
-%\input{\contentdir/what}
-%
-%
-%% ------------------ %
-%
-%
-%\bigskip
-%\section{Notations utilisées}
-%
-%\input{\contentdir/notations}
+\newpage
+\section{Ce qui nous intéresse}
+
+\input{\contentdir/what}
 
 
 % ------------------ %
 
 
-%\foreach \k in {1,...,7} {
-\foreach \k in {7} {
+\bigskip
+\section{Notations utilisées}
+
+\input{\contentdir/notations}
+
+
+% ------------------ %
+
+
+\foreach \k in {1,...,7} {
+%\foreach \k in {7} {
 	\newpage
 
 	\ifthenelse{\k = 1}{
@@ -170,13 +170,13 @@
 }
 
 
-% Searching...
-\foreach \k in {8} {
-	\newpage
-	\section{\k\ facteurs ?}
-
-	\input{\contentdir/case-\k-OKKO}
-}
+%% Searching...
+%\foreach \k in {8} {
+%	\newpage
+%	\section{\k\ facteurs ?}
+%
+%	\input{\contentdir/case-\k-OKKO}
+%}
 
 
 % ------------------ %
