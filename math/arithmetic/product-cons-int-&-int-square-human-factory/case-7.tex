@@ -69,19 +69,28 @@ La très jolie démonstration suivante vient d'un échange sur \url{https://math
 		\end{enumerate}
 
 
-    	\item Supposons maintenant que $u + 2 = M^2$.
+    	\item Supposons maintenant que $u + 4 = M^2$.
 
 		\smallskip
 		\noindent
-		Le fait d'avoir $\setgene{u, u + 4} = \setgene{3P^2, 5Q^2}$ demande un peu de prudence pour adapter la preuve précédente. 
-		Il faut considérer $(u - 1, u + 2)$ si $u > n$\,, et $(u + 2, u + 5)$ sinon.
+		Comme $\setgene{u, u + 2} = \setgene{3P^2, 5Q^2}$\,, la preuve précédente s'adapte à $(u + 1, u + 4)$\,.
 
 
-    	\item Supposons enfin que $u + 4 = M^2$.
+    	\item Supposons enfin que $u + 2 = M^2$.
 
 		\smallskip
 		\noindent
-		Comme $\setgene{u, u + 2} = \setgene{3P^2, 5Q^2}$\,, il suffit de raisonner avec $(u + 1, u + 4)$\,.
+		$\setgene{u, u + 4} = \setgene{3P^2, 5Q^2}$ est impossible d'après ce qui suit en travaillant modulo $4$\,.
+		%
+		\begin{enumerate}
+			\item Si $(u, u + 4) = (3P^2, 5Q^2)$\,, alors 
+			$u \equiv \text{$0$ ou $3$}$\,, 
+			$u + 4 \equiv \text{$0$ ou $1$}$\,, et
+			$u \equiv \pm 1$
+			se contredisent.
+
+			\item Si $(u, u + 4) = (5Q^2, 3P^2)$\,, on obtient une contradiction de façon analogue à la précédente.
+		\end{enumerate}
     \end{itemize}
 \end{proof}
 
