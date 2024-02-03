@@ -6,49 +6,53 @@
 % ------------------ %
 
 
-Cette preuve reprend l'idée de la démonstration courte du fait \ref{case-6}.
-
-\begin{proof}
-    Supposons que $\consprod<7> \in \NNsquare$\,.
-    Commençons par de petites manipulations algébriques où l'on cherche à faire apparaître le même coefficient pour $n$ dans chaque parenthèse.
-    
-    \medskip
-    \begin{stepcalc}[style = sar]
-    	\consprod<5>
-	\explnext{}
-		n (n+7) \cdot (n+1) (n+6) \cdot (n+2) (n+5) \cdot (n+3) (n+4)
-	\explnext{}
-		(n^2 + 7n) (n^2 + 7n + 6) (n^2 + 7n + 10) (n^2 + 7n + 12)
-	\explnext*{$x = n^2 + 7n \in \NN_{\geq 8}$}{}
-		x (x + 6) (x + 10) (x + 12)
-	\explnext*{$a = x + 10 \in \NN_{\geq 18}$}{}
-		(a - 10) (a - 4) a (a + 2)
-    \end{stepcalc}
-  
-    \medskip
-    Nous avons donc $a \in \NNs$ vérifiant $a (a + 2) (a - 4) (a - 10) \in \NNssquare$\,. 
-    Posons alors $a = \alpha A^2$ où $(\alpha, A) \in \big( \NNs \big)^2$ avec $\alpha$ sans facteur carré.
-    Comme $a = \alpha (\alpha A^2 + 2) (\alpha A^2 - 4) (\alpha A^2 - 10) \in \NNssquare$\,,
-    et comme de plus $\alpha$ est sans facteur carré, nous devons avoir $\alpha \divides (\alpha A^2 + 2) (\alpha A^2 - 4) (\alpha A^2 - 10)$\,, d'où $\alpha \divides 80$\,, et finalement $\alpha \in \setgene{1, 2, 5, 10}$\,.
-    Nous allons voir que ceci est impossible.
-
-
-    Supposons avoir $\alpha = 1$\,.
-    
-    \begin{itemize}
-    	\item Notons les équivalences suivantes.
-        
-        \medskip
-        \noindent\kern-6pt%
-        \begin{stepcalc}[style=ar*, ope=\iff]
-        	(A^2 + 2) (A^2 - 4) (A^2 - 10)\in \NNssquare
-    	\explnext{$u = A^2 - 4$}
-        	(u + 6) u (u - 6) \in \NNssquare
-    	\explnext{}
-        	u(u^2 - 36) \in \NNssquare
-        \end{stepcalc}
-
-		\item ????
-    \end{itemize}
-\end{proof}
-
+%Cette preuve reprend l'idée de la démonstration courte du fait \ref{case-6}.
+%
+%\begin{proof}[Preuve]
+%    Supposons que $\consprod<7> \in \NNsquare$\,.
+%    
+%    \smallskip
+%    
+%    Commençons par de petites manipulations algébriques avec une première étape faisant apparaître le même coefficient pour $n$ dans chaque parenthèse, et dans la dernière étape on fait apparaître des entiers avec de petits facteurs premiers
+%    \footnote{
+%    	Par exemple, $a = x + 10$ donne $(a - 10) (a - 4) a (a + 2)$ qui est moins intéressant que le choix retenu.
+%    }.
+%    
+%    \medskip
+%    \begin{stepcalc}[style = sar]
+%    	\consprod<5>
+%	\explnext{}
+%		n (n+7) \cdot (n+1) (n+6) \cdot (n+2) (n+5) \cdot (n+3) (n+4)
+%	\explnext{}
+%		(n^2 + 7n) (n^2 + 7n + 6) (n^2 + 7n + 10) (n^2 + 7n + 12)
+%	\explnext*{$x = n^2 + 7n \in \NN_{\geq 8}$}{}
+%		x (x + 6) (x + 10) (x + 12)
+%	\explnext*{$a = x + 6 \in \NN_{\geq 16}$}{}
+%		(a - 6) a (a + 4) (a + 6)
+%    \end{stepcalc}
+%  
+%    \medskip
+%    Nous avons $a \in \NNs$ vérifiant $a (a + 4) (a^2 - 36) \in \NNssquare$\,. 
+%    Posons alors $a = \alpha A^2$ où $(\alpha, A) \in \NNsf \times \NNs$\,.
+%    Comme $\alpha \in \NNsf$\,, nous avons $\alpha \divides (\alpha A^2 + 4) (\alpha^2 A^4 - 36)$\,, d'où $\alpha \divides 2^4 \cdot 3^2$\,, et finalement $\alpha \in \setgene{1, 2, 3, 6}$\,.
+%    Nous allons voir que ceci est impossible.
+%
+%    \medskip
+%    
+%    Supposons avoir $\alpha = 1$\,.
+%    
+%    \begin{itemize}
+%    	\item Notons l'équivalence suivante.
+%   
+%%        \medskip
+%        \noindent\kern-6pt%
+%        \begin{stepcalc}[style=ar*, ope=\iff]
+%        	(A^2 + 4) (A^2 + 6) (A^2 - 6) \in \NNssquare
+%    	\explnext{}
+%        	...
+%        \end{stepcalc}
+%
+%		\item ????
+%    \end{itemize}
+%\end{proof}
+%

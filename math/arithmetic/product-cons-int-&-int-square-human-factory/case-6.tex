@@ -37,9 +37,9 @@ Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) 
     \medskip
     Nous avons $a \in \NN_{\geq 10}$ vérifiant $a (a + 2) (a - 4) \in \NNssquare$\,. 
     Posons $a = \alpha A^2$ où $(\alpha, A) \in \NNsf \times \NNs$\,,
-    de sorte que $a = \alpha (\alpha A^2 + 2) (\alpha A^2 - 4) \in \NNssquare$\,.
-    Or $\alpha\in \NNsf$\,, donc $\alpha \divides (\alpha A^2 + 2) (\alpha A^2 - 4)$\,, 
-    d'où $\alpha \divides 8$\,, et finalement $\alpha \in \setgene{1, 2}$
+    de sorte que $\alpha (\alpha A^2 + 2) (\alpha A^2 - 4) \in \NNssquare$ via le fait \ref{facto-square}.
+    De plus, $\alpha\in \NNsf$\,, donc $\alpha \divides (\alpha A^2 + 2) (\alpha A^2 - 4)$\,, 
+    d'où $\alpha \divides 8$\,, et ainsi $\alpha \in \setgene{1, 2}$
     \footnote{
     	On comprend ici le choix d'avoir $\consprod<5> = (a - 4) a (a + 2)$\,.
     }.
@@ -66,7 +66,7 @@ Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) 
         
 %        \medskip
         \noindent\kern-6pt%
-        \begin{stepcalc}[style=ar*, ope=\iff]
+        \begin{stepcalc}[style=sar, ope=\iff]
         	u = 5
     	\explnext{}
         	A^2 - 1 = 5
@@ -102,7 +102,11 @@ Une petite simplification a été faite pour arriver à $\consprod<5> = (a - 4) 
 % ------------------ %
 
 
-Bien que très longue, la preuve suivante est simple à comprendre car elle ne fait que dérouler le fil des faits découverts.
+Bien que très longue
+\footnote{
+	Ce sera notre dernière tentative de démonstration à faible empreinte cognitive.
+},
+la preuve suivante est simple à comprendre car elle ne fait que dérouler le fil des faits découverts.
 
 \begin{proof}[Preuve 2]%
     Supposons que $\consprod<5> \in \NNsquare$\,.
@@ -146,7 +150,7 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 
 		\item En particulier, 
 		$\forall p \in \PP_{>3}$\,, 
-		$(\padicval{a}, \padicval{b}, \padicval{c}) \in \big( 2 \NN \big)^3$.
+		$(\padicval{a}, \padicval{b}, \padicval{c}) \in ( 2 \NN )^3$.
 	\end{itemize}
 
 %	\newpage
@@ -206,7 +210,7 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 
 	Donc 
 	$a = \alpha A^2$\,, $b = \beta B^2$ et $c = \gamma C^2$ 
-	avec $(A, B, C) \in \big( \NNs \big)^3$
+	avec $(A, B, C) \in ( \NNs )^3$
 	et
 	$\setgene{\alpha, \beta, \gamma} \subset \NNsf \cap \NN_{>1}$\,,
 	ceci nous donnant les faits suivants.
@@ -222,7 +226,7 @@ Bien que très longue, la preuve suivante est simple à comprendre car elle ne f
 		d'après $b \wedge c \divides 8$\,.
 
 		\item $\setgene{\alpha, \beta, \gamma} \subseteq \setgene{2, 3, 6}$
-		car $\forall p \in \PP_{>3}$\,, $(\padicval{a}, \padicval{b}, \padicval{c}) \in \big( 2 \NN \big)^3$\,. 
+		car $\forall p \in \PP_{>3}$\,, $(\padicval{a}, \padicval{b}, \padicval{c}) \in ( 2 \NN )^3$\,. 
     \end{itemize}
 		
 %	\medskip

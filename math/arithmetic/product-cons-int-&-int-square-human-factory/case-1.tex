@@ -43,7 +43,7 @@
 
 \begin{fact} \label{same-square-free}
 	Soit $(a, b) \in \NNs \times \NNs$ tel que $a b \in \NNssquare$\,,
-	ainsi que $(\alpha, \beta, A, B) \in \big( \NNsf \big)^2 \times \NN^2$ tel que $a = \alpha A^2$ et $b = \beta B^2$.
+	ainsi que $(\alpha, \beta, A, B) \in ( \NNsf )^2 \times \NN^2$ tel que $a = \alpha A^2$ et $b = \beta B^2$.
 	Nous avons alors forcément $\alpha = \beta$\,.
 \end{fact}
 
@@ -93,7 +93,8 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 		
 		\item $N^2 - M^2 = 3$ uniquement si $(N, M) = (2, 1)$\,.
 		
-		\item Le nombre $nb_{sol}$ de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$ est connu pour $\delta \in \ZintervalC{1}{20}$ (certains cas seront rencontrés dans ce document).
+		\item Notons $nb_{sol}$ le nombre de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
+		Pour $\delta \in \ZintervalC{1}{20}$, nous avons :
 		\begin{enumerate}
 			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
 
@@ -128,6 +129,7 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 		Ceci permet de limiter notre zone de recherche à $N \in \ZintervalC{1}{2}$\,, ce qui permet de conclure.
 		
 
+		\newpage
 		\item Il suffit de s'appuyer sur le programme \verb#Python# donné ci-dessous.
 		%
 		\qedhere

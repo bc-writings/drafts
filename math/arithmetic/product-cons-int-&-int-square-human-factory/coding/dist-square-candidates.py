@@ -20,10 +20,10 @@ def sol(diff):
     return solfound
 
 
-for c in sol(3):
+for c in sol(36):
     print(c)
 
-# exit()
+exit()
 
 for nbsol in range(20):
     print()

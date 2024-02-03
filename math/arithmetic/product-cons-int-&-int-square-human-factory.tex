@@ -58,7 +58,6 @@
 \newtheorem{defi}{Définition}[section]
 \newtheorem{example}{Exemple}[section]
 \newtheorem{remark}{Remarque}[section]
-\newtheorem*{proof*}{Une preuve alternative}
 
 \npthousandsep{.}
 \setlength\parindent{0pt}
@@ -139,26 +138,26 @@
 % ------------------ %
 
 
-\newpage
-\section{Ce qui nous intéresse}
-
-\input{\contentdir/what}
+%\newpage
+%\section{Ce qui nous intéresse}
+%
+%\input{\contentdir/what}
+%
+%
+%% ------------------ %
+%
+%
+%\bigskip
+%\section{Notations utilisées}
+%
+%\input{\contentdir/notations}
 
 
 % ------------------ %
 
 
-\bigskip
-\section{Notations utilisées}
-
-\input{\contentdir/notations}
-
-
-% ------------------ %
-
-
-\foreach \k in {1,...,6} {
-%\foreach \k in {1} {
+\foreach \k in {1,...,7} {
+%\foreach \k in {1,7} {
 	\newpage
 
 	\ifthenelse{\k = 1}{
@@ -172,7 +171,8 @@
 
 
 %% Searching...
-%\foreach \k in {7, 8} {
+%\foreach \k in {8} {
+%	\newpage
 %	\section{\k\ facteurs ?}
 %
 %	\input{\contentdir/case-\k-OKKO}
@@ -184,7 +184,7 @@
 
 \newpage
 
-\section{Sources utilisées}
+\section{Sources utilisées} \label{sources}
 
 \input{\contentdir/sources}
 
