@@ -79,11 +79,11 @@ Comme pour le cas de quatre facteurs, l'algèbre va nous permettre d'aller très
 
         \medskip
         \noindent
-        Via le site \url{https://www.wolframalpha.com}
+        Le site \url{https://www.wolframalpha.com} nous donne sans effort cognitif
         \footnote{
         	Il faut vivre avec son temps...
-        },
-        nous avons sans effort cognitif :
+        }
+        ce qui suit.%(les \enquote{transhumanophobes} se reporteront à la remarque qui suit).
 
         \medskip
         \noindent\kern-6pt%
@@ -129,4 +129,22 @@ Comme pour le cas de quatre facteurs, l'algèbre va nous permettre d'aller très
 		\item Nous venons de voir que $( a b - 2)^2 < \consprod<7> < ( a b - 1)^2$ sur $\NN_{\geq 4}$\,, donc $\consprod<7> \notin \NNsquare$ dès que $n \in \NN_{\geq 4}$\,, mais pour $n \in \setgene{1, 2, 3}$\,, $\padicval[7]{\consprod<7>} =1$ donne $\consprod<7> \notin \NNsquare$\,, ce qui permet de conclure.
 	\end{itemize}
 \end{proof}
+
+
+%\begin{remark}
+%	Voici comment obtenir une preuve $\qty{100}{\percent}$ non silliconé.
+%	Pour cela, commençons par les manipulations algébriques naturelles suivantes qui cherchent à obtenir le même coefficient pour $n$ dans chaque parenthèse.
+%    
+%    \medskip
+%    
+%    \begin{stepcalc}[style = sar]
+%    	\consprod<7>
+%    \explnext{}
+%    	n(n+7) \cdot (n+1)(n+6) \cdot (n+2)(n+5) \cdot (n+3)(n+4)
+%    \explnext{}
+%    	(n^2 + 7n) \cdot (n^2 + 7n + 6) \cdot (n^2 + 7n + 10) \cdot (n^2 + 7n + 12)
+%    \explnext*{$m = n^2 + 7n$}{}
+%    	m (m + 6) (m + 10)(m + 12)
+%    \end{stepcalc}
+%\end{remark}
 
