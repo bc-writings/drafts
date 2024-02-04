@@ -1,0 +1,95 @@
+\begin{fact} \label{case-8}
+	 $\forall n \in \NNs$\,, $\consprod<7> \notin \NNsquare$\,.
+\end{fact}
+
+
+% ------------------ %
+
+
+La démonstration très astucieuse suivante est proposée dans un échange sur \url{https://math.stackexchange.com} (voir la section \ref{sources}).
+Comme pour le cas de quatre facteurs, l'algèbre va nous permettre d'aller très vite.
+
+
+\begin{proof}[Preuve]
+	\leavevmode
+
+	\begin{itemize}
+		\item L'une des preuves du fait \ref{case-4} nous donne
+		$n (n + 1) (n + 2) (n + 3) = (n^2 + 3n + 1)^2 - 1$\,.
+
+		\smallskip
+		\noindent
+		En particulier,
+		$(n + 4)(n + 5)(n + 6)(n + 7) = (n^2 + 11 n + 29)^2 - 1$\,.
+
+
+		\item L'idée astucieuse va être de considérer les deux expressions suivantes qui viennent de $\consprod<7> = \big( f(n)^2 - 1 \big) \big( g(n)^2 - 1 \big)$\,.
+		%
+		\begin{enumerate}
+			\item $f(n) = n^2 + 3n + 1$\,.
+
+			\item $g(n) = n^2 + 11 n + 29$\,.
+		\end{enumerate}
+
+
+		\item Nous avons les manipulations algébriques naturelles suivantes.
+
+%        \medskip
+        \noindent\kern-6pt%
+        \begin{stepcalc}[style = sar]
+        	\consprod<7>
+        \explnext{}
+        	\big( f(n)^2 - 1 \big) \big( g(n)^2 - 1 \big)
+        \explnext*{$a = f(n)$ et $b = g(n)$\,.}{}
+        	(a^2 - 1) (b^2 - 1)
+        \explnext{}
+        	a^2 b^2 - a^2 - b^2 + 1
+        \explnext*{Choisir $(a - b)^2$ au lieu de $(a + b)^2$ va nous permettre \\ plus bas de ne pas trop nous éloigner de $\consprod<7>$\,.}{}
+        	a^2 b^2 - (a - b)^2 - 2 ab + 1
+        \explnext{}
+        	a^2 b^2  - 2 ab + 1 - (a - b)^2
+        \explnext{}
+        	(a b  - 1)^2 - (a - b)^2
+        \explnext*[<]{$b - a = 8 n + 28 > 0$\,.}{}
+        	(a b  - 1)^2
+        \end{stepcalc}
+        
+        \medskip
+        
+        \noindent
+        Donc $\consprod<7> < \big( f(n) g(n) - 1)^2$\,.
+
+
+		\item Le point précédent rend naturel de tenter de démontrer que $\big( f(n) g(n) - 2)^2 < \consprod<7>$\,, car, si tel est le cas, $\consprod<7>$ sera encadré par les carrés de deux entiers consécutifs, et forcément nous aurons $\consprod<7> \notin \NNsquare$\,. 
+		Ce qui suit montre que notre pari est gagnant. Que c'est joli !
+
+        \medskip
+        \noindent\kern-6pt%
+        \begin{stepcalc}[style = ar*, ope={\iff}]
+        	\big( f(n) g(n) - 2)^2 < \consprod<7>
+        \explnext*{$a = f(n)$ et $b = g(n)$\,.}{}
+        	(a b - 2)^2 < (a^2 - 1) (b^2 - 1)
+        \explnext{}
+        	a^2 b^2 - 4 a b + 4 < a^2 b^2 - a^2 - b^2 + 1
+        \explnext{}
+        	a^2 + b^2 - 4 a b + 3 < 0
+        \explnext*{Le choix fait donne une majoration \enquote{pas trop grande} \\ comme nous le verrons dans la suite.}{}
+        	(2 a - b)^2 - 3 a^2 + 3 < 0
+        \explnext{}
+        	(2 a - b)^2 < 3(a^2 - 1)
+        \end{stepcalc}
+
+        \medskip
+        \noindent
+        Comme $(2a - b)^2 = n^4 + \cdots$ et $3(a^2 - 1) = 3 n^4 + \cdots$\,, nous savons que $3(a^2 - 1)$ prédomine $(2a - b)^2$ en $+\infty$\,, donc l'inégalité précédente sera validée à partir d'un certain $n_0$\,.
+        Nous devons malheureusement être plus précis afin de rejeter aussi les cas restants $n < n_0$\,.
+        Commençons donc par obtenir une valeur petite de $n_0$\,.
+        %
+        \begin{enumerate}
+        	\item XXXX
+
+        	\item XXXX
+        \end{enumerate}
+	\end{itemize}
+\end{proof}
+
