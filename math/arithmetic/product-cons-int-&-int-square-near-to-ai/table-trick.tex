@@ -1,50 +1,15 @@
-Il est facile de trouver des démonstrations à la main du fait que $n(n+1) \cdots (n + k) \notin \NNssquare$ pour les premières valeurs de $k$.
-Certains preuves sont très sympathiques, mais, malheureusement, elles ne reposent pas sur un schéma commun de raisonnement.
-Dans la suite, nous allons tenter de limiter au maximum l'emploi de fourberies déductives ; pour cela, commençons par noter le fait suivant
-\footnote{
-	$N^2 - M^2 = (N - M)(N + M)$ donne directement $N^2 - M^2 \geq 3$ dès que $(N, M) \in \big( \NNs \big)^2$ vérifie $N > M$\,.
-}.
-
-
-\begin{fact} \label{dist-square}
-	$\forall (N, M) \in \NNs \times \NNs$, 
-	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
-\end{fact}
-
-
-\begin{proof}
-	Il suffit d'utiliser $N^2 = \dsum_{k=1}^{N} (2 k - 1)$\,.
-\end{proof}
-
-
-% ------------------ %
-
-
-\begin{fact} \label{facto-square}
-	$\forall n \in \NNssquare$\,, s'il existe $m \in \NNssquare$ tel que $n =  f m$ alors $f  \in \NNssquare$\,.
-\end{fact}
-
-
-\begin{proof}
-	Il suffit de passer via les décompositions en facteurs premiers de $n$\,, $m$ et $f$\,.
-\end{proof}
-
-
-% ------------------ %
-
-
-Passons aux diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod = \dprod_{i = 0}^{k} (n + i)$\,. 
+L'idée de départ est simple : il faut se concentrer sur les diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod = n (n + 1) \cdots (n + k)$\,. 
 
 
 \begin{defi}
-	Soient $(n, k) \in \big( \NNs \big)^2$\,,
+	Considérons $(n, k) \in \NNs \times \NN$\,,
 	$( a_i )_{0 \leq i \leq k} \subseteq \NNs$
 	et
 	$( s_i )_{0 \leq i \leq k} \subseteq \NNssquare$
 	tels que 
 	$\forall i \in \ZintervalC{0}{k}$\,, $n + i = a_i s_i$\,.
 	%
-	Ce type de situation sera résumé par le tableau suivant que nous nommerons tableau de Vogler en référence à la discussion où l'auteur a découvert ce concept.
+	Ce type de situation sera résumé par le tableau suivant que nous nommerons tableau de Vogler en référence à la discussion où l'auteur a vu ce concept.
 
 	\begin{center}
 		\begin{tblr}{
@@ -179,7 +144,7 @@ Passons aux diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod =
 
 
 \begin{proof}
-	C'est immédiat via le fait \ref{facto-square}.
+	Immédiat via le fait \ref{facto-square}, car nous avons soit $n + k \in \NNssquare$\,, soit $n \in \NNssquare$\,.
 \end{proof}
 
 
@@ -187,8 +152,9 @@ Passons aux diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod =
 
 
 \begin{fact} \label{illegal-vogler}
-	Soit $(n, d, i, a) \in \big( \NNs \big)^4$.
-	Les tableaux de Vogler ci-après sont impossibles. 
+	Soit $(n, d, a) \in ( \NNs )^3$ et $i \in \NN$\,.
+	Les tableaux de Vogler ci-après sont impossibles
+	(les puces $\bullet$ indiquent des valeurs quelconques). 
 
 
 %	\begin{enumerate}
@@ -216,7 +182,7 @@ Passons aux diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod =
 
 
 	\begin{enumerate}
-		\item Pas de facteurs carrés trop près (les puces $\bullet$ indiquent des valeurs inconnues).
+		\item Pas de facteurs carrés trop près.
 	\end{enumerate}
 		
     \begin{center}

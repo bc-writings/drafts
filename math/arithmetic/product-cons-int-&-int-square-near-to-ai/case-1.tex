@@ -89,10 +89,6 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 	\begin{enumerate}
 		\item $N^2 - M^2 \geq 2M + 1$\,.
 		
-		\item $N^2 - M^2 < 3$ est impossible.
-		
-		\item $N^2 - M^2 = 3$ uniquement si $(N, M) = (2, 1)$\,.
-		
 		\item Notons $nb_{sol}$ le nombre de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
 		Pour $\delta \in \ZintervalC{1}{20}$, nous avons :
 		\begin{enumerate}
@@ -112,25 +108,14 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 	\vspace{-1ex}
 	\begin{enumerate}
 		\item $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1) \geq 2(M + 1) - 1 = 2M + 1$
-		
-		\smallskip
-		\noindent
-		On peut aussi juste procéder comme suit. 
-		
-		\smallskip
-		\noindent
-		$N^2 - M^2 = (N - M)(N + M) \geq 1 \cdot (M + 1 + M) = 2M + 1$
+		\footnote{
+			On peut aussi noter que 
+			$N^2 - M^2 = (N - M)(N + M) \geq 1 \cdot (M + 1 + M) = 2M + 1$\,.
+		}
 
 
-		\item Immédiat puisque $2M + 1 \geq 3$\,.
-
-
-		\item Notant $\delta = N^2 - M^2$ \,, nous avons $2 N - 1 \leq \dsum_{k=M+1}^{N} (2 k - 1) = \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
-		Ceci permet de limiter notre zone de recherche à $N \in \ZintervalC{1}{2}$\,, ce qui permet de conclure.
-		
-
-		\newpage
-		\item Il suffit de s'appuyer sur le programme \verb#Python# donné ci-dessous.
+		\item Notant $\delta = N^2 - M^2$ \,, nous avons $2 N - 1 \leq \dsum_{k=M+1}^{N} (2 k - 1) = \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,. 
+		Ceci permet de comprendre le programme \verb#Python# donné ci-dessous qui nous donne les nombres de solutions.
 		%
 		\qedhere
 	\end{enumerate}
@@ -162,4 +147,3 @@ def sol(diff):
     return solfound
 \end{Python}
 \egroup
-

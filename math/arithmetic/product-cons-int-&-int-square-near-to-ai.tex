@@ -1,8 +1,8 @@
 \documentclass[12pt]{amsart}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
 
-\usepackage[top=1.8cm, bottom=1.8cm, left=2.35cm, right=2.35cm]{geometry}
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
 
 \usepackage{hyperref}
 \usepackage{enumitem}
@@ -19,6 +19,28 @@
 \usepackage[french]{babel}
 \frenchsetup{StandardItemLabels=true}
 \usepackage{csquotes}
+\usepackage{piton}
+
+\NewPitonEnvironment{Python}{}
+  {\begin{tcolorbox}}
+  {\end{tcolorbox}}
+  
+\SetPitonStyle{
+ 	Number = ,
+    String = \itshape ,
+    String.Doc = \color{gray} \slshape ,
+    Operator = ,
+    Operator.Word = \bfseries ,
+    Name.Builtin = ,
+    Name.Function = ,
+    Comment = \color{gray} ,
+    Comment.LaTeX = \normalfont \color{gray},
+    Keyword = \bfseries ,
+    Name.Namespace = ,
+    Name.Class = ,
+    Name.Type = ,
+    InitialValues = \color{gray}
+}
 
 \usepackage[
     type={CC},
@@ -29,7 +51,7 @@
 \newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
 
 \usepackage{tnsmath}
-
+  
 
 \newtheorem{fact}{Fait}[section]
 \newtheorem{defi}{Définition}[section]
@@ -59,13 +81,14 @@
 	 
 \newcommand\contentdir{\jobname}
 
-\newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
-\newcommand\NNssquare{\seqsuprageo{\NN}{}{*}{}{2}}
-
 \newcommand\NNsf{\NN_{\kern-1pt s\kern-1pt f}}
 
-\NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
+\newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
+\newcommand\NNssquare{\seqsuprageo{\NN}{*}{}{}{2}}
 
+\NewDocumentCommand\GCD{ m  m }{#1 \wedge #2}
+
+\NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
 \NewDocumentCommand\consprod{ O{n} D<>{k} }{\pi_{#1}^{#2}}
 
 \NewDocumentCommand\alt{ m }{\textbf{[A\kern1pt#1]}}
@@ -79,7 +102,7 @@
 
 \title{Parler de tab réduit ou non càd sans factauer carré, du coup multuiplication mécanique et on réduit BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Une méthode efficace}
 \author{Christophe BAL}
-\date{25 Jan. 2024 -- 31 Jan. 2024}
+\date{25 Jan. 2024 -- 6 Fév. 2024}
 
 \maketitle
 
@@ -116,17 +139,26 @@
 
 
 \newpage
-\section{Ce qui nous intéresse}
+%\section{Ce qui nous intéresse}
+%
+%\input{\contentdir/what}
+%
+%
+%% ------------------ %
+%
+%
+%\section{Notations utilisées}
+%
+%\input{\contentdir/notations}
+%
+%
+%% ------------------ %
+%
+%
+%\section{Les carrés parfaits}
+%
+%\input{\contentdir/case-1}
 
-\input{\contentdir/what}
-
-
-% ------------------ %
-
-
-\section{Notations utilisées}
-
-\input{\contentdir/notations}
 
 
 % ------------------ %
@@ -137,21 +169,18 @@
 \input{\contentdir/table-trick}
 
 
-\foreach \k in {2,...,5} {
-%\foreach \k in {5} {
-	\section{Application au cas de \k\ facteurs} \label{apply-\k}
-
-	\input{\contentdir/case-\k}
-}
-
-
-\section{Et après ?}
-
-\input{\contentdir/case-after}
-
 
 % ------------------ %
 
+
+
+
+
+
+
+
+% ------------------ %
+		
 
 \section{Sources utilisées} \label{sources}
 
@@ -171,5 +200,24 @@
 \bigskip
 
 \hrule
+
+\end{document}
+
+
+
+% ------------------ %
+
+
+\foreach \k in {2,...,5} {
+%\foreach \k in {5} {
+	\section{Application au cas de \k\ facteurs} \label{apply-\k}
+
+	\input{\contentdir/case-\k}
+}
+
+
+\section{Et après ?}
+
+\input{\contentdir/case-after}
 
 \end{document}
