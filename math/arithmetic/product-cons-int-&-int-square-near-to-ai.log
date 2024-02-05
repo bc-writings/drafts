@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.23)  4 FEB 2024 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.23)  5 FEB 2024 08:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1689,54 +1689,54 @@ Package: ccicons 2017/10/30 v1.6 LaTeX support for Creative Commons icons
 (./product-cons-int-&-int-square-near-to-ai.aux)
 \openout1 = `product-cons-int-&-int-square-near-to-ai.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 78.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 78.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+esvect on input line 
-73.
+78.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/esvect/uesvect.fd
 File: uesvect.fd 
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 73
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 78
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 7
-3.
+8.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 
-73.
+78.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 File: OMXyhex.fd 
@@ -1776,7 +1776,7 @@ File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 73.
+Package hyperref Info: Link coloring OFF on input line 78.
 (./product-cons-int-&-int-square-near-to-ai.out)
 (./product-cons-int-&-int-square-near-to-ai.out)
 \@outlinefile=\write6
@@ -1808,14 +1808,14 @@ e
 (/usr/local/texlive/2023/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
 )
-LaTeX Info: Redefining \degres on input line 73.
+LaTeX Info: Redefining \degres on input line 78.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 73.
+(french.ldf)             reported on input line 78.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 73.
-LaTeX Info: Redefining \up on input line 73.
+(french.ldf)             reported on input line 78.
+LaTeX Info: Redefining \up on input line 78.
 \c__nicematrix_shift_Ldots_last_row_dim=\dimen446
 \c__nicematrix_shift_exterior_Vdots_dim=\dimen447
 \c__nicematrix_innersep_middle_dim=\dimen448
@@ -1828,7 +1828,7 @@ LaTeX Info: Redefining \up on input line 73.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
 your preamble.
- on input line 73.
+ on input line 78.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/translations/translations-basic-d
@@ -1837,26 +1837,26 @@ File: translations-basic-dictionary-french.trsl (french translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `french'. on input line 73.
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
-5.
+or `french'. on input line 78.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 9
+0.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 
 LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <15.85869> not available
-(Font)              size <17.28> substituted on input line 95.
+(Font)              size <17.28> substituted on input line 100.
 
 
 LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <15.85869> not available
-(Font)              size <17.28> substituted on input line 96.
+(Font)              size <17.28> substituted on input line 101.
 
-<doclicense-CC-by-nc-sa-eu-88x31.pdf, id=50, 90.3375pt x 31.61812pt>
+<doclicense-CC-by-nc-sa-eu-88x31.pdf, id=10, 90.3375pt x 31.61812pt>
 File: doclicense-CC-by-nc-sa-eu-88x31.pdf Graphic file (type pdf)
 <use doclicense-CC-by-nc-sa-eu-88x31.pdf>
 Package pdftex.def Info: doclicense-CC-by-nc-sa-eu-88x31.pdf  used on input lin
-e 101.
+e 106.
 (pdftex.def)             Requested size: 108.87878pt x 38.10797pt.
 (./product-cons-int-&-int-square-near-to-ai.toc)
 \tf@toc=\write7
@@ -1872,34 +1872,12 @@ LaTeX Font Info:    Trying to load font information for U+dsrom on input line 5
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-))
-(./product-cons-int-&-int-square-near-to-ai/notations.tex)
-(./product-cons-int-&-int-square-near-to-ai/table-trick.tex
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
- [2]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
+)
+
+LaTeX Warning: Reference `sources' on page 2 undefined on input line 13.
+
+) (./product-cons-int-&-int-square-near-to-ai/notations.tex)
+(./product-cons-int-&-int-square-near-to-ai/table-trick.tex [2]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1932,6 +1910,29 @@ File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
+
+
+LaTeX Warning: Reference `facto-square' on page 3 undefined on input line 182.
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+LaTeX Warning: Reference `dist-square' on page 3 undefined on input line 280.
+
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1972,100 +1973,23 @@ NTIERS CONSÉCUTIFS -- UNE MÉTHODE EFFICACE []
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 ) (./product-cons-int-&-int-square-near-to-ai/case-2.tex
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-)
-(./product-cons-int-&-int-square-near-to-ai/case-3.tex
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
- [4]
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-)
-(./product-cons-int-&-int-square-near-to-ai/case-4.tex
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
+
+LaTeX Warning: Reference `vogler-multiple' on page 4 undefined on input line 1.
+
+
+
+LaTeX Warning: Reference `vogler-parity-square' on page 4 undefined on input li
+ne 1.
+
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2075,17 +1999,103 @@ NTIERS CONSÉCUTIFS -- UNE MÉTHODE EFFICACE []
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
 
-Overfull \vbox (11.0113pt too high) has occurred while \output is active []
+LaTeX Warning: Reference `illegal-vogler' on page 4 undefined on input line 22.
 
 
-Overfull \vbox (11.0113pt too high) has occurred while \output is active []
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+[4]) (./product-cons-int-&-int-square-near-to-ai/case-3.tex
+
+LaTeX Warning: Reference `vogler-multiple' on page 5 undefined on input line 1.
 
 
-Overfull \vbox (11.0113pt too high) has occurred while \output is active []
+
+LaTeX Warning: Reference `vogler-parity-square' on page 5 undefined on input li
+ne 1.
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+LaTeX Warning: Reference `vogler-multiple' on page 5 undefined on input line 23
+.
 
 
-Overfull \vbox (11.0113pt too high) has occurred while \output is active []
+LaTeX Warning: Reference `vogler-parity-square' on page 5 undefined on input li
+ne 23.
 
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+LaTeX Warning: Reference `illegal-vogler' on page 5 undefined on input line 49.
+
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+) (./product-cons-int-&-int-square-near-to-ai/case-4.tex
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
 
 Overfull \hbox (607.29141pt too wide) has occurred while \output is active
  \T1/cmr/m/n/9 PARLER DE TAB RÉDUIT OU NON CÀD SANS FACTAUER CARRÉ, DU COUP MUL
@@ -2094,6 +2104,10 @@ NTIERS CONSÉCUTIFS -- UNE MÉTHODE EFFICACE []
  []
 
 [5]
+
+LaTeX Warning: Reference `illegal-vogler' on page 6 undefined on input line 157
+.
+
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2102,31 +2116,26 @@ NTIERS CONSÉCUTIFS -- UNE MÉTHODE EFFICACE []
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+LaTeX Warning: Reference `dist-square' on page 6 undefined on input line 273.
+
 ) (./product-cons-int-&-int-square-near-to-ai/case-5.tex
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
-> Step: init table outer spec.
-> Step: parse table options.
-> Step: split table.
-> Step: init table inner spec.
-> Step: parse table inner spec.
-> Step: execute table commands.
-> Step: calculate cell and line sizes.
-> Step: build the whole table.
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2160,8 +2169,6 @@ NTIERS CONSÉCUTIFS -- UNE MÉTHODE EFFICACE []
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-)
-(./product-cons-int-&-int-square-near-to-ai/case-after.tex
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2170,15 +2177,65 @@ NTIERS CONSÉCUTIFS -- UNE MÉTHODE EFFICACE []
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-)
-(./product-cons-int-&-int-square-near-to-ai/sources.tex
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+
+LaTeX Warning: Reference `vogler-sub-square' on page 7 undefined on input line 
+269.
+
+
+LaTeX Warning: Reference `illegal-vogler' on page 7 undefined on input line 269
+.
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+LaTeX Warning: Reference `apply-4' on page 7 undefined on input line 330.
+
+) (./product-cons-int-&-int-square-near-to-ai/case-after.tex
+
+LaTeX Warning: Reference `apply-4' on page 7 undefined on input line 1.
+
+
+LaTeX Warning: Reference `vogler-sub-square' on page 7 undefined on input line 
+19.
+
+
+LaTeX Warning: Reference `illegal-vogler' on page 7 undefined on input line 21.
+
+
+
+LaTeX Warning: Reference `apply-4' on page 7 undefined on input line 24.
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
 Overfull \hbox (607.29141pt too wide) has occurred while \output is active
  \T1/cmr/m/n/9 PARLER DE TAB RÉDUIT OU NON CÀD SANS FACTAUER CARRÉ, DU COUP MUL
 TUIPLICATION MÉCANIQUE ET ON RÉDUIT BROUILLON - CARRÉS PARFAITS ET PRODUITS D'E
 NTIERS CONSÉCUTIFS -- UNE MÉTHODE EFFICACE []
  []
 
-[7]
+[7]) (./product-cons-int-&-int-square-near-to-ai/sources.tex
 Overfull \hbox (1.80852pt too wide) in paragraph at lines 6--8
 []$\T1/cmtt/m/n/12 https : / / web . archive . org / web / 20171110144534 / htt
 p : / / mathforum . org / library /
@@ -2191,12 +2248,12 @@ TUIPLICATION MÉCANIQUE ET ON RÉDUIT BROUILLON - CARRÉS PARFAITS ET PRODUITS D'E
 NTIERS CONSÉCUTIFS -- UNE MÉTHODE EFFICACE []
  []
 
-(/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+[9] (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [9]
+) [10]
 (./product-cons-int-&-int-square-near-to-ai.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -2207,18 +2264,34 @@ L3 programming layer <2024-01-22>
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.42131pt have occurred.
 
-Package rerunfilecheck Info: File `product-cons-int-&-int-square-near-to-ai.out
-' has not changed.
-(rerunfilecheck)             Checksum: D0229AF9D540B237BB2121B63C6B140B;1875.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+LaTeX Warning: Temporary extra page added at the end. Rerun to get it removed.
+
+
+Package rerunfilecheck Warning: File `product-cons-int-&-int-square-near-to-ai.
+out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `product-cons-int-&-int-square-near-
+to-ai.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  D0229AF9D540B237BB2121B63C6B140B;1875.
  ) 
 Here is how much of TeX's memory you used:
- 63241 strings out of 474228
- 1569813 string characters out of 5746458
- 2215668 words of memory out of 5000000
- 84357 multiletter control sequences out of 15000+600000
- 625812 words of font info for 225 fonts, out of 8000000 for 9000
+ 63234 strings out of 474228
+ 1569737 string characters out of 5746458
+ 2190212 words of memory out of 5000000
+ 84348 multiletter control sequences out of 15000+600000
+ 626588 words of font info for 226 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 101i,9n,107p,1641b,1247s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,9n,107p,1641b,1191s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -2234,28 +2307,30 @@ e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 023/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/
 2023/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/local/texlive
 /2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/tex
-live/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texli
-ve/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive
-/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2
-023/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/local/texlive/202
-3/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2023/
-texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/te
-xmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2023/texm
-f-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-
-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-di
-st/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist
-/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2023/texmf-dist/f
-onts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf-dist/fon
-ts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2023/texmf-dist/fonts
-/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/cm-super/sfti1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/typ
-e1/public/cm-super/sftt1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1
-/public/stmaryrd/stmary10.pfb>
-Output written on product-cons-int-&-int-square-near-to-ai.pdf (9 pages, 479996
- bytes).
+live/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local
+/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/t
+exlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/tex
+live/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive
+/2023/texmf-dist/fonts/type1/public/cm-super/sfit1200.pfb></usr/local/texlive/2
+023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2023/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texm
+f-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-di
+st/fonts/type1/public/cm-super/sfrm2488.pfb></usr/local/texlive/2023/texmf-dist
+/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf-dist/f
+onts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2023/texmf-dist/fon
+ts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2023/texmf-dist/fonts
+/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
+ype1/public/cm-super/sftt1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/typ
+e1/public/stmaryrd/stmary10.pfb>
+Output written on product-cons-int-&-int-square-near-to-ai.pdf (10 pages, 49873
+5 bytes).
 PDF statistics:
- 342 PDF objects out of 1000 (max. 8388607)
- 262 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 296 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 22 words of extra memory for PDF output out of 10000 (max. 10000000)
 
