@@ -1,0 +1,4 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\tocsection {}{1}{Et après ?}}{2}{section.1}%
+\contentsline {section}{\tocsection {}{2}{Sources utilisées}}{2}{section.2}%
+\contentsline {section}{\tocsection {}{3}{AFFAIRE À SUIVRE...}}{3}{section.3}%

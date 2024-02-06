@@ -11,10 +11,7 @@ ILLEGAL_SUB_VOGLER = [
 from sympy import primerange
 
 
-def build_p_vogler(n, p):
-    p_vogler = [
-        [1 for p in range(n)]
-    ]
+# Vogler table.
 
 # n = 6
 #
@@ -39,24 +36,17 @@ def build_p_vogler(n, p):
 # [5, 1, 1, 1, 1, 5, 1, 1, 1, 1, 5]    --> occu max = 3
 # [7, 1, 1, 1, 1, 1, 1, 7, 1, 1, 1]    --> occu max = 2
 
-    nb_even_occu = n // p
 
-    if n % p != 0:
-        nb_even_occu += 1
-
-    nb_even_occu -= nb_even_occu % 2
-
-    for nbof_p in range(2, nb_even_occu + 1, 2):
-        build_p_vogler_recu(n, p, nbof_p)
-
-    # for v in p_vogler:
-    #     print(v)
+def build_p_vogler(n, p):
+    p_vogler = [
+        [1 for p in range(n)]
+    ]
 
     exit()
 
 
 def build_p_vogler_recu(n, p, nbof_p, cursor = 0):
-    print(f"{n=} , {p=} , {nbof_p=}")
+    ...
 
 
 
