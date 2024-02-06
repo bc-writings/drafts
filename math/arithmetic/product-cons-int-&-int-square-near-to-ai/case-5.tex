@@ -1,4 +1,4 @@
-Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,. Nous avons alors les $p$-tableaux de Vogler suivants pour $p \in \PP_{>4}$ divisant $\consprod<4>$\,.
+Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,. Nous avons alors les tableaux de Vogler partiels suivants pour $p \in \PP_{>4}$ divisant $\consprod<4>$\,.
 
 \begin{center}
 	\begin{tblr}{
@@ -24,8 +24,7 @@ Supposons que $\consprod<4> = n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$\,. Nous avon
 \end{center}
 
 
-%\newpage
-Pour $p = 2$\,, nous avons les $2$-tableaux de Vogler suivants.
+Pour $p = 2$\,, nous avons les tableaux de Vogler partiels relatifs à $2$ donnés ci-après.
 
 \begin{center}
 	\begin{tblr}{
@@ -77,7 +76,7 @@ Pour $p = 2$\,, nous avons les $2$-tableaux de Vogler suivants.
 
 %\newpage
 
-Pour $p = 3$\,, nous obtenons les $3$-tableaux de Vogler suivants.
+Pour $p = 3$\,, nous obtenons les tableaux de Vogler partiels relatifs à $3$ donnés ci-après.
 
 \begin{center}
 	\begin{tblr}{
@@ -116,7 +115,7 @@ Pour $p = 3$\,, nous obtenons les $3$-tableaux de Vogler suivants.
 
 
 %\newpage
-La multiplication de tous les $d$-tableaux de Vogler précédents donne les $15$ cas suivants.
+La multiplication de tous les tableaux de Vogler partiels précédents donne les $15$ cas suivants.
 
 \vspace{-1.75ex}
 \begin{multicols}{3}
@@ -266,7 +265,12 @@ La multiplication de tous les $d$-tableaux de Vogler précédents donne les $15$
 
 
 \vspace{-1.5ex}
-Comme $\consprod<3> = n(n+1)(n+2)(n+3) \notin \NNssquare$ et $\consprod[n+1]<3> = (n+1)(n+2)(n+3)(n+4) \notin \NNssquare$\,, nous pouvons ignorer tous les tableaux commençant, ou finissant, par une valeur $1$ d'après le fait \ref{vogler-sub-square}. Cela laisse les tableaux de Vogler ci-après, mais ces derniers sont rejetés par le fait \ref{illegal-vogler}.
+Comme 
+$\consprod<3> = n(n+1)(n+2)(n+3) \notin \NNssquare$ 
+et
+$\consprod[n+1]<3> = (n+1)(n+2)(n+3)(n+4) \notin \NNssquare$
+d'après la section \ref{apply-4},
+nous pouvons ignorer tous les tableaux commençant, ou finissant, par une valeur $1$ d'après le fait \ref{vogler-sub-square}. Cela laisse les tableaux de Vogler ci-après, mais ces derniers sont rejetés par le fait \ref{vogler-illegal}.
 
 \begin{center}
 	\begin{tblr}{
@@ -326,10 +330,10 @@ Comme $\consprod<3> = n(n+1)(n+2)(n+3) \notin \NNssquare$ et $\consprod[n+1]<3> 
 	$6 \cdot 1 \cdot 1 \cdot 3 \cdot 2$\,,
 	c'est-à-dire
 	$n = 6 A^2$\,, $n + 1 = B^2$\,, $n + 2 = C^2$\,, $n + 3 = 3 D^2$ et $n + 4 = 2 E^2$ 
-	où $(A, B, C, D, E) \in \big( \NNs \big)^4$
+	où $(A, B, C, D, E) \in ( \NNs )^4$
 	peut se traiter de façon analogue à ce qui a été fait dans la section \ref{apply-4} via
 	$x - 2 = 6 A^2$\,, $x - 1 = B^2$\,, $x = C^2$\,, $x + 1 = 3 D^2$ et $x + 2 = 2 E^2$
 	qui donnent
 	$x^2 - 4 = 3 F^2$ et $x^2 - 1 = 3 G^2$
-	où $(F, G) \in \big( \NNs \big)^4$\,.
+	où $(F, G) \in ( \NNs )^4$\,.
 \end{remark}

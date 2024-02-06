@@ -163,35 +163,10 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 % ------------------ %
 
 
-\begin{fact} \label{illegal-vogler}
+\begin{fact} \label{vogler-illegal}
 	Soit $(n, d, a) \in ( \NNs )^3$ et $i \in \NN$\,.
 	Les tableaux de Vogler ci-après sont impossibles
 	(les puces $\bullet$ indiquent des valeurs quelconques). 
-
-
-%	\begin{enumerate}
-%		\item Pas de facteurs carrés consécutifs.
-%	\end{enumerate}
-%		
-%    \begin{center}
-%    	\begin{tblr}{
-%    		colspec     = {Q[r,$]*{2}{Q[c,$]}},
-%    		vline{2}    = {.95pt},
-%    		vline{3}    = {dashed},
-%   			hline{2}    = {.95pt},
-%			column{2-Z} = {2em},
-%			% Rejected
-%			cell{2}{2,3} = {red!15},
-%    	}
-%    		n + \bullet
-%   				&  i 
-%    			&  i + 1
-%    	\\
-%    			&  a
-%				&  a
-%    	\end{tblr}
-%    \end{center}
-
 
 	\begin{enumerate}
 		\item Pas de facteurs carrés trop près.
@@ -258,9 +233,6 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 	Tout est contenu dans le fait \ref{diff-square-ko}.
 	
 	\begin{enumerate}
-%		\item \label{vogler-no-witness}
-%		Ici, $n + i = a A^2$ et $n + i + 1 = a B^2$ donnent $a (B^2 - A^2) = 1$\,, d'où $B^2 - A^2 = 1$ qui ne se peut pas car nous sommes dans $\NNs$, d'où $A^2 > B^2 \geq 1$\,.
-
 		\item $n + i = ad A^2$ et $n + i + d = ad B^2$ donnent $ad (B^2 - A^2) = d$\,, puis $a (B^2 - A^2) = 1$, d'où $B^2 - A^2 = 1$ qui ne se peut pas car $B^2 > A^2 \geq 1$\,.
 
 		\item $n + i = ad A^2$ et $n + i + 2 d = ad B^2$ donnent $ad (B^2 - A^2) = 2d$\,, \emph{i.e.} $a (B^2 - A^2) = 2$\,, d'où $B^2 - A^2 \in \setgene{1, 2}$ qui est impossible.
@@ -276,20 +248,33 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 \leavevmode
 
 \smallskip
-Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\underline{d}$-tableaux de Vogler qui sont définis comme suit.
+Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tableaux de Vogler partiels.
 	
 
 \begin{defi}
-	Soient $(n, k, d) \in \NNs \times \NN \times \NN_{\geq 2}$\,,
-	$( \epsilon_i )_{0 \leq i \leq k} \subseteq \setgene{0, 1}$
+	Soient $(n, k, r) \in \NNs \times \NN \times \NNs$\,,
+	$( p_j )_{1 \leq j \leq r} \subseteq \PPseq$\,,
+	$( \epsilon_{i,j} )_{0 \leq i \leq k, 1 \leq j \leq r} \subseteq \setgene{0, 1}$
 	et
 	$( f_i )_{0 \leq i \leq k} \subseteq \NNs$
-	tels que 
-	$\forall i \in \ZintervalC{0}{k}$\,, $n + i = d^{\,\padicval[d]{n+i}} f_i$ avec $\padicval[d]{n+i} \equiv \epsilon_i$ modulo $2$\,.
+	vérifiant les conditions suivantes.
 	%
-	Cette situation est résumée par le tableau suivant que nous nommerons $d$-tableau de Vogler
+	\begin{itemize}
+		\item $\forall i \in \ZintervalC{0}{k}$\,, 
+		$n + i = f_i \cdot \dprod_{j = 1}^{r} p_j^{\,\padicval[p_j]{n+i}}$\,.
+		Noter que 
+		$\forall i \in \ZintervalC{0}{k}$\,, 
+		$\forall j \in \ZintervalC{1}{r}$\,, 
+		$\GCD{f_i}{p_j} = 1$\,. 
+
+		\item $\forall i \in \ZintervalC{0}{k}$\,, 
+		$\forall j \in \ZintervalC{1}{r}$\,,
+		$\padicval[p_j]{n+i} \equiv \epsilon_{i,j}$ modulo $2$\,.
+	\end{itemize}
+	
+	Cette situation est résumée par le tableau suivant qui sera nommé tableau de Vogler partiel
 	\footnote{
-		Noter que $\forall i \in \ZintervalC{0}{k}$\,, $d^{\,\epsilon_i} \in \setgene{1, d}$\,.
+		Noter que $\forall i \in \ZintervalC{0}{k}$\,, $\forall j \in \ZintervalC{1}{r}$\,, $p_j^{\,\epsilon_{i,j}} \in \setgene{1, p_j}$\,.
 	}.
 
 	\begin{center}
@@ -297,7 +282,8 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 			colspec    = {Q[r,$]*{5}{Q[c,$]}},
 			vline{2}   = {.95pt},
 			vline{3-6} = {dashed},
-			hline{2}   = {.95pt}
+			hline{2}   = {.95pt},
+			column{2-Z} = {2.75em},
 		}
 			n + \bullet
 				&  0  
@@ -306,12 +292,12 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 				&  \dots
 				&  k
 		\\
-			d
-				&  d^{\,\epsilon_0}
-				&  d^{\,\epsilon_1}
-				&  d^{\,\epsilon_2}
+			( p_j )_{1 \leq j \leq r}
+				&  \dprod_{j = 1}^{r} p_j^{\,\epsilon_{0,j}}
+				&  \dprod_{j = 1}^{r} p_j^{\,\epsilon_{1,j}}
+				&  \dprod_{j = 1}^{r} p_j^{\,\epsilon_{2,j}}
 				&  \dots  
-				&  d^{\,\epsilon_k}
+				&  \dprod_{j = 1}^{r} p_j^{\,\epsilon_{k,j}}
 		\end{tblr}
 	\end{center}
 \end{defi}
@@ -321,14 +307,15 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 
 
 \begin{example}
-	Supposons avoir le $5$-tableau de Vogler suivant où $n \in \NNs$.
+	Supposons avoir le tableau de Vogler partiel suivant où $n \in \NNs$.
 
 	\begin{center}
 		\begin{tblr}{
 			colspec    = {Q[r,$]*{4}{Q[c,$]}},
 			vline{2}   = {.95pt},
 			vline{3-5} = {dashed},
-			hline{2}   = {.95pt}
+			hline{2}   = {.95pt},
+%			column{2-Z} = {1.75em},
 		}
 			n + \bullet
 				&  0  
@@ -336,28 +323,36 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 				&  2  
 				&  3
 		\\
-			5
+			(2, 3)
+				&  2
+				&  6
 				&  1
-				&  5
-				&  1
-				&  5
+				&  3
 		\end{tblr}
 	\end{center}
 	
 	Ceci résume la situation suivante. 
 	%
 	\begin{itemize}
-		\item $\exists (a, A) \in \NN \times \NNs$
-		      tel que $A \wedge 5 = 1$ et $n     = 5^{\,2a}     A$\,.
+		\item $\exists (a, \alpha, A) \in \NN^3 \times \NNs$
+		      tel que $A \wedge 6 = 1$ 
+		      et
+		      $n     = 2^{2a+1} 3^{2\alpha} A$\,.
 		
-		\item $\exists (b, B) \in \NN \times \NNs$
-		      tel que $B \wedge 5 = 1$ et $n + 1 = 5^{\,2b + 1} B$\,.
+		\item $\exists (b, \beta, B) \in \NN^3 \times \NNs$
+		      tel que $B \wedge 6 = 1$
+		      et
+		      $n + 1 = 2^{2b+1} 3^{2\beta+1} B$\,.
 		
-		\item $\exists (c, C) \in \NN \times \NNs$
-		      tel que $C \wedge 5 = 1$ et $n + 2 = 5^{\,2c}     C$\,.
+		\item $\exists (c, \gamma, C) \in \NN^3 \times \NNs$
+		      tel que $C \wedge 6 = 1$
+		      et
+		      $n + 2 = 2^{2c} 3^{2\gamma} C$\,.
 		
-		\item $\exists (d, D) \in \NN \times \NNs$
-		      tel que $D \wedge 5 = 1$ et $n + 3 = 5^{\,2d + 1} D$\,.
+		\item $\exists (d, \delta, D) \in \NN^3 \times \NNs$
+		      tel que $D \wedge 6 = 1$
+		      et
+		      $n + 3 = 2^{2d} 3^{2\delta+1} D$\,.
 	\end{itemize}
 \end{example}
 
@@ -366,8 +361,12 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 
 
 \begin{example}
-	La multiplication de deux $d$-tableaux de Vogler est \enquote{naturelle} lorsqu'elle porte sur des nombres $d$ premiers entre eux.
-	Considérons le $2$-tableau de Vogler et le $3$-tableau de Vogler suivants.
+	La multiplication de deux tableaux de Vogler partiels est \enquote{naturelle} lorsqu'elle porte sur des suites 
+	$( p_j )_{1 \leq j \leq r} \subseteq \PPseq$ 
+	et
+	$( q_j )_{1 \leq j \leq r} \subseteq \PPseq$
+	d'intersection vide, c'est-à-dire sans nombre premier commun.
+	Considérons les deux tableaux de Vogler partiels suivants où l'on note $2$ et $3$ au lieu de $(2)$ et $(3)$\,.
 	
 	\vspace{-1.5ex}
 	\begin{multicols}{2}
@@ -416,7 +415,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 
 
 	\vspace{-1ex}
-	La multiplication de ces $d$-tableaux de Vogler est le $6$-tableau de Vogler suivant.
+	La multiplication de ces tableaux de Vogler partiels est le tableau de Vogler partiel suivant.
 
 	\begin{center}
 		\begin{tblr}{
@@ -431,7 +430,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 				&  2  
 				&  3
 		\\
-			6
+			(2, 3)
 				&  3
 				&  2
 				&  1
@@ -439,7 +438,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 		\end{tblr}
 	\end{center}
 	
-	Ceci résume la situation suivante avec des notations \enquote{évidentes}\,. 
+	Ceci résume la situation suivante, avec des notations \enquote{évidentes}\,, qui est équivalente à ce que donnent les deux premiers tableaux de Vogler partiels. 
 	
 	
 	\vspace{-1ex}
@@ -447,25 +446,21 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 	\begin{itemize}
 		\item $A \wedge 6 = 1$
 		      et
-		      $n     = 2^{\,2a}   3^{\,2\alpha+1} A$\,.
+		      $n     = 2^{2a}   3^{2\alpha+1} A$\,.
 
 		\item $B \wedge 6 = 1$
 		      et
-		      $n + 1 = 2^{\,2b+1} 3^{\,2\beta}    B$\,.
+		      $n + 1 = 2^{2b+1} 3^{2\beta}    B$\,.
 
 		\item $C \wedge 6 = 1$
 		      et
-		      $n + 2 = 2^{\,2c}   3^{\,2\gamma}   C$\,.
+		      $n + 2 = 2^{2c}   3^{2\gamma}   C$\,.
 
 		\item $D \wedge 6 = 1$
 		      et
-		      $n + 3 = 2^{\,2d+1} 3^{\,2\delta+1} D$\,.
+		      $n + 3 = 2^{2d+1} 3^{2\delta+1} D$\,.
 	\end{itemize}
 	\end{multicols}
-	
-	Cette situation correspond aussi au tableau de Vogler réduit suivant.
-
-	XXX
 \end{example}
 
 
@@ -473,12 +468,12 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 
 
 \begin{fact} \label{vogler-multiple}
-	Dans la deuxième ligne d'un $d$-tableau de Vogler, les valeurs $d$ sont séparées par exactement $(d-1)$ valeurs $1$\,.
+	Dans la deuxième ligne d'un tableau de Vogler partiel relatif à un unique nombre premier $p$\,, les valeurs $p$ sont séparées par exactement $(p-1)$ valeurs $1$\,.
 \end{fact}
 
 
 \begin{proof}
-	Penser aux multiples de $d$\,.
+	Penser aux multiples de $p$\,.
 \end{proof}
 
 
@@ -486,7 +481,9 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des $\un
 
 
 \begin{fact} \label{vogler-parity-square}
-	$\forall p \in \PP$\,, si $\consprod \in \NNsquare$\,, alors dans le $p$-tableau de Vogler associé à $\consprod$\,, le nombre de valeurs $p$ est forcément pair.
+	$\forall (n, k, p) \in \NNs \times \NN \times \PP$\,,
+	si $\consprod \in \NNsquare$\,, 
+	alors dans le tableau de Vogler partiel relatif uniquement au nombre premier $p$\,, et associé à $\consprod$\,, le nombre de valeurs $p$ est forcément pair.
 \end{fact}
 
 

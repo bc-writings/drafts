@@ -19,6 +19,7 @@
 \usepackage[french]{babel}
 \frenchsetup{StandardItemLabels=true}
 \usepackage{csquotes}
+\usepackage{scalerel}
 \usepackage{piton}
 
 \NewPitonEnvironment{Python}{}
@@ -86,6 +87,8 @@
 \newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
 \newcommand\NNssquare{\seqsuprageo{\NN}{*}{}{}{2}}
 
+\NewDocumentCommand\PPseq{ O{n} }{\seqsuprageo{\PP}{}{sc}{#1}{}}
+
 \NewDocumentCommand\GCD{ m  m }{#1 \wedge #2}
 
 \NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
@@ -100,7 +103,7 @@
 
 \begin{document}
 
-\title{Parler de tab réduit ou non càd sans factauer carré, du coup multuiplication mécanique et on réduit BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Une méthode efficace}
+\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Une méthode efficace}
 \author{Christophe BAL}
 \date{25 Jan. 2024 -- 6 Fév. 2024}
 
@@ -147,6 +150,7 @@
 % ------------------ %
 
 
+%\bigskip
 \section{Notations utilisées}
 
 \input{\contentdir/notations}
@@ -155,6 +159,7 @@
 % ------------------ %
 
 
+%\newpage
 \section{Les carrés parfaits}
 
 \input{\contentdir/case-1}
@@ -174,10 +179,23 @@
 % ------------------ %
 
 
+\foreach \k in {2,...,5} {
+%\foreach \k in {5} {
+%	\newpage
+	\section{Application au cas de \k\ facteurs} \label{apply-\k}
+
+	\input{\contentdir/case-\k}
+}
 
 
 
+% ------------------ %
 
+
+%\newpage
+%\section{Et après ?}
+%
+%\input{\contentdir/case-after}
 
 
 % ------------------ %
@@ -201,24 +219,5 @@
 \bigskip
 
 \hrule
-
-\end{document}
-
-
-
-% ------------------ %
-
-
-\foreach \k in {2,...,5} {
-%\foreach \k in {5} {
-	\section{Application au cas de \k\ facteurs} \label{apply-\k}
-
-	\input{\contentdir/case-\k}
-}
-
-
-\section{Et après ?}
-
-\input{\contentdir/case-after}
 
 \end{document}
