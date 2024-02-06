@@ -1,4 +1,4 @@
-La méthode présentée ci-dessus permet de faire appel à un programme pour n'avoir à traiter à la main, et à la sueur des neurones, que certains tableaux de Vogler problématiques comme nous avons dû le faire dans la section \ref{apply-4}.
+La méthode présentée ci-dessus permet de faire appel à un programme pour ne traiter à la main, et à la sueur des neurones, que certains tableaux de Vogler problématiques comme nous avons dû le faire dans la section \ref{apply-4}.
 Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 
 
@@ -10,15 +10,15 @@ Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 	Notons qu'avec $7$ facteurs, nous n'aurions pas garder $7$ car il est forcément de valuation paire dans chaque facteur $(n + i)$ de $\consprod<7>$ si $\consprod<7> \in \NNssquare$\,.
 	
  
-	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des $p$-tableaux de Vogler possibles relativement à $\consprod<6> \in \NNssquare$\,.
+	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des tableaux de Vogler partiels relatifs à $p$ et $\consprod<6> \in \NNssquare$\,.
 	
  
-	\item Via les listes $\setproba*{V}{p}$\,, on calcule toutes les multiplications de $p$-tableaux de Vogler, et pour chacune d'elles on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme.
+	\item Via les listes $\setproba*{V}{p}$\,, on calcule toutes les multiplications de tous les tableaux de Vogler partiels relatifs à tous les nombres $p$ différents, et pour chacune d'elles, on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme.
 	%
 	\begin{enumerate}
 		\item Le tableau \enquote{produit} commence, ou se termine, par la valeur $1$\,. Dans ce cas, on sait par récurrence que le tableau produit n'est pas possible (voir le fait \ref{vogler-sub-square}). 
 
-		\item L'une des interdictions du fait \ref{illegal-vogler} est validée par le tableau \enquote{produit}\,.
+		\item L'une des interdictions du fait \ref{vogler-illegal} est validée par le tableau \enquote{produit}\,.
 		
 		\item Le tableau \enquote{produit} contient un sous-tableau que nous savons impossible suite à un raisonnement humain fait \emph{localement}\,, c'est-à-dire que seul les facteurs indiqués dans le sous-tableau, et le sous-tableau lui-même sont utilisés pour raisonner.
 		Comme c'est ce qui a été fait en fin de section \ref{apply-4}, nous pouvons indiquer les deux sous-tableaux impossibles suivants.
