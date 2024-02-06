@@ -63,7 +63,7 @@ La très jolie démonstration suivante vient d'un échange sur \url{https://math
 			\item Modulo $8$\,, $u \equiv M^2 \equiv 1$ car $u \in 2 \NN + 1$\,,
 			donc $u + 3 \equiv 4$\,, d'où $a = 2$\,.
 
-			\item Dès lors, $u + 3 \in \NNsquare$\,, puis $(u + 3, u) = (4, 1)$ via le fait \ref{diff-square-ko}.
+			\item Dès lors, $u + 3 \in \NNsquare$\,, puis $(u, u + 3) = (1, 4)$ via le fait \ref{diff-square-ko}.
 
 			\item Forcément $n = u = 1$\,, mais $\padicval[7]{\consprod[1]<6>} = 1$ contredit $\consprod<6> \in \NNssquare$\,.
 		\end{enumerate}
@@ -73,20 +73,20 @@ La très jolie démonstration suivante vient d'un échange sur \url{https://math
 
 		\smallskip
 		\noindent
-		Comme $\setgene{u, u + 2} = \setgene{3P^2, 5Q^2}$\,, la preuve précédente s'adapte à $(u + 1, u + 4)$\,.
+		Comme $\setgene{u, u + 2} = \setgene{3P^2, 5Q^2}$\,, la preuve précédente s'adapte à $(u + 1, u + 4)$ pour obtenir la contradiction $n = 0$\,.
 
 
     	\item Supposons enfin que $u + 2 = M^2$.
 
 		\smallskip
 		\noindent
-		$\setgene{u, u + 4} = \setgene{3P^2, 5Q^2}$ est impossible d'après ce qui suit en travaillant modulo $4$\,.
+		Démontrons qu'en fait $\setgene{u, u + 4} = \setgene{3P^2, 5Q^2}$ est impossible en travaillant modulo $4$\,.
 		%
 		\begin{enumerate}
 			\item Si $(u, u + 4) = (3P^2, 5Q^2)$\,, alors 
-			$u \equiv \text{$0$ ou $3$}$\,, 
-			$u + 4 \equiv \text{$0$ ou $1$}$\,, et
-			$u \equiv \pm 1$
+			$u \equiv \text{$0$ ou $3$}$
+			et
+			$u + 2 \equiv 1$
 			se contredisent.
 
 			\item Si $(u, u + 4) = (5Q^2, 3P^2)$\,, on obtient une contradiction comme ci-dessus.

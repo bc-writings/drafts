@@ -63,38 +63,22 @@
 
 \subsection{Distance entre deux carrés parfaits}
 
-	
-\begin{fact} \label{dist-square}
-	$\forall (N, M) \in \NNs \times \NNs$, 
-	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
-\end{fact}
-
-
-\begin{proof}
-	$N^2 = \dsum_{k=1}^{N} (2 k - 1)$ donne l'identité indiquée
-	\footnote{
-		La formule utilisée est facile à démontrer algébriquement, et évidente à découvrir géométriquement.
-	}.
-\end{proof}
-
-
-% ------------------ %
-
-
-L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, si besoin, d'un petit programme informatique (voir un peu plus bas).
-
 \begin{fact} \label{diff-square-ko}
 	Soit $(N, M) \in \NNs \times \NNs$ tel que $N > M$\,.
 	%
 	\begin{enumerate}
-		\item $N^2 - M^2 \geq 2M + 1$\,.
-		
-		\item $N^2 - M^2 < 3$ est impossible.
+		\item $N^2 - M^2 \geq 2N - 1$\, , 
+		d'où l'impossibilité d'avoir
+		$N^2 - M^2 < 3$\,.
 		
 		\item $N^2 - M^2 = 3$ uniquement si $(N, M) = (2, 1)$\,.
 		
 		\item Notons $nb_{sol}$ le nombre de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
+				
+		\smallskip
+		\noindent
 		Pour $\delta \in \ZintervalC{1}{20}$, nous avons :
+		%
 		\begin{enumerate}
 			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
 
@@ -111,32 +95,48 @@ L'identité précédente permet d'éliminer beaucoup de situations en s'aidant, 
 	
 	\vspace{-1ex}
 	\begin{enumerate}
-		\item $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1) \geq 2(M + 1) - 1 = 2M + 1$
+		\item Comme $N - 1 \geq M$\,, nous obtenons :
+		$N^2 - M^2 \geq N^2 - (N - 1)^2 = 2N - 1$\,.
+
+		\item Le point précédent permet d'utiliser le programme \verb#Python# suivant afin d'obtenir les nombres de solutions indiqués.
 		
-		\smallskip
-		\noindent
-		On peut aussi juste procéder comme suit. 
-		
-		\smallskip
-		\noindent
-		$N^2 - M^2 = (N - M)(N + M) \geq 1 \cdot (M + 1 + M) = 2M + 1$
 
-
-		\item Immédiat puisque $2M + 1 \geq 3$\,.
-
-
-		\item Notant $\delta = N^2 - M^2$ \,, nous avons $2 N - 1 \leq \dsum_{k=M+1}^{N} (2 k - 1) = \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
+		\item Notant $\delta = N^2 - M^2$ \,, nous avons $2 N - 1 \leq \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
 		Ceci permet de limiter notre zone de recherche à $N \in \ZintervalC{1}{2}$\,, ce qui permet de conclure.
 		
 
-		\newpage
-		\item Il suffit de s'appuyer sur le programme \verb#Python# donné ci-dessous.
+		
+		\item Il suffit de s'appuyer sur le programme \verb#Python# donné dans la page suivante.
 		%
 		\qedhere
 	\end{enumerate}
 \end{proof}
 
+	
+% ------------------ %
 
+
+Finissons par une jolie formule même si elle ne nous sera pas d'une grande aide dans la suite.
+
+
+\begin{fact} \label{dist-square}
+	$\forall (N, M) \in \NNs \times \NNs$, 
+	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
+\end{fact}
+
+
+\begin{proof}
+	$N^2 = \dsum_{k=1}^{N} (2 k - 1)$ donne l'identité indiquée
+	\footnote{
+		La formule utilisée est facile à démontrer algébriquement, et évidente à découvrir géométriquement.
+	}.
+\end{proof}
+
+	
+% ------------------ %
+
+
+\newpage
 \bgroup
 \small
 \begin{Python}
@@ -162,4 +162,3 @@ def sol(diff):
     return solfound
 \end{Python}
 \egroup
-
