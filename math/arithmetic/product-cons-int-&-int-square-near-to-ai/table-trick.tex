@@ -3,7 +3,7 @@
 \leavevmode
 \smallskip
 
-L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble opportun de se concentrer sur les diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod = n (n + 1) \cdots (n + k)$\,. 
+L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble opportun de se concentrer sur les diviseurs sans facteur carré des facteurs $(n + i)$ de $\consprod = n (n + 1) \cdots (n + k)$\,.
 
 
 % ------------------ %
@@ -14,7 +14,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 	$( a_i )_{0 \leq i \leq k} \subset \NNsf$
 	et
 	$( s_i )_{0 \leq i \leq k} \subset \NNssquare$
-	tels que 
+	tels que
 	$\forall i \in \ZintervalC{0}{k}$\,, $n + i = a_i s_i$\,.
 	%
 	Cette situation est résumée par le tableau suivant que nous nommerons \enquote{\sftab}
@@ -30,16 +30,16 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 			hline{2}   = {.95pt}
 		}
 			n + \bullet
-				&  0  
-				&  1  
-				&  2  
+				&  0
+				&  1
+				&  2
 				&  \dots
 				&  k
 		\\
 				&  a_0
 				&  a_1
 				&  a_2
-				&  \dots  
+				&  \dots
 				&  a_k
 		\end{tblr}
 	\end{center}
@@ -62,9 +62,9 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 			hline{2}   = {.95pt}
 		}
 			n + \bullet
-				&  0  
-				&  1  
-				&  2  
+				&  0
+				&  1
+				&  2
 				&  3
 		\\
 				&  2
@@ -73,9 +73,9 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 				&  1
 		\end{tblr}
 	\end{center}
-	
-	Ceci résume la situation suivante. 
-	
+
+	Ceci résume la situation suivante.
+
 	\vspace{-1ex}
 	\begin{multicols}{2}
 	\begin{itemize}
@@ -94,9 +94,9 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 % ------------------ %
 
 
-\begin{fact} \label{vogler-sub-square}
+\begin{fact} \label{sftable-sub-square}
 	Dans les tableaux ci-dessous, les puces $\bullet$ indiquent des valeurs quelconques.
-	
+
 	\begin{enumerate}
 		\item Si nous avons un \sftab\ du type suivant, alors $\consprod<k-1> \in \NNssquare$\,.
 	\end{enumerate}
@@ -112,15 +112,15 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 			cell{2}{6} = {blue!15},
 		}
 			n + \bullet
-				&  0  
-				&  1  
+				&  0
+				&  1
 				&  \dots
 				&  k - 1
 				&  k
 		\\
 				&  \bullet
 				&  \bullet
-				&  \dots  
+				&  \dots
 				&  \bullet
 				&  1
 		\end{tblr}
@@ -142,15 +142,15 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 			cell{2}{2} = {blue!15},
 		}
 			n + \bullet
-				&  0  
-				&  1  
+				&  0
+				&  1
 				&  \dots
 				&  k - 1
 				&  k
 		\\
 				&  1
 				&  \bullet
-				&  \dots  
+				&  \dots
 				&  \bullet
 				&  \bullet
 		\end{tblr}
@@ -166,15 +166,15 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 % ------------------ %
 
 
-\begin{fact} \label{vogler-illegal}
+\begin{fact} \label{sftable-illegal}
 	Soit $(n, d, a) \in ( \NNs )^3$ et $i \in \NN$\,.
 	Les \sftab[x] ci-après sont impossibles
-	(de nouveau, les puces $\bullet$ indiquent des valeurs quelconques). 
+	(de nouveau, les puces $\bullet$ indiquent des valeurs quelconques).
 
 	\begin{enumerate}
 		\item Pas de facteurs carrés trop près.
 	\end{enumerate}
-		
+
     \begin{center}
     	\begin{tblr}{
     		colspec     = {Q[r,$]*{5}{Q[c,$]}},
@@ -186,7 +186,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 			cell{2}{2,6} = {red!15},
     	}
     		n + \bullet
-   				&  i 
+   				&  i
     			&  i + 1
     			&  \dots
     			&  i + d - 1
@@ -204,7 +204,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 	\begin{enumerate}[start=2]
 		\item Pas de facteurs carrés pas trop loin.
 	\end{enumerate}
-		
+
     \begin{center}
     	\begin{tblr}{
     		colspec     = {Q[r,$]*{5}{Q[c,$]}},
@@ -216,7 +216,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 			cell{2}{2,6} = {red!15},
     	}
     		n + \bullet
-   				&  i 
+   				&  i
     			&  i + 1
     			&  \dots
     			&  i + 2d - 1
@@ -234,7 +234,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 
 \begin{proof}
 	Tout est contenu dans le fait \ref{diff-square-ko}.
-	
+
 	\begin{enumerate}
 		\item $n + i = ad A^2$ et $n + i + d = ad B^2$ donnent $ad (B^2 - A^2) = d$\,, puis $a (B^2 - A^2) = 1$, d'où $B^2 - A^2 = 1$ qui ne se peut pas car $B^2 > A^2 \geq 1$\,.
 
@@ -252,7 +252,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 
 \smallskip
 Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] partiels.
-	
+
 
 \begin{defi}
 	Soient $(n, k, r) \in \NNs \times \NN \times \NNs$\,,
@@ -263,20 +263,20 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 	vérifiant les conditions suivantes.
 	%
 	\begin{itemize}
-		\item $\forall i \in \ZintervalC{0}{k}$\,, 
+		\item $\forall i \in \ZintervalC{0}{k}$\,,
 		$n + i = f_i \cdot \dprod_{j = 1}^{r} p_j^{\,\padicval[p_j]{n+i}}$\,.
-		Noter que 
-		$\forall i \in \ZintervalC{0}{k}$\,, 
-		$\forall j \in \ZintervalC{1}{r}$\,, 
-		$\GCD{f_i}{p_j} = 1$\,. 
+		Noter que
+		$\forall i \in \ZintervalC{0}{k}$\,,
+		$\forall j \in \ZintervalC{1}{r}$\,,
+		$\GCD{f_i}{p_j} = 1$\,.
 
-		\item $\forall i \in \ZintervalC{0}{k}$\,, 
+		\item $\forall i \in \ZintervalC{0}{k}$\,,
 		$\forall j \in \ZintervalC{1}{r}$\,,
 		$\padicval[p_j]{n+i} \equiv \epsilon_{i,j}$ modulo $2$\,.
 	\end{itemize}
-	
+
 	\smallskip
-	
+
 	Cette situation est résumée par le tableau suivant qui sera nommé \enquote{\sftab\ partiel}\,
 	\footnote{
 		Noter que $\forall i \in \ZintervalC{0}{k}$\,, $\forall j \in \ZintervalC{1}{r}$\,, $p_j^{\,\epsilon_{i,j}} \in \setgene{1, p_j}$\,.
@@ -291,9 +291,9 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 			column{2-Z} = {2.75em},
 		}
 			n + \bullet
-				&  0  
-				&  1  
-				&  2  
+				&  0
+				&  1
+				&  2
 				&  \dots
 				&  k
 		\\
@@ -301,7 +301,7 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 				&  \dprod_{j = 1}^{r} p_j^{\,\epsilon_{0,j}}
 				&  \dprod_{j = 1}^{r} p_j^{\,\epsilon_{1,j}}
 				&  \dprod_{j = 1}^{r} p_j^{\,\epsilon_{2,j}}
-				&  \dots  
+				&  \dots
 				&  \dprod_{j = 1}^{r} p_j^{\,\epsilon_{k,j}}
 		\end{tblr}
 	\end{center}
@@ -323,9 +323,9 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 %			column{2-Z} = {1.75em},
 		}
 			n + \bullet
-				&  0  
-				&  1  
-				&  2  
+				&  0
+				&  1
+				&  2
 				&  3
 		\\
 			(2, 3)
@@ -335,25 +335,25 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 				&  3
 		\end{tblr}
 	\end{center}
-	
-	Ceci résume la situation suivante. 
+
+	Ceci résume la situation suivante.
 	%
 	\begin{itemize}
 		\item $\exists (a, \alpha, A) \in \NN^3 \times \NNs$
-		      tel que $A \wedge 6 = 1$ 
+		      tel que $A \wedge 6 = 1$
 		      et
 		      $n     = 2^{2a+1} 3^{2\alpha} A$\,.
-		
+
 		\item $\exists (b, \beta, B) \in \NN^3 \times \NNs$
 		      tel que $B \wedge 6 = 1$
 		      et
 		      $n + 1 = 2^{2b+1} 3^{2\beta+1} B$\,.
-		
+
 		\item $\exists (c, \gamma, C) \in \NN^3 \times \NNs$
 		      tel que $C \wedge 6 = 1$
 		      et
 		      $n + 2 = 2^{2c} 3^{2\gamma} C$\,.
-		
+
 		\item $\exists (d, \delta, D) \in \NN^3 \times \NNs$
 		      tel que $D \wedge 6 = 1$
 		      et
@@ -366,13 +366,13 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 
 
 \begin{example}
-	La multiplication de deux \sftab[x] partiels est \enquote{naturelle} lorsqu'elle porte sur des suites 
-	$( p_j )_{1 \leq j \leq r} \in \PPseq[r]$ 
+	La multiplication de deux \sftab[x] partiels est \enquote{naturelle} lorsqu'elle porte sur des suites
+	$( p_j )_{1 \leq j \leq r} \in \PPseq[r]$
 	et
 	$( q_j )_{1 \leq j \leq s} \in \PPseq[s]$
 	d'intersection vide, c'est-à-dire sans nombre premier commun.
 	Considérons les deux \sftab[x] partiels suivants où l'on note $2$ et $3$ au lieu de $(2)$ et $(3)$\,.
-	
+
 	\vspace{-1.5ex}
 	\begin{multicols}{2}
 	\begin{center}
@@ -383,9 +383,9 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 			hline{2}   = {.95pt}
 		}
 			n + \bullet
-				&  0  
-				&  1  
-				&  2  
+				&  0
+				&  1
+				&  2
 				&  3
 		\\
 			2
@@ -404,9 +404,9 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 			hline{2}   = {.95pt}
 		}
 			n + \bullet
-				&  0  
-				&  1  
-				&  2  
+				&  0
+				&  1
+				&  2
 				&  3
 		\\
 			3
@@ -420,7 +420,7 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 
 
 	\vspace{-1ex}
-	La multiplication de ces \sftab[x] partiels est le \sftab\  suivant, partiel a priori. 
+	La multiplication de ces \sftab[x] partiels est le \sftab\  suivant, partiel a priori.
 	Si de plus, $2$ et $3$ sont les seuls diviseurs premiers de $\consprod<3>$\,, alors on obtient un \sftab\ non partiel.
 
 	\begin{center}
@@ -431,9 +431,9 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 			hline{2}   = {.95pt}
 		}
 			n + \bullet
-				&  0  
-				&  1  
-				&  2  
+				&  0
+				&  1
+				&  2
 				&  3
 		\\
 			(2, 3)
@@ -443,10 +443,10 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 				&  6
 		\end{tblr}
 	\end{center}
-	
-	Ceci résume la situation suivante qui est équivalente à ce que donne la conjonction des deux premiers \sftab[x] partiels (les abus de notations sont évidents). 
-	
-	
+
+	Ceci résume la situation suivante qui est équivalente à ce que donne la conjonction des deux premiers \sftab[x] partiels (les abus de notations sont évidents).
+
+
 	\vspace{-1ex}
 	\begin{multicols}{2}
 	\begin{itemize}
@@ -473,8 +473,8 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 % ------------------ %
 
 
-\begin{fact} \label{vogler-multiple}
-	Dans la deuxième ligne d'un \sftab\ partiel relatif à un unique nombre premier $p$\,, les valeurs $p$ sont séparées par exactement $(p-1)$ valeurs $1$\,.
+\begin{fact} \label{sftable-multiple}
+	Dans la deuxième ligne d'un \sftab\ partiel relatif à un unique nombre premier $p$\,, les positions des valeurs $p$ sont congrus modulo $p$, et les autres valeurs ne sont que des $1$\,.
 \end{fact}
 
 
@@ -486,14 +486,13 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 % ------------------ %
 
 
-\begin{fact} \label{vogler-parity-square}
+\begin{fact} \label{sftable-parity-square}
 	$\forall (n, k, p) \in \NNs \times \NN \times \PP$\,,
-	si $\consprod \in \NNsquare$\,, 
-	alors dans le \sftab\ partiel relatif uniquement au nombre premier $p$\,, et associé à $\consprod$\,, le nombre de valeurs $p$ est forcément pair.
+	si $\consprod \in \NNsquare$\,,
+	alors dans le \sftab\ partiel relatif associé à $\consprod$\,, et uniquement au nombre premier $p$\,, le nombre de valeurs $p$ est forcément pair.
 \end{fact}
 
 
 \begin{proof}
 	Évident, mais très pratique, comme nous le verrons dans la suite.
 \end{proof}
-
