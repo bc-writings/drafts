@@ -23,12 +23,13 @@ La très jolie démonstration suivante vient d'un échange sur \url{https://math
     	$\padicval{n + i} \in 2 \NN$\,.
 	
 	
-		\item $\exists u \in \setgene{0, 1, 2}$ tel que $\setgene{u, u + 2, u + 4} \subset 2 \NN + 1$\,.
+		\item $\exists u \in \setgene{n, n+1, n+2}$ tel que $\setgene{u, u + 2, u + 4} \subset 2 \NN + 1$\,.
 		
 		\noindent
 		Nous avons alors
-		$\forall p \in \PP_{>5} - \setgene{2}$\,, 
+		$\forall p \in \PP - \setgene{3, 5}$\,, 
    		$(\padicval{u}, \padicval{u+2}, \padicval{u+4}) \in ( 2 \NN )^3$.
+		Cette astuce permet de passer de la gestion des trois nombres premiers $2$\,, $3$ et $5$ à celle de $3$ et $5$\,.
 		Donc, pour tout naturel $m \in \setgene{u, u + 2, u + 4}$\,, 
 		il existe $M \in \NNs$ tel que 
 		$m = M^2$, $m = 3 M^2$, $m = 5 M^2$ ou $m = 15 M^2$.

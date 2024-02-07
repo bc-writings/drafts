@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2024.1.23)  7 FEB 2024 00:35
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023)  (format=lualatex 2024.1.23)  7 FEB 2024 14:47
  restricted system commands enabled.
  file:line:error style messages enabled.
 **product-cons-int-&-int-square-near-to-ai.tex
@@ -2043,27 +2043,101 @@ e 132.
 
 \openout7 = product-cons-int-&-int-square-near-to-ai.toc
 
-[1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}</usr/lo
-cal/texlive/2023/texmf-dist/tex/latex/doclicense/images/doclicense-CC-by-nc-sa-e
-u-88x31.pdf>] (./product-cons-int-&-int-square-near-to-ai/case-after.tex
-
-LaTeX Warning: Reference `apply-4' on page 2 undefined on input line 1.
-
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 6
+(./product-cons-int-&-int-square-near-to-ai/case-5.tex
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 1
 .
+
 (/usr/local/texlive/2023/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+ [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}</usr/l
+ocal/texlive/2023/texmf-dist/tex/latex/doclicense/images/doclicense-CC-by-nc-sa-
+eu-88x31.pdf>]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+
+LaTeX Warning: Reference `apply-4' on page 2 undefined on input line 272.
+
 
 LaTeX Warning: Reference `vogler-sub-square' on page 2 undefined on input line 
+273.
+
+
+LaTeX Warning: Reference `vogler-illegal' on page 2 undefined on input line 273
+.
+
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+
+LaTeX Warning: Reference `apply-4' on page 2 undefined on input line 334.
+
+) [2] (./product-cons-int-&-int-square-near-to-ai/case-after.tex
+
+LaTeX Warning: Reference `apply-4' on page 3 undefined on input line 1.
+
+
+LaTeX Warning: Reference `vogler-sub-square' on page 3 undefined on input line 
 19.
 
 
-LaTeX Warning: Reference `vogler-illegal' on page 2 undefined on input line 21.
+LaTeX Warning: Reference `vogler-illegal' on page 3 undefined on input line 21.
 
 
 
-LaTeX Warning: Reference `apply-4' on page 2 undefined on input line 24.
+LaTeX Warning: Reference `apply-4' on page 3 undefined on input line 24.
 
 > Step: init table outer spec.
 > Step: parse table options.
@@ -2079,7 +2153,7 @@ Overfull \hbox (2.29677pt too wide) in paragraph at lines 6--8
 rg/library/
  []
 
-) [2]
+)
 Overfull \hbox (10.0224pt too wide) has occurred while \output is active
  \TU/lmr/m/n/9 BROUILLON - CAR-RÉS PAR-FAITS ET PRO-DUITS D’EN-TIERS CONSÉ-C
 U-TIFS -- UNE MÉ-THODE EF-FI-CACE []
@@ -2091,7 +2165,12 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 (/usr/local/texlive/2023/texmf-dist/tex/generic/stringenc/se-utf32be.def
 File: se-utf32be.def 2019/11/29 v1.12 stringenc: UTF-32BE
 )
-[3] (./product-cons-int-&-int-square-near-to-ai.aux)
+[3] [4]
+
+LaTeX Warning: Hook 'shipout/lastpage' executed on wrong page (3 not 4).
+               Rerun to correct this.
+
+(./product-cons-int-&-int-square-near-to-ai.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -2100,21 +2179,32 @@ L3 programming layer <2024-01-22>
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `product-cons-int-&-int-square-near-to-ai.out
-' has not changed.
-(rerunfilecheck)             Checksum: FE816317B838597AFE95E2C2F8036154;437.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `product-cons-int-&-int-square-near-to-ai.
+out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `product-cons-int-&-int-square-near-
+to-ai.out':
+(rerunfilecheck)             Before: FE816317B838597AFE95E2C2F8036154;437
+(rerunfilecheck)             After:  75D29364A2B8F6568B1D8FB6C30F40C6;673.
 )
 
 Here is how much of LuaTeX's memory you used:
- 64445 strings out of 476553
- 100000,2373549 words of node,token memory allocated
- 1108 words of node memory still in use:
-   9 hlist, 2 vlist, 2 rule, 25 glue, 4 kern, 1 penalty, 2 glyph, 151 attribute,
- 69 glue_spec, 24 attribute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:6,2:5044,3:279,4:51,5:260,6:66,7:6153,8:94,9:882,10:9,11:318
- 84960 multiletter control sequences out of 65536+600000
- 120 fonts using 8208271 bytes
- 101i,10n,102p,1640b,945s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 64545 strings out of 476553
+ 195340,2848258 words of node,token memory allocated
+ 1253 words of node memory still in use:
+   10 hlist, 2 vlist, 2 rule, 33 glue, 4 kern, 1 penalty, 2 glyph, 186 attribute
+, 69 glue_spec, 29 attribute_list, 2 write, 2 pdf_action nodes
+   avail lists: 1:8,2:28492,3:577,4:76,5:273,6:332,7:8830,8:94,9:6063,10:11,11:3
+34
+ 85051 multiletter control sequences out of 65536+600000
+ 121 fonts using 8339959 bytes
+ 101i,10n,102p,1640b,1013s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.ot
 f></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman17-regular
 .otf></usr/local/texlive/2023/texmf-dist/fonts/opentype/public/lm/lmroman9-regul
@@ -2134,11 +2224,11 @@ s/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/doublestroke/dsr
 om12.pfb>
-Output written on product-cons-int-&-int-square-near-to-ai.pdf (3 pages, 151836
+Output written on product-cons-int-&-int-square-near-to-ai.pdf (4 pages, 166433
  bytes).
 
-PDF statistics: 165 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
- 16 named destinations out of 1000 (max. 131072)
+PDF statistics: 171 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
+ 19 named destinations out of 1000 (max. 131072)
  45 words of extra memory for PDF output out of 10000 (max. 100000000)
 
