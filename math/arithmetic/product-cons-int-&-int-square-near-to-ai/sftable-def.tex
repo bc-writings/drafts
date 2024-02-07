@@ -1,4 +1,7 @@
-\subsection{Les \sftab[x]}
+% ------------------ %
+
+
+\subsection{Construire des \sftab[x]}
 
 \leavevmode
 \smallskip
@@ -94,158 +97,6 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 % ------------------ %
 
 
-\begin{fact} \label{sftable-sub-square}
-	Dans les tableaux ci-dessous, les puces $\bullet$ indiquent des valeurs quelconques.
-
-	\begin{enumerate}
-		\item Si nous avons un \sftab\ du type suivant, alors $\consprod<k-1> \in \NNssquare$\,.
-	\end{enumerate}
-
-	\begin{center}
-		\begin{tblr}{
-			colspec     = {Q[r,$]*{5}{Q[c,$]}},
-			vline{2}    = {.95pt},
-			vline{3-6}  = {dashed},
-			hline{2}    = {.95pt},
-			column{2-Z} = {2em},
-			% Subsquare
-			cell{2}{6} = {blue!15},
-		}
-			n + \bullet
-				&  0
-				&  1
-				&  \dots
-				&  k - 1
-				&  k
-		\\
-				&  \bullet
-				&  \bullet
-				&  \dots
-				&  \bullet
-				&  1
-		\end{tblr}
-	\end{center}
-
-
-	\begin{enumerate}[start=2]
-		\item Si nous avons un \sftab\ du type suivant, alors $\consprod[n+1]<k-1> \in \NNssquare$\,.
-	\end{enumerate}
-
-	\begin{center}
-		\begin{tblr}{
-			colspec     = {Q[r,$]*{5}{Q[c,$]}},
-			vline{2}    = {.95pt},
-			vline{3-6}  = {dashed},
-			hline{2}    = {.95pt},
-			column{2-Z} = {2em},
-			% Subsquare
-			cell{2}{2} = {blue!15},
-		}
-			n + \bullet
-				&  0
-				&  1
-				&  \dots
-				&  k - 1
-				&  k
-		\\
-				&  1
-				&  \bullet
-				&  \dots
-				&  \bullet
-				&  \bullet
-		\end{tblr}
-	\end{center}
-\end{fact}
-
-
-\begin{proof}
-	Immédiat via le fait \ref{facto-square}, car nous avons soit $n + k \in \NNssquare$\,, soit $n \in \NNssquare$\,.
-\end{proof}
-
-
-% ------------------ %
-
-
-\begin{fact} \label{sftable-illegal}
-	Soit $(n, d, a) \in ( \NNs )^3$ et $i \in \NN$\,.
-	Les \sftab[x] ci-après sont impossibles
-	(de nouveau, les puces $\bullet$ indiquent des valeurs quelconques).
-
-	\begin{enumerate}
-		\item Pas de facteurs carrés trop près.
-	\end{enumerate}
-
-    \begin{center}
-    	\begin{tblr}{
-    		colspec     = {Q[r,$]*{5}{Q[c,$]}},
-    		vline{2}    = {.95pt},
-    		vline{3-6}  = {dashed},
-   			hline{2}    = {.95pt},
-			column{2-Z} = {3em},
-			% Rejected
-			cell{2}{2,6} = {red!15},
-    	}
-    		n + \bullet
-   				&  i
-    			&  i + 1
-    			&  \dots
-    			&  i + d - 1
-    			&  i + d
-    	\\
-    			&  ad
-				&  \bullet
-    			&  \dots
-				&  \bullet
-				&  ad
-    	\end{tblr}
-    \end{center}
-
-
-	\begin{enumerate}[start=2]
-		\item Pas de facteurs carrés pas trop loin.
-	\end{enumerate}
-
-    \begin{center}
-    	\begin{tblr}{
-    		colspec     = {Q[r,$]*{5}{Q[c,$]}},
-    		vline{2}    = {.95pt},
-    		vline{3-6}  = {dashed},
-   			hline{2}    = {.95pt},
-			column{2-Z} = {3.75em},
-			% Rejected
-			cell{2}{2,6} = {red!15},
-    	}
-    		n + \bullet
-   				&  i
-    			&  i + 1
-    			&  \dots
-    			&  i + 2d - 1
-    			&  i + 2d
-    	\\
-    			&  ad
-				&  \bullet
-    			&  \dots
-				&  \bullet
-				&  ad
-    	\end{tblr}
-    \end{center}
-\end{fact}
-
-
-\begin{proof}
-	Tout est contenu dans le fait \ref{diff-square-ko}.
-
-	\begin{enumerate}
-		\item $n + i = ad A^2$ et $n + i + d = ad B^2$ donnent $ad (B^2 - A^2) = d$\,, puis $a (B^2 - A^2) = 1$, d'où $B^2 - A^2 = 1$ qui ne se peut pas car $B^2 > A^2 \geq 1$\,.
-
-		\item $n + i = ad A^2$ et $n + i + 2 d = ad B^2$ donnent $ad (B^2 - A^2) = 2d$\,, \emph{i.e.} $a (B^2 - A^2) = 2$\,, d'où $B^2 - A^2 \in \setgene{1, 2}$ qui est impossible.
-	\end{enumerate}
-\end{proof}
-
-
-% ------------------ %
-
-
 \subsection{Construire des \sftab[x]}
 
 \leavevmode
@@ -277,7 +128,7 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 
 	\smallskip
 
-	Cette situation est résumée par le tableau suivant qui sera nommé \enquote{\sftab\ partiel}\,
+	Cette situation est résumée par le tableau suivant qui sera nommé \enquote{\sftab\ partiel}\,, voire \enquote{\sftab\ partiel d'ordre $( p_j )_{1 \leq j \leq r}$\!}\,
 	\footnote{
 		Noter que $\forall i \in \ZintervalC{0}{k}$\,, $\forall j \in \ZintervalC{1}{r}$\,, $p_j^{\,\epsilon_{i,j}} \in \setgene{1, p_j}$\,.
 	}.
@@ -371,6 +222,8 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 	et
 	$( q_j )_{1 \leq j \leq s} \in \PPseq[s]$
 	d'intersection vide, c'est-à-dire sans nombre premier commun.
+	
+	\newpage	
 	Considérons les deux \sftab[x] partiels suivants où l'on note $2$ et $3$ au lieu de $(2)$ et $(3)$\,.
 
 	\vspace{-1.5ex}
@@ -420,8 +273,7 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 
 
 	\vspace{-1ex}
-	La multiplication de ces \sftab[x] partiels est le \sftab\  suivant, partiel a priori.
-	Si de plus, $2$ et $3$ sont les seuls diviseurs premiers de $\consprod<3>$\,, alors on obtient un \sftab\ non partiel.
+	La multiplication de ces \sftab[x] partiels est le \sftab\  suivant, partiel a priori, mais si l'on sait que $2$ et $3$ sont les seuls diviseurs premiers de $\consprod<3>$\,, alors le \sftab\ est non partiel.
 
 	\begin{center}
 		\begin{tblr}{
@@ -469,30 +321,3 @@ Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] par
 	\end{multicols}
 \end{example}
 
-
-% ------------------ %
-
-
-\begin{fact} \label{sftable-multiple}
-	Dans la deuxième ligne d'un \sftab\ partiel relatif à un unique nombre premier $p$\,, les positions des valeurs $p$ sont congrus modulo $p$, et les autres valeurs ne sont que des $1$\,.
-\end{fact}
-
-
-\begin{proof}
-	Penser aux multiples de $p$\,.
-\end{proof}
-
-
-% ------------------ %
-
-
-\begin{fact} \label{sftable-parity-square}
-	$\forall (n, k, p) \in \NNs \times \NN \times \PP$\,,
-	si $\consprod \in \NNsquare$\,,
-	alors dans le \sftab\ partiel relatif associé à $\consprod$\,, et uniquement au nombre premier $p$\,, le nombre de valeurs $p$ est forcément pair.
-\end{fact}
-
-
-\begin{proof}
-	Évident, mais très pratique, comme nous le verrons dans la suite.
-\end{proof}

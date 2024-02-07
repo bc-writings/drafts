@@ -142,54 +142,32 @@
 \tableofcontents
 
 
-%% ------------------ %
-%
-%
+% ------------------ %
+
+
+\newpage
+\section{Ce qui nous intéresse}
+
+\input{\contentdir/what}
+
+
+% ------------------ %
+
+
+\bigskip
+\section{Notations utilisées}
+
+\input{\contentdir/notations}
+
+
+% ------------------ %
+
+
 %\newpage
-%\section{Ce qui nous intéresse}
-%
-%\input{\contentdir/what}
-%
-%
-%% ------------------ %
-%
-%
-%%\bigskip
-%\section{Notations utilisées}
-%
-%\input{\contentdir/notations}
-%
-%
-%% ------------------ %
-%
-%
-%%\newpage
-%\section{Les carrés parfaits}
-%
-%\input{\contentdir/case-1}
-%
-%
-%
-%% ------------------ %
-%
-%
-%\newpage
-%\section{Prenons du recul}
-%
-%\input{\contentdir/table-trick}
-%
-%
-%
-%% ------------------ %
-%
-%
-%\foreach \k in {2,...,5} {
-%%\foreach \k in {5} {
-%%	\newpage
-%	\section{Application au cas de \k\ facteurs} \label{apply-\k}
-%
-%	\input{\contentdir/case-\k}
-%}
+\medskip
+\section{Les carrés parfaits}
+
+\input{\contentdir/case-1}
 
 
 
@@ -197,6 +175,43 @@
 
 
 \newpage
+\section{Prenons du recul}
+
+\input{\contentdir/sftable-def}
+%
+%
+%
+%% ------------------ %
+%
+%
+%\newpage
+%\bigskip
+\medskip
+\section{Structure des \sftab[x]} \label{sftab-struct}
+
+\input{\contentdir/sftable-struct}
+
+
+
+% ------------------ %
+
+
+\foreach \k in {2,...,5} {
+%\foreach \k in {5} {
+%	\newpage
+%	\medskip
+	\section{Application au cas de \k\ facteurs} \label{apply-\k}
+
+	\input{\contentdir/case-\k}
+}
+
+
+
+% ------------------ %
+
+
+%\newpage
+\medskip
 \section{Et après ?}
 
 \input{\contentdir/case-after}
