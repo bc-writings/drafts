@@ -1,5 +1,0 @@
-\babel@toc {french}{}\relax 
-\contentsline {section}{\tocsection {}{1}{Application au cas de 5\ facteurs}}{1}{section.1}%
-\contentsline {section}{\tocsection {}{2}{Et après ?}}{3}{section.2}%
-\contentsline {section}{\tocsection {}{3}{Sources utilisées}}{3}{section.3}%
-\contentsline {section}{\tocsection {}{4}{AFFAIRE À SUIVRE...}}{4}{section.4}%

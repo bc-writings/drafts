@@ -1,4 +1,4 @@
-\subsection{Tableaux de Vogler}
+\subsection{Les \sftab[x]}
 
 \leavevmode
 \smallskip
@@ -11,13 +11,16 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 
 \begin{defi}
 	Considérons $(n, k) \in \NNs \times \NN$\,,
-	$( a_i )_{0 \leq i \leq k} \subseteq \NNsf$
+	$( a_i )_{0 \leq i \leq k} \subset \NNsf$
 	et
-	$( s_i )_{0 \leq i \leq k} \subseteq \NNssquare$
+	$( s_i )_{0 \leq i \leq k} \subset \NNssquare$
 	tels que 
 	$\forall i \in \ZintervalC{0}{k}$\,, $n + i = a_i s_i$\,.
 	%
-	Cette situation est résumée par le tableau suivant que nous nommerons tableau de Vogler en référence à la discussion où l'auteur a rencontré ce concept.
+	Cette situation est résumée par le tableau suivant que nous nommerons \enquote{\sftab}
+	\footnote{
+		\enquote{sf} est pour \enquote{square free}\,.
+	}.
 
 	\begin{center}
 		\begin{tblr}{
@@ -40,7 +43,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 				&  a_k
 		\end{tblr}
 	\end{center}
-%	Si de plus $( a_i )_{0 \leq i \leq k} \subseteq \NNsf$\,, le tableau de Vogler sera dit réduit.
+%	Si de plus $( a_i )_{0 \leq i \leq k} \subseteq \NNsf$\,, le \sftab\ sera dit réduit.
 \end{defi}
 
 
@@ -49,7 +52,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 
 %\newpage
 \begin{example}
-	Supposons avoir le tableau de Vogler suivant où $n \in \NNs$.
+	Supposons avoir le \sftab\ suivant où $n \in \NNs$.
 
 	\begin{center}
 		\begin{tblr}{
@@ -95,7 +98,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 	Dans les tableaux ci-dessous, les puces $\bullet$ indiquent des valeurs quelconques.
 	
 	\begin{enumerate}
-		\item Si nous avons un tableau de Vogler du type suivant, alors $\consprod<k-1> \in \NNssquare$\,.
+		\item Si nous avons un \sftab\ du type suivant, alors $\consprod<k-1> \in \NNssquare$\,.
 	\end{enumerate}
 
 	\begin{center}
@@ -125,7 +128,7 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 
 
 	\begin{enumerate}[start=2]
-		\item Si nous avons un tableau de Vogler du type suivant, alors $\consprod[n+1]<k-1> \in \NNssquare$\,.
+		\item Si nous avons un \sftab\ du type suivant, alors $\consprod[n+1]<k-1> \in \NNssquare$\,.
 	\end{enumerate}
 
 	\begin{center}
@@ -165,8 +168,8 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 
 \begin{fact} \label{vogler-illegal}
 	Soit $(n, d, a) \in ( \NNs )^3$ et $i \in \NN$\,.
-	Les tableaux de Vogler ci-après sont impossibles
-	(les puces $\bullet$ indiquent des valeurs quelconques). 
+	Les \sftab[x] ci-après sont impossibles
+	(de nouveau, les puces $\bullet$ indiquent des valeurs quelconques). 
 
 	\begin{enumerate}
 		\item Pas de facteurs carrés trop près.
@@ -243,20 +246,20 @@ L'idée de départ est simple : d'après le fait \ref{facto-square}, il semble o
 % ------------------ %
 
 
-\subsection{Construire des tableaux de Vogler}
+\subsection{Construire des \sftab[x]}
 
 \leavevmode
 
 \smallskip
-Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tableaux de Vogler partiels.
+Pour fabriquer des \sftab[x], nous allons \enquote{multiplier} des \sftab[x] partiels.
 	
 
 \begin{defi}
 	Soient $(n, k, r) \in \NNs \times \NN \times \NNs$\,,
-	$( p_j )_{1 \leq j \leq r} \subseteq \PPseq$\,,
-	$( \epsilon_{i,j} )_{0 \leq i \leq k, 1 \leq j \leq r} \subseteq \setgene{0, 1}$
+	$( p_j )_{1 \leq j \leq r} \in \PPseq[r]$\,,
+	$( \epsilon_{i,j} )_{0 \leq i \leq k \,, 1 \leq j \leq r} \subseteq \setgene{0, 1}$
 	et
-	$( f_i )_{0 \leq i \leq k} \subseteq \NNs$
+	$( f_i )_{0 \leq i \leq k} \subset \NNs$
 	vérifiant les conditions suivantes.
 	%
 	\begin{itemize}
@@ -272,7 +275,9 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tabl
 		$\padicval[p_j]{n+i} \equiv \epsilon_{i,j}$ modulo $2$\,.
 	\end{itemize}
 	
-	Cette situation est résumée par le tableau suivant qui sera nommé tableau de Vogler partiel
+	\smallskip
+	
+	Cette situation est résumée par le tableau suivant qui sera nommé \enquote{\sftab\ partiel}\,
 	\footnote{
 		Noter que $\forall i \in \ZintervalC{0}{k}$\,, $\forall j \in \ZintervalC{1}{r}$\,, $p_j^{\,\epsilon_{i,j}} \in \setgene{1, p_j}$\,.
 	}.
@@ -307,7 +312,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tabl
 
 
 \begin{example}
-	Supposons avoir le tableau de Vogler partiel suivant où $n \in \NNs$.
+	Supposons avoir le \sftab\ partiel suivant où $n \in \NNs$.
 
 	\begin{center}
 		\begin{tblr}{
@@ -361,12 +366,12 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tabl
 
 
 \begin{example}
-	La multiplication de deux tableaux de Vogler partiels est \enquote{naturelle} lorsqu'elle porte sur des suites 
-	$( p_j )_{1 \leq j \leq r} \subseteq \PPseq$ 
+	La multiplication de deux \sftab[x] partiels est \enquote{naturelle} lorsqu'elle porte sur des suites 
+	$( p_j )_{1 \leq j \leq r} \in \PPseq[r]$ 
 	et
-	$( q_j )_{1 \leq j \leq r} \subseteq \PPseq$
+	$( q_j )_{1 \leq j \leq s} \in \PPseq[s]$
 	d'intersection vide, c'est-à-dire sans nombre premier commun.
-	Considérons les deux tableaux de Vogler partiels suivants où l'on note $2$ et $3$ au lieu de $(2)$ et $(3)$\,.
+	Considérons les deux \sftab[x] partiels suivants où l'on note $2$ et $3$ au lieu de $(2)$ et $(3)$\,.
 	
 	\vspace{-1.5ex}
 	\begin{multicols}{2}
@@ -415,7 +420,8 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tabl
 
 
 	\vspace{-1ex}
-	La multiplication de ces tableaux de Vogler partiels est le tableau de Vogler partiel suivant.
+	La multiplication de ces \sftab[x] partiels est le \sftab\  suivant, partiel a priori. 
+	Si de plus, $2$ et $3$ sont les seuls diviseurs premiers de $\consprod<3>$\,, alors on obtient un \sftab\ non partiel.
 
 	\begin{center}
 		\begin{tblr}{
@@ -438,7 +444,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tabl
 		\end{tblr}
 	\end{center}
 	
-	Ceci résume la situation suivante, avec des notations \enquote{évidentes}\,, qui est équivalente à ce que donnent les deux premiers tableaux de Vogler partiels. 
+	Ceci résume la situation suivante qui est équivalente à ce que donne la conjonction des deux premiers \sftab[x] partiels (les abus de notations sont évidents). 
 	
 	
 	\vspace{-1ex}
@@ -468,7 +474,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tabl
 
 
 \begin{fact} \label{vogler-multiple}
-	Dans la deuxième ligne d'un tableau de Vogler partiel relatif à un unique nombre premier $p$\,, les valeurs $p$ sont séparées par exactement $(p-1)$ valeurs $1$\,.
+	Dans la deuxième ligne d'un \sftab\ partiel relatif à un unique nombre premier $p$\,, les valeurs $p$ sont séparées par exactement $(p-1)$ valeurs $1$\,.
 \end{fact}
 
 
@@ -483,7 +489,7 @@ Pour fabriquer des tableaux de Vogler, nous allons \enquote{multiplier} des tabl
 \begin{fact} \label{vogler-parity-square}
 	$\forall (n, k, p) \in \NNs \times \NN \times \PP$\,,
 	si $\consprod \in \NNsquare$\,, 
-	alors dans le tableau de Vogler partiel relatif uniquement au nombre premier $p$\,, et associé à $\consprod$\,, le nombre de valeurs $p$ est forcément pair.
+	alors dans le \sftab\ partiel relatif uniquement au nombre premier $p$\,, et associé à $\consprod$\,, le nombre de valeurs $p$ est forcément pair.
 \end{fact}
 
 

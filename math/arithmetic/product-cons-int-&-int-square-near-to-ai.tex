@@ -82,12 +82,16 @@
 	 
 \newcommand\contentdir{\jobname}
 
+
+\NewDocumentCommand\sftab{ O{} }{\textsf{s}\kern.5pt\textsf{f}\kern1pt-\kern1pt tableau#1}
+
+
 \newcommand\NNsf{\NN_{\kern-1pt s\kern-1pt f}}
 
 \newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
 \newcommand\NNssquare{\seqsuprageo{\NN}{*}{}{}{2}}
 
-\NewDocumentCommand\PPseq{ O{n} }{\seqsuprageo{\PP}{}{sc}{#1}{}}
+\NewDocumentCommand\PPseq{ O{n} }{\seqsuprageo{\PP}{}{\!sc}{#1}{}}
 
 \NewDocumentCommand\GCD{ m  m }{#1 \wedge #2}
 
@@ -159,7 +163,7 @@
 %% ------------------ %
 %
 %
-%\newpage
+%%\newpage
 %\section{Les carrés parfaits}
 %
 %\input{\contentdir/case-1}
@@ -180,12 +184,12 @@
 %
 %
 %\foreach \k in {2,...,5} {
-\foreach \k in {5} {
-%	\newpage
-	\section{Application au cas de \k\ facteurs} \label{apply-\k}
-
-	\input{\contentdir/case-\k}
-}
+%%\foreach \k in {5} {
+%%	\newpage
+%	\section{Application au cas de \k\ facteurs} \label{apply-\k}
+%
+%	\input{\contentdir/case-\k}
+%}
 
 
 

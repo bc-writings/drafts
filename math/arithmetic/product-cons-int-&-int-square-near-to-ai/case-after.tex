@@ -1,4 +1,4 @@
-La méthode présentée ci-dessus permet de faire appel à un programme pour ne traiter à la main, et à la sueur des neurones, que certains tableaux de Vogler problématiques comme nous avons dû le faire dans la section \ref{apply-4}.
+La méthode présentée ci-dessus permet de faire appel à un programme pour ne traiter à la main, et à la sueur des neurones, que certains \sftab[x] problématiques comme nous avons dû le faire dans la section \ref{apply-4}.
 Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 
 
@@ -10,10 +10,10 @@ Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 	Notons qu'avec $7$ facteurs, nous n'aurions pas garder $7$ car il est forcément de valuation paire dans chaque facteur $(n + i)$ de $\consprod<7>$ si $\consprod<7> \in \NNssquare$\,.
 	
  
-	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des tableaux de Vogler partiels relatifs à $p$ et $\consprod<6> \in \NNssquare$\,.
+	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des \sftab[x] partiels relatifs à $p$ et $\consprod<6> \in \NNssquare$\,.
 	
  
-	\item Via les listes $\setproba*{V}{p}$\,, on calcule toutes les multiplications de tous les tableaux de Vogler partiels relatifs à tous les nombres $p$ différents, et pour chacune d'elles, on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme.
+	\item Via les listes $\setproba*{V}{p}$\,, on calcule toutes les multiplications de tous les \sftab[x] partiels relatifs à tous les nombres $p$ différents, et pour chacune d'elles, on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme qui va donc évoluer au gré des démonstrations faites à la main (que l'on espère le plus rare possible).
 	%
 	\begin{enumerate}
 		\item Le tableau \enquote{produit} commence, ou se termine, par la valeur $1$\,. Dans ce cas, on sait par récurrence que le tableau produit n'est pas possible (voir le fait \ref{vogler-sub-square}). 
@@ -51,10 +51,10 @@ Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 	
 	\smallskip
 	
-	\emph{\small Deux sous-tableaux de Vogler impossibles.}
+	\emph{\small Deux sous-\sftab[x] impossibles.}
 \end{center}
 
 
 {\Huge YAPLUKA !}
 
-Dans le dépôt en ligne associé à ce document est placé un programme nommé \verb#vogler-6.py# qui nous fournit les informations suivantes.
+Dans le dépôt en ligne associé à ce document est placé un programme nommé \verb#sftab-6.py# qui nous fournit les informations suivantes.
