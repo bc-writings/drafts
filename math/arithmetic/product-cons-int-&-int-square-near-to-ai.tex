@@ -163,8 +163,8 @@
 % ------------------ %
 
 
-%\newpage
-\medskip
+\newpage
+%\medskip
 \section{Les carrés parfaits}
 
 \input{\contentdir/case-1}
@@ -175,6 +175,7 @@
 
 
 \newpage
+%\medskip
 \section{Prenons du recul}
 
 \input{\contentdir/sftable-def}
@@ -184,9 +185,9 @@
 %% ------------------ %
 %
 %
-%\newpage
+\newpage
 %\bigskip
-\medskip
+%\medskip
 \section{Structure des \sftab[x]} \label{sftab-struct}
 
 \input{\contentdir/sftable-struct}
@@ -196,12 +197,18 @@
 % ------------------ %
 
 
+\newpage
+\section{Applications}
+
 \foreach \k in {2,...,5} {
 %\foreach \k in {5} {
 %	\newpage
 %	\medskip
-	\section{Application au cas de \k\ facteurs} \label{apply-\k}
+	\subsection{Application au cas de \k\ facteurs} \label{apply-\k}
 
+	\leavevmode
+	\smallskip
+	
 	\input{\contentdir/case-\k}
 }
 
@@ -210,11 +217,16 @@
 % ------------------ %
 
 
-%\newpage
-\medskip
+\newpage
+%\medskip
 \section{Et après ?}
 
-\input{\contentdir/case-after}
+\subsection{La méthode via le cas de 6 facteurs} \label{apply-6}
+
+\leavevmode
+\smallskip
+
+\input{\contentdir/after-method}
 
 
 % ------------------ %

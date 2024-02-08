@@ -1,19 +1,38 @@
 \subsection{Structure}
 
 
+% ------------------ %
+
+
+\leavevmode
+\smallskip
+
+Le fait suivant est immédiat.
+
+\begin{fact} \label{prime-square}
+	$\forall n \in \NNssquare$\,,
+	$\forall p \in \PP$\,,
+	nous avons 
+	$\padicval{n} \in 2 \NN$\,.
+\end{fact}
+
+
+% ------------------ %
+
+
 \begin{fact} \label{facto-square}
 	$\forall n \in \NNssquare$\,, s'il existe $m \in \NNssquare$ tel que $n =  f m$ alors $f  \in \NNssquare$\,.
 \end{fact}
 
 
 \begin{proof}
-	Clairement, $\forall p \in \PP$\,, nous avons 
-	$\padicval{f m} \in 2 \NN$
-	et
+	$\forall p \in \PP$\,, 
+	$\padicval{f m} \in 2 \NN$\,,
 	$\padicval{m} \in 2 \NN$
-	qui donnent
-	$\padicval{f} \in 2 \NN$
-	car $\padicval{f m} = \padicval{f} + \padicval{m}$\,.
+	et
+	$\padicval{f m} = \padicval{f} + \padicval{m}$
+	donnent
+	$\padicval{f} \in 2 \NN$\,.
 \end{proof}
 
 
@@ -28,9 +47,9 @@
 
 
 \begin{proof}
-	Clairement, $\forall p \in \PP$\,, nous avons $\padicval{ab} \in 2 \NN$\,.
-    %
-    Or $p \in \PP$ ne peut diviser à la fois $a$ et $b$\,, donc
+	$\forall p \in \PP$\,, $\padicval{ab} \in 2 \NN$\,,
+	et $p$ ne peut diviser à la fois $a$ et $b$\,,
+	donc
     $\forall p \in \PP$\,, 
     $\padicval{a} \in 2 \NN$ et $\padicval{b} \in 2 \NN$\,,
     autrement dit 
@@ -47,7 +66,7 @@
 	Nous avons alors forcément $\alpha = \beta$\,.
 \end{fact}
 
-
+%\newpage
 \begin{proof}
 	Le fait \ref{facto-square} donne $\alpha \beta \in \NNssquare$\,.
 	De plus, $\forall p \in \PP$\,, nous avons 
@@ -93,33 +112,7 @@
 		\item Comme $N - 1 \geq M$\,, nous obtenons :
 		$N^2 - M^2 \geq N^2 - (N - 1)^2 = 2N - 1$\,.
 
-		\item Le point précédent permet d'utiliser le programme \verb#Python# suivant afin d'obtenir les nombres de solutions indiqués rapidement.
-
-\bgroup
-\small
-\begin{Python}
-from math import sqrt, floor
-
-def sol(diff):
-    solfound = []
-
-    for i in range(1, (diff + 1) // 2 + 1):
-        tested = i**2 - diff
-
-        if tested < 0:
-            continue
-
-        tested = floor(sqrt(i**2 - diff))
-
-        if tested == 0:
-            continue
-
-        if tested**2 == i**2 - diff:
-            solfound.append((i, tested))
-
-    return solfound
-\end{Python}
-\egroup	
+		\item Le point précédent permet d'utiliser le programme \verb#Python# de la page suivante afin d'obtenir les nombres de solutions indiqués rapidement.
 		%
 		\qedhere
 	\end{enumerate}
@@ -145,3 +138,31 @@ Finissons par une jolie formule même si elle ne nous sera pas d'une grande aide
 	}.
 \end{proof}
 
+
+
+\newpage
+\bgroup
+\small
+\begin{Python}
+from math import sqrt, floor
+
+def sol(diff):
+    solfound = []
+
+    for i in range(1, (diff + 1) // 2 + 1):
+        tested = i**2 - diff
+
+        if tested < 0:
+            continue
+
+        tested = floor(sqrt(i**2 - diff))
+
+        if tested == 0:
+            continue
+
+        if tested**2 == i**2 - diff:
+            solfound.append((i, tested))
+
+    return solfound
+\end{Python}
+\egroup	

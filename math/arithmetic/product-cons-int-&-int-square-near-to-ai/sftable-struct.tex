@@ -19,7 +19,7 @@
 
 
 \begin{fact} \label{sftable-parity-square}
-	$\forall (n, k, p) \in \NNs \times \NN \times \PP$\,,
+	$\forall (n, k, p) \in ( \NNs )^2 \times \PP$\,,
 	si $\consprod \in \NNsquare$\,,
 	alors dans le \sftab\ partiel d'ordre $p$ associé à $\consprod$\,, le nombre de valeurs $p$ est forcément pair.
 \end{fact}
@@ -37,7 +37,7 @@
 
 
 \begin{fact} \label{sftab-recu}
-	Dans les tableaux ci-dessous, les puces $\bullet$ indiquent des valeurs quelconques.
+	Dans les tableaux ci-dessous, où $k \geq 2$\,, les puces $\bullet$ indiquent des valeurs quelconques.
 
 	\begin{enumerate}
 		\item Si nous avons un \sftab\ du type suivant, alors $\consprod<k-1> \in \NNssquare$\,.
@@ -109,7 +109,7 @@
 
 
 \begin{fact} \label{sftable-illegal-0-sol}
-	Soit $(n, d, a, k) \in ( \NNs )^4$ et $i \in \NN$\,.
+	Soient $(n, k, d) \in ( \NNs )^3$ et $i \in \NN$\,.
 	Considérons le \sftab\ ci-après où les puces $\bullet$ indiquent des valeurs quelconques.
 
     \begin{center}
@@ -126,28 +126,28 @@
    				&  i
     			&  i + 1
     			&  \dots
-    			&  i + k d - 1
-    			&  i + k d
+    			&  i + k - 1
+    			&  i + k
     	\\
-    			&  ad
+    			&  d
 				&  \bullet
     			&  \dots
 				&  \bullet
-				&  ad
+				&  d
     	\end{tblr}
     \end{center}
 
 	Ce \sftab\ est impossible si l'une des deux conditions suivantes est validée.
+	
+	\begin{enumerate}
+		\item $d \ndivides k$\,.
 
-	\begin{enumerate}[start=2]
-		\item $a \ndivides k$\,.
-
-		\item $a \divides k$ et $\frac{k}{a} \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
+		\item $d \divides k$ et $\dfrac{k}{d} \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
 	\end{enumerate}
 \end{fact}
 
 
 \begin{proof}
-	$n + i = ad A^2$ et $n + i + k d = ad B^2$ nous donnent $ad (B^2 - A^2) = k d$\,, puis $a (B^2 - A^2) = k$\,. On conclut directement si $a \ndivides k$\,, et via le fait \ref{diff-square-ko} dans le second cas.
+	$n + i = d A^2$ et $n + i + k = d B^2$ nous donnent $d (B^2 - A^2) = k$\,. On conclut directement si $d \ndivides k$\,, et via le fait \ref{diff-square-ko} dans le second cas.
 \end{proof}
 
