@@ -2,6 +2,6 @@ K = 6
 
 from common import *
 
-humansloving = find_pb_sftabs(K)
+human_sloving = find_pb_sftabs(K)
 
-from pprint import pprint;pprint(humansloving)
+from pprint import pprint;pprint(human_sloving)

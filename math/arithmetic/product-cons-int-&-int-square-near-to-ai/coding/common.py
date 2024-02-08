@@ -84,8 +84,8 @@ def prod_of(k, sftab_1, sftab_2, kprimes):
         return None
 
 # Illegal dist squares?
-    if is_illegal_zero_sol(k, prod):
-        return None
+    # if is_illegal_zero_sol(k, prod):
+    #     return None
 
 # No more tactic to apply for the moment...
     return prod
