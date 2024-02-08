@@ -75,7 +75,7 @@ def prod_of(k, sftab_1, sftab_2, kprimes):
         for a, b in zip(sftab_1, sftab_2)
     ]
 
-# No one is innocent (at the end or the start).
+# No one is innocent...
     if prod[0] == 1 or prod[-1] == 1:
         return None
 

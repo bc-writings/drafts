@@ -1,19 +1,38 @@
 \subsection{Structure}
 
 
+% ------------------ %
+
+
+\leavevmode
+\smallskip
+
+Le fait suivant est immédiat.
+
+\begin{fact} \label{prime-square}
+	$\forall n \in \NNssquare$\,,
+	$\forall p \in \PP$\,,
+	nous avons 
+	$\padicval{n} \in 2 \NN$\,.
+\end{fact}
+
+
+% ------------------ %
+
+
 \begin{fact} \label{facto-square}
 	$\forall n \in \NNssquare$\,, s'il existe $m \in \NNssquare$ tel que $n =  f m$ alors $f  \in \NNssquare$\,.
 \end{fact}
 
 
 \begin{proof}
-	Clairement, $\forall p \in \PP$\,, nous avons 
-	$\padicval{f m} \in 2 \NN$
-	et
+	$\forall p \in \PP$\,, 
+	$\padicval{f m} \in 2 \NN$\,,
 	$\padicval{m} \in 2 \NN$
-	qui donnent
-	$\padicval{f} \in 2 \NN$
-	car $\padicval{f m} = \padicval{f} + \padicval{m}$\,.
+	et
+	$\padicval{f m} = \padicval{f} + \padicval{m}$
+	donnent
+	$\padicval{f} \in 2 \NN$\,.
 \end{proof}
 
 
@@ -28,9 +47,9 @@
 
 
 \begin{proof}
-	Clairement, $\forall p \in \PP$\,, nous avons $\padicval{ab} \in 2 \NN$\,.
-    %
-    Or $p \in \PP$ ne peut diviser à la fois $a$ et $b$\,, donc
+	$\forall p \in \PP$\,, $\padicval{ab} \in 2 \NN$\,,
+	et $p$ ne peut diviser à la fois $a$ et $b$\,,
+	donc
     $\forall p \in \PP$\,, 
     $\padicval{a} \in 2 \NN$ et $\padicval{b} \in 2 \NN$\,,
     autrement dit 
@@ -71,8 +90,6 @@
 		d'où l'impossibilité d'avoir
 		$N^2 - M^2 < 3$\,.
 		
-		\item $N^2 - M^2 = 3$ uniquement si $(N, M) = (2, 1)$\,.
-		
 		\item Notons $nb_{sol}$ le nombre de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
 				
 		\smallskip
@@ -83,6 +100,7 @@
 			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
 
 			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9, 11, 12, 13, 16}$\,.
+			Par exemple, $N^2 - M^2 = 3$ uniquement si $(N, M) = (2, 1)$\,.
 
 			\item $nb_{sol}= 2$ si $\delta = 15$\,.
 		\end{enumerate}
@@ -98,12 +116,8 @@
 		\item Comme $N - 1 \geq M$\,, nous obtenons :
 		$N^2 - M^2 \geq N^2 - (N - 1)^2 = 2N - 1$\,.		
 
-		\item Notant $\delta = N^2 - M^2$, nous avons $2 N - 1 \leq \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
-		Ceci permet de limiter notre zone de recherche à $N \in \ZintervalC{1}{2}$\,, ce qui permet de conclure.
-		
-
-		
-		\item Il suffit de s'appuyer sur le programme \verb#Python# donné dans la page suivante.
+		\item Nous avons $2 N - 1 \leq \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
+		Ceci permet de comprendre le programme \verb#Python# donné dans la page suivante qui sert à obtenir facilement les nombres de solutions indiqués.
 		%
 		\qedhere
 	\end{enumerate}

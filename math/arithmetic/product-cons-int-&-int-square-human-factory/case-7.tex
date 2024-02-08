@@ -1,16 +1,16 @@
 \begin{fact} \label{case-7}
-	 $\forall n \in \NNs$\,, $\consprod<6> \notin \NNsquare$\,.
+	 $\forall n \in \NNs$\,, $\consprod<7> \notin \NNsquare$\,.
 \end{fact}
 
 
 % ------------------ %
 
 
-La très jolie démonstration suivante vient d'un échange sur \url{https://math.stackexchange.com} (voir la section \ref{sources}). Nous avons juste comblé quelques rares oublis, et apporté de petites simplifications.
+La très jolie démonstration suivante vient d'un échange sur \url{https://math.stackexchange.com} (voir la section \ref{sources}). Nous avons comblé les trous en apportant de petites simplifications.
 	
 
 \begin{proof}[Preuve]
-	Supposons que $\consprod<6> \in \NNssquare$\,.
+	Supposons que $\consprod<7> \in \NNssquare$\,.
 	
 	\smallskip
 	
@@ -56,41 +56,48 @@ La très jolie démonstration suivante vient d'un échange sur \url{https://math
     	\item Supposons avoir $u = M^2$.
 		%
 		\begin{enumerate}
-			\item Comme $\setgene{u + 2, u + 4} = \setgene{3P^2, 5Q^2}$\,, nous savons que $3 \ndivides (u + 3)$ et $5 \ndivides (u + 3)$\,, d'où $u + 3 = 2^a T^2$ avec $(a, T) \in \NN \times \NNs$.
-
-			\item Modulo $4$\,, $u \equiv M^2 \equiv 1$ car $u \in 2 \NN + 1$\,,
-			donc $u + 3 \equiv 0$\,, d'où $a \geq 2$\,.
+			\item Comme $\setgene{u + 2, u + 4} = \setgene{3P^2, 5Q^2}$\,, nous savons que $3 \ndivides (u + 3)$ et $5 \ndivides (u + 3)$\,, d'où $u + 3 = 2^a A^2$ avec $(a, A) \in \NN \times (2\NN + 1)$\,.
 
 			\item Modulo $8$\,, $u \equiv M^2 \equiv 1$ car $u \in 2 \NN + 1$\,,
 			donc $u + 3 \equiv 4$\,, d'où $a = 2$\,.
 
 			\item Dès lors, $u + 3 \in \NNsquare$\,, puis $(u, u + 3) = (1, 4)$ via le fait \ref{diff-square-ko}.
 
-			\item Forcément $n = u = 1$\,, mais $\padicval[7]{\consprod[1]<6>} = 1$ contredit $\consprod<6> \in \NNssquare$\,.
+			\item Nous arrivons à $n = u = 1$\,, mais $\padicval[7]{\consprod[1]<7>} = 1$ contredit l'hypothèse $\consprod<7> \in \NNssquare$\,.
 		\end{enumerate}
 
 
-    	\item Supposons maintenant que $u + 4 = M^2$.
+    	\item Supposons maintenant que $u + 2 = M^2$.
 
 		\smallskip
 		\noindent
-		Comme $\setgene{u, u + 2} = \setgene{3P^2, 5Q^2}$\,, la preuve précédente s'adapte à $(u + 1, u + 4)$ pour obtenir la contradiction $n = 0$\,.
-
-
-    	\item Supposons enfin que $u + 2 = M^2$.
-
-		\smallskip
-		\noindent
-		Démontrons qu'en fait $\setgene{u, u + 4} = \setgene{3P^2, 5Q^2}$ est impossible en travaillant modulo $4$\,.
+		Ce qui suit démontre que $\setgene{u, u + 4} = \setgene{3P^2, 5Q^2}$ est impossible.
 		%
 		\begin{enumerate}
-			\item Si $(u, u + 4) = (3P^2, 5Q^2)$\,, alors 
-			$u \equiv \text{$0$ ou $3$}$
+			\item Si $(u, u + 4) = (3P^2, 5Q^2)$\,, alors,
+			comme $u \in 2 \NN + 1$\,, nous avons, modulo $4$\,,
+			$u \equiv 3$
 			et
-			$u + 2 \equiv 1$
-			se contredisent.
+			$u+4 \equiv 1$
+			qui se contredisent.
 
-			\item Si $(u, u + 4) = (5Q^2, 3P^2)$\,, on obtient une contradiction comme ci-dessus.
+			\item Si $(u, u + 4) = (5Q^2, 3P^2)$\,, on raisonne de même.
+		\end{enumerate}
+
+
+    	\item Supposons enfin que $u + 4 = M^2$.
+
+		\smallskip
+		\noindent
+		Démontrons que $\setgene{u, u + 2} = \setgene{3P^2, 5Q^2}$ est impossible en raisonnant modulo $8$\,.
+		%
+		\begin{enumerate}
+			\item $u + 4 \equiv M^2 \equiv 1$\, via $u \in 2 \NN + 1$\,,
+			d'où $u + 3 \equiv 0$\,.
+
+			\item $u + 2 \in \setgene{3P^2, 5Q^2}$ donne $u + 2 \equiv \text{$3$ ou $5$}$  via $u \in 2 \NN + 1$\,.
+
+			\item Les deux points précédents se contredisent.
 		\end{enumerate}
     \end{itemize}
 \end{proof}

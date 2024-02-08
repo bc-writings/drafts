@@ -7,7 +7,7 @@
 
 
 \begin{proof}[Preuve 1]%
-    Supposons que $\consprod<4> \in \NNssquare$\,.
+    Supposons que $\consprod<5> \in \NNssquare$\,.
     
     \smallskip
     
@@ -15,7 +15,7 @@
     $\forall p \in \PP_{>3}$\,, 
     $\forall i \in \ZintervalC{0}{4}$\,, 
     $\padicval{n + i} \in 2 \NN$\,.
-    Pour $p = 2$ et $p = 3$\,, nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<4>$\,.
+    Pour $p = 2$ et $p = 3$\,, nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<5>$\,.
     %
     \begin{itemize}
     	\smallskip
@@ -104,7 +104,7 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 	
 	
 \begin{proof}[Preuve 2]
-    Supposons que $\consprod<4> \in \NNssquare$\,.
+    Supposons que $\consprod<5> \in \NNssquare$\,.
     
     \smallskip
     
@@ -126,7 +126,8 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 		il existe $M \in \NNs$ tel que 
 		$m = M^2$ ou $m = 3 M^2$\,.
 	
-		\item Comme $3$ divise au maximum un seul des trois éléments de $\setgene{n, n + 2, n + 4}$\,, le fait \ref{diff-square-ko} lève une contradiction (deux carrés parfaits ne sont jamais distants de $2$ ou $4$).
+		\item Comme $3$ divise au maximum un seul des trois éléments de $\setgene{n, n + 2, n + 4}$\,, comme on peut le constater en raisonnant modulo $3$\,.
+		Le fait \ref{diff-square-ko} lève alors une contradiction (deux carrés parfaits ne sont jamais distants de $2$ ou $4$).
     \end{itemize}
     
     \medskip
@@ -154,7 +155,7 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 
 			\item $(n+1)$ et $(n+2)$ étant trop proches pour être tous les deux des carrés parfaits, nous arrivons à $(n + 2, n + 4) = (2 D^2, E^2)$\,.
 
-			\item Or $n + 4 \in \NNssquare$ et $\consprod<4> \in \NNssquare$ donnent $\consprod<3> \in \NNssquare$ d'après le fait \ref{facto-square}, mais ceci contredit le fait \ref{case-4}.
+			\item Or $n + 4 \in \NNssquare$ et $\consprod<5> \in \NNssquare$ donnent $\consprod<4> \in \NNssquare$ d'après le fait \ref{facto-square}, mais ceci contredit le fait \ref{case-4}.
 		\end{itemize}
 	
 		\item Forcément, $(n + 1, n + 3) = (3 A^2, B^2)$\,, mais ce qui suit lève une nouvelle contradiction via une démarche similaire à la précédente.
@@ -164,7 +165,7 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 
 			\item Ensuite, $(n, n + 2) = (D^2, 2 E^2)$ avec $(D, E) \in ( \NNs )^2$.
 
-			\item $n \in \NNssquare$ et $\consprod<4> \in \NNssquare$ donnent $\consprod<3> \in \NNssquare$\,, ce qui est faux.
+			\item $n \in \NNssquare$ et $\consprod<5> \in \NNssquare$ donnent $\consprod[n+1]<4> \in \NNssquare$\,, ce qui est faux.
 		\end{itemize}
     \end{itemize}
 \end{proof}
@@ -177,13 +178,23 @@ Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'ava
 
 
 \begin{proof}[Preuve 3]%
-	Supposons que $\consprod<4> \in \NNssquare$\,.
+	Supposons que $\consprod<5> \in \NNssquare$\,.
 	
     \smallskip
     
-    Posant $m = n+2$\,, nous avons $\consprod<4> = m (m \pm 2) (m \pm 1) = m(m^2 - 1)(m^2 - 4)$ où $m \in \NN_{\geq 3}$\,.
+    Posant $m = n+2$\,, nous avons $\consprod<5> = m (m \pm 2) (m \pm 1) = m(m^2 - 1)(m^2 - 4)$ où $m \in \NN_{\geq 3}$\,.
 	Pour la suite, on pose $u = m^2 - 1$ et $q = m^2 - 4$\,.
+
+	\medskip
 	
+	Notons que $u \notin \NNsquare$ et $q \notin \NNsquare$\,.
+		%
+	\begin{itemize}
+		\item $u \in \NNsquare$ donne $m^2 - 1 \in \NNsquare$ qui est impossible d'après le fait \ref{diff-square-ko}.
+
+		\item $q \in \NNsquare$ donne $m^2 - 4 \in \NNsquare$ qui est impossible d'après le fait \ref{diff-square-ko}.
+	\end{itemize}
+
 	\medskip
 	
 	Supposons d'abord que $m \in \NNssquare$\,.
@@ -194,16 +205,12 @@ Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'ava
 		\item Comme $u - q = 3$\,, nous savons que $u \wedge q \in \setgene{1, 3}$\,.
 
 		\item Si $u \wedge q = 1$\,, 
-		alors $(u, q) \in \NNssquare \times \NNssquare$ d'après le fait \ref{prime-square}.
-		Ensuite, le fait \ref{diff-square-ko} impose d'avoir $(u, q) = (4, 1)$\,, d'où $m^2 - 1 = 4$\,, mais ceci est impossible
-		\footnote{
-			On peut aussi noter que le fait \ref{case-3} lève une contradiction car nous avons $m \in \NNsquare$ et $u \in \NNsquare$ qui donnent $(m-1)m(m+1) \in \NNssquare$\,.
-		}.
+		alors $(u, q) \in \NNssquare \times \NNssquare$ d'après le fait \ref{prime-square}, mais ceci est impossible.
 
 		\item Si $u \wedge q = 3$\,, 
 		alors $\forall p \in \PP - \setgene{3}$\,, 
 		$\padicval{u} \in 2 \NN$ et $\padicval{q} \in 2 \NN$\,,
-		mais aussi $\padicval[3]{u} \in 2 \NN + 1$ et $\padicval[3]{q} \in 2 \NN + 1$\,.
+		mais aussi $\padicval[3]{u} \in 2 \NN + 1$ et $\padicval[3]{q} \in 2 \NN + 1$\,, car  $u \notin \NNsquare$ et $q \notin \NNsquare$\,.
 		Donc 
 		$u = 3 U^2$ et $q = 3 Q^2$ avec $(U, Q) \in ( \NNs )^2$\,.
 		Or $u - q = 3$ donne $U^2 - Q^2 = 1$\,, et le fait \ref{diff-square-ko} nous indique une contradiction.
@@ -214,17 +221,6 @@ Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'ava
 	Supposons maintenant que $m \notin \NNssquare$\,.
 	%
 	\begin{itemize}
-		\item Montrons que $u \notin \NNsquare$ et $q \notin \NNsquare$\,.
-		%
-		\begin{enumerate}
-			\item $u \in \NNsquare$ donne $m^2 - 1 \in \NNsquare$\,, puis $m = 1$ via le fait \ref{diff-square-ko}, mais ceci est impossible puisque $m \in \NN_{\geq 3}$\,.
-			
-			
-			
-			\item $q \in \NNsquare$ donne $m^2 - 4 \in \NNsquare$\,, puis la contradiction $m = 2$ via le fait \ref{diff-square-ko}.
-		\end{enumerate}
-
-
 		\item Donc $m = \alpha M^2$\,, $u = \beta U^2$\,, $q = \gamma Q^2$ où $(M, U, Q) \in ( \NNs )^3$ et $\setgene{\alpha, \beta, \gamma} \subset \NNsf \cap \NN_{>1}$\,.
 
 
