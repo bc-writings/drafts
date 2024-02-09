@@ -291,7 +291,7 @@ En posant $x = n + \frac32 = \frac{n + (n + 3)}{2}$\,, nous obtenons les \sftab[
 \end{center}
 
 
-En multipliant les colonnes extrêmes ensemble, et celles centrales aussi, et en notant que $6 \times 3 = 2 \times 3^2$, nous arrivons au même \sftab\ généralisé ci-dessous.
+En multipliant les colonnes extrêmes ensemble, et celles centrales aussi, et en notant que $6 \times 3 = 2 \times 3^2$, nous arrivons, dans chaque cas, au même \sftab\ généralisé ci-dessous.
 
 \begin{center}
 	\begin{tblr}{
@@ -313,8 +313,37 @@ En multipliant les colonnes extrêmes ensemble, et celles centrales aussi, et en
 
 Comme $x^2 - \frac14 - \big( x^2 - \frac94 \big) = 2$\,, le fait \ref{sftable-illegal-0-sol} nous montre que le \sftab\ généralisé précédent est impossible. Joli ! Non ?
 
+\smallskip
 
-\begin{remark}
-	Noter que la fin du raisonnement n'a fait appel à aucune hypothèse sur $\consprod<4>$\,. 
-\end{remark}
+Noter que la fin du raisonnement n'a fait appel à aucune hypothèse sur $\consprod<4>$\,. Ceci nous donne donc le fait suivant.
+
+
+\begin{fact} \label{no-sftab-6.1.2.3}
+	Aucun \sftab\ ne peut contenir l'un des deux \sftab[x] suivants.
+	\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{4}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-5} = {dashed},
+		hline{2}   = {.95pt}
+	}
+		m + \bullet
+			&  0
+			&  1
+			&  2
+			&  3
+	\\
+			&  6
+			&  1
+			&  2
+			&  3
+	\\
+			&  3
+			&  2
+			&  1
+			&  6
+	\end{tblr}
+	\end{center} 
+\end{fact}
+
 
