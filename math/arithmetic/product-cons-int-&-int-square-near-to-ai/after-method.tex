@@ -1,16 +1,16 @@
 La méthode présentée ci-dessus permet de faire appel à un programme pour limiter les traitements à la main, et à la sueur des neurones, de \sftab[x] problématiques comme nous avons dû le faire dans la section \ref{apply-4}.
 Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 
-
+%\newpage
 \begin{enumerate}
 	\item On raisonne par l'absurde en supposant que $\consprod<6> \in \NNssquare$\,.
 
 
-	\item On fabrique la liste $\setproba{P}$ des diviseurs premiers stricts de $6$ : nous avons juste $2$\,, $3$ et $5$\,.
-	Notons qu'avec $7$ facteurs, nous n'aurions pas garder $7$ car il est forcément de valuation paire dans chaque facteur $(n + i)$ de $\consprod<7>$ si $\consprod<7> \in \NNssquare$\,.
+	\item Comme $\forall p \in \PP_{\geq 6}$\,, $p$ divise au maximum un seul des facteurs $(n + i)$ de $\consprod<6>$\,,
+	nous avons juste besoin de considérer l'ensemble $\setproba{P} = \setgene{2, 3, 5}$ des diviseurs premiers stricts de $6$\,.
 
 
-	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des \sftab[x] partiels relatifs à $p$ et $\consprod<6> \in \NNssquare$\,. On s'appuie sur la section \ref{sftable-constraint}.
+	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des \sftab[x] partiels relatifs à $p$ et $\consprod<6> \in \NNssquare$ en s'appuyant sur la section \ref{sftable-constraint}.
 
 
 	\item Via les listes $\setproba*{V}{p}$\,, on calcule toutes les multiplications de tous les \sftab[x] partiels relatifs à tous les nombres $p$ différents, et pour chacune d'elles, on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme qui va donc évoluer au gré des démonstrations faites par un humain (démonstrations que l'on espère le plus rare possible).

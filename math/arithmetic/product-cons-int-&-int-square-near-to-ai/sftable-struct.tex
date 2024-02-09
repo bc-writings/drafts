@@ -109,30 +109,29 @@
 
 
 \begin{fact} \label{sftable-illegal-0-sol}
-	Soient $(n, k, d) \in ( \NNs )^3$ et $i \in \NN$\,.
-	Considérons le \sftab\ ci-après où les puces $\bullet$ indiquent des valeurs quelconques.
+	Soit le \sftab\ généralisé ci-après où
+	$r \in \NN_{\geq 2}$\,,
+	$( n_i )_{1 \leq i \leq r} \in \NNseq[r]$
+	et
+	$d \in \NNsf$\,.
 
     \begin{center}
     	\begin{tblr}{
-    		colspec     = {Q[r,$]*{5}{Q[c,$]}},
+    		colspec     = {Q[r,$]*{3}{Q[c,$]}},
     		vline{2}    = {.95pt},
-    		vline{3-6}  = {dashed},
+    		vline{3-Y}  = {dashed},
    			hline{2}    = {.95pt},
-			column{2-Z} = {3.75em},
+			column{2-Z} = {2em},
 			% Rejected
-			cell{2}{2,6} = {red!15},
+			cell{2}{2,Z} = {red!15},
     	}
-    		n + \bullet
-   				&  i
-    			&  i + 1
+    		\bullet
+   				&  n_1
     			&  \dots
-    			&  i + k - 1
-    			&  i + k
+    			&  n_r
     	\\
     			&  d
-				&  \bullet
     			&  \dots
-				&  \bullet
 				&  d
     	\end{tblr}
     \end{center}
@@ -140,14 +139,14 @@
 	Ce \sftab\ est impossible si l'une des deux conditions suivantes est validée.
 	
 	\begin{enumerate}
-		\item $d \ndivides k$\,.
+		\item $\dfrac{n_r - n_1}{d} \notin \NN$\,.
 
-		\item $d \divides k$ et $\dfrac{k}{d} \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
+		\item $\dfrac{n_r - n_1}{d} \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
 	\end{enumerate}
 \end{fact}
 
 
 \begin{proof}
-	$n + i = d A^2$ et $n + i + k = d B^2$ nous donnent $d (B^2 - A^2) = k$\,. On conclut directement si $d \ndivides k$\,, et via le fait \ref{diff-square-ko} dans le second cas.
+	$n_1 = d A^2$ et $n_r = d B^2$ nous donnent $d (B^2 - A^2) = n_r - n_1$\,. On conclut directement pour le premier cas, et via le fait \ref{diff-square-ko} dans le second.
 \end{proof}
 

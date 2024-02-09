@@ -1,4 +1,4 @@
-Supposons que $\consprod<4> = n(n+1)(n+2)(n+3) \in \NNssquare$\,. Nous avons alors les \sftab[x] partiels suivants pour $p \in \PP_{>3}$ divisant $\consprod<4>$\,.
+Supposons que $\consprod<4> = n(n+1)(n+2)(n+3) \in \NNssquare$\,. Nous avons alors les \sftab[x] partiels suivants pour $p \in \PP_{\geq 4}$ divisant $\consprod<4>$\,.
 
 \begin{center}
 	\begin{tblr}{
@@ -233,20 +233,21 @@ Le fait \ref{sftable-illegal-0-sol} rejette quatre \sftab[x] : voir les cellules
 
 
 \vspace{-1.5ex}
-Il nous reste à étudier les deux derniers tableaux reproduits ci-après.
+Ceci nous amène à étudier les deux \sftab[x] généralisés suivants.
 
 \begin{center}
 	\begin{tblr}{
-		colspec    = {Q[r,$]*{4}{Q[c,$]}},
-		vline{2}   = {.95pt},
-		vline{3-5} = {dashed},
-		hline{2}   = {.95pt}
+		colspec     = {Q[r,$]*{4}{Q[c,$]}},
+		vline{2}    = {.95pt},
+		vline{3-5}  = {dashed},
+		hline{2}    = {.95pt},
+		column{2-Z} = {2em},
 	}
-		n + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
+		\bullet
+			&  n
+			&  n+1
+			&  n+2
+			&  n+3
 	\\
 			&  6
 			&  1
@@ -261,28 +262,62 @@ Il nous reste à étudier les deux derniers tableaux reproduits ci-après.
 \end{center}
 
 
-Commençons par démontrer que l'on ne peut pas avoir
-$n = 6 A^2$\,, $n + 1 = B^2$\,, $n + 2 = 2 C^2$ et $n + 3 = 3 D^2$
-où $(A, B, C, D) \in ( \NNs )^4$\,.
+En posant $x = n + \frac32 = \frac{n + (n + 3)}{2}$\,, nous obtenons les \sftab[x] généralisés suivants.
 
-\begin{itemize}
-	\item Posons $x = n + \frac32$\, de sorte que
-	$x - \frac32 = 6 A^2$\,, $x - \frac12 = B^2$\,, $x + \frac12 = 2 C^2$ et $x + \frac32 = 3 D^2$\,.
+\begin{center}
+	\begin{tblr}{
+		colspec     = {Q[r,$]*{4}{Q[c,$]}},
+		vline{2}    = {.95pt},
+		vline{3-5}  = {dashed},
+		hline{2}    = {.95pt},
+		column{2-Z} = {2.75em},
+	}
+		\bullet
+			&  x - \frac32
+			&  x - \frac12
+			&  x + \frac12
+			&  x + \frac32
+	\\
+			&  6
+			&  1
+			&  2
+			&  3
+	\\
+			&  3
+			&  2
+			&  1
+			&  6
+	\end{tblr}
+\end{center}
 
-	\item Nous avons alors
-	$\big( x - \frac32 \big) \big( x + \frac32 \big) = 2 E^2$\,, c'est-à-dire $x^2 - \frac94 = 2 E^2$\,, avec $E \in \NNs$.
 
-	\item De même,
-	$x^2 - \frac14 = 2 F^2$ avec $F \in \NNs$.
+En multipliant les colonnes extrêmes ensemble, et celles centrales aussi, nous arrivons aux \sftab[x] généralisés ci-après où les $2$ viennent de $6 \times 3 = 2 \times 3^2$\,.
 
-	\item Par simple soustraction, nous obtenons $2 F^2 - 2 E^2 = 2$\,, puis $F^2 - E^2 = 1$\,, mais ceci contredit le fait \ref{dist-square}.
-\end{itemize}
+\begin{center}
+	\begin{tblr}{
+		colspec     = {Q[r,$]*{2}{Q[c,$]}},
+		vline{2}    = {.95pt},
+		vline{3-Y}  = {dashed},
+		hline{2}    = {.95pt},
+		column{2-Z} = {2.75em},
+	}
+		\bullet
+			&  x - \frac94
+			&  x - \frac14
+	\\
+			&  2
+			&  2
+	\\
+			&  2
+			&  2
+	\end{tblr}
+\end{center}
 
 
-Le même type de raisonnement
-\footnote{
-	Noter la \enquote{symétrie} respectée par les valeurs des deux tableaux.
-}
-démontre l'impossibilité d'avoir
-$n = 3 A^2$\,, $n + 1 = 2 B^2$\,, $n + 2 = C^2$ et $n + 3 = 6 D^2$
-où $(A, B, C, D) \in ( \NNs )^4$\,.
+Comme $x - \frac14 - \big( x - \frac94 \big) = 4$\,, le fait \ref{sftable-illegal-0-sol} nous montre que les \sftab[x] généralisés précédents sont impossibles. Joli ! Non ?
+
+
+\begin{remark}
+	Noter que la fin du raisonnement n'a fait appel à aucune hypothèse sur $\consprod<4>$\,. 
+\end{remark}
+

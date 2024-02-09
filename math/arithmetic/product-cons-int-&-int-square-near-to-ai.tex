@@ -91,6 +91,8 @@
 \newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
 \newcommand\NNssquare{\seqsuprageo{\NN}{*}{}{}{2}}
 
+
+\NewDocumentCommand\NNseq{ O{n} }{\seqsuprageo{\NN}{}{\!sc}{#1}{}}
 \NewDocumentCommand\PPseq{ O{n} }{\seqsuprageo{\PP}{}{\!sc}{#1}{}}
 
 \NewDocumentCommand\GCD{ m  m }{#1 \wedge #2}
@@ -154,7 +156,7 @@
 % ------------------ %
 
 
-\bigskip
+%\bigskip
 \section{Notations utilisées}
 
 \input{\contentdir/notations}
@@ -241,7 +243,7 @@
 
 
 %\bigskip
-%\newpage
+\newpage
 
 \hrule
 

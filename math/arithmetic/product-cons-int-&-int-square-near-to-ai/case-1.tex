@@ -36,45 +36,45 @@ Le fait suivant est immédiat.
 \end{proof}
 
 
-% ------------------ %
+%% ------------------ %
+%
+%
+%\begin{fact} \label{prime-square}
+%	$\forall (a, b) \in \NNs \times \NNs$, 
+%	si $\GCD{a}{b} = 1$ et $a b \in \NNssquare$\,,
+%	alors $a \in \NNssquare$ et $b \in \NNssquare$\,.
+%\end{fact}
+%
+%
+%\begin{proof}
+%	$\forall p \in \PP$\,, $\padicval{ab} \in 2 \NN$\,,
+%	et $p$ ne peut diviser à la fois $a$ et $b$\,,
+%	donc
+%    $\forall p \in \PP$\,, 
+%    $\padicval{a} \in 2 \NN$ et $\padicval{b} \in 2 \NN$\,,
+%    autrement dit 
+%    $(a, b) \in \NNssquare \times \NNssquare$\,.
+%\end{proof}
 
 
-\begin{fact} \label{prime-square}
-	$\forall (a, b) \in \NNs \times \NNs$, 
-	si $\GCD{a}{b} = 1$ et $a b \in \NNssquare$\,,
-	alors $a \in \NNssquare$ et $b \in \NNssquare$\,.
-\end{fact}
-
-
-\begin{proof}
-	$\forall p \in \PP$\,, $\padicval{ab} \in 2 \NN$\,,
-	et $p$ ne peut diviser à la fois $a$ et $b$\,,
-	donc
-    $\forall p \in \PP$\,, 
-    $\padicval{a} \in 2 \NN$ et $\padicval{b} \in 2 \NN$\,,
-    autrement dit 
-    $(a, b) \in \NNssquare \times \NNssquare$\,.
-\end{proof}
-
-
-% ------------------ %
-
-
-\begin{fact} \label{same-square-free}
-	Soit $(a, b) \in \NNs \times \NNs$ tel que $a b \in \NNssquare$\,,
-	ainsi que $(\alpha, \beta, A, B) \in ( \NNsf )^2 \times \NN^2$ tel que $a = \alpha A^2$ et $b = \beta B^2$.
-	Nous avons alors forcément $\alpha = \beta$\,.
-\end{fact}
-
-%\newpage
-\begin{proof}
-	Le fait \ref{facto-square} donne $\alpha \beta \in \NNssquare$\,.
-	De plus, $\forall p \in \PP$\,, nous avons 
-	$\padicval{\alpha} \in \setgene{0, 1}$
-	et
-	$\padicval{\beta} \in \setgene{0, 1}$\,.
-	Finalement, $\forall p \in \PP$\,, $\padicval{\alpha} = \padicval{\beta}$\,, autrement dit $\alpha = \beta$\,.
-\end{proof}
+%% ------------------ %
+%
+%
+%\begin{fact} \label{same-square-free}
+%	Soit $(a, b) \in \NNs \times \NNs$ tel que $a b \in \NNssquare$\,,
+%	ainsi que $(\alpha, \beta, A, B) \in ( \NNsf )^2 \times \NN^2$ tel que $a = \alpha A^2$ et $b = \beta B^2$.
+%	Nous avons alors forcément $\alpha = \beta$\,.
+%\end{fact}
+%
+%%\newpage
+%\begin{proof}
+%	Le fait \ref{facto-square} donne $\alpha \beta \in \NNssquare$\,.
+%	De plus, $\forall p \in \PP$\,, nous avons 
+%	$\padicval{\alpha} \in \setgene{0, 1}$
+%	et
+%	$\padicval{\beta} \in \setgene{0, 1}$\,.
+%	Finalement, $\forall p \in \PP$\,, $\padicval{\alpha} = \padicval{\beta}$\,, autrement dit $\alpha = \beta$\,.
+%\end{proof}
 
 
 % ------------------ %
@@ -88,6 +88,7 @@ Le fait suivant est immédiat.
 	\begin{enumerate}
 		\item $N^2 - M^2 \geq 2N - 1$\,.
 		
+		\newpage
 		\item Notons $nb_{sol}$ le nombre de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
 		
 		\smallskip
