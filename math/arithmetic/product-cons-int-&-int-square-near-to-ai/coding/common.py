@@ -7,6 +7,11 @@ from sympy import primerange
 
 DIST_ZERO_SOL = {1, 2, 4, 6, 10, 14, 18}
 
+
+# ------------------------------ #
+# -- ILLEGAL HUMAN SUB SFTABS -- #
+# ------------------------------ #
+
 ILLEGAL_HUMAN_SUB_SFTABS = [
 # Found when solving 4 factors by hand.
     [6, 1, 2, 3],
@@ -80,8 +85,8 @@ def prod_of(k, sftab_1, sftab_2, kprimes):
         return None
 
 # Illegal human sub sf-table?
-    if prod in ILLEGAL_HUMAN_SUB_SFTABS:
-        return None
+    # if prod in ILLEGAL_HUMAN_SUB_SFTABS:
+    #     return None
 
 # Illegal dist squares?
     # if is_illegal_zero_sol(k, prod):
