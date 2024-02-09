@@ -1,4 +1,4 @@
-K = 6
+K = 5
 
 from common import *
 
