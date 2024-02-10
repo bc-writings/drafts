@@ -26,63 +26,77 @@ ILLEGAL_HUMAN_SUB_SFTABS = [
 # -- BUILD -- #
 # ----------- #
 
-def build_n_ones(k):
-    return [1 for _ in range(k)]
+def build_n_ones(nbfactors):
+    return [1 for _ in range(nbfactors)]
 
 
-def build_one_prime_sftab(k, p, pos):
+def build_one_prime_sftab(nbfactors, prime, positions):
     return [
-        p
-        if i in pos else
+        prime
+        if i in positions else
         1
-        for i in range(k)
+        for i in range(nbfactors)
     ]
 
 
-def build_prime_sftabs(k, p):
-    p_sftabs = [build_n_ones(k)]
+def build_prime_sftabs(nbfactors, prime):
+    p_sftabs = [build_n_ones(nbfactors)]
 
-    for pos in build_pos_sftab_recu(k, p):
+    for positions in build_pos_sftab_recu(nbfactors, prime):
         p_sftabs.append(
-            build_one_prime_sftab(k, p, pos)
+            build_one_prime_sftab(nbfactors, prime, positions)
         )
 
     return p_sftabs
 
 
-def build_pos_sftab_recu(k, p, cursor = 0, first = True):
-    TODO
+def build_pos_sftab_recu(
+    nbfactors,
+    prime,
+    cursor = 0,
+    first  = True
+):
 # No more place left.
-    if cursor + p >= k:
+    if cursor + prime >= nbfactors:
         return []
 
 # Just two more.
     allpos = []
     m = 1
 
-    while(cursor + m*p < k):
-        allpos.append([cursor, cursor + m*p])
+    while(cursor + m*prime < nbfactors):
+        allpos.append([cursor, cursor + m*prime])
 
 # Recursive call to obtain more.
-        nextpos = m*p + p
+        nextpos = m*prime + prime
 
-        while(nextpos < k):
-            for pos in build_pos_sftab_recu(k, p, cursor + nextpos, False):
-                allpos.append(initialpos + pos)
+        while(nextpos < nbfactors):
+            for positions in build_pos_sftab_recu(
+                nbfactors,
+                prime,
+                cursor + nextpos,
+                False
+            ):
+                allpos.append(positions)
 
-            nextpos += p
+            nextpos += prime
 
-        p += p
+        prime += prime
 
 # Recursive call to advance of just one step.
     if first:
-        allpos += build_pos_sftab_recu(k, p, cursor + 1, first)
+        allpos += build_pos_sftab_recu(
+            nbfactors,
+            prime,
+            cursor + 1,
+            first
+        )
 
 # No more job to do.
     return allpos
 
 
-def prod_of(k, sftab_1, sftab_2, kprimes):
+def prod_of(sftab_1, sftab_2):
     prod = [
         a * b
         for a, b in zip(sftab_1, sftab_2)
@@ -91,7 +105,7 @@ def prod_of(k, sftab_1, sftab_2, kprimes):
     return prod
 
 
-def is_illegal_zero_sol(k, sftable):
+def is_illegal_zero_sol(nbfactors, sftable):
     candidates = set()
 
     for elt in set(sftable):
@@ -102,7 +116,7 @@ def is_illegal_zero_sol(k, sftable):
 
     for elt in candidates:
         if is_illegal_zero_sol_recu(
-            k, sftable,
+            nbfactors, sftable,
             elt,
             sftable.index(elt),
             sftable.count(elt)
@@ -113,13 +127,13 @@ def is_illegal_zero_sol(k, sftable):
     return False
 
 
-def is_illegal_zero_sol_recu(k, sftable, elt, pos, nb_elt):
+def is_illegal_zero_sol_recu(nbfactors, sftable, elt, positions, nb_elt):
     if nb_elt == 1:
         return False
 
-    for i, e in enumerate(sftable, pos):
+    for i, e in enumerate(sftable, positions):
         if e == elt:
-            idelta = i - pos
+            idelta = i - positions
 
             if idelta % elt != 0:
                 if VERBOSE:
@@ -134,31 +148,29 @@ def is_illegal_zero_sol_recu(k, sftable, elt, pos, nb_elt):
                 return True
 
     return is_illegal_zero_sol_recu(
-        k,
+        nbfactors,
         sftable,
         elt,
-        sftable.index(elt, pos + 1),
+        sftable.index(elt, positions + 1),
         nb_elt - 1
     )
 
 
-# ------------- #
-# -- ANALYSE -- #
-# ------------- #
+# ---------------- #
+# -- NO MORE PB -- #
+# ---------------- #
 
-def find_pb_sftabs(k):
-    kprimes = list(primerange(k))
+def find_pb_sftabs(nbfactors):
+    kprimes = list(primerange(nbfactors))
 
     partial_sftabs = [
-        build_prime_sftabs(k, p)
+        build_prime_sftabs(nbfactors, p)
         for p in kprimes
     ]
 
-    # from pprint import pprint;pprint(partial_sftabs)
-
     pb_sftabs = []
 
-    for sftab in find_pb_sftabs_recu(k, partial_sftabs, kprimes):
+    for sftab in find_pb_sftabs_recu(nbfactors, partial_sftabs, kprimes):
         print(f">>> {sftab=}")
 # No one is innocent...
         # if sftab[0] == 1 or sftab[-1] == 1:
@@ -174,7 +186,7 @@ def find_pb_sftabs(k):
 
 # # Illegal dist squares?
 #
-#     if is_illegal_zero_sol(k, prod):
+#     if is_illegal_zero_sol(nbfactors, prod):
 #         return None
 
 # No pb found...
@@ -183,7 +195,7 @@ def find_pb_sftabs(k):
     return pb_sftabs
 
 
-def find_pb_sftabs_recu(k, partial_sftabs, kprimes):
+def find_pb_sftabs_recu(nbfactors, partial_sftabs, kprimes):
     if len(partial_sftabs) == 1:
         return partial_sftabs[0]
 
@@ -191,17 +203,11 @@ def find_pb_sftabs_recu(k, partial_sftabs, kprimes):
 
     for sftab_1 in partial_sftabs[0]:
         for sftab_2 in find_pb_sftabs_recu(
-            k,
+            nbfactors,
             partial_sftabs[1:],
             kprimes
         ):
-            prod = prod_of(
-                k,
-                sftab_1, sftab_2,
-                kprimes
-            )
-
-            all_prods.append(prod)
+            all_prods.append(prod_of(sftab_1, sftab_2))
 
     return all_prods
 
@@ -211,4 +217,10 @@ def find_pb_sftabs_recu(k, partial_sftabs, kprimes):
 # --------------------- #
 
 if __name__ == '__main__':
-    TODO
+    from pprint import pprint
+
+    for n in range(3, 8):
+        print(f"build_prime_sftabs({n}, 2)")
+
+        for t in build_prime_sftabs(n, 2):
+            print(t)
