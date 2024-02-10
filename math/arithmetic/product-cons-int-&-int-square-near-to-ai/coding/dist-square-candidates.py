@@ -1,3 +1,4 @@
+from collections import defaultdict
 from math import sqrt, floor
 
 def sol(diff):
@@ -19,6 +20,13 @@ def sol(diff):
 
     return solfound
 
+all_nbsol = defaultdict(list)
+
+for d in range(1, 101):
+    all_nbsol[len(sol(d))].append(str(d))
+
+for k, v in all_nbsol.items():
+    print(f"{k}: {', '.join(v)}")
 
 # for c in sol(36):
 #     print(c)
@@ -26,19 +34,8 @@ def sol(diff):
 # exit()
 
 
-for d in range(1, 21):
-    print(f"{d=} , {sol(d)=}")
-
-
-# for nbsol in range(20):
-#     print()
-#     print(f"{nbsol = }")
-
-#     for d in range(1, 21):
-#         if len(sol(d)) == nbsol:
-#             print(d, end=", ")
-
-# print()
+# for d in range(1, 101):
+#     print(f"{d=} , {sol(d)=}")
 
 
 # maxsol    = 0

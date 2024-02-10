@@ -7,14 +7,17 @@
 \leavevmode
 \smallskip
 
-Le fait suivant est immédiat.
-
 \begin{fact} \label{prime-square}
 	$\forall n \in \NNssquare$\,,
 	$\forall p \in \PP$\,,
 	nous avons 
 	$\padicval{n} \in 2 \NN$\,.
 \end{fact}
+
+
+\begin{proof}
+	Immédiat à valider.
+\end{proof}
 
 
 % ------------------ %
@@ -93,13 +96,17 @@ Le fait suivant est immédiat.
 		
 		\smallskip
 		\noindent
-		Pour $\delta \in \ZintervalC{1}{20}$, nous avons :
+		Pour $\delta \in \ZintervalC{1}{100}$, nous avons :
 		\begin{enumerate}
-			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
+			\item $nb_{sol}= 0$ si $\delta \in \{ 1, 2, 4, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74,$ $78, 82, 86, 90, 94, 98 \}$\,.
 
-			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9, 11, 12, 13, 16}$\,.
+			\item $nb_{sol}= 1$ si $\delta \in \{ 3, 5, 7, 8, 9, 11, 12, 13, 16, 17, 19, 20, 23, 25, 28, 29, 31, 36, 37, 41, 43,$ $44, 47, 49, 52, 53, 59, 61, 67, 68, 71, 73, 76, 79, 83, 89, 92, 97, 100 \}$\,.
 
-			\item $nb_{sol}= 2$ si $\delta = 15$\,.
+			\item $nb_{sol}= 2$ si $\delta \in \{ 15, 21, 24, 27, 32, 33, 35, 39, 40, 51, 55, 56, 57, 60, 64, 65, 69, 77, 81, 84,$ $85, 87, 88, 91, 93, 95 \}$\,.
+
+			\item $nb_{sol}= 3$ si $\delta \in \{ 45, 48, 63, 72, 75, 80, 99 \}$\,.
+
+			\item $nb_{sol}= 4$ si $\delta = 96$\,.
 		\end{enumerate}
 	\end{enumerate}
 \end{fact}
@@ -113,11 +120,12 @@ Le fait suivant est immédiat.
 		\item Comme $N - 1 \geq M$\,, nous obtenons :
 		$N^2 - M^2 \geq N^2 - (N - 1)^2 = 2N - 1$\,.
 
-		\item Le point précédent permet d'utiliser le programme \verb#Python# suivant afin d'obtenir les nombres de solutions indiqués rapidement.
+		\item Le point précédent permet d'utiliser le programme \verb#Python# suivant afin d'obtenir rapidement les longues listes de nombres indiquées.
 
 \bgroup
 \small
 \begin{Python}
+from collections import defaultdict
 from math import sqrt, floor
 
 def sol(diff):
@@ -138,6 +146,13 @@ def sol(diff):
             solfound.append((i, tested))
 
     return solfound
+
+all_nbsol = defaultdict(list)
+
+for d in range(1, 101):
+    all_nbsol[len(sol(d))].append(d)
+
+print(all_nbsol)
 \end{Python}
 \egroup	
 

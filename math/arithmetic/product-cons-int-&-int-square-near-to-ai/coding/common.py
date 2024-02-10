@@ -204,3 +204,11 @@ def find_pb_sftabs_recu(k, partial_sftabs, kprimes):
             all_prods.append(prod)
 
     return all_prods
+
+
+# -------------------------- #
+# -- HOMEMADE TESTS -- #
+# ------------- #
+
+if __name__ == '__main__':
+    TODO
