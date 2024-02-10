@@ -1,0 +1,190 @@
+\subsection{La méthode via le cas de 6 facteurs} \label{apply-6}
+
+\leavevmode
+\smallskip
+
+La méthode présentée ci-dessus permet de faire appel à des programmes informatiques pour limiter les traitements à la main, et à la sueur des neurones, de \sftab[x] problématiques comme nous avons dû le faire dans la section \ref{apply-4}.
+Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
+
+%\newpage
+\begin{enumerate}
+	\item On raisonne par l'absurde en supposant que $\consprod<6> \in \NNssquare$\,.
+
+
+	\item Comme $\forall p \in \PP_{\geq 6}$\,, $p$ divise au maximum un seul des facteurs $(n + i)$ de $\consprod<6>$\,,
+	nous avons juste besoin de considérer l'ensemble $\setproba{P} = \setgene{2, 3, 5}$ des diviseurs premiers stricts de $6$\,.
+
+
+	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des \sftab[x] partiels relatifs à $p$ et $\consprod<6> \in \NNssquare$ en s'appuyant sur la section \ref{sftable-constraint}.
+
+
+	\item Via les listes $\setproba*{V}{p}$\,, on calcule toutes les multiplications de tous les \sftab[x] partiels relatifs à des nombres $p$ différents, et pour chacune d'elles, on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme qui va donc évoluer au gré des démonstrations faites par un humain (démonstrations que l'on espère le plus rare possible).
+	%
+	\begin{enumerate}
+		\item Le tableau commence, ou se termine, par la valeur $1$\,. Dans ce cas, on sait par récurrence que le tableau produit n'est pas possible (voir le fait \ref{sftab-recu}).
+
+		\item Le tableau est rejeté par le fait \ref{sftable-illegal-0-sol}.
+
+		\item Le tableau \enquote{produit} contient un sous-tableau que nous savons impossible suite à un raisonnement humain fait \emph{localement}\,, c'est-à-dire que seul les facteurs indiqués dans le sous-tableau, et le sous-tableau lui-même sont utilisés pour raisonner.
+		C'est le cas des \sftab[x] du fait \ref{no-sftab-6.1.2.3}.
+	\end{enumerate}
+\end{enumerate}
+
+
+Dans le dépôt en ligne associé à ce document sont placés les fichiers \verb#find-pb-sftab.py# et \verb#common.py# qui nous donnent juste à analyser les deux \sftab[x] problématiques suivants pour lesquels nous allons justifier que les valeurs $1$ posent problème
+\footnote{
+	Toutes les règles 4-a, 4-b et 4-c sont utilisées pour n'arriver qu'aux deux \sftab[x] à analyser à la main.
+}.
+%
+\begin{center}
+	\begin{tblr}{
+		colspec  = {Q[r,$]*{6}{Q[c,$]}},
+		vline{2} = {.95pt},
+		vline{3-Y} = {dashed},
+		hline{2} = {.95pt},
+		% Rejected
+		cell{2,3}{3,Y} = {red!15},
+	}
+		n + \bullet
+			&  0
+			&  1
+			&  2
+			&  3
+			&  4
+			&  5
+	\\
+			&  30
+			&  1
+			&  2
+			&  3
+			&  1
+			&  5
+	\\
+			&  5
+			&  1
+			&  3
+			&  2
+			&  1
+			&  30
+	\end{tblr}
+\end{center}
+
+
+Ces deux cas sont rapides à gérer car le fait \ref{diff-square-ko} donne que $1$ et $4$ sont les seuls carrés distants de $3$\,, donc $(n+1, n+4) = (1, 4)$\,, mais ceci contredit $n \in \NNs$. Nous savons donc que $\consprod<6> \in \NNssquare$ sans effort.
+Notons au passage un nouveau cas problématique \enquote{local} pour nos futures recherches (le fait suivant généralise la technique que nous venons d'utiliser).
+
+
+\newpage
+\begin{fact} \label{sftable-illegal-1-sol}
+	Soit le \sftab\ généralisé ci-après où
+	$r \in \NN_{\geq 2}$\,,
+	$( n_i )_{1 \leq i \leq r} \in \NNseq[r]$
+	et
+	$d \in \NNsf$\,.
+
+    \begin{center}
+    	\begin{tblr}{
+    		colspec     = {Q[r,$]*{3}{Q[c,$]}},
+    		vline{2}    = {.95pt},
+    		vline{3-Y}  = {dashed},
+   			hline{2}    = {.95pt},
+			column{2-Z} = {2em},
+			% Rejected
+			cell{2}{2,Z} = {red!15},
+    	}
+    		\bullet
+   				&  n_1
+    			&  \dots
+    			&  n_r
+    	\\
+    			&  d
+    			&  \dots
+				&  d
+    	\end{tblr}
+    \end{center}
+
+	Ce \sftab\ est impossible si $n_1 \geq d+1$
+	et
+	$\frac{n_r - n_1}{d} \in \setgene{3, 8}$\,.
+\end{fact}
+
+
+\begin{proof}
+	Ceci vient des équivalences logiques suivantes en posant $n_1 = d A^2$ et $n_r = d B^2$ avec $(A, B) \in \NN^2$.
+	
+	\medskip
+	\begin{stepcalc}[style=ar*, ope={\iff}]
+		\dfrac{n_r - n_1}{d} \in \setgene{3, 8}
+	\explnext{}
+		B^2 -A^2 \in \setgene{3, 8}
+	\explnext*{Voir le fait \ref{diff-square-ko}.}{}
+		(A, B) \in \setgene{(1, 2), (1, 3)}
+	\explnext{}
+		(n_1, n_r) \in \setgene{(d, 4 d), (d, 9 d)}
+	\end{stepcalc}
+\end{proof}
+
+
+\begin{remark}
+	On peut gérer les cas problématiques du cas $6$ via des manipulations algébriques similaires à celles qui avaient donné le fait \ref{no-sftab-6.1.2.3}.
+	En effet, $x = n + \frac52$ nous donne ce qui suit avec un abus de notation évident.
+	\begin{center}
+	\begin{tblr}{
+		colspec    = {Q[r,$]*{6}{Q[c,$]}},
+		vline{2}   = {.95pt},
+		vline{3-Y} = {dashed},
+		hline{2}   = {.95pt},
+		column{2-Z} = {1.25em},
+		% Focus
+		cell{1-3}{2,7} = {green!15},
+		cell{1-3}{5,4} = {orange!15},
+	}
+		x + \bullet
+			&  -\frac52
+			&  -\frac32
+			&  -\frac12
+			&  \frac12
+			&  \frac32
+			&  \frac52
+	\\
+			&  30
+			&  1
+			&  2
+			&  3
+			&  1
+			&  5
+	\\
+			&  5
+			&  1
+			&  3
+			&  2
+			&  1
+			&  30
+	\end{tblr}
+	\end{center}
+	
+	La multiplication des colonnes $1$ et $6$\,, ainsi que celle de $3$ et $4$\,, nous amènent au même \sftab\ généralisé suivant après avoir noté que $5 \times 30 = 6 \times 5^2$\,.
+	\begin{center}
+	\begin{tblr}{
+		colspec     = {Q[r,$]*{2}{Q[c,$]}},
+		vline{2}    = {.95pt},
+		vline{3-Y}  = {dashed},
+		hline{2}    = {.95pt},
+		column{2-Z} = {3.25em},
+		% Focus
+		cell{1-3}{2} = {green!15},
+		cell{1-3}{3} = {orange!15},
+	}
+		\bullet
+			&  x^2 - \frac{25}{4}
+			&  x^2 - \frac14
+	\\
+			&  6
+			&  6
+	\end{tblr}
+	\end{center}
+	
+	
+	Comme $x^2 - \frac14 - \big( x^2 - \frac{25}{4} \big) = 6$\,, le fait \ref{sftable-illegal-0-sol} nous permet de conclure.
+\end{remark}
+

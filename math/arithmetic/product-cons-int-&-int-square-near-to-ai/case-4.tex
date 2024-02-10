@@ -5,7 +5,7 @@ Supposons que $\consprod<4> = n(n+1)(n+2)(n+3) \in \NNssquare$\,. Nous avons alo
 		colspec    = {Q[r,$]*{4}{Q[c,$]}},
 		vline{2}   = {.95pt},
 		vline{3-5} = {dashed},
-		hline{2}   = {.95pt}
+		hline{2}   = {.95pt},
 	}
 		n + \bullet
 			&  0
@@ -271,6 +271,9 @@ En posant $x = n + \frac32 = \frac{n + (n + 3)}{2}$\,, nous obtenons les \sftab[
 		vline{3-5}  = {dashed},
 		hline{2}    = {.95pt},
 		column{2-Z} = {2.75em},
+		% Focus
+		cell{1-3}{2,5} = {green!15},
+		cell{1-3}{3,4} = {orange!15},
 	}
 		\bullet
 			&  x - \frac32
@@ -291,7 +294,7 @@ En posant $x = n + \frac32 = \frac{n + (n + 3)}{2}$\,, nous obtenons les \sftab[
 \end{center}
 
 
-En multipliant les colonnes extrêmes ensemble, et celles centrales aussi, et en notant que $6 \times 3 = 2 \times 3^2$, nous arrivons, dans chaque cas, au même \sftab\ généralisé ci-dessous.
+En multipliant les colonnes $1$ et $4$\,, et aussi la $2$ et la $3$\,, nous arrivons, dans chaque cas, au même \sftab\ généralisé ci-dessous après avoir noté que $6 \times 3 = 2 \times 3^2$.
 
 \begin{center}
 	\begin{tblr}{
@@ -300,6 +303,9 @@ En multipliant les colonnes extrêmes ensemble, et celles centrales aussi, et en
 		vline{3-Y}  = {dashed},
 		hline{2}    = {.95pt},
 		column{2-Z} = {3em},
+		% Focus
+		cell{1-3}{2} = {green!15},
+		cell{1-3}{3} = {orange!15},
 	}
 		\bullet
 			&  x^2 - \frac94
@@ -345,5 +351,4 @@ Noter que la fin du raisonnement n'a fait appel à aucune hypothèse sur $\consp
 	\end{tblr}
 	\end{center} 
 \end{fact}
-
 

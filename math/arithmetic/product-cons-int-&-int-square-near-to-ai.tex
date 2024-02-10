@@ -223,12 +223,21 @@
 %\medskip
 \section{Et après ?}
 
-\subsection{La méthode via le cas de 6 facteurs} \label{apply-6}
+\input{\contentdir/auto-case-6}
 
-\leavevmode
-\smallskip
 
-\input{\contentdir/and-after}
+%\newpage
+\foreach \k in {7} {
+%\foreach \k in {5} {
+%	%\newpage
+%	\medskip
+	\subsection{Le cas de \k\ facteurs} \label{apply-\k}
+
+	\leavevmode
+	\smallskip
+	
+	\input{\contentdir/auto-case-\k}
+}
 
 
 % ------------------ %

@@ -8,14 +8,15 @@ from sympy import primerange
 # --------------- #
 
 VERBOSE = False
-# VERBOSE = True
+VERBOSE = True
 
 LOG = dict()
 
 DIST_NO_SOL = {1, 2, 4, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 78, 82, 86, 90, 94, 98}
+DIST_NO_SOL = {}
 
-ZERO_SOL_NOT_DIV_TAG    = "zero sol dist [not div by]"
-ZERO_SOL_NOT_ENOUGH_TAG = "zero sol dist [not enough]"
+ZERO_SOL_NOT_DIV_TAG    = "Zero sol dist [not div by]"
+ZERO_SOL_NOT_ENOUGH_TAG = "Zero sol dist [not enough]"
 
 LOG[ZERO_SOL_NOT_DIV_TAG]    = set()
 LOG[ZERO_SOL_NOT_ENOUGH_TAG] = defaultdict(set)
@@ -112,27 +113,26 @@ def is_illegal_zero_sol(nbfactors, sftable):
     return False
 
 
-def is_illegal_zero_sol_recu(nbfactors, sftable, elt, positions, nb_elt):
+def is_illegal_zero_sol_recu(nbfactors, sftable, elt, pos, nb_elt):
     if nb_elt == 1:
         return False
 
-    for i, e in enumerate(sftable, positions):
+    for i, e in enumerate(sftable, pos):
         if e == elt:
-            idelta = i - positions
-
-            if idelta % elt != 0:
+            if i % elt != 0:
+                print(f"{elt=}, {i=}, {pos=}")
                 LOG[ZERO_SOL_NOT_DIV_TAG].add(elt)
 
                 if VERBOSE:
-                    print(f"+ Zero Sol: {elt=} in {sftable=}")
+                    print(f"\n+ {ZERO_SOL_NOT_DIV_TAG}: {elt=} in {sftable=}")
 
                 return True
 
-            if idelta // elt in DIST_NO_SOL:
-                LOG[ZERO_SOL_NOT_ENOUGH_TAG][elt].add(idelta)
+            if i // elt in DIST_NO_SOL:
+                LOG[ZERO_SOL_NOT_ENOUGH_TAG][elt].add(i)
 
                 if VERBOSE:
-                    print(f"+ Zero Sol: {elt=} in {sftable=}")
+                    print(f"\n+ {ZERO_SOL_NOT_ENOUGH_TAG}: {elt=} in {sftable=}")
 
                 return True
 
@@ -140,7 +140,7 @@ def is_illegal_zero_sol_recu(nbfactors, sftable, elt, positions, nb_elt):
         nbfactors,
         sftable,
         elt,
-        sftable.index(elt, positions + 1),
+        sftable.index(elt, pos + 1),
         nb_elt - 1
     )
 
@@ -150,6 +150,11 @@ def is_illegal_zero_sol_recu(nbfactors, sftable, elt, positions, nb_elt):
 # ---------------- #
 
 def find_pb_sftabs(nbfactors):
+    global LOG
+
+    LOG[ZERO_SOL_NOT_DIV_TAG]    = set()
+    LOG[ZERO_SOL_NOT_ENOUGH_TAG] = defaultdict(set)
+
     kprimes = list(primerange(nbfactors))
 
     partial_sftabs = [
@@ -163,7 +168,7 @@ def find_pb_sftabs(nbfactors):
 # No one is innocent...
         if sftab[0] == 1 or sftab[-1] == 1:
             if VERBOSE:
-                print(f"+ No one is innocent: {sftab=}")
+                print(f"\n+ No one is innocent: {sftab=}")
 
             continue
 
@@ -173,8 +178,8 @@ def find_pb_sftabs(nbfactors):
 #     #     return None
 
 # Illegal dist squares?
-        if is_illegal_zero_sol(nbfactors, sftab):
-            continue
+        # if is_illegal_zero_sol(nbfactors, sftab):
+        #     continue
 
 # No pb found...
         pb_sftabs.append(sftab)
@@ -205,6 +210,20 @@ def sftabs_prod_rec(nbfactors, partial_sftabs, kprimes):
 
 if __name__ == '__main__':
     from pprint import pprint
+
+
+    for pb in [
+        [2, 3, 2, 1, 3],
+        [14, 15, 2, 1, 3, 1, 5, 7],
+    ]:
+        print()
+        print(f"{pb=}")
+
+        result = is_illegal_zero_sol(len(pb), pb)
+
+        print(f"{result=}")
+
+    exit()
 
     for p in [2, 3, 5]:
         # for n in list(range(3, 8)) + [9]:

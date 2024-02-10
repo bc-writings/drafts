@@ -21,19 +21,22 @@ def sol(diff):
     return solfound
 
 
-all_nbsol = defaultdict(list)
+# all_nbsol = defaultdict(list)
+
+# for d in range(1, 101):
+#     all_nbsol[len(sol(d))].append(str(d))
+
+# for k, v in all_nbsol.items():
+#     print(f"{k}: {', '.join(v)}")
+
+
 
 for d in range(1, 101):
-    all_nbsol[len(sol(d))].append(str(d))
+    sol_d = sol(d)
+    if len(sol_d) == 1:
+        if min(sol_d[0]) == 1:
+            print(d, sol_d)
 
-for k, v in all_nbsol.items():
-    print(f"{k}: {', '.join(v)}")
-
-
-# for c in sol(36):
-#     print(c)
-
-# exit()
 
 
 # for d in range(1, 101):
