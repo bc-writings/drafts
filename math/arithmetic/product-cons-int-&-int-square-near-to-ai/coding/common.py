@@ -8,7 +8,7 @@ from sympy import primerange
 VERBOSE = False
 # VERBOSE = True
 
-DIST_NO_SOL = {1, 2, 4, 6, 10, 14, 18}
+DIST_NO_SOL = {1, 2, 4, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 78, 82, 86, 90, 94, 98}
 
 
 # ------------------------------ #
@@ -206,9 +206,9 @@ def find_pb_sftabs_recu(k, partial_sftabs, kprimes):
     return all_prods
 
 
-# -------------------------- #
-# -- HOMEMADE TESTS -- #
-# ------------- #
+# --------------------- #
+# -- HOME-MADE TESTS -- #
+# --------------------- #
 
 if __name__ == '__main__':
     TODO
