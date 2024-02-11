@@ -8,16 +8,10 @@ Supposons que $\consprod<4> = n(n+1)(n+2)(n+3) \in \NNssquare$\,. Nous avons alo
 		hline{2}   = {.95pt},
 	}
 		n + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
+			&  0  &  1  &  2  &  3
 	\\
 		p
-			&  1
-			&  1
-			&  1
-			&  1
+			&  1  &  1  &  1  &  1
 	\end{tblr}
 \end{center}
 
@@ -31,27 +25,15 @@ Pour $p = 2$\,, nous avons les trois \sftab[x] partiels d'ordre $2$ donnés ci-a
 		vline{3-5} = {dashed},
 		hline{2}   = {.95pt}
 	}
-		n + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
+		n + \bullet  
+			&  0  &  1  &  2  &  3
 	\\
-		2
-			&  1
-			&  1
-			&  1
-			&  1
-	\\
-			&  2
-			&  1
-			&  2
-			&  1
-	\\
-			&  1
-			&  2
-			&  1
-			&  2
+		2  
+			&  1  &  1  &  1  &  1
+	\\  
+			&  2  &  1  &  2  &  1
+	\\  
+			&  1  &  2  &  1  &  2
 	\end{tblr}
 \end{center}
 
@@ -66,22 +48,13 @@ Pour $p = 3$\,, nous obtenons les deux \sftab[x] partiels d'ordre $3$ donnés ci
 		vline{3-5} = {dashed},
 		hline{2}   = {.95pt}
 	}
-		n + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
+		n + \bullet  
+			&  0  &  1  &  2  &  3
 	\\
-		3
-			&  1
-			&  1
-			&  1
-			&  1
-	\\
-			&  3
-			&  1
-			&  1
-			&  3
+		3  
+			&  1  &  1  &  1  &  1
+	\\  
+			&  3  &  1  &  1  &  3
 	\end{tblr}
 \end{center}
 
@@ -103,25 +76,13 @@ suivants.
 		hline{2}   = {.95pt},
 	}
 		n + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
-	\\
-			&  1
-			&  1
-			&  1
-			&  1
-	\\
-			&  2
-			&  1
-			&  2
-			&  1
-	\\
-			&  1
-			&  2
-			&  1
-			&  2
+			&  0  &  1  &  2  &  3
+	\\  
+			&  1  &  1  &  1  &  1
+	\\  
+			&  2  &  1  &  2  &  1
+	\\  
+			&  1  &  2  &  1  &  2
 	\end{tblr}
 \end{center}
 
@@ -133,26 +94,14 @@ suivants.
 		vline{3-5} = {dashed},
 		hline{2}   = {.95pt},
 	}
-		n + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
-	\\
-			&  3
-			&  1
-			&  1
-			&  3
-	\\
-			&  6
-			&  1
-			&  2
-			&  3
-	\\
-			&  3
-			&  2
-			&  1
-			&  6
+		n + \bullet  
+			&  0  &  1  &  2  &  3
+	\\  
+			&  3  &  1  &  1  &  3
+	\\  
+			&  6  &  1  &  2  &  3
+	\\  
+			&  3  &  2  &  1  &  6
 	\end{tblr}
 \end{center}
 \end{multicols}
@@ -174,26 +123,14 @@ Le fait \ref{sftable-illegal-0-sol} rejette quatre \sftab[x] : voir les cellules
 		cell{3}{2,4} = {red!15},
 		cell{4}{3,5} = {red!15},
 	}
-		n + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
-	\\
-			&  1
-			&  1
-			&  1
-			&  1
-	\\
-			&  2
-			&  1
-			&  2
-			&  1
-	\\
-			&  1
-			&  2
-			&  1
-			&  2
+		n + \bullet  
+			&  0  &  1  &  2  &  3
+	\\  
+			&  1  &  1  &  1  &  1
+	\\  
+			&  2  &  1  &  2  &  1
+	\\  
+			&  1  &  2  &  1  &  2
 	\end{tblr}
 \end{center}
 
@@ -207,26 +144,14 @@ Le fait \ref{sftable-illegal-0-sol} rejette quatre \sftab[x] : voir les cellules
 		% Rejected
 		cell{2}{3,4} = {red!15},
 	}
-		n + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
-	\\
-			&  3
-			&  1
-			&  1
-			&  3
-	\\
-			&  6
-			&  1
-			&  2
-			&  3
-	\\
-			&  3
-			&  2
-			&  1
-			&  6
+		n + \bullet  
+			&  0  &  1  &  2  &  3
+	\\  
+			&  3  &  1  &  1  &  3
+	\\  
+			&  6  &  1  &  2  &  3
+	\\  
+			&  3  &  2  &  1  &  6
 	\end{tblr}
 \end{center}
 \end{multicols}
@@ -243,21 +168,12 @@ Ceci nous amène à étudier les deux \sftab[x] généralisés suivants.
 		hline{2}    = {.95pt},
 		column{2-Z} = {2em},
 	}
-		\bullet
-			&  n
-			&  n+1
-			&  n+2
-			&  n+3
-	\\
-			&  6
-			&  1
-			&  2
-			&  3
-	\\
-			&  3
-			&  2
-			&  1
-			&  6
+		\bullet  
+			&  n  &  n+1  &  n+2  &  n+3
+	\\  
+			&  6  &  1  &  2  &  3
+	\\  
+			&  3  &  2  &  1  &  6
 	\end{tblr}
 \end{center}
 
@@ -275,21 +191,12 @@ En posant $x = n + \frac32 = \frac{n + (n + 3)}{2}$\,, nous obtenons les \sftab[
 		cell{1-3}{2,5} = {green!15},
 		cell{1-3}{3,4} = {orange!15},
 	}
-		\bullet
-			&  x - \frac32
-			&  x - \frac12
-			&  x + \frac12
-			&  x + \frac32
-	\\
-			&  6
-			&  1
-			&  2
-			&  3
-	\\
-			&  3
-			&  2
-			&  1
-			&  6
+		\bullet  
+			&  x - \frac32  &  x - \frac12  &  x + \frac12  &  x + \frac32
+	\\  
+			&  6  &  1  &  2  &  3
+	\\  
+			&  3  &  2  &  1  &  6
 	\end{tblr}
 \end{center}
 
@@ -307,12 +214,10 @@ En multipliant les colonnes $1$ et $4$\,, et aussi la $2$ et la $3$\,, nous arri
 		cell{1-3}{2} = {green!15},
 		cell{1-3}{3} = {orange!15},
 	}
-		\bullet
-			&  x^2 - \frac94
-			&  x^2 - \frac14
-	\\
-			&  2
-			&  2
+		\bullet  
+			&  x^2 - \frac94  &  x^2 - \frac14
+	\\  
+			&  2  &  2
 	\end{tblr}
 \end{center}
 
@@ -333,21 +238,12 @@ Noter que la fin du raisonnement n'a fait appel à aucune hypothèse sur $\consp
 		vline{3-5} = {dashed},
 		hline{2}   = {.95pt}
 	}
-		m + \bullet
-			&  0
-			&  1
-			&  2
-			&  3
-	\\
-			&  6
-			&  1
-			&  2
-			&  3
-	\\
-			&  3
-			&  2
-			&  1
-			&  6
+		m + \bullet  
+			&  0  &  1  &  2  &  3
+	\\  
+			&  6  &  1  &  2  &  3
+	\\  
+			&  3  &  2  &  1  &  6
 	\end{tblr}
 	\end{center} 
 \end{fact}

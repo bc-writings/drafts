@@ -1,13 +1,21 @@
-K_MIN = 16
-K_MAX = 25
+K_MIN = 31
+K_MAX = 40
 
 #       KMAX <= 12: immediate
 #       KMAX  = 13: slow, but acceptable
-# 14 <= KMAX      : too slow!
+# 14 <= KMAX <= 15: too slow!
+# 16 <= KMAX      : extremly slow!
+
+# PB MET...
+
 
 from pprint import pprint
 
 from common import *
+
+print()
+print (f"{K_MIN=} , {K_MAX=}")
+print()
 
 for k in range(K_MIN, K_MAX + 1):
     human_sloving = find_pb_sftabs(k)
