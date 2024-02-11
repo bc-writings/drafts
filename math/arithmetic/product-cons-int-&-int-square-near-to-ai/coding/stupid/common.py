@@ -1,4 +1,5 @@
 from collections import defaultdict
+import                  re
 
 from sympy import primerange
 
@@ -8,12 +9,12 @@ from sympy import primerange
 # --------------- #
 
 VERBOSE = False
-VERBOSE = True
+# VERBOSE = True
 
 LOG = dict()
 
 DIST_NO_SOL = {1, 2, 4, 6, 10, 14, 18, 22, 26, 30, 34, 38, 42, 46, 50, 54, 58, 62, 66, 70, 74, 78, 82, 86, 90, 94, 98}
-DIST_NO_SOL = {}
+# DIST_NO_SOL = {}
 
 ZERO_SOL_NOT_DIV_TAG    = "Zero sol dist [not div by]"
 ZERO_SOL_NOT_ENOUGH_TAG = "Zero sol dist [not enough]"
@@ -26,12 +27,22 @@ LOG[ZERO_SOL_NOT_ENOUGH_TAG] = defaultdict(set)
 # -- ILLEGAL HUMAN SUB SFTABS -- #
 # ------------------------------ #
 
-ILLEGAL_HUMAN_SUB_SFTABS = [
+ILLEGAL_HUMAN_SUB_SFTABS_REGEX = [
 # Found when solving 4 factors by hand.
-    [6, 1, 2, 3],
-    [3, 2, 1, 6],
+    "(\d+-)*6-1-2-3(-\d+)*",
+    "(\d+-)*3-2-1-6(-\d+)*",
+# Found when solving 9 factors by hand.
+    "(\d+-)*1-(\d+-){2}1(-\d+)*",
+    "(\d+-)*1-(\d+-){7}1(-\d+)*",
+# Found when solving 6 factors by hand.
+    "(\d+-)*1-6-\d+-2-3(-\d+)*",
+    "(\d+-)*3-2-\d+-6-1(-\d+)*",
 ]
 
+ILLEGAL_HUMAN_SUB_SFTABS_REGEX = [
+    re.compile(f"^{p}$")
+    for p in ILLEGAL_HUMAN_SUB_SFTABS_REGEX
+]
 
 # ----------- #
 # -- BUILD -- #
@@ -114,13 +125,20 @@ def is_illegal_zero_sol(nbfactors, sftable):
 
 
 def is_illegal_zero_sol_recu(nbfactors, sftable, elt, pos, nb_elt):
+    global LOG
+
     if nb_elt == 1:
         return False
 
-    for i, e in enumerate(sftable, pos):
+    for i, e in enumerate(sftable):
+        if i <= pos:
+            continue
+
         if e == elt:
-            if i % elt != 0:
-                print(f"{elt=}, {i=}, {pos=}")
+            idelta = i - pos
+
+            # print(f"{elt=} , {pos=} , {i=} , {idelta=}")
+            if idelta % elt != 0:
                 LOG[ZERO_SOL_NOT_DIV_TAG].add(elt)
 
                 if VERBOSE:
@@ -128,7 +146,7 @@ def is_illegal_zero_sol_recu(nbfactors, sftable, elt, pos, nb_elt):
 
                 return True
 
-            if i // elt in DIST_NO_SOL:
+            if idelta // elt in DIST_NO_SOL:
                 LOG[ZERO_SOL_NOT_ENOUGH_TAG][elt].add(i)
 
                 if VERBOSE:
@@ -145,26 +163,40 @@ def is_illegal_zero_sol_recu(nbfactors, sftable, elt, pos, nb_elt):
     )
 
 
+def is_illegal_subtab(nbfactors, sftable):
+    sftable = "-".join(str(x) for x in sftable)
+
+    for p in ILLEGAL_HUMAN_SUB_SFTABS_REGEX:
+        if p.match(sftable):
+                   return True
+
+    return False
+
+
 # ---------------- #
 # -- NO MORE PB -- #
 # ---------------- #
 
 def find_pb_sftabs(nbfactors):
+    assert nbfactors > 2
+
     global LOG
 
     LOG[ZERO_SOL_NOT_DIV_TAG]    = set()
     LOG[ZERO_SOL_NOT_ENOUGH_TAG] = defaultdict(set)
 
-    kprimes = list(primerange(nbfactors))
-
     partial_sftabs = [
         build_prime_sftabs(nbfactors, p)
-        for p in kprimes
+        for p in primerange(nbfactors)
     ]
 
     pb_sftabs = []
 
-    for sftab in sftabs_prod_rec(nbfactors, partial_sftabs, kprimes):
+    # from pprint import pprint;pprint(partial_sftabs);exit()
+
+    for sftab in sftabs_prod_rec(nbfactors, partial_sftabs):
+        # print(f"{sftab=}")
+
 # No one is innocent...
         if sftab[0] == 1 or sftab[-1] == 1:
             if VERBOSE:
@@ -172,14 +204,19 @@ def find_pb_sftabs(nbfactors):
 
             continue
 
+# Illegal ?
+        isillegal = False
 
-# # Illegal human sub sf-table?
-#     # if prod in ILLEGAL_HUMAN_SUB_SFTABS:
-#     #     return None
+        for tester in [
+            is_illegal_zero_sol,
+            is_illegal_subtab,
+        ]:
+            if tester(nbfactors, sftab):
+                isillegal = True
+                break
 
-# Illegal dist squares?
-        # if is_illegal_zero_sol(nbfactors, sftab):
-        #     continue
+        if isillegal:
+            continue
 
 # No pb found...
         pb_sftabs.append(sftab)
@@ -187,21 +224,20 @@ def find_pb_sftabs(nbfactors):
     return pb_sftabs
 
 
-def sftabs_prod_rec(nbfactors, partial_sftabs, kprimes):
+def sftabs_prod_rec(nbfactors, partial_sftabs):
     if len(partial_sftabs) == 1:
-        return partial_sftabs[0]
+        for ptab in partial_sftabs[0]:
+            # print(f"{ptab=}")
+            yield ptab
 
-    all_prods = []
-
-    for sftab_1 in partial_sftabs[0]:
-        for sftab_2 in sftabs_prod_rec(
-            nbfactors,
-            partial_sftabs[1:],
-            kprimes
-        ):
-            all_prods.append(prod_of(sftab_1, sftab_2))
-
-    return all_prods
+    else:
+        for sftab_1 in partial_sftabs[0]:
+            for sftab_2 in sftabs_prod_rec(
+                nbfactors,
+                partial_sftabs[1:],
+            ):
+                # print(f"{prod_of(sftab_1, sftab_2)=}")
+                yield prod_of(sftab_1, sftab_2)
 
 
 # --------------------- #
@@ -222,6 +258,8 @@ if __name__ == '__main__':
         result = is_illegal_zero_sol(len(pb), pb)
 
         print(f"{result=}")
+
+    print(LOG)
 
     exit()
 

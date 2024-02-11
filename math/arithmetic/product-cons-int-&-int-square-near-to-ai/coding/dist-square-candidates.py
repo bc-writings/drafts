@@ -21,6 +21,11 @@ def sol(diff):
     return solfound
 
 
+
+print(sol(5))
+
+exit()
+
 # all_nbsol = defaultdict(list)
 
 # for d in range(1, 101):

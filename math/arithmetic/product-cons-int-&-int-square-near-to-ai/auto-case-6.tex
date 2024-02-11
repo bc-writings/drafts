@@ -31,7 +31,11 @@ Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 \end{enumerate}
 
 
-Dans le dépôt en ligne associé à ce document sont placés les fichiers \verb#find-pb-sftab.py# et \verb#common.py# qui nous donnent juste à analyser les deux \sftab[x] problématiques suivants pour lesquels nous allons justifier que les valeurs $1$ posent problème
+Dans le dépôt en ligne associé à ce document sont placés des fichiers \verb#Pyhon#
+\footnote{
+	L'emploi de scripts codés rapidement est totalement fonctionnel ici.
+}
+qui nous amènent à analyser les deux \sftab[x] problématiques suivants pour lesquels nous allons justifier que les valeurs $1$ posent problème
 \footnote{
 	Toutes les règles 4-a, 4-b et 4-c sont utilisées pour n'arriver qu'aux deux \sftab[x] à analyser à la main.
 }.
@@ -70,7 +74,7 @@ Dans le dépôt en ligne associé à ce document sont placés les fichiers \verb
 \end{center}
 
 
-Ces deux cas sont rapides à gérer car le fait \ref{diff-square-ko} donne que $1$ et $4$ sont les seuls carrés distants de $3$\,, donc $(n+1, n+4) = (1, 4)$\,, mais ceci contredit $n \in \NNs$. Nous savons donc que $\consprod<6> \in \NNssquare$ sans effort.
+Ces deux cas sont rapides à gérer puisque, d'après le fait \ref{diff-square-ko}, $1$ et $4$ sont les seuls carrés distants de $3$\,, d'où $n+1 = 1$\,, mais ceci contredit $n \in \NNs$. Nous savons donc que $\consprod<6> \in \NNssquare$ sans effort.
 Notons au passage un nouveau cas problématique \enquote{local} pour nos futures recherches (le fait suivant généralise la technique que nous venons d'utiliser).
 
 
@@ -110,7 +114,7 @@ Notons au passage un nouveau cas problématique \enquote{local} pour nos futures
 
 
 \begin{proof}
-	Ceci vient des équivalences logiques suivantes en posant $n_1 = d A^2$ et $n_r = d B^2$ avec $(A, B) \in \NN^2$.
+	Ceci vient des équivalences logiques suivantes en posant $n_1 = d A^2$ et $n_r = d B^2$ avec $(A, B) \in ( \NNs )^2$.
 	
 	\medskip
 	\begin{stepcalc}[style=ar*, ope={\iff}]
@@ -122,6 +126,9 @@ Notons au passage un nouveau cas problématique \enquote{local} pour nos futures
 	\explnext{}
 		(n_1, n_r) \in \setgene{(d, 4 d), (d, 9 d)}
 	\end{stepcalc}
+
+	\vspace{-2ex}	
+	\leavevmode
 \end{proof}
 
 
@@ -163,7 +170,7 @@ Notons au passage un nouveau cas problématique \enquote{local} pour nos futures
 	\end{tblr}
 	\end{center}
 	
-	La multiplication des colonnes $1$ et $6$\,, ainsi que celle de $3$ et $4$\,, nous amènent au même \sftab\ généralisé suivant après avoir noté que $5 \times 30 = 6 \times 5^2$\,.
+	La multiplication des colonnes $1$ et $6$\,, ainsi que celle des colonnes $3$ et $4$\,, nous amènent au même \sftab\ généralisé suivant après avoir noté que $5 \times 30 = 6 \times 5^2$\,.
 	\begin{center}
 	\begin{tblr}{
 		colspec     = {Q[r,$]*{2}{Q[c,$]}},

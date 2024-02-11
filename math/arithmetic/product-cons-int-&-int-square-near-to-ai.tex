@@ -4,7 +4,11 @@
 
 \usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
 
-\usepackage{hyperref}
+\usepackage%[hidelinks]%
+           {hyperref}  
+\usepackage{pgfpages}
+%\pgfpagesuselayout{2 on 1}[a4paper,landscape,border shrink=5mm]
+
 \usepackage{enumitem}
 \usepackage{tcolorbox}
 \usepackage{float}
@@ -52,7 +56,7 @@
 \newcommand\floor[1]{\left\lfloor #1 \right\rfloor}
 
 \usepackage{tnsmath}
-  
+
 
 \newtheorem{fact}{Fait}[section]
 \newtheorem{defi}{Définition}[section]
@@ -73,7 +77,6 @@
 
 \newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
 
-
 \DefineVerbatimEnvironment{rawcode}%
 	{Verbatim}%
 	{tabsize=4,%
@@ -81,6 +84,29 @@
 	 
 	 
 \newcommand\contentdir{\jobname}
+
+
+
+\NewDocumentCommand\commonlayout{ m m }{
+\medskip
+\null\hfill\textit{#1}\hfill\null
+
+\smallskip
+\smallskip
+
+#2
+}
+
+\NewDocumentCommand\nopb{ m }{
+\commonlayout{Sans intervention humaine.}%
+             {Pour $#1$\,, nous avons $\consprod<k> \notin \NNsquare$ sans aucun effort cognitif.}
+}
+
+
+\NewDocumentCommand\byhand{ m }{
+\commonlayout{De nouveaux cas problématiques}%
+             {$\consprod<#1> \notin \NNsquare$ demande de gérer les \sftab[x] suivants.}
+}
 
 
 \NewDocumentCommand\sftab{ O{} }{\textsf{s}\kern.5pt\textsf{f}\kern1pt-\kern1pt tableau#1}
@@ -111,7 +137,7 @@
 
 \title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Une méthode efficace}
 \author{Christophe BAL}
-\date{25 Jan. 2024 -- 10 Fév. 2024}
+\date{25 Jan. 2024 -- 11 Fév. 2024}
 
 \maketitle
 
@@ -225,19 +251,7 @@
 
 \input{\contentdir/auto-case-6}
 
-
-%\newpage
-\foreach \k in {7} {
-%\foreach \k in {5} {
-%	%\newpage
-%	\medskip
-	\subsection{Le cas de \k\ facteurs} \label{apply-\k}
-
-	\leavevmode
-	\smallskip
-	
-	\input{\contentdir/auto-case-\k}
-}
+\input{\contentdir/auto-case-7-n-co}
 
 
 % ------------------ %
