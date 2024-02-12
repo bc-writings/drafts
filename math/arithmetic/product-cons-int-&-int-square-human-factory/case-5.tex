@@ -1,5 +1,5 @@
 \begin{fact} \label{case-5}
-	 $\forall n \in \NNs$\,, $n(n+1)(n+2)(n+3)(n+4) \notin \NNsquare$\,.
+	 $\forall n \in \NNs$\,, $n(n+1)(n+2)(n+3)(n+4) \notin \NNssquare$\,.
 \end{fact}
 
 
@@ -45,9 +45,9 @@
 		
 		\smallskip
 		\noindent
-		Dans ce cas, on sait juste que $(n+i, n+i^\prime) \in \NNsquare \times \NNsquare$\,.
-		Or $n \notin \NNsquare$ puisque sinon $n(n+1)(n+2)(n+3)(n+4) \in \NNsquare$ donne $(n+1)(n+2)(n+3)(n+4) \in \NNsquare$ via le fait \ref{facto-square}, mais ceci contredit le fait \ref{case-4}.
-		De même, $n+4 \notin \NNsquare$\,.
+		Dans ce cas, on sait juste que $(n+i, n+i^\prime) \in \NNssquare \times \NNssquare$\,.
+		Or $n \notin \NNssquare$ puisque sinon $n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$ donne $(n+1)(n+2)(n+3)(n+4) \in \NNssquare$ via le fait \ref{facto-square}, mais ceci contredit le fait \ref{case-4}.
+		De même, $n+4 \notin \NNssquare$\,.
 		Dès lors, nous avons $\setgene{n+i, n+i^\prime} \subseteq \setgene{n+1, n+2, n+3}$\,, d'où l'existence de deux carrés parfaits non nuls éloignés de moins de $3$\,, et ceci contredit le fait \ref{diff-square-ko}.
 
 
@@ -100,10 +100,58 @@
 % ------------------ %
 
 
+Voici une approche la plus simple possible ne faisant pas appel au principe des tiroirs.
+
+
+\begin{proof}[Preuve 2]
+	Supposons que $\consprod<5> \in \NNssquare$\,.
+    
+    \smallskip
+    
+	En notant $m = n+2$\,, nous avons $\consprod<5> = m (m \pm 2) (m \pm 1) = m (m^2 - 1) (m^2 - 4)$ où $m \in \NN_{\geq 3}$\,.
+    
+    \medskip
+    
+    Démontrons que $m \in \NNssquare$\,.
+	%	
+	\begin{itemize}
+		\item Si $m \in 2 \NN + 1$\,, nous avons clairement $\GCD{m}{(m^2 - 1)} = 1$ et $\GCD{m}{(m^2 - 4)} = 1$ (ici, la parité de $m$ doit être utilisée).
+		Donc $\GCD{m}{(m^2 - 1) (m^2 - 4)} = 1$\,, puis $m \in \NNssquare$ selon le fait \ref{prime-square}.
+
+		\item Si $m \in 2 \NN$\,, alors $\GCD{m}{(m^2 - 1)} = 1$\,, mais nous avons juste $\GCD{m}{(m^2 - 4)} \in \setgene{1, 2, 4}$\,. Soyons plus fin. Notant $m - 2 = 2A$ et $m + 2 = 2B$\,, nous avons clairement $\GCD{m}{A} = \GCD{m}{B} = 1$\,, et comme de plus $\consprod<5> = 4 m (m^2 - 1) A B$\,, nous avons $m (m^2 - 1) A B \in \NNssquare$ via le fait \ref{facto-square}, puis $m \in \NNssquare$ selon le fait \ref{prime-square}. 
+	\end{itemize}
+    
+    \medskip
+    
+    Ce qui suit lève une contradiction.
+	%	
+	\begin{itemize}
+		\item $m \in \NNssquare$ et $\consprod<5> \in \NNssquare$ donnent $(m^2 - 1) (m^2 - 4) \in \NNssquare$ via le fait \ref{facto-square}. 
+
+		\item En posant $x = m^2 \in \NN_{\geq 9}$\,, nous arrivons à $(x - 1) (x - 4) = x^2 - 5 x + 4 \in \NNssquare$\,, mais ceci est impossible d'après les implications suivantes.
+		
+		\noindent\kern-10pt%
+		\begin{stepcalc}[style=ar*, ope={\implies}]
+			x^2 - 5 x + 4 = (x-2)^2 - x
+			\,\,\text{ et }\,\,
+			x^2 - 5 x + 4 = (x-3)^2 + x - 5
+		\explnext*{$x-5 >0$ et $x > 0$\,.}{}
+			(x-3)^2 < x^2 - 5 x + 4 < (x - 2)^2
+		\end{stepcalc}
+	\end{itemize}
+
+    \vspace{-1.5ex}
+    \qedhere
+\end{proof}
+
+
+% ------------------ %
+
+
 Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 	
 	
-\begin{proof}[Preuve 2]
+\begin{proof}[Preuve 3]
     Supposons que $\consprod<5> \in \NNssquare$\,.
     
     \smallskip
@@ -126,8 +174,7 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 		il existe $M \in \NNs$ tel que 
 		$m = M^2$ ou $m = 3 M^2$\,.
 	
-		\item Comme $3$ divise au maximum un seul des trois éléments de $\setgene{n, n + 2, n + 4}$\,, comme on peut le constater en raisonnant modulo $3$\,.
-		Le fait \ref{diff-square-ko} lève alors une contradiction (deux carrés parfaits ne sont jamais distants de $2$ ou $4$).
+		\item En raisonnant modulo $3$\,, on constate que $3$ divise au maximum un seul des trois éléments de $\setgene{n, n + 2, n + 4}$\,, donc nous avons au moins deux carrés parfaits dans $\setgene{n, n + 2, n + 4}$\,, mais ceci contredit le fait \ref{diff-square-ko} (deux carrés parfaits ne sont jamais distants de $2$ ou $4$).
     \end{itemize}
     
     \medskip
@@ -139,7 +186,8 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 		Comme ci-dessus,
 		soit $(n + 1, n + 3) = (A^2, 3 B^2)$\,,
 		soit $(n + 1, n + 3) = (3 A^2, B^2)$\,,
-		avec $(A, B) \in ( \NNs )^2$.
+		avec $(A, B) \in ( \NNs )^2$\,,
+		car $(n + 1, n + 3) = (A^2, B^2)$ est impossible.
 	
 		\item Supposons $(n + 1, n + 3) = (A^2, 3 B^2)$\,. Ce qui suit lève alors une contradiction.
 		%	
@@ -151,7 +199,7 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 			$\setgene{n + 2, n + 4} \subset 2 \NN - 3 \NN$\,, 
 			puis, via le fait \ref{diff-square-ko},
 			$\setgene{n + 2, n + 4} = \setgene{D^2, 2 E^2}$ 
-			avec $(D, E) \in ( \NNs )^2$.
+			avec $(D, E) \in ( \NNs )^2$ nécessairement.
 
 			\item $(n+1)$ et $(n+2)$ étant trop proches pour être tous les deux des carrés parfaits, nous arrivons à $(n + 2, n + 4) = (2 D^2, E^2)$\,.
 
@@ -165,7 +213,7 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 
 			\item Ensuite, $(n, n + 2) = (D^2, 2 E^2)$ avec $(D, E) \in ( \NNs )^2$.
 
-			\item $n \in \NNssquare$ et $\consprod<5> \in \NNssquare$ donnent $\consprod[n+1]<4> \in \NNssquare$\,, ce qui est faux.
+			\item $n \in \NNssquare$ et $\consprod<5> \in \NNssquare$ donnent $\consprod[n+1]<4> \in \NNssquare$\,, ce qui est faux.\qedhere
 		\end{itemize}
     \end{itemize}
 \end{proof}
@@ -177,7 +225,7 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
 Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'avancer à vue, mais avec rigueur.
 
 
-\begin{proof}[Preuve 3]%
+\begin{proof}[Preuve 4]%
 	Supposons que $\consprod<5> \in \NNssquare$\,.
 	
     \smallskip
@@ -187,12 +235,12 @@ Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'ava
 
 	\medskip
 	
-	Notons que $u \notin \NNsquare$ et $q \notin \NNsquare$\,.
+	Notons que $u \notin \NNssquare$ et $q \notin \NNssquare$\,.
 		%
 	\begin{itemize}
-		\item $u \in \NNsquare$ donne $m^2 - 1 \in \NNsquare$ qui est impossible d'après le fait \ref{diff-square-ko}.
+		\item $u \in \NNssquare$ donne $m^2 - 1 \in \NNssquare$ qui est impossible d'après le fait \ref{diff-square-ko}.
 
-		\item $q \in \NNsquare$ donne $m^2 - 4 \in \NNsquare$ qui est impossible d'après le fait \ref{diff-square-ko}.
+		\item $q \in \NNssquare$ donne $m^2 - 4 \in \NNssquare$ qui est impossible d'après le fait \ref{diff-square-ko}.
 	\end{itemize}
 
 	\medskip
@@ -210,7 +258,7 @@ Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'ava
 		\item Si $u \wedge q = 3$\,, 
 		alors $\forall p \in \PP - \setgene{3}$\,, 
 		$\padicval{u} \in 2 \NN$ et $\padicval{q} \in 2 \NN$\,,
-		mais aussi $\padicval[3]{u} \in 2 \NN + 1$ et $\padicval[3]{q} \in 2 \NN + 1$\,, car  $u \notin \NNsquare$ et $q \notin \NNsquare$\,.
+		mais aussi $\padicval[3]{u} \in 2 \NN + 1$ et $\padicval[3]{q} \in 2 \NN + 1$\,, car  $u \notin \NNssquare$ et $q \notin \NNssquare$\,.
 		Donc 
 		$u = 3 U^2$ et $q = 3 Q^2$ avec $(U, Q) \in ( \NNs )^2$\,.
 		Or $u - q = 3$ donne $U^2 - Q^2 = 1$\,, et le fait \ref{diff-square-ko} nous indique une contradiction.
@@ -228,7 +276,7 @@ Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'ava
 
 
 		\item Nous avons $m \wedge u = 1$\,, $m \wedge q \in \setgene{1, 2, 4}$ et $u \wedge q \in \setgene{1, 3}$
-		avec $m \wedge u = m \wedge q = u \wedge q = 1$ impossible car sinon on aurait $(m, u, q) \in ( \NNsquare )^3$ via $muq \in \NNsquare$ et le fait \ref{prime-square}.
+		avec $m \wedge u = m \wedge q = u \wedge q = 1$ impossible car sinon on aurait $(m, u, q) \in ( \NNssquare )^3$ via $muq \in \NNssquare$ et le fait \ref{prime-square}.
 
 
 		\item Clairement, $\forall p \in \PP_{>3}$\,, $\big( \padicval{m} , \padicval{u} , \padicval{q} \big) \in ( 2 \NN )^3$.
@@ -289,7 +337,7 @@ Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'ava
 			
 			\item Posant $m - 2 = 6 r$ et notant $s = m + 2$\,, nous avons $6 r s = 6 Q^2$\,, puis $r s = Q^2$.
 			
-			\item $s \notin \NNsquare$\,. Sinon $(m-2)(m-1)m(m+1) \in \NNsquare$ via $(m-2)(m-1)m(m+1)(m+2)  \in \NNsquare$ et le fait \ref{facto-square}, mais ceci ne se peut pas d'après le fait \ref{case-4}.
+			\item $s \notin \NNssquare$\,. Sinon $(m-2)(m-1)m(m+1) \in \NNssquare$ via $(m-2)(m-1)m(m+1)(m+2)  \in \NNssquare$ et le fait \ref{facto-square}, mais ceci ne se peut pas d'après le fait \ref{case-4}.
 			
 			\item Les deux résultats précédents et le fait \ref{same-square-free} donnent $(\pi, R, S) \in \NNsf \times ( \NNs )^2$ tel que $r = \pi R^2$ et $s = \pi S^2$ avec  $\pi \in \NN_{>1}$\,.
 			
