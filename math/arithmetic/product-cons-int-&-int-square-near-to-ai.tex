@@ -87,26 +87,23 @@
 
 
 
-\NewDocumentCommand\commonlayout{ m m }{
+\NewDocumentCommand\commonlayout{ m m }{%
 \medskip
 \null\hfill\textit{#1}\hfill\null
 
 \smallskip
 \smallskip
 
-#2
-}
+#2}
 
-\NewDocumentCommand\nopb{ m }{
+\NewDocumentCommand\nopb{ m }{%
 \commonlayout{Sans intervention humaine.}%
-             {Pour $#1$\,, nous avons $\consprod<k> \notin \NNsquare$ sans aucun effort cognitif.}
-}
+             {Pour $#1$\,, nous avons $\consprod<k> \notin \NNsquare$ sans aucun effort cognitif.}}
 
 
-\NewDocumentCommand\byhand{ m }{
+\NewDocumentCommand\byhand{ m }{%
 \commonlayout{De nouveaux cas problématiques}%
-             {$\consprod<#1> \notin \NNsquare$ demande de gérer les \sftab[x] suivants.}
-}
+             {$\consprod<#1> \notin \NNsquare$ demande de gérer les \sftab[x] suivants.}}
 
 
 \NewDocumentCommand\sftab{ O{} }{\textsf{s}\kern.5pt\textsf{f}\kern1pt-\kern1pt tableau#1}
@@ -137,7 +134,7 @@
 
 \title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Une méthode efficace}
 \author{Christophe BAL}
-\date{25 Jan. 2024 -- 11 Fév. 2024}
+\date{25 Jan. 2024 -- 12 Fév. 2024}
 
 \maketitle
 

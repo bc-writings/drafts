@@ -31,12 +31,12 @@ ILLEGAL_HUMAN_SUB_SFTABS_REGEX = [
 # Found when solving 4 factors by hand.
     "(\d+-)*6-1-2-3(-\d+)*",
     "(\d+-)*3-2-1-6(-\d+)*",
-# Found when solving 9 factors by hand.
-    "(\d+-)*1-(\d+-){2}1(-\d+)*",
-    "(\d+-)*1-(\d+-){7}1(-\d+)*",
 # Found when solving 6 factors by hand.
     "(\d+-)*1-6-\d+-2-3(-\d+)*",
     "(\d+-)*3-2-\d+-6-1(-\d+)*",
+# Found when solving 9 factors by hand.
+    "(\d+-)*1-(\d+-){2}1(-\d+)*",
+    "(\d+-)*1-(\d+-){7}1(-\d+)*",
 ]
 
 ILLEGAL_HUMAN_SUB_SFTABS_REGEX = [

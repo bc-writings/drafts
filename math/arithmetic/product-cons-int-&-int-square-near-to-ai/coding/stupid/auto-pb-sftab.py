@@ -1,10 +1,11 @@
-K_MIN = 31
-K_MAX = 40
+K_MIN = 18
+K_MAX = 18
 
 #       KMAX <= 12: immediate
 #       KMAX  = 13: slow, but acceptable
 # 14 <= KMAX <= 15: too slow!
-# 16 <= KMAX      : extremly slow!
+# 16 <= KMAX <= 17: extremly slow!
+# 18? <= KMAX      : unusable
 
 # PB MET...
 

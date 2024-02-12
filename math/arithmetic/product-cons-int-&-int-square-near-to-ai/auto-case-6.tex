@@ -18,7 +18,7 @@ Expliquons cette tactique semi-automatique en traitant le cas de $6$ facteurs.
 	\item Pour chaque élément $p$ de $\setproba{P}$\,, on construit la liste $\setproba*{V}{p}$ des \sftab[x] partiels relatifs à $p$ et $\consprod<6> \in \NNssquare$ en s'appuyant sur la section \ref{sftable-constraint}.
 
 
-	\item Via les listes $\setproba*{V}{p}$\,, on calcule toutes les multiplications de tous les \sftab[x] partiels relatifs à des nombres $p$ différents, et pour chacune d'elles, on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme qui va donc évoluer au gré des démonstrations faites par un humain (démonstrations que l'on espère le plus rare possible).
+	\item Via les listes $( \setproba*{V}{p} )_{p \in \setproba{P}}$\,, on calcule toutes les multiplications de tous les \sftab[x] partiels relatifs à des nombres $p$ différents, et pour chacune d'elles, on ne la garde que si elle ne vérifie aucune des conditions suivantes, celles du dernier cas devant être indiquées à la main au programme qui va donc évoluer au gré des démonstrations faites par un humain (démonstrations que l'on espère le plus rare possible).
 	%
 	\begin{enumerate}
 		\item Le tableau commence, ou se termine, par la valeur $1$\,. Dans ce cas, on sait par récurrence que le tableau produit n'est pas possible (voir le fait \ref{sftab-recu}).
