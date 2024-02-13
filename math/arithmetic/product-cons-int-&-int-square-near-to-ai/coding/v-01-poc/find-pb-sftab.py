@@ -1,4 +1,4 @@
-K = 11
+K = 4
 
 from common import *
 
