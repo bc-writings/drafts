@@ -20,7 +20,7 @@ def sol(diff):
     return solfound
 
 
-for c in sol(9):
+for c in sol(12):
     print(c)
 
 exit()
