@@ -1,4 +1,4 @@
-\documentclass[12pt]{amsart}
+ \documentclass[12pt]{amsart}
 %\usepackage[T1]{fontenc}
 %\usepackage[utf8]{inputenc}
 
@@ -9,6 +9,7 @@
 \usepackage{pgfpages}
 %\pgfpagesuselayout{2 on 1}[a4paper,landscape,border shrink=5mm]
 
+\usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{tcolorbox}
 \usepackage{float}
@@ -23,7 +24,6 @@
 \usepackage[french]{babel}
 \frenchsetup{StandardItemLabels=true}
 \usepackage{csquotes}
-\usepackage{scalerel}
 \usepackage{piton}
 
 \NewPitonEnvironment{Python}{}
@@ -62,7 +62,6 @@
 \newtheorem{defi}{Définition}[section]
 \newtheorem{example}{Exemple}[section]
 \newtheorem{remark}{Remarque}[section]
-\newtheorem*{proof*}{Une preuve alternative}
 
 \npthousandsep{.}
 \setlength\parindent{0pt}
@@ -77,6 +76,7 @@
 
 \newcommand\sqseq[2]{\fbox{$#1$}_{\,\,#2}}
 
+
 \DefineVerbatimEnvironment{rawcode}%
 	{Verbatim}%
 	{tabsize=4,%
@@ -85,38 +85,10 @@
 	 
 \newcommand\contentdir{\jobname}
 
-
-
-\NewDocumentCommand\commonlayout{ m m }{%
-\vspace{-5pt}
-\null\hfill\textit{#1}\hfill\null
-
-\smallskip
-\smallskip
-
-#2}
-
-\NewDocumentCommand\nopb{ m }{%
-\commonlayout{Sans intervention humaine.}%
-             {Pour $#1$\,, nous avons $\consprod<k> \notin \NNsquare$ sans aucun effort cognitif.}}
-
-
-\NewDocumentCommand\byhand{ m }{%
-\commonlayout{De nouveaux cas problématiques}%
-             {$\consprod<#1> \notin \NNsquare$ demande de gérer les \sftab[x] suivants.}}
-
-
-\NewDocumentCommand\sftab{ O{} }{\textsf{s}\kern.5pt\textsf{f}\kern1pt-\kern1pt tableau#1}
-
-
 \newcommand\NNsf{\NN_{\kern-1pt s\kern-1pt f}}
 
 \newcommand\NNsquare{\seqsuprageo{\NN}{}{}{}{2}}
 \newcommand\NNssquare{\seqsuprageo{\NN}{*}{}{}{2}}
-
-
-\NewDocumentCommand\NNseq{ O{n} }{\seqsuprageo{\NN}{}{\!sc}{#1}{}}
-\NewDocumentCommand\PPseq{ O{n} }{\seqsuprageo{\PP}{}{\!sc}{#1}{}}
 
 \NewDocumentCommand\GCD{ m  m }{#1 \wedge #2}
 
@@ -132,9 +104,9 @@
 
 \begin{document}
 
-\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Une méthode efficace}
+\title{BROUILLON - Carrés parfaits et produits d'entiers consécutifs -- Jusqu'à 100 facteurs traités numériquement}
 \author{Christophe BAL}
-\date{25 Jan. 2024 -- 14 Fév. 2024}
+\date{14 Fév. 2024}
 
 \maketitle
 
@@ -179,7 +151,7 @@
 % ------------------ %
 
 
-%\bigskip
+\bigskip
 \section{Notations utilisées}
 
 \input{\contentdir/notations}
@@ -195,48 +167,14 @@
 \input{\contentdir/case-1}
 
 
-
-% ------------------ %
-
-
-\newpage
-%\medskip
-\section{Prenons du recul}
-
-\input{\contentdir/sftable-def}
-%
-%
-%
-%% ------------------ %
-%
-%
-%\newpage
-%\bigskip
-%\medskip
-\section{Structure des \sftab[x]} \label{sftab-struct}
-
-\input{\contentdir/sftable-struct}
-
-
-
 % ------------------ %
 
 
 %\newpage
-\section{Premières applications}
+%\medskip
+\section{Une démonstration intéressante}
 
-\foreach \k in {2,...,5} {
-%\foreach \k in {5} {
-%	%\newpage
-%	\medskip
-	\subsection{Le cas de \k\ facteurs} \label{apply-\k}
-
-	\leavevmode
-	\smallskip
-	
-	\input{\contentdir/case-\k}
-}
-
+\input{\contentdir/case-10}
 
 
 % ------------------ %
@@ -244,15 +182,31 @@
 
 %\newpage
 %\medskip
-\section{Et après ?}
+\section{Une tactique informatique}
 
-\input{\contentdir/auto-case-6}
+\subsection{De potentiels bons candidats}
 
-\input{\contentdir/auto-case-7-n-co}
+\input{\contentdir/algo-select}
+
+
+\subsection{Les cas gagnants}
+
+\input{\contentdir/algo-OK}
+
+
+\subsection{Les cas perdants}
+
+\input{\contentdir/algo-KO}
 
 
 % ------------------ %
-		
+
+
+
+% ------------------ %
+
+
+%\newpage
 
 \section{Sources utilisées} \label{sources}
 
@@ -262,15 +216,15 @@
 % ------------------ %
 
 
+%%\bigskip
+%\newpage
+%
+%\hrule
+%
+%\section{AFFAIRE À SUIVRE...}
+%
 %\bigskip
-\newpage
-
-\hrule
-
-\section{AFFAIRE À SUIVRE...}
-
-\bigskip
-
-\hrule
+%
+%\hrule
 
 \end{document}
