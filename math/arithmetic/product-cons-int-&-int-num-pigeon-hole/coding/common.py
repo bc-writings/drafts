@@ -56,6 +56,21 @@ def pigeonhole(nbfactors):
 # --------------------- #
 
 if __name__ == '__main__':
+    from collections import defaultdict
+
+    results = defaultdict(int)
+
     for n in range(2, 101):
-        print(f'--- {n} ---')
-        print(pigeonhole(n))
+        # print(f'--- {n} ---')
+        # print(pigeonhole(n))
+
+        results[len(pigeonhole(n))] += 1
+
+    print(results)
+
+    results = defaultdict(list)
+
+    for n in range(2, 101):
+        results[len(pigeonhole(n))].append(n)
+
+    print(results)
