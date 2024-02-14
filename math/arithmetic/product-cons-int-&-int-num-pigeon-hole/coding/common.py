@@ -31,7 +31,10 @@ def distsquares(diff_squares):
 # -- PIGEON-HOLE -- #
 # ----------------- #
 
-def pigeonhole(nbfactors):
+SOL_OF  = {}
+SET_ONE = set([1])
+
+def pigeonhole_candidates(nbfactors):
     primes       = list(primerange(nbfactors))
     nbprimesleft = len(primes)
     maxindice    = nbfactors - 1
@@ -48,7 +51,20 @@ def pigeonhole(nbfactors):
         if placeleft > 2**nbprimesleft:
             primeskept = primes[:]
 
-    return primeskept
+    return set(primeskept)
+
+
+def coefsquare(candidates):
+    if candidates:
+        a = candidates.pop()
+
+        yield a
+
+        for b in coefsquare(candidates):
+            if a != 1:
+                yield b
+
+            yield a*b
 
 
 # --------------------- #
@@ -58,19 +74,28 @@ def pigeonhole(nbfactors):
 if __name__ == '__main__':
     from collections import defaultdict
 
-    results = defaultdict(int)
+    # for n in range(2, 19):
+    #     print(f'--- {n} ---')
+    #     print(pigeonhole_candidates(n))
 
-    for n in range(2, 101):
-        # print(f'--- {n} ---')
-        # print(pigeonhole(n))
+    # results_card  = defaultdict(int)
+    # results_which = defaultdict(list)
 
-        results[len(pigeonhole(n))] += 1
+    # for n in range(2, 18):
+    #     nb_candidates = len(pigeonhole_candidates(n))
 
-    print(results)
+    #     results_card[nb_candidates] += 1
+    #     results_which[nb_candidates].append(n)
 
-    results = defaultdict(list)
+    # print(f"{results_card=}")
+    # print(f"{results_which=}")
 
-    for n in range(2, 101):
-        results[len(pigeonhole(n))].append(n)
 
-    print(results)
+    for candidates in [
+        [2, 3],
+        [2, 3, 5],
+    ]:
+        print(f'--- {candidates} ---')
+
+        for coef in coefsquare(candidates + [1]):
+            print(coef)
