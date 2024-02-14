@@ -1,0 +1,34 @@
+\begin{fact} \label{case-12}
+	 $\forall n \in \NNs$\,, $\consprod<12> \notin \NNsquare$\,.
+\end{fact}
+
+% ------------------ %
+
+
+L'idée suivie est celle de la démonstration des cas \ref{case-10} et \ref{case-11} avec les changements suivants.
+
+
+\begin{proof}[Preuve]%
+    Ici nous avons moins $5$ facteurs $(n + i)$ de $\consprod<12>$ non divisibles par $5$\,, $7$ et $11$\,, avec un nouveau compagnon premier à prendre en compte.
+    Ceci nous amène juste à adapter le cas où deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{1}\,.
+    Dans ce cas, nous avons $(n+i, n+i^\prime) = (N^2, M^2)$ avec $\abs{N^2 - M^2} \in \ZintervalC{1}{11}$\,. Ce qui suit lève des contradictions.
+	%
+	\begin{enumerate}
+		\item $N^2 - M^2 \in \setgene{3, 5, 7, 8, 9}$ se traite comme pour le cas \ref{case-11}. On sait alors que $n > 9$\,.
+
+			
+		\item Un nouveau cas est à gérer car $N^2 - M^2 = 11$ est possible.
+		Ceci ne se peut que si $(N, M) = (6, 5)$\,, d'où $n \in \ZintervalC{10}{25}$\,, mais nous avons les deux situations suivantes.
+		%
+		\begin{itemize}
+			\item $\forall n \in \ZintervalC{10}{20}$\,, 
+			$\padicval[17]{\consprod[n]<12>} = 1$\,, donc $\consprod[n]<12> \in \NNsquare$ est faux.
+
+			\item $\forall n \in \ZintervalC{20}{25}$\,, 
+			$\padicval[27]{\consprod[n]<12>} = 1$\,, donc $\consprod[n]<12> \in \NNsquare$ est faux.
+		%
+		\qedhere
+		\end{itemize}
+	\end{enumerate}
+\end{proof}
+

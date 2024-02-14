@@ -1,0 +1,40 @@
+\begin{fact} \label{case-13}
+	 $\forall n \in \NNs$\,, $\consprod<13> \notin \NNsquare$\,.
+\end{fact}
+
+% ------------------ %
+
+
+L'idée suivie est celle de la démonstration aux cas \ref{case-10} avec les changements suivants.
+
+
+\begin{proof}[Preuve]%
+    Les arguments de la preuve du cas \ref{case-12} s'adaptent immédiatement.
+\end{proof}
+
+
+% ------------------ %
+
+
+\begin{remark}
+	Que donnerait l'analyse du cas suivant $\consprod<14> \notin \NNsquare$ ?
+	Nous avons ce qui suit.
+    %
+    \begin{itemize}
+		\item $\forall p \in \PP_{\geq 14}$\,, 
+    $\forall i \in \ZintervalC{0}{13}$\,, 
+    $\padicval{n + i} \in 2 \NN$\,.
+		
+		\item Au maximum trois facteurs $(n + i)$ de $\consprod<14>$ sont divisibles par $5$\,.
+
+		\item Au maximum deux facteurs $(n + i)$ de $\consprod<14>$ sont divisibles par $7$\,.
+
+		\item Au maximum deux facteurs $(n + i)$ de $\consprod<14>$ sont divisibles par $11$\,.
+
+		\item Au maximum deux facteurs $(n + i)$ de $\consprod<14>$ sont divisibles par $13$\,. Un nouveau venu !
+
+		\item Les points précédents nous donnent qu'au moins $5$ facteurs $(n + i)$ de $\consprod<14>$ ne sont pas divisibles par $5$\,, $7$\,, $11$ et $13$\,.
+    \end{itemize}
+    
+    À ce stade, il semble opportun de tenter une analyse informatique pour au moins traiter les cas jusqu'à $100$ facteurs, c'est-à-dire ceux supposés connus dans la démonstration de Paul Erdős. Nous ne le ferons pas dans ce document qui préfère laisser la place aux humains avant tout.
+\end{remark}

@@ -191,7 +191,7 @@ def find_pb_sftabs(nbfactors):
     # from pprint import pprint;pprint(partial_sftabs);exit()
 
     for sftab in sftabs_prod_rec(nbfactors, partial_sftabs):
-        # print(f"{sftab=}")
+        print(f"{sftab=}")
 
 # No one is innocent...
         if sftab[0] == 1 or sftab[-1] == 1:
