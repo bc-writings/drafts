@@ -34,6 +34,7 @@ def distsquares(diff_squares):
 SOL_OF  = {}
 SET_ONE = set([1])
 
+
 def pigeonhole_candidates(nbfactors):
     primes       = list(primerange(nbfactors))
     nbprimesleft = len(primes)
@@ -41,7 +42,7 @@ def pigeonhole_candidates(nbfactors):
     placeleft    = nbfactors
     primeskept   = []
 
-    while(primes):
+    while(primes and placeleft > 0):
         p             = primes.pop()
         occumax       = 1 + maxindice // p
         nbprimesleft -= 1
@@ -51,7 +52,7 @@ def pigeonhole_candidates(nbfactors):
         if placeleft > 2**nbprimesleft:
             primeskept = primes[:]
 
-    return set(primeskept)
+    return primeskept
 
 
 def coefsquare(candidates):
@@ -73,6 +74,7 @@ def coefsquare(candidates):
 
 if __name__ == '__main__':
     from collections import defaultdict
+    from pprint import pprint
 
     # for n in range(2, 19):
     #     print(f'--- {n} ---')
@@ -81,14 +83,14 @@ if __name__ == '__main__':
     # results_card  = defaultdict(int)
     # results_which = defaultdict(list)
 
-    # for n in range(2, 18):
+    # for n in range(2, 500):
     #     nb_candidates = len(pigeonhole_candidates(n))
 
     #     results_card[nb_candidates] += 1
     #     results_which[nb_candidates].append(n)
 
-    # print(f"{results_card=}")
-    # print(f"{results_which=}")
+    # pprint(results_card)
+    # pprint(results_which)
 
 
     for candidates in [
