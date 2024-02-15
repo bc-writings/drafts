@@ -6,6 +6,9 @@
 % ------------------ %
 
 
+Commençons par une idée simple consistant à se concentrer sur les nombres premiers de valuation impaire dans $\consprod<5>$ supposé être un carré parfait.
+
+
 \begin{proof}[Preuve 1]%
     Supposons que $\consprod<5> \in \NNssquare$\,.
     
@@ -105,7 +108,7 @@
 % ------------------ %
 
 
-L'idée suivie pour la preuve suivante est celle de la démonstration du cas \ref{case-10} qui utilise plus efficacement le principe des tiroirs, mais en commençant par un raisonnement plus grossier a priori. Comme quoi certains détails ne comptent pas, ou au contraire comptent trop !
+La preuve suivante s'inspire directement de la démonstration du cas \ref{case-10} : on utilise plus efficacement le principe des tiroirs en commençant par un raisonnement plus grossier a priori. Comme quoi certains détails ne comptent pas, ou au contraire comptent trop !
 
 \begin{proof}[Preuve 2]%
     Supposons que $\consprod<5> \in \NNssquare$\,.
@@ -117,7 +120,7 @@ L'idée suivie pour la preuve suivante est celle de la démonstration du cas \re
     $\forall i \in \ZintervalC{0}{4}$\,, 
     $\padicval{n + i} \in 2 \NN$\,.
     On doit donc s'intéresser à $p \in \setgene{2, 3}$\,, mais on peut observer très grossièrement qu'au maximum deux facteurs $(n + i)$ de $\consprod<5>$ sont divisibles par $3$\,.
-    Nous avons donc au moins $3$ facteurs premiers relativement à tout premier $p \in \PP_{\geq 3}$\,.
+    Nous avons donc au moins $3$ facteurs de valuation $p$-adique paire dès que $p \in \PP_{\geq 3}$\,.
     Ces facteurs vérifient alors l'une des deux alternatives suivantes, d'après le principe des tiroirs
     \footnote{
     	Est-ce vraiment utile de citer ici ce principe ?
@@ -214,6 +217,7 @@ Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
     ceci nous amène à considérer deux alternatives.
     
     \medskip
+%    \newpage
     
     Supposons d'abord $\setgene{n, n + 2, n + 4} \subset 2 \NN + 1$\,.
 	%	
@@ -321,7 +325,7 @@ Bien que longue, la preuve suivante se comprend bien, car nous ne faisons qu'ava
 	Supposons maintenant que $m \notin \NNssquare$\,.
 	%
 	\begin{itemize}
-		\item Donc $m = \alpha M^2$\,, $u = \beta U^2$\,, $q = \gamma Q^2$ où $(M, U, Q) \in ( \NNs )^3$ et $\setgene{\alpha, \beta, \gamma} \subset \NNsf \cap \NN_{>1}$\,.
+		\item Ici, $m = \alpha M^2$\,, $u = \beta U^2$\,, $q = \gamma Q^2$ avec $(M, U, Q) \in ( \NNs )^3$ et $\setgene{\alpha, \beta, \gamma} \subset \NNsf \cap \NN_{>1}$\,.
 
 
 		\item Notons que $\beta \neq \gamma$\,, car, dans le cas contraire, $3 = u - q = \beta \big( U^2 - Q^2 \big)$ fournirait $\beta = 3$\, puis $U^2 - Q^2 = 1$\,, et ceci contredirait le fait \ref{diff-square-ko}.
