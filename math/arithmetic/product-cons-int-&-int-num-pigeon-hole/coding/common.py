@@ -31,8 +31,27 @@ def distsquares(diff_squares):
 # -- PIGEON-HOLE -- #
 # ----------------- #
 
-SOL_OF  = {}
-SET_ONE = set([1])
+def find_pigeon_killers(nmin, nmax):
+    for n in range(nmin, nmax+1):
+        print(n, end="")
+
+        candidates = pigeonhole_candidates(n)
+
+        if len(candidates) == 0:
+            print(' <-- DEAD PIGEON')
+            continue
+
+        print(' <-- PIGEON TRIES TO FLY...')
+
+        tab = ' '*(len(f"{n} <-- "))
+
+        for coef in coefsquare(candidates + [1]):
+            sol = distsquares(diff_squares = n // coef)
+
+            if not sol:
+                continue
+
+            print(f"{tab}{coef} : {sol}")
 
 
 def pigeonhole_candidates(nbfactors):
@@ -76,6 +95,8 @@ if __name__ == '__main__':
     from collections import defaultdict
     from pprint import pprint
 
+    find_pigeon_killers(2, 25)
+
     # for n in range(2, 19):
     #     print(f'--- {n} ---')
     #     print(pigeonhole_candidates(n))
@@ -93,11 +114,11 @@ if __name__ == '__main__':
     # pprint(results_which)
 
 
-    for candidates in [
-        [2, 3],
-        [2, 3, 5],
-    ]:
-        print(f'--- {candidates} ---')
+    # for candidates in [
+    #     [2, 3],
+    #     [2, 3, 5],
+    # ]:
+    #     print(f'--- {candidates} ---')
 
-        for coef in coefsquare(candidates + [1]):
-            print(coef)
+    #     for coef in coefsquare(candidates + [1]):
+    #         print(coef)
