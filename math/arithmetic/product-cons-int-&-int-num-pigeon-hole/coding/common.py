@@ -3,6 +3,16 @@ from math import sqrt, floor
 from sympy import primerange
 
 
+# --------------- #
+# -- CONSTANTS -- #
+# --------------- #
+
+VERBOSE = False
+VERBOSE = True
+
+LOG = dict()
+
+
 # ---------------------- #
 # -- DISTANCE SQUARES -- #
 # ---------------------- #
@@ -38,20 +48,31 @@ def find_pigeon_killers(nmin, nmax):
         candidates = pigeonhole_candidates(n)
 
         if len(candidates) == 0:
-            print(' <-- DEAD PIGEON')
+            if VERBOSE:
+                print(' <-- DEAD PIGEON')
+
             continue
 
-        print(' <-- PIGEON TRIES TO FLY...')
+        if VERBOSE:
+            print(' <-- PIGEON TRIES TO FLY...')
 
-        tab = ' '*(len(f"{n} <-- "))
+            tab = ' '*(len(f"{n} <-- "))
+
+        factors = set()
 
         for coef in coefsquare(candidates + [1]):
-            sol = distsquares(diff_squares = n // coef)
+            for df in range(1, (n - 1) // coef + 1 ):
+                sols = distsquares(diff_squares = df)
 
-            if not sol:
-                continue
+                if not sols:
+                    continue
 
-            print(f"{tab}{coef} : {sol}")
+                # print(f"{tab}{coef=} , {df=} , {sols=}")
+
+                factors = factors.union(set(sols))
+
+        if VERBOSE:
+            print(f"{tab}{factors=}")
 
 
 def pigeonhole_candidates(nbfactors):
@@ -95,7 +116,7 @@ if __name__ == '__main__':
     from collections import defaultdict
     from pprint import pprint
 
-    find_pigeon_killers(2, 25)
+    find_pigeon_killers(2, 13)
 
     # for n in range(2, 19):
     #     print(f'--- {n} ---')
