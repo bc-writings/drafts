@@ -13,6 +13,12 @@ regex
 MATH
 ====
 
+POLYNOME
+    ---> classification courbe degré <= 3 mais à partir de 4 c'est la merde !
+    ---> resultat de Etienne Ghyse sur nbre intersection qui medre aussi à partir de deg 4
+    ---> polyno deg 2 et sa primitive tous les deux à racines entières ? Cf un article de quadrature
+
+
 N à la von Neumann (cf image)
     ---> 0
     ---> 1 = succ(0)                    -> (0)
@@ -41,7 +47,7 @@ compter moi le signe égal
     ---> différentes significations de = (toutes ?)
 
 
-êytre nul fait aller vite
+être nul fait aller vite
     ---> formule puissnace succesive sur N ==> vraie sur R via poly nul sur ensemble infinie
     ---> cas identiét relaruqable via uns impel dessn géométrique donc juste pour val > 0 mais en fait valable partout !
 
