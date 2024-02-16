@@ -1,4 +1,5 @@
-from math import sqrt, floor
+from collections import defaultdict
+from math        import sqrt, floor
 
 from sympy import primerange
 
@@ -58,7 +59,7 @@ def find_pigeon_killers(nmin, nmax):
 
             tab = ' '*(len(f"{n} <-- "))
 
-        factors = set()
+        factors = defaultdict(set)
 
         for coef in coefsquare(candidates + [1]):
             for df in range(1, (n - 1) // coef + 1 ):
@@ -69,10 +70,21 @@ def find_pigeon_killers(nmin, nmax):
 
                 # print(f"{tab}{coef=} , {df=} , {sols=}")
 
-                factors = factors.union(set(sols))
+                factors[coef] = factors[coef].union(set(sols))
 
         if VERBOSE:
             print(f"{tab}{factors=}")
+
+        nmax = 0
+
+        for coef, sols in factors.items():
+            nmax = max(
+                nmax,
+                coef * max(min(x**2, y**2) for x, y in sols)
+            )
+
+        if VERBOSE:
+            print(f"{tab}{nmax=}")
 
 
 def pigeonhole_candidates(nbfactors):
