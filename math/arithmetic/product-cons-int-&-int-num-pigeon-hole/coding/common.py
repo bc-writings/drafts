@@ -42,27 +42,28 @@ def distsquares(diff_squares):
 # -- PIGEON-HOLE -- #
 # ----------------- #
 
-def find_pigeon_killers(nmin, nmax):
-    for n in range(nmin, nmax+1):
-        print(n, end="")
+def find_pigeon_killers(nbfactors_min, nbfactors_max):
+    for nbfactors in range(
+        nbfactors_min,
+        nbfactors_max + 1
+    ):
+        print(nbfactors)
 
-        candidates = pigeonhole_candidates(n)
+        tab = ' '*(len(f"{nbfactors}   <-- "))
+
+        candidates = pigeonhole_candidates(nbfactors)
 
         if len(candidates) == 0:
-            if VERBOSE:
-                print(' <-- DEAD PIGEON')
-
-            continue
+            print(f"{tab}FAILS!")
+            exit()
 
         if VERBOSE:
             print(' <-- PIGEON TRIES TO FLY...')
 
-            tab = ' '*(len(f"{n} <-- "))
-
         factors = defaultdict(set)
 
         for coef in coefsquare(candidates + [1]):
-            for df in range(1, (n - 1) // coef + 1 ):
+            for df in range(1, (nbfactors - 1) // coef + 1 ):
                 sols = distsquares(diff_squares = df)
 
                 if not sols:
@@ -80,11 +81,45 @@ def find_pigeon_killers(nmin, nmax):
         for coef, sols in factors.items():
             nmax = max(
                 nmax,
-                coef * max(min(x**2, y**2) for x, y in sols)
+                coef * max(min(x, y)**2 for x, y in sols)
             )
 
         if VERBOSE:
             print(f"{tab}{nmax=}")
+
+        if notsingleprimediv(nbfactors, nmax, tab):
+            print(f"{tab}FAILS!")
+            exit()
+
+
+def notsingleprimediv(nbfactors, nmax, tab):
+    nbsuccess = 0
+
+    for n in range(1, nmax + 1):
+
+        primes = {
+            p: 0
+            for p in primerange(n, n + nbfactors)
+        }
+
+        for k in range(1, nbfactors + 1):
+            npk = n + k
+
+            if npk in primes:
+                primes[npk] += 1
+
+        if VERBOSE:
+            print(f"{tab}{n=} : {primes=}")
+
+        for p, pval in primes.items():
+            if pval % 2 == 1:
+                if VERBOSE:
+                    print(f"{tab}{p=}")
+
+                nbsuccess += 1
+                break
+
+    return nbsuccess != nmax
 
 
 def pigeonhole_candidates(nbfactors):
@@ -128,7 +163,7 @@ if __name__ == '__main__':
     from collections import defaultdict
     from pprint import pprint
 
-    find_pigeon_killers(2, 13)
+    find_pigeon_killers(99, 100)
 
     # for n in range(2, 19):
     #     print(f'--- {n} ---')
