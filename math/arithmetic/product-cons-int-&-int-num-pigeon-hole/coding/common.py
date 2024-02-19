@@ -9,9 +9,12 @@ from sympy import primerange
 # --------------- #
 
 VERBOSE = False
-VERBOSE = True
+# VERBOSE = True
 
 LOG = dict()
+
+TAB_1 = " "*3
+TAB_2 = TAB_1 + " "*4
 
 
 # ---------------------- #
@@ -43,22 +46,22 @@ def distsquares(diff_squares):
 # ----------------- #
 
 def find_pigeon_killers(nbfactors_min, nbfactors_max):
+    assert nbfactors_min <= nbfactors_max
+
     for nbfactors in range(
         nbfactors_min,
         nbfactors_max + 1
     ):
         print(nbfactors)
 
-        tab = ' '*(len(f"{nbfactors}   <-- "))
-
         candidates = pigeonhole_candidates(nbfactors)
 
         if len(candidates) == 0:
-            print(f"{tab}FAILS!")
+            print(f"{TAB_1}<-- THE PIGEON IS DEAD!")
             exit()
 
         if VERBOSE:
-            print(' <-- PIGEON TRIES TO FLY...')
+            print(f"{TAB_1}<-- THE PIGEON TRIES TO FLY...")
 
         factors = defaultdict(set)
 
@@ -69,12 +72,12 @@ def find_pigeon_killers(nbfactors_min, nbfactors_max):
                 if not sols:
                     continue
 
-                # print(f"{tab}{coef=} , {df=} , {sols=}")
+                # print(f"{TAB_2}{coef=} , {df=} , {sols=}")
 
                 factors[coef] = factors[coef].union(set(sols))
 
-        if VERBOSE:
-            print(f"{tab}{factors=}")
+        # if VERBOSE:
+        #     print(f"{TAB_2}{factors=}")
 
         nmax = 0
 
@@ -85,39 +88,52 @@ def find_pigeon_killers(nbfactors_min, nbfactors_max):
             )
 
         if VERBOSE:
-            print(f"{tab}{nmax=}")
+            print(f"{TAB_2}{nmax=}")
 
-        if notsingleprimediv(nbfactors, nmax, tab):
-            print(f"{tab}FAILS!")
+        if notwithsingleprimediv(nbfactors, nmax):
+            print(f"{TAB_2}IT'S A FAIL!")
             exit()
 
+        print(f"{TAB_1}<-- THE PIGEON IS FLYING HIGH!")
 
-def notsingleprimediv(nbfactors, nmax, tab):
+
+# We are looking for a prime p of valuation equal to one: we must
+# have 2p > last_factor, i.e. last_factor / 2 < p <= last_factor .
+def notwithsingleprimediv(nbfactors, nmax):
+    global LOG
+
     nbsuccess = 0
+    results   = set()
 
     for n in range(1, nmax + 1):
+        last_factor = n + nbfactors - 1
 
         primes = {
-            p: 0
-            for p in primerange(n, n + nbfactors)
+            p
+            for p in primerange(last_factor // 2, last_factor + 1)
         }
+
+        if VERBOSE:
+            print(f"{TAB_2}{n=}...{last_factor=}")
+            print(f"{TAB_2}    + {primes=}")
 
         for k in range(1, nbfactors + 1):
             npk = n + k
 
             if npk in primes:
-                primes[npk] += 1
-
-        if VERBOSE:
-            print(f"{tab}{n=} : {primes=}")
-
-        for p, pval in primes.items():
-            if pval % 2 == 1:
                 if VERBOSE:
-                    print(f"{tab}{p=}")
+                    print(f"{TAB_2}    + {npk=}")
+
+                results.add(npk)
 
                 nbsuccess += 1
                 break
+
+    if nbsuccess == nmax:
+        LOG[nbfactors] = {
+            'tactic': "single_prime_div",
+            'primes': results,
+        }
 
     return nbsuccess != nmax
 
@@ -163,7 +179,10 @@ if __name__ == '__main__':
     from collections import defaultdict
     from pprint import pprint
 
-    find_pigeon_killers(99, 100)
+    find_pigeon_killers(9, 100)
+
+    # from pprint import pprint
+    # pprint(LOG)
 
     # for n in range(2, 19):
     #     print(f'--- {n} ---')
