@@ -1,13 +1,17 @@
-Dans un échange sur \url{https://math.stackexchange.com} est indiquée une référence vers une preuve du fait $\forall n \in \NNs$\,, $\consprod<10> \notin \NNsquare$ (voir la section \ref{sources}).
+Nous allons présenter dans cette section une démonstration qui va nous donner sans effort un algorithme permettant de valider, ou rejeter, la proposition $\consprod \notin \NNsquare$ au cas par cas. 
+
+\medskip
+
+Dans un échange sur \url{https://math.stackexchange.com}\,, voir la section \ref{sources}, il est indiqué une preuve de $\consprod<10> \notin \NNsquare$ pour $n \in \NNs$ quelconque.
 Voici cette preuve complétée avec certains arguments laissés sous silence dans la source utilisée.
-Noter au passage que l'on fait principalement des actes algorithmiques basiques pour appliquer le fait \ref{diff-square-ko} sans user de fourberies déductives. Ennuyeux, mais efficace !
+Noter au passage que l'essentiel consiste en des actes algorithmiques basiques permettant d'appliquer le fait \ref{diff-square-ko} sans user de fourberies déductives. Ennuyeux, mais efficace !
 
 
 % ------------------ %
 
 
 \begin{proof}[Preuve]%
-    Supposons que $\consprod<10> \in \NNssquare$\,.
+    Supposons que $\consprod<10> \in \NNssquare$ pour $n \in \NNs$\,.
     
     \smallskip
     
@@ -15,17 +19,17 @@ Noter au passage que l'on fait principalement des actes algorithmiques basiques 
     $\forall p \in \PP_{\geq 10}$\,, 
     $\forall i \in \ZintervalC{0}{9}$\,, 
     $\padicval{n + i} \in 2 \NN$\,.
-    On doit donc s'intéresser à $p \in \setgene{2, 3, 5, 7}$\,. Voici ce que l'on peut observer très grossièrement.
+    Concentrons-nous sur les nombres premiers dans $\setgene{2, 3, 5, 7}$\,. Voici ce que l'on peut observer très grossièrement.
     %
     \begin{itemize}
 		\item Au maximum deux facteurs $(n + i)$ de $\consprod<10>$ sont divisibles par $5$\,.
 
 		\item Au maximum deux facteurs $(n + i)$ de $\consprod<10>$ sont divisibles par $7$\,.
 
-		\item Les points précédents donnent au moins $6$ facteurs $(n + i)$ de $\consprod<10>$ premiers relativement à tout premier $p \in \PP_{\geq 5}$.
+		\item Les points précédents donnent au moins $6$ facteurs $(n + i)$ de $\consprod<10>$ de valuation $p$-adique paire dès que $p \in \PP_{\geq 5}$\,.
     \end{itemize}
     
-    Nous avons alors l'une des alternatives suivantes pour chacun des $6$ facteurs $(n+i)$ vérifiant $\padicval{n + i} \in 2 \NN$ pour $p \in \PP_{\geq 5}$\,.
+    Nous avons alors l'une des alternatives suivantes pour chacun des $6$ facteurs $(n+i)$ vérifiant $\padicval{n + i} \in 2 \NN$ dès que $p \in \PP_{\geq 5}$\,.
     %
     \begin{itemize}
     	\smallskip
@@ -79,7 +83,7 @@ Noter au passage que l'on fait principalement des actes algorithmiques basiques 
 
 
 			\item $N^2 - M^2 = 9$ avec $(N, M) = (5, 4)$ est possible
-			d'où $n \in \ZintervalC{9}{16}$\,, puis $n \in \ZintervalC{10}{16}$ d'après ce qui précède.
+			d'où $n \in \ZintervalC{10}{16}$ d'après ce qui précède.
 			Or $\forall n \in \ZintervalC{10}{16}$\,, $\padicval[17]{\consprod[n]<10>} = 1$\,, donc $\consprod[n]<10> \in \NNsquare$ est faux.
 		\end{enumerate}
 
@@ -120,10 +124,9 @@ Noter au passage que l'on fait principalement des actes algorithmiques basiques 
 % ------------------ %
 
 
-On peut adapter \enquote{mécaniquement} ce qui précède
+Ce qui est intéressant avec la preuve précédente est qu'avec quelques adaptations \enquote{mécaniques}\,, on démontre que $\forall n \in \NNs$\,, $\consprod<k> \notin \NNsquare$ dès que $k \in \setgene{5, 7, 9, 11, 12, 13}$\,.
 \footnote{
-	Voir le document \enquote{Carrés parfaits et produits d'entiers consécutifs -- Des solutions à la main} disponible dans le dépôt associé au présent document.
-},
-afin de démontrer que $\forall n \in \NNs$\,, $\consprod<k> \notin \NNsquare$ si $k \in \setgene{5, 7, 9, 11, 12, 13}$\,.
+	Voir le document \emph{\enquote{Carrés parfaits et produits d'entiers consécutifs -- Des solutions à la main}} disponible dans le dépôt associé au présent document.
+}
 Ces preuves semblant peu gourmandes informatiquement, il semble opportun de tenter un traitement numérique des cas absents dans l'article de Paul Erdős. 
 

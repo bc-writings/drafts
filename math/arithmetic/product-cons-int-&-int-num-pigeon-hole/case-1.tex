@@ -101,7 +101,7 @@
 
 			\item $nb_{sol}= 1$ si $\delta \in \{ 3, 5, 7, 8, 9, 11, 12, 13, 16, 17, 19, 20 \}$\,.
 
-			\item $nb_{sol}= 2$ si $\delta \in \{ 15 \}$\,.
+			\item $nb_{sol}= 2$ si $\delta = 15$\,.
 		\end{enumerate}
 	\end{enumerate}
 \end{fact}
@@ -115,14 +115,14 @@
 		\item Comme $N - 1 \geq M$\,, nous obtenons :
 		$N^2 - M^2 \geq N^2 - (N - 1)^2 = 2N - 1$\,.
 
-		\item Le point précédent permet d'utiliser le programme \verb#Python# suivant afin d'obtenir rapidement les longues listes de nombres indiquées.
+		\item Le point précédent permet d'utiliser le programme \verb#Python# suivant afin d'obtenir rapidement les listes de nombres indiquées.
 	\end{enumerate}
 
 \bgroup
 \small
 \begin{Python}
 from collections import defaultdict
-from math import sqrt, floor
+from math        import sqrt, floor
 
 def sol(diff):
     solfound = []

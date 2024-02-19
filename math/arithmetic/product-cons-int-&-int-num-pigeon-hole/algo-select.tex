@@ -1,7 +1,32 @@
 \leavevmode
 \smallskip
 
-TODO
+????
+
+
+La démonstration donnée dans la section \ref{case-10} commence par repérer le moins possible de nombres premiers $p$ de valuation -p--adiques non nécessaireemnt paires 
+
+
+
+suit les grandes lignes suivantes qui mênent directement à un algorithme.
+%
+\begin{enumerate}
+	\item XXXX
+
+	\item XXXX
+
+	\item XXXX
+\end{enumerate}
+
+
+
+
+
+\newpage
+Idée : on compte grossièrement des nombres de valuation p adiques paires avec le plus de p différents, dison en avoir k, il reste alors d priemirs et on veut juste que d > 2**d, on fait en sorte d'aller vers d le plus petit possible.
+
+une fois ceci faitn on se ramène à des eq du type $N^2 - M^2 = d$ ou d w= nbre de facteurs
+
 
 De 2 à 100
 
@@ -32,34 +57,39 @@ pour 37 on a 11 nbrs premires
 \vspace{-1ex}
 \begin{center}
     \begin{tblr}{
-            width = \linewidth,
-            stretch = 1.75,
-            colspec = {X[3,r] *{10}{X[1,c,$]}},
-            vline{2-Y},
-            hline{2-Y},
-            rowsep=2pt,
-            colsep=3pt,
-        }
-          $p\,$
-        	& 31 & 29 & 23 & 19 & 17 & 13 & 11 & 7  & 5  & 3
-        \\
-          Occu. max.
-    		& 2  & 2  & 2  & 2  & 3  & 3  & 4  & 6  & 8  & 13
-        \\
-          Occu. libres.
-    		& 35 & 33 & 31 & 29 & 26 & 23 & 19 & 13 & 5  & 0
-        \\
-          Alternatives.
-    		& 2^{10}
-    		& 2^9
-    		& 2^8
-    		& 2^7
-    		& 2^6
-    		& 2^5
-    		& 2^4
-    		& 2^3
-    		& 2^2
-    		& 2
+        width = \linewidth,
+        stretch = 1.75,
+        colspec = {X[3,r] *{10}{X[1,c,$]}},
+        vline{2-Y},
+        hline{2-Y},
+        rowsep=2pt,
+        colsep=3pt,
+		% GOOD!
+		column{W-X} = {blue!15},
+		column{Y}   = {green!15},
+		% STOP!
+		column{Z} = {red!15},
+    }
+      $p\,$
+    	& 31 & 29 & 23 & 19 & 17 & 13 & 11 & 7  & 5  & 3
+    \\
+      Occu. max.
+		& 2  & 2  & 2  & 2  & 3  & 3  & 4  & 6  & 8  & 13
+    \\
+      Occu. libres.
+		& 35 & 33 & 31 & 29 & 26 & 23 & 19 & 13 & 5  & 0
+    \\
+      Alternatives.
+		& 2^{10}
+		& 2^9
+		& 2^8
+		& 2^7
+		& 2^6
+		& 2^5
+		& 2^4
+		& 2^3
+		& 2^2
+		& 2
     \end{tblr}
 \end{center}
 
@@ -70,35 +100,40 @@ pour 40
 \vspace{-1ex}
 \begin{center}
     \begin{tblr}{
-            width = \linewidth,
-            stretch = 1.75,
-            colspec = {X[3,r] *{11}{X[1,c,$]}},
-            vline{2-Y},
-            hline{2-Y},
-            rowsep=2pt,
-            colsep=3pt,
-        }
-          $p\,$
-        	& 37 & 31 & 29 & 23 & 19 & 17 & 13 & 11 & 7  & 5  & 3
-        \\
-          Occu. max.
-    		& 2  & 2  & 2  & 2  & 3  & 3  & 4  & 4  & 6  & 8  & 14
-        \\
-          Occu. libres.
-    		& 38 & 36 & 34 & 32 & 29 & 26 & 22 & 18 & 12 & 4  & 0
-        \\
-          Alternatives.
-    		& 2^{11}
-    		& 2^{10}
-    		& 2^9
-    		& 2^8
-    		& 2^7
-    		& 2^6
-    		& 2^5
-    		& 2^4
-    		& 2^3
-    		& 2^2
-    		& 2
+        width = \linewidth,
+        stretch = 1.75,
+        colspec = {X[3,r] *{11}{X[1,c,$]}},
+        vline{2-Y},
+        hline{2-Y},
+        rowsep=2pt,
+        colsep=3pt,
+		% GOOD!
+		column{W} = {blue!15},
+		column{X} = {green!15},
+		% STOP!
+		column{Z} = {red!15},
+    }
+      $p\,$
+    	& 37 & 31 & 29 & 23 & 19 & 17 & 13 & 11 & 7  & 5  & 3
+    \\
+      Occu. max.
+		& 2  & 2  & 2  & 2  & 3  & 3  & 4  & 4  & 6  & 8  & 14
+    \\
+      Occu. libres.
+		& 38 & 36 & 34 & 32 & 29 & 26 & 22 & 18 & 12 & 4  & 0
+    \\
+      Alternatives.
+		& 2^{11}
+		& 2^{10}
+		& 2^9
+		& 2^8
+		& 2^7
+		& 2^6
+		& 2^5
+		& 2^4
+		& 2^3
+		& 2^2
+		& 2
     \end{tblr}
 \end{center}
 

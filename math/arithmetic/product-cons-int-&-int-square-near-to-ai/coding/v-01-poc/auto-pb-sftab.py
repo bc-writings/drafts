@@ -1,5 +1,5 @@
-K_MIN = 18
-K_MAX = 18
+K_MIN = 3
+K_MAX = 8
 
 #       KMAX <= 12: immediate
 #       KMAX  = 13: slow, but acceptable
