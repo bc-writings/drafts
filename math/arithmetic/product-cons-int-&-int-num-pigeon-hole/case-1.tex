@@ -129,17 +129,12 @@ def sol(diff):
 
     for i in range(1, (diff + 1) // 2 + 1):
         tested = i**2 - diff
+        
+        if tested > 0:
+            tested = floor(sqrt(tested))
 
-        if tested < 0:
-            continue
-
-        tested = floor(sqrt(i**2 - diff))
-
-        if tested == 0:
-            continue
-
-        if tested**2 == i**2 - diff:
-            solfound.append((i, tested))
+            if tested != 0 and tested**2 == i**2 - diff:
+                solfound.append((i, tested))
 
     return solfound
 
@@ -158,22 +153,37 @@ print(all_nbsol)
 \end{proof}
 
 	
-%% ------------------ %
-%
-%
-%Finissons par une jolie formule même si elle ne nous sera pas d'une grande aide dans la suite.
-%
-%
-%\begin{fact} \label{dist-square}
-%	$\forall (N, M) \in \NNs \times \NNs$, 
-%	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
-%\end{fact}
-%
-%
-%\begin{proof}
-%	$N^2 = \dsum_{k=1}^{N} (2 k - 1)$ donne l'identité indiquée
-%	\footnote{
-%		La formule utilisée est facile à démontrer algébriquement, et évidente à découvrir géométriquement.
-%	}.
-%\end{proof}
-%
+% ------------------ %
+
+
+\begin{remark}
+	La fonction \piton{sol} du programme précédent traduit l'algorithme suivant que nous utiliserons dans la suite de ce document.
+\end{remark}
+
+{\small
+\begin{algo}[frame] \label{algo-square-ko}
+%	\caption{Classique et efficace} 
+	%%%
+    \Data{$\delta \in \NNs$}
+    \Result{$\setproba{S}$ l'ensemble des couples $(N, M) \in \NNs \times \NNs$ vérifiant $N^2 - M^2 = \delta$\,.}
+	\BlankLine
+    \Actions{
+		$\setproba{S} \Store \emptyset$
+		\\
+		\ForRange{N}{1}{1 + \quot{\delta + 1}{2}}{	
+			$M \Store N^2 - \delta$
+			\\
+			\If{$M \geq 0$}{
+				$M \Store \floor{\sqrt{M}}$
+				\\
+				\If{$M \neq 0$ \And $M^2 = N^2 - \delta$}{
+					$\setproba{S} \Store \setproba{S} \cup \setgene{(N, M)}$
+				}
+			}
+		}
+		\BlankLine
+		\Return{$\setproba{S}$}
+	}
+\end{algo}
+}
+

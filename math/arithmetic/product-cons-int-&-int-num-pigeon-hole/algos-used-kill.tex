@@ -1,7 +1,35 @@
-\subsubsection{XXX} \label{algos-used-kill}
+\subsubsection{Cibler la recherche pour des tests brutaux} \label{algos-used-kill}
 
 \leavevmode
 \smallskip
+
+Reprenons les notations de la section \ref{algos-used-select} en supposant $\consprod \in \NNssquare$ avec $k \in \NN_{\geq 2}$\,.
+De plus, nous nous plaçons dans la situation où l'ensemble $\setgeo{C}$ renvoyé par l'algorithme \ref{algo-select} est non vide (dans le cas contraire, notre tactique est mise en échec).
+Il existe donc au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant les deux points suivants.
+%
+\begin{itemize}
+	\item $\forall p \in \PP - \setgeo{C}$\,, $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$\,.
+
+	\item $\forall p \in \setgeo{C}$\,, $\padicval{n+i}$ et $\padicval{n+i^\prime}$ ont la même parité.
+\end{itemize}
+
+Nous pouvons alors \enquote{localiser} les valeurs possible de $n$ pour tester brutalement si $\consprod \in \NNssquare$ est vrai.
+%
+\begin{enumerate}
+	\item 
+
+
+	\item $c ( N^2 - M^2 ) \in \ZintervalC{1}{k-1}$\,, d'où $N^2 - M^2 \in \ZintervalC{1}{\quot{k-1}{c}}$\,.
+
+
+	\item Le fait \ref{diff-square-ko} donne un ensemble fini $\setproba*{M}{k,c}$ tel que nécessairement $M \in \setproba*{M}{k,c}$\,.
+\end{enumerate}
+
+
+Notant $\epsilon_{i,p} = \reste{\padicval{n+i}}{2} \in \setgene{0, 1}$ pour $p \in \setgeo{C}$\,, puis posant $c = \prod_{p \in \setgeo{C}} p^{(\epsilon_{i,p})}$\,, nous avons $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,.
+Sans perte de généralité, nous pouvons supposer que $n + i > n+i^\prime$\,.s
+Nous avons alors les faits suivants. 
+???
 
 YYYY
 

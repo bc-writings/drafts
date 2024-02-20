@@ -187,26 +187,26 @@ Nous décidons donc de procéder grosso modo comme suit.
 	\textbf{Début des actions répétitives.}
 	
 	\noindent
-	Si $\setgeo{P} \neq \emptyset$ et $occu_{libre} > 2^{\card( \setgeo{P} )}$\,, nous posons $\setgeo{C} = \setgeo{P}$\,.
+	Si $\setgeo{P} = \emptyset$\,, ou $occu_{libre} = 0$\,, nous stoppons tout !
+
+	\explainthis{Si $\setgeo{C} = \emptyset$\,, nous avons perdu. Dans le cas contraire, nous pourrons continuer avec l'algorithme qui sera présenté dans la section \ref{algo-kill} suivante.}
+
+
+	\item Si $occu_{libre} > 2^{\card( \setgeo{P} )}$\,, nous posons $\setgeo{C} = \setgeo{P}$\,.
 	
 	\explainthis{Nous avons $2^{\card ( \setgeo{P} )}$ alternatives \alt{${}_j$} possibles relativement aux parités possible des valuations $p$-adiques pour les nombres premiers $p$ dans $\setgeo{P} = \PP_{< p_m}$\,, les valuations $p$-adiques restantes étant paires. %
 	De l'autre côté, nous avons au moins $occu_{libre}$ facteurs $(n+i)$ de $\consprod$ tels que $\padicval{n+i} \in 2\,\NN$ dès que $p \in \PP_{\geq p_m}$\,. %
 	Finalement, si $occu_{libre} > 2^{\card ( \setgeo{P} )}$\,, nous avons au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifiant la même alternative \alt{${}_j$}\,, d'où $c M^2$ et $c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser} des $\consprod$ à tester brutalement.}
 
 
-	\item Si $\setgeo{P} = \emptyset$\,, ou $occu_{libre} = 0$\,, nous stoppons tout !
-	
-	\explainthis{Si $\setgeo{C} = \emptyset$\,, nous avons perdu. Dans le cas contraire, nous pourrons continuer avec l'algorithme qui sera présenté dans la section \ref{algo-kill} suivante.}
-
-
-	\item Sinon, nous considérons $p_m = \max ( \setgeo{P})$\,, puis retirons $p_m$ de $\setgeo{P}$\,, d'où $\setgeo{P} = \PP_{< p_m}$\,.
+	\item Ensuite, nous considérons $p_m = \max ( \setgeo{P})$\,, puis retirons $p_m$ de $\setgeo{P}$\,, d'où $\setgeo{P} = \PP_{< p_m}$\,.
 	
 	\explainthis{Le choix du maximum tente de limiter les rejets de facteurs dans les étapes suivantes.} 
 
 
 	\item Nous calculons $occu_{max}$ le nombre maximum de facteurs $(n+i)$ de $\consprod$ pouvant être divisés par $p_m$\,.
 	
-	\explainthis{Le calcul de $occu_{max}$ est simple puisqu'il suffit de considérer le cas où $p$ divise $n$\,, nous obtenons alors $occu_{max} = 1 + \quot{k-1}{p}$ car $\consprod = n (n + 1) \cdots (n + k - 1)$\,.}
+	\explainthis{Le calcul de $occu_{max}$ est simple puisqu'il suffit de considérer le cas où $p_m$ divise $n$\,, nous avons alors $occu_{max} = 1 + \quot{k-1}{p_m}$ car $\consprod = n (n + 1) \cdots (n + k - 1)$\,.}
 
 
 	\item $occu_{libre}$ devient $occu_{libre} - occu_{max}$\,.
@@ -221,8 +221,8 @@ Nous décidons donc de procéder grosso modo comme suit.
 % ------------------ %
 
 
-%\medskip
-\newpage
+\medskip
+%\newpage
 
 Tout ceci nous amène au premier algorithme suivant.
 
@@ -230,35 +230,32 @@ Tout ceci nous amène au premier algorithme suivant.
 \begin{algo}[frame] \label{algo-select}
 %	\caption{Classique et efficace} 
 	%%%
-    \Data{$k \in \NN_{\geq 2}$\,, le nombre de facteurs considérés}
+    \Data{$k \in \NN_{\geq 2}$\,, le nombre de facteurs considérés.}
     \Result{$\setgeo{C}$ un ensemble, éventuellement vide, de nombres premiers \enquote{candidats} tel que si $\setgeo{C} \neq \emptyset$ alors il existe au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant $\forall p \in \PP - \setgeo{C}$\,, $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$\,, ainsi que $\padicval{n+i}$ et $\padicval{n+i^\prime}$ ont la même parité dès que $p \in \setgeo{C}$\,.}
 	\BlankLine
     \Actions{
-		$u^{\prime} \Store 1$
+		\BlankLine
+		$\setgeo{P} \Store \PP \cap \ZintervalC{0}{k-1}$
 		\\
-		$u^{\prime\prime} \Store 0$
+		$\setgeo{C} \Store \emptyset$
 		\\
-    	$v^{\prime} \Store 0$
-		\\
-		$v^{\prime\prime} \Store 1$
+		$occu_{libre} \Store k$
 		\\
 		\BlankLine
-        \While{$b \neq 0$}{
-			$a = q b + r$ est la division euclidienne standard.
+        \While{$\setgeo{P} \neq \emptyset$ \And $occu_{libre} \neq 0$}{
+			\If{$occu_{libre} > 2^{\card( \setgeo{P} )}$}{
+				$\setgeo{C} \Store \setgeo{P}$
+			}
+			$p_m \Store \max( \setgeo{P} )$
 			\\
-			$temp_u \Store u^{\prime} - q u^{\prime\prime}$
+			$\setgeo{P} \Store \setgeo{P} - \setgene{p_m}$
 			\\
-			$u^{\prime} \Store u^{\prime\prime}$
+			$occu_{max} \Store 1 + \quot{k-1}{p_m}$
 			\\
-			$u^{\prime\prime} \Store temp_u$
-			\\
-			$temp_v \Store v^{\prime} - q v^{\prime\prime}$
-			\\
-			$v^{\prime} \Store v^{\prime\prime}$
-			\\
-			$v^{\prime\prime} \Store temp_v$
+			$occu_{libre} \Store \max( 0 , occu_{libre} - occu_{max} )$
 		}
-		\Return{$(u^{\prime} ; v^{\prime})$}
+		\BlankLine
+		\Return{$\setgeo{C}$}
 	}
 \end{algo}
 }
@@ -269,7 +266,7 @@ Tout ceci nous amène au premier algorithme suivant.
 
 \medskip
 
-Une fois l'algorithme \ref{algo-select} traduit en \python, nous obtiennons instantanément les informations suivantes pour $k \in \ZintervalC{2}{100}$\,.
+Une fois l'algorithme \ref{algo-select} traduit en \python, nous obtennons instantanément les informations suivantes pour $k \in \ZintervalC{2}{100}$\,.
 %
 \begin{itemize}
 	\item \textbf{Mauvais candidats.}
@@ -303,5 +300,6 @@ Quant aux candidats acceptés, les nombres premiers à gérer sont forcément da
 
 
 \begin{remark}
-	Ne rêvons pas trop à un principe général, car le programme donne aussi que $824$ est le premier naturel, après $8$\,, non sélectionné par notre algorithme.
+	Ne rêvons pas trop, car le programme donne aussi que $824$ est le premier naturel, après $8$\,, non sélectionné par notre algorithme.
 \end{remark}
+

@@ -30,12 +30,9 @@ def distsquares(diff_squares):
         if tested < 0:
             continue
 
-        tested = floor(sqrt(i**2 - diff_squares))
+        tested = floor(sqrt(tested))
 
-        if tested == 0:
-            continue
-
-        if tested**2 == i**2 - diff_squares:
+        if tested != 0 and tested**2 == i**2 - diff_squares:
             solfound.append((i, tested))
 
     return solfound

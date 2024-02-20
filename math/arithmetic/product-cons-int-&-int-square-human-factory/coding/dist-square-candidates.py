@@ -1,21 +1,17 @@
 from math import sqrt, floor
 
+
 def sol(diff):
     solfound = []
 
     for i in range(1, (diff + 1) // 2 + 1):
         tested = i**2 - diff
 
-        if tested < 0:
-            continue
+        if tested > 0:
+            tested = floor(sqrt(tested))
 
-        tested = floor(sqrt(i**2 - diff))
-
-        if tested == 0:
-            continue
-
-        if tested**2 == i**2 - diff:
-            solfound.append((i, tested))
+            if tested != 0 and tested**2 == i**2 - diff:
+                solfound.append((i, tested))
 
     return solfound
 
