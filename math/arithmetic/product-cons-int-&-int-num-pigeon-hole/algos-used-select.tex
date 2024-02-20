@@ -65,7 +65,7 @@ Le tableau se lit comme suit.
 \end{itemize}
 
 
-On voit ici que $2$ est un bon candidat pour rejeter $\consprod<3> \in \NNssquare$ puisqu'au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ de $\consprod<3>$ vérifient la même alternative, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser}\,, via le fait \ref{diff-square-ko}, des entiers naturels $n$ afin de tester brutalement si $\consprod<3> \in \NNssquare$ est vrai, ou non.
+On voit ici que $2$ est un bon candidat pour rejeter $\consprod<3> \in \NNssquare$ puisqu'au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ de $\consprod<3>$ vérifient la même alternative, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser}\,, via le fait \ref{diff-square-ko}, des entiers naturels $n$ afin de tester presque brutalement si $\consprod<3> \in \NNssquare$ est vrai, ou non.
 
 
 % ------------------ %
@@ -259,7 +259,9 @@ Une fois l'algorithme codé en \python, on obtient instantanément les informati
 \end{itemize}
 
 
-Ce qui précède est encourageant, car peu de candidats sont rejetés. De plus, ces derniers correspondent à des cas déjà gérés par humainement, et pour les candidats acceptés, le nombre maximum d'alternatives est $2^3 = 8$ qui est n'est pas une valeur informatiquement bloquante (nous verrons dans la section \ref{algo-kill} que d'autres paramètres peuvent bloquer la recherche).
+Ce qui précède est encourageant, car peu de cas sont rejetés.
+De plus, les mauvais candidats sont faciles à gérer par un humain, ou un programme : voir la section \ref{algo-KO}.
+Quant aux candidats acceptés, le nombre maximum d'alternatives est $2^3 = 8$ qui n'est pas une valeur informatiquement bloquante (nous verrons dans la section \ref{algo-kill} que d'autres paramètres peuvent bloquer la recherche).
 
 % ------------------ %
 
