@@ -1,4 +1,4 @@
-\subsubsection{Sélection de potentiels bons candidats} \label{algo-select}
+\subsubsection{Sélection de potentiels bons candidats} \label{algos-used-select}
 
 \leavevmode
 \smallskip
@@ -231,7 +231,7 @@ Tout ceci nous amène au premier algorithme suivant.
 %	\caption{Classique et efficace} 
 	%%%
     \Data{$k \in \NN_{\geq 2}$\,, le nombre de facteurs considérés}
-    \Result{$\setgeo{C}$ un ensemble, éventuellement vide, de nombres premiers \enquote{candidats} tels que si $\setgeo{C} \neq \emptyset$ alors il existe au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant $\forall p \in \PP - \setgeo{C}$\,, $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$\,, ainsi que $\padicval{n+i}$ et $\padicval{n+i^\prime}$ ont la même parité dès que $p \in \setgeo{C}$\,.}
+    \Result{$\setgeo{C}$ un ensemble, éventuellement vide, de nombres premiers \enquote{candidats} tel que si $\setgeo{C} \neq \emptyset$ alors il existe au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant $\forall p \in \PP - \setgeo{C}$\,, $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$\,, ainsi que $\padicval{n+i}$ et $\padicval{n+i^\prime}$ ont la même parité dès que $p \in \setgeo{C}$\,.}
 	\BlankLine
     \Actions{
 		$u^{\prime} \Store 1$
@@ -296,7 +296,8 @@ Une fois l'algorithme \ref{algo-select} traduit en \python, nous obtiennons inst
 
 Ce qui précède est encourageant, car peu de cas sont rejetés.
 De plus, les mauvais candidats sont faciles à gérer par un humain, ou un programme : voir la section \ref{algo-KO}.
-Quant aux candidats acceptés, le nombre maximum d'alternatives est $2^3 = 8$ qui n'est pas une valeur informatiquement bloquante (nous verrons dans la section \ref{algo-kill} que d'autres paramètres peuvent bloquer la recherche).
+Quant aux candidats acceptés, les nombres premiers à gérer sont forcément dans $\setgene{2, 3, 5}$\,, et le nombre maximum d'alternatives est $2^3 = 8$\,, tout ceci n'étant pas informatiquement bloquant (nous verrons dans la section \ref{algos-used-kill} qu'un autre paramètre peut bloquer la recherche).
+ 
 
 % ------------------ %
 
