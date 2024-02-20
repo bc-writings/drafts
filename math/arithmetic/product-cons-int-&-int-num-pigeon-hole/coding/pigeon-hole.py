@@ -198,14 +198,14 @@ if __name__ == '__main__':
     results_card  = defaultdict(int)
     results_which = defaultdict(list)
 
-    for n in range(2, 100):
+    for n in range(2, 101):
         nb_candidates = len(pigeonhole_candidates(n))
 
         results_card[nb_candidates] += 1
         results_which[nb_candidates].append(n)
 
     pprint(results_card)
-    # pprint(results_which)
+    pprint(results_which[0])
 
 
     # for candidates in [

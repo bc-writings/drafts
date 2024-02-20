@@ -65,7 +65,7 @@ Le tableau se lit comme suit.
 \end{itemize}
 
 
-On voit ici que $2$ est un bon candidat pour rejeter $\consprod<3> \in \NNssquare$ puisqu'au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ de $\consprod<3>$ vérifient la même alternative, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser}\,, via le fait \ref{diff-square-ko}, des entiers naturels $n$ afin de tester presque brutalement si $\consprod<3> \in \NNssquare$ est vrai, ou non.
+Nous voyons ici que $2$ est un bon candidat pour rejeter $\consprod<3> \in \NNssquare$ puisqu'au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ de $\consprod<3>$ vérifient la même alternative, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser}\,, via le fait \ref{diff-square-ko}, des entiers naturels $n$ afin de tester presque brutalement si $\consprod<3> \in \NNssquare$ est vrai, ou non.
 
 
 % ------------------ %
@@ -164,21 +164,21 @@ Afin de clarifier la démarche que nous allons suivre, donnons un dernier exempl
 
 \medskip
 
-On décide donc de procéder grosso modo comme suit.
+Nous décidons donc de procéder grosso modo comme suit.
 
 \begin{enumerate}
-	\item On suppose par l'absurde que $\consprod \in \NNssquare$ avec $k \in \NNs$.
+	\item Nous supposons par l'absurde que $\consprod \in \NNssquare$ avec $k \in \NNs$.
 
 
-	\item On fabrique $\setgeo{P} = \PP_{<k}$\,.
+	\item Nous fabriquons $\setgeo{P} = \PP_{<k}$\,.
 
 
-	\item On pose $\setgeo{C} = \emptyset$\,.
+	\item Nous posons $\setgeo{C} = \emptyset$\,.
 	
-	\explainthis{Cet ensemble sera celui des nombres premiers \enquote{candidats} utilisés dans notre second algorithme de tests brutaux. On cherche à obtenir l'ensemble $\setgeo{C}$ non vide le plus petit possible.}
+	\explainthis{Cet ensemble sera celui des nombres premiers \enquote{candidats} utilisés dans notre second algorithme de tests brutaux. Nous cherchons à obtenir l'ensemble $\setgeo{C}$ non vide le plus petit possible.}
 
 
-	\item On pose $occu_{libre} = k$\,.
+	\item Nous posons aussi $occu_{libre} = k$\,.
 	
 	\explainthis{Cette variable va nous servir à compter les facteurs $(n+i)$ de $\consprod$ ayant un \enquote{maximum} de valuations $p$-adiques pairs.}
 
@@ -226,7 +226,42 @@ On décide donc de procéder grosso modo comme suit.
 
 Tout ceci nous amène au premier algorithme suivant.
 
-ALGO TODO !!!!!
+{\small
+\begin{algo}[frame] \label{algo-select}
+%	\caption{Classique et efficace} 
+	%%%
+    \Data{$k \in \NN_{\geq 2}$\,, le nombre de facteurs considérés}
+    \Result{$\setgeo{C}$ un ensemble, éventuellement vide, de nombres premiers \enquote{candidats} tels que si $\setgeo{C} \neq \emptyset$ alors il existe au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant $\forall p \in \PP - \setgeo{C}$\,, $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$\,, ainsi que $\padicval{n+i}$ et $\padicval{n+i^\prime}$ ont la même parité dès que $p \in \setgeo{C}$\,.}
+	\BlankLine
+    \Actions{
+		$u^{\prime} \Store 1$
+		\\
+		$u^{\prime\prime} \Store 0$
+		\\
+    	$v^{\prime} \Store 0$
+		\\
+		$v^{\prime\prime} \Store 1$
+		\\
+		\BlankLine
+        \While{$b \neq 0$}{
+			$a = q b + r$ est la division euclidienne standard.
+			\\
+			$temp_u \Store u^{\prime} - q u^{\prime\prime}$
+			\\
+			$u^{\prime} \Store u^{\prime\prime}$
+			\\
+			$u^{\prime\prime} \Store temp_u$
+			\\
+			$temp_v \Store v^{\prime} - q v^{\prime\prime}$
+			\\
+			$v^{\prime} \Store v^{\prime\prime}$
+			\\
+			$v^{\prime\prime} \Store temp_v$
+		}
+		\Return{$(u^{\prime} ; v^{\prime})$}
+	}
+\end{algo}
+}
 
 
 % ------------------ %
@@ -234,7 +269,7 @@ ALGO TODO !!!!!
 
 \medskip
 
-Une fois l'algorithme codé en \python, on obtient instantanément les informations suivantes pour $k \in \ZintervalC{2}{100}$\,.
+Une fois l'algorithme \ref{algo-select} traduit en \python, nous obtiennons instantanément les informations suivantes pour $k \in \ZintervalC{2}{100}$\,.
 %
 \begin{itemize}
 	\item \textbf{Mauvais candidats.}
@@ -255,7 +290,7 @@ Une fois l'algorithme codé en \python, on obtient instantanément les informati
 	\item\textbf{Bons candidats avec trois nombres premiers à gérer.}
 	
 	\noindent
-	Il y en a 65 correspondant aux entiers restants.
+	Il y en a 66 correspondant aux entiers restants.
 \end{itemize}
 
 
@@ -267,5 +302,5 @@ Quant aux candidats acceptés, le nombre maximum d'alternatives est $2^3 = 8$ qu
 
 
 \begin{remark}
-	Ne rêvons pas trop à un principe général, car le programme donne aussi que $824$ est rejeté par notre algorithme de sélection.
+	Ne rêvons pas trop à un principe général, car le programme donne aussi que $824$ est le premier naturel, après $8$\,, non sélectionné par notre algorithme.
 \end{remark}
