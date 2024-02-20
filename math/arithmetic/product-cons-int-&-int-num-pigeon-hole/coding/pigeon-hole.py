@@ -152,14 +152,15 @@ def pigeonhole_candidates(nbfactors):
     primeskept   = []
 
     while(primes and placeleft > 0):
+        if placeleft > 2**nbprimesleft:
+            primeskept = primes[:]
+
         p             = primes.pop()
         occumax       = 1 + maxindice // p
         nbprimesleft -= 1
 
         placeleft -= occumax
-
-        if placeleft > 2**nbprimesleft:
-            primeskept = primes[:]
+        placeleft = max(0, placeleft)
 
     return primeskept
 
@@ -197,14 +198,14 @@ if __name__ == '__main__':
     results_card  = defaultdict(int)
     results_which = defaultdict(list)
 
-    for n in range(2, 10):
+    for n in range(2, 100):
         nb_candidates = len(pigeonhole_candidates(n))
 
         results_card[nb_candidates] += 1
         results_which[nb_candidates].append(n)
 
     pprint(results_card)
-    pprint(results_which)
+    # pprint(results_which)
 
 
     # for candidates in [
