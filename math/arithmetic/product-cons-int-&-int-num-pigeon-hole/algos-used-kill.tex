@@ -3,9 +3,8 @@
 \leavevmode
 \smallskip
 
-Reprenons les notations de la section \ref{algos-used-select} en supposant $\consprod \in \NNssquare$ avec $k \in \NN_{\geq 2}$\,.
-De plus, nous nous plaçons dans la situation où l'ensemble $\setgeo{C}$ renvoyé par l'algorithme \ref{algo-select} est non vide (dans le cas contraire, notre tactique est mise en échec).
-Il existe donc au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant les deux points suivants.
+Reprenons les notations de la section \ref{algos-used-select} en supposant $\consprod \in \NNssquare$ avec $k \in \NN_{\geq 2}$\,, et plaçons-nous dans la situation où l'ensemble $\setgeo{C}$ renvoyé par l'algorithme \ref{algo-select} est non vide (dans le cas contraire, notre tactique est mise en échec).
+Nous avons donc au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant les points suivants.
 %
 \begin{itemize}
 	\item $\forall p \in \PP - \setgeo{C}$\,, $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$\,.
@@ -13,25 +12,46 @@ Il existe donc au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ v
 	\item $\forall p \in \setgeo{C}$\,, $\padicval{n+i}$ et $\padicval{n+i^\prime}$ ont la même parité.
 \end{itemize}
 
-Nous pouvons alors \enquote{localiser} les valeurs possible de $n$ pour tester brutalement si $\consprod \in \NNssquare$ est vrai.
+Ceci permet de \enquote{localiser} comme suit les valeurs de $n$ pouvant vérifier $\consprod \in \NNssquare$\,.
 %
 \begin{enumerate}
-	\item 
+	\item Notons $\setproba{C}$ l'ensemble des entiers $\prod_{p \in \setgeo{C}} p^{(\epsilon_p)}$ avec $(\epsilon_p)_{p \in \setgeo{C}} \subseteq \setgene{0, 1}$\,.
 
 
-	\item $c ( N^2 - M^2 ) \in \ZintervalC{1}{k-1}$\,, d'où $N^2 - M^2 \in \ZintervalC{1}{\quot{k-1}{c}}$\,.
+	\item Il existe $c \in \setproba{C}$ tel que $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, M, N) \in \NNsf \times ( \NNs )^2$\,.
+	
+	\explainthis{Comme nous n'avons aucune idée de la suite $(\epsilon_p)_{p \in \setgeo{C}}$ à choisir, il faudra les tester toutes.}
 
 
-	\item Le fait \ref{diff-square-ko} donne un ensemble fini $\setproba*{M}{k,c}$ tel que nécessairement $M \in \setproba*{M}{k,c}$\,.
+	\item $c ( N^2 - M^2 ) \in \ZintervalC{1}{k-1}$ donne $N^2 - M^2 \in \ZintervalC{1}{\quot{k-1}{c}}$\,.
+
+
+	\item L'algorithme \ref{algo-square-ko} permet de construire l'ensemble fini $\setproba*{D}{c}$\,, éventuellement vide, des couples $(M, N)$ tels que $N^2 - M^2 \in \ZintervalC{1}{\quot{k-1}{c}}$\,,
+	à partir duquel nous construisons 
+	$\setproba*{F}{c} = \setgene{(c M^2, c N^2) \, | \, (M, N) \in \setproba*{D}{c}}$\,.
+	
+	\explainthis{Nous pouvons affirmer que $\consprod$ contient au moins un couple de facteurs appartenant à $\cup_{c \in \setproba{C}} \setproba*{F}{c}$\,.}
+
+
+	\item XXX
+
+
+	\item XXX
+
+
+	\item XXX
+
+
+	\item XXX
 \end{enumerate}
 
 
-Notant $\epsilon_{i,p} = \reste{\padicval{n+i}}{2} \in \setgene{0, 1}$ pour $p \in \setgeo{C}$\,, puis posant $c = \prod_{p \in \setgeo{C}} p^{(\epsilon_{i,p})}$\,, nous avons $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,.
-Sans perte de généralité, nous pouvons supposer que $n + i > n+i^\prime$\,.s
-Nous avons alors les faits suivants. 
+
+
+
+
 ???
 
-YYYY
 
 
 
@@ -40,10 +60,10 @@ YYYY
 % ------------------ %
 
 
-%\medskip
-\newpage
+\medskip
+%\newpage
 
-Tout ceci nous amène au premier algorithme suivant.
+Tout ce qui précède nous amène à l'algorithme suivant.
 
 {\small
 \begin{algo}[frame] \label{algo-kill}

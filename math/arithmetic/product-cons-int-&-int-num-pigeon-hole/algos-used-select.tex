@@ -196,7 +196,7 @@ Nous décidons donc de procéder grosso modo comme suit.
 	
 	\explainthis{Nous avons $2^{\card ( \setgeo{P} )}$ alternatives \alt{${}_j$} possibles relativement aux parités possible des valuations $p$-adiques pour les nombres premiers $p$ dans $\setgeo{P} = \PP_{< p_m}$\,, les valuations $p$-adiques restantes étant paires. %
 	De l'autre côté, nous avons au moins $occu_{libre}$ facteurs $(n+i)$ de $\consprod$ tels que $\padicval{n+i} \in 2\,\NN$ dès que $p \in \PP_{\geq p_m}$\,. %
-	Finalement, si $occu_{libre} > 2^{\card ( \setgeo{P} )}$\,, nous avons au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifiant la même alternative \alt{${}_j$}\,, d'où $c M^2$ et $c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser} des $\consprod$ à tester brutalement.}
+	Finalement, si $occu_{libre} > 2^{\card ( \setgeo{P} )}$\,, nous avons au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifiant la même alternative \alt{${}_j$}\,, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser} des $\consprod$ à tester brutalement.}
 
 
 	\item Ensuite, nous considérons $p_m = \max ( \setgeo{P})$\,, puis retirons $p_m$ de $\setgeo{P}$\,, d'où $\setgeo{P} = \PP_{< p_m}$\,.
@@ -224,7 +224,7 @@ Nous décidons donc de procéder grosso modo comme suit.
 \medskip
 %\newpage
 
-Tout ceci nous amène au premier algorithme suivant.
+Tout ce qui précède nous amène à l'algorithme suivant.
 
 {\small
 \begin{algo}[frame] \label{algo-select}
@@ -266,28 +266,28 @@ Tout ceci nous amène au premier algorithme suivant.
 
 \medskip
 
-Une fois l'algorithme \ref{algo-select} traduit en \python, nous obtennons instantanément les informations suivantes pour $k \in \ZintervalC{2}{100}$\,.
+Une fois l'algorithme \ref{algo-select} traduit en \python, nous obtenons instantanément les informations suivantes pour $k \in \ZintervalC{2}{100}$\,.
 %
 \begin{itemize}
 	\item \textbf{Mauvais candidats.}
 	
 	\noindent
-	Il y en a 4 correspondant aux entiers $2$\,, $4$\,, $6$ et $8$\,.
+	Il y en a 4 qui sont $2$\,, $4$\,, $6$ et $8$\,.
 	
 	\item \textbf{Bons candidats avec un seul nombre premier à gérer.}
 	
 	\noindent
-	Il y en a 2 correspondant aux entiers $3$ et $5$\,.
+	Il y en a 2 qui sont $3$ et $5$\,.
 	
 	\item \textbf{Bons candidats avec deux nombres premiers à gérer.}
 	
 	\noindent
-	Il y en a 27 correspondant aux entiers $7$\,, $9$\,, $10$\,, $11$\,, $12$\,, $13$\,, $14$\,, $15$\,, $16$\,, $17$\,, $18$\,, $19$\,, $20$\,, $21$\,, $22$\,, $23$\,, $25$\,, $26$\,, $27$\,, $28$\,, $29$\,, $30$\,, $31$\,, $33$\,, $34$\,, $35$ et $37$\,.
+	Il y en a 27 qui sont $7$\,, $9$\,, $10$\,, $11$\,, $12$\,, $13$\,, $14$\,, $15$\,, $16$\,, $17$\,, $18$\,, $19$\,, $20$\,, $21$\,, $22$\,, $23$\,, $25$\,, $26$\,, $27$\,, $28$\,, $29$\,, $30$\,, $31$\,, $33$\,, $34$\,, $35$ et $37$\,.
 
 	\item\textbf{Bons candidats avec trois nombres premiers à gérer.}
 	
 	\noindent
-	Il y en a 66 correspondant aux entiers restants.
+	Il y en a 66 qui sont les entiers restants.
 \end{itemize}
 
 
