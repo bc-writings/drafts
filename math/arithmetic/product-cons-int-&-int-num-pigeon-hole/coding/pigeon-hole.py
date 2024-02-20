@@ -24,16 +24,14 @@ TAB_2 = TAB_1 + " "*4
 def distsquares(diff_squares):
     solfound = []
 
-    for i in range(1, (diff_squares + 1) // 2 + 1):
-        tested = i**2 - diff_squares
+    for N in range(1, (diff_squares + 1) // 2 + 1):
+        M_square = N**2 - diff_squares
 
-        if tested < 0:
-            continue
+        if M_square > 0:
+            M = floor(sqrt(M_square))
 
-        tested = floor(sqrt(tested))
-
-        if tested != 0 and tested**2 == i**2 - diff_squares:
-            solfound.append((i, tested))
+            if M != 0 and M**2 == M_square:
+                solfound.append((N, M))
 
     return solfound
 
