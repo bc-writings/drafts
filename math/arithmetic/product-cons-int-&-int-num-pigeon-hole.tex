@@ -91,6 +91,8 @@
 \newcommand\NNssquare{\seqsuprageo{\NN}{*}{}{}{2}}
 
 \NewDocumentCommand\GCD{ m  m }{#1 \wedge #2}
+\NewDocumentCommand\reste{ m  m }{\mathrm{reste}( #1 , #2)}
+\NewDocumentCommand\quot{ m  m }{\mathrm{quot}( #1 , #2)}
 
 \NewDocumentCommand\padicval{ O{p} m }{v_{#1}(#2)}
 \NewDocumentCommand\consprod{ O{n} D<>{k} }{\pi_{#1}^{#2}}
@@ -135,7 +137,7 @@
 \end{center}
 
 
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 \tableofcontents
 
 
@@ -184,9 +186,11 @@
 %\medskip
 \section{Une tactique informatique}
 
-\subsection{De potentiels bons candidats} \label{algo-select}
+\subsection{Deux algorithmes basiques} \label{algos-used}
 
-\input{\contentdir/algo-select}
+\input{\contentdir/algos-used-intro}
+\input{\contentdir/algos-used-select}
+\input{\contentdir/algos-used-kill}
 
 
 \subsection{Les cas gagnants} \label{algo-OK}
