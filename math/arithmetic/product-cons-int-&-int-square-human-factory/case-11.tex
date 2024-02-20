@@ -18,21 +18,21 @@ L'idée suivie est celle de la démonstration du cas \ref{case-10} ; nous indiqu
 		
 		\smallskip
 		\noindent
-		Dans ce cas, $(n+i, n+i^\prime) = (N^2, M^2)$ avec $\abs{N^2 - M^2} \in \ZintervalC{1}{10}$\,. Ce qui suit lève des contradictions.
+		Dans ce cas, $(n+i, n+i^\prime) = (M^2, N^2)$ avec $\abs{N^2 - M^2} \in \ZintervalC{1}{10}$\,. Ce qui suit lève des contradictions.
 		%
 		\begin{enumerate}
-			\item $N^2 - M^2 = 3$ donne $n = 1$\,, mais $\consprod[1]<11> = 11 ! \notin \NNsquare$ via $\padicval[11]{11!} = 1$\,.
+			\item $\abs{N^2 - M^2} = 3$ donne $n = 1$\,, mais $\consprod[1]<11> = 11 ! \notin \NNsquare$ via $\padicval[11]{11!} = 1$\,.
 
 
-			\item $N^2 - M^2 = 5$ donne $n \in \ZintervalC{2}{4}$\,, mais $\forall n \in \ZintervalC{2}{4}$\,, $\padicval[11]{\consprod[n]<11>} = 1$ donne $\consprod[n]<11> \notin \NNsquare$\,.
+			\item $\abs{N^2 - M^2} = 5$ donne $n \in \ZintervalC{2}{4}$\,, mais $\forall n \in \ZintervalC{2}{4}$\,, $\padicval[11]{\consprod[n]<11>} = 1$ donne $\consprod[n]<11> \notin \NNsquare$\,.
 			
 
-			\item $N^2 - M^2 = 7$ donne $n \in \ZintervalC{5}{9}$\,, mais $\forall n \in \ZintervalC{5}{9}$\,, $\padicval[11]{\consprod[n]<11>} = 1$ donne $\consprod[n]<11> \notin \NNsquare$\,.
+			\item $\abs{N^2 - M^2} = 7$ donne $n \in \ZintervalC{5}{9}$\,, mais $\forall n \in \ZintervalC{5}{9}$\,, $\padicval[11]{\consprod[n]<11>} = 1$ donne $\consprod[n]<11> \notin \NNsquare$\,.
 
 
-			\item $N^2 - M^2 = 8$ donne $n = 1$\,, mais ceci est impossible.
+			\item $\abs{N^2 - M^2} = 8$ donne $n = 1$\,, mais ceci est impossible.
 
-			\item $N^2 - M^2 = 9$ donne $n \in \ZintervalC{10}{16}$\,, mais $\forall n \in \ZintervalC{10}{16}$\,, $\padicval[17]{\consprod[n]<11>} = 1$\,, donc $\consprod[n]<11> \in \NNsquare$ est faux.
+			\item $\abs{N^2 - M^2} = 9$ donne $n \in \ZintervalC{10}{16}$\,, mais $\forall n \in \ZintervalC{10}{16}$\,, $\padicval[17]{\consprod[n]<11>} = 1$\,, donc $\consprod[n]<11> \in \NNsquare$ est faux.
 		\end{enumerate}
 
 
@@ -41,14 +41,14 @@ L'idée suivie est celle de la démonstration du cas \ref{case-10} ; nous indiqu
 		
 		\smallskip
 		\noindent
-		Dans ce cas, $(n+i, n+i^\prime) = (3 N^2, 3 M^2)$ avec $\abs{3(N^2 - M^2)} \in \ZintervalC{1}{10}$\,, d'où $n \in \ZintervalC{1}{3}$ que nous savons impossible.
+		Dans ce cas, $(n+i, n+i^\prime) = (3 M^2, 3 N^2)$ avec $\abs{3(N^2 - M^2)} \in \ZintervalC{1}{10}$\,, d'où $n \in \ZintervalC{1}{3}$ que nous savons impossible.
 
     	\medskip
 		\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{3}\,.
 		
 		\smallskip
 		\noindent
-		Dans ce cas, $(n+i, n+i^\prime) = (2 N^2, 2 M^2)$ avec $\abs{2(N^2 - M^2)} \in \ZintervalC{1}{10}$\,, puis nécessairement $\abs{N^2 - M^2} \in \setgene{3, 5}$\,, d'où $n \in \ZintervalC{1}{8}$\,, mais on sait que cela est impossible.
+		Dans ce cas, $(n+i, n+i^\prime) = (2 M^2, 2 N^2)$ avec $\abs{2(N^2 - M^2)} \in \ZintervalC{1}{10}$\,, puis nécessairement $\abs{N^2 - M^2} \in \setgene{3, 5}$\,, d'où $n \in \ZintervalC{1}{8}$\,, mais on sait que cela est impossible.
 
 
     	\medskip
@@ -56,7 +56,7 @@ L'idée suivie est celle de la démonstration du cas \ref{case-10} ; nous indiqu
 		
 		\smallskip
 		\noindent
-		Dans ce cas, $(n+i, n+i^\prime) = (6 N^2, 6 M^2)$ avec $\abs{6(N^2 - M^2)} \in \ZintervalC{1}{10}$\,, mais c'est impossible d'après le fait \ref{diff-square-ko}.
+		Dans ce cas, $(n+i, n+i^\prime) = (6 M^2, 6 N^2)$ avec $\abs{6(N^2 - M^2)} \in \ZintervalC{1}{10}$\,, mais c'est impossible d'après le fait \ref{diff-square-ko}.
 		%
 		\qedhere
     \end{itemize}

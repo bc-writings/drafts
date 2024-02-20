@@ -12,7 +12,7 @@ def sol(diff):
             M = floor(sqrt(M_square))
 
             if M != 0 and M**2 == M_square:
-                solfound.append((N, M))
+                solfound.append((M, N))
 
     return solfound
 

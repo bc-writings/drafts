@@ -85,14 +85,14 @@
 \subsection{Distance entre deux carrés parfaits}
 
 \begin{fact} \label{diff-square-ko}
-	Soit $(N, M) \in \NNs \times \NNs$ tel que $N > M$\,.
+	Soit $(M, N) \in \NNs \times \NNs$ tel que $N > M$\,.
 	%
 	\begin{enumerate}
 		\item $N^2 - M^2 \geq 2N - 1$\,, 
 		d'où l'impossibilité d'avoir
 		$N^2 - M^2 < 3$\,.
 		
-		\item Notons $nb_{sol}$ le nombre de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
+		\item Notons $nb_{sol}$ le nombre de solutions $(M, N) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
 				
 		\smallskip
 		\noindent
@@ -102,7 +102,7 @@
 			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
 
 			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9, 11, 12, 13, 16}$\,.
-			Par exemple, $N^2 - M^2 = 3$ uniquement si $(N, M) = (2, 1)$\,.
+			Par exemple, $N^2 - M^2 = 3$ uniquement si $(M, N) = (1, 2)$\,.
 
 			\item $nb_{sol}= 2$ si $\delta = 15$\,.
 		\end{enumerate}
@@ -133,7 +133,7 @@ Finissons par une jolie formule même si elle ne nous sera pas d'une grande aide
 
 
 \begin{fact} \label{dist-square}
-	$\forall (N, M) \in \NNs \times \NNs$, 
+	$\forall (M, N) \in \NNs \times \NNs$, 
 	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
 \end{fact}
 
@@ -166,7 +166,7 @@ def sol(diff):
             M = floor(sqrt(M_square))
 
             if M != 0 and M**2 == M_square:
-                solfound.append((N, M))
+                solfound.append((M, N))
 
     return solfound
 \end{Python}

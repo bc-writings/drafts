@@ -85,13 +85,13 @@
 \subsection{Distance entre deux carrés parfaits}
 
 \begin{fact} \label{diff-square-ko}
-	Soit $(N, M) \in \NNs \times \NNs$ tel que $N > M$\,.
+	Soit $(M, N) \in \NNs \times \NNs$ tel que $N > M$\,.
 	%
 	\begin{enumerate}
 		\item $N^2 - M^2 \geq 2N - 1$\,.
 		
 %		\newpage
-		\item Notons $nb_{sol}$ le nombre de solutions $(N, M) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
+		\item Notons $nb_{sol}$ le nombre de solutions $(M, N) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
 		
 		\smallskip
 		\noindent
@@ -134,7 +134,7 @@ def sol(diff):
             M = floor(sqrt(M_square))
 
             if M != 0 and M**2 == M_square:
-                solfound.append((N, M))
+                solfound.append((M, N))
 
     return solfound
 
@@ -160,7 +160,7 @@ print(all_nbsol)
 %
 %
 %\begin{fact} \label{dist-square}
-%	$\forall (N, M) \in \NNs \times \NNs$, 
+%	$\forall (M, N) \in \NNs \times \NNs$, 
 %	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
 %\end{fact}
 %
