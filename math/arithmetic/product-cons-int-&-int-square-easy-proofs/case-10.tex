@@ -6,7 +6,7 @@
 % ------------------ %
 
 
-La démonstration suivante, qui fait penser à la première preuve du fait \ref{case-5}, est citée via une source dans un échange sur \url{https://math.stackexchange.com} (voir la section \ref{sources}).
+La démonstration suivante est citée via une source dans un échange sur \url{https://math.stackexchange.com} (voir la section \ref{sources}).
 
 
 \begin{proof}[Preuve]%
@@ -18,7 +18,8 @@ La démonstration suivante, qui fait penser à la première preuve du fait \ref{
     $\forall p \in \PP_{\geq 10}$\,, 
     $\forall i \in \ZintervalC{0}{9}$\,, 
     $\padicval{n + i} \in 2 \NN$\,.
-    On doit donc s'intéresser à $p \in \setgene{2, 3, 5, 7}$\,. Voici ce que l'on peut observer très grossièrement.
+    D'après le fait \ref{facto-square}, on doit s'intéresser à $p \in \setgene{2, 3, 5, 7}$\,.
+    Voici ce que l'on peut observer très grossièrement.
     %
     \begin{itemize}
 		\item Au maximum deux facteurs $(n + i)$ de $\consprod<10>$ sont divisibles par $5$\,.
@@ -50,7 +51,10 @@ La démonstration suivante, qui fait penser à la première preuve du fait \ref{
     
     \medskip
     
-    Comme nous avons six facteurs pour quatre alternatives, ce bon vieux principe des tiroirs va nous permettre de lever des contradictions.
+    Comme nous avons six facteurs pour quatre alternatives, ce bon vieux principe des tiroirs va nous permettre de lever des contradictions
+    \footnote{
+    	Notons qu'en considérant $3$\,, il resterait au minimum $2$ facteurs $(n + i)$ de $\consprod<7>$ de valuation $p$-adique paire dès que $p \in \PP_{\geq 3}$\,. Or, en considérant la parité de $\padicval[2]{n + i}$\,, nous aurions deux alternatives, ceci rendant impossible l'usage du principe des tiroirs.
+    }.
     %
     \begin{itemize}
     	\medskip

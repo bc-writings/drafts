@@ -62,7 +62,7 @@ Une petite simplification a été faite pour arriver à $\consprod<6> = (a - 4) 
         	u^2 - 9 \in \NNssquare
         \end{stepcalc}
 
-		\item Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, le fait \ref{diff-square-ko} donne $(u, m) = (5, 4)$\, d'où la contradiction suivante.
+		\item Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, le fait \ref{diff-square-ko} donne $(m, u) = (4, 5)$\, d'où la contradiction suivante.
         
 %        \medskip
         \noindent\kern-6pt%
@@ -178,7 +178,7 @@ la preuve suivante est simple à comprendre car elle ne fait que dérouler le fi
 		\smallskip
 		\noindent
 		Dans ce cas, $bc \in \NNssquare$ via le fait \ref{facto-square}, soit $(u + 8) (u + 16) \in \NNssquare$\,.
-		En posant $w = u + 12$\,, on arrive à $(w - 4) (w + 4) \in \NNssquare$\,, soit $w^2 - 16 \in \NNssquare$\,, d'où $(w, m) = (5, 3)$ grâce au fait \ref{diff-square-ko}.
+		En posant $w = u + 12$\,, on arrive à $(w - 4) (w + 4) \in \NNssquare$\,, soit $w^2 - 16 \in \NNssquare$\,, d'où $(m, w) = (3, 5)$ grâce au fait \ref{diff-square-ko}.
 		Or $u \in \NN_{\geq 32}$ donne $w \in \NN_{\geq 20}$\,, d'où une contradiction.
 
 		
@@ -189,11 +189,11 @@ la preuve suivante est simple à comprendre car elle ne fait que dérouler le fi
 		\noindent
 		Dans ce cas, $ac \in \NNssquare$\,, soit $(u - 8) (u + 16) \in \NNssquare$\,.
 		En posant $w = u + 4$\,, on arrive à $(w - 12) (w + 12) \in \NNssquare$\,, soit $w^2 - 144 \in \NNssquare$\,.
-		Notant $m \in \NNs$ tel que $m^2 = w^2 - 144$\,, nous arrivons à $w^2 - m^2 = 144$\,, d'où $(w, m) \in \setgene{(13, 5) , (15, 9) , (20, 16) , (37, 35)}$
+		Notant $m \in \NNs$ tel que $m^2 = w^2 - 144$\,, nous arrivons à $w^2 - m^2 = 144$\,, d'où $(m, w) \in \setgene{(5, 13) , (9, 15) , (16, 20) , (35, 37)}$
 		\footnote{
 			Le programme reproduit après la preuve du fait \ref{diff-square-ko} donne rapidement cet ensemble de couples.
 		}.
-		Comme $u \in 2 \NN$ donne $w \in 2 \NN$\,, nécessairement $(w, m) = (20, 16)$\,, mais les équivalences suivantes lèvent une contradiction.
+		Comme $u \in 2 \NN$ donne $w \in 2 \NN$\,, nécessairement $(m, w) = (16, 20)$\,, mais les équivalences suivantes lèvent une contradiction.
 
 %		\medskip
 		\noindent\!\!%
@@ -215,7 +215,7 @@ la preuve suivante est simple à comprendre car elle ne fait que dérouler le fi
 		\noindent
 		Dans ce cas, $ab \in \NNssquare$\,, soit $(u - 8) (u + 8) \in \NNssquare$\,, c'est-à-dire $u^2 - 64 \in \NNssquare$\,.
 		Notant $m \in \NNs$ tel que $m^2 = u^2 - 64$\,, nous arrivons à $u^2 - m^2 = 64$\,.
-		Ceci n'est possible que si $(u, m) \in \setgene{(10, 6), (17, 15)}$\,.
+		Ceci n'est possible que si $(m, u) \in \setgene{(6, 10), (15, 17)}$\,.
 		Or $u \in \NN_{\geq 32}$ donne une contradiction.
 	\end{itemize}
 

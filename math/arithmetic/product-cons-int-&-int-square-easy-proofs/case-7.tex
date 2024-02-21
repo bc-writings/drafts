@@ -6,12 +6,46 @@
 % ------------------ %
 
 
-Pour la preuve suivante, nous reprenons l'idée de la démonstration du cas \ref{case-10} ; nous indiquons juste les adaptations à faire en reprenant les notations de la preuve citée.
+La preuve suivante s'inspire directement d'une démonstration citée via une source dans un échange sur \url{https://math.stackexchange.com} (voir la section \ref{sources}).
 
 
 \begin{proof}[Preuve]%
-    Ici nous avons au moins $5$ facteurs $(n + i)$ de $\consprod<7>$ de valuation $p$-adique paire dès que $p \in \PP_{\geq 5}$\,.
-    Ceci nous amène aux cas suivants.
+    Supposons que $\consprod<7> \in \NNssquare$\,.
+    
+    \smallskip
+    
+    Clairement, 
+    $\forall p \in \PP_{\geq 7}$\,, 
+    $\forall i \in \ZintervalC{0}{6}$\,, 
+    $\padicval{n + i} \in 2 \NN$\,.
+    D'après le fait \ref{facto-square}, on doit s'intéresser à $p \in \setgene{2, 3, 5}$\,. 
+    Mais on note très grossièrement qu'au maximum deux facteurs $(n + i)$ de $\consprod<7>$ sont divisibles par $5$\,.
+    Autrement dit, nous avons au moins $5$ facteurs $(n + i)$ de $\consprod<7>$ de valuation $p$-adique paire dès que $p \in \PP_{\geq 5}$\,, ceux-ci vérifiant l'une des alternatives suivantes.
+    %
+    \begin{itemize}
+    	\smallskip
+		\item \alt{1}\,
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times 2 \NN$
+
+    	\smallskip
+		\item \alt{2}\,
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times \big( 2 \NN + 1)$
+
+    	\smallskip
+		\item \alt{3}\,
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times 2 \NN$
+
+    	\smallskip
+		\item \alt{4}\,
+		$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times \big( 2 \NN + 1)$
+    \end{itemize}
+    
+    \medskip
+    
+    Comme nous avons cinq facteurs pour quatre alternatives, ce bon vieux principe des tiroirs va nous permettre de lever des contradictions
+    \footnote{
+    	Notons qu'en considérant $3$\,, il resterait au minimum $2$ facteurs $(n + i)$ de $\consprod<7>$ de valuation $p$-adique paire dès que $p \in \PP_{\geq 3}$\,. Or, en considérant la parité de $\padicval[2]{n + i}$\,, nous aurions deux alternatives, ceci rendant impossible l'usage du principe des tiroirs.
+    }.
     %
     \begin{itemize}
     	\medskip
@@ -19,13 +53,16 @@ Pour la preuve suivante, nous reprenons l'idée de la démonstration du cas \ref
 		
 		\smallskip
 		\noindent
-		Dans ce cas, $(n+i, n+i^\prime) = (M^2, N^2)$ avec $\abs{N^2 - M^2} \in \ZintervalC{1}{6}$\,, mais ce qui suit lève des contradictions.
+		Dans ce cas, $(n+i, n+i^\prime) = (M^2, N^2)$ avec $(M, N) \in \NNs$.
+		Par symétrie des rôles, on peut supposer $N > M$\,, de sorte que $N^2 - M^2 \in \ZintervalC{1}{6}$\,. 
+		Selon le fait \ref{diff-square-ko}, seuls les cas suivants sont possibles mais ils lèvent tous une contradiction.
 		%
 		\begin{enumerate}
-			\item $\abs{N^2 - M^2} = 3$ donne $n = 1$\,, mais $\consprod[1]<7> = 7! \notin \NNsquare$ via $\padicval[7]{7!} = 1$\,.
+			\item $N^2 - M^2 = 3$ donne $(M, N) = (1, 3)$\,, puis nécessairement $n = 1$\,, mais $\consprod[1]<7> = 7! \notin \NNsquare$ via $\padicval[7]{7!} = 1$\,.
 
 
-			\item $\abs{N^2 - M^2} = 5$ donne $n \in \ZintervalC{2}{4}$\,, mais $\forall n \in \ZintervalC{2}{4}$\,, $\padicval[7]{\consprod[n]<7>} = 1$ donne $\consprod[n]<7> \notin \NNsquare$\,.
+			\item $N^2 - M^2 = 5$ donne $(M, N) = (2, 3)$\,, puis nécessairement $n \in \ZintervalC{1}{4}$\,, et $n \in \ZintervalC{2}{4}$ d'après le cas précédent.
+			Mais $\forall n \in \ZintervalC{2}{4}$\,, $\padicval[7]{\consprod[n]<7>} = 1$ donne $\consprod[n]<7> \notin \NNsquare$ si $n \in \ZintervalC{2}{4}$\,.
 		\end{enumerate}
 
 
