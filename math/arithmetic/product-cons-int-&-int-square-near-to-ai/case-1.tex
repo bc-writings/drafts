@@ -95,13 +95,13 @@
 		
 		\smallskip
 		\noindent
-		Par exemple, pour $\delta \in \ZintervalC{1}{20}$, nous avons :
+		Pour $\delta \in \ZintervalC{1}{10}$, nous avons :
+		%
 		\begin{enumerate}
-			\item $nb_{sol}= 0$ si $\delta \in \{ 1, 2, 4, 6, 10, 14, 18\}$\,.
+			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10}$\,.
 
-			\item $nb_{sol}= 1$ si $\delta \in \{ 3, 5, 7, 8, 9, 11, 12, 13, 16, 17, 19, 20 \}$\,.
-
-			\item $nb_{sol}= 2$ si $\delta \in \{ 15 \}$\,.
+			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9}$\,.
+			Ainsi, $N^2 - M^2 = 3$ uniquement si $(M, N) = (1, 2)$\,.
 		\end{enumerate}
 	\end{enumerate}
 \end{fact}
@@ -116,6 +116,10 @@
 		$N^2 - M^2 \geq N^2 - (N - 1)^2 = 2N - 1$\,.
 
 		\item Le point précédent permet d'utiliser le programme \verb#Python# suivant afin d'obtenir rapidement les longues listes de nombres indiquées.
+		%
+		\qedhere
+	\end{enumerate}
+\end{proof}
 
 \bgroup
 \small
@@ -123,7 +127,6 @@
 from collections import defaultdict
 from math        import sqrt, floor
 
-# N**2 - M**2 = diff ?
 def sol(diff):
     solfound = []
 
@@ -142,15 +145,8 @@ all_nbsol = defaultdict(list)
 
 for d in range(1, 101):
     all_nbsol[len(sol(d))].append(d)
-
-print(all_nbsol)
 \end{Python}
 \egroup	
-
-		%
-		\qedhere
-	\end{enumerate}
-\end{proof}
 
 	
 %% ------------------ %

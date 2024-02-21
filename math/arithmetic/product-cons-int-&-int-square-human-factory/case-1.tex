@@ -96,16 +96,13 @@
 				
 		\smallskip
 		\noindent
-		Pour $\delta \in \ZintervalC{1}{20}$, nous avons :
+		Pour $\delta \in \ZintervalC{1}{10}$, nous avons :
 		%
 		\begin{enumerate}
-			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10, 14, 18}$\,.
+			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10}$\,.
 
-			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9, 11, 12, 13, 16}$\,.
-			
-			Par exemple, $N^2 - M^2 = 3$ uniquement si $(M, N) = (1, 2)$\,.
-
-			\item $nb_{sol}= 2$ si $\delta = 15$\,.
+			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9}$\,.
+			Ainsi, $N^2 - M^2 = 3$ uniquement si $(M, N) = (1, 2)$\,.
 		\end{enumerate}
 	\end{enumerate}
 \end{fact}
@@ -120,37 +117,12 @@
 		$N^2 - M^2 \geq N^2 - (N - 1)^2 = 2N - 1$\,.		
 
 		\item Nous avons $2 N - 1 \leq \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
-		Ceci permet de comprendre le programme \verb#Python# donné dans la page suivante qui sert à obtenir facilement les nombres de solutions indiqués.
+		Ceci permet de comprendre le programme \verb#Python# suivant donnant facilement les nombres de solutions indiqués.
 		%
 		\qedhere
 	\end{enumerate}
 \end{proof}
 
-	
-% ------------------ %
-
-
-Finissons par une jolie formule même si elle ne nous sera pas d'une grande aide dans la suite.
-
-
-\begin{fact} \label{dist-square}
-	$\forall (M, N) \in \NNs \times \NNs$, 
-	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
-\end{fact}
-
-
-\begin{proof}
-	$N^2 = \dsum_{k=1}^{N} (2 k - 1)$ donne l'identité indiquée
-	\footnote{
-		La formule utilisée est facile à démontrer algébriquement, et évidente à découvrir géométriquement.
-	}.
-\end{proof}
-
-	
-% ------------------ %
-
-
-\newpage
 \bgroup
 \small
 \begin{Python}
@@ -172,3 +144,22 @@ def sol(diff):
     return solfound
 \end{Python}
 \egroup
+	
+% ------------------ %
+
+
+%Finissons par une jolie formule même si elle ne nous sera pas d'une grande aide dans la suite.
+%
+%
+%\begin{fact} \label{dist-square}
+%	$\forall (M, N) \in \NNs \times \NNs$, 
+%	si $N > M$\,, alors $N^2 - M^2 = \dsum_{k=M+1}^{N} (2 k - 1)$\,.
+%\end{fact}
+%
+%
+%\begin{proof}
+%	$N^2 = \dsum_{k=1}^{N} (2 k - 1)$ donne l'identité indiquée
+%	\footnote{
+%		La formule utilisée est facile à démontrer algébriquement, et évidente à découvrir géométriquement.
+%	}.
+%\end{proof}
