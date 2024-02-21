@@ -1,0 +1,37 @@
+\begin{fact} \label{case-4}
+	 $\forall n \in \NNs$\,, $n(n+1)(n+2)(n+3) \notin \NNsquare$\,.
+\end{fact}
+
+
+% ------------------ %
+
+
+\begin{proof}[Preuve]
+	En \enquote{symétrisant} la formule, nous obtenons les manipulations algébriques naturelles suivantes qui vont nous permettre de conclure
+    
+    \medskip
+    
+    \begin{stepcalc}[style = sar]
+    	\consprod<4>
+    \explnext{}
+    	n(n+1)(n+2)(n+3)
+    \explnext*{$x = n + \dfrac32$}{}
+    	\big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big)
+    \explnext{}
+    	\big( x^2 - \dfrac94 \big) \big( x^2 - \dfrac14 \big)
+    \explnext*{$y = x^2  - \dfrac54$ où $\dfrac54 = \dfrac12 \big( \dfrac94+ \dfrac14 \big)$\,.}{}
+    	(y \pm 1)
+    \explnext{}
+    	y^2 - 1
+    \explnext*{$y = \big( n + \dfrac32 \big)^2 - \dfrac54 = n^2 + 3n + 1$}{}
+    	\big( n^2 + 3n + 1 \big)^2 - 1
+    \explnext*{$m = n^2 + 3n + 1$}{}
+    	m^2 - 1
+    \end{stepcalc}
+    
+    \medskip
+    
+    Comme $m > 0$\,, $m^2 - 1 \notin \NNsquare$ d'après le fait \ref{diff-square-ko}, donc $\consprod<4> \notin \NNsquare$\,. 
+\end{proof}
+
+

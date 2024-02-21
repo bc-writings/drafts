@@ -1,0 +1,100 @@
+\begin{fact} \label{case-6}
+	 $\forall n \in \NNs$\,, $\consprod<6> \notin \NNsquare$\,.
+\end{fact}
+
+
+% ------------------ %
+
+
+La démonstration suivante se trouve dans l'article \enquote{Solution of a Problem}
+\footnote{
+	The Analyst (1874).
+}
+de G. W. Hill et J. E. Oliver.
+Une petite simplification a été faite pour arriver à $\consprod<6> = (a - 4) a (a + 2)$\,.
+
+
+\begin{proof}[Preuve]%
+    Supposons que $\consprod<6> \in \NNsquare$\,.
+    
+    \smallskip
+    
+    Commençons par de petites manipulations algébriques où la première modification fait apparaître le même coefficient pour $n$ dans chaque parenthèse.
+    
+    \medskip
+    \begin{stepcalc}[style = sar]
+    	\consprod<6>
+	\explnext{}
+		n (n+5) \cdot (n+1) (n+4) \cdot (n+2) (n+3)
+	\explnext{}
+		(n^2 + 5n) (n^2 + 5n + 4) (n^2 + 5n + 6)
+	\explnext*{$x = n^2 + 5n \in \NN_{\geq 6}$}{}
+		x (x + 4) (x + 6)
+	\explnext*{$a = x + 4 \in \NN_{\geq 10}$}{}
+		(a - 4) a (a + 2)
+    \end{stepcalc}
+  
+    \medskip
+    Nous avons $a \in \NN_{\geq 10}$ vérifiant $a (a + 2) (a - 4) \in \NNssquare$\,. 
+    Posons $a = \alpha A^2$ où $(\alpha, A) \in \NNsf \times \NNs$\,,
+    de sorte que $\alpha (\alpha A^2 + 2) (\alpha A^2 - 4) \in \NNssquare$ via le fait \ref{facto-square}.
+    Or $\alpha\in \NNsf$ donne $\alpha \divides (\alpha A^2 + 2) (\alpha A^2 - 4)$\,, 
+    d'où $\alpha \divides 8$\,, et ainsi $\alpha \in \setgene{1, 2}$
+    \footnote{
+    	On comprend ici le choix d'avoir $\consprod<6> = (a - 4) a (a + 2)$\,.
+    }.
+    Nous allons voir que ceci est impossible.
+    
+    \medskip
+    
+    Supposons que $\alpha = 1$\,.
+    %
+    \begin{itemize}
+    	\item Notons les équivalences suivantes.
+        
+%        \medskip
+        \noindent\kern-6pt%
+        \begin{stepcalc}[style=ar*, ope=\iff]
+        	(A^2 + 2) (A^2 - 4) \in \NNssquare
+    	\explnext{$u = A^2 - 1$ où $- 1 = \dfrac{2 - 4}{2}$\,.}
+        	(u + 3) (u - 3) \in \NNssquare
+    	\explnext{}
+        	u^2 - 9 \in \NNssquare
+        \end{stepcalc}
+
+		\item Ensuite, prenant $m \in \NNs$ tel que $m^2 = u^2 - 9$\,, le fait \ref{diff-square-ko} donne $(u, m) = (5, 4)$\, d'où la contradiction suivante.
+        
+%        \medskip
+        \noindent\kern-6pt%
+        \begin{stepcalc}[style=sar, ope=\iff]
+        	u = 5
+    	\explnext{}
+        	A^2 - 1 = 5
+    	\explnext*{$6 \notin \NNsquare$\,.}{}
+        	A^2 = 6
+        \end{stepcalc}
+    \end{itemize}
+    
+    \medskip
+    
+%   	\vspace{-1ex}
+	Supposons que $\alpha = 2$\,.
+    %
+    \begin{itemize}
+    	\item Notons l'équivalence suivante.
+        
+%        \medskip
+        \noindent\kern-6pt%
+        \begin{stepcalc}[style=ar*, ope=\iff]
+        	2 (2 A^2 + 2) (2 A^2 - 4) \in \NNssquare
+    	\explnext{Via $4 \cdot 2 (A^2 + 1) (A^2 - 2)$\,.}
+        	2 (A^2 + 1) (A^2 - 2) \in \NNssquare
+        \end{stepcalc}
+
+		\item Ensuite, en travaillant modulo $3$\,, nous avons
+		$2 (A^2 + 1) (A^2 - 2) \equiv -4 \equiv -1$ qui ne correspond pas à un carré modulo $3$\,.
+		%
+		\qedhere 
+    \end{itemize}   
+\end{proof}
+

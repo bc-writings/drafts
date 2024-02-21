@@ -1,0 +1,150 @@
+\subsection{Structure}
+
+
+% ------------------ %
+
+
+\leavevmode
+\smallskip
+
+\begin{fact} \label{prime-square}
+	$n \in \NNssquare$ si, et seulement si,
+	$\forall p \in \PP$\,,
+	$\padicval{n} \in 2 \NN$\,.
+\end{fact}
+
+
+\begin{proof}
+	Immédiat à valider.
+\end{proof}
+
+
+% ------------------ %
+
+
+\begin{fact} \label{facto-square}
+	$\forall n \in \NNssquare$\,, s'il existe $m \in \NNssquare$ tel que $n =  f m$ alors $f  \in \NNssquare$\,.
+\end{fact}
+
+
+\begin{proof}
+	$\forall p \in \PP$\,, 
+	$\padicval{f m} \in 2 \NN$\,,
+	$\padicval{m} \in 2 \NN$
+	et
+	$\padicval{f m} = \padicval{f} + \padicval{m}$
+	donnent
+	$\padicval{f} \in 2 \NN$\,.
+\end{proof}
+
+
+% ------------------ %
+
+
+\begin{fact} \label{prime-square}
+	$\forall (a, b) \in \NNs \times \NNs$, 
+	si $\GCD{a}{b} = 1$ et $a b \in \NNssquare$\,,
+	alors $a \in \NNssquare$ et $b \in \NNssquare$\,.
+\end{fact}
+
+
+\begin{proof}
+	$\forall p \in \PP$\,, $\padicval{ab} \in 2 \NN$\,,
+	et $p$ ne peut diviser à la fois $a$ et $b$\,,
+	donc
+    $\forall p \in \PP$\,, 
+    $\padicval{a} \in 2 \NN$ et $\padicval{b} \in 2 \NN$\,,
+    autrement dit 
+    $(a, b) \in \NNssquare \times \NNssquare$\,.
+\end{proof}
+
+
+% ------------------ %
+
+
+\begin{fact} \label{same-square-free}
+	Soit $(a, b) \in \NNs \times \NNs$ tel que $a b \in \NNssquare$\,,
+	ainsi que $(\alpha, \beta, A, B) \in ( \NNsf )^2 \times \NN^2$ tel que $a = \alpha A^2$ et $b = \beta B^2$.
+	Nous avons alors forcément $\alpha = \beta$\,.
+\end{fact}
+
+
+\begin{proof}
+	Le fait \ref{facto-square} donne $\alpha \beta \in \NNssquare$\,.
+	De plus, $\forall p \in \PP$\,, nous avons 
+	$\padicval{\alpha} \in \setgene{0, 1}$
+	et
+	$\padicval{\beta} \in \setgene{0, 1}$\,.
+	Finalement, $\forall p \in \PP$\,, $\padicval{\alpha} = \padicval{\beta}$\,, autrement dit $\alpha = \beta$\,.
+\end{proof}
+
+
+% ------------------ %
+
+
+\subsection{Distance entre deux carrés parfaits}
+
+\begin{fact} \label{diff-square-ko}
+	Soit $(M, N) \in \NNs \times \NNs$ tel que $N > M$\,.
+	%
+	\begin{enumerate}
+		\item $N^2 - M^2 \geq 2N - 1$\,, 
+		d'où l'impossibilité d'avoir
+		$N^2 - M^2 < 3$\,.
+		
+		\item Notons $nb_{sol}$ le nombre de solutions $(M, N) \in \NNs \times \NNs$ de $N^2 - M^2 = \delta$\,.
+				
+		\smallskip
+		\noindent
+		Pour $\delta \in \ZintervalC{1}{10}$, nous avons :
+		%
+		\begin{enumerate}
+			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10}$\,.
+
+			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9}$\,.
+			
+			Par exemple, $N^2 - M^2 = 3$ uniquement si $(M, N) = (1, 2)$\,.
+		\end{enumerate}
+	\end{enumerate}
+\end{fact}
+
+
+\begin{proof}
+	\leavevmode
+	
+	\vspace{-1ex}
+	\begin{enumerate}
+		\item Comme $N - 1 \geq M$\,, nous obtenons :
+		$N^2 - M^2 \geq N^2 - (N - 1)^2 = 2N - 1$\,.		
+
+		\item Nous avons $2 N - 1 \leq \delta$\,, soit $N  \leq \dfrac{\delta + 1}{2}$\,.
+		Ceci permet de comprendre le programme \verb#Python# donné dans la page suivante qui sert à obtenir facilement les nombres de solutions indiqués.
+		%
+		\qedhere
+	\end{enumerate}
+\end{proof}
+
+	
+
+%\newpage
+\bgroup
+\small
+\begin{Python}
+from math import sqrt, floor
+
+# N**2 - M**2 = diff ?
+def sol(diff):
+    solfound = []
+
+    for N in range(1, (diff + 1) // 2 + 1):
+        M_square = N**2 - diff
+
+        if M_square > 0:
+            M = floor(sqrt(M_square))
+
+            if M != 0 and M**2 == M_square:
+                solfound.append((M, N))
+
+    return solfound
+\end{Python}
+\egroup
