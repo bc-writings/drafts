@@ -104,8 +104,24 @@
 
 \NewDocumentCommand\sfprod{ m }{\fbox{$#1$}}
 
+\NewDocumentCommand\pattern{ m }{\fbox{\kern2pt\texttt{#1}}}
+
 \NewDocumentCommand\sfremain{ m }{
-	\explainthis{\hfill Il reste $#1$ cas à traiter.}
+
+	\noindent
+	\bgroup
+	\small
+	\hfill\emph{Il reste $#1$ cas à traiter.}%
+	\egroup
+}
+
+\newcommand\sfremainKO{
+
+	\noindent
+	\bgroup
+	\small
+	\hfill\emph{Tous les cas ont été traités.}%
+	\egroup
 }
 
 \newcommand\explainthis[1]{
@@ -113,7 +129,7 @@
 	\noindent
 	\bgroup
 	\small
-	\emph{#1}
+	\emph{#1}%
 	\egroup
 }
 
@@ -176,8 +192,8 @@
 % ------------------ %
 
 
-%\foreach \k in {1,...,13} {
-\foreach \k in {1, 6} {
+\foreach \k in {1,...,13} {
+%\foreach \k in {1, 6} {
 	\newpage
 
 	\ifthenelse{\k = 1}{

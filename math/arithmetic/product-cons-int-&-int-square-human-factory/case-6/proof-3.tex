@@ -134,7 +134,7 @@ Si nous supposons avoir les trois alternatives surlignées en vert, nous pouvons
 \vspace{-1ex}
 Ce qui précède est impossible, car $D^2 - C^2 = 1$ contredit le fait \ref{diff-square-ko}.
 Intéressant mais a priori nous devrions analyser $7 \times 4 \times 2 = 56$ possibilités ! 
-Nous allons être plus efficace en éliminant certaines situations rapidement, et aussi en notant que l'élimination des cas problématiques restants se fait via des raisonnements \enquote{symétriques} qui permettent de traiter simultanément  deux cas à chaque fois. C'est parti !
+Nous allons être plus efficace en éliminant certaines situations rapidement. C'est parti !
 %
 \begin{enumerate}
 	\item Notons \sfprod{d.t.c} le produit cellule par cellule des lignes numérotées $d$\,, $t$ et $c$ des tableaux de $2$\,, $3$ et $5$ respectivement.
@@ -142,24 +142,56 @@ Nous allons être plus efficace en éliminant certaines situations rapidement, e
 
 
 	\item \label{KO-1*-or-*1}
-	Une ligne produit \sfprod{d.t.c} commençant par $1$ donne
+	\textbf{Pas de motif \pattern{1...} ou \pattern{...1}\,.}
+
+	\explainthis{Un produit \sfprod{d.t.c} commençant par $1$ donne
 	$\consprod[n+1]<5> \in \NNssquare$ via le fait \ref{facto-square}, or c'est impossible d'après le fait \ref{case-5}.
-	De même, une ligne produit se finissant par $1$ lève une contradiction.
+	De même, un produit se finissant par $1$ lève une contradiction.}
 
 
 	\item \label{KO-11}
-	Une ligne produit \sfprod{d.t.c} contenant deux $1$ consécutifs lève une contradiction (voir l'exemple ci-dessus).
+	\textbf{Pas de motif \pattern{11}\,.}
+
+	\explainthis{Un produit \sfprod{d.t.c} contenant deux $1$ consécutifs lève une contradiction (vu dans l'exemple ci-dessus).}
+
+
+	\item \label{KO-1*1}
+	\textbf{Pas de motif \pattern{1*1}\,.}
+
+	\explainthis{Un produit \sfprod{d.t.c} contenant deux $1$ séparés par une seule cellule lève une contradiction, car ceci donne $N^2 - M^2 = 2$ qui contredit le fait \ref{diff-square-ko}.}
+
+
+	\item \label{KO-1**1}
+	\textbf{Pas de motif \pattern{1**1}\,.}
+
+	\explainthis{Un produit \sfprod{d.t.c} contenant deux $1$ séparés par deux cellules n'est possible que si le $1$ est en début de ligne et $n = 1$\,, car $N^2 - M^2 = 3$ uniquement si $(M, N) = (1, 2)$ d'après le fait \ref{diff-square-ko}.
+	Comme nous rejetons les produits commençant par $1$\,, nous avons un nouveau critère pour lever une contradiction.}
 
 
 	\item \label{KO-2*2}
-	Une ligne produit \sfprod{d.t.c} contenant deux $2$ séparés par une seule cellule lève une contradiction, car ceci donne $2 N^2 - 2 M^2 = 2$\,, puis $N^2 - M^2 = 1$.
+	\textbf{Pas de motif \pattern{2*2}\,.}
+
+	\explainthis{Un produit \sfprod{d.t.c} contenant deux $2$ séparés par une seule cellule lève une contradiction, car ceci donne $2 N^2 - 2 M^2 = 2$\,, puis $N^2 - M^2 = 1$.}
+
+
+	\item \label{KO-3**3}
+	\textbf{Pas de motif \pattern{3**3}\,.}
+
+	\explainthis{Un produit \sfprod{d.t.c} contenant deux $3$ séparés par deux cellules lève une contradiction, car ceci donne $3 N^2 - 3 M^2 = 3$\,, puis $N^2 - M^2 = 1$.}
+
+
+	\item \label{KO-5****5}
+	\textbf{Pas de motif \pattern{5****5}\,.}
+
+	\explainthis{Un produit \sfprod{d.t.c} contenant deux $5$ séparés par quatre cellules lève une contradiction, car ceci donne $5 N^2 - 5 M^2 = 5$\,, puis $N^2 - M^2 = 1$.}
 \end{enumerate}
 
 
 \smallskip
+%\newpage
 
 Nous voilà armé pour lever des contractions à la chaîne.
-%
+
 \begin{itemize}
 	\item D'après le point \ref{KO-1*-or-*1}, tous les produits du type \sfprod{1.t.1} lèvent une contradiction.
 	
@@ -171,25 +203,100 @@ Nous voilà armé pour lever des contractions à la chaîne.
 	\sfremain{48}
 
 
-	\item Les points \ref{KO-1*-or-*1}, \ref{KO-11} et \ref{KO-2*2} lèvent une contradiction relativement aux produits du type \sfprod{d.1.c} où $d \neq 1$\,.
+	\item Les points \ref{KO-1*-or-*1}, \ref{KO-11} et \ref{KO-2*2} lèvent une contradiction pour les produits du type \sfprod{d.1.c} où $d \neq 1$\,.
 	
 	\sfremain{36}
 
 
-	\item JJJ
+	\item Pour les produits du type \sfprod{d.t.1} où $d \neq 1$ et $t \neq 1$\,, les points \ref{KO-1*-or-*1}, \ref{KO-11}, \ref{KO-2*2} et \ref{KO-3**3} lèvent une contradiction.
 	
-	\sfremain{666}
+	\sfremain{18}
 
 
-	\item JJJ
-	
-	\sfremain{666}
-
-
-	\item JJJ
-	
-	\sfremain{666}
+	\item Les produits restants sont du type \sfprod{d.t.2} où $d \neq 1$ et $t \neq 1$\,. Ceci revient à se concentrer sur les tableaux suivants.
 \end{itemize}
 
+\begin{multicols}{2}
+    \begin{center}
+    	\begin{tblr}{
+    		colspec    = {Q[r,$]*{6}{Q[c,$]}},
+    		vline{2-Y} = {},
+    		hline{2}   = {},
+    	}
+       	    n + \bullet
+    	    	& 0 & 1 & 2 & 3 & 4 & 5
+    	\\
+    		2
+                & 2 & 1 & 2 & 1 & 1 & 1
+        \\
+                & 2 & 1 & 1 & 1 & 2 & 1
+        \\
+                & 1 & 2 & 1 & 2 & 1 & 1
+        \\
+                & 1 & 2 & 1 & 1 & 1 & 2
+        \\
+                & 1 & 1 & 2 & 1 & 2 & 1
+        \\
+                & 1 & 1 & 1 & 2 & 1 & 2
+        \end{tblr}
+    \end{center}
+
+\columnbreak
+
+    \begin{center}
+    	\begin{tblr}{
+    		colspec    = {Q[r,$]*{7}{c}},
+    		vline{2-Y} = {},
+    		hline{2}   = {},
+    	}
+       	    n + \bullet
+    	    	& 0 & 1 & 2 & 3 & 4 & 5
+				& Produit
+    	\\
+    		(3, 5)
+                & 15 & 1 & 1 & 3 & 1 & 5
+                & \sfprod{2.2}
+        \\
+                & 5  & 3 & 1 & 1 & 3 & 5
+                & \sfprod{3.2}
+        \\
+                & 5  & 1 & 3 & 1 & 1 & 15
+                & \sfprod{4.2}
+        \end{tblr}
+    \end{center}
+\end{multicols}
+
+	
+\begin{itemize}
+	\item Pour \sfprod{d.2.2} avec $d \neq 1$\,, les points 
+	\ref{KO-1*1},
+	\ref{KO-1**1} 
+	et
+	\ref{KO-2*2}
+	permettent d'obtenir des contradictions.
+	
+	\sfremain{12}
+	
+
+	\item Pour \sfprod{d.3.2} avec $d \neq 1$\,, les points 
+	\ref{KO-11},
+	\ref{KO-3**3}
+	et
+	\ref{KO-5****5}
+	permettent d'obtenir des contradictions.
+
+	\sfremain{6}
 
 
+	\item Pour \sfprod{d.4.2} avec $d \neq 1$\,, les points 
+	\ref{KO-11},
+	\ref{KO-1*1},
+	\ref{KO-1**1}
+	et
+	\ref{KO-2*2}
+	permettent d'obtenir des contradictions.
+
+	\sfremainKO
+\end{itemize}
+
+Noter le peu de réflexion que nous avons dû engager dans cette démonstration.
