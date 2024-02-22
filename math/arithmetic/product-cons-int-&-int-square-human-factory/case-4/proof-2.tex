@@ -1,0 +1,24 @@
+En \enquote{symétrisant} certaines expressions, nous obtenons d'autres manipulations algébriques qui permettent de conclure comme ci-dessus.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	\consprod<4>
+\explnext{}
+	n(n+1)(n+2)(n+3)
+\explnext*{$x = n + \dfrac32$}{}
+	\big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big)
+\explnext{}
+	\big( x^2 - \dfrac94 \big) \big( x^2 - \dfrac14 \big)
+\explnext*{$y = x^2  - \dfrac54$ où $\dfrac54 = \dfrac12 \big( \dfrac94+ \dfrac14 \big)$\,.}{}
+	(y \pm 1)
+\explnext{}
+	y^2 - 1
+\explnext{}
+	\Big( \big( n + \dfrac32 \big)^2 - \dfrac54 \Big)^2 - 1
+\explnext{}
+	\big( n^2 + 3n + 1 \big)^2 - 1
+\end{stepcalc}
+
+\vspace{-1.5ex}
+\qedhere

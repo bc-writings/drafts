@@ -247,26 +247,26 @@ def sftabs_prod_rec(nbfactors, partial_sftabs):
 if __name__ == '__main__':
     from pprint import pprint
 
+    # for pb in [
+    #     [2, 3, 2, 1, 3],
+    #     [14, 15, 2, 1, 3, 1, 5, 7],
+    # ]:
+    #     print()
+    #     print(f"{pb=}")
 
-    for pb in [
-        [2, 3, 2, 1, 3],
-        [14, 15, 2, 1, 3, 1, 5, 7],
-    ]:
-        print()
-        print(f"{pb=}")
+    #     result = is_illegal_zero_sol(len(pb), pb)
 
-        result = is_illegal_zero_sol(len(pb), pb)
+    #     print(f"{result=}")
 
-        print(f"{result=}")
+    # print(LOG)
 
-    print(LOG)
+    # exit()
 
-    exit()
-
-    for p in [2, 3, 5]:
+    for p in [3, 5]:
         # for n in list(range(3, 8)) + [9]:
         for n in [6]:
             print(f"\nbuild_prime_sftabs({n}, {p})")
 
             for t in build_prime_sftabs(n, p):
-                print(t)
+                print(' '*16 + "& " + " & ".join(str(x) for x in t))
+                print(' '*8 + '\\\\')

@@ -1,0 +1,21 @@
+Nous pouvons ici faire les manipulations algébriques naturelles suivantes qui cherchent à obtenir le même coefficient pour $n$ dans chaque parenthèse.
+
+\medskip
+
+\begin{stepcalc}[style = sar]
+	\consprod<4>
+\explnext{}
+	n(n+3) \cdot (n+1)(n+2)
+\explnext{}
+	(n^2 + 3n) \cdot (n^2 + 3n + 2)
+\explnext*{$m = n^2 + 3n$}{}
+	m (m + 2)
+\explnext{}
+	m^2 + 2m
+\explnext{}
+	(m + 1)^2 - 1
+\end{stepcalc}
+
+\medskip
+
+Comme $m > 0$\,, $(m + 1)^2 - 1 \notin \NNsquare$ d'après le fait \ref{diff-square-ko}, donc $\consprod<4> \notin \NNsquare$\,. 

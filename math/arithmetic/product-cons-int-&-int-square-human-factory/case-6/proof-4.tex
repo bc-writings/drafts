@@ -1,0 +1,247 @@
+Bien que très longue
+\footnote{
+	Ce sera notre dernière tentative de démonstration à faible empreinte cognitive.
+},
+cette preuve est simple à comprendre car elle ne fait que dérouler le fil des faits découverts.
+Commençons par supposer que $\consprod<6> \in \NNsquare$\,.
+
+\medskip
+\begin{stepcalc}[style = ar*, ope = \iff]
+	\consprod<6> = 
+		n (n+1) (n+2) (n+3) (n+4) (n+5)
+\explnext*{$x = n + 2 + \dfrac12$ (on symétrise la formule).}{}
+	\consprod<6> = 
+		\big( x \pm \dfrac52 \big) \big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big)
+\end{stepcalc}
+
+\begin{stepcalc}[style = ar*, ope = \iff]
+	\consprod<6> = 
+		\big( x \pm \dfrac52 \big) \big( x \pm \dfrac32 \big) \big( x \pm \dfrac12 \big)
+\explnext*{$y = 2 x$ (on chasse les fractions).}{}
+	2^6 \consprod<6> = 
+		(y \pm 5) (y \pm 3) (y \pm 1)
+%\end{stepcalc}
+%
+%\begin{stepcalc}[style = ar*, ope = \iff]
+%	2^6 \consprod<6> = 
+%		(y \pm 5) (y \pm 3) (y \pm 1)
+\explnext*{$z = y^2$}{}
+	2^6 \consprod<6> = 
+		(z - 25) (z - 9) (z - 1) 
+\explnext*{$u = z - 17$ où $17 = \dfrac{25 + 9}{2}$\,.}{}
+	2^6 \consprod<6> = 
+		(u - 8) (u + 8) (u + 16)
+\end{stepcalc}
+
+\medskip
+Notant $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,, où $u = (2 n + 5)^2 - 17 \in 2 \NN$\,, nous avons les faits suivants.
+
+\begin{itemize}
+	\item $u \in \NN_{\geq 32}$ car $(2 + 5)^2 - 17 = 32$\,.
+
+	\item $(a, b, c) \in \big( \NN_{\geq 24} \big)^3$ avec $abc \in \NNssquare$ puisque $2^6 \consprod<6> \in \NNssquare$\,.
+
+	\item $a \wedge b \divides 16$ via $b - a = 16$\,.
+
+	\item $a \wedge c \divides 24$ via $c - a = 24$\,.
+
+	\item $b \wedge c \divides 8$  via $c - b = 8$\,.
+
+	\item En particulier, 
+	$\forall p \in \PP_{>3}$\,, 
+	$(\padicval{a}, \padicval{b}, \padicval{c}) \in ( 2 \NN )^3$.
+\end{itemize}
+
+%	\newpage
+\medskip
+	
+Démontrons qu'aucun des trois entiers $a$\,, $b$ et $c$ ne peut être un carré parfait.
+%
+\begin{itemize}
+	\medskip
+	\item Commençons par supposer que $a \in \NNssquare$\,. 
+		
+	\smallskip
+	\noindent
+	Dans ce cas, $bc \in \NNssquare$ via le fait \ref{facto-square}, soit $(u + 8) (u + 16) \in \NNssquare$\,.
+	En posant $w = u + 12$\,, on arrive à $(w - 4) (w + 4) \in \NNssquare$\,, soit $w^2 - 16 \in \NNssquare$\,, d'où $(m, w) = (3, 5)$ grâce au fait \ref{diff-square-ko}.
+	Or $u \in \NN_{\geq 32}$ donne $w \in \NN_{\geq 20}$\,, d'où une contradiction.
+
+		
+	\medskip
+	\item Supposons maintenant que $b \in \NNssquare$\,.
+		
+	\smallskip
+	\noindent
+	Dans ce cas, $ac \in \NNssquare$\,, soit $(u - 8) (u + 16) \in \NNssquare$\,.
+	En posant $w = u + 4$\,, on arrive à $(w - 12) (w + 12) \in \NNssquare$\,, soit $w^2 - 144 \in \NNssquare$\,.
+	Notant $m \in \NNs$ tel que $m^2 = w^2 - 144$\,, nous arrivons à $w^2 - m^2 = 144$\,, d'où $(m, w) \in \setgene{(5, 13) , (9, 15) , (16, 20) , (35, 37)}$
+	\footnote{
+		Le programme reproduit après la preuve du fait \ref{diff-square-ko} donne rapidement cet ensemble de couples.
+	}.
+	Comme $u \in 2 \NN$ donne $w \in 2 \NN$\,, nécessairement $(m, w) = (16, 20)$\,, mais les équivalences suivantes lèvent une contradiction.
+
+%		\medskip
+	\noindent\!\!%
+	\begin{stepcalc}[style = sar, ope = \iff]
+		u + 4 = 20
+	\explnext{}
+		u = 16
+	\explnext{}
+		(2 n + 5)^2 - 17 = 16
+	\explnext*{$33 \notin \NNsquare$}{}
+		(2 n + 5)^2 = 33
+	\end{stepcalc}	
+		
+		
+	\medskip
+	\item Supposons enfin que $c \in \NNssquare$\,.
+		
+	\smallskip
+	\noindent
+	Dans ce cas, $ab \in \NNssquare$\,, soit $(u - 8) (u + 8) \in \NNssquare$\,, c'est-à-dire $u^2 - 64 \in \NNssquare$\,.
+	Notant $m \in \NNs$ tel que $m^2 = u^2 - 64$\,, nous arrivons à $u^2 - m^2 = 64$\,.
+	Ceci n'est possible que si $(m, u) \in \setgene{(6, 10), (15, 17)}$\,.
+	Or $u \in \NN_{\geq 32}$ donne une contradiction.
+\end{itemize}
+
+\medskip
+
+Donc 
+$a = \alpha A^2$\,, $b = \beta B^2$ et $c = \gamma C^2$ 
+avec $(A, B, C) \in ( \NNs )^3$
+et
+$\setgene{\alpha, \beta, \gamma} \subset \NNsf \cap \NN_{>1}$\,,
+ceci nous donnant les faits suivants.
+
+\begin{itemize}
+	\item $\alpha \wedge \beta \in \setgene{1, 2}$
+	d'après $a \wedge b \divides 16$\,.
+
+	\item $\alpha \wedge \gamma \in \setgene{1, 2, 3}$
+	d'après $a \wedge c \divides 24$\,.
+
+	\item $\beta \wedge \gamma \in \setgene{1, 2}$
+	d'après $b \wedge c \divides 8$\,.
+
+	\item $\setgene{\alpha, \beta, \gamma} \subseteq \setgene{2, 3, 6}$
+	car $\forall p \in \PP_{>3}$\,, $(\padicval{a}, \padicval{b}, \padicval{c}) \in ( 2 \NN )^3$\,. 
+\end{itemize}
+		
+\medskip
+%	\newpage
+
+En fait, $\alpha$\,, $\beta$ et $\gamma$ sont différents deux à deux.
+	
+\begin{itemize}	
+	\item Démontrons que $\alpha \neq \beta$\,. 
+		
+	\noindent
+	Dans le cas contraire, $16 = b - a = \alpha(B^2 - A^2)$ et $\alpha > 1$ donnent $B^2 - A^2 \in \setgene{1, 2, 4, 8}$\,, puis forcément $B^2 - A^2 = 8$ avec $(B, A) = (3, 1)$ d'après le fait \ref{diff-square-ko}.
+	Comme de plus, $\alpha = 2$\,, nous obtenons $a = 2$ qui contredit $a \in \NN_{\geq 24}$\,.		
+
+	\item Nous avons aussi $\beta \neq \gamma$\,. 
+		
+	\noindent
+	Dans le cas contraire, $8 = c - b = \beta(C^2 - B^2)$ et $\beta > 1$ donnent $C^2 - B^2 \in \setgene{1, 2, 4}$\,, mais c'est impossible d'après le fait \ref{diff-square-ko}.
+		
+
+	\item Enfin, $\alpha \neq \gamma$\,. 
+		
+	\noindent
+	Dans le cas contraire,
+	$C^2 - A^2 \in \setgene{1, 2, 3, 4, 6, 8, 12}$
+	car 
+	$24 = c - a = \alpha(C^2 - A^2)$ et $\alpha > 1$\,.
+	Le fait \ref{diff-square-ko} ne laisse plus que les possibilités suivantes.
+	%
+	\begin{enumerate}
+		\item $C^2 - A^2 = 3$ n'est possible que si $(C, A) = (2, 1)$\,.
+		Comme de plus $\alpha = 8$\,, nous avons $a = 8$ qui contredit $a \in \NN_{\geq 24}$\,.
+			
+			
+		\item $C^2 - A^2 = 8$ n'est possible que si $(C, A) = (3, 1)$.
+		Comme de plus $\alpha = 3$\,, nous avons $a = 3$ qui contredit $a \in \NN_{\geq 24}$\,.
+			
+		
+		\item $C^2 - A^2 = 12$ n'est possible que si $(C, A) = (4, 2)$\,.
+		Comme de plus $\alpha = 2$\,, nous avons $a = 8$ qui contredit $a \in \NN_{\geq 24}$\,.
+	\end{enumerate}
+\end{itemize}
+
+
+\medskip
+	
+Comme
+$\setgene{\alpha, \beta, \gamma} \subseteq \setgene{2, 3, 6}$\,,
+$\alpha \wedge \beta \in \setgene{1, 2}$\,,
+$\alpha \wedge \gamma \in \setgene{1, 2, 3}$ et
+$\beta \wedge \gamma \in \setgene{1, 2}$\,,
+et comme de plus $\alpha$\,, $\beta$ et $\gamma$ sont différents deux à deux, il ne nous reste plus qu'à analyser les cas suivants.
+La lumière est proche...
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {*{7}{Q[c,$]}},
+		vline{2-7} = {},
+		hline{2-7} = {}
+	}
+   	      \alpha & \beta & \gamma 
+		& \alpha \wedge \beta & \alpha \wedge \gamma & \beta \wedge \gamma
+		& Statut
+	\\
+      	  2 & 3 & 6
+		& 1 & 2 & 3 
+		& \myboxtimes
+	\\
+      	  2 & 6 & 3
+		& 2 & 1 & 3 
+		& \myboxtimes
+	%
+	\\
+      	  3 & 2 & 6
+		& 1 & 3 & 2 
+		& \mycheckmark
+	\\
+      	  3 & 6 & 2
+		& 3 & 1 & 2
+		& \myboxtimes
+	%
+	\\
+      	  6 & 2 & 3
+		& 2 & 3 & 1
+		& \mycheckmark
+	\\
+      	  6 & 3 & 2
+		& 3 & 2 & 1
+		& \myboxtimes
+	\end{tblr}
+\end{center}
+
+
+Traitons les deux cas restants en nous souvenant que $a = u - 8$\,, $b = u + 8$ et $c = u + 16$\,.
+	
+\begin{itemize}
+	\item Supposons $(\alpha, \beta, \gamma) = (3, 2, 6)$\,, 
+	autrement dit 
+	$a = 3 A^2$\,, $b = 2 B^2$ et $c = 6 C^2$\,.
+		
+	\smallskip
+	\noindent
+	Travaillons modulo $3$ afin de lever une contradiction.
+	\begin{enumerate}			
+		\item $a \equiv u - 2$ et $a \equiv 3 A^2 \equiv 0$ donnent $u \equiv 2$\,.
+			
+		\item D'autre part, $b \equiv 2 B^2 \equiv \text{$0$ ou $2$}$\,.
+			Or $b \equiv u + 2 \equiv 1$ lève une contradiction.
+	\end{enumerate}
+		
+		
+	\item Supposons $(\alpha, \beta, \gamma) = (6, 2, 3)$\,, 
+	autrement dit 
+	$a = 6 A^2$\,, $b = 2 B^2$ et $c = 3 C^2$\,.
+		
+	\smallskip
+	\noindent
+	La preuve précédente s'adapte directement car $a \equiv 6 A^2 \equiv 0$ et $b \equiv 2 B^2$ modulo $3$\,. \qedhere
+\end{itemize}

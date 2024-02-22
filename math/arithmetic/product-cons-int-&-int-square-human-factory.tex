@@ -102,6 +102,12 @@
 
 \newcommand\python{\texttt{Python}}
 
+\NewDocumentCommand\sfprod{ m }{\fbox{$#1$}}
+
+\NewDocumentCommand\sfremain{ m }{
+	\explainthis{\hfill Il reste $#1$ cas à traiter.}
+}
+
 \newcommand\explainthis[1]{
 
 	\noindent
@@ -116,7 +122,7 @@
 
 \title{Carrés parfaits et produits d'entiers consécutifs -- Des solutions à la main}
 \author{Christophe BAL}
-\date{25 Jan. 2024 -- 21 Fév. 2024}
+\date{25 Jan. 2024 -- 22 Fév. 2024}
 
 \maketitle
 
@@ -170,8 +176,8 @@
 % ------------------ %
 
 
-\foreach \k in {1,...,13} {
-%\foreach \k in {5,7,9,...,13} {
+%\foreach \k in {1,...,13} {
+\foreach \k in {1, 6} {
 	\newpage
 
 	\ifthenelse{\k = 1}{

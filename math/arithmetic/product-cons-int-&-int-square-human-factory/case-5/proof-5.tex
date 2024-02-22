@@ -1,0 +1,123 @@
+Bien que longue, cette preuve se comprend bien, car nous ne faisons qu'avancer à vue, mais avec rigueur.
+Nous commençons par supposer que $\consprod<5> \in \NNssquare$\,.
+	
+\smallskip
+
+Posant $m = n+2$\,, nous avons $\consprod<5> = m (m \pm 2) (m \pm 1) = m(m^2 - 1)(m^2 - 4)$ où $m \in \NN_{\geq 3}$\,.
+Pour la suite, on pose $u = m^2 - 1$ et $q = m^2 - 4$\,.
+
+\medskip
+	
+Notons que $u \notin \NNssquare$ et $q \notin \NNssquare$\,.
+	%
+\begin{itemize}
+	\item $u \in \NNssquare$ donne $m^2 - 1 \in \NNssquare$ qui est impossible d'après le fait \ref{diff-square-ko}.
+
+	\item $q \in \NNssquare$ donne $m^2 - 4 \in \NNssquare$ qui est impossible d'après le fait \ref{diff-square-ko}.
+\end{itemize}
+
+\medskip
+	
+Supposons d'abord que $m \in \NNssquare$\,.
+%
+\begin{itemize}
+	\item De $muq \in \NNssquare$\,, nous déduisons que $uq \in \NNssquare$ via le fait \ref{facto-square}.
+
+	\item Comme $u - q = 3$\,, nous savons que $u \wedge q \in \setgene{1, 3}$\,.
+
+	\item Si $u \wedge q = 1$\,, 
+	alors $(u, q) \in \NNssquare \times \NNssquare$ d'après le fait \ref{prime-square}, mais ceci est impossible.
+
+	\item Si $u \wedge q = 3$\,, 
+	alors $\forall p \in \PP - \setgene{3}$\,, 
+	$\padicval{u} \in 2 \NN$ et $\padicval{q} \in 2 \NN$\,,
+	mais aussi $\padicval[3]{u} \in 2 \NN + 1$ et $\padicval[3]{q} \in 2 \NN + 1$\,, car  $u \notin \NNssquare$ et $q \notin \NNssquare$\,.
+	Donc 
+	$u = 3 U^2$ et $q = 3 Q^2$ avec $(U, Q) \in ( \NNs )^2$\,.
+	Or $u - q = 3$ donne $U^2 - Q^2 = 1$\,, et le fait \ref{diff-square-ko} nous indique une contradiction.
+\end{itemize}
+	
+\medskip
+	
+Supposons maintenant que $m \notin \NNssquare$\,.
+%
+\begin{itemize}
+	\item Ici, $m = \alpha M^2$\,, $u = \beta U^2$\,, $q = \gamma Q^2$ avec $(M, U, Q) \in ( \NNs )^3$ et $\setgene{\alpha, \beta, \gamma} \subset \NNsf \cap \NN_{>1}$\,.
+
+
+	\item Notons que $\beta \neq \gamma$\,, car, dans le cas contraire, $3 = u - q = \beta \big( U^2 - Q^2 \big)$ fournirait $\beta = 3$\, puis $U^2 - Q^2 = 1$\,, et ceci contredirait le fait \ref{diff-square-ko}.
+
+
+	\item Nous avons $m \wedge u = 1$\,, $m \wedge q \in \setgene{1, 2, 4}$ et $u \wedge q \in \setgene{1, 3}$
+	avec $m \wedge u = m \wedge q = u \wedge q = 1$ impossible car sinon on aurait $(m, u, q) \in ( \NNssquare )^3$ via $muq \in \NNssquare$ et le fait \ref{prime-square}.
+
+
+	\item Clairement, $\forall p \in \PP_{\geq 5}$\,, $\big( \padicval{m} , \padicval{u} , \padicval{q} \big) \in ( 2 \NN )^3$.
+
+
+	\item Les points précédents donnent 
+	$\setgene{\alpha, \beta, \gamma} \subseteq \setgene{2, 3, 6}$
+	avec de plus
+	$\beta \neq \gamma$\,,
+	ainsi que 
+	$\alpha \wedge \beta = 1$\,, $\alpha \wedge \gamma \in \setgene{1, 2}$ et $\beta \wedge \gamma \in \setgene{1, 3}$\,.
+%		avec $\alpha \wedge \beta = \alpha \wedge \gamma = \beta \wedge \gamma = 1$ impossible.
+	%
+	Notons au passage que $\alpha \wedge \beta = 1$ implique $(\alpha, \beta) = (2, 3)$\,, ou $(\alpha, \beta) = (3, 2)$\,.
+	%
+	Via le tableau \enquote{mécanique} ci-après, nous obtenons que forcément $(\alpha, \beta, \gamma) = (2, 3, 2)$ ou $(\alpha, \beta, \gamma) = (2, 3, 6)$\,. Le plus dur est fait !
+\end{itemize}
+
+\begin{center}
+	\begin{tblr}{
+		colspec    = {*{7}{Q[c,$]}},
+		vline{2-7} = {},
+		hline{2-5} = {}
+	}
+		  \alpha & \beta & \gamma 
+		& \alpha \wedge \beta & \alpha \wedge \gamma & \beta \wedge \gamma
+		& Statut
+	\\
+    	  2 & 3 & 2
+		& 1 & 2 & 1
+		& \mycheckmark
+	\\
+    	  2 & 3 & 6
+		& 1 & 2 & 3
+		& \mycheckmark
+	\\
+    	  3 & 2 & 3
+		& 1 & 3 & 1
+		& \myboxtimes
+	\\
+    	  3 & 2 & 6
+		& 1 & 3 & 2
+		& \myboxtimes
+	\end{tblr}
+\end{center}
+
+
+\begin{itemize}
+	\item $(\alpha, \beta, \gamma) = (2, 3, 2)$ nous donne $m = 2 M^2$, $u = 3 U^2$ et $q = 2 Q^2$\,, d'où la contradiction $3 \cdot4 M^2 U^2 Q^2 \in \NNssquare$.
+
+
+	\item $(\alpha, \beta, \gamma) = (2, 3, 6)$ nous donne $m = 2 M^2$, $m^2 - 1 = 3 U^2$ et $m^2 - 4 = 6 Q^2$\,, mais ce qui suit lève une autre contradiction.
+	%
+	\begin{itemize}
+		\item Travaillons modulo $3$\,.
+		Nous avons $m \equiv 2 M^2 \equiv \text{$0$ ou $-1$}$\,. 
+		Or $m^2 - 1 = 3 U^2$ donne $m^2 \equiv 1$\,, d'où $m \equiv -1$\,, puis $3 \divides m - 2$\,, et enfin $6 \divides m - 2$ puisque $m$ est pair.
+			
+		\item Posant $m - 2 = 6 r$ et notant $s = m + 2$\,, nous avons $6 r s = 6 Q^2$\,, puis $r s = Q^2$.
+			
+		\item $s \notin \NNssquare$\,. Sinon $(m-2)(m-1)m(m+1) \in \NNssquare$ via $(m-2)(m-1)m(m+1)(m+2)  \in \NNssquare$ et le fait \ref{facto-square}, mais ceci ne se peut pas d'après le fait \ref{case-4}.
+			
+		\item Les deux résultats précédents et le fait \ref{same-square-free} donnent $(\pi, R, S) \in \NNsf \times ( \NNs )^2$ tel que $r = \pi R^2$ et $s = \pi S^2$ avec  $\pi \in \NN_{>1}$\,.
+			
+		\item Dès lors, $4 = s - 6r = \pi (S^2 - 6 R^2)$ donne $\pi = 2$\,, d'où $m + 2 = 2 S^2$\,.
+			
+		\item Finalement, $m = 2 M^2$ et $m + 2 = 2 S^2$ donnent $2 = 2(S^2 - M^2)$\,, soit $1 = S^2 - M^2$, ce qui contredit le fait \ref{diff-square-ko}.
+		%
+		\qedhere
+	\end{itemize}
+\end{itemize}

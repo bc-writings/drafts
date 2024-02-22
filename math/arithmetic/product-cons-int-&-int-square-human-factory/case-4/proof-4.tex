@@ -1,0 +1,65 @@
+Un échange sur \url{https://math.stackexchange.com} a inspiré cette démonstration non algébrique (voir la section \ref{sources}).	
+Nous commençons par supposer que $\consprod<4> \in \NNssquare$\,.
+
+\smallskip
+
+Clairement, nous avons les faits suivants.
+%
+\begin{itemize}
+	\item  
+	$\forall p \in \PP_{\geq 4}$\,, 
+	$\forall i \in \ZintervalC{0}{3}$\,, 
+	$\padicval{n + i} \in 2 \NN$\,.
+	
+	
+	\item $\exists u \in \setgene{n, n+1}$ tel que $\setgene{u, u + 2} \subset 2 \NN + 1$\,.
+		
+	\noindent
+	Nous avons alors
+	$\forall p \in \PP - \setgene{3}$\,, 
+	$(\padicval{u}, \padicval{u+2}) \in ( 2 \NN )^2$,
+	donc, pour tout naturel $m \in \setgene{u, u + 2}$\,, 
+	il existe $M \in \NNs$ tel que 
+	$m = M^2$ ou $m = 3 M^2$\,.
+	
+	
+	\item Forcément, il existe $(A, B) \in ( \NNs )^2$ tel que 
+    $\setgene{u, u + 2} = \setgene{A^2, 3 B^2}$\,. Voici pourquoi.
+	%
+    \begin{itemize}
+    	\item $\setgene{u, u + 2} = \setgene{A^2, B^2}$ donne deux carrés distants de $2$\,, ceci contredit le fait \ref{diff-square-ko}.
+
+    	\item $\setgene{u, u + 2} = \setgene{3 A^2, 3 B^2}$ donne $3 A^2 - 3 B^2 = \pm 2$\,, ce qui est impossible.
+    \end{itemize}
+\end{itemize}
+
+\smallskip
+	
+Nous savons donc que l'un des facteurs $(n+i)$ de $\consprod<4>$ possède une valuation $3$-adique impaire. Ceci n'est possible que si $n$ et $(n+3)$ ont une valuation $3$-adique impaire.
+Dès lors, comme ci-dessus, nous avons $(Q, R) \in ( \NNs )^2$ tel que $\setgene{n+1, n+2} = \setgene{Q^2, 2 R^2}$\,.
+Ceci nous amène aux deux situations contradictoires suivantes où $(A, B, C, D) \in ( \NNs )^4$.
+	
+%    \newpage
+\begin{itemize}
+	\item Cas 1 : $(n, n+1, n+2, n+3) = (6A^2, B^2, 2C^2, 3D^2)$\,.
+	%
+	\begin{itemize}
+    	\item Posons $x = n + \frac32$\, de sorte que 
+    	$x - \frac32 = 6 A^2$\,, $x - \frac12 = B^2$\,, $x + \frac12 = 2 C^2$ et $x + \frac32 = 3 D^2$\,.
+    
+    	\item Nous avons alors
+    	$\big( x - \frac32 \big) \big( x + \frac32 \big) = 2 E^2$\,, c'est-à-dire $x^2 - \frac94 = 2 E^2$\,, avec $E \in \NNs$.
+    
+    	\item De même,
+    	$x^2 - \frac14 = 2 F^2$ avec $F \in \NNs$.	
+    
+    	\item Par simple soustraction, nous obtenons $2 F^2 - 2 E^2 = 2$\,, puis $F^2 - E^2 = 1$\,, mais ceci contredit le fait \ref{diff-square-ko}.
+    \end{itemize}
+	
+	
+	\item Cas 2 : $(n, n+1, n+2, n+3) = (3A^2, 2B^2, C^2, 6D^2)$\,.
+		
+	\smallskip
+	\noindent
+	Un raisonnement similaire au précédent montre que ce cas aussi est impossible. \qedhere
+\end{itemize}

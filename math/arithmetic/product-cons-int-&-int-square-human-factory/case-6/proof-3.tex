@@ -1,0 +1,195 @@
+Dans une discussion archivée consultée le 28 janvier 2024, voir la section \ref{sources}, sont présentés les tableaux au coeur de cette preuve
+\footnote{
+	Comme ces tableaux sont suffisamment intéressants pour leur dédier un écrit : voir mon document \emph{\enquote{Carrés parfaits et produits d'entiers consécutifs -- Une méthode efficace}}\,.
+}.
+Nous commençons par supposer que $\consprod<6> \in \NNsquare$\,.
+%
+\begin{itemize}
+	\item  Comme clairement
+    $\forall p \in \PP_{\geq 6}$\,, 
+    $\forall i \in \ZintervalC{0}{5}$\,, 
+    $\padicval{n + i} \in 2 \NN$\,,
+    nous nous intéressons aux nombres premiers $p \in \PP_{< 6}$\,.
+
+    \item Nous allons tenter d'envisager toutes les alternatives possibles pour les parités des valuations $p$-adiques des facteurs $(n + i)$ de $\consprod<6>$ lorsque $p \in \PP_{< 6}$\,.
+\end{itemize}
+
+
+%\newpage
+Les tableaux suivants donnent toutes les alternatives possibles.
+Par exemple, la 3\ieme{} ligne du tableau de $2$ donne $\padicval[2]{n + i} \in 2 \NN$ pour $i \in \setgene{0, 4}$\,,
+et $\padicval[2]{n + i} \in 2 \NN + 1$ sinon.
+
+\begin{multicols}{2}
+    \begin{center}
+    	\begin{tblr}{
+    		colspec    = {Q[r,$]*{7}{Q[c,$]}},
+    		vline{2-Y} = {},
+    		hline{2}   = {},
+		% Focus
+			cell{4}{2-Y} = {green!15},
+			cell{1-8}{Z} = {gray!15},
+    	}
+       	    n + \bullet
+    	    	& 0 & 1 & 2 & 3 & 4 & 5
+				& \text{No. de ligne}
+    	\\
+    		2
+                & 1 & 1 & 1 & 1 & 1 & 1
+                & 1
+        \\
+                & 2 & 1 & 2 & 1 & 1 & 1
+                & 2
+        \\
+                & 2 & 1 & 1 & 1 & 2 & 1
+                & 3
+        \\
+                & 1 & 2 & 1 & 2 & 1 & 1
+                & 4
+        \\
+                & 1 & 2 & 1 & 1 & 1 & 2
+                & 5
+        \\
+                & 1 & 1 & 2 & 1 & 2 & 1
+                & 6
+        \\
+                & 1 & 1 & 1 & 2 & 1 & 2
+                & 7
+        \end{tblr}
+    \end{center}
+
+\columnbreak
+
+    \begin{center}
+    	\begin{tblr}{
+    		colspec    = {Q[r,$]*{7}{Q[c,$]}},
+    		vline{2-Y} = {},
+    		hline{2}   = {},
+		% Focus
+			cell{4}{2-Y} = {green!15},
+			cell{1-5}{Z} = {gray!15},
+    	}
+       	    n + \bullet
+    	    	& 0 & 1 & 2 & 3 & 4 & 5
+				& \text{No. de ligne}
+    	\\
+    		3
+                & 1 & 1 & 1 & 1 & 1 & 1
+                & 1
+        \\
+                & 3 & 1 & 1 & 3 & 1 & 1
+                & 2
+        \\
+                & 1 & 3 & 1 & 1 & 3 & 1
+                & 3
+        \\
+                & 1 & 1 & 3 & 1 & 1 & 3
+                & 4
+        \end{tblr}
+    \end{center}
+    
+    
+    \begin{center}
+    	\begin{tblr}{
+    		colspec    = {Q[r,$]*{7}{Q[c,$]}},
+    		vline{2-Y} = {},
+    		hline{2}   = {},
+		% Focus
+			cell{3}{2-Y} = {green!15},
+			cell{1-3}{Z} = {gray!15},
+    	}
+       	    n + \bullet
+    	    	& 0 & 1 & 2 & 3 & 4 & 5
+				& \text{No. de ligne}
+    	\\
+    		5
+                & 1 & 1 & 1 & 1 & 1 & 1
+                & 1
+        \\
+                & 5 & 1 & 1 & 1 & 1 & 5
+                & 2
+        \end{tblr}
+    \end{center}
+\end{multicols}
+
+
+
+Si nous supposons avoir les trois alternatives surlignées en vert, nous pouvons affirmer avoir les informations suivantes en notant au passage que les coefficients sans facteur carré s'obtiennent en multipliant les lignes cellule par cellule.%
+\vspace{-1ex}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item $\exists A \in \NNs$ tel que $n     = 10 A^2$\,.
+
+		\item $\exists B \in \NNs$ tel que $n + 1 = 3  B^2$\,.
+
+		\item $\exists C \in \NNs$ tel que $n + 2 =    C^2$\,.
+
+		\item $\exists D \in \NNs$ tel que $n + 3 =    D^2$\,.
+
+		\item $\exists E \in \NNs$ tel que $n + 4 = 6  E^2$\,.
+
+		\item $\exists F \in \NNs$ tel que $n + 5 = 5  F^2$\,.
+	\end{itemize}
+\end{multicols}
+\vspace{-1ex}
+Ce qui précède est impossible, car $D^2 - C^2 = 1$ contredit le fait \ref{diff-square-ko}.
+Intéressant mais a priori nous devrions analyser $7 \times 4 \times 2 = 56$ possibilités ! 
+Nous allons être plus efficace en éliminant certaines situations rapidement, et aussi en notant que l'élimination des cas problématiques restants se fait via des raisonnements \enquote{symétriques} qui permettent de traiter simultanément  deux cas à chaque fois. C'est parti !
+%
+\begin{enumerate}
+	\item Notons \sfprod{d.t.c} le produit cellule par cellule des lignes numérotées $d$\,, $t$ et $c$ des tableaux de $2$\,, $3$ et $5$ respectivement.
+	Nous venons de voir que \sfprod{3.3.2} lève une contradiction.
+
+
+	\item \label{KO-1*-or-*1}
+	Une ligne produit \sfprod{d.t.c} commençant par $1$ donne
+	$\consprod[n+1]<5> \in \NNssquare$ via le fait \ref{facto-square}, or c'est impossible d'après le fait \ref{case-5}.
+	De même, une ligne produit se finissant par $1$ lève une contradiction.
+
+
+	\item \label{KO-11}
+	Une ligne produit \sfprod{d.t.c} contenant deux $1$ consécutifs lève une contradiction (voir l'exemple ci-dessus).
+
+
+	\item \label{KO-2*2}
+	Une ligne produit \sfprod{d.t.c} contenant deux $2$ séparés par une seule cellule lève une contradiction, car ceci donne $2 N^2 - 2 M^2 = 2$\,, puis $N^2 - M^2 = 1$.
+\end{enumerate}
+
+
+\smallskip
+
+Nous voilà armé pour lever des contractions à la chaîne.
+%
+\begin{itemize}
+	\item D'après le point \ref{KO-1*-or-*1}, tous les produits du type \sfprod{1.t.1} lèvent une contradiction.
+	
+	\sfremain{52}
+
+
+	\item D'après le point \ref{KO-11}, tous les produits du type \sfprod{1.t.2} lèvent une contradiction.
+	
+	\sfremain{48}
+
+
+	\item Les points \ref{KO-1*-or-*1}, \ref{KO-11} et \ref{KO-2*2} lèvent une contradiction relativement aux produits du type \sfprod{d.1.c} où $d \neq 1$\,.
+	
+	\sfremain{36}
+
+
+	\item JJJ
+	
+	\sfremain{666}
+
+
+	\item JJJ
+	
+	\sfremain{666}
+
+
+	\item JJJ
+	
+	\sfremain{666}
+\end{itemize}
+
+
+

@@ -1,0 +1,91 @@
+Cette jolie preuve vient d'un échange sur \url{https://math.stackexchange.com} (voir la section \ref{sources}). Nous avons comblé les trous en apportant de petites simplifications.
+Nous commençons par supposer que $\consprod<7> \in \NNssquare$\,.
+
+\smallskip
+
+Commençons par quelques observations immédiates.
+%
+\begin{itemize}
+	\item  
+	$\forall p \in \PP_{\geq 7}$\,, 
+	$\forall i \in \ZintervalC{0}{6}$\,, 
+	$\padicval{n + i} \in 2 \NN$\,.
+	
+	
+	\item $\exists u \in \setgene{n, n+1, n+2}$ tel que $\setgene{u, u + 2, u + 4} \subset 2 \NN + 1$\,.
+		
+	\noindent
+	Nous avons alors
+	$\forall p \in \PP - \setgene{3, 5}$\,, 
+	$(\padicval{u}, \padicval{u+2}, \padicval{u+4}) \in ( 2 \NN )^3$.
+	Cette astuce permet de passer de la gestion des trois nombres premiers $2$\,, $3$ et $5$ à celle de $3$ et $5$\,.
+	Donc, pour tout naturel $m \in \setgene{u, u + 2, u + 4}$\,, 
+	il existe $M \in \NNs$ tel que 
+	$m = M^2$, $m = 3 M^2$, $m = 5 M^2$ ou $m = 15 M^2$.
+	
+	
+	\item Parmi les trois naturels $u$\,, $u + 2$\, et $u + 4$\,, ...
+	%
+	\begin{itemize}
+		\item il en existe un, et un seul, divisible par $3$\,, comme on le constate vite en raisonnant modulo $3$\,,
+
+		\item au plus un est divisible par $5$\,,
+
+		\item au plus un est un carrée parfait d'après le fait \ref{diff-square-ko}.
+	\end{itemize}
+\end{itemize}
+
+\smallskip
+	
+Donc, il existe $(M, P, Q) \in ( \NNs )^3$ tel que 
+$\setgene{u, u + 2, u + 4} = \setgene{M^2, 3P^2, 5Q^2}$\,.
+Ceci permet de considérer les trois cas suivants qui lèvent tous une contradiction.
+	%
+\begin{itemize}
+	\item Supposons avoir $u = M^2$.
+	%
+	\begin{enumerate}
+		\item Comme $\setgene{u + 2, u + 4} = \setgene{3P^2, 5Q^2}$\,, nous savons que $3 \ndivides (u + 3)$ et $5 \ndivides (u + 3)$\,, d'où $u + 3 = 2^a A^2$ avec $(a, A) \in \NN \times (2\NN + 1)$\,.
+
+		\item Modulo $8$\,, $u \equiv M^2 \equiv 1$ car $u \in 2 \NN + 1$\,,
+		donc $u + 3 \equiv 4$\,, d'où $a = 2$\,.
+
+		\item Dès lors, $u + 3 \in \NNsquare$\,, puis $(u, u + 3) = (1, 4)$ via le fait \ref{diff-square-ko}.
+
+		\item Nous arrivons à $n = u = 1$\,, mais $\padicval[7]{\consprod[1]<7>} = 1$ contredit l'hypothèse $\consprod<7> \in \NNssquare$\,.
+	\end{enumerate}
+
+
+	\item Supposons maintenant que $u + 2 = M^2$.
+
+	\smallskip
+	\noindent
+	Ce qui suit démontre que $\setgene{u, u + 4} = \setgene{3P^2, 5Q^2}$ est impossible.
+	%
+	\begin{enumerate}
+		\item Si $(u, u + 4) = (3P^2, 5Q^2)$\,, alors,
+		comme $u \in 2 \NN + 1$\,, nous avons, modulo $4$\,,
+		$u \equiv 3$
+		et
+		$u+4 \equiv 1$
+		qui se contredisent.
+
+		\item Si $(u, u + 4) = (5Q^2, 3P^2)$\,, on raisonne de même.
+	\end{enumerate}
+
+
+	\item Supposons enfin que $u + 4 = M^2$.
+
+	\smallskip
+	\noindent
+	Démontrons que $\setgene{u, u + 2} = \setgene{3P^2, 5Q^2}$ est impossible en raisonnant modulo $8$\,.
+	%
+	\begin{enumerate}
+		\item $u + 4 \equiv M^2 \equiv 1$\, via $u \in 2 \NN + 1$\,,
+		d'où $u + 3 \equiv 0$\,.
+
+		\item $u + 2 \in \setgene{3P^2, 5Q^2}$ donne $u + 2 \equiv \text{$3$ ou $5$}$  via $u \in 2 \NN + 1$\,.
+
+		\item Les deux points précédents se contredisent. \qedhere
+	\end{enumerate}
+\end{itemize}

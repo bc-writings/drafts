@@ -1,0 +1,46 @@
+Cette preuve suivante s'inspire directement de la première démonstration du cas \ref{case-6}
+\footnote{
+	Compte-tenu de la première preuve, celle proposée ici peut sembler \enquote{capillo-tracté}\,. Ceci étant dit, l'approche reste intéressante malgré tout, et de plus, rien n'interdit de s'amuser.
+}.
+Nous commençons par supposer que $\consprod<4> \in \NNsquare$\,.
+
+\smallskip
+
+Comme dans la première preuve ci-dessus, on note que $\consprod<4> = m (m + 2)$ où $m = n^2 + 3n$\,.
+Posons $m = \mu M^2$ où $(\mu, M) \in \NNsf \times \NNs$\,,
+de sorte que $\mu (\mu M^2 + 2) \in \NNssquare$ via le fait \ref{facto-square}.
+Or $\mu \in \NNsf$ donne $\mu \divides (\mu M^2 + 2)$\,, 
+d'où $\mu \divides 2$\,, et ainsi $\mu \in \setgene{1, 2}$
+\footnote{
+	On comprend ici le choix d'avoir $\consprod<4> = m (m + 2)$\,.
+}.
+Nous allons voir que ceci est impossible.
+
+\medskip
+
+Supposons que $\mu = 1$\,.
+%
+\begin{itemize}
+	\item Dans ce cas $M^2 + 2 \in \NNssquare$ donne $N \in \NNs$ tel que $N^2 = M^2 + 2$\,, soit tel que $N^2 - M^2 = 2$\,, mais ceci contredit le fait \ref{diff-square-ko}.
+\end{itemize}
+
+\medskip
+
+%   	\vspace{-1ex}
+	Supposons que $\mu = 2$\,.
+%
+\begin{itemize}
+	\item Notons l'équivalence suivante.
+    
+%        \medskip
+    \noindent\kern-6pt%
+    \begin{stepcalc}[style=ar*, ope=\iff]
+    	2 (2 M^2 + 2) \in \NNssquare
+	\explnext{Via $4 \cdot (M^2 + 1)$\,.}
+    	M^2 + 1 \in \NNssquare
+    \end{stepcalc}
+
+	\item On a alors $N \in \NNs$ tel que $N^2 = M^2 + 1$\,, c'est-à-dire tel que $N^2 - M^2 = 1$\,, mais ceci contredit le fait \ref{diff-square-ko}.
+	%
+	\qedhere 
+\end{itemize}

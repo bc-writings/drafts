@@ -1,0 +1,66 @@
+Voici une approche similaire à la dernière preuve du cas \ref{case-4}.
+Nous commençons par supposer que $\consprod<5> \in \NNssquare$\,.
+    
+\smallskip
+
+Clairement, $\forall p \in \PP_{\geq 5}$\,, 
+$\forall i \in \ZintervalC{0}{3}$\,, 
+$\padicval{n + i} \in 2 \NN$\,,
+ceci nous amène à considérer deux alternatives.
+
+\medskip
+%    \newpage
+
+Supposons d'abord $\setgene{n, n + 2, n + 4} \subset 2 \NN + 1$\,.
+%	
+\begin{itemize}
+	\item
+	Nous avons alors
+	$\forall p \in \PP - \setgene{3}$\,, 
+	$(\padicval{n}, \padicval{n+2}, \padicval{n+4}) \in ( 2 \NN )^3$,
+	donc, pour tout naturel $m \in \setgene{n, n + 2, n + 4}$\,, 
+	il existe $M \in \NNs$ tel que 
+	$m = M^2$ ou $m = 3 M^2$\,.
+	
+	\item En raisonnant modulo $3$\,, on constate que $3$ divise au maximum un seul des trois éléments de $\setgene{n, n + 2, n + 4}$\,, donc nous avons au moins deux carrés parfaits dans $\setgene{n, n + 2, n + 4}$\,, mais ceci contredit le fait \ref{diff-square-ko} (deux carrés parfaits ne sont jamais distants de $2$ ou $4$).
+\end{itemize}
+
+\medskip
+
+Supposons maintenant $\setgene{n + 1, n + 3} \subset 2 \NN + 1$\,.
+%	
+\begin{itemize}
+	\item
+	Comme ci-dessus,
+	soit $(n + 1, n + 3) = (A^2, 3 B^2)$\,,
+	soit $(n + 1, n + 3) = (3 A^2, B^2)$\,,
+	avec $(A, B) \in ( \NNs )^2$\,,
+	car $(n + 1, n + 3) = (A^2, B^2)$ est impossible.
+	
+	\item Supposons $(n + 1, n + 3) = (A^2, 3 B^2)$\,. Ce qui suit lève alors une contradiction.
+	%	
+	\begin{itemize}
+		\item Forcément, $n = 3 C^2$ ou $n = 6 C^2$ avec $C \in \NNs$.
+		Le fait \ref{diff-square-ko} impose d'avoir $n = 6 C^2$.
+
+		\item Donc 
+		$\setgene{n + 2, n + 4} \subset 2 \NN - 3 \NN$\,, 
+		puis, via le fait \ref{diff-square-ko},
+		$\setgene{n + 2, n + 4} = \setgene{D^2, 2 E^2}$ 
+		avec $(D, E) \in ( \NNs )^2$ nécessairement.
+
+		\item $(n+1)$ et $(n+2)$ étant trop proches pour être tous les deux des carrés parfaits, nous arrivons à $(n + 2, n + 4) = (2 D^2, E^2)$\,.
+
+		\item Or $n + 4 \in \NNssquare$ et $\consprod<5> \in \NNssquare$ donnent $\consprod<4> \in \NNssquare$ d'après le fait \ref{facto-square}, mais ceci contredit le fait \ref{case-4}.
+	\end{itemize}
+	
+	\item Forcément, $(n + 1, n + 3) = (3 A^2, B^2)$\,, mais ce qui suit lève une nouvelle contradiction via une démarche similaire à la précédente.
+	%	
+	\begin{itemize}
+		\item Forcément, $n + 4 = 6 C^2$ avec $C \in \NNs$. 
+
+		\item Ensuite, $(n, n + 2) = (D^2, 2 E^2)$ avec $(D, E) \in ( \NNs )^2$.
+
+		\item $n \in \NNssquare$ et $\consprod<5> \in \NNssquare$ donnent $\consprod[n+1]<4> \in \NNssquare$\,, ce qui est faux.\qedhere
+	\end{itemize}
+\end{itemize}

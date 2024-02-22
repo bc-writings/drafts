@@ -1,0 +1,47 @@
+Pour cette preuve, nous reprenons l'idée de la démonstration du cas \ref{case-10} ; nous indiquons juste les adaptations à faire en reprenant les notations de la preuve citée.
+
+\smallskip
+
+Ici nous avons au moins $5$ facteurs $(n + i)$ de $\consprod<7>$ de valuation $p$-adique paire dès que $p \in \PP_{\geq 5}$\,.
+Ceci nous amène aux cas suivants.
+%
+\begin{itemize}
+	\medskip
+	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{1}\,.
+		
+	\smallskip
+	\noindent
+	Dans ce cas, $(n+i, n+i^\prime) = (M^2, N^2)$ avec $\abs{N^2 - M^2} \in \ZintervalC{1}{6}$\,, mais ce qui suit lève des contradictions.
+	%
+	\begin{enumerate}
+		\item $\abs{N^2 - M^2} = 3$ donne $n = 1$\,, mais $\consprod[1]<7> = 7! \notin \NNsquare$ via $\padicval[7]{7!} = 1$\,.
+
+
+		\item $\abs{N^2 - M^2} = 5$ donne $n \in \ZintervalC{2}{4}$\,, mais $\forall n \in \ZintervalC{2}{4}$\,, $\padicval[7]{\consprod[n]<7>} = 1$ donne $\consprod[n]<7> \notin \NNsquare$\,.
+	\end{enumerate}
+
+
+	\medskip
+	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{2}\,.
+		
+	\smallskip
+	\noindent
+	Dans ce cas, $(n+i, n+i^\prime) = (3 M^2, 3 N^2)$ avec $\abs{3(N^2 - M^2)} \in \ZintervalC{1}{6}$\,, mais c'est impossible d'après le fait \ref{diff-square-ko}.
+
+	\medskip
+	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{3}\,.
+		
+	\smallskip
+	\noindent
+	Dans ce cas, $(n+i, n+i^\prime) = (2 M^2, 2 N^2)$ avec $\abs{2(N^2 - M^2)} \in \ZintervalC{1}{6}$\,, puis nécessairement $\abs{N^2 - M^2} = 3$ qui implique $n \in \ZintervalC{1}{2}$\,, mais on sait que cela est impossible.
+
+
+	\medskip
+	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{4}\,.
+		
+	\smallskip
+	\noindent
+	Dans ce cas, $(n+i, n+i^\prime) = (6 M^2, 6 N^2)$ avec $\abs{6(N^2 - M^2)} \in \ZintervalC{1}{6}$\,, mais c'est impossible d'après le fait \ref{diff-square-ko}.
+	%
+	\qedhere
+\end{itemize}

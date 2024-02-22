@@ -1,0 +1,31 @@
+Supposons que $\consprod<3> \in \NNssquare$\,.
+
+\smallskip
+
+Comme $p \in \PP_{\geq 3}$ ne peut diviser au maximum qu'un seul des trois facteurs $n$\,, $(n+1)$ et $(n+2)$\,, nous savons que 
+$\forall p \in \PP_{\geq 3}$\,, 
+$\forall i \in \ZintervalC{0}{2}$\,, 
+$\padicval{n + i} \in 2 \NN$\,.
+Mais que se passe-t-il pour $p = 2$ ?
+
+\medskip
+
+Supposons d'abord $n \in 2 \NN$\,.
+%
+\begin{itemize}
+	\item Posant $n = 2 m$\,, nous avons $\consprod<3> = 4 m(2m+1)(m+1)$\,, d'où $m(2m+1)(m+1) \in \NNssquare$\,.
+		
+	\item Comme $\padicval[2]{2m+1} = 0$\,, nous savons que $2m+1 \in \NNssquare$\,.
+		
+	\item Donc $\consprod[m]<2> = m(m+1)\in \NNssquare$ via le fait \ref{facto-square}, mais le fait \ref{case-2} interdit cela.
+\end{itemize}
+
+\medskip
+
+Supposons maintenant $n \in 2 \NN + 1$\,.
+%
+\begin{itemize}
+	\item Nous savons que $n \in \NNssquare$ via $\padicval[2]{n} = 0$\,.
+
+	\item On conclut comme dans le cas précédent mais en passant via $\consprod[n+1]<2>=(n+1)(n+2)$\,. \qedhere
+\end{itemize}

@@ -1,0 +1,43 @@
+Voici une approche la plus simple possible ne faisant pas appel au principe des tiroirs.
+Nous commençons par supposer que $\consprod<5> \in \NNssquare$\,.
+    
+\smallskip
+
+En notant $m = n+2$\,, nous avons $\consprod<5> = m (m \pm 2) (m \pm 1) = m (m^2 - 1) (m^2 - 4)$ où $m \in \NN_{\geq 3}$\,.
+
+\medskip
+%	\newpage
+
+Démontrons que $m \in \NNssquare$\,.
+%	
+\begin{itemize}
+	\item Si $m \in 2 \NN + 1$\,, nous avons clairement $\GCD{m}{(m^2 - 1)} = 1$ et $\GCD{m}{(m^2 - 4)} = 1$ (ici, la parité de $m$ doit être utilisée).
+	Donc $\GCD{m}{\big( (m^2 - 1) (m^2 - 4) \big)} = 1$\,, puis $m \in \NNssquare$ selon le fait \ref{prime-square}.
+
+
+	\item Si $m \in 2 \NN$\,, alors $\GCD{m}{(m^2 - 1)} = 1$ et $\GCD{m}{(m^2 - 4)} \in \setgene{1, 2, 4}$ (ici, la parité de $m$ ne limite pas les possibilités). Soyons plus fin.
+	Notant $m - 2 = 2A$ et $m + 2 = 2B$\,, nous avons clairement $\GCD{m}{A} = 1 = \GCD{m}{B}$ car $\GCD{m}{(m - 2)} = 2 = \GCD{m}{(m + 2)}$\,.
+	Comme $\consprod<5> = 4 m (m^2 - 1) A B$\,, nous avons aussi $m (m^2 - 1) A B \in \NNssquare$ via le fait \ref{facto-square}, et finalement $m \in \NNssquare$ selon le fait \ref{prime-square} et $\GCD{m}{\big( (m^2 - 1) A B \big)} = 1$\,. 
+\end{itemize}
+
+\medskip
+
+Ce qui suit lève une contradiction.
+%	
+\begin{itemize}
+	\item $m \in \NNssquare$ et $\consprod<5> \in \NNssquare$ donnent $(m^2 - 1) (m^2 - 4) \in \NNssquare$ via le fait \ref{facto-square}. 
+
+	\item En posant $x = m^2 \in \NN_{\geq 9}$\,, nous arrivons à $(x - 1) (x - 4) = x^2 - 5 x + 4 \in \NNssquare$\,, mais ceci est impossible d'après l'implication suivante.
+		
+	\noindent\kern-10pt%
+	\begin{stepcalc}[style=ar*, ope={\implies}]
+		x^2 - 5 x + 4 = (x-2)^2 - x
+		\,\,\text{ et }\,\,
+		x^2 - 5 x + 4 = (x-3)^2 + x - 5
+	\explnext*{$x-5 >0$ et $x > 0$\,.}{}
+		(x-3)^2 < x^2 - 5 x + 4 < (x - 2)^2
+	\end{stepcalc}
+\end{itemize}
+
+\vspace{-1.5ex}
+\qedhere

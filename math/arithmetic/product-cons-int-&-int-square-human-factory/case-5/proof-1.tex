@@ -1,0 +1,92 @@
+Commençons par une idée simple consistant à se concentrer sur les nombres premiers de valuation impaire dans $\consprod<5>$ supposé être un carré parfait.
+Nous commençons par supposer que $\consprod<5> \in \NNssquare$\,.
+ 
+\smallskip
+
+Clairement, 
+$\forall p \in \PP_{\geq 5}$\,, 
+$\forall i \in \ZintervalC{0}{4}$\,, 
+$\padicval{n + i} \in 2 \NN$\,.
+Pour $p = 2$ et $p = 3$\,, nous avons les alternatives suivantes pour chaque facteur $(n+i)$ de $\consprod<5>$\,.
+%
+\begin{itemize}
+	\smallskip
+	\item \alt{1}\,
+	$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times 2 \NN$
+
+	\smallskip
+	\item \alt{2}\,
+	$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in 2 \NN \times \big( 2 \NN + 1)$
+
+	\smallskip
+	\item \alt{3}\,
+	$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times 2 \NN$
+
+	\smallskip
+	\item \alt{4}\,
+	$\big( \padicval[2]{n + i} , \padicval[3]{n + i} \big) \in \big( 2 \NN + 1 \big) \times \big( 2 \NN + 1)$
+\end{itemize}
+
+\medskip
+
+Comme nous avons cinq facteurs pour quatre alternatives, ce bon vieux principe des tiroirs va nous permettre de lever des contradictions très facilement.
+%
+\begin{itemize}
+	\medskip
+	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{1}\,.
+		
+	\smallskip
+	\noindent
+	Dans ce cas, $(n+i, n+i^\prime) = (M^2, N^2)$ avec $(M, N) \in \NNs$.
+	Par symétrie des rôles, on peut supposer $N > M$\,, de sorte que $N^2 - M^2 \in \setgene{1, 2, 3, 4}$\,. 
+	Selon le fait \ref{diff-square-ko}, seul $N^2 - M^2 = 3$ avec $(M, N) = (1, 2)$ est possible, puis nécessairement $n = 1$\,, or $\consprod[1]<5> = 5 ! \in \NNsquare$ est faux car $\padicval[5]{5!} = 1$\,.
+		
+		
+	\explainthis{Autre méthode : on note que $n \notin \NNssquare$ car sinon $n(n+1)(n+2)(n+3)(n+4) \in \NNssquare$ donne $(n+1)(n+2)(n+3)(n+4) \in \NNssquare$ via le fait \ref{facto-square}, mais ceci contredit le fait \ref{case-4}.%
+	De même, $n+4 \notin \NNssquare$\,.%
+	Dès lors, nous avons $\setgene{n+i, n+i^\prime} \subseteq \setgene{n+1, n+2, n+3}$\,, d'où l'existence de deux carrés parfaits non nuls éloignés de moins de $3$\,, et ceci contredit le fait \ref{diff-square-ko}.}
+
+
+	\medskip
+	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{2}\,.
+		
+	\smallskip
+	\noindent
+	Dans ce cas, le couple de facteurs est $(n, n + 3)$\,, ou $(n + 1, n + 4)$\,.    
+	%
+	\begin{enumerate}
+		\item Supposons d'abord que $n$ et $(n+3)$ vérifient \alt{2}\,.
+			
+		\noindent
+		Comme $\forall p \in \PP - \setgene{3}$\,, $\padicval{n} \in 2 \NN$ et $\padicval{n + 3} \in 2 \NN$\,,
+		mais aussi $\padicval[3]{n} \in 2 \NN + 1$ et $\padicval[3]{n + 3} \in 2 \NN + 1$\,,
+		nous avons $n = 3 M^2$ et $n+3 = 3 N^2$ où $(M, N) \in ( \NNs )^2$\,.
+		Or, ceci donne $3 = 3 N^2 - 3 M^2$\,, puis $N^2 - M^2 = 1$ qui contredit le fait \ref{diff-square-ko}.
+
+		\item De façon analogue, on ne peut pas avoir $(n+1)$ et $(n+4)$ vérifiant \alt{2}\,.
+	\end{enumerate}
+
+
+	\medskip
+	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{3}\,.
+		
+	\smallskip
+	\noindent
+	Comme dans le point précédent, c'est impossible car on aurait $2 = 2 N^2 - 2 M^2$\,, ou $4 = 2 N^2 - 2 M^2$, mais ceci contredirait le fait \ref{diff-square-ko}. 
+		
+	\smallskip
+		
+	\noindent
+	En effet, ici les couples possibles sont $(n, n + 2)$\,, $(n, n + 4)$\,,  $(n + 2, n + 4)$ et $(n + 1, n + 3)$
+	\footnote{
+		A priori, rien n'empêche d'avoir $n$\,, $(n + 2)$ et $(n + 4)$ vérifiant tous les trois \alt{3}\,.
+	}.
+
+
+	\medskip
+	\item Deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifient \alt{4}\,.
+		
+	\smallskip
+	\noindent
+	Ceci donne deux facteurs différents divisibles par $6$\,, mais c'est impossible. \qedhere
+\end{itemize}
