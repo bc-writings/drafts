@@ -101,7 +101,9 @@
 			\item $nb_{sol}= 0$ si $\delta \in \setgene{1, 2, 4, 6, 10}$\,.
 
 			\item $nb_{sol}= 1$ si $\delta \in \setgene{3, 5, 7, 8, 9}$\,.
-			Ainsi, $N^2 - M^2 = 3$ uniquement si $(M, N) = (1, 2)$\,.
+			
+			\noindent
+			Par exemple, $N^2 - M^2 = 3$ uniquement si $(M, N) = (1, 2)$\,.
 		\end{enumerate}
 	\end{enumerate}
 \end{fact}
@@ -140,7 +142,7 @@ def sol(diff):
             M = floor(sqrt(M_square))
 
             if M != 0 and M**2 == M_square:
-                solfound.append((N, M))
+                solfound.append((M, N))
 
     return solfound
 
@@ -185,7 +187,7 @@ print(all_nbsol)
 				\BlankLine
 				\If{$M \neq 0$ \And $M^2 = M_{square}$}{
 					\BlankLine
-					$\setproba{S} \Store \setproba{S} \cup \setgene{(N, M)}$
+					$\setproba{S} \Store \setproba{S} \cup \setgene{\, (M, N) \,}$
 				}
 			}
 		}

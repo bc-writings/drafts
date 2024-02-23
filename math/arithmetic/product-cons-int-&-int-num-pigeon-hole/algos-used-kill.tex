@@ -3,8 +3,8 @@
 \leavevmode
 \smallskip
 
-Reprenons les notations de la section \ref{algos-used-select} en supposant $\consprod \in \NNssquare$ avec $k \in \NN_{\geq 2}$\,, et plaçons-nous dans la situation où l'ensemble $\setgeo{C}$ renvoyé par l'algorithme \ref{algo-select} est non vide (dans le cas contraire, notre tactique est mise en échec).
-Nous avons donc au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant les points suivants.
+Reprenons les notations de la section \ref{algos-used-select} de nouveau en supposant $\consprod \in \NNssquare$ avec $k \in \NN_{\geq 2}$\,, et plaçons-nous dans la situation où l'algorithme \ref{algo-select} a réussi sa sélection (dans le cas contraire, notre tactique est mise en échec).
+Nous avons donc au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant les points suivants avec $\setgeo{C} = \emptyset$ éventuellement.
 %
 \begin{itemize}
 	\item $\forall p \in \PP - \setgeo{C}$\,, $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$\,.
@@ -15,25 +15,36 @@ Nous avons donc au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ 
 Ceci permet de \enquote{localiser} comme suit les valeurs de $n$ pouvant vérifier $\consprod \in \NNssquare$\,.
 %
 \begin{enumerate}
-	\item Notons $\setproba{C}$ l'ensemble des entiers $\prod_{p \in \setgeo{C}} p^{(\epsilon_p)}$ avec $(\epsilon_p)_{p \in \setgeo{C}} \subseteq \setgene{0, 1}$\,.
+	\item Si $\setgeo{C} = \emptyset$\,, on pose $\setproba{C} = \setgene{1}$\,. 
+	
+	\noindent
+	Sinon, $\setproba{C}$ désigne l'ensemble des entiers $\prod_{p \in \setgeo{C}} p^{(\epsilon_p)}$ avec $(\epsilon_p)_{p \in \setgeo{C}} \subseteq \setgene{0, 1}$\,.
 
 
 	\item Il existe $c \in \setproba{C}$ tel que $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, M, N) \in \NNsf \times ( \NNs )^2$\,.
 	
-	\explainthis{Comme nous n'avons aucune idée de la suite $(\epsilon_p)_{p \in \setgeo{C}}$ à choisir, il faudra les tester toutes.}
+	\explainthis{Comme nous n'avons aucune idée de l'élément de $\setproba{C}$ à choisir, il faudra les tester tous.}
 
 
 	\item $c ( N^2 - M^2 ) \in \ZintervalC{1}{k-1}$ donne $N^2 - M^2 \in \ZintervalC{1}{\quot{k-1}{c}}$\,.
 
 
-	\item L'algorithme \ref{algo-square-ko} permet de construire l'ensemble fini $\setproba*{D}{c}$\,, éventuellement vide, des couples $(M, N)$ tels que $N^2 - M^2 \in \ZintervalC{1}{\quot{k-1}{c}}$\,,
-	à partir duquel nous construisons 
-	$\setproba*{F}{c} = \setgene{(c M^2, c N^2) \, | \, (M, N) \in \setproba*{D}{c}}$\,.
+	\item Pour chaque $c \in \setproba{C}$\,, l'algorithme \ref{algo-square-ko} permet de construire l'ensemble fini $\setproba*{D}{c}$\,, éventuellement vide, des couples $(M, N)$ tels que $N^2 - M^2 \in \ZintervalC{1}{\quot{k-1}{c}}$\,.
 	
-	\explainthis{Nous pouvons affirmer que $\consprod$ contient au moins un couple de facteurs $(f, f^\prime)$ appartenant à $\cup_{c \in \setproba{C}} \setproba*{F}{c}$\,, et vérifiant $f < f^\prime$\,.}
+	\noindent
+	Nous construisons alors
+	$\setproba*{F}{c} = \setgene{ (c M^2, c N^2) \,\, | \,\, (M, N) \in \setproba*{D}{c} }$\,.
+	
+	\explainthis{Nous pouvons affirmer que $\consprod$ contient au moins un couple de facteurs $(n + i, n + i^\prime)$ appartenant à $\cup_{c \in \setproba{C}} \setproba*{F}{c}$ et vérifiant $n + i < n + i^\prime$\,.}
 
 
-	\item XXX
+	\item Si $f = n + i$ et $f^\prime = n + i^\prime$ sont deux facteurs de $\consprod$\,, nous localisons $n$ comme suit.
+	%
+	\begin{itemize}
+		\item XXX
+
+		\item XXX
+	\end{itemize}
 
 
 	\item XXX
@@ -63,7 +74,7 @@ Ceci permet de \enquote{localiser} comme suit les valeurs de $n$ pouvant vérifi
 \medskip
 %\newpage
 
-Tout ce qui précède nous amène à l'algorithme suivant.
+Tout ce qui précède nous amène à l'algorithme brutal, mais à l'action localisée, suivant.
 
 {\small
 \begin{algo}[frame] \label{algo-kill}

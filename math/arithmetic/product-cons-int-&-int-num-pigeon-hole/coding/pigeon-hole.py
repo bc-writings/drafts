@@ -49,9 +49,9 @@ def find_pigeon_killers(nbfactors_min, nbfactors_max):
     ):
         print(nbfactors)
 
-        candidates = pigeonhole_candidates(nbfactors)
+        success, candidates = pigeonhole_candidates(nbfactors)
 
-        if len(candidates) == 0:
+        if not success:
             print(f"{TAB_1}<-- THE PIGEON IS DEAD!")
             exit()
 
@@ -60,7 +60,7 @@ def find_pigeon_killers(nbfactors_min, nbfactors_max):
 
         factors = defaultdict(set)
 
-        for coef in coefsquare(candidates + [1]):
+        for coef in sf_coef(candidates + [1]):
             for df in range(1, (nbfactors - 1) // coef + 1 ):
                 sols = distsquares(diff_squares = df)
 
@@ -145,11 +145,13 @@ def pigeonhole_candidates(nbfactors):
     maxindice    = nbfactors - 1
     placeleft    = nbfactors
     primeskept   = []
+    success      = False
+
+    if placeleft > 2**nbprimesleft:
+        success    = True
+        primeskept = primes[:]
 
     while(primes and placeleft > 0):
-        if placeleft > 2**nbprimesleft:
-            primeskept = primes[:]
-
         p             = primes.pop()
         occumax       = 1 + maxindice // p
         nbprimesleft -= 1
@@ -157,16 +159,20 @@ def pigeonhole_candidates(nbfactors):
         placeleft -= occumax
         placeleft = max(0, placeleft)
 
-    return primeskept
+        if placeleft > 2**nbprimesleft:
+            primeskept = primes[:]
+            success    = True
+
+    return (success, primeskept)
 
 
-def coefsquare(candidates):
+def sf_coef(candidates):
     if candidates:
         a = candidates.pop()
 
         yield a
 
-        for b in coefsquare(candidates):
+        for b in sf_coef(candidates):
             if a != 1:
                 yield b
 
@@ -192,17 +198,27 @@ if __name__ == '__main__':
 
     results_card  = defaultdict(int)
     results_which = defaultdict(list)
+    failures      = list()
 
-    for n in range(2, 101):
-        nb_candidates = len(pigeonhole_candidates(n))
+    nmax = 10**5
 
-        print(f"{n=} : {pigeonhole_candidates(n):}")
+    for n in range(2, nmax):
+        success, candidates = pigeonhole_candidates(n)
+
+        if not success:
+            failures.append(n)
+
+        nb_candidates = len(candidates)
+
+        # print(f"{n=} : {pigeonhole_candidates(n):}")
+        print(f"{n=}")
 
         results_card[nb_candidates] += 1
         results_which[nb_candidates].append(n)
 
     # pprint(results_card)
     # pprint(results_which)
+    print(len(failures) / (nmax - 1) * 100)
 
 
     # for candidates in [

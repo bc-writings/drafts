@@ -3,8 +3,9 @@
 \leavevmode
 \smallskip
 
-La première phase consiste à tenter de trouver le moins possible de nombres premiers $p$ tels que tous les facteurs $(n+i)$ de $\consprod$ soient de valuation $p$-adique non nécessairement paire. 
-Comme $p \in \PP_{\geq k}$ divise au maximum un facteur $(n+i)$ de $\consprod$\,, nous avons $\forall i \in \ZintervalC{0}{k-1}$\,, $\padicval{n+i} \in 2\,\NN$ dès que $p \in \PP_{\geq k}$ puisque  $\consprod \in \NNssquare$ par hypothèse. Ceci permet de cibler notre analyse sur les nombres premiers dans $\PP_{< k}$\,. 
+La première étape consiste à tenter de trouver le moins possible de nombres premiers $p$ tels que nous ne connaissions pas la parité des valuations $p$-adiques des facteurs $(n+i)$ de $\consprod$\,. 
+Or, pour $p \in \PP_{\geq k}$\,, nous savons que $p$ divise au maximum un facteur $(n+i)$ de $\consprod$\,, donc $\forall i \in \ZintervalC{0}{k-1}$\,, $\padicval{n+i} \in 2\,\NN$ dès que $p \in \PP_{\geq k}$\,, en se souvenant que $\consprod \in \NNssquare$ par hypothèse.
+Ceci permet de cibler notre analyse sur les nombres premiers dans $\PP_{< k}$\,. 
 
 
 % ------------------ %
@@ -12,7 +13,7 @@ Comme $p \in \PP_{\geq k}$ divise au maximum un facteur $(n+i)$ de $\consprod$\,
 
 \medskip
 
-Voici un premier exemple de sélection avec $\consprod<3>$ en notant que $\PP_{< 3} = \setgene{2}$\,. Nous expliquons juste après comment lire le tableau ci-dessous.
+Voici un premier exemple de sélection avec $k = 3$, c'est-à-dire pour $\consprod<3>$ et $\PP_{< 3} = \setgene{2}$\,. Nous expliquons juste après comment lire le tableau ci-dessous.
 
 
 % \vspace{-1ex}
@@ -32,40 +33,43 @@ Voici un premier exemple de sélection avec $\consprod<3>$ en notant que $\PP_{<
 		% STOP!
 		column{Z} = {red!15},
     }
-      $p_m\,$
-    	&   & 2
+      $p_m$
+    	&     & 2
     \\
       Occu. max.
-		&   & 2
+		&     & 2
     \\
-      Occu. libres.
-		& 3 & 1
+      Occu. libre
+		& 3   & 1
     \\
-      Alternatives.
-		& 2^1
-		& 0
+      Objectif
+		& 2^1 & 2^0
     \end{tblr}
 \end{center}
 
 Le tableau se lit comme suit.
 %
 \begin{itemize}
-	\item $p_m$ désigne le plus grand nombre premier disponible non encore éliminé.
+	\item $p_m$ désigne le plus grand nombre premier disponible non encore éliminé. Dans la première colonne, l'absence de valeurs pour cette ligne, et aussi la suivante, sert de phase d'initialisation où l'on considère tous les nombres premiers dans $\PP_{\geq k}$\,.
 
 	\item La deuxième ligne indique le nombre maximum de facteurs $(n+i)$ de $\consprod$ pouvant être divisibles par $p_m$\,.
 
-	\item La troisième ligne donne le nombre minimum de facteurs de valuations $p$-adiques nécessairement paires dès que $p \in \PP_{\geq p_m}$\,.
+	\item La troisième ligne donne le nombre minimum de facteurs de valuations $p$-adiques nécessairement paires 
+	dès que $p \in \PP_{\geq k}$ pour la première colonne, puis 
+	dès que $p \in \PP_{\geq p_m}$ pour les colonnes suivantes.
 
-	\item La dernière ligne donne le nombre d'alternatives possibles relativement aux parités des valuations $p$-adiques pour les nombres premiers $p$ dans $\PP_{< p_m}$\,, les autres valuations $p$-adiques restantes étant paires.
+	\item La dernière ligne donne l'objectif à dépasser, celui-ci étant égal 
+	à $2^{\card( \PP_{< k} )}$ pour la première colonne, puis
+	à $2^{\card( \PP_{< p_m} )}$ pour les colonnes suivantes.
 
-	\item La colonne sur fond vert indique le \enquote{meilleur bon} candidat, c'est-à-dire celui avec le moins d'alternatives.
+	\item La colonne sur fond vert indique le \enquote{meilleur bon} candidat, c'est-à-dire celui avec l'objectif le plus petit possible, c'est-à-dire avec un ensemble $\PP_{< k}$ ou $\PP_{< p_m} $ le plus petit possible.
 	Nous utiliserons du bleu pour de bons candidats non gardés.
 
 	\item La colonne sur fond rouge indique que l'on ne peut plus avancer (évident ici mais nous verrons que cela peut arriver plus tôt dans l'analyse).
 \end{itemize}
 
 
-Nous voyons ici que $2$ est un bon candidat pour rejeter $\consprod<3> \in \NNssquare$ puisqu'au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ de $\consprod<3>$ vérifient la même alternative, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser}\,, via le fait \ref{diff-square-ko}, des entiers naturels $n$ afin de tester presque brutalement si $\consprod<3> \in \NNssquare$ est vrai, ou non.
+Nous voyons ici que $2$\,, non éliminé dans la première colonne, est un bon candidat pour rejeter $\consprod<3> \in \NNssquare$ puisqu'au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ de $\consprod<3>$ vérifient la même alternative, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser}\,, via le fait \ref{diff-square-ko}, des entiers naturels $n$ afin de tester presque brutalement si $\consprod<3> \in \NNssquare$ est vrai, ou non.
 
 
 % ------------------ %
@@ -90,19 +94,19 @@ Voici un autre exemple montrant que la sélection peut échouer : il suffit de c
 		% STOP!
 		column{Z} = {red!15},
     }
-      $p_m\,$
+      $p_m$
     	&   & 3 & 2
     \\
       Occu. max.
 		&   & 2 & 2
     \\
-      Occu. libres.
+      Occu. libre
 		& 4 & 2 & 0
     \\
-      Alternatives.
+      Objectif
 		& 2^2
 		& 2^1
-		& 0
+		& 2^0
     \end{tblr}
 \end{center}
 
@@ -134,16 +138,16 @@ Afin de clarifier la démarche que nous allons suivre, donnons un dernier exempl
 		% STOP!
 		column{Z} = {red!15},
     }
-      $p_m\,$
+      $p_m$
     	&    & 31 & 29 & 23 & 19 & 17 & 13 & 11 & 7  & 5  & 3
     \\
       Occu. max.
 		&    & 2  & 2  & 2  & 2  & 3  & 3  & 4  & 6  & 8  & 13
     \\
-      Occu. libres.
+      Occu. libre
 		& 37 & 35 & 33 & 31 & 29 & 26 & 23 & 19 & 13 & 5  & 0
     \\
-      Alternatives.
+      Objectif
 		& 2^{11}
 		& 2^{10}
 		& 2^9
@@ -154,7 +158,7 @@ Afin de clarifier la démarche que nous allons suivre, donnons un dernier exempl
 		& 2^4
 		& 2^3
 		& 2^2
-		& 2
+		& 2^1
     \end{tblr}
 \end{center}
 
@@ -167,20 +171,27 @@ Afin de clarifier la démarche que nous allons suivre, donnons un dernier exempl
 Nous décidons donc de procéder grosso modo comme suit.
 
 \begin{enumerate}
-	\item Nous supposons par l'absurde que $\consprod \in \NNssquare$ avec $k \in \NNs$.
+	\item Nous supposons par l'absurde que $\consprod \in \NNssquare$ pour $k \in \NN_{\geq 2}\,$.
 
 
 	\item Nous fabriquons $\setgeo{P} = \PP_{<k}$\,.
 
 
-	\item Nous posons $\setgeo{C} = \emptyset$\,.
+	\item Nous posons $\setgeo{C} = \emptyset$ et $succes = \bot$\,.
 	
-	\explainthis{Cet ensemble sera celui des nombres premiers \enquote{candidats} utilisés dans notre second algorithme de tests brutaux. Nous cherchons à obtenir l'ensemble $\setgeo{C}$ non vide le plus petit possible.}
+	\explainthis{Cet ensemble sera celui des nombres premiers \enquote{candidats} utilisés dans notre algorithme de tests brutaux (ces nombres premiers serviront à calculer des coefficients sans facteur carré). Nous cherchons à obtenir l'ensemble $\setgeo{C}$, éventuellement vide, le plus petit possible. De plus, $succes = \top$ uniquement en cas de réussite.}
 
 
-	\item Nous posons aussi $occu_{libre} = k$\,.
+	\item Nous posons $occu_{libre} = k$\,.
 	
-	\explainthis{Cette variable va nous servir à compter les facteurs $(n+i)$ de $\consprod$ ayant un \enquote{maximum} de valuations $p$-adiques pairs.}
+	\explainthis{Cette variable va nous servir à compter les facteurs $(n+i)$ de $\consprod$ ayant un \enquote{maximum} de valuations $p$-adiques forcément paires à un moment donné.}
+
+
+	\item Si $occu_{libre} > 2^{\card( \setgeo{P} )}$\,, nous posons $succes = \top$ et $\setgeo{C} = \setgeo{P}$\,.
+	
+	\explainthis{Nous avons $2^{\card ( \setgeo{P} )}$ alternatives \alt{${}_j$} possibles relativement aux parités possible des valuations $p$-adiques pour les nombres premiers $p$ dans $\setgeo{P} = \PP_{< k}$\,, les valuations $p$-adiques restantes étant paires. %
+	De l'autre côté, nous avons au moins $occu_{libre}$ facteurs $(n+i)$ de $\consprod$ tels que $\padicval{n+i} \in 2\,\NN$ dès que $p \in \PP_{\geq k}$\,. %
+	Finalement, si $occu_{libre} > 2^{\card ( \setgeo{P} )}$\,, nous avons au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifiant la même alternative \alt{${}_j$}\,, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser} des $\consprod$ à tester brutalement.}
 
 
 	\item \label{algo-select-restart}
@@ -189,14 +200,7 @@ Nous décidons donc de procéder grosso modo comme suit.
 	\noindent
 	Si $\setgeo{P} = \emptyset$\,, ou $occu_{libre} = 0$\,, nous stoppons tout !
 
-	\explainthis{Si $\setgeo{C} = \emptyset$\,, nous avons perdu. Dans le cas contraire, nous pourrons continuer avec l'algorithme qui sera présenté dans la section \ref{algo-kill} suivante.}
-
-
-	\item Si $occu_{libre} > 2^{\card( \setgeo{P} )}$\,, nous posons $\setgeo{C} = \setgeo{P}$\,.
-	
-	\explainthis{Nous avons $2^{\card ( \setgeo{P} )}$ alternatives \alt{${}_j$} possibles relativement aux parités possible des valuations $p$-adiques pour les nombres premiers $p$ dans $\setgeo{P} = \PP_{< p_m}$\,, les valuations $p$-adiques restantes étant paires. %
-	De l'autre côté, nous avons au moins $occu_{libre}$ facteurs $(n+i)$ de $\consprod$ tels que $\padicval{n+i} \in 2\,\NN$ dès que $p \in \PP_{\geq p_m}$\,. %
-	Finalement, si $occu_{libre} > 2^{\card ( \setgeo{P} )}$\,, nous avons au moins deux facteurs différents $(n+i)$ et $(n+i^\prime)$ vérifiant la même alternative \alt{${}_j$}\,, d'où $n+i = c M^2$ et $n+i^\prime = c N^2$ avec $(c, N, M) \in \NNsf \times ( \NNs )^2$\,, une information qui sera utilisée par notre second algorithme pour \enquote{localiser} des $\consprod$ à tester brutalement.}
+	\explainthis{Si $succes = \bot$\,, nous avons perdu. Dans le cas contraire, nous pourrons continuer avec l'algorithme qui sera présenté dans la section \ref{algo-kill} suivante.}
 
 
 	\item Ensuite, nous considérons $p_m = \max ( \setgeo{P})$\,, puis retirons $p_m$ de $\setgeo{P}$\,, d'où $\setgeo{P} = \PP_{< p_m}$\,.
@@ -209,9 +213,14 @@ Nous décidons donc de procéder grosso modo comme suit.
 	\explainthis{Le calcul de $occu_{max}$ est simple puisqu'il suffit de considérer le cas où $p_m$ divise $n$\,, nous avons alors $occu_{max} = 1 + \quot{k-1}{p_m}$ car $\consprod = n (n + 1) \cdots (n + k - 1)$\,.}
 
 
-	\item $occu_{libre}$ devient $occu_{libre} - occu_{max}$\,.
+	\item $occu_{libre}$ devient $\max ( 0, occu_{libre} - occu_{max} )$\,.
 	
 	\explainthis{Maintenant, nous savons qu'au moins $occu_{libre}$ facteurs $(n+i)$ de $\consprod$ vérifient $\padicval{n+i} \in 2\,\NN$ dès que $p \in \PP_{\geq p_m}$\,.}
+
+
+	\item Si $occu_{libre} > 2^{\card( \setgeo{P} )}$\,, nous posons $succes = \top$ et $\setgeo{C} = \setgeo{P}$\,.
+	
+	\explainthis{Voir les explications juste avant le point \ref{algo-select-restart} en remplaçant $k$ par $p_m$\,.}
 
 
 	\item Nous reprenons les étapes à partir du point \ref{algo-select-restart}.
@@ -221,8 +230,8 @@ Nous décidons donc de procéder grosso modo comme suit.
 % ------------------ %
 
 
-\medskip
-%\newpage
+%\medskip
+\newpage
 
 Tout ce qui précède nous amène à l'algorithme suivant.
 
@@ -231,7 +240,23 @@ Tout ce qui précède nous amène à l'algorithme suivant.
 %	\caption{Classique et efficace} 
 	%%%
     \Data{$k \in \NN_{\geq 2}$\,, le nombre de facteurs considérés.}
-    \Result{$\setgeo{C}$ un ensemble, éventuellement vide, de nombres premiers \enquote{candidats} tel que si $\setgeo{C} \neq \emptyset$ alors il existe au moins deux facteurs $(n+i)$ et $(n+i^\prime)$ de $\consprod$ vérifiant $\forall p \in \PP - \setgeo{C}$\,, $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$\,, ainsi que $\padicval{n+i}$ et $\padicval{n+i^\prime}$ ont la même parité dès que $p \in \setgeo{C}$\,.}
+    \Result{
+    	$( succes, \setgeo{C} )$
+    	\\
+    	\phantom{\textbf{Résultat :\kern8pt}}%
+		$succes = \top$ en cas de succès, et $succes = \bot$ sinon.
+    	\\
+    	\phantom{\textbf{Résultat :\kern8pt}}%
+		Si $succes = \top$\,, alors l'ensemble $\setgeo{C} \subset \PP$ est tel que deux facteurs $(n+i)$
+    	\\
+    	\phantom{\textbf{Résultat :\kern8pt}}%
+		et $(n+i^\prime)$ de $\consprod$ vérifient $( \padicval{n+i}, \padicval{n+i^\prime} ) \in ( 2 \NN )^2$ dès que $p \in \PP - \setgeo{C}$\,,
+    	\\
+    	\phantom{\textbf{Résultat :\kern8pt}}%
+		avec aussi $\padicval{n+i}$ et $\padicval{n+i^\prime}$ de même parité dès que $p \in \setgeo{C}$ (il est pos-
+    	\\
+    	\phantom{\textbf{Résultat :\kern8pt}}%
+		sible d'avoir $\setgeo{C} \neq \emptyset$\,).}
 	\BlankLine
     \Actions{
 		\BlankLine
@@ -239,23 +264,36 @@ Tout ce qui précède nous amène à l'algorithme suivant.
 		\\
 		$\setgeo{C} \Store \emptyset$
 		\\
-		$occu_{libre} \Store k$
+		$succes \Store \bot$
 		\\
+		$occu_{libre} \Store k$
+		\BlankLine
+        \If{$occu_{libre} > 2^{\card( \setgeo{P} )}$}{
+			\BlankLine
+			$\setgeo{C} \Store \setgeo{P}$
+			\\
+			$succes \Store \top$
+		}
 		\BlankLine
         \While{$\setgeo{P} \neq \emptyset$ \And $occu_{libre} \neq 0$}{
-			\If{$occu_{libre} > 2^{\card( \setgeo{P} )}$}{
-				$\setgeo{C} \Store \setgeo{P}$
-			}
+			\BlankLine
 			$p_m \Store \max( \setgeo{P} )$
 			\\
 			$\setgeo{P} \Store \setgeo{P} - \setgene{p_m}$
-			\\
+			\BlankLine
 			$occu_{max} \Store 1 + \quot{k-1}{p_m}$
 			\\
 			$occu_{libre} \Store \max( 0 , occu_{libre} - occu_{max} )$
+			\BlankLine
+			\If{$occu_{libre} > 2^{\card( \setgeo{P} )}$}{
+				\BlankLine
+				$\setgeo{C} \Store \setgeo{P}$
+				\\
+				$succes \Store \top$
+			}
 		}
 		\BlankLine
-		\Return{$\setgeo{C}$}
+		\Return{$( succes, \setgeo{C} )$}
 	}
 \end{algo}
 }
@@ -272,12 +310,18 @@ Une fois l'algorithme \ref{algo-select} traduit en \python, nous obtenons instan
 	\item \textbf{Mauvais candidats.}
 	
 	\noindent
-	Il y en a 4 qui sont $2$\,, $4$\,, $6$ et $8$\,.
+	Il y a juste $4$\,, $6$ et $8$\,.
+	
+	\item \textbf{Bon candidat sans nombre premier à gérer.}
+	
+	\noindent
+	Il y a juste $2$\,.
+	
 	
 	\item \textbf{Bons candidats avec un seul nombre premier à gérer.}
 	
 	\noindent
-	Il y en a 2 qui sont $3$ et $5$\,.
+	Il y a juste $3$ et $5$\,.
 	
 	\item \textbf{Bons candidats avec deux nombres premiers à gérer.}
 	
@@ -292,8 +336,8 @@ Une fois l'algorithme \ref{algo-select} traduit en \python, nous obtenons instan
 
 
 Ce qui précède est encourageant, car peu de cas sont rejetés.
-De plus, les mauvais candidats sont faciles à gérer par un humain, ou un programme : voir la section \ref{algo-KO}.
-Quant aux candidats acceptés, les nombres premiers à gérer sont forcément dans $\setgene{2, 3, 5}$\,, et le nombre maximum d'alternatives est $2^3 = 8$\,, tout ceci n'étant pas informatiquement bloquant (nous verrons dans la section \ref{algos-used-kill} qu'un autre paramètre peut bloquer la recherche).
+De plus, les mauvais candidats sont faciles à gérer via une autre approche algorithmique : voir la section \ref{algo-KO}.
+Quant aux candidats acceptés, les nombres premiers à gérer sont forcément dans $\setgene{2, 3, 5}$\,, et le nombre maximum d'alternatives est $2^3 = 8$\,, tout ceci n'étant pas bloquant du pointe de vue informatique (nous verrons dans la section \ref{algos-used-kill} qu'un autre paramètre peut bloquer la recherche).
  
 
 % ------------------ %
@@ -301,5 +345,6 @@ Quant aux candidats acceptés, les nombres premiers à gérer sont forcément da
 
 \begin{remark}
 	Ne rêvons pas trop, car le programme donne aussi que $824$ est le premier naturel, après $8$\,, non sélectionné par notre algorithme.
+	De plus, sur $\ZintervalC{2}{10^5}$\,, nous avons environ \qty{99.17}{\percent} de mauvais candidats.
 \end{remark}
 
