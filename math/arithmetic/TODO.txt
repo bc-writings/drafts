@@ -2,5 +2,5 @@
 product-cons-int-&-int-square-...
 =================================
 
-    + Simplifier les méthodes à la principe de tiroirs
-    + Optimiser le code des sf-tabs
+    + Simplifier les méthodes via le principe des tiroirs
+    + Optimiser le code des sf-tabs si possible
