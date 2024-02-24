@@ -9,13 +9,19 @@
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage[french]{babel}
+\frenchsetup{StandardItemLabels=true}
+
+\usepackage{tnsmath}
+
 \usepackage[
     type={CC},
     modifier={by-nc-sa},
 	version={4.0},
 ]{doclicense}
 
-\usepackage{tnsmath}
+
+\newcommand\contentdir{\jobname}
+
 
 \DeclareMathOperator{\taille}{\tau}
 
@@ -32,9 +38,9 @@
 
 \begin{document}
 
-\title{BROUILLON - Courbes polynomiales similaires \\ MANQUE DES DESSINS !}
+\title{BROUILLON - Courbes polynomiales similaires}
 \author{Christophe BAL}
-\date{2 Octobre 2020 -- 5 Novembre 2020}
+\date{2 Oct. 2020 -- 24 Fév. 2024}
 \maketitle
 
 
@@ -62,31 +68,32 @@
 \newpage
 \section{Où allons-nous ?}
 
-\input{similar-poly-curve/question}
+\input{\contentdir/what}
 
 
 % ------------- %
 
 
+%\newpage
 \section{Cas des polynômes de degré 3} 
 
-\subsection{Une preuve visuelle ou presque}
+\input{\contentdir/poly-deg-3/visual-proof}
+\input{\contentdir/poly-deg-3/diff-n-integral}
 
-\input{similar-poly-curve/poly-deg-3}
 
-
-\subsection{Une preuve via les calculs différentiel et intégral}
-
-\input{similar-poly-curve/poly-deg-3-OLD_PROOF-TO-KEEP}
+%% ------------- %
+%
+%
+%\newpage
+%\section{Cas des polynômes de degré au moins 4} 
+%
+%\input{\contentdir/poly-deg-more-than-3}
 
 
 % ------------- %
 
 
-\section{Cas des polynômes de degré au moins 4} 
-
-\input{similar-poly-curve/poly-deg-more-than-3}
-
+\newpage
 \bigskip
 
 \hrule

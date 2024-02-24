@@ -1,0 +1,104 @@
+\subsection{Une approche via les calculs différentiel et intégral}
+
+\leavevmode
+\smallskip
+
+
+% ------------- %
+
+
+Soit $\setgeo*{C}{g}$ la courbe de la fonction
+$\funcdef[h]{g}{x}{a \, x^3 + b \, x^2 + c \, x + d}{}{}$
+où $a\neq 0$\,.
+Nous allons démontrer que $\setgeo*{C}{g}$ s'obtient à partir de l'une des courbes suivantes en utilisant une translation, une dilatation verticale et/ou une dilatation horizontale.
+
+\begin{enumerate}
+	\item $\Lambda_1$ représente $\funcdef[h]{f_1}{x}{x^3}{}{}$\,.
+
+	\item $\Lambda_2$ représente $\funcdef[h]{f_2}{x}{x^3 - 3 x}{}{}$ avec $\der{f_2}{x}{1}(x) = 3(x^2 - 1)$\,.
+
+	\item $\Lambda_3$ représente $\funcdef[h]{f_3}{x}{x^3 + 3 x}{}{}$ avec $\der{f_3}{x}{1}(x) = 3(x^2 + 1)$\,.
+\end{enumerate}
+
+
+\begin{proof}
+	Distinguons trois cas en notant que l'on peut supposer que $a = 1$\,.
+	
+	\begin{enumerate}
+		\item \textbf{$\der{g}{x}{1}(x)$ a une unique racine réelle.}
+
+		      \smallskip
+
+		      \noindent
+		      Nous avons $\alpha \in \RR$ tel que $\der{g}{x}{1}(x) = 3(x - \alpha)^2$\,, et donc $g(x) = (x - \alpha)^3 + k$\,.
+		      Il est immédiat que l'on peut passer de $\Lambda_1$ à $\setgeo*{C}{g}$ à l'aide des transformations autorisées.
+
+
+		\medskip
+		
+		\item \textbf{$\der{g}{x}{1}(x)$ a deux racines réelles.}
+
+		      \smallskip
+
+		      \noindent
+		      Nous avons $\alpha \neq \beta$ deux réels tels que $\der{g}{x}{1}(x) = 3 (x - \alpha) (x - \beta)$\,.
+		      Les faits suivants montrent que l'on peut passer de $\setgeo*{C}{g}$ à $\Lambda_2$\,, \emph{i.e.} de $\Lambda_2$ à $\setgeo*{C}{g}$\,, à l'aide des transformations autorisées.
+		      \begin{itemize}
+		      		\item En posant $\delta = \frac{\alpha + \beta}{2}$\,,
+						  $\der{g}{x}{1}(x + \delta) = 3 \left( x + \frac{\beta - \alpha}{2} \right) \left( x + \frac{\alpha - \beta}{2} \right)$\,.
+				          Ceci nous fournit alors
+				          $\der{g}{x}{1}(x + \delta) = 3 ( x - \lambda) (x + \lambda)$
+				          avec $\lambda \neq 0$\,,
+				          puis
+				          $\der{g}{x}{1}( \lambda \, x + \delta) = \lambda^2 \der{f_2}{x}{1}(x)$\,.
+
+		      		\item En résumé,
+				          $\der{f_2}{x}{1}(x) = \frac{1}{\lambda^2} \der{g}{x}{1}(\lambda \, x + \delta)$
+				          puis par intégration
+				          $f_2(x) = \frac{1}{\lambda^3} g(\lambda \, x + \delta) + k$\,.
+		      \end{itemize}
+
+
+		
+		\medskip
+		
+		\item \textbf{$\der{g}{x}{1}(x)$ n'a pas de racine réelle.}
+
+		      \smallskip
+
+		      \noindent
+		      La forme canonique semi-développée de $\der{g}{x}{1}(x)$ est
+		      $\der{g}{x}{1}(x) = 3(x - p)^2 + m$ où les réels $p$ et $m$ sont tels que $m > 0$\,.
+		      Les faits suivants montrent que l'on peut passer de $\setgeo*{C}{g}$ à $\Lambda_3$\,, \emph{i.e.} de $\Lambda_3$ à $\setgeo*{C}{g}$\,, à l'aide des transformations autorisées.
+		      \begin{itemize}
+		      		\item $\der{g}{x}{1}(x + p) = 3 x^2 + m$\,.
+				          
+
+		      		\item Notant $\mu = \sqrt{\frac{m}{3}}$\,, on a ensuite
+				          $\der{g}{x}{1}(\mu x + p) = m x^2 + m$\,,
+				          soit
+				          $\der{g}{x}{1}(\mu x + p) = \frac{m}{3} \der{f_3}{x}{1}(x)$\,.
+
+		      		\item En résumé,
+				          $\der{f_3}{x}{1}(x) = \frac{3}{m} \der{g}{x}{1}(\mu x + p)$\,,
+				          puis par intégration
+				          $f_3(x) = \frac{3}{\mu m} g(\mu x + p) + k$\,.
+		      \end{itemize}
+	\end{enumerate}
+\end{proof}
+
+
+% ------------- %
+
+
+\medskip
+
+Comme pour les courbes $\Gamma_k$ de la section \ref{visual-proof}, il n'est pas possible de passer de $\Lambda_i$  à $\Lambda_j$ à l'aide des transformations autorisées dès que $i \neq j$\,.
+
+
+% ------------- %
+
+
+\begin{remark}
+	La preuve précédente reste constructive, mais obtenir les bons coefficients est plus complexe qu'avec la première preuve : nous devons passer via les théorèmes classiques des polynômes du 2\ieme\ degré, et aussi calculer une constante d'intégration.
+\end{remark}

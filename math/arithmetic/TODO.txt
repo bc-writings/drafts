@@ -1,0 +1,6 @@
+=================================
+product-cons-int-&-int-square-...
+=================================
+
+    + Simplifier les méthodes à la principe de tiroirs
+    + Optimiser le code des sf-tabs

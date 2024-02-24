@@ -1,0 +1,147 @@
+\subsection{Une approche visuelle, ou presque} \label{visual-proof}
+
+\leavevmode
+\smallskip
+
+
+% ------------- %
+
+
+Soit $\setgeo*{C}{g}$ la courbe de la fonction
+$\funcdef[h]{g}{x}{a \, x^3 + b \, x^2 + c \, x + d}{}{}$
+où $a\neq 0$\,.
+Nous allons démontrer que $\setgeo*{C}{g}$ s'obtient à partir de l'une des courbes suivantes en utilisant une translation, une dilatation verticale et/ou une dilatation horizontale.
+%
+\begin{enumerate}
+	\item $\Gamma_1$ représente $\funcdef[h]{f_1}{x}{x^3}{}{}$\,.
+
+	\item $\Gamma_2$ représente $\funcdef[h]{f_2}{x}{x^3 - x}{}{}$ de sorte que \txtfuncdef{f_2}{x}{x(x - 1)(x + 1)}{}{}\,.
+
+	\item $\Gamma_3$ représente $\funcdef[h]{f_3}{x}{x^3 + x}{}{}$ de sorte que \txtfuncdef{f_3}{x}{x(x - \ii)(x + \ii)}{}{} où $\ii \in \CC$\,.
+\end{enumerate}
+
+
+% ------------- %
+
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+		\item \textbf{On peut supposer que $(a ; b ; d) = (1 ; 0 ; 0)$\,.}
+		%
+		\begin{itemize}
+			\item Il est immédiat que l'on peut supposer que $a = 1$\,. 
+				          
+			Dans la suite, on supposera donc que \txtfuncdef{g}{x}{x^3 + b \, x^2 + c \, x + d}{}{}\,.
+
+			\item En considérant $\setgeo*{C}{g}$\,, on observe un centre de symétrie qui semble être l'unique point d'inflexion de $\setgeo*{C}{g}$ dont l'abscisse $m$ se calcule comme suit.
+					      
+			\smallskip
+			\noindent\kern-5pt
+			\begin{stepcalc}[style = sar, ope = \iff]
+				\der{g}{x}{2}(m) = 0
+			\explnext{}
+				6m + 2b = 0
+			\explnext{}
+				m = - \frac{b}{3}
+			\end{stepcalc}
+					      
+			\smallskip
+			\noindent
+			Il devient naturel de faire le changement de variable $x = m + t$\,.
+			
+			\smallskip
+			\noindent\kern-5pt
+			\begin{stepcalc}[style = sar]
+				g(x)
+				\explnext{}
+				g(m + t)
+				\explnext{}
+				(m + t)^3 + b \, (m + t)^2 + c \, (m + t) + d
+				\explnext{}
+				  t^3 + 3 m \, t^2 + 3 m^2 \, t    + m^3
+			          + b \, t^2   + 2 b \, m \, t + b \, m^2
+				                   + c \, t        + c \, m + d
+			\end{stepcalc} 
+			
+			\smallskip
+			\noindent
+			Le coefficient de $t^3$ reste égal à $1$ et celui de $t^2$ est $3m + b = 0$\,. Ceci montre que l'on peut supposer $(a ; b) = (1 ; 0)$\,.
+			
+			Dans la suite, on supposera donc \txtfuncdef{g}{x}{x^3 + c \, x + d}{}{}.
+		\end{itemize}
+
+
+% ------------- %
+
+
+		\newpage
+		\item On peut clairement supposer que \txtfuncdef{g}{x}{x^3 + c \, x}{}{}\,, puis on conclut comme suit.
+		%
+		\begin{itemize}
+		\item \textbf{Cas 1 : $c = 0$}
+		
+		\smallskip
+		\noindent
+		Nous n'avons rien à faire de plus, car ici $\setgeo*{C}{g} = \Gamma_1$\,.
+
+
+% ------------- %
+
+
+		\item \textbf{Cas 2 : $c = - k^2$ avec $k > 0$}
+		
+		\smallskip
+		\noindent
+		Ici
+		\txtfuncdef{g}{x}{x^3 - k^2 \, x}{}{}\,,
+		soit
+		\txtfuncdef{g}{x}{x(x - k)(x + k)}{}{}\,.
+		
+		\smallskip
+		\noindent
+		Nous avons donc $g(k \, x) = k^3 \, x(x - 1)(x + 1) = k^3 \, f_2(x)$\,,
+		puis
+		$f_2(x) = \frac{1}{k^3} g(k \, x)$\,.
+		
+		\smallskip
+		\noindent
+		On peut passer de $\setgeo*{C}{g}$ à $\Gamma_2$\,, \emph{i.e.} de $\Gamma_2$ à $\setgeo*{C}{g}$\,, à l'aide des transformations autorisées.
+
+
+% ------------- %
+
+
+		\item \textbf{Cas 3 : $c = k^2$ avec $k > 0$}
+		
+		\smallskip
+		\noindent
+		Ici
+		\txtfuncdef{g}{x}{x^3 - (k \, \ii)^2 \, x}{}{}\,,
+		soit
+		\txtfuncdef{g}{x}{x(x - k \, \ii)(x + k \, \ii)}{}{}\,.
+		
+		\smallskip
+		\noindent
+		Nous avons donc $g(k \, x) = k^3 \, x(x - \ii)(x + \ii) = k^3 \, f_3(x)$\,,
+		puis comme dans le cas précédent on peut passer de $\Gamma_3$ à $\setgeo*{C}{g}$ à l'aide des transformations autorisées.
+		\end{itemize}
+	\end{enumerate}
+\end{proof}
+
+
+% ------------- %
+
+
+\begin{remark}
+	On notera que la preuve précédente est constructive : on peut donner les applications à appliquer en fonction des coefficients $a$, $b$, $c$, et $d$ de \txtfuncdef{g}{x}{a \, x^3 + b \, x^2 + c \, x + d}{}{}\,.
+\end{remark}
+
+
+% ------------- %
+
+
+\medskip
+
+Pour $i \neq j$\,, il est évident qu'il n'est pas possible de passer de $\Gamma_i$  à $\Gamma_j$ à l'aide des transformations autorisées \emph{(penser à la conservation géométrique du nombre de tangentes horizontales)}.
+Ceci permet de parler de trois types de courbe pour les polynômes de degré $3$\,, contre un seul pour les fonctions affines, et de même pour les trinômes du 2\ieme{} degré. Joli !
