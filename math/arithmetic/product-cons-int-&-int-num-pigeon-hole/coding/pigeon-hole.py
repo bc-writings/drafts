@@ -202,7 +202,7 @@ if __name__ == '__main__':
 
 
     # find_pigeon_killers(2, 12)
-    find_pigeon_killers(600, 1000)
+    find_pigeon_killers(9, 100)
 
     # from pprint import pprint
     # pprint(LOG)

@@ -11,58 +11,70 @@
   }
   \BlankLine
     \Actions{
-%    \BlankLine
+    \BlankLine
     $( succes, \setgeo{C} ) \Store \text{Résultat de l'algorithme \ref{algo-select} appliqué à $k$}$
     \\
-%    \BlankLine
+    \BlankLine
     \If{$succes = \top$}{
+      \BlankLine
       \uIf {$\setgeo{C} = \emptyset$} {
-%        \BlankLine
+        \BlankLine
         $\setproba{C} \Store \setgene{1}$
       } \Else {
 %        \BlankLine
         $\setproba{C} \Store \setgene{ \prod_{p \in \setgeo{C}} p^{(\epsilon_p)} \,\, | \,\, (\epsilon_p)_{p \in \setgeo{C}} \subseteq \setgene{0, 1} }$
       }
-%      \BlankLine
+      \BlankLine
+      \BlankLine
       $\setproba{F} \Store \emptyset$
-      \\
+      \BlankLine
       \ForEach{$\delta \in \ZintervalC{1}{k-1}$}{
+        \BlankLine
         $\setproba{S} \Store \text{Résultat de l'algorithme \ref{algo-square-ko} appliqué à $\delta$}$
-        \\
+        \BlankLine
         \If{$\setproba{S} \neq \emptyset$}{
+          \BlankLine
           \ForEach{$c \in \setproba{C}$}{
+            \BlankLine
             \If{$\delta \leq \quot{k-1}{c}$}{
+              \BlankLine
               $\setproba{F} \Store \setproba{F} \cup \setgene{ (c m, c n) \,\, | \,\, (m, n) \in \setproba{S} }$ 
             }
           }
         }
       }
-%      \BlankLine
+      \BlankLine
+      \BlankLine
       $\setproba{N} \Store \emptyset$
-      \\
+      \BlankLine
       \ForEach{$(f, f^\prime) \in \setproba{F}$}{
-%        \BlankLine
+        \BlankLine
         $\setproba{N} \Store \setproba{N} \cup \ZintervalC{\max( 1 , f^\prime - k + 1 )}{f + k - 1}$
       }
-%      \BlankLine
+      \BlankLine
+      \BlankLine
       $nb_{perdants} \Store \card \setproba{N}$
-      \\
+      \BlankLine
       \ForEach{$n \in \setproba{N}$}{
+        \BlankLine
         $\setgeo{i} \Store 1 + \quot{n + k}{2} $
-        \\
+        \BlankLine
         \While{$i < k$}{
+          \BlankLine
           \uIf{$n+i \in \PP$}{
+            \BlankLine
             $nb_{perdants} \Store nb_{perdants} - 1$
             \\
             $i \Store k$
           } \Else {
+            \BlankLine
             $i \Store i + 1$
           }
         }
       }
-      \uIf{$nb_{perdants} = 0$}{
-        $succes \Store \top$
-      } \Else {
+      \BlankLine
+      \If{$nb_{perdants} \neq 0$}{
+        \BlankLine
         $succes \Store \bot$
       }
     }
