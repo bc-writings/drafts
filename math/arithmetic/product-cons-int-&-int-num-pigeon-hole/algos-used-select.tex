@@ -259,34 +259,37 @@ Tout ce qui précède nous amène à l'algorithme suivant.
 		sible d'avoir $\setgeo{C} \neq \emptyset$\,).}
 	\BlankLine
     \Actions{
-		\BlankLine
-		$\setgeo{P} \Store \PP \cap \ZintervalC{0}{k-1}$
+%		\BlankLine
+		$succes \Store \bot$
 		\\
 		$\setgeo{C} \Store \emptyset$
 		\\
-		$succes \Store \bot$
+		$\setgeo{P} \Store \PP \cap \ZintervalC{0}{k-1}$
 		\\
 		$occu_{libre} \Store k$
-		\BlankLine
+%		\BlankLine
+        \\
         \If{$occu_{libre} > 2^{\card( \setgeo{P} )}$}{
-			\BlankLine
+%			\BlankLine
 			$\setgeo{C} \Store \setgeo{P}$
 			\\
 			$succes \Store \top$
 		}
-		\BlankLine
+%		\BlankLine
         \While{$\setgeo{P} \neq \emptyset$ \And $occu_{libre} \neq 0$}{
-			\BlankLine
+%			\BlankLine
 			$p_m \Store \max( \setgeo{P} )$
 			\\
 			$\setgeo{P} \Store \setgeo{P} - \setgene{p_m}$
-			\BlankLine
+%			\BlankLine
+			\\
 			$occu_{max} \Store 1 + \quot{k-1}{p_m}$
 			\\
 			$occu_{libre} \Store \max( 0 , occu_{libre} - occu_{max} )$
-			\BlankLine
+%			\BlankLine
+			\\
 			\If{$occu_{libre} > 2^{\card( \setgeo{P} )}$}{
-				\BlankLine
+%				\BlankLine
 				$\setgeo{C} \Store \setgeo{P}$
 				\\
 				$succes \Store \top$

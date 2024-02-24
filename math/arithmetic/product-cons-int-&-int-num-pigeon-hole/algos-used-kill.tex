@@ -38,53 +38,19 @@ Ceci permet de \enquote{localiser} comme suit les valeurs de $n$ pouvant vérifi
 	\explainthis{Nous pouvons affirmer que $\consprod$ contient au moins un couple de facteurs $(n + i, n + i^\prime)$ appartenant à $\cup_{c \in \setproba{C}} \setproba*{F}{c}$ et vérifiant $n + i < n + i^\prime$\,.}
 
 
-	\item Si $f = n + i$ et $f^\prime = n + i^\prime$ sont deux facteurs de $\consprod$\,, nous localisons $n$ comme suit.
-	%
-	\begin{itemize}
-		\item XXX
-
-		\item XXX
-	\end{itemize}
+	\item Si $f$ et $f^\prime$ sont deux facteurs de $\consprod$\, tels que $f < f^\prime$\,, alors $n \in \ZintervalC{f^\prime - k + 1}{f + k - 1}$\,.
+	
+	\explainthis{Ceci permet de construire l'ensemble $\setproba{N}$ des valeurs de $n$ à tester.}
 
 
-	\item XXX
-
-
-	\item XXX
-
-
-	\item XXX
+	\item Le dernier ingrédient utilisé est à la fois brutal et osé : pour chaque naturel $n$ retenu, nous tentons de voir si un seul des facteurs $(n+i)$ de $\consprod$ est un nombre premier ne divisant aucun des autres facteurs $(n+i^\prime)$ de $\consprod$\,.
+	
+	\explainthis{Un tel nombre premier $p$ est tel que $2p \geq n + k$\,.}
 \end{enumerate}
 
 
-
-
-
-
-???
-
-
-
-
-
-
-% ------------------ %
-
-
-\medskip
+%\medskip
 %\newpage
 
-Tout ce qui précède nous amène à l'algorithme brutal, mais à l'action localisée, suivant.
+Tout ce qui précède nous amène à un algorithme à la brutalité \enquote{localisée} : se reporter à la page suivante.
 
-{\small
-\begin{algo}[frame] \label{algo-kill}
-%	\caption{Classique et efficace} 
-	%%%
-    \Data{?}
-    \Result{?}
-	\BlankLine
-    \Actions{
-		?
-	}
-\end{algo}
-}

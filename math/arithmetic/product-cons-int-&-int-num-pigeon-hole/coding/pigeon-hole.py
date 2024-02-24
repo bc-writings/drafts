@@ -1,7 +1,7 @@
 from collections import defaultdict
 from math        import sqrt, floor
 
-from sympy import primerange
+from sympy import primerange, isprime
 
 
 # --------------- #
@@ -31,7 +31,7 @@ def distsquares(diff_squares):
             M = floor(sqrt(M_square))
 
             if M != 0 and M**2 == M_square:
-                solfound.append((M, N))
+                solfound.append((M_square, N**2))
 
     return solfound
 
@@ -39,105 +39,6 @@ def distsquares(diff_squares):
 # ----------------- #
 # -- PIGEON-HOLE -- #
 # ----------------- #
-
-def find_pigeon_killers(nbfactors_min, nbfactors_max):
-    assert nbfactors_min <= nbfactors_max
-
-    for nbfactors in range(
-        nbfactors_min,
-        nbfactors_max + 1
-    ):
-        print(nbfactors)
-
-        success, candidates = pigeonhole_candidates(nbfactors)
-
-        if not success:
-            print(f"{TAB_1}<-- THE PIGEON IS DEAD!")
-            exit()
-
-        if VERBOSE:
-            print(f"{TAB_1}<-- THE PIGEON TRIES TO FLY...")
-
-        factors = defaultdict(set)
-
-        for coef in sf_coef(candidates + [1]):
-            for df in range(1, (nbfactors - 1) // coef + 1 ):
-                sols = distsquares(diff_squares = df)
-
-                if not sols:
-                    continue
-
-                # print(f"{TAB_2}{coef=} , {df=} , {sols=}")
-
-                factors[coef] = factors[coef].union(set(sols))
-
-        # if VERBOSE:
-        #     print(f"{TAB_2}{factors=}")
-
-        nmax = 0
-
-        for coef, sols in factors.items():
-            nmax = max(
-                nmax,
-                coef * max(min(x, y)**2 for x, y in sols)
-            )
-
-        if VERBOSE:
-            print(f"{TAB_2}{nmax=}")
-
-        if nosingleprimediv(nbfactors, nmax):
-            print(f"{TAB_2}IT'S A FAIL!")
-            exit()
-
-        print(f"{TAB_1}<-- THE PIGEON IS FLYING HIGH!")
-
-
-# We are looking for a prime p of valuation equal to one: we must
-# have 2p > last_factor, i.e. last_factor / 2 < p <= last_factor .
-def nosingleprimediv(nbfactors, nmax):
-    global LOG
-
-    nbsuccess = 0
-    results   = set()
-
-    for n in range(1, nmax + 1):
-        last_factor = n + nbfactors - 1
-
-        firstprime = last_factor // 2
-
-        if last_factor % 2 == 0:
-            firstprime += 1
-
-        primes = {
-            p
-            for p in primerange(firstprime, last_factor + 1)
-        }
-
-        if VERBOSE:
-            print(f"{TAB_2}{n=}...{last_factor=}")
-            print(f"{TAB_2}    + {primes=}")
-
-        for k in range(1, nbfactors + 1):
-            npk = n + k
-
-            # print(f"{n=} , {k=}")
-            if npk in primes:
-                if VERBOSE:
-                    print(f"{TAB_2}    + {npk=}")
-
-                results.add(npk)
-
-                nbsuccess += 1
-                break
-
-    if nbsuccess == nmax:
-        LOG[nbfactors] = {
-            'tactic': "single_prime_div",
-            'primes': results,
-        }
-
-    return nbsuccess != nmax
-
 
 def pigeonhole_candidates(nbfactors):
     primes       = list(primerange(nbfactors))
@@ -166,17 +67,88 @@ def pigeonhole_candidates(nbfactors):
     return (success, primeskept)
 
 
+def find_pigeon_killers(nbfactors_min, nbfactors_max):
+    assert nbfactors_min <= nbfactors_max
+
+    for nbfactors in range(
+        nbfactors_min,
+        nbfactors_max + 1
+    ):
+        print(nbfactors)
+
+        success, candidates = pigeonhole_candidates(nbfactors)
+
+        if not success:
+            print(f"{TAB_1}<-- THE PIGEON IS DEAD!")
+            exit()
+
+        if VERBOSE:
+            print(f"{TAB_1}<-- THE PIGEON TRIES TO FLY...")
+
+        candidates = sf_coef(candidates + [1])
+
+
+        factors_pairs = set()
+
+        for delta in range(1, nbfactors):
+            for sol in distsquares(delta):
+                for c in candidates:
+                    if delta <= ((nbfactors -1) // c):
+                        factors_pairs.add((c*sol[0], c*sol[1]))
+
+        if VERBOSE:
+            print(f"{TAB_2}{factors_pairs=}")
+
+
+        n_tested = set()
+
+        for (fmin, fmax) in factors_pairs:
+            n_tested = n_tested.union(
+                set(
+                    range(
+                        max(1, fmax - nbfactors + 1),
+                        fmin + nbfactors
+                    )
+                )
+            )
+
+        if VERBOSE:
+            print(f"{TAB_2}{n_tested=}")
+
+
+        nb_bad = len(n_tested)
+
+        for n in n_tested:
+            for f in range((n + nbfactors) // 2 + 1, n + nbfactors):
+                if isprime(f):
+                    # if VERBOSE:
+                    #     print(f"{TAB_2}{n} + {i}={n + i}")
+
+                    nb_bad -= 1
+                    break
+
+
+        if nb_bad != 0:
+            print(f"{TAB_2}IT'S A FAIL!")
+            exit()
+
+        print(f"{TAB_1}<-- THE PIGEON IS FLYING HIGH!")
+
+
 def sf_coef(candidates):
-    if candidates:
-        a = candidates.pop()
+    if not candidates:
+        return set()
 
-        yield a
 
-        for b in sf_coef(candidates):
-            if a != 1:
-                yield b
+    coefs = set([a := candidates.pop()])
 
-            yield a*b
+    for b in sf_coef(candidates):
+        if a != 1:
+            coefs.add(b)
+
+        coefs.add(a*b)
+
+    return coefs
 
 
 # --------------------- #
@@ -187,38 +159,33 @@ if __name__ == '__main__':
     from collections import defaultdict
     from pprint import pprint
 
-    # find_pigeon_killers(9, 100)
 
-    # from pprint import pprint
-    # pprint(LOG)
+    # results_card  = defaultdict(int)
+    # results_which = defaultdict(list)
+    # failures      = list()
 
-    # for n in range(2, 19):
-    #     print(f'--- {n} ---')
-    #     print(pigeonhole_candidates(n))
+    # nmax = 100
 
-    results_card  = defaultdict(int)
-    results_which = defaultdict(list)
-    failures      = list()
+    # for n in range(2, nmax+1):
+    #     success, candidates = pigeonhole_candidates(n)
 
-    nmax = 10**5
+    #     if not success:
+    #         failures.append(n)
 
-    for n in range(2, nmax):
-        success, candidates = pigeonhole_candidates(n)
+    #     else:
+    #         nb_candidates = len(candidates)
 
-        if not success:
-            failures.append(n)
+    #         # print(f"{n=} : {pigeonhole_candidates(n):}")
+    #         # print(f"{n=}")
 
-        nb_candidates = len(candidates)
-
-        # print(f"{n=} : {pigeonhole_candidates(n):}")
-        print(f"{n=}")
-
-        results_card[nb_candidates] += 1
-        results_which[nb_candidates].append(n)
+    #         results_card[nb_candidates] += 1
+    #         results_which[nb_candidates].append(n)
 
     # pprint(results_card)
     # pprint(results_which)
-    print(len(failures) / (nmax - 1) * 100)
+    # pprint(failures)
+
+    # print(len(failures) / (nmax - 1) * 100)
 
 
     # for candidates in [
@@ -229,3 +196,17 @@ if __name__ == '__main__':
 
     #     for coef in coefsquare(candidates + [1]):
     #         print(coef)
+
+
+    # print(f"{sf_coef([2, 3])}")
+
+
+    # find_pigeon_killers(2, 12)
+    find_pigeon_killers(600, 1000)
+
+    # from pprint import pprint
+    # pprint(LOG)
+
+    # for n in range(2, 19):
+    #     print(f'--- {n} ---')
+    #     print(pigeonhole_candidates(n))

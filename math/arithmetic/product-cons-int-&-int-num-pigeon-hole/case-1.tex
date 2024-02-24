@@ -160,7 +160,7 @@ print(all_nbsol)
 
 
 \begin{remark}
-	La fonction \emph{\piton{sol}} du programme précédent traduit l'algorithme suivant que nous utiliserons dans la suite de ce document.
+	La fonction \emph{\piton{sol}} du programme précédent est proche de l'algorithme suivant que nous utiliserons dans la suite de ce document.
 \end{remark}
 
 {\small
@@ -168,26 +168,26 @@ print(all_nbsol)
 %	\caption{Classique et efficace} 
 	%%%
     \Data{$\delta \in \NNs$}
-    \Result{$\setproba{S}$ l'ensemble des couples $(N, M) \in \NNs \times \NNs$ vérifiant $N^2 - M^2 = \delta$\,.}
+    \Result{$\setproba{S}$ l'ensemble des couples $(M, N) \in \NNs \times \NNs$ vérifiant $N^2 - M^2 = \delta$\,.}
 	\BlankLine
     \Actions{
-		\BlankLine
+%		\BlankLine
 		$\setproba{S} \Store \emptyset$
 		\\
-		\BlankLine
+%		\BlankLine
 		\ForRange{N}{1}{1 + \quot{\delta}{2}}{	
-			\BlankLine
+%			\BlankLine
 			$M_{square} \Store N^2 - \delta$
 			\\
-			\BlankLine
+%			\BlankLine
 			\If{$M_{square} > 0$}{
-				\BlankLine
+%				\BlankLine
 				$M \Store \floor{\sqrt{M_{square}}}$
 				\\
-				\BlankLine
+%				\BlankLine
 				\If{$M \neq 0$ \And $M^2 = M_{square}$}{
-					\BlankLine
-					$\setproba{S} \Store \setproba{S} \cup \setgene{\, (M, N) \,}$
+%					\BlankLine
+					$\setproba{S} \Store \setproba{S} \cup \setgene{\, (M_{square} \, , N^2) \,}$
 				}
 			}
 		}

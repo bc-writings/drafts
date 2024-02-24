@@ -1,0 +1,73 @@
+{\small
+\begin{algo}[frame] \label{algo-kill}
+  \Data{$k \in \NN_{\geq 2}$\,, le nombre de facteurs considérés.}
+  \Result{
+    $\top$ permet d'affirmer que $\forall n \in \NNs$\,, $\consprod \notin \NNsquare$\,.
+    \\
+    \phantom{\textbf{Résultat :\kern8pt}}%
+	$\bot$ indique juste un échec de notre tactique, autrement dit, on ne peut pas\\
+    \phantom{\textbf{Résultat :\kern8pt}}%
+	affirmer que $\exists n \in \NNs$ tel que $\consprod \in \NNsquare$\,.
+  }
+  \BlankLine
+    \Actions{
+%    \BlankLine
+    $( succes, \setgeo{C} ) \Store \text{Résultat de l'algorithme \ref{algo-select} appliqué à $k$}$
+    \\
+%    \BlankLine
+    \If{$succes = \top$}{
+      \uIf {$\setgeo{C} = \emptyset$} {
+%        \BlankLine
+        $\setproba{C} \Store \setgene{1}$
+      } \Else {
+%        \BlankLine
+        $\setproba{C} \Store \setgene{ \prod_{p \in \setgeo{C}} p^{(\epsilon_p)} \,\, | \,\, (\epsilon_p)_{p \in \setgeo{C}} \subseteq \setgene{0, 1} }$
+      }
+%      \BlankLine
+      $\setproba{F} \Store \emptyset$
+      \\
+      \ForEach{$\delta \in \ZintervalC{1}{k-1}$}{
+        $\setproba{S} \Store \text{Résultat de l'algorithme \ref{algo-square-ko} appliqué à $\delta$}$
+        \\
+        \If{$\setproba{S} \neq \emptyset$}{
+          \ForEach{$c \in \setproba{C}$}{
+            \If{$\delta \leq \quot{k-1}{c}$}{
+              $\setproba{F} \Store \setproba{F} \cup \setgene{ (c m, c n) \,\, | \,\, (m, n) \in \setproba{S} }$ 
+            }
+          }
+        }
+      }
+%      \BlankLine
+      $\setproba{N} \Store \emptyset$
+      \\
+      \ForEach{$(f, f^\prime) \in \setproba{F}$}{
+%        \BlankLine
+        $\setproba{N} \Store \setproba{N} \cup \ZintervalC{\max( 1 , f^\prime - k + 1 )}{f + k - 1}$
+      }
+%      \BlankLine
+      $nb_{perdants} \Store \card \setproba{N}$
+      \\
+      \ForEach{$n \in \setproba{N}$}{
+        $\setgeo{i} \Store 1 + \quot{n + k}{2} $
+        \\
+        \While{$i < k$}{
+          \uIf{$n+i \in \PP$}{
+            $nb_{perdants} \Store nb_{perdants} - 1$
+            \\
+            $i \Store k$
+          } \Else {
+            $i \Store i + 1$
+          }
+        }
+      }
+      \uIf{$nb_{perdants} = 0$}{
+        $succes \Store \top$
+      } \Else {
+        $succes \Store \bot$
+      }
+    }
+    \BlankLine
+    \Return{$succes$}
+  }
+\end{algo}
+}
