@@ -72,15 +72,15 @@ Nous allons démontrer que $\setgeo*{C}{g}$ s'obtient à partir de l'une des cou
 		\begin{itemize}
 			\item $\der{g}{x}{1}(x + p) = 3 x^2 + m$\,.
 			
-			\item Notant $\mu = \sqrt{\frac{m}{3}} \neq 0$\,, on a
-			$\der{g}{x}{1}(\mu x + p) = m x^2 + m$\,,
+			\item Notant $\alpha = \sqrt{\frac{m}{3}} \neq 0$\,, on a
+			$\der{g}{x}{1}(\alpha x + p) = m x^2 + m$\,,
 			soit
-			$\der{g}{x}{1}(\mu x + p) = \frac{m}{3} \der{f_3}{x}{1}(x)$\,.
+			$\der{g}{x}{1}(\alpha x + p) = \frac{m}{3} \der{f_3}{x}{1}(x)$\,.
 			
 			\item En résumé,
-			$\der{f_3}{x}{1}(x) = \frac{3}{m} \der{g}{x}{1}(\mu x + p)$\,,
+			$\der{f_3}{x}{1}(x) = \frac{3}{m} \der{g}{x}{1}(\alpha x + p)$\,,
 			puis
-			$f_3(x) = \frac{3}{\mu m} g(\mu x + p) + k$\,.
+			$f_3(x) = \frac{3}{\alpha m} g(\alpha x + p) + k$\,.
 		\end{itemize}
 	\end{enumerate}
 \end{proof}
@@ -89,8 +89,6 @@ Nous allons démontrer que $\setgeo*{C}{g}$ s'obtient à partir de l'une des cou
 % ------------- %
 
 
-\medskip
-
 Comme pour les courbes $\Gamma_k$ de la section \ref{visual-proof}, il n'est pas possible de passer de $\Lambda_i$  à $\Lambda_j$ à l'aide des transformations autorisées dès que $i \neq j$\,.
 
 
@@ -98,5 +96,15 @@ Comme pour les courbes $\Gamma_k$ de la section \ref{visual-proof}, il n'est pas
 
 
 \begin{remark}
-	La preuve précédente reste constructive, mais obtenir les bons coefficients est plus complexe qu'avec la première preuve : nous devons passer via les théorèmes classiques des polynômes du 2\ieme\ degré, et aussi calculer une constante d'intégration.
+	Dans la preuve précédente, les transformations appliquées à $\der{g}{x}{1}(x)$ n'utilisent pas de translation verticale, ceci permettant d'en faire apparaître une par intégration.
+	Sans cela, nous aurions quelque chose du type $f_i(x) = \lambda g(\alpha x + \beta) + \gamma x + \delta$ qui mènerait à une impasse.
 \end{remark}
+
+
+% ------------- %
+
+
+\begin{remark}
+	On notera que la preuve précédente est constructive : on peut donner les applications à appliquer en fonction des coefficients $a$, $b$, $c$, et $d$ de \txtfuncdef{g}{x}{a \, x^3 + b \, x^2 + c \, x + d}{}{}\,.
+\end{remark}
+
