@@ -1,0 +1,15 @@
+Voyons à quoi ressemblent les \sftab[x] partiels pour $k \in \ZintervalC{3}{7}$ et $p \in \PP_{<k}$ (seulement, $k = 6$ et  $k = 7$ sont des nouveautés). Noter l'emploi d'une méthode de construction automatisable.
+
+\begin{multicols}{2}
+	\foreach \k in {2,...,7} {
+		\ifthenelse{\k=7}{
+			\columnbreak
+		}{
+			\ifthenelse{\k=1}{}{
+				\medskip
+			}
+		}
+
+		\input{\contentdir/sftable-size/case-\k}
+	}
+\end{multicols}	
