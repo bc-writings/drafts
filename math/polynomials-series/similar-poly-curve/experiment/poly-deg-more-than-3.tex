@@ -1,3 +1,28 @@
+% expand f(x+m) where f(x) = x^4 + b*x^3 + c*x^2 + d*x + e
+% 
+%   e + d (x + m) + c (x + m)^2 + b (x + m)^3 + (x + m)^4 
+% = e + d m + c m^2 + b m^3 + m^4 
+% + d x + 2 c m x + 3 b m^2 x + 4 m^3 x
+% + c x^2 + 3 b m x^2 + 6 m^2 x^2
+% + b x^3 + 4 m x^3
+% + x^4
+%
+% coef de x : d + 2 c m + 3 b m^2 + 4 m^3
+%
+% m existe tel que pas de x d'où
+%
+% P(x) = x^4 + b*x^3 + c*x^2 + e
+%
+% P'(x) similaire à f_i(x) de degré 3
+%
+% P'(x) = A f_i(B x + C) + D
+%
+% P(x) = A/B F_i(B x + C) + D x
+%
+% F_i(x) = x^4 / 4
+%     ou = x^4 / 4 - x^2 / 2
+%     ou = x^4 / 4 + x^2 / 2
+
 Nous allons voir que le passage au degré $4$ va faire exploser une vaine conjecture qui supposerait que pour un degré donné il n'y a qu'un nombre fini de types de courbe.
 L'argument est simple car les polynômes $f_r(x) = x (x^2 - 4) (x - r)$ où $r \in \RR - \setgene{-1 ; 0 ; 1}$ ont des courbes $\setgeo*{C}{r}$ non similaires deux à deux via les transformations autorisées. Voici pourquoi où $r \neq 2$ par hypothèse.
 

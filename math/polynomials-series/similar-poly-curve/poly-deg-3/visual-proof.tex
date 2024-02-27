@@ -49,6 +49,10 @@ Nous allons démontrer que $\setgeo*{C}{g}$ s'obtient à partir de l'une des cou
 			\smallskip
 			\noindent
 			Il devient naturel de faire le changement de variable $x = m + t$\,.
+			\footnote{
+				Il est plus élégant de passer via la formule de Taylor en $0$ du polynôme $h(t) = g(m + t)$ : le coefficient de $t^2$ est $\frac{\der{h}{t}{2}(0)}{2} = \frac{\der{g}{x}{2}(m)}{2} = 0$\,.
+				Le choix de passer via des développements calculatoires permet de rendre ce document le plus accessible possible à un élève ayant obtenu son BAC français avec un cursus mathématique.
+			} 
 			
 			\smallskip
 			\noindent\kern-5pt
@@ -62,6 +66,11 @@ Nous allons démontrer que $\setgeo*{C}{g}$ s'obtient à partir de l'une des cou
 				  t^3 + 3 m \, t^2 + 3 m^2 \, t    + m^3
 			          + b \, t^2   + 2 b \, m \, t + b \, m^2
 				                   + c \, t        + c \, m + d
+				\explnext{}
+				    t^3 
+				  + ( 3 m + b ) t^2
+				  + ( 3 m^2 + 2 b \, m + c ) t    
+				  + m^3 + b \, m^2 + c \, m + d
 			\end{stepcalc} 
 			
 			\smallskip
@@ -75,7 +84,7 @@ Nous allons démontrer que $\setgeo*{C}{g}$ s'obtient à partir de l'une des cou
 % ------------- %
 
 
-		\newpage
+%		\newpage
 		\item On peut clairement supposer que \txtfuncdef{g}{x}{x^3 + c \, x}{}{}\,, puis on conclut comme suit.
 		%
 		\begin{itemize}
