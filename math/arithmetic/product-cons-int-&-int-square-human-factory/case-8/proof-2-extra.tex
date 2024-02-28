@@ -1,0 +1,55 @@
+\begin{remark} \label{no-silicon}
+	Voici comment obtenir une preuve $\qty{100}{\percent}$ non silliconé.
+	Pour cela, commençons par les manipulations algébriques naturelles suivantes qui cherchent à obtenir le même coefficient pour $n$ dans chaque parenthèse, tout en passant d'un polynôme de degré $8$ à un polynôme de degré $4$\,.
+    
+    \medskip
+    \begin{stepcalc}[style = sar]
+    	\consprod<8>
+    \explnext{}
+    	n(n+7) \cdot (n+1)(n+6) \cdot (n+2)(n+5) \cdot (n+3)(n+4)
+    \explnext{}
+    	(n^2 + 7n) \cdot (n^2 + 7n + 6) \cdot (n^2 + 7n + 10) \cdot (n^2 + 7n + 12)
+    \explnext*{$m = n^2 + 7n$}{}
+    	m (m + 6) (m + 10)(m + 12)
+    \end{stepcalc}
+    
+    \medskip
+    Nous décidons d'offrir un 1\ier\ rôle à la variable $m = n^2 + 7n$\,. Voyons où cela nous mène...
+    
+	\medskip
+    \noindent\kern-10pt%
+	\begin{stepcalc}[style = ar*, ope={=}]
+    	a^2 + b^2 - 4 a b + 3
+    \explnext{}
+    	a(a - 4b) + b^2 + 3
+    \explnext*{$a = n^2 + 3n + 1 = m - 4n + 1$ \\ $b = n^2 + 11 n + 29 = m + 4n + 29$}{}
+    	(m - 4n + 1)(- 3m - 20 n - 115) 
+		+
+		(m + 4 n + 29)^2
+		+
+		3
+    \explnext{}
+    	- 3 m^2 - (8 n + 118) m + (4n - 1)(20 n + 115)
+		+
+		m^2 + 2 (4 n + 29) m
+		+
+		(4 n + 29)^2
+		+
+		3
+    \explnext{}
+    	- 2 m^2
+		- 60 m 
+		+
+		729 + 672 n + 96 n^2
+    \explnext*{Ici, la magie opère... En effet, nous avons : \\ $672 n + 96 n^2 = 96 (7 n + n^2) = 96 m$\,.}{}
+%    	- 2 m^2
+%		- 60 m 
+%		+ 729 + 96 (n^2 + 7 n)
+%    \explnext{}
+%    	- 2 m^2
+%		- 60 m 
+%		+ 729 + 96 m
+%    \explnext{}
+    	- 2 m^2 + 36 m + 729
+    \end{stepcalc}
+\end{remark}

@@ -6,188 +6,95 @@
 % ------------------ %
 
 
-La démonstration très astucieuse suivante est proposée dans un échange sur \url{https://math.stackexchange.com} (voir la section \ref{sources}).
-Comme pour le cas de quatre facteurs, l'algèbre va nous permettre d'aller très vite.
+Cette démonstration vient d'un document d'entraînement aux Olympiades Mathématiques (se reporter à la section \ref{sources}).
+L'idée de départ est similaire au cas de quatre facteurs.
 
 
 \begin{proof}[Preuve]
 	\leavevmode
 
-	\begin{itemize}
-		\item L'une des preuves du fait \ref{case-4} nous donne
-		$n (n + 1) (n + 2) (n + 3) = (n^2 + 3n + 1)^2 - 1$\,.
-
-		\smallskip
-		\noindent
-		En particulier,
-		$(n + 4)(n + 5)(n + 6)(n + 7) = (n^2 + 11 n + 29)^2 - 1$\,.
-
-
-		\item L'idée astucieuse va être de considérer les deux expressions suivantes qui viennent de $\consprod<8> = \big( f(n)^2 - 1 \big) \big( g(n)^2 - 1 \big)$\,.
-		%
-		\begin{enumerate}
-			\item $f(n) = n^2 + 3n + 1$\,.
-
-			\item $g(n) = n^2 + 11 n + 29$\,.
-		\end{enumerate}
-
-
-		\item Nous avons les manipulations algébriques naturelles suivantes.
-
-%        \medskip
-%        \newpage
+    \begin{itemize}
+    	\item Nous avons les manipulations algébriques naturelles suivantes.
+    
+        \medskip
         \noindent\kern-6pt%
         \begin{stepcalc}[style = sar]
         	\consprod<8>
         \explnext{}
-        	\big( f(n)^2 - 1 \big) \big( g(n)^2 - 1 \big)
-        \explnext*{$a = f(n)$ et $b = g(n)$\,.}{}
-        	(a^2 - 1) (b^2 - 1)
+        	n (n + 7) \cdot (n + 1) (n + 6) \cdot (n + 2) (n + 5) \cdot (n + 4) (n + 3) 
         \explnext{}
-        	a^2 b^2 - a^2 - b^2 + 1
-%        \end{stepcalc}
-%
-%		\newpage  
-%        \noindent\kern-6pt%
-%        \begin{stepcalc}[style = sar]
-%        	\consprod<8>
-%        \explnext{}
-%        	a^2 b^2 - a^2 - b^2 + 1
-		\explnext*{Choisir $(a - b)^2$ au lieu de $(a + b)^2$ va nous permettre, \\ un plus bas, de ne pas trop nous éloigner de $\consprod<8>$\,.}{}
-        	a^2 b^2 - (a - b)^2 - 2 ab + 1
+        	(n^2 + 7n) (n^2 + 7n + 6) (n^2 + 7n + 10) (n^2 + 7n + 12) 
+        \explnext*{$a = n^2 + 7n \in \ZintervalC{8}{+\infty}$}{}
+        	a (a + 6) (a + 10) (a + 12)
+        \end{stepcalc}
+    
+    
+    	\item Clairement $a \in 2 \NN$\,, donc $a = 2b$ avec $b \in \ZintervalC{4}{+\infty}$\,, d'où les implications suivantes.
+    
+        \medskip
+        \noindent\kern-10pt%
+        \begin{stepcalc}[style = ar*, ope=\implies]
+        	\consprod<8> \in \NNssquare
         \explnext{}
-        	(a b  - 1)^2 - (a - b)^2
-        \explnext*[<]{$b - a \neq 0$\,.}{}
-        	(a b  - 1)^2
+        	2b (2b + 6) (2b + 10) (2b + 12) \in \NNssquare
+        \explnext{}
+        	16 b (b + 3) (b + 5) (b + 6) \in \NNssquare
+        \explnext*{Voir le fait \ref{facto-square}.}{}
+        	b (b + 3) (b + 5) (b + 6) \in \NNssquare
+        \explnext*{Via $b (b + 6) \cdot (b + 3) (b + 5)$\,.}{}
+        	(b^2 + 6b) (b^2 + 8b + 15) \in \NNssquare
+        \end{stepcalc}
+    
+    
+    	\item Que faire de $(b^2 + 6b) (b^2 + 8b + 15)$ ?
+    
+        \smallskip
+        \noindent%
+        Tentons de passer via $c = b^2 + 7b$ la moyenne de $b^2 + 6b$ et $b^2 + 8b$\,. Voici une première constatation.
+    
+        \medskip
+        \noindent\kern-10pt%
+        \begin{stepcalc}[style = ar*]
+        	(b^2 + 6b) (b^2 + 8b + 15)
+        \explnext{}
+        	(c - b) (c + b + 15)
+        \explnext{}
+        	(c - b) (c + b) + 15 (c - b)
+        \explnext{}
+        	c^2 - b^2 + 15 (b^2 + 6b)
+        \explnext{}
+        	c^2 + 14 b^2 + 90b
+        \explnext{}
+        	c^2 + 14 (c - 7b) + 90b
+        \explnext{}
+        	c^2 + 14 c - 8b
+        \explnext[<]{}
+        	c^2 + 14 c + 49
+        \explnext[<]{}
+        	(c + 7)^2
         \end{stepcalc}
         
-        \medskip
-        
+        \smallskip
         \noindent
-        Donc $\consprod<8> < \big( f(n) g(n) - 1)^2$\,.
-
-
-		\item Le point précédent rend naturel de tenter de démontrer que 
-		$\big( f(n) g(n) - 2)^2 < \consprod<8>$\,, car, si tel est le cas, 
-		$\consprod<8>$ sera encadré par les carrés de deux entiers consécutifs, et forcément nous aurons $\consprod<8> \notin \NNsquare$\,. 
-		Ce qui suit montre que notre pari est gagnant dès que $n \geq 4$\,. Que c'est joli !
-
+        Pas mal ! Avons-nous $(b^2 + 6b) (b^2 + 8b + 15) > (c + 6)^2$ ? Si oui, nous pourrons conclure. Voici ce que cela donne.
+    
         \medskip
-        \noindent\kern-6pt%
-        \begin{stepcalc}[style = ar*, ope={\iff}]
-        	\big( f(n) g(n) - 2)^2 < \consprod<8>
-        \explnext*{$a = f(n)$ et $b = g(n)$\,.}{}
-        	(a b - 2)^2 < (a^2 - 1) (b^2 - 1)
+        \noindent\kern-10pt%
+        \begin{stepcalc}[style = ar*]
+        	(b^2 + 6b) (b^2 + 8b + 15) - (c + 6)^2
         \explnext{}
-        	a^2 b^2 - 4 a b + 4 < a^2 b^2 - a^2 - b^2 + 1
+        	c^2 + 14 c - 8 b - (c + 6)^2
         \explnext{}
-        	a^2 + b^2 - 4 a b + 3 < 0
+        	2 c - 8 b - 36
+        \explnext{}
+        	2 b^2 + 6 b - 36
+        \explnext*[\geq]{$b \in \ZintervalC{4}{+\infty}$}{}
+        	32 + 24 - 36
+        \explnext[>]{}
+        	0
         \end{stepcalc}
-
-        \medskip
-        \noindent
-        Le site \url{https://www.wolframalpha.com} nous donne sans effort cognitif
-        \footnote{
-        	Il faut vivre avec son temps...
-        }
-        ce qui suit (les \enquote{transhumanophobes} se reporteront à la remarque \ref{no-silicon} qui suit).
-
-        \medskip
-        \noindent\kern-6pt%
-        \begin{stepcalc}[style = ar*, ope={=}]
-        	a^2 + b^2 - 4 a b + 3
-        \explnext{}
-        	- 2 (n^2 + 7 n)^2 + 36 (n^2 + 7 n) + 729
-        \explnext*{$m = n^2 + 7 n$}{}
-        	- 2 m^2 + 36 m + 729
-        \explnext{}
-        	- 2 (m - 9)^2 + 891
-        \end{stepcalc}
-        
-        \medskip
-        
-        \noindent
-        Or, $n^2 + 7 n - 9 = 0$ admet pour unique racine positive $n = \frac{- 7 + \sqrt{85}}{2} \approx \num{1.1}$\,,
-        donc $a^2 + b^2 - 4 a b + 3$ décroît en fonction de $n$ à partir de $n = 2$\,. Les calculs suivants donnent alors que $a^2 + b^2 - 4 a b + 3 < 0$ pour $n \geq 4$\,.
-	\end{itemize}
-
-	\begin{center}
-		\begin{tblr}{
-			colspec     = {Q[r,$]*{4}{Q[c,$]}},
-			vline{2-Y}  = {},
-			hline{2}    = {},
-			column{2-Z} = {2.5em},
-		}
-			n
-				&  1    &  2    &  3  &  4
-		\\
-			-2 (n^2 + 7 n)^2 + 36 (n^2 + 7 n) + 729
-			    &  889  &  729  &  9  &  -1559
-		\end{tblr}
-	\end{center}
-
-	\begin{itemize}
-		\item Nous venons de voir que $( a b - 2)^2 < \consprod<8> < ( a b - 1)^2$ sur $\NN_{\geq 4}$\,, donc $\consprod<8> \notin \NNsquare$ dès que $n \in \NN_{\geq 4}$\,, mais pour $n \in \setgene{1, 2, 3}$\,, $\padicval[7]{\consprod<8>} =1$ donne $\consprod<8> \notin \NNsquare$\,, ce qui permet de conclure.\qedhere
-	\end{itemize}
+    \end{itemize}
+    
+    \vspace{-2ex}	
+    \leavevmode
 \end{proof}
-
-
-% ------------------ %
-
-
-\begin{remark} \label{no-silicon}
-	Voici comment obtenir une preuve $\qty{100}{\percent}$ non silliconé.
-	Pour cela, commençons par les manipulations algébriques naturelles suivantes qui cherchent à obtenir le même coefficient pour $n$ dans chaque parenthèse, tout en passant d'un polynôme de degré $8$ à un polynôme de degré $4$\,.
-    
-    \medskip
-    
-    \begin{stepcalc}[style = sar]
-    	\consprod<8>
-    \explnext{}
-    	n(n+7) \cdot (n+1)(n+6) \cdot (n+2)(n+5) \cdot (n+3)(n+4)
-    \explnext{}
-    	(n^2 + 7n) \cdot (n^2 + 7n + 6) \cdot (n^2 + 7n + 10) \cdot (n^2 + 7n + 12)
-    \explnext*{$m = n^2 + 7n$}{}
-    	m (m + 6) (m + 10)(m + 12)
-    \end{stepcalc}
-    
-    \medskip
-    Nous décidons d'offrir un 1\ier\ rôle à la variable $m = n^2 + 7n$\,. Voyons où cela nous mène...
-    
-	\medskip
-	\begin{stepcalc}[style = ar*, ope={=}]
-    	a^2 + b^2 - 4 a b + 3
-    \explnext{}
-    	a(a - 4b) + b^2 + 3
-    \explnext*{$a = n^2 + 3n + 1 = m - 4n + 1$ \\ $b = n^2 + 11 n + 29 = m + 4n + 29$}{}
-    	(m - 4n + 1)(- 3m - 20 n - 115) 
-		+
-		(m + 4 n + 29)^2
-		+
-		3
-    \explnext{}
-    	- 3 m^2 - (8 n + 118) m + (4n - 1)(20 n + 115)
-		+
-		m^2 + 2 (4 n + 29) m
-		+
-		(4 n + 29)^2
-		+
-		3
-    \explnext{}
-    	- 2 m^2
-		- 60 m 
-		+
-		729 + 672 n + 96 n^2
-    \explnext*{Ici, la magie opère...}{}
-    	- 2 m^2
-		- 60 m 
-		+ 729 + 96 (n^2 + 7 n)
-    \explnext{}
-    	- 2 m^2
-		- 60 m 
-		+ 729 + 96 m
-    \explnext{}
-    	- 2 m^2 + 36 m + 729
-    \end{stepcalc}
-\end{remark}
-

@@ -17,11 +17,16 @@
 %
 % P'(x) = A f_i(B x + C) + D
 %
-% P(x) = A/B F_i(B x + C) + D x
+% B P(x) = A F_i(B x + C) + D x
 %
-% F_i(x) = x^4 / 4
-%     ou = x^4 / 4 - x^2 / 2
-%     ou = x^4 / 4 + x^2 / 2
+% F_i(x) = 4(x^4 / 4)          
+%   --->   A C^4 + 4 A B C^3 x + D x + 6 A B^2 C^2 x^2 + 4 A B^3 C x^3 + A B^4 x^4
+%
+%     ou = 4(x^4 / 4 - x^2 / 2)
+%   --->   -2 A C^2 + A C^4 - 4 A B C x + 4 A B C^3 x + D x - 2 A B^2 x^2 + 6 A B^2 C^2 x^2 + 4 A B^3 C x^3 + A B^4 x^4
+%
+%     ou = 4(x^4 / 4 + x^2 / 2)
+%   --->   2 A C^2 + A C^4 + 4 A B C x + 4 A B C^3 x + D x + 2 A B^2 x^2 + 6 A B^2 C^2 x^2 + 4 A B^3 C x^3 + A B^4 x^4
 
 Nous allons voir que le passage au degré $4$ va faire exploser une vaine conjecture qui supposerait que pour un degré donné il n'y a qu'un nombre fini de types de courbe.
 L'argument est simple car les polynômes $f_r(x) = x (x^2 - 4) (x - r)$ où $r \in \RR - \setgene{-1 ; 0 ; 1}$ ont des courbes $\setgeo*{C}{r}$ non similaires deux à deux via les transformations autorisées. Voici pourquoi où $r \neq 2$ par hypothèse.

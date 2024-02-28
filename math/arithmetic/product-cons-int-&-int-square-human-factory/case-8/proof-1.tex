@@ -1,0 +1,87 @@
+Cette démonstration vient d'un document d'entraînement aux Olympiades Mathématiques (se reporter à la section \ref{sources}).
+L'idée de départ est similaire au cas de quatre facteurs.
+
+\begin{itemize}
+	\item Nous avons les manipulations algébriques naturelles suivantes.
+
+    \medskip
+    \noindent\kern-6pt%
+    \begin{stepcalc}[style = sar]
+    	\consprod<8>
+    \explnext{}
+    	n (n + 7) \cdot (n + 1) (n + 6) \cdot (n + 2) (n + 5) \cdot (n + 4) (n + 3) 
+    \explnext{}
+    	(n^2 + 7n) (n^2 + 7n + 6) (n^2 + 7n + 10) (n^2 + 7n + 12) 
+    \explnext*{$a = n^2 + 7n \in \ZintervalC{8}{+\infty}$}{}
+    	a (a + 6) (a + 10) (a + 12)
+    \end{stepcalc}
+
+
+	\item Clairement $a \in 2 \NN$\,, donc $a = 2b$ avec $b \in \ZintervalC{4}{+\infty}$\,, d'où les implications suivantes.
+
+    \medskip
+    \noindent\kern-10pt%
+    \begin{stepcalc}[style = ar*, ope=\implies]
+    	\consprod<8> \in \NNssquare
+    \explnext{}
+    	2b (2b + 6) (2b + 10) (2b + 12) \in \NNssquare
+    \explnext{}
+    	16 b (b + 3) (b + 5) (b + 6) \in \NNssquare
+    \explnext*{Voir le fait \ref{facto-square}.}{}
+    	b (b + 3) (b + 5) (b + 6) \in \NNssquare
+    \explnext*{Via $b (b + 6) \cdot (b + 3) (b + 5)$\,.}{}
+    	(b^2 + 6b) (b^2 + 8b + 15) \in \NNssquare
+    \end{stepcalc}
+
+
+	\item Que faire de $(b^2 + 6b) (b^2 + 8b + 15)$ ?
+
+    \smallskip
+    \noindent%
+    Tentons de passer via $c = b^2 + 7b$ la moyenne de $b^2 + 6b$ et $b^2 + 8b$\,. Voici une première constatation.
+
+    \medskip
+    \noindent\kern-10pt%
+    \begin{stepcalc}[style = ar*]
+    	(b^2 + 6b) (b^2 + 8b + 15)
+    \explnext{}
+    	(c - b) (c + b + 15)
+    \explnext{}
+    	(c - b) (c + b) + 15 (c - b)
+    \explnext{}
+    	c^2 - b^2 + 15 (b^2 + 6b)
+    \explnext{}
+    	c^2 + 14 b^2 + 90b
+    \explnext{}
+    	c^2 + 14 (c - 7b) + 90b
+    \explnext{}
+    	c^2 + 14 c - 8b
+    \explnext[<]{}
+    	c^2 + 14 c + 49
+    \explnext[<]{}
+    	(c + 7)^2
+    \end{stepcalc}
+    
+    \smallskip
+    \noindent
+    Pas mal ! Avons-nous $(b^2 + 6b) (b^2 + 8b + 15) > (c + 6)^2$ ? Si oui, nous pourrons conclure. Voici ce que cela donne.
+
+    \medskip
+    \noindent\kern-10pt%
+    \begin{stepcalc}[style = ar*]
+    	(b^2 + 6b) (b^2 + 8b + 15) - (c + 6)^2
+    \explnext{}
+    	c^2 + 14 c - 8 b - (c + 6)^2
+    \explnext{}
+    	2 c - 8 b - 36
+    \explnext{}
+    	2 b^2 + 6 b - 36
+    \explnext*[\geq]{$b \in \ZintervalC{4}{+\infty}$}{}
+    	32 + 24 - 36
+    \explnext[>]{}
+    	0
+    \end{stepcalc}
+\end{itemize}
+
+\vspace{-2ex}	
+\leavevmode

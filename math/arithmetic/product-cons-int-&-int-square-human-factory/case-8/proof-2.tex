@@ -1,0 +1,113 @@
+Cette démonstration est très astucieuse, voire magique. Elle se trouve dans un échange sur \url{https://math.stackexchange.com} (se reporter à la section \ref{sources}).
+Comme pour le cas de quatre facteurs, l'algèbre va nous permettre d'aller relativement vite.
+
+\begin{itemize}
+	\item L'une des preuves du fait \ref{case-4} nous donne
+	$n (n + 1) (n + 2) (n + 3) = (n^2 + 3n + 1)^2 - 1$\,.
+
+	\smallskip
+	\noindent
+	En particulier,
+	$(n + 4)(n + 5)(n + 6)(n + 7) = (n^2 + 11 n + 29)^2 - 1$\,.
+
+
+	\item L'idée astucieuse va être de considérer les deux expressions suivantes qui viennent de $\consprod<8> = \big( f(n)^2 - 1 \big) \big( g(n)^2 - 1 \big)$\,.
+	%
+	\begin{enumerate}
+		\item $f(n) = n^2 + 3n + 1$\,.
+
+		\item $g(n) = n^2 + 11 n + 29$\,.
+	\end{enumerate}
+
+
+	\item Nous avons les manipulations algébriques naturelles suivantes.
+
+	\medskip
+    \noindent\kern-6pt%
+    \begin{stepcalc}[style = sar]
+    	\consprod<8>
+    \explnext{}
+    	\big( f(n)^2 - 1 \big) \big( g(n)^2 - 1 \big)
+    \explnext*{$a = f(n)$ et $b = g(n)$\,.}{}
+    	(a^2 - 1) (b^2 - 1)
+    \explnext{}
+    	a^2 b^2 - a^2 - b^2 + 1
+    \explnext*{Choisir $(a - b)^2$ au lieu de $(a + b)^2$ va nous permettre, \\ un plus bas, de ne pas trop nous éloigner de $\consprod<8>$\,.}{}
+    	a^2 b^2 - (a - b)^2 - 2 ab + 1
+    \explnext{}
+    	(a b  - 1)^2 - (a - b)^2
+    \explnext*[<]{$b - a \neq 0$\,.}{}
+    	(a b  - 1)^2
+    \end{stepcalc}
+    
+    \medskip
+    
+    \noindent
+    Donc $\consprod<8> < \big( f(n) g(n) - 1)^2$\,.
+
+
+	\item Le point précédent rend naturel de tenter de démontrer que 
+	$\big( f(n) g(n) - 2)^2 < \consprod<8>$\,, car, si tel est le cas, 
+	$\consprod<8>$ sera encadré par les carrés de deux entiers consécutifs, et forcément nous aurons $\consprod<8> \notin \NNsquare$\,. 
+	Notre pari va être gagnant dès que $n \geq 4$\,.
+	Que c'est joli !
+
+    \medskip
+    \noindent\kern-10pt%
+    \begin{stepcalc}[style = ar*, ope={\iff}]
+    	\big( f(n) g(n) - 2)^2 < \consprod<8>
+    \explnext*{$a = f(n)$ et $b = g(n)$\,.}{}
+    	(a b - 2)^2 < (a^2 - 1) (b^2 - 1)
+    \explnext{}
+    	a^2 b^2 - 4 a b + 4 < a^2 b^2 - a^2 - b^2 + 1
+    \explnext{}
+    	a^2 + b^2 - 4 a b + 3 < 0
+    \end{stepcalc}
+
+    \medskip
+    \noindent
+    Le site \url{https://www.wolframalpha.com} nous donne sans effort cognitif
+    \footnote{
+    	Il faut vivre avec son temps...
+    }
+    ce qui suit (les \enquote{transhumanophobes} se reporteront à la remarque \ref{no-silicon} qui suit).
+
+    \medskip
+    \noindent\kern-10pt%
+    \begin{stepcalc}[style = ar*, ope={=}]
+    	a^2 + b^2 - 4 a b + 3
+    \explnext{}
+    	- 2 (n^2 + 7 n)^2 + 36 (n^2 + 7 n) + 729
+    \explnext*{$m = n^2 + 7 n$}{}
+    	- 2 m^2 + 36 m + 729
+    \explnext{}
+    	- 2 (m - 9)^2 + 891
+    \end{stepcalc}
+    
+    \medskip
+    
+    \noindent
+    Or, $n^2 + 7 n - 9 = 0$ admet pour unique racine positive $n = \frac{- 7 + \sqrt{85}}{2} \approx \num{1.1}$\,,
+    donc $a^2 + b^2 - 4 a b + 3$ décroît en fonction de $n$ à partir de $n = 2$\,. Les calculs suivants donnent alors que $a^2 + b^2 - 4 a b + 3 < 0$ pour $n \geq 4$\,.
+\end{itemize}
+
+\begin{center}
+	\begin{tblr}{
+		colspec     = {Q[r,$]*{4}{Q[c,$]}},
+		vline{2-Y}  = {},
+		hline{2}    = {},
+		column{2-Z} = {2.5em},
+	}
+		n
+			&  1    &  2    &  3  &  4
+	\\
+		-2 (n^2 + 7 n)^2 + 36 (n^2 + 7 n) + 729
+		    &  889  &  729  &  9  &  -1559
+	\end{tblr}
+\end{center}
+
+\begin{itemize}
+	\item Nous venons de voir que $( a b - 2)^2 < \consprod<8> < ( a b - 1)^2$ sur $\NN_{\geq 4}$\,, donc $\consprod<8> \notin \NNsquare$ dès que $n \in \NN_{\geq 4}$\,, mais pour $n \in \setgene{1, 2, 3}$\,, $\padicval[7]{\consprod<8>} =1$ donne $\consprod<8> \notin \NNsquare$\,, ce qui permet de conclure.
+		%
+		\qedhere
+\end{itemize}
