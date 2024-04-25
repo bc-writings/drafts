@@ -1,0 +1,23 @@
+Source du pb : https://youtu.be/Q0QLspcnrrA?si=JtxfhmUseC6Punj0
+
+
+=======================================
+Une ode aux demis, mais sans modération
+=======================================
+
+On souhaite trouver les m et k dans N tels que n^2 + (n + 1)^2 + (n + 2)^2 + (n + 3)^2 = m^k avec n dans Z.
+
+On pose n = r - 3/2, et aussi R = 2r = 2n + 3 avec R dans Z.
+
+  (r - 3/2)^2 + (r - 1/2)^2 + (r + 1/2)^2 + (r + 3/2)^2
+= 4 r^2 + 2(9/4 + 1/4)
+= 4 r^2 + 5
+= R^2 + 5
+
+Modulo 2, on obtient 9 + 5 = 0 = m^k d'où k non nul et m pair.
+
+Modulo 4, R^2 = 9 via une simple identité remarquable, d'où R^2 + 5 = 2 = m^k, puis forcément k = 1, car les carrés de paires modulo 4 sont tous nuls.
+
+Rq 1 : travailler modulo 4 est naturel parce que cela fait disparaître n dans R^2.
+
+Rq 2 : modulo 3, on obtient n^2 + 2 = m, puis m = -1 ou 0. Que donnerait modulo 6 ?
