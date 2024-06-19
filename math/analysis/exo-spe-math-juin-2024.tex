@@ -1,0 +1,105 @@
+\documentclass[12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[top=1.95cm, bottom=1.95cm, left=2.35cm, right=2.35cm]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage[french]{babel}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+	version={4.0},
+]{doclicense}
+
+\usepackage{tnsmath}
+
+\setlength\parindent{0cm}
+
+\begin{document}
+
+\title{À propos de l'exercice de SPÉ MATHS du BAC de Juin 2024 (Métropole)}
+\author{Christophe BAL}
+\date{19 Juin 2024}
+\maketitle
+
+
+\begin{center}
+	\itshape
+	Document, avec son source \LaTeX, disponible sur la page
+	
+	\url{https://github.com/bc-writing/drafts}.
+\end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\hrule\vspace{.3em}
+	{
+		\fontsize{1.35em}{1em}\selectfont
+		\textbf{Mentions \og légales \fg}
+	}
+			
+	\vspace{0.45em}
+	\doclicenseThis
+	\hrule
+\end{center}
+
+\bigskip
+
+Sachant que $\ln \alpha = 2(2 - \alpha)$ où $\alpha \in [1 ; 2]$\,, nous allons calculer $\setproba{I} = \dintegrate*{x^2 \ln x}{x}{1 / \alpha}{1}$ sans faire d'intégration par parties.
+
+\medskip
+
+\begin{stepcalc}[style=sar]
+	\setproba{I}
+\explnext{}
+	\dintegrate*{%	
+		x^2  \, \dintegrate*{\dfrac{1}{t}}{t}{1}{x}%
+	}{x}{1 / \alpha}{1}
+\explnext*{On veut une intégrale positive pour faciliter la suite.}{}
+	-
+	\dintegrate*{%	
+		\dintegrate*{\dfrac{x^2}{t}}{t}{x}{1}%
+	}{x}{1 / \alpha}{1}
+\explnext*{Faire un schéma pour la permutation des intégrales.}{}
+	-
+	\dintegrate*{%	
+		\dintegrate*{\dfrac{x^2}{t}}{x}{1 / \alpha}{t}%
+	}{t}{1 / \alpha}{1}
+\explnext{}
+	\dintegrate*{%	
+		\hook*{\dfrac{x^3}{3 \, t}}{x}{1 / \alpha}{t}%
+	}{t}{1}{1 / \alpha}
+\explnext{}
+	\dintegrate*{%	
+		\Big( \dfrac{t^2}{3} - \dfrac{1}{3 \, \alpha^3 \, t} \Big)%
+	}{t}{1}{1 / \alpha}
+\explnext{}
+	\hook*{%	
+		\dfrac{t^3}{9} - \dfrac{1}{3 \, \alpha^3} \, \ln t%
+	}{t}{1}{1 / \alpha}
+\explnext{}
+	\dfrac{1}{9 \, \alpha^3}
+	-
+	\dfrac{1}{3 \, \alpha^3} \, \ln \big( \dfrac{1}{\alpha} \big)%
+	-
+	\dfrac{1}{9}%
+\explnext*{$\ln \alpha = 2(2 - \alpha)$}{}
+	\dfrac{1}{9 \, \alpha^3}
+	+
+	\dfrac{2(2 - \alpha)}{3 \, \alpha^3}%
+	-
+	\dfrac{1}{9}%
+\explnext{}
+	\dfrac{1 + 6(2 - \alpha) - \alpha^3}{9 \, \alpha^3}%
+\explnext{}
+	\dfrac{13 - 6 \, \alpha - \alpha^3}{9 \, \alpha^3}%
+\end{stepcalc}
+
+\end{document}
